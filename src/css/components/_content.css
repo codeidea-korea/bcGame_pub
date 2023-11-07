@@ -1,0 +1,11 @@
+.content {
+    
+    @apply min-w-0 min-h-screen flex-1 pb-10;
+    @include media-breakpoint-down(md) {
+        @apply px-4 max-w-full;
+    }
+    &:before {
+        content: "";
+        @apply w-full h-px block;
+    }
+}

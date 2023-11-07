@@ -1,0 +1,81 @@
+/*
+#=========================================#
+        탑바
+        사이드 메뉴 커스텀
+        우측 사이드메뉴
+        모바일 메뉴
+        푸터
+        검색모달
+#=========================================#
+*/
+
+/*
+#=========================================#
+        색상
+#=========================================#
+*/
+body {background-color: var(--background-color);}
+
+
+
+
+/*
+#=========================================#
+        탑바
+#=========================================#
+*/
+.top-bar {position:relative; }
+.top-bar:before {
+    content:''; position:absolute; left:0; bottom:-0.75rem;
+    width:100%; height:0.75rem; opacity:0.3; 
+    background-image: linear-gradient(to bottom,#DADDE6,rgba(218,221,230,0));
+}
+.dark .top-bar:before {
+    background-image: linear-gradient(to bottom,#111415,rgba(17,20,21,0));
+}
+
+/*
+#=========================================#
+        사이드 메뉴 커스텀
+#=========================================#
+*/
+.side-nav { 
+    width:260px;
+    padding:0; background-color: var(--standard-color);
+}
+.side-nav .top_box {
+    position:relative; 
+    width:100%; height:64px; 
+}
+.side-nav .top_box:before {
+    content:''; position:absolute; left:0; top:100%; 
+    width:100%; height:12px; opacity:0.2;
+    background-image:linear-gradient(to bottom,#DADDE6,rgba(218,221,230,0));
+}
+.dark .side-nav .top_box:before {
+    background-image: linear-gradient(to bottom,#111415,rgba(17,20,21,0));
+}
+
+/*
+#=========================================#
+        우측 사이드메뉴
+#=========================================#
+*/
+
+/*
+#=========================================#
+        모바일 메뉴 
+#=========================================#
+*/
+
+/*
+#=========================================#
+        푸터
+#=========================================#
+*/
+
+/*
+#=========================================#
+        검색모달
+#=========================================#
+*/
