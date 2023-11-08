@@ -85,7 +85,7 @@ module.exports = {
                 },
             },
             fontFamily: {
-                roboto: ["Roboto"],
+                roboto: ["Inter"],
             },
             container: {
                 center: true,

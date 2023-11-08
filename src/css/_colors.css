@@ -28,6 +28,7 @@
     --standard-color: #FFFFFF;
     --shadow-color: #EAECF3;
     --page-shadow: linear-gradient(to right, #DADDE6, rgba(218, 221, 230, 0));
+    --page-bottom-shadow : linear-gradient(to bottom,#DADDE6,rgba(218,221,230,0));
     --autofill-color: #31373d;
     --yellow-color: #FFAD00;
     --primary-color: #3BC117;
@@ -57,6 +58,7 @@
     --standard-color: #1C1E22;
     --shadow-color: #111415;
     --page-shadow: linear-gradient(to right, #111415, rgba(17, 20, 21, 0));
+    --page-bottom-shadow : linear-gradient(to bottom,#111415,rgba(17,20,21,0));
     --autofill-color: #f5f6f7;
     --yellow-color: #FFBF39;
 }

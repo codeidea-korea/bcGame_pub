@@ -1,14 +1,228 @@
 <!-- pc : 사이드메뉴 -->
 <nav class="side-nav h-full">
         
-    <div class="top_box intro-x flex items-center p-2">
+    <div class="top_box intro-x flex items-center gap-4 p-2 px-3">
         <!-- 접기 버튼 -->
-        <button class="rounded bg-slate-500 p-2">
-            <svg class="w-4 h-4"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Tighten"></use></svg>
+        <button class="fold_btn rounded p-3.5 bg-back">
+            <svg class="w-4 h-4 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Tighten"></use></svg>
         </button>
-        <a href="javascript:;"><img alt="logo" class="h-8" src="./dist/custom_img/logo.webp"></a>
+        <a href="javascript:;" class="top_logo"><img alt="logo" class="h-10" src="./dist/custom_img/logo.webp"></a>
     </div>
         
-    <div class="flex items-center justify-center mx-3">
+    <div class="menu_box px-3 py-6 text-basic">
+        <div class="bonus_menu p-2 rounded">
+            <div class="menu_list bg-back rounded">
+                <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                    <svg class="w-5 h-5"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Gift"></use></svg>
+                    <span class="font-medium">보너스</span>
+                </a>
+            </div>
+            <div class="flex w-full gap-1.5 mt-2 quest_box">
+                <div class="menu_list quest w-1/2 bg-back rounded">
+                    <a href="javascript:;" class="flex items-center gap-1 h-full pl-2">
+                        <img class="w-10 h-10" src="./dist/custom_img/quest_icon.webp" alt="">
+                        <span class="text-xs font-semibold">퀘스트</span>
+                    </a>
+                </div>
+                <div class="menu_list spin w-1/2 bg-back rounded">
+                    <a href="javascript:;" class="flex items-center gap-1 h-full pl-2">
+                        <div class="spin-anim">
+                            <img class="img-spinbg" src="./dist/custom_img/spin_bg.webp" alt="">
+                            <img class="img-turntable" src="./dist/custom_img/turntable.webp" alt="">
+                            <img class="img-pointer" src="./dist/custom_img/pointer.webp" alt="">
+                        </div>
+                        <span class="text-xs font-semibold">스핀</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="fold_line mt-4"></div>
+
+        <button class="flex gap-2 items-center reward_btn w-full my-4 px-2 py-1 rounded">
+            <img class="w-12 h-12" src="./dist/custom_img/refer.webp" alt="">
+            <b class="font-extrabold">추천 그리고 보상</b>
+        </button>
+
+        <div class="fold_line mb-4"></div>
+
+        <div>
+            <div class="menu_wrap">
+                <div class="menu_list bg-back rounded flex items-center justify-between cursor-pointer active">
+                    <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                        <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Casino"></use></svg>
+                        <span class="font-medium">카지노</span>
+                    </a>
+                    <i class="flex items-center h-full px-3 cursor-pointer"><svg class="w-4 h-4 fill-basic "><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                </div>
+                <div class="hidden menu_depth p-2">
+                    <div class="menu_list bg-back active">
+                        <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                            <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_PicksForYou"></use></svg>
+                            <span class="font-medium">당신을 위해 선택</span>
+                        </a>
+                    </div>
+                    <div class="menu_list bg-back">
+                        <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                            <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Favorites"></use></svg>
+                            <span class="font-medium">가장 좋아하는</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu_wrap">
+                <div class="menu_list mt-1 bg-back rounded flex items-center justify-between">
+                    <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                        <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Sports"></use></svg>
+                        <span class="font-medium">스포츠</span>
+                    </a>
+                    <i class="flex items-center h-full px-3 cursor-pointer"><svg class="w-4 h-4 fill-basic "><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                </div>
+                <div class="hidden menu_depth p-2">
+                    <div class="menu_list bg-back">
+                        <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                            <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_LiveEvents"></use></svg>
+                            <span class="font-medium">라이브 이벤트</span>
+                        </a>
+                    </div>
+                    <div class="menu_list bg-back">
+                        <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                            <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Soccer"></use></svg>
+                            <span class="font-medium">축구</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu_list mt-1 bg-back rounded">
+                <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                    <svg class="w-5 h-5 fill-basic" version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" height="32" viewBox="0 0 30 32"><path d="M23.707-0c-0.047 0-0.109 0-0.155 0.016-0.078 0.016-1.54 0.404-2.333 1.182s-1.213 1.804-1.369 2.582c-7.636 0.264-14.993 4.557-14.993 13.702 0 2.364 0.7 6.159 1.757 7.714 0 0 0.995 2.022 5.817 4.728 3.282 1.089 6.579 1.182 7.667 1.182 0.187 0 0.311 0 0.342 0 0.264 0 0.482-0.187 0.56-0.435 0.031-0.078 0.607-1.866 0.607-3.81 0-2.022-0.809-3.313-1.586-4.572-0.84-1.338-1.711-2.737-1.711-5.195 0-1.26 0.451-2.193 1.337-2.799 1.291 2.411 3.717 2.986 4.728 3.126 0.202 0.607 0.669 1.633 1.509 1.96 0.373 0.156 0.793 0.156 1.166 0 0.187 0.109 0.42 0.187 0.638 0.156 0.653-0.015 1.322-0.467 1.788-1.26 0.047-0.078 0.093-0.155 0.156-0.233 0.513-0.762 1.555-2.348-0.762-4.572-1.104-4.744-3.079-7.076-3.826-7.978l-0.093-0.14c-0.358-0.42-0.731-0.84-1.12-1.244l0.498-3.422c0.031-0.202-0.047-0.404-0.187-0.544-0.124-0.078-0.28-0.14-0.436-0.14zM19.415 0.124c-0.031 0-0.047 0.016-0.078 0.016-0.482 0.062-0.809 0.451-1.151 0.84-0.14 0.156-0.404 0.451-0.544 0.529-0.124-0.031-0.389-0.233-0.56-0.342-0.482-0.327-1.089-0.747-1.773-0.591-0.575 0.109-0.918 0.669-1.244 1.182-0.124 0.202-0.373 0.575-0.513 0.684-0.14-0.047-0.42-0.218-0.607-0.327-0.529-0.311-1.089-0.638-1.649-0.451-0.591 0.202-1.026 0.995-1.198 1.571-0.062 0.187-0.156 0.513-0.233 0.638-0.156-0.016-0.575-0.14-0.762-0.218-0.56-0.249-1.338-0.311-1.913-0.031-0.607 0.311-0.747 1.306-0.731 1.897 0 0.171 0 0.451-0.016 0.591s-0.062 0.171-0.109 0.202c-0.078 0.062-0.327 0.062-0.529 0.093-0.529 0.062-1.244-0.047-1.617 0.42-0.389 0.529-0.342 1.151-0.202 1.742 0.078 0.202 0.187 0.622 0.171 0.7-0.078 0.093-0.171 0.156-0.404 0.249-0.591 0.202-1.306 0.451-1.54 1.166-0.14 0.482-0.062 0.778 0.233 1.244 0.078 0.124 0.218 0.358 0.28 0.482-0.093 0.078-0.296 0.202-0.42 0.264-0.42 0.233-0.98 0.56-1.104 1.229-0.062 0.482 0.342 0.995 0.622 1.4 0.156 0.202 0.28 0.498 0.358 0.622-0.078 0.078-0.529 0.513-0.622 0.575-0.373 0.28-0.886 0.669-0.886 1.306 0 0.435 0.467 1.509 0.793 1.913 0.124 0.155-0.047 0.42-0.156 0.576-0.047 0.124-0.404 0.513-0.607 0.731-0.249 0.295-0.762 1.011-0.7 1.618 0.078 0.622 0.669 1.291 1.135 1.664 0.311 0.233 0.311 0.389 0.404 0.467 0.031 0.093 0.109 0.171 0.171 0.233 0.062 0.047 0.902 0.855 3.841 0.84-1.322-1.944-1.944-6.143-1.944-8.367 0-9.612 7.481-14.355 15.413-14.884 0.202-0.513 0.544-1.306 1.244-2.115-0.513-0.342-0.746-0.373-0.855-0.358zM25.496 1.182l-0.358 2.551c0.109 0.109 0.218 0.249 0.327 0.373 0.202-0.607 0.498-1.26 0.995-1.804 0.155-0.156 0.218-0.389 0.155-0.607s-0.249-0.373-0.467-0.435c-0.202-0.047-0.404-0.078-0.606-0.078h-0.047zM23.832 9.331c0.513 0 0.933 0.42 0.933 0.933s-0.42 0.933-0.933 0.933c-0.513 0-0.933-0.42-0.933-0.933s0.42-0.933 0.933-0.933z"></path></svg>
+                    <span class="font-medium">레이싱</span>
+                </a>
+            </div>
+
+            <div class="menu_list mt-1 bg-back rounded-t">
+                <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                    <svg class="w-5 h-5 fill-basic" version="1.1" xmlns="http://www.w3.org/2000/svg" width="29" height="32" viewBox="0 0 29 32"><path d="M4.831 6.955c0-0.337-0.273-0.61-0.61-0.61h-0.277c-0.337 0-0.61 0.273-0.61 0.61v2.977c0 0.337-0.273 0.61-0.61 0.61h-2.115c-0.337 0-0.61 0.273-0.61 0.61v14.991c0 0.337 0.273 0.61 0.61 0.61h2.115c0.337 0 0.61 0.273 0.61 0.61v2.977c0 0.337 0.273 0.61 0.61 0.61h0.277c0.337 0 0.61-0.273 0.61-0.61v-2.977c0-0.337 0.273-0.61 0.61-0.61h2.115c0.337 0 0.61-0.273 0.61-0.61v-14.991c0-0.337-0.273-0.61-0.61-0.61h-2.115c-0.337 0-0.61-0.273-0.61-0.61v-2.977z"></path><path d="M14.502 4.048c0-0.337-0.273-0.61-0.61-0.61h-0.277c-0.337 0-0.61 0.273-0.61 0.61v2.977c0 0.337-0.273 0.61-0.61 0.61h-2.115c-0.337 0-0.61 0.273-0.61 0.61v14.991c0 0.337 0.273 0.61 0.61 0.61h2.115c0.337 0 0.61 0.273 0.61 0.61v2.977c0 0.337 0.273 0.61 0.61 0.61h0.277c0.337 0 0.61-0.273 0.61-0.61v-2.977c0-0.337 0.273-0.61 0.61-0.61h2.115c0.337 0 0.61-0.273 0.61-0.61v-14.992c0-0.337-0.273-0.61-0.61-0.61h-2.115c-0.337 0-0.61-0.273-0.61-0.61v-2.977z"></path><path d="M24.175 0.61c0-0.337-0.273-0.61-0.61-0.61h-0.277c-0.337 0-0.61 0.273-0.61 0.61v2.977c0 0.337-0.273 0.61-0.61 0.61h-2.115c-0.337 0-0.61 0.273-0.61 0.61v14.991c0 0.337 0.273 0.61 0.61 0.61h2.115c0.337 0 0.61 0.273 0.61 0.61v2.977c0 0.337 0.273 0.61 0.61 0.61h0.277c0.337 0 0.61-0.273 0.61-0.61v-2.977c0-0.337 0.273-0.61 0.61-0.61h2.115c0.337 0 0.61-0.273 0.61-0.61v-14.992c0-0.337-0.273-0.61-0.61-0.61h-2.115c-0.337 0-0.61-0.273-0.61-0.61v-2.977z"></path></svg>
+                    <span class="font-medium">거래</span>
+                </a>
+            </div>
+            <div class="menu_list bg-back rounded-b">
+                <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                    <svg class="w-5 h-5 fill-basic" version="1.1" xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><title></title><g id="icomoon-ignore"></g><path d="M721.001 168.252c8.491 6.244 14.981 14.984 18.694 25.14l126.843 344.678 82.893 0.048c13.879 0 27.227 5.827 37.065 16.107 9.797 10.322 15.349 24.309 15.349 38.876s-5.511 28.595-15.349 38.918c-9.838 10.322-23.186 16.107-37.065 16.107l-102.194 0.079c-12.276 3.998-25.896 3.223-38.025-2.826-6.453-3.218-12.191-7.752-16.859-13.32-4.426-5.243-7.846-11.282-10.088-17.803 0.041-0.108-0.003-0.217-0.046-0.327-0.108-0.119-0.255-0.566-0.398-1.017l-94.703-256.692-199.119 469.010c-1.442 5.544-3.721 10.899-6.822 15.861-4.733 7.537-11.227 13.759-18.9 18.106-7.282 4.123-15.433 6.373-23.748 6.563l-1.697 0.013-6.133-0.405-5.335-1.074c-0.215-0.054-0.432-0.108-0.645-0.165l5.98 1.239c-12.25-1.548-23.647-7.471-32.102-16.827-6.537-7.198-11.021-15.966-13.11-25.371l-115.583-285.323-39.732 80.39c-4.409 8.991-11.063 16.525-19.267 21.769-8.164 5.286-17.633 8.075-27.227 8.117h-109.113c-13.879 0-27.227-5.827-37.065-16.107-9.874-10.434-15.379-24.378-15.349-38.876 0-14.61 5.511-28.595 15.349-38.918s23.186-16.107 37.065-16.107h77.069l76.252-153.84c2.937-6.73 7.172-12.788 12.45-17.814 10.563-9.976 24.703-15.053 39.065-14.027 7.062 0.541 13.961 2.58 20.247 6.036 6.287 3.414 11.838 8.158 16.33 13.902 5.81 7.397 9.612 16.107 11.166 25.275l110.995 274.313 204.729-481.108c4.245-9.989 11.185-18.356 19.961-24.183 17.836-11.819 40.975-11.189 58.169 1.58z"></path></svg>
+                    <span class="font-medium">Futures</span>
+                </a>
+            </div>
+
+            <div class="menu_list mt-1 bg-back rounded">
+                <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                    <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Lottery"></use></svg>
+                    <span class="font-medium">복권</span>
+                </a>
+            </div>
+            <div class="menu_list mt-1 bg-back rounded">
+                <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                    <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Bingo2"></use></svg>
+                    <span class="font-medium">빙고</span>
+                </a>
+            </div>
+
+            <div class="menu_list mt-1 bg-back rounded">
+                <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                    <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_VipClub"></use></svg>
+                    <span class="font-bold vip_text"><b class="text-[#FFBF39]">VIP</b> 클럽</span>
+                </a>
+            </div>
+            
+            <div class="menu_wrap">
+                <div class="menu_list bg-back flex items-center justify-between">
+                    <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                        <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Exclusive"></use></svg>
+                        <span class="font-medium">BC 독점</span>
+                    </a>
+                    <i class="flex items-center h-full px-3 cursor-pointer"><svg class="w-4 h-4 fill-basic "><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                </div>
+                <div class="hidden menu_depth p-2">
+                    <div class="menu_list bg-back">
+                        <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                            <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_LiveEvents"></use></svg>
+                            <span class="font-medium">라이브 이벤트</span>
+                        </a>
+                    </div>
+                    <div class="menu_list bg-back">
+                        <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                            <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Soccer"></use></svg>
+                            <span class="font-medium">축구</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu_list bg-back">
+                <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                    <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Affiliate"></use></svg>
+                    <span class="font-medium">제휴</span>
+                </a>
+            </div>
+            <div class="menu_list bg-back">
+                <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                    <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Forum"></use></svg>
+                    <span class="font-medium">포럼</span>
+                </a>
+            </div>
+            <div class="menu_list bg-back">
+                <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                    <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_ProvablyFair"></use></svg>
+                    <span class="font-medium">공정성</span>
+                </a>
+            </div>
+            <div class="menu_list bg-back rounded-b">
+                <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                    <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Blog"></use></svg>
+                    <span class="font-medium">블로그</span>
+                </a>
+            </div>
+
+            <div class="menu_wrap">
+                <div class="menu_list mt-1 bg-back flex items-center justify-between">
+                    <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                        <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Sponsorship"></use></svg>
+                        <span class="font-medium">스폰서쉽</span>
+                    </a>
+                    <i class="flex items-center h-full px-3 cursor-pointer"><svg class="w-4 h-4 fill-basic "><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                </div>
+                <div class="hidden menu_depth p-2">
+                    <div class="menu_list bg-back">
+                        <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                            <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_LiveEvents"></use></svg>
+                            <span class="font-medium">라이브 이벤트</span>
+                        </a>
+                    </div>
+                    <div class="menu_list bg-back">
+                        <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                            <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Soccer"></use></svg>
+                            <span class="font-medium">축구</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu_list mt-1 bg-back rounded">
+                <a href="javascript:;" class="flex items-center gap-5 h-full pl-4">
+                    <svg class="w-5 h-5 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Support"></use></svg>
+                    <span class="font-medium">라이브카지노</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="flex color_theme mt-4 rounded">
+            <button class="flex w-full items-center justify-center py-3 gap-2 rounded active" data-theme="dark">
+                <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Dark"></use></svg>
+                어두운
+            </button>
+            <button class="flex w-full items-center justify-center py-3 gap-2 rounded" data-theme="">
+                <svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Light"></use></svg>
+                밝은
+            </button>
+        </div>
+
     </div>
 </nav>
