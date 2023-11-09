@@ -2,7 +2,7 @@
     
     @apply min-w-0 min-h-screen flex-1;
     @include media-breakpoint-down(md) {
-        @apply px-4 max-w-full;
+        @apply max-w-full;
     }
     &:before {
         content: "";

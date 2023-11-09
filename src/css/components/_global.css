@@ -3,18 +3,17 @@ html {
     &.dark {
         
         body {
-            @apply text-slate-300;
             *,
             ::before,
             ::after {
-                @apply border-white/5;
+                
             }
         }
     }
     body {
-        @apply antialiased overflow-x-hidden text-sm text-slate-800;
+        @apply antialiased overflow-x-hidden text-sm ;
         @include media-breakpoint-down(sm) {
-            @apply px-3;
+            
         }
     }
 }

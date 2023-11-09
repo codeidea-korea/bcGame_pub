@@ -10,3 +10,43 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url("layout.css");
+
+
+.form-control {height:42px; border-radius:3px; }
+.form-control:focus {border:1px solid var(--primary-color) !important; box-shadow:none; outline:0 none; }
+
+
+.dark .form-control.type02 {background-color:#222328; border-color:#2d3035; }
+.form-control.type02 {background-color:#fff; border:1px solid #e9eaf2; }
+/*
+#=========================================#
+        checkbox
+#=========================================#
+*/
+.form-switch .form-check-input {width:28px; height:16px; padding:0; background-color:#bfc3c7; }
+.form-switch .form-check-input:focus {box-shadow:none; outline:none; }
+.form-switch .form-check-input:before {width:16px; height:16px; background-color: #fff;}
+.form-switch .form-check-input:checked {border:0 none; background-color: #3bc11733 !important;}
+.form-switch .form-check-input:checked::before {background-color: var(--primary-color) !important;}
+.dark .form-switch .form-check-input {background-color: #3A4047;}
+.dark .form-switch .form-check-input:before {background-color: #737c86;}
+
+/*
+#=========================================#
+        tab
+#=========================================#
+*/
+.dark .nav-boxed-tabs .active {background-color: #2D3035; }
+.nav-boxed-tabs .active {background-color: #fff; color:var(--title-color); font-weight:bold; }
+/*
+#=========================================#
+        dropdown
+#=========================================#
+*/
+.dropdown-menu .dropdown-content {padding:0; }
+.dark .dropdown-content {background-color: #17181b; }
+.dropdown-content {background-color: #fff; }
+.dropdown-menu .dropdown-content .tab-content .tab-pane { width:100% !important; }
+@media all and (max-width:640px){
+    .dropdown-menu.show {width:100% !important; }
+}

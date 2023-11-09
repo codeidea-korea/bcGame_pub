@@ -1,6 +1,6 @@
 /* Default colors */
 :root {
-    --color-primary: theme("colors.rgb.blue.800");
+    --color-primary: 59 193 23;
     --color-secondary: theme("colors.rgb.slate.200");
     --color-success: theme("colors.rgb.lime.500");
     --color-info: theme("colors.rgb.cyan.500");
@@ -9,16 +9,16 @@
     --color-danger: theme("colors.rgb.red.600");
     --color-light: theme("colors.rgb.slate.100");
     --color-dark: theme("colors.rgb.slate.800");
-    --color-slate-50: theme("colors.rgb.slate.50");
-    --color-slate-100: theme("colors.rgb.slate.100");
-    --color-slate-200: theme("colors.rgb.slate.200");
-    --color-slate-300: theme("colors.rgb.slate.300");
-    --color-slate-400: theme("colors.rgb.slate.400");
-    --color-slate-500: theme("colors.rgb.slate.500");
-    --color-slate-600: theme("colors.rgb.slate.600");
-    --color-slate-700: theme("colors.rgb.slate.700");
-    --color-slate-800: theme("colors.rgb.slate.800");
-    --color-slate-900: theme("colors.rgb.slate.900");
+    --color-slate-50: theme("colors.rgb.gray.50");
+    --color-slate-100: theme("colors.rgb.gray.100");
+    --color-slate-200: theme("colors.rgb.gray.200");
+    --color-slate-300: theme("colors.rgb.gray.300");
+    --color-slate-400: theme("colors.rgb.gray.400");
+    --color-slate-500: theme("colors.rgb.gray.500");
+    --color-slate-600: theme("colors.rgb.gray.600");
+    --color-slate-700: theme("colors.rgb.gray.700");
+    --color-slate-800: theme("colors.rgb.gray.800");
+    --color-slate-900: theme("colors.rgb.gray.900");
 
     --title-color: #000000;
     --text-color: #31373D;
@@ -33,12 +33,21 @@
     --yellow-color: #FFAD00;
     --primary-color: #3BC117;
     --border-radius: .25rem;
+    --background-type-color:#f2f2f7;
 }
 
 /* Default dark-mode colors */
 .dark {
-    --color-primary: theme("colors.rgb.blue.700");
-    --color-slate-500: theme("colors.rgb.slate.400");
+    --color-primary: 59 193 23;
+    --color-slate-100: theme("colors.rgb.gray.900");
+    --color-slate-200: theme("colors.rgb.gray.800");
+    --color-slate-300: theme("colors.rgb.gray.700");
+    --color-slate-400: theme("colors.rgb.gray.600");
+    --color-slate-500: theme("colors.rgb.gray.500");
+    --color-slate-600: theme("colors.rgb.gray.400");
+    --color-slate-700: theme("colors.rgb.gray.300");
+    --color-slate-800: theme("colors.rgb.gray.200");
+    --color-slate-900: theme("colors.rgb.gray.100");
     --color-darkmode-50: 87 103 132;
     --color-darkmode-100: 74 90 121;
     --color-darkmode-200: 65 81 114;
@@ -61,6 +70,7 @@
     --page-bottom-shadow : linear-gradient(to bottom,#111415,rgba(17,20,21,0));
     --autofill-color: #f5f6f7;
     --yellow-color: #FFBF39;
+    --background-type-color:#1e2024;
 }
 
 /* Theme 1 colors */

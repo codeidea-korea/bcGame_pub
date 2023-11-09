@@ -1,17 +1,201 @@
-<div class="top-bar flex items-center justify-between">
+<!-- 로그인 했을때 top-login 클래스 추가 -->
+<div class="top-bar flex items-center justify-between top-login">
     <div class="container relative flex items-center justify-between text-basic">
+        <div class="mo_left">
+            <a class="block px-4 py-2" href="javascript:;"><img class="w-6" src="./dist//custom_img/logo_small.webp" alt=""></a>
+        </div>
         <div class="left">
             <button class="btn btn-top h-11 px-5"><svg class="w-5 h-5 mr-2 fill-basic casino_i"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Casino"></use></svg> 카지노</button>
             <button class="btn btn-top h-11 px-5"><svg class="w-5 h-5 mr-2 fill-basic sports_i"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Sports"></use></svg> 스포츠</button>
             <button class="btn btn-top h-11 px-5"><svg class="w-5 h-5 mr-2 fill-basic horse_i"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Horse"></use></svg> 레이싱</button>
         </div>
         <div class="right flex items-center">
-            <button class="btn h-11 px-4 border-none shadow-none">로그인</button>
-            <button class="btn btn-green h-11 w-28 mr-4 font-bold">가입하기</button>
-            <button class="btn btn-top h-11 px-4"><svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Notice"></use></svg></button>
+            
+            <!-- 로그인 안했을때 -->
+            <!-- <button class="btn h-11 px-4 border-none shadow-none">로그인</button> -->
+            <!-- <button class="btn btn-green h-10 sm:h-11 w-24 sm:w-28 mr-0 sm:mr-4 font-bold">가입하기</button> -->
+            
+            <!-- 로그인 했을때 -->
+            <div class="dropdown inline-block" data-tw-placement="bottom">
+                <button class="dropdown-toggle flex items-center gap-2 h-11 px-2 bg-back2 rounded-l font-bold" aria-expanded="false" data-tw-toggle="dropdown">
+                    <span class="flex justify-center items-center text-tit text-xs sm:text-sm wallet_top_btn">
+                        <img class="coin-icon w-4 h-4 mr-1" src="./dist/custom_img/coin/KRW.webp">
+                        <strong class="font-bold">₩ 0.00</strong><span class="hidden">0.00</span>
+                    </span>
+                    <svg class="w-3 h-3 rotate-90 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                </button>
+                <div class="dropdown-menu font-medium walletDropdown">
+                    <div class="dropdown-content wallet_menu bg-tit">
+                        <div class="flex items-center p-5">
+                            <div class="relative w-full">
+                                <label for="cash_input"><svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Search"></use></svg></label>
+                                <input type="text" id="cash_input" class="form-control type02 pl-10" placeholder="검색" />
+                            </div>
+                            <button class="p-2"><svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_AddSub"></use></svg></button>
+                        </div>
+                        <div class="px-6 pb-4">
+                            <ul class="nav nav-boxed-tabs bg-back rounded p-0.5" role="tablist">
+                                <li id="top-cash_tab01" class="nav-item w-full" role="presentation"> 
+                                    <button class="w-full py-1 text-basic active" data-tw-toggle="pill" data-tw-target="#top-cash_cont01" type="button" role="tab" aria-controls="top-cash_cont01" aria-selected="true">화폐</button>
+                                </li>
+                                <li id="top-cash_tab02" class="nav-item w-full" role="presentation"> 
+                                    <button class="w-full py-1 text-basic" data-tw-toggle="pill" data-tw-target="#top-cash_cont02" type="button" role="tab" aria-controls="top-cash_cont02" aria-selected="false">mNFT</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="overflow-y-auto h-96 wallet_search px-4">
+                            <div class="tab-content mt-5">
+                                <div id="top-cash_cont01" class="tab-pane active" role="tabpanel" aria-labelledby="top-cash_tab01" data-btn="wallet_top_btn">
+                                    <div class="py-1 wallet_tit">법정화폐</div>
+
+                                    <div class="wallet_list">
+                                        <div class="flex justify-between p-2.5 rounded active">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/KRW.webp" alt=""><b class="text-tit font-extrabold">KRW</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/ARS.webp" alt=""><b class="text-tit font-extrabold">ARS</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/CLP.webp" alt=""><b class="text-tit font-extrabold">CLP</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/IDR.webp" alt=""><b class="text-tit font-extrabold">IDR</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/AUD.webp" alt=""><b class="text-tit font-extrabold">AUD</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/AZN.webp" alt=""><b class="text-tit font-extrabold">AZN</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/BDT.webp" alt=""><b class="text-tit font-extrabold">BDT</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/CAD.webp" alt=""><b class="text-tit font-extrabold">CAD</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/COP.webp" alt=""><b class="text-tit font-extrabold">COP</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/EGP.webp" alt=""><b class="text-tit font-extrabold">EGP</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/EUR.webp" alt=""><b class="text-tit font-extrabold">EUR</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/GBP.webp" alt=""><b class="text-tit font-extrabold">GBP</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/GHS.webp" alt=""><b class="text-tit font-extrabold">GHS</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/JPY.webp" alt=""><b class="text-tit font-extrabold">JPY</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/KES.webp" alt=""><b class="text-tit font-extrabold">KES</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/KGS.webp" alt=""><b class="text-tit font-extrabold">KGS</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="py-1 wallet_tit">크립토</div>
+                                    <div class="wallet_list">
+                                        <div class="flex justify-between p-2.5 rounded isItem">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/USDC.webp" alt=""><b class="text-tit font-extrabold">USDC</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 6,536.39<b class="text-xs font-normal ml-1">(보너스)</b></strong><span class="block text-xs">5.0038</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded isItem">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/JB.webp" alt=""><b class="text-tit font-extrabold">JB</b> <svg class="w-5 h-5 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">99999.00</strong><span class="hidden text-xs">99999.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/BTC.webp" alt=""><b class="text-tit font-extrabold">BTC</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/BCD.webp" alt=""><b class="text-tit font-extrabold">BCD</b> <svg class="w-5 h-5 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">0.00</strong><span class="hidden text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/SATS.webp" alt=""><b class="text-tit font-extrabold">SATS</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/ETH.webp" alt=""><b class="text-tit font-extrabold">ETH</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/BNB.webp" alt=""><b class="text-tit font-extrabold">BNB</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/DOGE.webp" alt=""><b class="text-tit font-extrabold">DOGE</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                        <div class="flex justify-between p-2.5 rounded">
+                                            <p class="flex gap-2 items-center"><img class="w-7" src="./dist/custom_img/coin/USDT.webp" alt=""><b class="text-tit font-extrabold">USDT</b></p>
+                                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="top-cash_cont02" class="tab-pane" role="tabpanel" aria-labelledby="top-cash_tab02">
+                                    <div class="h-80 py-10 text-center ">
+                                        <img class="w-48 mx-auto" src="./dist/custom_img/empty.webp" alt="">
+                                        <p class="-mt-5 text-basic opacity-70">코인 또는 토큰을 찾을 수 없음</p>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="p-6 border-t border-slate-200 border-solid flex items-center justify-between">
+                            <div>
+                                <div class="form-check form-switch"> 
+                                    <input id="top-cash_check" class="form-check-input legal_check" type="checkbox" checked> 
+                                    <label class="form-check-label" for="top-cash_check">법정화폐로 보기</label> 
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-check form-switch"> 
+                                    <input id="top-cash_check02" class="form-check-input small_check" type="checkbox"> 
+                                    <label class="form-check-label" for="top-cash_check02">작게보기</label> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-purple h-10 sm:h-11 w-16 sm:w-28 mr-0 sm:mr-4 font-bold">
+                <svg class="sm:block hidden w-4 h-4 fill-white mr-2"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Wallet"></use></svg>
+                입금
+            </button>
+            <button class="btn btn-top h-11 px-4 relative notice_btn"><svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Notice"></use></svg><span class="z-10 absolute -right-1 -top-1 px-2.5 bg-primary text-white rounded-xl">1</span></button>
+
+            <!-- 로그인했을때/안했을때 -->
             <button class="btn btn-top h-11 px-4 chat_btn"><svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Chat"></use></svg><div class="chat-dot"></div></button>
+
+            <!-- 모바일에서만 -->
+            <button class="btn btn-top h-11 px-4 block sm:hidden"><svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Gift"></use></svg></button>
+
+            <!-- 로그인 했을때 -->
             <div class="profile_btn">
-                <button class="mx-4"><i class="block w-9 h-9 rounded-full overflow-hidden"><img src="./dist/custom_img/profile_img.png" alt=""></i></button>
+                <button class="mx-0 sm:mx-4"><i class="block w-9 h-9 rounded-full overflow-hidden"><img src="./dist/custom_img/profile_img.png" alt=""></i></button>
                 <div class="profile_box">
                     <div class="shadow-lg">
                         <ul class="p-3 rounded-t">
@@ -52,7 +236,7 @@
                                 <span>글로벌 세팅</span>
                             </a></li>
                         </ul>
-                        <ul class="p-3 rounded-b border-t border-slate-200">
+                        <ul class="p-3 rounded-b border-t border-slate-300">
                             <li><a href="javascript:;" class="flex items-center pl-2.5 h-10 basic-hover">
                                 <svg class="w-5 h-5 mr-2"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Logout"></use></svg>
                                 <span>로그아웃</span>
@@ -62,8 +246,10 @@
                 </div>
             </div>
 
-            <button class="btn btn-top h-11 px-4"><svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Language"></use></svg></button>
-            <button class="btn btn-top h-11 px-2">₩ KRW</button>
+            <!-- 로그인했을때/안했을때 -->
+            <button class="btn btn-top h-11 px-4 lang_btn"><svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Language"></use></svg></button>
+            <i class="sm:block hidden border-r border-solid border-slate-500 h-6"></i>
+            <button class="btn btn-top h-11 px-2 cash_btn">₩ KRW</button>
         </div>
     </div>
 </div>

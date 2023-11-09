@@ -5,7 +5,6 @@
         width: 85px;
     }
     @include media-breakpoint-down(md) {
-        @apply hidden;
     }
     &.side-nav--simple {
         width: 85px;
