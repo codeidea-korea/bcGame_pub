@@ -275,7 +275,16 @@ button:focus {box-shadow:none !important; }
 #=========================================#
 */
 .dark footer {background-color: #1A1C20; }
-footer {background-color: #fff; }
+footer { background-color: #fff; }
+
+footer .network_list li {position:relative; padding-top:10px; }
+footer .network_list li:hover {z-index:200; }
+.dark footer .network_list li > div {box-shadow:0px 0px 10px rgba(0, 0, 0, 0.35) }
+footer .network_list li > div {z-index:10; visibility:hidden; position:absolute; left:calc(50% - 137.5px); bottom:100%; width:280px; box-shadow:0px 0px 10px rgba(0,0,0, 0.15) }
+footer .network_list li:hover > div {visibility:visible; }
+
+footer .icon_btn {display:block; width:40px; height:40px; background: url('../custom_img/footer/hover.webp'); background-size:205px 164px; }
+footer .icon_btn.icon-bitcoin {background-position: 0 -41px;}
 /*
 #=========================================#
         검색모달

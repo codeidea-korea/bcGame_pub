@@ -7,6 +7,7 @@ import tippy, { roundArrow } from "tippy.js";
     $(".tooltip").each(function () {
         let options = {
             content: $(this).attr("title"),
+            zIndex: 10001
         };
 
         if ($(this).data("trigger") !== undefined) {

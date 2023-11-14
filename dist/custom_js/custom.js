@@ -28,17 +28,30 @@ fetch("./_top_bar.html")
         console.log(error);
     });
 
+window.addEventListener("load",function(){
 
-// 푸터 로드
-fetch("./_footer.html")
-    .then((response) => response.text())
-    .then((html) => {
-        $(".container_wrap").append(html);
-
-    })
-    .catch((error) => {
-        console.log(error);
-    });
+    // 푸터 로드
+    fetch("./_footer.html")
+        .then((response) => response.text())
+        .then((html) => {
+            $(".container_wrap").append(html);
+            $(".tooltip2").each(function () {
+                console.log(this)
+                  tippy(this, {
+                      animation: "shift-away",
+                      content: "ddddd",
+                      zIndex: 10001,
+                      trigger: 'click',
+                      placement:'top'
+  
+                  });
+              });
+    
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+})
 
 
 const leftMenuHandle = () => {
