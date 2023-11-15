@@ -191,6 +191,13 @@ button:focus {box-shadow:none !important; }
 .fold_line {display:none; border-top:1px solid #DADDE6; }
 .side-nav.fold .fold_line {display:block; }
 
+.menu-hover_wrap {width:calc(100% + 2.5rem); margin-left:-1.25rem; padding:0 1.25rem;}
+.dark .menu-hover_wrap .game_wrap {background-color:#2D3035;}
+.menu-hover_wrap .game_wrap {overflow:hidden; position:absolute; top:0px; left:100%; width:0; height:100%; background-color:#F6F7FA; box-shadow:inset 5px 0px 5px rgba(0,0,0,0.05); transition:width .5s cubic-bezier(.36,.66,.04,1); }
+.menu-hover_wrap:hover .game_wrap {width:240px; }
+.menu-hover_wrap .game_wrap .game_list {width:240px; height:100%; padding:32px 0 32px 12px; overflow-y:auto;  overflow-x:hidden;}
+.menu-hover_wrap .game_wrap .game_list::-webkit-scrollbar {width:2px; }
+
 /* 접었을때 */
 .side-nav.fold {display:flex; align-items:flex-end; flex-direction:column; width:260px; transform:translateX(-196px)}
 .side-nav.fold .top_box {justify-content:flex-end;}
