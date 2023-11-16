@@ -19,39 +19,53 @@ fetch("./_top_bar.html")
     .then((html) => {
         if(!$('.content').hasClass('logout')){
             $(".content").prepend(html);
+            leftMenuHandle()
+            topbarHandle()
         }
-        leftMenuHandle()
-        topbarHandle()
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+// 탑바 로드 - 로그인 안했을때
+fetch("./_top_bar_logout.html")
+    .then((response) => response.text())
+    .then((html) => {
+        if($('.content').hasClass('logout')){
+            $(".content").prepend(html);
+            leftMenuHandle()
+            topbarHandle()
+        }
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+// 푸터 로드
+fetch("./_footer.html")
+    .then((response) => response.text())
+    .then((html) => {
+        $(".container_wrap").append(html);
 
     })
     .catch((error) => {
         console.log(error);
     });
 
-window.addEventListener("load",function(){
+// 우측영역 추가
+fetch("./_right_area.html")
+    .then((response) => response.text())
+    .then((html) => {
+        $(".content").prepend(html);
 
-    // 푸터 로드
-    fetch("./_footer.html")
-        .then((response) => response.text())
-        .then((html) => {
-            $(".container_wrap").append(html);
-            $(".tooltip2").each(function () {
-                console.log(this)
-                  tippy(this, {
-                      animation: "shift-away",
-                      content: "ddddd",
-                      zIndex: 10001,
-                      trigger: 'click',
-                      placement:'top'
-  
-                  });
-              });
-    
+        $(document).on('click','.all_view_btn',function(){
+            $(this).prev().toggleClass('open')
+            $(this).toggleClass('open');
         })
-        .catch((error) => {
-            console.log(error);
-        });
-})
+    })
+    .catch((error) => {
+        console.log(error);
+    });
 
 
 const leftMenuHandle = () => {
@@ -185,6 +199,23 @@ const topbarHandle = ()=>{
         }
     }
     smallBtn.addEventListener("change",smallHandle)
+}
+
+//=======================================================
+//   우측바 제어
+//=======================================================
+const rightOpen = (target)=>{
+    const content = document.querySelector('.content');
+    content.classList.add('right_open')
+    const right = document.querySelector('.right-area')
+    right.classList.add('open')
+    $(`.right-area .${target}`).show().siblings().hide();
+}
+const rightClose = ()=>{
+    const content = document.querySelector('.content');
+    content.classList.remove('right_open')
+    const right = document.querySelector('.right-area')
+    right.classList.remove('open')
 }
 
 //=======================================================

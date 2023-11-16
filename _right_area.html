@@ -1,0 +1,150 @@
+<div class="right-area">
+
+    <!-- 공지영역 -->
+    <div class="notice_area flex flex-col h-full">
+        <div class="top_box h-16 p-5 flex items-center justify-between bg-shadow">
+            <h3 class="text-base font-semibold text-tit">공지</h3>
+            <svg class="w-5 h-5 close_btn cursor-pointer" onclick="rightClose()"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg>
+        </div>
+         <ul class="nav nav-link-tabs w-full" role="tablist">
+             <li id="notice-tab-1" class="nav-item w-1/2" role="presentation"> 
+                <button class="nav-link w-full py-2 h-14 active" data-tw-toggle="pill" data-tw-target="#notice-con-1" type="button" role="tab" aria-controls="notice-con-1" aria-selected="true" >시스템공지</button> 
+            </li> 
+            <li id="notice-tab-2" class="nav-item w-1/2" role="presentation"> 
+                <button class="nav-link w-full py-2 h-14" data-tw-toggle="pill" data-tw-target="#notice-con-2" type="button" role="tab" aria-controls="notice-con-2" aria-selected="false" >활동</button> 
+            </li> 
+        </ul> 
+        <div class="notice_cont">
+            <div class="overflow-y-auto h-full">
+                <div class="tab-content h-full p-3"> 
+                    <div id="notice-con-1" class="tab-pane leading-relaxed active" role="tabpanel" aria-labelledby="notice-tab-1"> 
+                        <div class="bg-back p-4 notice_list rounded">
+                            <span class="text-xs">2023. 11. 15. 오후 3:55:52</span>
+                            <h4 class=" my-2 text-tit text-base font-bold">🔧 Sportsbook Maintenance In Progress 🔧</h4>
+                            <p>We wish to inform you that our Sportsbook is currently undergoing maintenance.<br/><br/>
+                                ⏳ Maintenance Duration: The maintenance is underway and is expected to last for approximately 1 hour from now.<br/><br/>
+                                During this period, access to the Sportsbook will be temporarily unavailable. This essential maintenance is part of our commitment to providing you with the best possible betting experience.<br/><br/>
+                                We apologize for any inconvenience caused during this time and greatly appreciate your understanding and patience.<br/><br/>
+                                Best regards,<br/>
+                                BC.GAME Team
+                            </p>
+                            <button class="all_view_btn flex items-center gap-1 ml-auto text-tit font-semibold p-1"><span>모두 보기</span><span>숨김</span> <svg class="w-3 h-3 fill-title"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        </div>
+                        <div class="bg-back p-4 notice_list rounded mt-2">
+                            <span class="text-xs">2023. 11. 15. 오후 3:55:52</span>
+                            <h4 class=" my-2 text-tit text-base font-bold">🔧 예정된 정기 점검 공지 🔧</h4>
+                            <p>2023년 11월 15일, UTC+0 기준으로 오전 05:30부터 07:30까지 예정된 정기 점검에 대해 알려드립니다. 이 기간 동안 최대 2시간 동안 다운타임이 발생할 수 있습니다.<br/><br/>
+                                저희 팀은 가능한 영향과 다운타임 기간을 최소화하기 위해 노력하고 있습니다.<br/><br/>
+                                이로 인한 불편함에 대해 사과드리며, 양해해 주셔서 감사합니다.<br/><br/>
+                                고맙습니다.<br/>
+                                BC.GAME
+                            </p>
+                            <button class="all_view_btn flex items-center gap-1 ml-auto text-tit font-semibold p-1"><span>모두 보기</span><span>숨김</span> <svg class="w-3 h-3 fill-title"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        </div>
+                        <div class="bg-back p-4 notice_list rounded mt-2">
+                            <span class="text-xs">2023. 11. 14. 오전 11:57:38</span>
+                            <h4 class=" my-2 text-tit text-base font-bold">🔧 Betsoft Games Downtime Notification 🔧</h4>
+                            <p>Kindly be informed of an upcoming scheduled downtime for Betsoft games.<br/><br/>
+                                📅 Planned Downtime Schedule:<br/><br/>
+                                - Date: Tuesday, November 14th<br/>
+                                - Time: 10:00 CET to 13:00 CET<br/><br/>
+                                Please note that Betsoft games will be unavailable during this maintenance window.<br/><br/>
+                                We apologize for any inconvenience this may cause and appreciate your understanding as we work to enhance your gaming experience.<br/><br/>
+                                Thank you for your patience.<br/><br/>
+                                Best regards,<br/>
+                                BC.GAME Team 
+                            </p>
+                            <button class="all_view_btn flex items-center gap-1 ml-auto text-tit font-semibold p-1"><span>모두 보기</span><span>숨김</span> <svg class="w-3 h-3 fill-title"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        </div>
+                        <div class="bg-back p-4 notice_list rounded mt-2">
+                            <span class="text-xs">2023. 11. 11. 오후 1:59:42</span>
+                            <h4 class=" my-2 text-tit text-base font-bold">🏀Its Weekly Sports Bonus Time!⚽️</h4>
+                            <img class="rounded mb-2" src="./dist/custom_img/notice_sample.JPEG" alt="">
+                            <p>Weekly Sports bonus has been dropped successfully! 🔥<br/><br/>
+                                -   Wager period Saturday November  4th  to Friday November 10th<br/>
+                                -   Minimum VIP level 22+.<br/>
+                                -   Wager $500 or more = $5  bonus<br/>
+                                -   Wager $2,500 or more = $30 bonus<br/>
+                                -   Wager $5,000 or more = $70 bonus<br/>
+                                -   Wager $10,000 or more = $150 bonus<br/><br/>
+                                Grab your weekly bonus boost every Saturday with BC Sports Club! <br/><br/>
+                                BC.GAME
+                            </p>
+                            <button class="all_view_btn flex items-center gap-1 ml-auto text-tit font-semibold p-1"><span>모두 보기</span><span>숨김</span> <svg class="w-3 h-3 fill-title"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                            <div class="border-t border-solid border-slate-300 pt-2 mt-2">
+                                <a href="javascript:;" class="flex items-center justify-between gap-2 text-primary hover:underline">
+                                    Weekly Sports Bonus? What is this? How can I take part?
+                                    <svg class="w-4 h-4 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bg-back p-4 notice_list rounded mt-2">
+                            <span class="text-xs">2023. 11. 8. 오후 7:00:14</span>
+                            <h4 class=" my-2 text-tit text-base font-bold">🛠️ YGR Maintenance Scheduled 🛠️</h4>
+                            <p>We want to inform you that YGR has scheduled a maintenance session to keep your gaming experience smooth and reliable.<br/><br/>
+                                📅 Maintenance Schedule:<br/><br/>
+                                - Date: November 9, 2023<br/>
+                                - Time (UTC+8): From 14:00 PM to 17:00 PM<br/><br/>
+                                🚧 Maintenance Details:<br/><br/>
+                                - Server maintenance is underway, making games inaccessible during this period.<br/>
+                                - Games and back-office services will not be available while maintenance is in progress.<br/><br/>
+                                We appreciate your understanding and apologize for any inconvenience caused by this necessary downtime.<br/><br/>
+                                Thank you for your patience.<br/><br/>
+                                Best regards,<br/>
+                                BC.GAME Team
+                            </p>
+                            <button class="all_view_btn flex items-center gap-1 ml-auto text-tit font-semibold p-1"><span>모두 보기</span><span>숨김</span> <svg class="w-3 h-3 fill-title"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        </div>
+                    </div> 
+                    <div id="notice-con-2" class="tab-pane leading-relaxed h-full" role="tabpanel" aria-labelledby="notice-tab-2"> 
+                        <div class="flex flex-col justify-center h-full text-center"><img class="w-48 mx-auto" src="./dist/custom_img/empty.webp"><div class="-mt-5 text-basic opacity-70">웁스! 아직 데이터가 없습니다!</div></div>
+                    </div> 
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <!-- 채팅영역 -->
+    <div class="chat_area flex flex-col h-full">
+        <div class="top_box h-16 p-5 flex items-center justify-between bg-shadow">
+            <h3 class="text-base font-semibold text-tit">채팅</h3>
+            <div class="flex items-center gap-4">
+                <button class="basic-hover"><svg class="w-6 h-6 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg></button>
+                <button class="basic-hover"><svg class="w-5 h-5 fill-basic hover:-rotate-90 transition-all duration-500" onclick="rightClose()"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+            </div>
+        </div>
+        <div class="chat_cont">
+            <div class="chat_list">채팅</div>
+        </div>
+        <div class="chat_bottom p-3">
+            <div class="send-input">
+                <div class="relative">
+                    <input type="text" class="form-control form-control-rounded" placeholder="보내신 메시지">
+                    <div class="absolute top-3 right-2 ">
+                        <button class="basic-hover mr-1"><svg class="w-5 h-5"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_GIF"></use></svg></button>
+                        <button class="basic-hover"><svg class="w-5 h-5"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Emjoy"></use></svg></button>
+                    </div>
+                </div>
+            </div>
+            <div class="send-controls flex justify-between items-center mt-3">
+                <div>
+                    <div class="dropdown"> <button class="dropdown-toggle btn btn-primary" aria-expanded="false" data-tw-toggle="dropdown">Show Dropdown</button>
+                        <div class="dropdown-menu w-40">
+                            <ul class="dropdown-content">
+                                <li> <a href="" class="dropdown-item">New Dropdown</a> </li>
+                                <li> <a href="" class="dropdown-item">Delete Dropdown</a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <button class="basic-hover mr-1"><svg class="w-5 h-5"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Rain"></use></svg></button>
+                    <button class="basic-hover mr-1"><svg class="w-5 h-5"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Command"></use></svg></button>
+                    <button class="basic-hover mr-1"><svg class="w-5 h-5"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_CoinDrop"></use></svg></button>
+                    <button class="basic-hover"><img class="w-5 h-5" src="./dist/custom_img/rich_icon.webp" alt=""></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
