@@ -4,7 +4,7 @@
     <div class="notice_area flex flex-col h-full">
         <div class="top_box h-16 p-5 flex items-center justify-between bg-shadow">
             <h3 class="text-base font-semibold text-tit">공지</h3>
-            <svg class="w-5 h-5 close_btn cursor-pointer" onclick="rightClose()"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg>
+            <svg class="w-5 h-5 close_btn cursor-pointer" onclick="rightOpen('close')"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg>
         </div>
          <ul class="nav nav-link-tabs w-full" role="tablist">
              <li id="notice-tab-1" class="nav-item w-1/2" role="presentation"> 
@@ -110,33 +110,51 @@
             <h3 class="text-base font-semibold text-tit">채팅</h3>
             <div class="flex items-center gap-4">
                 <button class="basic-hover"><svg class="w-6 h-6 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg></button>
-                <button class="basic-hover"><svg class="w-5 h-5 fill-basic hover:-rotate-90 transition-all duration-500" onclick="rightClose()"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                <button class="basic-hover"><svg class="w-5 h-5 fill-basic hover:-rotate-90 transition-all duration-500" onclick="rightOpen('close')"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
             </div>
         </div>
         <div class="chat_cont">
             <div class="chat_list">채팅</div>
         </div>
         <div class="chat_bottom p-3">
-            <div class="send-input">
+            <div class="send-input relative">
                 <div class="relative">
-                    <input type="text" class="form-control form-control-rounded" placeholder="보내신 메시지">
+                    <input type="text" class="form-control form-control-rounded pr-16" onfocusin="sendFocus()" onfocusout="sendFocusout()" placeholder="보내신 메시지">
                     <div class="absolute top-3 right-2 ">
                         <button class="basic-hover mr-1"><svg class="w-5 h-5"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_GIF"></use></svg></button>
                         <button class="basic-hover"><svg class="w-5 h-5"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Emjoy"></use></svg></button>
                     </div>
                 </div>
+                <button class="btn btn-green send_btn"><svg class="w-5 h-5 fill-white"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Send"></use></svg></button>
             </div>
             <div class="send-controls flex justify-between items-center mt-3">
-                <div>
-                    <div class="dropdown"> <button class="dropdown-toggle btn btn-primary" aria-expanded="false" data-tw-toggle="dropdown">Show Dropdown</button>
-                        <div class="dropdown-menu w-40">
-                            <ul class="dropdown-content">
-                                <li> <a href="" class="dropdown-item">New Dropdown</a> </li>
-                                <li> <a href="" class="dropdown-item">Delete Dropdown</a> </li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="send_lang relative">
+                    <button class="btn w-32 h-8 flex px-2 items-center justify-between border-none bg-back">
+                        <span>한국어</span>
+                        <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                    </button>
+                    <ul class="p-2 shadow-basic rounded">
+                        <li>Global</li>
+                        <li>Sports</li>
+                        <li>English</li>
+                        <li>Português</li>
+                        <li>Indonesian</li>
+                        <li>Руccкий</li>
+                        <li>فارسی</li>
+                        <li>Español</li>
+                        <li>Tiếng việt</li>
+                        <li>Filipino</li>
+                        <li>Deutsch</li>
+                        <li>हिन्दी</li>
+                        <li>မြန်မာ</li>
+                        <li>Français</li>
+                        <li class="on">한국어</li>
+                        <li>ภาษาไทย</li>
+                        <li>Urdu</li>
+                        <li>日本語</li>
+                    </ul>
                 </div>
+                
                 <div class="flex gap-4">
                     <button class="basic-hover mr-1"><svg class="w-5 h-5"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Rain"></use></svg></button>
                     <button class="basic-hover mr-1"><svg class="w-5 h-5"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Command"></use></svg></button>

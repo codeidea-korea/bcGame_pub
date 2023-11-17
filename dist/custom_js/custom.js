@@ -62,6 +62,8 @@ fetch("./_right_area.html")
             $(this).prev().toggleClass('open')
             $(this).toggleClass('open');
         })
+
+        rightAreaHandle();
     })
     .catch((error) => {
         console.log(error);
@@ -132,6 +134,12 @@ const leftMenuHandle = () => {
 
 }
 
+const rightAreaHandle = ()=>{
+    $('.right-area .chat_area .send_lang button').on('click',function(){
+        
+    })
+}
+
 const topbarHandle = ()=>{
     // 화폐
     const walletList = document.querySelectorAll('.wallet_list > div')
@@ -155,7 +163,7 @@ const topbarHandle = ()=>{
             var el = document.querySelector(".walletDropdown");
             var dropdown = tailwind.Dropdown.getOrCreateInstance(el);
             dropdown.hide();
-        }, 10);
+        }, 10); 
     }
 
     walletList.forEach((item)=>{
@@ -201,21 +209,41 @@ const topbarHandle = ()=>{
     smallBtn.addEventListener("change",smallHandle)
 }
 
+const sendFocus = ()=>{
+    const sendBox = document.querySelector('.chat_area .send-input')
+    sendBox.classList.add('focus-on')
+}
+const sendFocusout = ()=>{
+    const sendBox = document.querySelector('.chat_area .send-input')
+    sendBox.classList.remove('focus-on')
+}
+
 //=======================================================
 //   우측바 제어
 //=======================================================
+let rightOpen_item = "";
 const rightOpen = (target)=>{
     const content = document.querySelector('.content');
-    content.classList.add('right_open')
     const right = document.querySelector('.right-area')
-    right.classList.add('open')
-    $(`.right-area .${target}`).show().siblings().hide();
-}
-const rightClose = ()=>{
-    const content = document.querySelector('.content');
-    content.classList.remove('right_open')
-    const right = document.querySelector('.right-area')
-    right.classList.remove('open')
+
+    if(target == "close" || target == rightOpen_item){
+        // 닫기버튼 or 같은버튼을 두번 눌렀을때,
+        content.classList.remove('right_open')
+        right.classList.remove('open')
+        $('.top-bar .chat_btn use').attr('xlink:href','./dist/custom_img/symbol-defs.svg#icon_Chat')
+
+        rightOpen_item = "";
+    }else{
+        content.classList.add('right_open')
+        right.classList.add('open')
+        $(`.right-area .${target}`).show().siblings().hide();
+    
+        if(target == "chat_area"){
+            $('.top-bar .chat_btn use').attr('xlink:href','./dist/custom_img/symbol-defs.svg#icon_CloseChat')
+        }
+        rightOpen_item = target;
+    }
+
 }
 
 //=======================================================

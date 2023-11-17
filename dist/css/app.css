@@ -754,6 +754,24 @@ select{
     --tw-border-opacity: 1;
     border-color: rgb(var(--color-primary) / var(--tw-border-opacity));
 }
+.btn-dark{
+    --tw-border-opacity: 1;
+    border-color: rgb(var(--color-dark) / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(var(--color-dark) / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.dark .btn-dark{
+    border-color: transparent;
+    --tw-bg-opacity: 1;
+    background-color: rgb(var(--color-darkmode-800) / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(var(--color-slate-300) / var(--tw-text-opacity));
+}
+.dark .btn-dark:hover:not(:disabled){
+    background-color: rgb(var(--color-darkmode-800) / 0.7);
+}
 /* Button Elevated */
 /* Button Rounded */
 /* Button Elevated Rounded */
@@ -1653,6 +1671,12 @@ select{
 .h-16{
     height: 4rem;
 }
+.h-8{
+    height: 2rem;
+}
+.h-3\.5{
+    height: 0.875rem;
+}
 .w-0{
     width: 0px;
 }
@@ -1700,6 +1724,9 @@ select{
 }
 .w-40{
     width: 10rem;
+}
+.w-3\.5{
+    width: 0.875rem;
 }
 .flex-1{
     flex: 1 1 0%;
@@ -1939,6 +1966,15 @@ select{
 }
 .pt-2{
     padding-top: 0.5rem;
+}
+.pr-8{
+    padding-right: 2rem;
+}
+.pr-12{
+    padding-right: 3rem;
+}
+.pr-16{
+    padding-right: 4rem;
 }
 .text-center{
     text-align: center;
