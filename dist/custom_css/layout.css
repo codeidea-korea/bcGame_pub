@@ -29,11 +29,16 @@ button:focus {box-shadow:none !important; }
 .text-basic {color: var(--text-color);}
 .text-sub {color: var(--sub-text-color);}
 .text-primary {color: var(--primary-color);}
+.text-stand {color:var(--standard-color);}
+.text-place {color:var(--placeholder-color);}
+.text-yellow {color:var(--yellow-color);}
 
 
 .fill-title {fill: var(--title-color);}
 .fill-basic {fill: var(--text-color);}
+.fill-place {fill: var(--placeholder-color);}
 .fill-primary {fill: var(--primary-color) !important;}
+.fill-red {fill:#eb4926}
 
 .shadow-basic {box-shadow:0 0 8px #00000024; }
 
@@ -49,6 +54,7 @@ button:focus {box-shadow:none !important; }
 
 .btn-green {border:0 none; box-shadow:none; background-color:#1d803ab3; background-image:conic-gradient(from 1turn,rgba(88,175,16,1),rgba(29,128,58,1)); color:#fff; border-radius:3px; }
 .btn-purple {border:0 none; box-shadow:none; background-color:#6e34e2b3; background-image:conic-gradient(from 1turn,rgba(136,83,252,1),rgba(110,52,226,1)); color:#fff; border-radius:3px; }
+.btn-yellow {border:0 none; box-shadow:none; color: #fff; background-color: #f19511b3; background-image: conic-gradient(from 1turn,#F6C722,#F19511);}
 
 .dark .basic-hover {color:var(--text-color)}
 .dark .basic-hover svg {fill:var(--text-color); }
@@ -58,6 +64,17 @@ button:focus {box-shadow:none !important; }
 .basic-hover svg {fill:#9FA5AC; }
 .basic-hover:hover {color:#000; }
 .basic-hover:hover svg {fill:#000; }
+
+.animate-twinkle {animation: twinkle 1s linear infinite;}
+.animate-twinkle.delay-2 {animation-delay:.2s; }
+.animate-twinkle.delay-5 {animation-delay:.5s; }
+@keyframes twinkle {
+    0% {transform: scale(0.8);}
+    25% {transform: scale(1.5);}
+    50% {transform: scale(0.8);}
+    75% {transform: scale(1.2);}
+    100% {transform: scale(0.8);}
+  }
 
 /*
 #=========================================#
@@ -304,9 +321,33 @@ button:focus {box-shadow:none !important; }
 .right-area .all_view_btn.open span:nth-of-type(1) {display:none;}
 .right-area .all_view_btn.open svg {transform:rotate(270deg); }
 
-.right-area .chat_cont {overflow:hidden; flex-grow:1; display:flex; flex-direction: column; justify-content:flex-end; }
+.right-area .chat_cont {overflow-x:hidden; overflow-y:auto; flex-grow:1; display:flex; flex-direction: column; justify-content:flex-end; }
+.right-area .chat_cont::-webkit-scrollbar {width:5px; }
+.right-area .chat_cont::-webkit-scrollbar-thumb {background-color: var(--placeholder-color); border-radius:4px;}
+.right-area .chat_cont::-webkit-scrollbar-track {background-color: transparent;}
+.right-area .chat_cont .hover_box {width:calc(100% - 48px); }
+.right-area .chat_cont .hover_box:hover .btn_box {opacity:1; }
+
+.dark .right-area .chat_area .chat_ticket {background:linear-gradient(145deg,#FFB416 -200%,#1C1E22 40%); }
+.right-area .chat_area .chat_ticket {background:linear-gradient(145deg,#FFB416 -50%,#ffffff 40%); }
+.dark .right-area .chat_area .chat_ticket02 {background:linear-gradient(145deg,#395231,#1c1e22 50%); }
+.right-area .chat_area .chat_ticket02 {background:linear-gradient(145deg,#cff47e,#ffffff 50%); }
+
 .dark .right-area .chat_area .chat_bottom {background-color: #212127; box-shadow:0 0 10px 0 rgba(0,0,0,.2); }
 .right-area .chat_area .chat_bottom {background-color: #fff; box-shadow:0 0 10px 0 rgba(0,0,0,.05); }
+.dark .right-area .chat_area .chat_bottom .tag_area,
+.dark .right-area .chat_area .chat_bottom .mention_area {background-color: var(--background-color);}
+.right-area .chat_area .chat_bottom .tag_area,
+.right-area .chat_area .chat_bottom .mention_area {background-color: #fff;}
+.dark .right-area .chat_area .chat_bottom .hover-bg:hover {background-color: #2D3035;}
+.right-area .chat_area .chat_bottom .hover-bg:hover {background-color: #F6F7FA;}
+
+.right-area .chat_area .rain_box {overflow:hidden; background:var(--background-color) url('../custom_img/bg_star_w.png') no-repeat center 8px / 85% auto;  }
+.dark .right-area .chat_area .rain_box {background:var(--background-color) url('../custom_img/bg_star.webp') no-repeat center 8px / 85% auto;  }
+.right-area .chat_area .rain_box > img {position:absolute; left:0; top:0; width:100%; } 
+
+.dark .right-area .chat_area .game-share-base {background:linear-gradient(180deg,rgba(254,242,122,.2) -4.43%,rgba(254,242,122,0) 38.75%),#1C1E22; }
+.right-area .chat_area .game-share-base {background:linear-gradient(180deg,rgba(254,242,122,.6) -40%,rgba(254,242,122,0) 46.56%),#FFFFFF; }
 
 .right-area .send-input > div {width:100%; transition:width 0.3s; }
 .right-area .send-input.focus-on > div {width:calc(100% - 65px); }
@@ -314,18 +355,39 @@ button:focus {box-shadow:none !important; }
 .right-area .send-input.focus-on button.send_btn {transform:translateX(0); }
 
 .right-area .send_lang button svg {transition:transform 0.4s; }
-.right-area .send_lang button.open svg {transform:rotate(-90deg); }
+.right-area .send_lang button.on svg {transform:rotate(-90deg); }
 .dark .right-area .send_lang ul {background-color: #17181b;}
-.right-area .send_lang ul {overflow-y:auto; display:none; position:absolute; left:0; bottom:calc(100% + 10px); width:100%; height:270px; background-color: #fff; }
+.right-area .send_lang ul {overflow-y:auto; visibility: hidden; position:absolute; left:0; bottom:calc(100% + 20px); width:100%; height:270px; background-color: #fff; transition:bottom 0.3s; }
+.right-area .send_lang ul.on {visibility: visible; bottom:calc(100% + 5px); }
 .right-area .send_lang ul li {display:flex; align-items:center; height:30px; padding:0 10px; margin:4px 0; border-radius:4px; cursor:pointer; }
 .dark .right-area .send_lang ul li:hover {background-color: rgba(45,48,53,.4);}
 .right-area .send_lang ul li:hover {background-color: #f5f6fa;}
 .right-area .send_lang ul li.on {position:relative; border:1px solid #3bc11766; }
 .right-area .send_lang ul li.on:after {content: ""; position: absolute; width: 0.5rem; height: 0.5rem; border-radius: 50%; top: 50%; margin-top: -0.25rem; right: 0.625rem; background-color: var(--primary-color); box-shadow: 0 0 0 0.3125rem #3bc11726;}
 
+.right-area .emoji-box-wrap .emoji-box > div::-webkit-scrollbar,
 .right-area .send_lang ul::-webkit-scrollbar {width:5px; }
+.right-area .emoji-box-wrap .emoji-box > div::-webkit-scrollbar-thumb,
 .right-area .send_lang ul::-webkit-scrollbar-thumb {background-color: #2D3035; border-radius:4px; }
+.right-area .emoji-box-wrap .emoji-box > div::-webkit-scrollbar-track,
 .right-area .send_lang ul::-webkit-scrollbar-track {background-color: transparent;}
+
+.right-area .emoji-box-wrap {z-index:10; position:absolute; left:0; bottom:100%; width:280px; height:200px; background-color:var(--background-type-color); padding:10px 10px 40px; }
+.right-area .emoji-box-wrap .emoji-box > div {overflow:hidden; overflow-y:auto; display:none; height:150px; }
+.right-area .emoji-box-wrap .emoji-box > div.active {display:flex; flex-wrap:wrap; }
+.right-area .emoji-box-wrap .emoji-box > div {overflow-y:auto; }
+.right-area .emoji-box-wrap .emoji-box .emoji {width:36px; height:36px; font-size:25px; cursor:pointer; text-align:center; line-height:36px; }
+.right-area .emoji-box-wrap .bot-nav {position:absolute; left:0; bottom:0; right:0; display:flex; justify-content: space-between; height:40px; line-height:40px; }
+.right-area .emoji-box-wrap .bot-nav .emoji-icon {width:36px; height:36px; cursor:pointer; line-height:36px; text-align:center; }
+.right-area .emoji-box-wrap .bot-nav .emoji-icon svg {width:24px; height:24px; margin:7px auto 0; fill:rgba(153,164,176,.6); }
+.right-area .emoji-box-wrap .bot-nav .emoji-icon.active svg {fill:var(--primary-color)}
+
+.right-area .gift-box-wrap {z-index:10; position:absolute; left:5%; bottom:100%; width:90%; height:400px; background-color:var(--background-type-color); padding:10px 10px 25px; }
+.right-area .gift-box-wrap .gift-box {display:flex; flex-wrap:wrap; justify-content: space-between; }
+.right-area .gift-box-wrap .gift-item {width:48%; height:80px; margin-bottom:10px; cursor:pointer; }
+.right-area .gift-box-wrap .gift-item img {display:inline-block; vertical-align: top; width:100%; height:100%; }
+.right-area .gift-box-wrap .giphy-copyright {width:130px; height:15px; margin-top:10px; background:url('../custom_img/gif_copyright.png') no-repeat center center / 100% auto; }
+.dark .right-area .gift-box-wrap .giphy-copyright {background:url('../custom_img/gif_copyright_w.png') no-repeat center center / 100% auto; }
 
 /*
 #=========================================#

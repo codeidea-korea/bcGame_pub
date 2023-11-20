@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>rain</title>
+    <defs>
+        <radialGradient cx="50%" cy="1.13686838e-11%" fx="50%" fy="1.13686838e-11%" r="460.972992%" gradientTransform="translate(0.500000,0.000000),scale(1.000000,0.666667),rotate(79.097434),translate(-0.500000,-0.000000)" id="radialGradient-1">
+            <stop stop-color="#DEEEFF" offset="0%"></stop>
+            <stop stop-color="#007EFC" offset="100%"></stop>
+        </radialGradient>
+        <path d="M8.16008699,12.7105437 C8.73018738,12.7105437 9.19234506,12.234635 9.19234506,11.6475718 C9.19234506,11.2561964 8.84825903,10.5782623 8.16008699,9.61376953 C7.47191495,10.5782623 7.12782893,11.2561964 7.12782893,11.6475718 C7.12782893,12.234635 7.5899866,12.7105437 8.16008699,12.7105437 Z" id="path-2"></path>
+        <path d="M8.16008699,16.8303106 C8.73018738,16.8303106 9.19234506,16.3544019 9.19234506,15.7673387 C9.19234506,15.3759633 8.84825903,14.6980292 8.16008699,13.7335364 C7.47191495,14.6980292 7.12782893,15.3759633 7.12782893,15.7673387 C7.12782893,16.3544019 7.5899866,16.8303106 8.16008699,16.8303106 Z" id="path-3"></path>
+        <path d="M3.93062909,14.973239 C4.50072947,14.973239 4.96288715,14.4973303 4.96288715,13.9102671 C4.96288715,13.5188917 4.61880113,12.8409576 3.93062909,11.8764648 C3.24245704,12.8409576 2.89837102,13.5188917 2.89837102,13.9102671 C2.89837102,14.4973303 3.3605287,14.973239 3.93062909,14.973239 Z" id="path-4"></path>
+        <path d="M12.3895449,14.973239 C12.9596453,14.973239 13.421803,14.4973303 13.421803,13.9102671 C13.421803,13.5188917 13.0777169,12.8409576 12.3895449,11.8764648 C11.7013729,12.8409576 11.3572868,13.5188917 11.3572868,13.9102671 C11.3572868,14.4973303 11.8194445,14.973239 12.3895449,14.973239 Z" id="path-5"></path>
+        <radialGradient cx="40.6498221%" cy="32.3197798%" fx="40.6498221%" fy="32.3197798%" r="64.5399999%" id="radialGradient-6">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#BBDDFF" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="40.6498221%" cy="32.3197798%" fx="40.6498221%" fy="32.3197798%" r="64.9444837%" id="radialGradient-7">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#C3E1FF" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="40.6498221%" cy="32.3197798%" fx="40.6498221%" fy="32.3197798%" r="64.9444837%" id="radialGradient-8">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#D3E9FF" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="40.6498221%" cy="32.3197798%" fx="40.6498221%" fy="32.3197798%" r="64.438879%" id="radialGradient-9">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#C6E2FF" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="40.6498221%" cy="32.3197798%" fx="40.6498221%" fy="32.3197798%" r="64.9444837%" id="radialGradient-10">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#C2E1FF" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="40.6498221%" cy="32.3197798%" fx="40.6498221%" fy="32.3197798%" r="64.3976802%" id="radialGradient-11">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#C6E2FF" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="rain" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组-11" transform="translate(8.000000, 7.000000)">
+            <g id="椭圆形" transform="translate(8.160087, 11.162157) rotate(30.000000) translate(-8.160087, -11.162157) ">
+                <use fill="#69B4FF" xlink:href="#path-2"></use>
+                <use fill="url(#radialGradient-1)" xlink:href="#path-2"></use>
+            </g>
+            <g id="椭圆形-copy" transform="translate(8.160087, 15.281924) rotate(30.000000) translate(-8.160087, -15.281924) ">
+                <use fill="#69B4FF" xlink:href="#path-3"></use>
+                <use fill="url(#radialGradient-1)" xlink:href="#path-3"></use>
+            </g>
+            <g id="椭圆形-copy-2" transform="translate(3.930629, 13.424852) rotate(30.000000) translate(-3.930629, -13.424852) ">
+                <use fill="#69B4FF" xlink:href="#path-4"></use>
+                <use fill="url(#radialGradient-1)" xlink:href="#path-4"></use>
+            </g>
+            <g id="椭圆形-copy-3" transform="translate(12.389545, 13.424852) rotate(30.000000) translate(-12.389545, -13.424852) ">
+                <use fill="#69B4FF" xlink:href="#path-5"></use>
+                <use fill="url(#radialGradient-1)" xlink:href="#path-5"></use>
+            </g>
+            <circle id="Oval" fill="url(#radialGradient-6)" cx="3.41545086" cy="4.77180013" r="3.41545086"></circle>
+            <circle id="Oval-Copy-10" fill="url(#radialGradient-7)" cx="13.3826706" cy="4.77180013" r="2.48396426"></circle>
+            <circle id="Oval-Copy-8" fill="url(#radialGradient-8)" cx="6.66011677" cy="2.71476723" r="2.11929478"></circle>
+            <circle id="Oval-Copy-7" fill="url(#radialGradient-9)" cx="8.16008699" cy="5.85004439" r="3.13527716"></circle>
+            <circle id="Oval-Copy-11" fill="url(#radialGradient-10)" cx="10.3032339" cy="2.59936575" r="2.59936575"></circle>
+            <circle id="Oval-Copy-9" fill="url(#radialGradient-11)" cx="10.8987063" cy="6.06795621" r="2.11929478"></circle>
+        </g>
+    </g>
+</svg>

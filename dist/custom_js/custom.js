@@ -135,10 +135,91 @@ const leftMenuHandle = () => {
 }
 
 const rightAreaHandle = ()=>{
+    // 채팅 하단 언어 선택
     $('.right-area .chat_area .send_lang button').on('click',function(){
-        
+        $(this).toggleClass('on');
+        $(this).next('ul').toggleClass('on');
     })
+    $('.right-area .chat_area .send_lang ul li').on('click',function(){
+        $(this).addClass('on').siblings().removeClass('on');
+        $(this).parent().prev('button').find('span').text($(this).text());
+        $(this).parent().removeClass('on');
+        $(this).parent().prev('button').removeClass('on');
+    })
+    $('body').on('click',function(e){
+        if(!e.target.offsetParent.classList.contains('send_lang')){
+            $('.send_lang button').removeClass('on');
+            $('.send_lang ul').removeClass('on');
+        }
+    })
+
+    // 좋아요 눌렀을떄
+    $('.right-area .like-dom').on('click',function(){
+        $(this).find('svg').addClass('fill-red').removeClass('fill-place')
+    })
+
+    // 이모지 클릭
+    $('.right-area .emoji_btn').on('click',function(){
+        fetch("./_emoji_box.html")
+            .then((response) => response.text())
+            .then((html) => {
+                $(".right-area .chat_bottom .gif_wrap > div").remove();
+                $(".right-area .chat_bottom .emoji_wrap").append(html);
+                $(".right-area .chat_bottom .emoji_wrap").removeClass('hidden')
+                $(".right-area .chat_bottom .send-input input").focus();
+
+                $('.emoji-box-wrap .bot-nav .emoji-icon').on('click',function(){
+                    var liN = $(this).index();
+                    $(this).addClass('active').siblings().removeClass('active')
+                    $('.emoji-box-wrap .emoji-box > div').eq(liN).addClass('active').siblings().removeClass('active')
+                });
+
+                $('.emoji-box-wrap .emoji-box .emoji').on('click',function(){
+                    $(".right-area .chat_bottom .emoji_wrap > div").remove();
+                    $(".right-area .chat_bottom .emoji_wrap").addClass('hidden');
+
+                    const input = $(".right-area .chat_bottom .send-input input").val();
+                    $(".right-area .chat_bottom .send-input input").val(input + $(this).text())
+                    $(".right-area .chat_bottom .send-input input").focus();
+                })
+
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    })
+    // gif 클릭
+    $('.right-area .gif_btn').on('click',function(){
+        fetch("./_gif_box.html")
+            .then((response) => response.text())
+            .then((html) => {
+                $(".right-area .chat_bottom .emoji_wrap > div").remove();
+                $(".right-area .chat_bottom .gif_wrap").append(html);
+                $(".right-area .chat_bottom .gif_wrap").removeClass('hidden')
+                $(".right-area .chat_bottom .send-input input").focus();
+
+
+                $('.gift-box-wrap .gift-item').on('click',function(){
+                    $(".right-area .chat_bottom .gif_wrap > div").remove();
+                    $(".right-area .chat_bottom .gif_wrap").addClass('hidden');
+
+                    $(".right-area .chat_bottom .send-input input").focus();
+                })
+
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    })
+
+    // input 클릭시 이모지, gif 닫기
+    $('.right-area .chat_bottom .send-input input').on('click',function(){
+        $(".right-area .chat_bottom .emoji_wrap > div").remove();
+        $(".right-area .chat_bottom .gif_wrap > div").remove();
+    })
+
 }
+
 
 const topbarHandle = ()=>{
     // 화폐
@@ -298,3 +379,38 @@ const resizeHandle = ()=>{
     }
 }
 window.addEventListener("resize",resizeHandle)
+
+
+//=======================================================
+//   채팅
+//=======================================================
+// 채팅 input 텍스트 추가
+const chatInput = (text)=>{
+    $('.right-area .send-input input').val(text);
+    $('.right-area .send-input input').focus()
+    if(text == "/"){
+        $('.right-area .chat_bottom .tag_area').removeClass('hidden')
+    }else{
+        $('.right-area .chat_bottom .tag_area').addClass('hidden')
+    }
+    if(text.includes(' ')){
+        $('.right-area .chat_bottom .mention_area').addClass('hidden')
+    }
+}
+const chatInputChange = (e)=>{
+    const Regex = /^\//; 
+    const Regex2 = /^\@/; 
+    if(!e.value.includes(' ')){
+        if(Regex.test(e.value)){
+            $('.right-area .chat_bottom .tag_area').removeClass('hidden')
+        }else{
+            $('.right-area .chat_bottom .tag_area').addClass('hidden')
+        }
+
+        if(Regex2.test(e.value)){
+            $('.right-area .chat_bottom .mention_area').removeClass('hidden')
+        }else{
+            $('.right-area .chat_bottom .mention_area').addClass('hidden')
+        }
+    }
+}

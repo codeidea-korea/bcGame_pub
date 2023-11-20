@@ -66,4 +66,4 @@
 #=========================================#
 */
 .dark .form-control {background-color: var(--standard-color);}
-.form-control {box-shadow:none; background-color: var(--background-color); border:0 none;}
+.form-control {box-shadow:none; background-color: var(--background-color); border:0 none; color:var(--title-color); }
