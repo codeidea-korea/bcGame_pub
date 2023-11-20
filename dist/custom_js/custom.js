@@ -147,9 +147,11 @@ const rightAreaHandle = ()=>{
         $(this).parent().prev('button').removeClass('on');
     })
     $('body').on('click',function(e){
-        if(!e.target.offsetParent.classList.contains('send_lang')){
-            $('.send_lang button').removeClass('on');
-            $('.send_lang ul').removeClass('on');
+        if(e.target.offsetParent){
+            if(!e.target.offsetParent.classList.contains('send_lang')){
+                $('.send_lang button').removeClass('on');
+                $('.send_lang ul').removeClass('on');
+            }
         }
     })
 
@@ -288,6 +290,7 @@ const topbarHandle = ()=>{
         }
     }
     smallBtn.addEventListener("change",smallHandle)
+
 }
 
 const sendFocus = ()=>{
@@ -413,4 +416,30 @@ const chatInputChange = (e)=>{
             $('.right-area .chat_bottom .mention_area').addClass('hidden')
         }
     }
+}
+
+
+//=======================================================
+//   로그인 / 회원가입
+//=======================================================
+// 비밀번호 보기
+const passwordView = (e)=>{
+    const svg = e.querySelector('svg use')
+    if(e.classList.contains('on')){
+        e.classList.remove('on')
+        e.previousElementSibling.setAttribute('type','password')
+        svg.setAttribute('xlink:href','./dist/custom_img/symbol-defs.svg#icon_View')
+    }else{
+        e.classList.add('on')
+        e.previousElementSibling.setAttribute('type','text')
+        svg.setAttribute('xlink:href','./dist/custom_img/symbol-defs.svg#icon_Hide')
+    }
+}
+// 로그인 내부 탭
+const loginModal = (text)=>{
+    const loginWrap = document.querySelectorAll('.login_modal .login-wrap > div')
+    loginWrap.forEach((item)=>{
+        item.classList.add('hidden')
+    })
+    document.querySelector(`.login_modal .login-wrap .${text}`).classList.remove('hidden')
 }

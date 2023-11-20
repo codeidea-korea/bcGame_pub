@@ -67,3 +67,28 @@
 */
 .dark .form-control {background-color: var(--standard-color);}
 .form-control {box-shadow:none; background-color: var(--background-color); border:0 none; color:var(--title-color); }
+
+.dark .form-control.bg-back2 {background-color:#1a1c20; }
+.form-control.bg-back2 {background-color:#fff; }
+
+/*
+#=========================================#
+        modal
+#=========================================#
+*/
+.modal-content {background-color: var(--standard-color) !important;}
+.modal-body {padding:0; }
+
+@media (min-width:640px){
+    .modal .modal-dialog.modal-2lg {
+        width:600px;
+    }
+}
+@media (min-width:1024px){
+    .modal .modal-dialog.modal-2lg {
+        width:800px;
+    }
+}
+
+.dark .login_modal .modal-content {background-color: #1f2327 !important;}
+.login_modal .modal-content {background-color: #F4F4F7 !important;}
