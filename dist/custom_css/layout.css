@@ -24,6 +24,8 @@ button:focus {box-shadow:none !important; }
 .bg-stand {background-color: var(--standard-color);}
 .bg-shadow {background-color: var(--standard-color);}
 .bg-back2 {background-color: var(--background-type-color);}
+.bg-gradient-green {background:var(--green-gradient); }
+.dark .dark\:bg-back2 {background-color: var(--background-type-color);}
 
 .text-tit {color: var(--title-color);}
 .text-basic {color: var(--text-color);}
@@ -46,7 +48,9 @@ button:focus {box-shadow:none !important; }
 
 
 .btn-top {border:0 none; box-shadow:none; border-radius:3px; color:var(--text-color)}
+.dark .btn-top.active,
 .dark .btn-top:hover {background-color: #2D3035; color:#fff; }
+.btn-top.active,
 .btn-top:hover {background-color: #F6F7FA;}
 .btn-top svg {fill:#9FA5AC; }
 .dark .btn-top:hover svg {fill:#fff; }
@@ -79,6 +83,7 @@ button:focus {box-shadow:none !important; }
 .scrollbar::-webkit-scrollbar {width:5px; }
 .scrollbar::-webkit-scrollbar-thumb {background-color: var(--placeholder-color); border-radius:4px;}
 .scrollbar::-webkit-scrollbar-track {background-color: transparent;}
+
 
 /*
 #=========================================#
@@ -118,7 +123,6 @@ button:focus {box-shadow:none !important; }
     .top-bar .mo_left {display:block; }
     .top-bar .chat_btn,
     .top-bar .cash_btn {display:none; }
-    .top-login.top-bar .lang_btn,
     .top-login.top-bar .notice_btn {display:none; }
 }
 

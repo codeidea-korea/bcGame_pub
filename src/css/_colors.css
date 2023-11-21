@@ -34,6 +34,7 @@
     --primary-color: #3BC117;
     --border-radius: .25rem;
     --background-type-color:#f2f2f7;
+    --green-gradient:linear-gradient(145deg,#cff47e,#f5f6fa 50%);
 }
 
 /* Default dark-mode colors */
@@ -72,6 +73,7 @@
     --autofill-color: #f5f6f7;
     --yellow-color: #FFBF39;
     --background-type-color:#1e2024;
+    --green-gradient:linear-gradient(145deg,#395231,#1c1e22 50%);
 }
 
 /* Theme 1 colors */

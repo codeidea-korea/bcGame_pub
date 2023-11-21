@@ -422,6 +422,24 @@ const chatInputChange = (e)=>{
 //=======================================================
 //   로그인 / 회원가입
 //=======================================================
+// 모달 내부 탭
+const ModalTab = (modal,text)=>{
+    const modalTabWrap = document.querySelectorAll(`#${modal} .modal-tab-wrap > div`)
+    modalTabWrap.forEach((item)=>{
+        item.classList.add('hidden')
+    })
+    document.querySelector(`#${modal} .modal-tab-wrap .${text}`).classList.remove('hidden')
+}
+// 모달 내부 탭 - nav-tab
+const ModalNav = (modal,item)=>{
+    const clickTab = document.querySelector(`#${modal} #${item} button`)
+    clickTab.click();
+}
+
+
+//=======================================================
+//   로그인 / 회원가입
+//=======================================================
 // 비밀번호 보기
 const passwordView = (e)=>{
     const svg = e.querySelector('svg use')
@@ -434,14 +452,6 @@ const passwordView = (e)=>{
         e.previousElementSibling.setAttribute('type','text')
         svg.setAttribute('xlink:href','./dist/custom_img/symbol-defs.svg#icon_Hide')
     }
-}
-// 로그인 내부 탭
-const loginModal = (text)=>{
-    const loginWrap = document.querySelectorAll('.login_modal .login-wrap > div')
-    loginWrap.forEach((item)=>{
-        item.classList.add('hidden')
-    })
-    document.querySelector(`.login_modal .login-wrap .${text}`).classList.remove('hidden')
 }
 const joinPhoneHandle = (text)=>{
     const joinPhoneBox = document.querySelector('.join_phone_box')

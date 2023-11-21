@@ -12,21 +12,17 @@
       <div class="right flex items-center">
           
           <!-- 로그인 안했을때 -->
-          <button class="btn h-11 px-4 border-none shadow-none" data-tw-toggle="modal" data-tw-target="#login_join_modal" onclick="loginModal('login_box')">로그인</button>
-          <button class="btn btn-green h-10 sm:h-11 w-24 sm:w-28 mr-0 sm:mr-4 font-bold" data-tw-toggle="modal" data-tw-target="#login_join_modal" onclick="loginModal('join_box')">가입하기</button>
+          <button class="btn h-11 px-4 border-none shadow-none" data-tw-toggle="modal" data-tw-target="#login_join_modal" onclick="ModalTab('login_join_modal','login_box')">로그인</button>
+          <button class="btn btn-green h-10 sm:h-11 w-24 sm:w-28 mr-0 sm:mr-4 font-bold" data-tw-toggle="modal" data-tw-target="#login_join_modal" onclick="ModalTab('login_join_modal','join_box')">가입하기</button>
           
         
           <!-- 로그인했을때/안했을때 -->
           <button class="btn btn-top h-11 px-4 chat_btn" onclick="rightOpen('chat_area')"><svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Chat"></use></svg><div class="chat-dot"></div></button>
 
-          <!-- 모바일에서만 -->
-          <button class="btn btn-top h-11 px-4 block sm:hidden"><svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Gift"></use></svg></button>
-
-       
           <!-- 로그인했을때/안했을때 -->
-          <button class="btn btn-top h-11 px-4 lang_btn"><svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Language"></use></svg></button>
+          <button class="btn btn-top h-11 px-4 lang_btn" data-tw-toggle="modal" data-tw-target="#lang_currency_modal" onclick="ModalNav('lang_currency_modal','lang-tab-1')"><svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Language"></use></svg></button>
           <i class="sm:block hidden border-r border-solid border-slate-500 h-6"></i>
-          <button class="btn btn-top h-11 px-2 cash_btn">₩ KRW</button>
+          <button class="btn btn-top h-11 px-2 cash_btn" data-tw-toggle="modal" data-tw-target="#lang_currency_modal" onclick="ModalNav('lang_currency_modal','lang-tab-2')">₩ KRW</button>
       </div>
   </div>
 </div>
@@ -35,7 +31,7 @@
 
 <!-- 공통 모달 영역 : S -->
 <!-- 로그인 / 가입하기 -->
-<div id="login_join_modal" class="modal" tabindex="-1" aria-hidden="true">
+<div id="login_join_modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog login_modal modal-2lg h-full sm:h-auto">
         <div class="modal-content h-full sm:h-auto">
             <div class="modal-body flex flex-wrap content-start relative h-full sm:h-auto">
@@ -48,8 +44,7 @@
                     </div>
                 </div>
                 <div class="w-full sm:w-1/2 relative p-8 flex flex-col">
-                    <div class="login-wrap">
-                        <!-- 로그인 -->
+                    <div class="login-wrap modal-tab-wrap">
                         <div class="login_box mb-2">
                             <h3 class="text-tit text-base font-bold">로그인</h3>
                             <input type="text" class="form-control form-control-rounded bg-back2 mt-2" placeholder="이메일 / 전화번호">
@@ -58,14 +53,15 @@
                                 <button class="absolute right-3 top-[14px] basic-hover" onclick="passwordView(this)"><svg class="w-4 h-4"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_View"></use></svg></button>
                             </div>
                             <div class="text-right">
-                                <button class="hover:underline mt-3 text-right text-tit" onclick="loginModal('password_reset')">비밀번호를 잊으셨나요?</button>
+                                <button class="hover:underline mt-3 text-right text-tit" onclick="ModalTab('login_join_modal','password_reset')">비밀번호를 잊으셨나요?</button>
                             </div>
                             <button class="btn btn-green block w-full h-11 mt-5 rounded font-extrabold">로그인</button>
                             <div class="mt-3">
                                 BC.GAME에 처음이신가요?
-                                <button class="text-primary text-base font-extrabold" onclick="loginModal('join_box')">계정 생성</button>
+                                <button class="text-primary text-base font-extrabold" onclick="ModalTab('login_join_modal','join_box')">계정 생성</button>
                             </div>
                         </div>
+
                         <!-- 회원가입 -->
                         <div class="join_box hidden mb-2">
                             <h3 class="text-tit text-base font-bold">가입하기</h3>
@@ -168,17 +164,18 @@
                             <button class="btn btn-green block w-full h-11 mt-5 rounded font-extrabold">가입하기</button>
                             <div class="mt-3">
                                 이미 계정이 있으신가요?
-                                <button class="text-primary text-base font-extrabold" onclick="loginModal('login_box')">로그인</button>
+                                <button class="text-primary text-base font-extrabold" onclick="ModalTab('login_join_modal','login_box')">로그인</button>
                             </div>
                         </div>
+
                         <!-- 비밀번호 리셋 -->
-                        <div class="password_reset mb-2">
+                        <div class="password_reset hidden mb-2">
                             <h3 class="text-tit text-base font-bold">비밀번호 리셋</h3>
                             <input type="text" class="form-control form-control-rounded bg-back2 mt-2" placeholder="이메일 / 전화번호">
                             <button class="btn btn-green block w-full h-11 mt-5 rounded font-extrabold">비밀번호 리셋</button>
                             <div class="mt-3">
                                 이미 계정이 있으신가요?
-                                <button class="text-primary text-base font-extrabold" onclick="loginModal('login_box')">로그인</button>
+                                <button class="text-primary text-base font-extrabold" onclick="ModalTab('login_join_modal','login_box')">로그인</button>
                             </div>
                         </div>
                     </div>
@@ -197,6 +194,301 @@
                             <button class="border border-solid border-slate-300 dark:border-slate-500 w-10 h-10 rounded hover:bg-slate-300"><svg class="w-4 h-4 fill-title mx-auto" width="14" height="14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path d="M972.55 409.27h.01l-.29-2.37-.01-.12-.01-.1-1.08-8.91-.74-6.16-.23-1.86-.46.06c-11.29-64.2-42.3-125.13-90.32-177.14-47.8-51.78-109.9-92.65-179.6-118.21-59.7-21.9-123.06-33.01-188.3-33.01-88.07 0-173.6 20.7-247.34 59.9C121.97 196.9 38.1 335.78 50.5 475.16c6.41 72.12 34.67 140.78 81.71 198.55 44.28 54.37 104.18 98.25 173.22 126.89 42.45 17.6 84.42 25.9 128.86 34.69l5.2 1.03c12.23 2.42 15.53 5.75 16.37 7.06 1.57 2.45.75 7.27.12 9.93-.58 2.45-1.18 4.9-1.78 7.34-4.77 19.46-9.7 39.58-5.83 61.77 4.46 25.5 20.39 40.13 43.7 40.13 25.08 0 53.62-16.82 72.5-27.95l2.52-1.48c45.06-26.46 87.5-56.3 119.44-79.34 69.9-50.43 149.12-107.6 208.52-181.54 59.81-74.48 87.98-170.19 77.5-262.97zm-635.07 141.1h-79.84a21.85 21.85 0 0 1-21.84-21.84V360.96a21.85 21.85 0 0 1 43.69 0v145.73h57.99a21.85 21.85 0 0 1 0 43.69zm83.29-22.43a21.85 21.85 0 0 1-43.7 0V360.36a21.85 21.85 0 0 1 43.7 0v167.58zm197.46 0a21.85 21.85 0 0 1-39.52 12.83l-78.67-108.34v95.51a21.85 21.85 0 0 1-43.69 0V365.16a21.85 21.85 0 0 1 39.53-12.84l78.66 108.35v-100.3a21.85 21.85 0 0 1 43.7 0v167.57zm159.19 18.4H669.3a21.85 21.85 0 0 1-21.85-21.84V356.92a21.85 21.85 0 0 1 21.85-21.84h104.76a21.85 21.85 0 0 1 0 43.69h-82.91v40.1h67.29a21.85 21.85 0 0 1 0 43.69h-67.3v40.1h86.28a21.85 21.85 0 0 1 0 43.68z"></path></svg></button>
                             <button class="border border-solid border-slate-300 dark:border-slate-500 w-10 h-10 rounded hover:bg-slate-300"><svg class="w-4 h-4 fill-title mx-auto" width="12" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><g clip-path="url(#a)"><path d="M16 8A8 8 0 0 1 .17 9.642l3.177 1.335a2.098 2.098 0 0 0 4.154-.396l.004-.002 2.402-1.79a2.727 2.727 0 1 0 .031-5.456A2.728 2.728 0 0 0 7.211 6.01l-1.76 2.462a2.068 2.068 0 0 0-1.194.34L.061 7.048C.533 3.079 3.905 0 8 0a8 8 0 0 1 8 8ZM4.949 11.651l-1.03-.432a1.62 1.62 0 0 0 3.106-.665 1.627 1.627 0 0 0-1.621-1.607c-.191 0-.38.033-.573.106l1.028.432a1.174 1.174 0 0 1-.91 2.166Zm4.989-3.734a1.857 1.857 0 0 1-1.854-1.855c0-1.023.832-1.855 1.854-1.855 1.023 0 1.854.832 1.854 1.855a1.857 1.857 0 0 1-1.854 1.855Zm0-.455a1.401 1.401 0 1 0-.002-2.802 1.401 1.401 0 0 0 .002 2.802Z"></path></g><defs><clipPath id="a"><path d="M0 0h16v16H0z"></path></clipPath></defs></svg></button>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 언어 / 법정화폐 모달 -->
+<div id="lang_currency_modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-body flex flex-wrap content-start relative">
+                <button class="absolute z-10 right-5 top-5 basic-hover" data-tw-dismiss="modal"><svg class="w-5 h-5 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+
+                <ul class="nav nav-link-tabs type02 w-full" role="tablist">
+                    <li id="lang-tab-1" class="nav-item w-1/3 sm:w-1/4" role="presentation">
+                       <button class="nav-link w-full py-2 h-16 active" data-tw-toggle="pill" data-tw-target="#lang-con-1" type="button" role="tab" aria-controls="lang-con-1" aria-selected="true" >언어</button> 
+                    </li>
+                    <li id="lang-tab-2" class="nav-item w-1/3 sm:w-1/4" role="presentation">
+                       <button class="nav-link w-full py-2 h-16" data-tw-toggle="pill" data-tw-target="#lang-con-2" type="button" role="tab" aria-controls="lang-con-2" aria-selected="false" >법정화폐로 보기</button> 
+                    </li>
+                    <li class="nav-item flex-1"><div class="nav-link h-16"></div></li>
+                </ul> 
+                <div class="tab-content w-full p-6 overflow-y-auto scrollbar h-auto sm:h-[504px]"> 
+                    <div id="lang-con-1" class="tab-pane leading-relaxed overflow-y-auto active" role="tabpanel" aria-labelledby="lang-tab-1">
+                        <ul class="grid grid-cols-2 sm:grid-cols-4 w-full gap-3">
+                            <li><button class="btn-top w-full p-5 py-4 text-left">Indian English</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">English</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">Tiếng việt</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">Indonesian</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">日本語</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left active">한국어</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">Français</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">Español</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">Filipino</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">عربى</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">हिन्दी</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">Türkçe</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">فارسی</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">Português</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">Руccкий</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">Deutsch</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">ภาษาไทย</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">Suomi</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">Polski</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">Italiano</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">မြန်မာ</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">اردو</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">Українська</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">Melayu</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">বাংলা</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">Marathi</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">Tamil</button></li>
+                            <li><button class="btn-top w-full p-5 py-4 text-left">Telugu</button></li>
+                        </ul>
+                    </div>
+                    <div id="lang-con-2" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="lang-tab-2">
+                        <ul class="grid grid-cols-2 sm:grid-cols-4 w-full gap-3">
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4 active">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/USD.webp">
+                                <p class="text-tit">없음</p>
+                            </button></li>
+                        </ul>
+                        <ul class="grid grid-cols-2 sm:grid-cols-4 w-full gap-3 mt-4">
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/USD.webp">
+                                <p>USD</p>
+                                <span class="text-sub truncate">US Dollar</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/BRL.webp">
+                                <p>BRL</p>
+                                <span class="text-sub truncate">Brazil</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/INR.webp">
+                                <p>INR</p>
+                                <span class="text-sub truncate">India</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/EUR.webp">
+                                <p>EUR</p>
+                                <span class="text-sub truncate">Euro</span>
+                            </button></li>
+
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/RUB.webp">
+                                <p>PUR</p>
+                                <span class="text-sub truncate">Russia</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/NGN.webp">
+                                <p>NGN</p>
+                                <span class="text-sub truncate">Nigeria</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/INR.webp">
+                                <p>INR</p>
+                                <span class="text-sub truncate">India</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/BDT.webp">
+                                <p>BDT</p>
+                                <span class="text-sub truncate">Bangladesh</span>
+                            </button></li>
+
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/PHP.webp">
+                                <p>PHP</p>
+                                <span class="text-sub truncate">Philippine</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/VND.webp">
+                                <p>VND</p>
+                                <span class="text-sub truncate">Vietnam</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/THB.webp">
+                                <p>THB</p>
+                                <span class="text-sub truncate">Thailand</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/KZT.webp">
+                                <p>KZT</p>
+                                <span class="text-sub truncate">Kazakhstani tenge</span>
+                            </button></li>
+
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/MAD.webp">
+                                <p>MAD</p>
+                                <span class="text-sub truncate">Morocco</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/ZAR.webp">
+                                <p>ZAR</p>
+                                <span class="text-sub truncate">South Africa</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/PLN.webp">
+                                <p>PLN</p>
+                                <span class="text-sub truncate">Poland</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/CUP.webp">
+                                <p>CUP</p>
+                                <span class="text-sub truncate">Cuba</span>
+                            </button></li>
+
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/KRW.webp">
+                                <p>KRW</p>
+                                <span class="text-sub truncate">Korea</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/JPY.webp">
+                                <p>JPY</p>
+                                <span class="text-sub truncate">Japan</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/GBP.webp">
+                                <p>GBP</p>
+                                <span class="text-sub truncate">United Kingdom</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/HRK.webp">
+                                <p>HRK</p>
+                                <span class="text-sub truncate">Croatia</span>
+                            </button></li>
+
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/ISK.webp">
+                                <p>ISK</p>
+                                <span class="text-sub truncate">Iceland</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/HUF.webp">
+                                <p>HUF</p>
+                                <span class="text-sub truncate">Hungary</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/NOK.webp">
+                                <p>NOK</p>
+                                <span class="text-sub truncate">Norwegian</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/NZD.webp">
+                                <p>NZD</p>
+                                <span class="text-sub truncate">New Zealand Dollar</span>
+                            </button></li>
+
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/ARS.webp">
+                                <p>ARS</p>
+                                <span class="text-sub truncate">Argentina Peso</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/MXN.webp">
+                                <p>MXN</p>
+                                <span class="text-sub truncate">Mexico Peso</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/AUD.webp">
+                                <p>AUD</p>
+                                <span class="text-sub truncate">Australia Dollar</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/TRY.webp">
+                                <p>TRY</p>
+                                <span class="text-sub truncate">Turkey Lira</span>
+                            </button></li>
+
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/IRR.webp">
+                                <p>IRR</p>
+                                <span class="text-sub truncate">Iran Rial</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/AED.webp">
+                                <p>AED</p>
+                                <span class="text-sub truncate">UAE-Dirham</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/CAD.webp">
+                                <p>CAD</p>
+                                <span class="text-sub truncate">Canada Dollar</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/UAH.webp">
+                                <p>UAH</p>
+                                <span class="text-sub truncate">Ukraine Hryvnia</span>
+                            </button></li>
+
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/CZK.webp">
+                                <p>CZK</p>
+                                <span class="text-sub truncate">Czech Republic Koruna</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/LKR.webp">
+                                <p>LKR</p>
+                                <span class="text-sub truncate">Sri Lanka Rupee</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/ILS.webp">
+                                <p>ILS</p>
+                                <span class="text-sub truncate">Israel Shekel</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/EGP.webp">
+                                <p>EGP</p>
+                                <span class="text-sub truncate">Egypt Pound</span>
+                            </button></li>
+
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/PKR.webp">
+                                <p>PKR</p>
+                                <span class="text-sub truncate">Pakistan Rupee</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/AED.webp">
+                                <p>GHS</p>
+                                <span class="text-sub truncate">Ghana Cedi</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/VEF.webp">
+                                <p>VEF</p>
+                                <span class="text-sub truncate">Venezuela Bolívar</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/PEN.webp">
+                                <p>PEN</p>
+                                <span class="text-sub truncate">Peru Sol</span>
+                            </button></li>
+
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/RON.webp">
+                                <p>RON</p>
+                                <span class="text-sub truncate">Romania Leu</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/BGN.webp">
+                                <p>BGN</p>
+                                <span class="text-sub truncate">Bulgaria Lev</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/RSD.webp">
+                                <p>RSD</p>
+                                <span class="text-sub truncate">Serbia Dinar</span>
+                            </button></li>
+                            <li><button class="btn-top w-full flex items-center gap-2 h-14 px-4">
+                                <img class="w-8 h-8" src="./dist/custom_img/coin/CLP.webp">
+                                <p>CLP</p>
+                                <span class="text-sub truncate">Chile Peso</span>
+                            </button></li>
+                        </ul>
                     </div>
                 </div>
             </div>

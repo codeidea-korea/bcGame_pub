@@ -39,10 +39,17 @@
 .dark .nav-boxed-tabs .active {background-color: #2D3035; }
 .nav-boxed-tabs .active {background-color: #fff; color:var(--title-color); font-weight:bold; }
 
-.dark .nav.nav-link-tabs .nav-item .nav-link {border-color:rgba(49,56,61,.6); }
-.dark .nav.nav-link-tabs .nav-item .nav-link.active {border-color:var(--primary-color); }
+.dark .nav.nav-link-tabs .nav-item .nav-link {border-color:rgba(49,56,61,.6); color:inherit; }
+.dark .nav.nav-link-tabs .nav-item .nav-link.active {border-color:var(--primary-color); color:var(--title-color); }
 .nav.nav-link-tabs .nav-item .nav-link {border-width:0px; border-bottom-width:1px; border-color:rgba(192,196,208,.6); }
 .nav.nav-link-tabs .nav-item .nav-link.active {font-weight:bold; background-image:linear-gradient(to top, rgba(59, 193, 23, 0.15), rgba(59, 193, 23, 0) 60%); }
+.nav.nav-link-tabs.type02 .nav-item .nav-link {border-bottom-width:2px; }
+.nav.nav-link-tabs.type02 .nav-item .nav-link.active {background:transparent; }
+
+.nav.nav-tabs {border:0 none; }
+.nav.nav-tabs .nav-item .nav-link {border:0 none !important; }
+.nav.nav-tabs .nav-item .nav-link:hover {background-color: var(--background-color) !important;}
+.nav.nav-tabs .nav-item .nav-link.active {background-color: var(--background-color) !important;}
 
 .tab-content .tab-pane {width:100% !important; }
 
@@ -82,6 +89,8 @@
 */
 .modal-content {background-color: var(--standard-color) !important;}
 .modal-body {padding:0; }
+.dark .modal-head {background-color: #17181b;}
+.modal-head {background-color:#f5f6fa ;}
 
 @media (min-width:640px){
     .modal .modal-dialog.modal-2lg {
@@ -93,7 +102,9 @@
         width:800px;
     }
 }
-
+@media (max-width:640px){
+    .mo_full.modal.show > .modal-dialog {margin:0; width:100%; }
+}
 
 /*
 #=========================================#
@@ -115,7 +126,6 @@
 
 
 @media (max-width:640px){
-    #login_join_modal.modal.show > .modal-dialog {margin:0; width:100%; }
     .dark .login_modal .login-left {background:url('../custom_img/login_bg_mo.webp') no-repeat center center / 100% auto; }
     .login_modal .login-left {background:url('../custom_img/login_bg_w_mo.png') no-repeat center center / 100% auto; }
 }
