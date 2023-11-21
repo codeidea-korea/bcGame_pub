@@ -65,11 +65,15 @@
         form
 #=========================================#
 */
+/* input */
 .dark .form-control {background-color: var(--standard-color);}
 .form-control {box-shadow:none; background-color: var(--background-color); border:0 none; color:var(--title-color); }
 
 .dark .form-control.bg-back2 {background-color:#1a1c20; }
 .form-control.bg-back2 {background-color:#fff; }
+
+/* checkbox */
+.form-check-input[type="checkbox"] {border:1px solid var(--primary-color) !important; box-shadow:none; }
 
 /*
 #=========================================#
@@ -90,5 +94,28 @@
     }
 }
 
+
+/*
+#=========================================#
+        로그인/회원가입 모달
+#=========================================#
+*/
 .dark .login_modal .modal-content {background-color: #1f2327 !important;}
 .login_modal .modal-content {background-color: #F4F4F7 !important;}
+
+.dark .login_modal .login-left {background:url('../custom_img/login_bg.webp') no-repeat center center / 100% auto; }
+.login_modal .login-left {background:url('../custom_img/login_bg_w.png') no-repeat center center / 100% auto; }
+
+.join_phone_box {z-index:10; position:absolute; left:0; top:calc(100% + 5px); opacity:0; visibility: hidden; width:100%; margin-top:-10px; transition:all 0.5s; }
+.join_phone_box.show {opacity:1; visibility:visible; margin-top:0; }
+.join_phone_box .active {border:1px solid var(--primary-color); }
+
+.login_modal .promotion_btn svg {transform:rotate(90deg); transition:all 0.3s; }
+.login_modal .promotion_btn.on svg {transform:rotate(270deg); }
+
+
+@media (max-width:640px){
+    #login_join_modal.modal.show > .modal-dialog {margin:0; width:100%; }
+    .dark .login_modal .login-left {background:url('../custom_img/login_bg_mo.webp') no-repeat center center / 100% auto; }
+    .login_modal .login-left {background:url('../custom_img/login_bg_w_mo.png') no-repeat center center / 100% auto; }
+}

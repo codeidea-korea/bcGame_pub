@@ -76,6 +76,10 @@ button:focus {box-shadow:none !important; }
     100% {transform: scale(0.8);}
   }
 
+.scrollbar::-webkit-scrollbar {width:5px; }
+.scrollbar::-webkit-scrollbar-thumb {background-color: var(--placeholder-color); border-radius:4px;}
+.scrollbar::-webkit-scrollbar-track {background-color: transparent;}
+
 /*
 #=========================================#
         탑바
@@ -410,7 +414,7 @@ footer .network_list li:hover {z-index:200; }
 footer .network_list li > div {z-index:10; visibility:hidden; position:absolute; left:calc(50% - 137.5px); bottom:100%; width:280px; box-shadow:0px 0px 10px rgba(0,0,0, 0.15) }
 footer .network_list li:hover > div {visibility:visible; }
 
-footer .icon_btn {display:block; width:40px; height:40px; background: url('../custom_img/footer/hover.webp') no-repeat top left; background-size:205px 164px; }
+footer .icon_btn {display:block; width:40px; height:40px; margin:0 auto; background: url('../custom_img/footer/hover.webp') no-repeat top left; background-size:205px 164px; }
 footer .icon_btn.icon-Arbitrum {background-position: 0 0; }
 footer .icon_btn.icon-Avalanche {background-position: -41px 0; }
 footer .icon_btn.icon-Bitcoin {background-position: 0 -41px; }

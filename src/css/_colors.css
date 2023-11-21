@@ -39,15 +39,16 @@
 /* Default dark-mode colors */
 .dark {
     --color-primary: 59 193 23;
-    --color-slate-100: theme("colors.rgb.gray.900");
-    --color-slate-200: theme("colors.rgb.gray.800");
-    --color-slate-300: theme("colors.rgb.gray.700");
-    --color-slate-400: theme("colors.rgb.gray.600");
-    --color-slate-500: theme("colors.rgb.gray.500");
-    --color-slate-600: theme("colors.rgb.gray.400");
-    --color-slate-700: theme("colors.rgb.gray.300");
-    --color-slate-800: theme("colors.rgb.gray.200");
-    --color-slate-900: theme("colors.rgb.gray.100");
+    --color-slate-50: theme("colors.rgb.zinc.900");
+    --color-slate-100: theme("colors.rgb.zinc.900");
+    --color-slate-200: theme("colors.rgb.zinc.800");
+    --color-slate-300: theme("colors.rgb.zinc.700");
+    --color-slate-400: theme("colors.rgb.zinc.600");
+    --color-slate-500: theme("colors.rgb.zinc.500");
+    --color-slate-600: theme("colors.rgb.zinc.400");
+    --color-slate-700: theme("colors.rgb.zinc.300");
+    --color-slate-800: theme("colors.rgb.zinc.200");
+    --color-slate-900: theme("colors.rgb.zinc.100");
     --color-darkmode-50: 87 103 132;
     --color-darkmode-100: 74 90 121;
     --color-darkmode-200: 65 81 114;

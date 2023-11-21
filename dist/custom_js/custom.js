@@ -443,3 +443,39 @@ const loginModal = (text)=>{
     })
     document.querySelector(`.login_modal .login-wrap .${text}`).classList.remove('hidden')
 }
+const joinPhoneHandle = (text)=>{
+    const joinPhoneBox = document.querySelector('.join_phone_box')
+    if(text == 'hide'){
+        joinPhoneBox.classList.remove('show')
+    }else{
+        if(joinPhoneBox.classList.contains('show')){
+            joinPhoneBox.classList.remove('show')
+        }else{
+            joinPhoneBox.classList.add('show')
+        }
+    }
+}
+document.addEventListener('click',(e)=>{
+    const joinPhone = document.querySelector('.join_phone_wrap')
+    if(joinPhone && !joinPhone.contains(e.target)){
+        joinPhoneHandle('hide')
+    }
+})
+const joinPhoneClick = (e)=>{
+    const joinPhoneBtn = document.querySelector('.join_phone_btn > span')
+    joinPhoneBtn.innerText = e.querySelector('p:last-of-type').innerText
+    joinPhoneHandle('hide');
+    const joinPhone = document.querySelectorAll('.join_phone_box .overflow-y-auto > div')
+    joinPhone.forEach((item)=>{item.classList.remove('active')})
+    e.classList.add('active')
+}
+const promotionHandle = (e)=>{
+    const inputbox = e.nextElementSibling;
+    if(e.classList.contains('on')){
+        e.classList.remove('on')
+        inputbox.classList.add('hidden')
+    }else{
+        e.classList.add('on')
+        inputbox.classList.remove('hidden')
+    }
+}
