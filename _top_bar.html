@@ -553,7 +553,7 @@
 
 <!-- 프로필 - vip 클럽 -->
 <div id="profile_vip-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-2lg">
+    <div class="modal-dialog modal-2lg overflow-y-auto scrollbar sm:max-h-[820px]">
         <div class="modal-content">
             <div class="modal-body relative">
                 <button class="absolute z-10 right-5 top-5 basic-hover" data-tw-dismiss="modal"><svg class="w-5 h-5 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
@@ -564,27 +564,838 @@
                 </div>
                 <div class="bg-back pt-2 pb-8 px-4">
                     <div class="p-4 bg-back2 text-center text-xs rounded">
-                        넉넉한 보상과 맞춤형 선물을 독점적으로 받으려면 레벨을 올리십시오! <a href="javascript:;" class="text-primary hover:underline">레벨업 세부정보 보기</a>
+                        넉넉한 보상과 맞춤형 선물을 독점적으로 받으려면 레벨을 올리십시오! <a href="javascript:;" class="text-primary hover:underline"data-tw-dismiss="modal" data-tw-toggle="modal" data-tw-target="#profile_vip_level-modal">레벨업 세부정보 보기</a>
                     </div>
-                    <div class="my-2"></div>
-                    <div class="bg-back2 p-4">
+                    <div class="my-4 flex sm:flex-row flex-col w-full gap-4">
+                        <!-- vip_grade 클래스 : bronze silver gold plat dia  -->
+                        <div class="vip_grade rounded w-full sm:w-3/5">
+                            <div class="flex gap-8 items-start px-4 rounded">
+                                <div class="relative">
+                                    <!-- img 경로 : nostage.webp bronze_medal.png silver_medal.png gold_medal.webp platinum_medal.png diamond_medal.webp -->
+                                    <img class="w-28" src="./dist/custom_img/profile/nostage.webp" alt="">
+                                    <img class="absolute left-0 top-0 w-full h-full" src="./dist/custom_img/profile/light.svg" alt="">
+                                    <p class="z-10 absolute left-0 top-1/2 w-full -mt-1 text-center text-white">VIP <b class="text-xl">0</b></p>
+                                </div>
+                                <div class="text-tit py-8 flex-1">
+                                    <div class="text-base font-semibold">VIP 진행 상황</div>
+                                    <div class="mt-2 vip-cont">
+                                        <div class="flex items-center gap-2">
+                                            0 XP 
+                                            <div class="relative hover_box">
+                                                <button class="basic-hover pt-1 cursor-pointer"><svg class="w-4 h-4"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg></button>
+                                                <div class="z-20 absolute left-0 top-full w-[350px] -translate-x-1/3 bg-shadow text-xs p-3 rounded shadow">
+                                                    <p class="text-basic font-normal">
+                                                        롤링 $1.00 = 1 XP; 스포츠 롤링 $1.00 = 2 XP<br/>
+                                                        모든 베팅은 현재 환율로 USD로 변환됩니다.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="vip-process w-full h-2.5 mt-2 bg-[#f7f4f3] rounded">
+                                            <div class="h-full rounded" style="width:20%;"></div>
+                                        </div>
+                                    </div>
+                                    <p class="mt-2">1 XP 까지 VIP 1</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full sm:w-2/5 sm:pb-0 pb-4 vip-cont relative rounded bg-white dark:bg-[#2D3035] p-2">
+                            <div class="flex flex-col h-full">
+                                <div>
+                                    <div class="vip_flag host !absolute left-0 top-2 text-xs">VIP 호스트</div>
+                                    <div class="flex justify-end">
+                                        <div class="relative hover_box">
+                                            <button class="basic-hover pt-1 cursor-pointer"><svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg></button>
+                                            <div class="z-20 absolute right-0 top-full w-[350px] bg-shadow p-3 rounded shadow">
+                                                <p class="text-basic font-normal">
+                                                    VIP 호스트는 귀하의 독점적인 고객 지원입니다. 언제든지 연락 주시기 바랍니다.
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-1 items-center flex-col justify-center">
+                                    <img class="w-36 mx-auto" src="./dist/custom_img/profile/host.webp" alt="">
+                                    <p class="text-basic mt-2"><b class="text-tit">VIP 38</b> 에서 독점 VIP HOST 잠금 해제</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-back2 p-4">
                         <div class="text-center font-bold">BC.GAME의 독점 VIP 시스템으로 최고의 게임 경험을 발견하십시오!</div>
                                                 
-                        <ul class="nav nav-tabs gap-1" role="tablist">
-                            <li id="example-1-tab" class="nav-item " role="presentation">
-                                <button class="nav-link w-full py-2 active" data-tw-toggle="pill" data-tw-target="#example-tab-1" type="button" role="tab" aria-controls="example-tab-1" aria-selected="true"> 브론즈 </button> 
-                            </li>
-                            <li id="example-2-tab" class="nav-item " role="presentation"> 
-                                <button class="nav-link w-full py-2" data-tw-toggle="pill" data-tw-target="#example-tab-2" type="button" role="tab" aria-controls="example-tab-2" aria-selected="false"> 실버 </button> 
-                            </li>
-                        </ul>
-                        <div class="tab-content bg-back">
-                            <div id="example-tab-1" class="tab-pane leading-relaxed p-5 active" role="tabpanel" aria-labelledby="example-1-tab">
-                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
+                        <div class="overflow-x-auto overflow-y-hidden">
+                            <ul class="nav nav-tabs gap-1 vip-tabs mt-4 min-w-[500px]" role="tablist">
+                                <li id="vip-1-tab" class="nav-item " role="presentation">
+                                    <button class="nav-link w-full py-4 text-xs bronze active" data-tw-toggle="pill" data-tw-target="#vip-tab-1" type="button" role="tab" aria-controls="vip-tab-1" aria-selected="true">
+                                        <img src="./dist/custom_img/profile/bronze.png" alt=""> 브론즈 
+                                    </button> 
+                                </li>
+                                <li id="vip-2-tab" class="nav-item " role="presentation"> 
+                                    <button class="nav-link w-full py-4 text-xs silver" data-tw-toggle="pill" data-tw-target="#vip-tab-2" type="button" role="tab" aria-controls="vip-tab-2" aria-selected="false"> 
+                                        <img src="./dist/custom_img/profile/silver.png" alt=""> 실버 
+                                    </button> 
+                                </li>
+                                <li id="vip-3-tab" class="nav-item " role="presentation"> 
+                                    <button class="nav-link w-full py-4 text-xs gold" data-tw-toggle="pill" data-tw-target="#vip-tab-3" type="button" role="tab" aria-controls="vip-tab-3" aria-selected="false"> 
+                                        <img src="./dist/custom_img/profile/gold.png" alt=""> 골드 
+                                    </button> 
+                                </li>
+                                <li id="vip-4-tab" class="nav-item " role="presentation"> 
+                                    <button class="nav-link w-full py-4 text-xs plat" data-tw-toggle="pill" data-tw-target="#vip-tab-4" type="button" role="tab" aria-controls="vip-tab-4" aria-selected="false"> 
+                                        <img src="./dist/custom_img/profile/platinum.png" alt=""> 플래티넘 I 
+                                    </button> 
+                                </li>
+                                <li id="vip-5-tab" class="nav-item " role="presentation"> 
+                                    <button class="nav-link w-full py-4 text-xs plat" data-tw-toggle="pill" data-tw-target="#vip-tab-5" type="button" role="tab" aria-controls="vip-tab-5" aria-selected="false"> 
+                                        <img src="./dist/custom_img/profile/platinum.png" alt=""> 플래티넘 II 
+                                    </button> 
+                                </li>
+                                <li id="vip-6-tab" class="nav-item " role="presentation"> 
+                                    <button class="nav-link w-full py-4 text-xs dia" data-tw-toggle="pill" data-tw-target="#vip-tab-6" type="button" role="tab" aria-controls="vip-tab-6" aria-selected="false"> 
+                                        <img src="./dist/custom_img/profile/diamond.png" alt=""> 다이아몬드 I 
+                                    </button> 
+                                </li>
+                                <li id="vip-7-tab" class="nav-item " role="presentation"> 
+                                    <button class="nav-link w-full py-4 text-xs dia" data-tw-toggle="pill" data-tw-target="#vip-tab-7" type="button" role="tab" aria-controls="vip-tab-7" aria-selected="false"> 
+                                        <img src="./dist/custom_img/profile/diamond.png" alt=""> 다이아몬드 II  
+                                    </button> 
+                                </li>
+                                <li id="vip-8-tab" class="nav-item " role="presentation"> 
+                                    <button class="nav-link w-full py-4 text-xs dia" data-tw-toggle="pill" data-tw-target="#vip-tab-8" type="button" role="tab" aria-controls="vip-tab-8" aria-selected="false"> 
+                                        <img src="./dist/custom_img/profile/diamond.png" alt=""> 다이아몬드 III  
+                                    </button> 
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content bg-back vip-cont">
+                            <!-- 브론즈 -->
+                            <div id="vip-tab-1" class="tab-pane leading-relaxed p-5 active" role="tabpanel" aria-labelledby="vip-1-tab">
+                                <div class="flex items-center gap-2 text-xs">
+                                    <div class="bronze vip_flag font-bold">브론즈</div>
+                                    <span>VIP 2-7</span>
+                                </div>
+                                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">레벨업 보너스</div>
+                                            <p class="text-xs text-basic">총 상금: <span class="text-yellow font-bold">1.04 BCD</span></p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">비</div>
+                                            <p class="text-xs text-basic">채팅에서 매우 활동적인 플레이어를 위한 레인 알고리즘 보상.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">코인 드랍</div>
+                                            <p class="text-xs text-basic">채팅에서 친구를 위한 코인 드롭을 생성합니다.</p>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
-                            <div id="example-tab-2" class="tab-pane leading-relaxed p-5" role="tabpanel" aria-labelledby="example-2-tab"> 
-                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). 
+                            <!-- 실버 -->
+                            <div id="vip-tab-2" class="tab-pane leading-relaxed p-5" role="tabpanel" aria-labelledby="vip-2-tab"> 
+                                <div class="flex flex-wrap items-center gap-2 text-xs">
+                                    <div class="silver vip_flag font-bold">실버</div>
+                                    <span>VIP 8-21</span>
+                                    <span>* 이전 레벨의 혜택이 모두 포함되어 있습니다.</span>
+                                </div>
+                                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">레벨업 보너스</div>
+                                            <p class="text-xs text-basic">총 상금: <span class="text-yellow font-bold">18.9 BCD</span></p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">팁</div>
+                                            <p class="text-xs text-basic">팁을 보내 다른 플레이어에게 감사를 표하십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">VIP 스핀</div>
+                                            <p class="text-xs text-basic">Starting from VIP level 8, you will receive an extra lucky spin with each level-up.</p>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
+                            <!-- 골드 -->
+                            <div id="vip-tab-3" class="tab-pane leading-relaxed p-5" role="tabpanel" aria-labelledby="vip-3-tab"> 
+                                <div class="flex flex-wrap items-center gap-2 text-xs">
+                                    <div class="gold vip_flag font-bold">골드</div>
+                                    <span>VIP 22-37</span>
+                                    <span>* 이전 레벨의 혜택이 모두 포함되어 있습니다.</span>
+                                </div>
+                                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">레벨업 보너스</div>
+                                            <p class="text-xs text-basic">총 상금: <span class="text-yellow font-bold">204 BCD</span></p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="flex items-center gap-2 text-tit font-bold">
+                                                재충전 
+                                                <div class="relative hover_box">
+                                                    <button class="basic-hover pt-1 cursor-pointer"><svg class="w-4 h-4"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg></button>
+                                                    <div class="absolute left-0 bottom-full w-[350px] -translate-x-1/2 bg-shadow text-xs p-3 rounded shadow">
+                                                        <p class="text-basic font-normal">
+                                                            재충전 비율: 귀하의 비율은 베팅을 기준으로 계산됩니다. 더 많이 걸수록 더 높은 충전률을 얻을 수 있습니다!<br/>
+                                                            현재 VIP 재충전 요금 등급:
+                                                        </p>
+                                                        <div class="bg-back p-3 mt-3">
+                                                            <div class="flex items-center justify-between">
+                                                                <div class="text-tit">등급 1 - Basic <b class="text-sub">(₩1292k - 64600.7k)</b></div>
+                                                                <div class="text-yellow font-normal">10%</div>
+                                                            </div>
+                                                            <div class="flex items-center justify-between mt-2">
+                                                                <div class="text-tit">등급 2 - Super <b class="text-sub">(₩64602k - 258406.7k)</b></div>
+                                                                <div class="text-yellow font-normal">12%</div>
+                                                            </div>
+                                                            <div class="flex items-center justify-between mt-2">
+                                                                <div class="text-tit">등급 3 - Mega <b class="text-sub">(₩258641k - 646601.2k)</b></div>
+                                                                <div class="text-yellow font-normal">14%</div>
+                                                            </div>
+                                                            <div class="flex items-center justify-between mt-2">
+                                                                <div class="text-tit">등급 4 - Epic <b class="text-sub">(₩646602.5k+)</b></div>
+                                                                <div class="text-yellow font-normal">16%</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="text-xs text-basic">7일 연속으로 <span class="text-yellow font-bold">10-16%</span> 보너스를 활성화하고 청구하십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">주간 캐쉬백</div>
+                                            <p class="text-xs text-basic">베팅 금액을 기준으로 대략 <span class="text-yellow font-bold">롤링*1%*5%</span>의 주간 보너스를 받으십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">월간 캐쉬백</div>
+                                            <p class="text-xs text-basic">베팅 금액을 기준으로 대략 <span class="text-yellow font-bold">롤링*1%*5%</span>의 월별 보너스를 받으십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="flex items-center gap-2 text-tit font-bold">
+                                                스포츠 주간 캐쉬백
+                                                <div class="relative hover_box">
+                                                    <button class="basic-hover pt-1 cursor-pointer"><svg class="w-4 h-4"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg></button>
+                                                    <div class="absolute left-0 bottom-full w-[350px] -translate-x-1/2 bg-shadow p-3 text-basic rounded shadow">
+                                                        <ul class="list-disc font-normal pl-3">
+                                                            <li>
+                                                                7d 스포츠 베팅:<br/>
+                                                                $500-$2,499 = $5 보너스<br/>
+                                                                $2,500-$4,999 = $30 보너스<br/>
+                                                                $5,000-$9,999 = $70 보너스<br/>
+                                                                $10,000+ = $150 보너스
+                                                            </li>
+                                                            <li class="mt-2">배팅 기간 토요일 00:00 ~ 금요일 23:59 (7일)</li>
+                                                            <li class="mt-2">우리는 매주 토요일 주간 캐쉬백을 떨어뜨리는 것을 목표로 합니다.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="text-xs text-basic">스포츠 베터를 위한 추가 보상 및 혜택.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">VIP 스핀</div>
+                                            <p class="text-xs text-basic">Starting from VIP level 8, you will receive an extra lucky spin with each level-up.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 플래티넘1 -->
+                            <div id="vip-tab-4" class="tab-pane leading-relaxed p-5" role="tabpanel" aria-labelledby="vip-4-tab"> 
+                                <div class="flex flex-wrap items-center gap-2 text-xs">
+                                    <div class="plat vip_flag font-bold">플래티넘 I</div>
+                                    <span>VIP 38-55</span>
+                                    <span>* 이전 레벨의 혜택이 모두 포함되어 있습니다.</span>
+                                </div>
+                                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">레벨업 보너스</div>
+                                            <p class="text-xs text-basic">총 상금: <span class="text-yellow font-bold">1905 BCD</span></p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="flex items-center gap-2 text-tit font-bold">
+                                                재충전 
+                                                <div class="relative hover_box">
+                                                    <button class="basic-hover pt-1 cursor-pointer"><svg class="w-4 h-4"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg></button>
+                                                    <div class="absolute left-0 bottom-full w-[350px] -translate-x-1/2 bg-shadow text-xs p-3 rounded shadow">
+                                                        <p class="text-basic font-normal">
+                                                            재충전 비율: 귀하의 비율은 베팅을 기준으로 계산됩니다. 더 많이 걸수록 더 높은 충전률을 얻을 수 있습니다!<br/>
+                                                            현재 VIP 재충전 요금 등급:
+                                                        </p>
+                                                        <div class="bg-back p-3 mt-3">
+                                                            <div class="flex items-center justify-between">
+                                                                <div class="text-tit">등급 1 - Basic <b class="text-sub">(₩1293.7k - 64687.4k)</b></div>
+                                                                <div class="text-yellow font-normal">12%</div>
+                                                            </div>
+                                                            <div class="flex items-center justify-between mt-2">
+                                                                <div class="text-tit">등급 2 - Super <b class="text-sub">(₩64662.5k - 258648.7k)</b></div>
+                                                                <div class="text-yellow font-normal">14%</div>
+                                                            </div>
+                                                            <div class="flex items-center justify-between mt-2">
+                                                                <div class="text-tit">등급 3 - Mega <b class="text-sub">(₩258650k - 646623.7k)</b></div>
+                                                                <div class="text-yellow font-normal">16%</div>
+                                                            </div>
+                                                            <div class="flex items-center justify-between mt-2">
+                                                                <div class="text-tit">등급 4 - Epic <b class="text-sub">(₩646625k+)</b></div>
+                                                                <div class="text-yellow font-normal">18%</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="text-xs text-basic">7일 연속으로 <span class="text-yellow font-bold">12-18%</span> 보너스를 활성화하고 청구하십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">주간 캐쉬백</div>
+                                            <p class="text-xs text-basic">베팅 금액을 기준으로 대략 <span class="text-yellow font-bold">롤링*1%*8%</span>의 주간 보너스를 받으십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">월간 캐쉬백</div>
+                                            <p class="text-xs text-basic">베팅 금액을 기준으로 대략 <span class="text-yellow font-bold">롤링*1%*3.5%</span>의 월별 보너스를 받으십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="flex items-center gap-2 text-tit font-bold">
+                                                스포츠 주간 캐쉬백
+                                                <div class="relative hover_box">
+                                                    <button class="basic-hover pt-1 cursor-pointer"><svg class="w-4 h-4"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg></button>
+                                                    <div class="absolute left-0 bottom-full w-[350px] -translate-x-1/2 bg-shadow p-3 text-basic rounded shadow">
+                                                        <ul class="list-disc font-normal pl-3">
+                                                            <li>
+                                                                7d 스포츠 베팅:<br/>
+                                                                $500-$2,499 = $5 보너스<br/>
+                                                                $2,500-$4,999 = $30 보너스<br/>
+                                                                $5,000-$9,999 = $70 보너스<br/>
+                                                                $10,000+ = $150 보너스
+                                                            </li>
+                                                            <li class="mt-2">배팅 기간 토요일 00:00 ~ 금요일 23:59 (7일)</li>
+                                                            <li class="mt-2">우리는 매주 토요일 주간 캐쉬백을 떨어뜨리는 것을 목표로 합니다.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="text-xs text-basic">스포츠 베터를 위한 추가 보상 및 혜택.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">VIP 호스트</div>
+                                            <p class="text-xs text-basic">주문형 서비스와 독점 혜택을 즐기십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">수수료없는 출금</div>
+                                            <p class="text-xs text-basic">제로 수수료로 원활한 인출.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">VIP 스핀</div>
+                                            <p class="text-xs text-basic">Starting from VIP level 8, you will receive an extra lucky spin with each level-up.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 플래티넘2 -->
+                            <div id="vip-tab-5" class="tab-pane leading-relaxed p-5" role="tabpanel" aria-labelledby="vip-5-tab"> 
+                                <div class="flex flex-wrap items-center gap-2 text-xs">
+                                    <div class="plat vip_flag font-bold">플래티넘 II</div>
+                                    <span>VIP 56-69</span>
+                                    <span>* 이전 레벨의 혜택이 모두 포함되어 있습니다.</span>
+                                </div>
+                                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">레벨업 보너스</div>
+                                            <p class="text-xs text-basic">총 상금: <span class="text-yellow font-bold">5850 BCD</span></p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="flex items-center gap-2 text-tit font-bold">
+                                                재충전 
+                                                <div class="relative hover_box">
+                                                    <button class="basic-hover pt-1 cursor-pointer"><svg class="w-4 h-4"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg></button>
+                                                    <div class="absolute left-0 bottom-full w-[350px] -translate-x-1/2 bg-shadow text-xs p-3 rounded shadow">
+                                                        <p class="text-basic font-normal">
+                                                            재충전 비율: 귀하의 비율은 베팅을 기준으로 계산됩니다. 더 많이 걸수록 더 높은 충전률을 얻을 수 있습니다!<br/>
+                                                            현재 VIP 재충전 요금 등급:
+                                                        </p>
+                                                        <div class="bg-back p-3 mt-3">
+                                                            <div class="flex items-center justify-between">
+                                                                <div class="text-tit">등급 1 - Basic <b class="text-sub">(₩1293.2k - 64661.9k)</b></div>
+                                                                <div class="text-yellow font-normal">14%</div>
+                                                            </div>
+                                                            <div class="flex items-center justify-between mt-2">
+                                                                <div class="text-tit">등급 2 - Super <b class="text-sub">(₩64663.2k - 258651.6k)</b></div>
+                                                                <div class="text-yellow font-normal">16%</div>
+                                                            </div>
+                                                            <div class="flex items-center justify-between mt-2">
+                                                                <div class="text-tit">등급 3 - Mega <b class="text-sub">(₩258652.9k - 646630.9k)</b></div>
+                                                                <div class="text-yellow font-normal">18%</div>
+                                                            </div>
+                                                            <div class="flex items-center justify-between mt-2">
+                                                                <div class="text-tit">등급 4 - Epic <b class="text-sub">(₩646632.2k+)</b></div>
+                                                                <div class="text-yellow font-normal">20%</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="text-xs text-basic">7일 연속으로 <span class="text-yellow font-bold">14-20%</span> 보너스를 활성화하고 청구하십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">주간 캐쉬백</div>
+                                            <p class="text-xs text-basic">베팅 금액을 기준으로 대략 <span class="text-yellow font-bold">롤링*1%*8%</span>의 주간 보너스를 받으십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">월간 캐쉬백</div>
+                                            <p class="text-xs text-basic">베팅 금액을 기준으로 대략 <span class="text-yellow font-bold">롤링*1%*4%</span>의 월별 보너스를 받으십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="flex items-center gap-2 text-tit font-bold">
+                                                스포츠 주간 캐쉬백
+                                                <div class="relative hover_box">
+                                                    <button class="basic-hover pt-1 cursor-pointer"><svg class="w-4 h-4"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg></button>
+                                                    <div class="absolute left-0 bottom-full w-[350px] -translate-x-1/2 bg-shadow p-3 text-basic rounded shadow">
+                                                        <ul class="list-disc font-normal pl-3">
+                                                            <li>
+                                                                7d 스포츠 베팅:<br/>
+                                                                $500-$2,499 = $5 보너스<br/>
+                                                                $2,500-$4,999 = $30 보너스<br/>
+                                                                $5,000-$9,999 = $70 보너스<br/>
+                                                                $10,000+ = $150 보너스
+                                                            </li>
+                                                            <li class="mt-2">배팅 기간 토요일 00:00 ~ 금요일 23:59 (7일)</li>
+                                                            <li class="mt-2">우리는 매주 토요일 주간 캐쉬백을 떨어뜨리는 것을 목표로 합니다.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="text-xs text-basic">스포츠 베터를 위한 추가 보상 및 혜택.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">VIP 호스트</div>
+                                            <p class="text-xs text-basic">주문형 서비스와 독점 혜택을 즐기십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">수수료없는 출금</div>
+                                            <p class="text-xs text-basic">제로 수수료로 원활한 인출.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">VIP 스핀</div>
+                                            <p class="text-xs text-basic">Starting from VIP level 8, you will receive an extra lucky spin with each level-up.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 다이아1 -->
+                            <div id="vip-tab-6" class="tab-pane leading-relaxed p-5" role="tabpanel" aria-labelledby="vip-6-tab"> 
+                                <div class="flex flex-wrap items-center gap-2 text-xs">
+                                    <div class="dia vip_flag font-bold">다이아몬드 I</div>
+                                    <span>SVIP 1-15</span>
+                                    <span>* 이전 레벨의 혜택이 모두 포함되어 있습니다.</span>
+                                </div>
+                                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">레벨업 보너스</div>
+                                            <p class="text-xs text-basic">총 상금: <span class="text-yellow font-bold">30600 BCD</span></p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="flex items-center gap-2 text-tit font-bold">
+                                                재충전 
+                                                <div class="relative hover_box">
+                                                    <button class="basic-hover pt-1 cursor-pointer"><svg class="w-4 h-4"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg></button>
+                                                    <div class="absolute left-0 bottom-full w-[350px] -translate-x-1/2 bg-shadow text-xs p-3 rounded shadow">
+                                                        <p class="text-basic font-normal">
+                                                            재충전 비율: 귀하의 비율은 베팅을 기준으로 계산됩니다. 더 많이 걸수록 더 높은 충전률을 얻을 수 있습니다!<br/>
+                                                            현재 VIP 재충전 요금 등급:
+                                                        </p>
+                                                        <div class="bg-back p-3 mt-3">
+                                                            <div class="flex items-center justify-between">
+                                                                <div class="text-tit">등급 1 - Basic <b class="text-sub">(₩1293.5k - 64674.9k)</b></div>
+                                                                <div class="text-yellow font-normal">16%</div>
+                                                            </div>
+                                                            <div class="flex items-center justify-between mt-2">
+                                                                <div class="text-tit">등급 2 - Super <b class="text-sub">(₩64676.2k - 258703.7k)</b></div>
+                                                                <div class="text-yellow font-normal">18%</div>
+                                                            </div>
+                                                            <div class="flex items-center justify-between mt-2">
+                                                                <div class="text-tit">등급 3 - Mega <b class="text-sub">(₩258705k - 646761.2k)</b></div>
+                                                                <div class="text-yellow font-normal">20%</div>
+                                                            </div>
+                                                            <div class="flex items-center justify-between mt-2">
+                                                                <div class="text-tit">등급 4 - Epic <b class="text-sub">(₩646762.5k+)</b></div>
+                                                                <div class="text-yellow font-normal">22%</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="text-xs text-basic">7일 연속으로 <span class="text-yellow font-bold">16-22%</span> 보너스를 활성화하고 청구하십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">주간 캐쉬백</div>
+                                            <p class="text-xs text-basic">베팅 금액을 기준으로 대략 <span class="text-yellow font-bold">롤링*1%*8%</span>의 주간 보너스를 받으십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">월간 캐쉬백</div>
+                                            <p class="text-xs text-basic">베팅 금액을 기준으로 대략 <span class="text-yellow font-bold">롤링*1%*5%</span>의 월별 보너스를 받으십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="flex items-center gap-2 text-tit font-bold">
+                                                스포츠 주간 캐쉬백
+                                                <div class="relative hover_box">
+                                                    <button class="basic-hover pt-1 cursor-pointer"><svg class="w-4 h-4"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg></button>
+                                                    <div class="absolute left-0 bottom-full w-[350px] -translate-x-1/2 bg-shadow p-3 text-basic rounded shadow">
+                                                        <ul class="list-disc font-normal pl-3">
+                                                            <li>
+                                                                7d 스포츠 베팅:<br/>
+                                                                $500-$2,499 = $5 보너스<br/>
+                                                                $2,500-$4,999 = $30 보너스<br/>
+                                                                $5,000-$9,999 = $70 보너스<br/>
+                                                                $10,000+ = $150 보너스
+                                                            </li>
+                                                            <li class="mt-2">배팅 기간 토요일 00:00 ~ 금요일 23:59 (7일)</li>
+                                                            <li class="mt-2">우리는 매주 토요일 주간 캐쉬백을 떨어뜨리는 것을 목표로 합니다.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="text-xs text-basic">스포츠 베터를 위한 추가 보상 및 혜택.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">독점 SVIP 패키지</div>
+                                            <p class="text-xs text-basic">다이아몬드 VIP로서 상상할 수 없는 놀라움을 발견하십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">럭셔리 깁어웨이</div>
+                                            <p class="text-xs text-basic">놀라운 놀라움을 얻을 수 있는 독점적인 기회에 참여하세요.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">VIP 스핀</div>
+                                            <p class="text-xs text-basic">Starting from VIP level 8, you will receive an extra lucky spin with each level-up.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 다이아2 -->
+                            <div id="vip-tab-7" class="tab-pane leading-relaxed p-5" role="tabpanel" aria-labelledby="vip-7-tab"> 
+                                <div class="flex flex-wrap items-center gap-2 text-xs">
+                                    <div class="dia vip_flag font-bold">다이아몬드 II</div>
+                                    <span>SVIP 16-37</span>
+                                    <span>* 이전 레벨의 혜택이 모두 포함되어 있습니다.</span>
+                                </div>
+                                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">레벨업 보너스</div>
+                                            <p class="text-xs text-basic">총 상금: <span class="text-yellow font-bold">297800 BCD</span></p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="flex items-center gap-2 text-tit font-bold">
+                                                재충전 
+                                                <div class="relative hover_box">
+                                                    <button class="basic-hover pt-1 cursor-pointer"><svg class="w-4 h-4"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg></button>
+                                                    <div class="absolute left-0 bottom-full w-[350px] -translate-x-1/2 bg-shadow text-xs p-3 rounded shadow">
+                                                        <p class="text-basic font-normal">
+                                                            재충전 비율: 귀하의 비율은 베팅을 기준으로 계산됩니다. 더 많이 걸수록 더 높은 충전률을 얻을 수 있습니다!<br/>
+                                                            현재 VIP 재충전 요금 등급:
+                                                        </p>
+                                                        <div class="bg-back p-3 mt-3">
+                                                            <div class="flex items-center justify-between">
+                                                                <div class="text-tit">등급 1 - Basic <b class="text-sub">(₩1293.5k - 64674.9k)</b></div>
+                                                                <div class="text-yellow font-normal">18%</div>
+                                                            </div>
+                                                            <div class="flex items-center justify-between mt-2">
+                                                                <div class="text-tit">등급 2 - Super <b class="text-sub">(₩64676.2k - 258703.7k)</b></div>
+                                                                <div class="text-yellow font-normal">20%</div>
+                                                            </div>
+                                                            <div class="flex items-center justify-between mt-2">
+                                                                <div class="text-tit">등급 3 - Mega <b class="text-sub">(₩258705k - 646761.2k)</b></div>
+                                                                <div class="text-yellow font-normal">22%</div>
+                                                            </div>
+                                                            <div class="flex items-center justify-between mt-2">
+                                                                <div class="text-tit">등급 4 - Epic <b class="text-sub">(₩646762.5k+)</b></div>
+                                                                <div class="text-yellow font-normal">24%</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="text-xs text-basic">7일 연속으로 <span class="text-yellow font-bold">18-24%</span> 보너스를 활성화하고 청구하십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">주간 캐쉬백</div>
+                                            <p class="text-xs text-basic">베팅 금액을 기준으로 대략 <span class="text-yellow font-bold">롤링*1%*8%</span>의 주간 보너스를 받으십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">월간 캐쉬백</div>
+                                            <p class="text-xs text-basic">베팅 금액을 기준으로 대략 <span class="text-yellow font-bold">롤링*1%*5%</span>의 월별 보너스를 받으십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="flex items-center gap-2 text-tit font-bold">
+                                                스포츠 주간 캐쉬백
+                                                <div class="relative hover_box">
+                                                    <button class="basic-hover pt-1 cursor-pointer"><svg class="w-4 h-4"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg></button>
+                                                    <div class="absolute left-0 bottom-full w-[350px] -translate-x-1/2 bg-shadow p-3 text-basic rounded shadow">
+                                                        <ul class="list-disc font-normal pl-3">
+                                                            <li>
+                                                                7d 스포츠 베팅:<br/>
+                                                                $500-$2,499 = $5 보너스<br/>
+                                                                $2,500-$4,999 = $30 보너스<br/>
+                                                                $5,000-$9,999 = $70 보너스<br/>
+                                                                $10,000+ = $150 보너스
+                                                            </li>
+                                                            <li class="mt-2">배팅 기간 토요일 00:00 ~ 금요일 23:59 (7일)</li>
+                                                            <li class="mt-2">우리는 매주 토요일 주간 캐쉬백을 떨어뜨리는 것을 목표로 합니다.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="text-xs text-basic">스포츠 베터를 위한 추가 보상 및 혜택.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">독점 SVIP 패키지</div>
+                                            <p class="text-xs text-basic">다이아몬드 VIP로서 상상할 수 없는 놀라움을 발견하십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">럭셔리 깁어웨이</div>
+                                            <p class="text-xs text-basic">놀라운 놀라움을 얻을 수 있는 독점적인 기회에 참여하세요.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">VIP 스핀</div>
+                                            <p class="text-xs text-basic">Starting from VIP level 8, you will receive an extra lucky spin with each level-up.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 다이아3 -->
+                            <div id="vip-tab-8" class="tab-pane leading-relaxed p-5" role="tabpanel" aria-labelledby="vip-8-tab"> 
+                                <div class="flex flex-wrap items-center gap-2 text-xs">
+                                    <div class="dia vip_flag font-bold">다이아몬드 III</div>
+                                    <span>SVIP 38-55</span>
+                                    <span>* 이전 레벨의 혜택이 모두 포함되어 있습니다.</span>
+                                </div>
+                                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">레벨업 보너스</div>
+                                            <p class="text-xs text-basic">총 상금: <span class="text-yellow font-bold">1462000 BCD</span></p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="flex items-center gap-2 text-tit font-bold">
+                                                재충전 
+                                                <div class="relative hover_box">
+                                                    <button class="basic-hover pt-1 cursor-pointer"><svg class="w-4 h-4"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg></button>
+                                                    <div class="absolute left-0 bottom-full w-[350px] -translate-x-1/2 bg-shadow text-xs p-3 rounded shadow">
+                                                        <p class="text-basic font-normal">
+                                                            재충전 비율: 귀하의 비율은 베팅을 기준으로 계산됩니다. 더 많이 걸수록 더 높은 충전률을 얻을 수 있습니다!<br/>
+                                                            현재 VIP 재충전 요금 등급:
+                                                        </p>
+                                                        <div class="bg-back p-3 mt-3">
+                                                            <div class="flex items-center justify-between">
+                                                                <div class="text-tit">등급 1 - Basic <b class="text-sub">(₩1293.5k - 64674.9k)</b></div>
+                                                                <div class="text-yellow font-normal">20%</div>
+                                                            </div>
+                                                            <div class="flex items-center justify-between mt-2">
+                                                                <div class="text-tit">등급 2 - Super <b class="text-sub">(₩64676.2k - 258703.7k)</b></div>
+                                                                <div class="text-yellow font-normal">22%</div>
+                                                            </div>
+                                                            <div class="flex items-center justify-between mt-2">
+                                                                <div class="text-tit">등급 3 - Mega <b class="text-sub">(₩258705k - 646761.2k)</b></div>
+                                                                <div class="text-yellow font-normal">24%</div>
+                                                            </div>
+                                                            <div class="flex items-center justify-between mt-2">
+                                                                <div class="text-tit">등급 4 - Epic <b class="text-sub">(₩646762.5k+)</b></div>
+                                                                <div class="text-yellow font-normal">25%</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="text-xs text-basic">7일 연속으로 <span class="text-yellow font-bold">20-25%</span> 보너스를 활성화하고 청구하십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">주간 캐쉬백</div>
+                                            <p class="text-xs text-basic">베팅 금액을 기준으로 대략 <span class="text-yellow font-bold">롤링*1%*8%</span>의 주간 보너스를 받으십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">월간 캐쉬백</div>
+                                            <p class="text-xs text-basic">베팅 금액을 기준으로 대략 <span class="text-yellow font-bold">롤링*1%*5%</span>의 월별 보너스를 받으십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="flex items-center gap-2 text-tit font-bold">
+                                                스포츠 주간 캐쉬백
+                                                <div class="relative hover_box">
+                                                    <button class="basic-hover pt-1 cursor-pointer"><svg class="w-4 h-4"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg></button>
+                                                    <div class="absolute left-0 bottom-full w-[350px] -translate-x-1/2 bg-shadow p-3 text-basic rounded shadow">
+                                                        <ul class="list-disc font-normal pl-3">
+                                                            <li>
+                                                                7d 스포츠 베팅:<br/>
+                                                                $500-$2,499 = $5 보너스<br/>
+                                                                $2,500-$4,999 = $30 보너스<br/>
+                                                                $5,000-$9,999 = $70 보너스<br/>
+                                                                $10,000+ = $150 보너스
+                                                            </li>
+                                                            <li class="mt-2">배팅 기간 토요일 00:00 ~ 금요일 23:59 (7일)</li>
+                                                            <li class="mt-2">우리는 매주 토요일 주간 캐쉬백을 떨어뜨리는 것을 목표로 합니다.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="text-xs text-basic">스포츠 베터를 위한 추가 보상 및 혜택.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">독점 SVIP 패키지</div>
+                                            <p class="text-xs text-basic">다이아몬드 VIP로서 상상할 수 없는 놀라움을 발견하십시오.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">럭셔리 깁어웨이</div>
+                                            <p class="text-xs text-basic">놀라운 놀라움을 얻을 수 있는 독점적인 기회에 참여하세요.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center gap-3 border border-solid border-opacity-50 border-slate-300 p-3 rounded">
+                                        <i class="flex-shrink-0 rounded-full border border-solid border-slate-300 dark:border-slate-400 bg-opacity-100 dark:bg-opacity-30 bg-white dark:bg-slate-400 p-1"><img class="w-14 h-14" src="./dist/custom_img/profile/lock.png" alt=""></i>
+                                        <div>
+                                            <div class="text-tit font-bold">VIP 스핀</div>
+                                            <p class="text-xs text-basic">Starting from VIP level 8, you will receive an extra lucky spin with each level-up.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
                         </div>
                     </div>
                     <button class="btn mt-6 border-slate-300 w-full h-12 text-primary"> BC.GAME’s VIP 시스템에 대하여 더 알아보세요.</button>
@@ -596,6 +1407,830 @@
     </div>
 </div>
 
+<!-- 프로필 - vip 클럽 - vip 레벨 시스템 -->
+<div id="profile_vip_level-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body bg-modaldark relative rounded">
+                <div class="flex items-center justify-between p-4">
+                    <div class="flex items-center gap-2">
+                        <button data-tw-dismiss="modal" data-tw-toggle="modal" data-tw-target="#profile_vip-modal"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        <p class="text-tit font-extrabold text-base">VIP 레벨 시스템</p>
+                    </div>
+                    <button class="basic-hover" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+                <div class="w-full p-6 overflow-y-auto scrollbar h-auto sm:h-[640px]">
+                    <!-- 브론즈 -->
+                    <div class="py-2 vip-info bg-slate-200 dark:bg-back2 rounded">
+                        <div class="flex justify-between cursor-pointer on" onclick="vipLevelHandle(this)">
+                            <div class="vip-cont flex items-center gap-2">
+                                <div class="vip_flag small bronze w-7 "></div>
+                                <p class="text-tit font-bold">브론즈 VIP 2-7</p>
+                            </div>
+                            <i class="p-2"><svg class="w-4 h-4 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                        </div>
+                        <div class="overflow-hidden open">
+                            <table class="table table-sm table-striped noline rounded"> 
+                                <thead> 
+                                    <tr> 
+                                        <th class="whitespace-nowrap text-left">레벨</th> 
+                                        <th class="whitespace-nowrap text-center">XP 요구됨</th> 
+                                        <th class="whitespace-nowrap text-right">레벨업 보너스 (BCD)</th> 
+                                    </tr> 
+                                </thead> 
+                                <tbody> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/bronze_medal.png" alt="">VIP 2</td>
+                                        <td class="text-center">100</td> 
+                                        <td class="text-right text-tit">0.04</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/bronze_medal.png" alt="">VIP 3</td>
+                                        <td class="text-center">200</td> 
+                                        <td class="text-right text-tit">0.05</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/bronze_medal.png" alt="">VIP 4</td>
+                                        <td class="text-center">1000</td> 
+                                        <td class="text-right text-tit">0.1</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/bronze_medal.png" alt="">VIP 5</td>
+                                        <td class="text-center">2000</td> 
+                                        <td class="text-right text-tit">0.2</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/bronze_medal.png" alt="">VIP 6</td>
+                                        <td class="text-center">3000</td> 
+                                        <td class="text-right text-tit">0.3</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/bronze_medal.png" alt="">VIP 7</td>
+                                        <td class="text-center">4000</td> 
+                                        <td class="text-right text-tit">0.35</td> 
+                                    </tr> 
+                                </tbody> 
+                            </table> 
+                        </div>
+                    </div>
+                    <!-- 실버 -->
+                    <div class="py-2 vip-info mt-3 bg-slate-200 dark:bg-back2 rounded">
+                        <div class="flex justify-between cursor-pointer" onclick="vipLevelHandle(this)">
+                            <div class="vip-cont flex items-center gap-2">
+                                <div class="vip_flag small silver w-7 "></div>
+                                <p class="text-tit font-bold">실버 VIP 8-21</p>
+                            </div>
+                            <i class="p-2"><svg class="w-4 h-4 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <table class="table table-sm table-striped noline rounded"> 
+                                <thead> 
+                                    <tr> 
+                                        <th class="whitespace-nowrap text-left">레벨</th> 
+                                        <th class="whitespace-nowrap text-center">XP 요구됨</th> 
+                                        <th class="whitespace-nowrap text-right">레벨업 보너스 (BCD)</th> 
+                                    </tr> 
+                                </thead> 
+                                <tbody> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/silver_medal.png" alt="">VIP 8</td>
+                                        <td class="text-center">5000</td> 
+                                        <td class="text-right text-tit">0.7</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/silver_medal.png" alt="">VIP 9</td>
+                                        <td class="text-center">7000</td> 
+                                        <td class="text-right text-tit">0.8</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/silver_medal.png" alt="">VIP 10</td>
+                                        <td class="text-center">9000</td> 
+                                        <td class="text-right text-tit">0.9</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/silver_medal.png" alt="">VIP 11</td>
+                                        <td class="text-center">11000</td> 
+                                        <td class="text-right text-tit">1</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/silver_medal.png" alt="">VIP 12</td>
+                                        <td class="text-center">13000</td> 
+                                        <td class="text-right text-tit">1.1</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/silver_medal.png" alt="">VIP 13</td>
+                                        <td class="text-center">15000</td> 
+                                        <td class="text-right text-tit">1.2</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/silver_medal.png" alt="">VIP 14</td>
+                                        <td class="text-center">17000</td> 
+                                        <td class="text-right text-tit">1.3</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/silver_medal.png" alt="">VIP 15</td>
+                                        <td class="text-center">21000</td> 
+                                        <td class="text-right text-tit">1.4</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/silver_medal.png" alt="">VIP 16</td>
+                                        <td class="text-center">25000</td> 
+                                        <td class="text-right text-tit">1.5</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/silver_medal.png" alt="">VIP 17</td>
+                                        <td class="text-center">29000</td> 
+                                        <td class="text-right text-tit">1.6</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/silver_medal.png" alt="">VIP 18</td>
+                                        <td class="text-center">33000</td> 
+                                        <td class="text-right text-tit">1.7</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/silver_medal.png" alt="">VIP 19</td>
+                                        <td class="text-center">37000</td> 
+                                        <td class="text-right text-tit">1.8</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/silver_medal.png" alt="">VIP 20</td>
+                                        <td class="text-center">41000</td> 
+                                        <td class="text-right text-tit">1.9</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/silver_medal.png" alt="">VIP 21</td>
+                                        <td class="text-center">45000</td> 
+                                        <td class="text-right text-tit">2</td> 
+                                    </tr> 
+                                </tbody> 
+                            </table> 
+                        </div>
+
+                    </div>
+                    <!-- 골드 -->
+                    <div class="py-2 vip-info mt-3 bg-slate-200 dark:bg-back2 rounded">
+                        <div class="flex justify-between cursor-pointer" onclick="vipLevelHandle(this)">
+                            <div class="vip-cont flex items-center gap-2">
+                                <div class="vip_flag small gold w-7 "></div>
+                                <p class="text-tit font-bold">골드 VIP 22-37</p>
+                            </div>
+                            <i class="p-2"><svg class="w-4 h-4 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <table class="table table-sm table-striped noline rounded"> 
+                                <thead> 
+                                    <tr> 
+                                        <th class="whitespace-nowrap text-left">레벨</th> 
+                                        <th class="whitespace-nowrap text-center">XP 요구됨</th> 
+                                        <th class="whitespace-nowrap text-right">레벨업 보너스 (BCD)</th> 
+                                    </tr> 
+                                </thead> 
+                                <tbody> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/gold_medal.webp" alt="">VIP 22</td>
+                                        <td class="text-center">49000</td> 
+                                        <td class="text-right text-tit">3</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/gold_medal.webp" alt="">VIP 23</td>
+                                        <td class="text-center">59000</td> 
+                                        <td class="text-right text-tit">4</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/gold_medal.webp" alt="">VIP 24</td>
+                                        <td class="text-center">69000</td> 
+                                        <td class="text-right text-tit">5</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/gold_medal.webp" alt="">VIP 25</td>
+                                        <td class="text-center">79000</td> 
+                                        <td class="text-right text-tit">6</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/gold_medal.webp" alt="">VIP 26</td>
+                                        <td class="text-center">89000</td> 
+                                        <td class="text-right text-tit">7</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/gold_medal.webp" alt="">VIP 27</td>
+                                        <td class="text-center">99000</td> 
+                                        <td class="text-right text-tit">8</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/gold_medal.webp" alt="">VIP 28</td>
+                                        <td class="text-center">109000</td> 
+                                        <td class="text-right text-tit">9</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/gold_medal.webp" alt="">VIP 29</td>
+                                        <td class="text-center">119000</td> 
+                                        <td class="text-right text-tit">10</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/gold_medal.webp" alt="">VIP 30</td>
+                                        <td class="text-center">129000</td> 
+                                        <td class="text-right text-tit">12</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/gold_medal.webp" alt="">VIP 31</td>
+                                        <td class="text-center">153000</td> 
+                                        <td class="text-right text-tit">14</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/gold_medal.webp" alt="">VIP 32</td>
+                                        <td class="text-center">177000</td> 
+                                        <td class="text-right text-tit">16</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/gold_medal.webp" alt="">VIP 33</td>
+                                        <td class="text-center">201000</td> 
+                                        <td class="text-right text-tit">18</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/gold_medal.webp" alt="">VIP 34</td>
+                                        <td class="text-center">225000</td> 
+                                        <td class="text-right text-tit">20</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/gold_medal.webp" alt="">VIP 35</td>
+                                        <td class="text-center">249000</td> 
+                                        <td class="text-right text-tit">22</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/gold_medal.webp" alt="">VIP 36</td>
+                                        <td class="text-center">273000</td> 
+                                        <td class="text-right text-tit">24</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/gold_medal.webp" alt="">VIP 37</td>
+                                        <td class="text-center">297000</td> 
+                                        <td class="text-right text-tit">26</td> 
+                                    </tr> 
+                                </tbody> 
+                            </table> 
+                        </div>
+
+                    </div>
+                    <!-- 플래티넘 1 -->
+                    <div class="py-2 vip-info mt-3 bg-slate-200 dark:bg-back2 rounded">
+                        <div class="flex justify-between cursor-pointer" onclick="vipLevelHandle(this)">
+                            <div class="vip-cont flex items-center gap-2">
+                                <div class="vip_flag small plat w-7 "></div>
+                                <p class="text-tit font-bold">플래티넘 I VIP 38-55</p>
+                            </div>
+                            <i class="p-2"><svg class="w-4 h-4 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <table class="table table-sm table-striped noline rounded"> 
+                                <thead> 
+                                    <tr> 
+                                        <th class="whitespace-nowrap text-left">레벨</th> 
+                                        <th class="whitespace-nowrap text-center">XP 요구됨</th> 
+                                        <th class="whitespace-nowrap text-right">레벨업 보너스 (BCD)</th> 
+                                    </tr> 
+                                </thead> 
+                                <tbody> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 38</td>
+                                        <td class="text-center">321000</td> 
+                                        <td class="text-right text-tit">30</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 39</td>
+                                        <td class="text-center">377000</td> 
+                                        <td class="text-right text-tit">35</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 40</td>
+                                        <td class="text-center">433000</td> 
+                                        <td class="text-right text-tit">40</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 41</td>
+                                        <td class="text-center">489000</td> 
+                                        <td class="text-right text-tit">50</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 42</td>
+                                        <td class="text-center">545000</td> 
+                                        <td class="text-right text-tit">60</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 43</td>
+                                        <td class="text-center">601000</td> 
+                                        <td class="text-right text-tit">70</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 44</td>
+                                        <td class="text-center">657000</td> 
+                                        <td class="text-right text-tit">80</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 45</td>
+                                        <td class="text-center">713000</td> 
+                                        <td class="text-right text-tit">90</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 46</td>
+                                        <td class="text-center">769000</td> 
+                                        <td class="text-right text-tit">100</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 47</td>
+                                        <td class="text-center">897000</td> 
+                                        <td class="text-right text-tit">110</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 48</td>
+                                        <td class="text-center">1025000</td> 
+                                        <td class="text-right text-tit">120</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 49</td>
+                                        <td class="text-center">1153000</td> 
+                                        <td class="text-right text-tit">130</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 50</td>
+                                        <td class="text-center">1281000</td> 
+                                        <td class="text-right text-tit">140</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 51</td>
+                                        <td class="text-center">1409000</td> 
+                                        <td class="text-right text-tit">150</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 52</td>
+                                        <td class="text-center">1537000</td> 
+                                        <td class="text-right text-tit">160</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 53</td>
+                                        <td class="text-center">1665000</td> 
+                                        <td class="text-right text-tit">170</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 54</td>
+                                        <td class="text-center">1793000</td> 
+                                        <td class="text-right text-tit">180</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 55</td>
+                                        <td class="text-center">2081000</td> 
+                                        <td class="text-right text-tit">190</td> 
+                                    </tr>
+                                </tbody> 
+                            </table> 
+                        </div>
+
+                    </div>
+                    <!-- 플래티넘 2 -->
+                    <div class="py-2 vip-info mt-3 bg-slate-200 dark:bg-back2 rounded">
+                        <div class="flex justify-between cursor-pointer" onclick="vipLevelHandle(this)">
+                            <div class="vip-cont flex items-center gap-2">
+                                <div class="vip_flag small plat w-7 "></div>
+                                <p class="text-tit font-bold">플래티넘 II VIP 56-69</p>
+                            </div>
+                            <i class="p-2"><svg class="w-4 h-4 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <table class="table table-sm table-striped noline rounded"> 
+                                <thead> 
+                                    <tr> 
+                                        <th class="whitespace-nowrap text-left">레벨</th> 
+                                        <th class="whitespace-nowrap text-center">XP 요구됨</th> 
+                                        <th class="whitespace-nowrap text-right">레벨업 보너스 (BCD)</th> 
+                                    </tr> 
+                                </thead> 
+                                <tbody> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 56</td>
+                                        <td class="text-center">2369000</td> 
+                                        <td class="text-right text-tit">200</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 57</td>
+                                        <td class="text-center">2657000</td> 
+                                        <td class="text-right text-tit">220</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 58</td>
+                                        <td class="text-center">2945000</td> 
+                                        <td class="text-right text-tit">240</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 59</td>
+                                        <td class="text-center">3233000</td> 
+                                        <td class="text-right text-tit">260</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 60</td>
+                                        <td class="text-center">3521000</td> 
+                                        <td class="text-right text-tit">280</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 61</td>
+                                        <td class="text-center">3809000</td> 
+                                        <td class="text-right text-tit">300</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 62</td>
+                                        <td class="text-center">4097000</td> 
+                                        <td class="text-right text-tit">350</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 63</td>
+                                        <td class="text-center">4737000</td> 
+                                        <td class="text-right text-tit">400</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 64</td>
+                                        <td class="text-center">5377000</td> 
+                                        <td class="text-right text-tit">450</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 65</td>
+                                        <td class="text-center">6017000</td> 
+                                        <td class="text-right text-tit">500</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 66</td>
+                                        <td class="text-center">6657000</td> 
+                                        <td class="text-right text-tit">550</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 67</td>
+                                        <td class="text-center">7297000</td> 
+                                        <td class="text-right text-tit">600</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 68</td>
+                                        <td class="text-center">7937000</td> 
+                                        <td class="text-right text-tit">700</td> 
+                                    </tr> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/platinum_medal.png" alt="">VIP 69</td>
+                                        <td class="text-center">8577000</td> 
+                                        <td class="text-right text-tit">800</td> 
+                                    </tr>
+                                </tbody> 
+                            </table> 
+                        </div>
+
+                    </div>
+                    <!-- 다이아몬드 1 -->
+                    <div class="py-2 vip-info mt-3 bg-slate-200 dark:bg-back2 rounded">
+                        <div class="flex justify-between cursor-pointer" onclick="vipLevelHandle(this)">
+                            <div class="vip-cont flex items-center gap-2">
+                                <div class="vip_flag small dia w-7 "></div>
+                                <p class="text-tit font-bold">다이아몬드 I SVIP 1-15</p>
+                            </div>
+                            <i class="p-2"><svg class="w-4 h-4 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <table class="table table-sm table-striped noline rounded"> 
+                                <thead> 
+                                    <tr> 
+                                        <th class="whitespace-nowrap text-left">레벨</th> 
+                                        <th class="whitespace-nowrap text-center">XP 요구됨</th> 
+                                        <th class="whitespace-nowrap text-right">레벨업 보너스 (BCD)</th> 
+                                    </tr> 
+                                </thead> 
+                                <tbody> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 1</td>
+                                        <td class="text-center">9217000</td> 
+                                        <td class="text-right text-tit">1200</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 2</td>
+                                        <td class="text-center">10625000</td> 
+                                        <td class="text-right text-tit">1300</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 3</td>
+                                        <td class="text-center">12033000</td> 
+                                        <td class="text-right text-tit">1400</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 4</td>
+                                        <td class="text-center">13441000</td> 
+                                        <td class="text-right text-tit">1500</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 5</td>
+                                        <td class="text-center">14849000</td> 
+                                        <td class="text-right text-tit">1600</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 6</td>
+                                        <td class="text-center">16257000</td> 
+                                        <td class="text-right text-tit">1700</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 7</td>
+                                        <td class="text-center">17665000</td> 
+                                        <td class="text-right text-tit">1800</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 8</td>
+                                        <td class="text-center">19073000</td> 
+                                        <td class="text-right text-tit">2000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 9</td>
+                                        <td class="text-center">20481000</td> 
+                                        <td class="text-right text-tit">2200</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 10</td>
+                                        <td class="text-center">23553000</td> 
+                                        <td class="text-right text-tit">2300</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 11</td>
+                                        <td class="text-center">26625000</td> 
+                                        <td class="text-right text-tit">2500</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 12</td>
+                                        <td class="text-center">29697000</td> 
+                                        <td class="text-right text-tit">2600</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 13</td>
+                                        <td class="text-center">32769000</td> 
+                                        <td class="text-right text-tit">2700</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 14</td>
+                                        <td class="text-center">35841000</td> 
+                                        <td class="text-right text-tit">2800</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 15</td>
+                                        <td class="text-center">38913000</td> 
+                                        <td class="text-right text-tit">3000</td> 
+                                    </tr>
+                                </tbody> 
+                            </table> 
+                        </div>
+
+                    </div>
+                    <!-- 다이아몬드 2 -->
+                    <div class="py-2 vip-info mt-3 bg-slate-200 dark:bg-back2 rounded">
+                        <div class="flex justify-between cursor-pointer" onclick="vipLevelHandle(this)">
+                            <div class="vip-cont flex items-center gap-2">
+                                <div class="vip_flag small dia w-7 "></div>
+                                <p class="text-tit font-bold">다이아몬드 II SVIP 16-37</p>
+                            </div>
+                            <i class="p-2"><svg class="w-4 h-4 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <table class="table table-sm table-striped noline rounded"> 
+                                <thead> 
+                                    <tr> 
+                                        <th class="whitespace-nowrap text-left">레벨</th> 
+                                        <th class="whitespace-nowrap text-center">XP 요구됨</th> 
+                                        <th class="whitespace-nowrap text-right">레벨업 보너스 (BCD)</th> 
+                                    </tr> 
+                                </thead> 
+                                <tbody> 
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 16</td>
+                                        <td class="text-center">41985000</td> 
+                                        <td class="text-right text-tit">3200</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 17</td>
+                                        <td class="text-center">45057000</td> 
+                                        <td class="text-right text-tit">3600</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 18</td>
+                                        <td class="text-center">51713000</td> 
+                                        <td class="text-right text-tit">4000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 19</td>
+                                        <td class="text-center">58369000</td> 
+                                        <td class="text-right text-tit">4500</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 20</td>
+                                        <td class="text-center">65025000</td> 
+                                        <td class="text-right text-tit">5000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 21</td>
+                                        <td class="text-center">71681000</td> 
+                                        <td class="text-right text-tit">5500</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 22</td>
+                                        <td class="text-center">78337000</td> 
+                                        <td class="text-right text-tit">6000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 23</td>
+                                        <td class="text-center">84993000</td> 
+                                        <td class="text-right text-tit">7000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 24</td>
+                                        <td class="text-center">91649000</td> 
+                                        <td class="text-right text-tit">8000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 25</td>
+                                        <td class="text-center">98305000</td> 
+                                        <td class="text-right text-tit">9000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 26</td>
+                                        <td class="text-center">112641000</td> 
+                                        <td class="text-right text-tit">10000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 27</td>
+                                        <td class="text-center">126977000</td> 
+                                        <td class="text-right text-tit">11000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 28</td>
+                                        <td class="text-center">141313000</td> 
+                                        <td class="text-right text-tit">12000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 29</td>
+                                        <td class="text-center">155649000</td> 
+                                        <td class="text-right text-tit">13000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 30</td>
+                                        <td class="text-center">169985000</td> 
+                                        <td class="text-right text-tit">15000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 31</td>
+                                        <td class="text-center">184321000</td> 
+                                        <td class="text-right text-tit">18000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 32</td>
+                                        <td class="text-center">198657000</td> 
+                                        <td class="text-right text-tit">20000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 33</td>
+                                        <td class="text-center">212993000</td> 
+                                        <td class="text-right text-tit">23000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 34</td>
+                                        <td class="text-center">243713000</td> 
+                                        <td class="text-right text-tit">26000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 35</td>
+                                        <td class="text-center">274433000</td> 
+                                        <td class="text-right text-tit">28000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 36</td>
+                                        <td class="text-center">305153000</td> 
+                                        <td class="text-right text-tit">31000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 37</td>
+                                        <td class="text-center">335873000</td> 
+                                        <td class="text-right text-tit">35000</td> 
+                                    </tr>
+                                </tbody> 
+                            </table> 
+                        </div>
+
+                    </div>
+                    <!-- 다이아몬드 3 -->
+                    <div class="py-2 vip-info mt-3 bg-slate-200 dark:bg-back2 rounded">
+                        <div class="flex justify-between cursor-pointer" onclick="vipLevelHandle(this)">
+                            <div class="vip-cont flex items-center gap-2">
+                                <div class="vip_flag small dia w-7 "></div>
+                                <p class="text-tit font-bold">다이아몬드 III SVIP 38-55</p>
+                            </div>
+                            <i class="p-2"><svg class="w-4 h-4 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <table class="table table-sm table-striped noline rounded">
+                                <thead> 
+                                    <tr> 
+                                        <th class="whitespace-nowrap text-left">레벨</th> 
+                                        <th class="whitespace-nowrap text-center">XP 요구됨</th> 
+                                        <th class="whitespace-nowrap text-right">레벨업 보너스 (BCD)</th> 
+                                    </tr> 
+                                </thead> 
+                                <tbody>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 38</td>
+                                        <td class="text-center">366593000</td> 
+                                        <td class="text-right text-tit">38000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 39</td>
+                                        <td class="text-center">397313000</td> 
+                                        <td class="text-right text-tit">40000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 40</td>
+                                        <td class="text-center">428033000</td> 
+                                        <td class="text-right text-tit">42000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 41</td>
+                                        <td class="text-center">458753000</td> 
+                                        <td class="text-right text-tit">45000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 42</td>
+                                        <td class="text-center">524289000</td> 
+                                        <td class="text-right text-tit">48000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 43</td>
+                                        <td class="text-center">589825000</td> 
+                                        <td class="text-right text-tit">50000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 44</td>
+                                        <td class="text-center">655361000</td> 
+                                        <td class="text-right text-tit">53000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 45</td>
+                                        <td class="text-center">720897000</td> 
+                                        <td class="text-right text-tit">56000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 46</td>
+                                        <td class="text-center">786433000</td> 
+                                        <td class="text-right text-tit">60000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 47</td>
+                                        <td class="text-center">851969000</td> 
+                                        <td class="text-right text-tit">65000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 48</td>
+                                        <td class="text-center">917505000</td> 
+                                        <td class="text-right text-tit">70000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 49</td>
+                                        <td class="text-center">983041000</td> 
+                                        <td class="text-right text-tit">75000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 50</td>
+                                        <td class="text-center">1122305000</td> 
+                                        <td class="text-right text-tit">80000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 51</td>
+                                        <td class="text-center">1261569000</td> 
+                                        <td class="text-right text-tit">90000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 52</td>
+                                        <td class="text-center">1400833000</td> 
+                                        <td class="text-right text-tit">100000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 53</td>
+                                        <td class="text-center">1540097000</td> 
+                                        <td class="text-right text-tit">120000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 54</td>
+                                        <td class="text-center">1679361000</td> 
+                                        <td class="text-right text-tit">180000</td> 
+                                    </tr>
+                                    <tr class="rounded">
+                                        <td class="text-left"><img class="w-4 h-4 inline-flex items-center mr-1" src="./dist/custom_img/profile/diamond_medal.webp" alt="">SVIP 55</td>
+                                        <td class="text-center">1818625000</td> 
+                                        <td class="text-right text-tit">250000</td> 
+                                    </tr>
+                                </tbody> 
+                            </table> 
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- 프로필 - 추천 그리고 보상 -->
 <div id="profile_reward-modal" class="modal" tabindex="-1" aria-hidden="true">
@@ -632,5 +2267,122 @@
         </div>
     </div>
 </div> 
+
+
+<!-- 프로필 - 유저정보 -->
+<div id="profile_info-modal" class="modal mo_full overflow-y-auto show" tabindex="-1" aria-hidden="true" style="margin-top: 0px; margin-left: 0px; padding-left: 0px; z-index: 10000;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body bg-modaldark relative rounded">
+                <div class="relative flex items-center justify-between p-4">
+                    <p class="text-tit font-extrabold text-base">유저정보</p>
+                    <!-- vip-bat 클래스 : bronze silver gold plat dia -->
+                    <div class="vip-bat plat absolute right-14 top-0 text-center">
+                        <span class="text-white font-extrabold">V38</span>
+                    </div>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+
+                <div class="w-full p-6 overflow-y-auto scrollbar h-auto sm:h-[640px]">
+
+                    <div class="relative pb-8 text-center">
+                        <div class="absolute left-0 top-0 flex text-tit gap-2 bg-back p-1.5 px-3 rounded">
+                            <svg class="w-5 h-5 fill-place fill-red"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Like"></use></svg>
+                            51
+                        </div>
+                        <div class="overflow-hidden w-[70px] mx-auto rounded-full border-2 border-solid border-slate-300">
+                            <img src="./dist/custom_img/profile_img.png" alt="">
+                        </div>
+                        <div class="mt-2 text-tit text-xl font-bold">Tauruz🐂</div>
+                        <div class="mt-1 text-basic cursor-pointer" onclick="viewAlert('copy_alert')">사용자 ID: 832483</div>
+                    </div>
+
+                    <div class="p-3 mt-2 bg-back rounded">
+                        <div class="flex justify-between items-center p-2">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Medal"></use></svg>
+                                <p class="text-tit">메달 2</p>
+                            </div>
+                            <button class="flex gap-1 items-center text-primary">자세히 <svg class="w-4 h-4 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        </div>
+                    </div>
+
+                    <div class="p-3 mt-2 bg-back rounded">
+                        <div class="flex justify-between items-center p-2">
+                            <p class="text-tit">롤링 대회</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 프로필 - 유저정보 - 시크릿 모드 -->
+<div id="profile_info_secret-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body bg-modaldark relative rounded">
+                <div class="relative flex items-center justify-between p-4">
+                    <p class="text-tit font-extrabold text-base">유저정보</p>
+                    <!-- vip-bat 클래스 : bronze silver gold plat dia -->
+                    <div class="vip-bat gold absolute right-14 top-0 text-center">
+                        <span class="text-white font-extrabold">V30</span>
+                    </div>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+
+                <div class="w-full p-6 overflow-y-auto scrollbar h-auto sm:h-[640px]">
+
+                    <div class="relative pb-8 text-center">
+                        <div class="absolute left-0 top-0 flex text-tit gap-2 bg-back p-1.5 px-3 rounded">
+                            <svg class="w-5 h-5 fill-place fill-red"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Like"></use></svg>
+                            266
+                        </div>
+                        <div class="overflow-hidden w-[70px] mx-auto rounded-full border-2 border-solid border-slate-300">
+                            <img src="./dist/custom_img/profile_img2.png" alt="">
+                        </div>
+                        <div class="mt-2 text-tit text-xl font-bold">Tauruz🐂</div>
+                        <div class="mt-1 text-basic cursor-pointer" onclick="viewAlert('copy_alert')">사용자 ID: Zatouyb</div>
+                    </div>
+
+                    <div class="p-3 mt-2 bg-back2 rounded">
+                        <div class="flex justify-between items-center p-2">
+                            <p class="text-tit font-semibold">통계</p>
+                        </div>
+                        <div>
+                            <div class="flex flex-col justify-center pt-8 pb-16 text-center">
+                                <img class="w-48 mx-auto" src="./dist/custom_img/privacy.png">
+                                <div class="-mt-5 text-basic opacity-70 text-xs">통계숨기기</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-4 text-xs text-center opacity-70">
+                        가입일 2023. 4. 3.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 공통 모달 영역 : E -->
+
+
+<!-- 공통 알림 영역 : S -->
+
+<!-- 복사 확인 알림 -->
+<div class="alert copy_alert bg-back mb-2 border-none" id="copy_alert">
+    <div class="flex justify-between ">
+        <p>복사되었습니다</p>
+        <div class="loading_svg">
+            <svg viewBox="25 25 50 50">
+                <circle cx="50" cy="50" r="20" fill="none" stroke-width="8" pathLength="1" stroke-dashoffset="0px" stroke-dasharray="0.6186666666666667px 1px"></circle>
+            </svg>
+        </div>
+    </div>
+</div>
 
 <!-- 공통 모달 영역 : E -->

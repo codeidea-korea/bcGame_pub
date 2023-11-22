@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102.29 129.58">
+  <defs>
+    <linearGradient id="gradient" x1="0.2" x2="0.8" y1="0.3" y2="0.5">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"></stop>
+      <stop offset="0.3" stop-color="#fff" stop-opacity="0.3"></stop>
+      <stop offset="0.5" stop-color="#fff" stop-opacity="0.5"></stop>
+      <stop offset="0.7" stop-color="#fff" stop-opacity="0.3"></stop>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
+    </linearGradient>
+    <clipPath id="mask">
+      <path fill="none"  d="m0 0 18.68 35.03-12.8 7.46a7.998 7.998 0 0 0-3.97 6.91v48.17c0 2.85 1.51 5.48 3.97 6.91l41.21 24.02a8.01 8.01 0 0 0 8.06 0l41.21-24.02a7.998 7.998 0 0 0 3.97-6.91V49.4c0-2.85-1.51-5.48-3.97-6.91l-12.77-7.44L102.29 0H69.31L58.44 20.38l-3.28-1.91a8.01 8.01 0 0 0-8.06 0l-3.26 1.9L32.98 0z"/>
+    </clipPath>
+  </defs>
+  <rect x="0" y="0" width="50" height="100%" fill="url(#gradient)" clip-path="url(#mask)">
+    <animate attributeType="XML" attributeName="x" from="-400%" to="1200%" dur="8s" repeatCount="indefinite"></animate>
+  </rect>
+</svg>

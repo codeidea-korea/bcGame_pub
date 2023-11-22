@@ -156,7 +156,7 @@ const rightAreaHandle = ()=>{
     })
 
     // 좋아요 눌렀을떄
-    $('.right-area .like-dom').on('click',function(){
+    $('.like-dom').on('click',function(){
         $(this).find('svg').addClass('fill-red').removeClass('fill-place')
     })
 
@@ -290,6 +290,7 @@ const topbarHandle = ()=>{
         }
     }
     smallBtn.addEventListener("change",smallHandle)
+
 
 }
 
@@ -488,4 +489,32 @@ const promotionHandle = (e)=>{
         e.classList.add('on')
         inputbox.classList.remove('hidden')
     }
+}
+
+
+//=======================================================
+//   vip 모달
+//=======================================================
+// vip 레벨 시스템 
+const vipLevelHandle = (e)=>{
+    if(!e.classList.contains('on')){
+        e.classList.add('on')
+        e.nextElementSibling.classList.add('open')
+    }else{
+        e.classList.remove('on')
+        e.nextElementSibling.classList.remove('open')
+    }
+}
+
+
+//=======================================================
+//   알림 제어
+//=======================================================
+const viewAlert = (id)=>{
+    const alertBox = document.querySelector(`#${id}`)
+    alertBox.classList.add('show')
+    
+    setTimeout(()=>{
+        alertBox.classList.remove('show')
+    },3000)
 }

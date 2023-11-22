@@ -108,6 +108,38 @@
 
 /*
 #=========================================#
+        table
+#=========================================#
+*/
+.noline.table th,
+.noline.table td {border:0 none !important; }
+
+.table.rounded tr td:first-of-type {border-top-left-radius: 5px; border-bottom-left-radius: 5px;}
+.table.rounded tr td:last-of-type {border-top-right-radius: 5px; border-bottom-right-radius: 5px;}
+
+
+.dark .table.table-striped tr:nth-of-type(odd) td {background-color: rgb(var(--color-slate-400) / 0.4) !important;}
+.table.table-striped tr:nth-of-type(odd) td {background-color: #fff !important;}
+
+/*
+#=========================================#
+        알림
+#=========================================#
+*/
+.alert {z-index:10003; position:fixed; left:20px; bottom:-100px; width:450px; transition:bottom 0.4s;  }
+.alert.show {bottom:20px; }
+.alert .loading_svg {width:23px; height:23px; padding:3px; background-color:rgba(30,32,36,.5); border-radius:50%;}
+.alert .loading_svg svg {width:100%; height:100%; transform: rotate(115deg) scaleX(-1); }
+.alert .loading_svg circle {stroke:var(--primary-color); stroke-dasharray: 1px, 1px; transition-delay: 1s;}
+.alert.show .loading_svg circle { stroke-dasharray: 0px, 1px; transition:stroke-dasharray 3s linear; }
+
+@media all and (max-width:640px){
+    .alert {width:calc(100% - 40px); }
+}
+
+
+/*
+#=========================================#
         로그인/회원가입 모달
 #=========================================#
 */
@@ -129,3 +161,87 @@
     .dark .login_modal .login-left {background:url('../custom_img/login_bg_mo.webp') no-repeat center center / 100% auto; }
     .login_modal .login-left {background:url('../custom_img/login_bg_w_mo.png') no-repeat center center / 100% auto; }
 }
+
+/*
+#=========================================#
+        vip 클럽 모달
+#=========================================#
+*/
+/* 탭 */
+.vip-tabs.nav {display:grid; grid-template-columns: repeat(8,1fr); gap:5px; }
+.vip-tabs .nav-link {padding-left:5px; padding-right:5px; }
+.vip-tabs .nav-link:hover {color:var(--text-color); }
+.vip-tabs .nav-link.active {font-weight:bold !important; }
+.vip-tabs .nav-link.bronze.active {color:rgb(224, 154, 106); }
+.vip-tabs .nav-link.silver.active {color:rgb(225, 225, 225); }
+.vip-tabs .nav-link.gold.active {color:rgb(255, 195, 41); }
+.vip-tabs .nav-link.plat.active {color:rgb(157, 99, 246); }
+.vip-tabs .nav-link.dia.active {color:rgb(244, 80, 169); }
+.vip-tabs .nav-link img {width:34px; margin:0 auto 5px; opacity:.5; }
+.vip-tabs .nav-link.active img {opacity:1; }
+
+/* 컨텐츠 */
+.vip-cont .vip_flag {position:relative; height:20px; padding:0 12px 0 6px; line-height:20px; }
+.vip-cont .vip_flag.small {height:16px; }
+.vip-cont .vip_flag.bronze {background-color:rgb(224, 154, 106); color:#533f37; }
+.vip-cont .vip_flag.silver {background-color:rgb(225, 225, 225); color:#533f37; }
+.vip-cont .vip_flag.gold {background-color:rgb(255, 195, 41); color:#533f37; }
+.vip-cont .vip_flag.plat {background-color:rgb(157, 99, 246); color:#fff; }
+.vip-cont .vip_flag.dia {background-color:rgb(244, 80, 169); color:#fff; }
+.vip-cont .vip_flag:after {content:''; position:absolute; right:0; top:0; width:7px; height:100%; border-right:7px solid var(--background-color); border-top:10px solid transparent; border-bottom:10px solid transparent; }
+.vip-cont .vip_flag.small:after {border-top-width:8px; border-bottom-width:8px; }
+.vip-cont .vip_flag.host {background-color: rgb(177, 202, 235); color:#fff; }
+.dark .vip-cont .vip_flag.host:after {border-right-color:#2D3035; }
+.vip-cont .vip_flag.host:after {border-right-color:#fff; }
+.vip-info .vip-cont .vip_flag:after {border-right-color:rgb(var(--color-slate-200)); }
+
+.vip-cont .hover_box > div {display:none; }
+.vip-cont .hover_box:hover > div {display:block; }
+
+
+.vip_grade {padding:1px; background:linear-gradient(180deg,#798DA4 0%,#627C9B 100%); }
+.dark .vip_grade > div {background:linear-gradient(82.85deg,#475565 -.8%,#6F7F93 103.54%); }
+.vip_grade > div {background:linear-gradient(82deg,#FFFFFF 0%,#909FB0 103%); }
+.vip-process > div {background:linear-gradient(270deg,#7993B3 3.21%,#A5B6CA 108.65%); }
+
+.dark .vip_grade.bronze {background:linear-gradient(180deg,rgba(255,255,255,.21) 0%,rgba(140,127,110,.51) 100%); }
+.vip_grade.bronze {background:linear-gradient(251.99deg,#E8B88C 20.28%,#FFE2BC 86.35%); }
+.dark .vip_grade.bronze > div {background:linear-gradient(82.85deg,#2D2920 -.8%,#705F4B 103.54%); }
+.vip_grade.bronze > div {background:linear-gradient(82deg,#FFFFFF 0%,#F2CB99 103%); }
+.bronze .vip-process > div {background:linear-gradient(270deg,#975637 3.21%,#EEC2A8 108.65%); }
+
+.dark .vip_grade.silver {background:linear-gradient(80.86deg,#333232 -.89%,#747474 103.25%); }
+.vip_grade.silver {background:linear-gradient(82deg,#FFFFFF 0%,#D9D9D9 103%); }
+.dark .vip_grade.silver > div {background:linear-gradient(251.99deg,#ACA9A9 20.28%,#525050 86.35%); }
+.vip_grade.silver > div {background:linear-gradient(251.99deg,#C0C0C0 20.28%,#E1E1E1 86.35%); }
+.silver .vip-process > div {background: linear-gradient(270deg,#8E8E8E 3.21%,#E3E3E3 108.65%); }
+
+.dark .vip_grade.gold {background:linear-gradient(82.85deg,#443B30 -.8%,#BD9548 103.54%); }
+.vip_grade.gold {background:linear-gradient(82deg,#FFFFFF 0%,#FAC44B 103%); }
+.dark .vip_grade.gold > div {background:linear-gradient(251.99deg,#E7C171 20.28%,#847153 86.35%); }
+.vip_grade.gold > div {background:linear-gradient(251.99deg,#F8B31F 20.28%,#FEECC0 86.35%); }
+.gold .vip-process > div {background:linear-gradient(270deg,#F7AE19 3.21%,#FDD67B 108.65%); }
+
+.dark .vip_grade.plat {background:linear-gradient(82.85deg,#433A4F -.8%,#8051B5 103.54%); }
+.vip_grade.plat {background:linear-gradient(82deg,#FFFFFF 0%,#BC95E8 103%); }
+.dark .vip_grade.plat > div {background:linear-gradient(251.99deg,#A174DA 20.28%,#9073A5 86.35%); }
+.vip_grade.plat > div {background:linear-gradient(251.99deg,#9E78D8 20.28%,#E2BAFE 86.35%); }
+.plat .vip-process > div {background:linear-gradient(270deg,#AC85E0 3.21%,#DEB5FB 108.65%); }
+
+.dark .vip_grade.dia {background:linear-gradient(78.9deg,#412B38 -5%,#B56691 105.74%); }
+.vip_grade.dia {background:linear-gradient(82deg,#FFFFFF 0%,#BC95E8 103%); }
+.dark .vip_grade.dia > div {background:linear-gradient(251.99deg,#EA84B9 20.28%,#79536A 86.35%); }
+.vip_grade.dia > div {background:linear-gradient(251.99deg,#DE83B2 20.28%,#FFBDE4 86.35%); }
+.dia .vip-process > div {background:linear-gradient(270deg,#D36EA1 3.21%,#F8B0D9 108.65%); }
+
+.vip-info > div:first-of-type i svg {transform:rotate(90deg); transition:all 0.3s; }
+.vip-info > div:first-of-type.on i svg {transform:rotate(270deg);}
+.vip-info > div:last-of-type {height:0; }
+.vip-info > div:last-of-type.open {height:auto; padding:8px; padding-bottom:0; }
+
+.vip-bat {width:61px; height:78px; padding-top:31px; background:url('../custom_img/profile/nostage_bat.png') no-repeat center center / 100% auto; letter-spacing:-0.5px; }
+.vip-bat.bronze {background-image:url('../custom_img/profile/bronze_bat.webp'); }
+.vip-bat.silver {background-image:url('../custom_img/profile/silver_bat.webp'); }
+.vip-bat.gold {background-image:url('../custom_img/profile/gold_bat.png'); }
+.vip-bat.plat {background-image:url('../custom_img/profile/platinum_bat.png'); }
+.vip-bat.dia {background-image:url('../custom_img/profile/diamond_bat.webp'); }

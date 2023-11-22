@@ -21,9 +21,11 @@ button:focus {box-shadow:none !important; }
 */
 .bg-tit {background-color: var(--title-color);}
 .bg-back {background-color: var(--background-color);}
+.bg-place {background-color: var(--placeholder-color);}
 .bg-stand {background-color: var(--standard-color);}
-.bg-shadow {background-color: var(--standard-color);}
+.bg-shadow {background-color: var(--shadow-color);}
 .bg-back2 {background-color: var(--background-type-color);}
+.bg-modaldark {background-color: var(--modal-darkbg);}
 .bg-gradient-green {background:var(--green-gradient); }
 .dark .dark\:bg-back2 {background-color: var(--background-type-color);}
 
@@ -418,7 +420,7 @@ footer .network_list li:hover {z-index:200; }
 footer .network_list li > div {z-index:10; visibility:hidden; position:absolute; left:calc(50% - 137.5px); bottom:100%; width:280px; box-shadow:0px 0px 10px rgba(0,0,0, 0.15) }
 footer .network_list li:hover > div {visibility:visible; }
 
-footer .icon_btn {display:block; width:40px; height:40px; margin:0 auto; background: url('../custom_img/footer/hover.webp') no-repeat top left; background-size:205px 164px; }
+footer .icon_btn {display:block; width:40px; height:40px; background: url('../custom_img/footer/hover.webp') no-repeat top left; background-size:205px 164px; }
 footer .icon_btn.icon-Arbitrum {background-position: 0 0; }
 footer .icon_btn.icon-Avalanche {background-position: -41px 0; }
 footer .icon_btn.icon-Bitcoin {background-position: 0 -41px; }
