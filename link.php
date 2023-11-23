@@ -90,6 +90,10 @@ echo txtRecord('./@record/');
 							<button class="pop-modal" data-tw-toggle="modal" data-tw-target="#profile_vip_level-modal">VIP 클럽 - 레벨시스템 모달</button>
 							<button class="pop-modal" data-tw-toggle="modal" data-tw-target="#profile_reward-modal">추천 그리고 보상 모달</button>
 						</li>
+                        <li>
+                            <button class="pop-modal" data-tw-toggle="modal" data-tw-target="#profile_info-modal">유저 정보 모달</button>
+                            <button class="pop-modal" data-tw-toggle="modal" data-tw-target="#profile_info_secret-modal">유저 정보 모달 - 시크릿 모드</button>
+                        </li>
 					</ul>
 				</li>
 			</ul>
@@ -2287,6 +2291,752 @@ echo txtRecord('./@record/');
         </div>
     </div>
 </div> 
+
+<!-- 프로필 - 유저정보 -->
+<div id="profile_info-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content overflow-hidden relative rounded">
+            <!-- 유저정보 -->
+            <div class="modal-body bg-modaldark relative rounded">
+                <div class="relative flex items-center justify-between p-4">
+                    <p class="text-tit font-extrabold text-base">유저정보</p>
+                    <!-- vip-bat 클래스 : bronze silver gold plat dia -->
+                    <div class="vip-bat plat absolute right-14 top-0 text-center">
+                        <span class="text-white font-extrabold">V38</span>
+                    </div>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+
+                <div class="w-full p-6 overflow-y-auto scrollbar h-auto sm:h-[640px]">
+
+                    <div class="relative pb-8 text-center">
+                        <div class="absolute left-0 top-0 flex text-tit gap-2 bg-white dark:bg-back p-1.5 px-3 rounded">
+                            <svg class="w-5 h-5 fill-place fill-red"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Like"></use></svg>
+                            51
+                        </div>
+                        <div class="overflow-hidden w-[70px] mx-auto rounded-full border-2 border-solid border-slate-300">
+                            <img src="./dist/custom_img/profile_img.png" alt="">
+                        </div>
+                        <div class="mt-2 text-tit text-xl font-bold">Tauruz🐂</div>
+                        <div class="mt-1 text-basic cursor-pointer" onclick="viewAlert('copy_alert')">사용자 ID: 832483</div>
+                    </div>
+
+                    <!-- 메달 -->
+                    <div class="p-3 mt-2 bg-white dark:bg-back rounded">
+                        <div class="flex justify-between items-center p-2">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Medal"></use></svg>
+                                <p class="text-tit font-bold">메달 2</p>
+                            </div>
+                            <button class="flex gap-1 items-center text-primary" onclick="modalInHandle('profile_info-modal','profile_medal')">자세히 <svg class="w-4 h-4 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        </div>
+                        <div class="overflow-x-auto scrollbar_x flex nowrap w-full py-2 gap-2 cursor-pointer" onclick="modalInHandle('profile_info-modal','profile_medal')">
+                            <div class="shrink-0"><img class="w-11" src="./dist/custom_img/profile/achieve_1.png" alt=""></div>
+                            <div class="shrink-0"><img class="w-11" src="./dist/custom_img/profile/achieve_2.png" alt=""></div>
+                            <div class="shrink-0 opacity-50"><img class="w-11" src="./dist/custom_img/profile/achieve_3.png" alt=""></div>
+                            <div class="shrink-0 opacity-50"><img class="w-11" src="./dist/custom_img/profile/achieve_4.png" alt=""></div>
+                            <div class="shrink-0 opacity-50"><img class="w-11" src="./dist/custom_img/profile/achieve_5.png" alt=""></div>
+                            <div class="shrink-0 opacity-50"><img class="w-11" src="./dist/custom_img/profile/achieve_6.png" alt=""></div>
+                            <div class="shrink-0 opacity-50"><img class="w-11" src="./dist/custom_img/profile/achieve_7.png" alt=""></div>
+                            <div class="shrink-0 opacity-50"><img class="w-11" src="./dist/custom_img/profile/achieve_8.png" alt=""></div>
+                            <div class="shrink-0 opacity-50"><img class="w-11" src="./dist/custom_img/profile/achieve_9.png" alt=""></div>
+                            <div class="shrink-0 opacity-50"><img class="w-11" src="./dist/custom_img/profile/achieve_10.png" alt=""></div>
+                            <div class="shrink-0 opacity-50"><img class="w-11" src="./dist/custom_img/profile/achieve_11.png" alt=""></div>
+                            <div class="shrink-0 opacity-50"><img class="w-11" src="./dist/custom_img/profile/achieve_12.png" alt=""></div>
+                            <div class="shrink-0 opacity-50"><img class="w-11" src="./dist/custom_img/profile/achieve_13.png" alt=""></div>
+                            <div class="shrink-0 opacity-50"><img class="w-11" src="./dist/custom_img/profile/achieve_14.png" alt=""></div>
+                            <div class="shrink-0 opacity-50"><img class="w-11" src="./dist/custom_img/profile/achieve_15.png" alt=""></div>
+                            <div class="shrink-0 opacity-50"><img class="w-11" src="./dist/custom_img/profile/achieve_16.png" alt=""></div>
+                            <div class="shrink-0 opacity-50"><img class="w-11" src="./dist/custom_img/profile/achieve_17_BTC.png" alt=""></div>
+                            <div class="shrink-0 opacity-50"><img class="w-11" src="./dist/custom_img/profile/achieve_17_DOGE.png" alt=""></div>
+                            <div class="shrink-0 opacity-50"><img class="w-11" src="./dist/custom_img/profile/achieve_17_EOS.png" alt=""></div>
+                            <div class="shrink-0 opacity-50"><img class="w-11" src="./dist/custom_img/profile/achieve_17_ETH.png" alt=""></div>
+                        </div>
+                    </div>
+
+                    <!-- 통계 -->
+                    <div class="p-3 mt-2 bg-white dark:bg-back rounded">
+                        <div class="flex justify-between items-center p-2">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Statistics"></use></svg>
+                                <p class="text-tit font-bold">통계</p>
+                            </div>
+                            <button class="flex gap-1 items-center text-primary" onclick="modalInHandle('profile_info-modal','profile_statis')">자세히 <svg class="w-4 h-4 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        </div>
+                        <div class="flex nowrap w-full py-2 gap-2">
+                            <div class="w-1/3 bg-back2 text-center rounded p-4">
+                                <div class="text-xs"><svg class="inline-flex mr-1 items-center w-4 h-4 fill-title"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Bet"></use></svg>총승리</div>
+                                <div class="text-tit text-base font-extrabold pt-1 truncate">199233</div>
+                            </div>
+                            <div class="w-1/3 bg-back2 text-center rounded p-4">
+                                <div class="text-xs"><svg class="inline-flex mr-1 items-center w-4 h-4 fill-yellow"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Coin"></use></svg>총베팅</div>
+                                <div class="text-tit text-base font-extrabold pt-1 truncate">446731</div>
+                            </div>
+                            <div class="w-1/3 bg-back2 text-center rounded p-4">
+                                <div class="text-xs"><svg class="inline-flex mr-1 items-center w-4 h-4 fill-yellow"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_TotalWager"></use></svg>총롤링</div>
+                                <div class="text-tit text-base font-extrabold pt-1 truncate">₩407,608,896.74</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 즐겨찾기 -->
+                    <div class="p-3 mt-2 bg-white dark:bg-back rounded">
+                        <div class="flex justify-between items-center p-2">
+                            <div class="flex items-center gap-2">
+                                <p class="text-tit font-bold">Top 3 즐겨찾기</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col w-full py-2 gap-3">
+                           <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-4">
+                                    <img class="w-20 rounded" src="./dist/custom_img/casino/casino_1.png" alt="">
+                                    <p class="text-base font-medium">Tower Legend</p>
+                                </div>
+                                <div class="text-xs text-right">
+                                    <p>롤링된</p>
+                                    <p class="text-tit">₩73,981,545.72</p>
+                                </div>
+                           </div>
+                           <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-4">
+                                    <img class="w-20 rounded" src="./dist/custom_img/casino/casino_2.png" alt="">
+                                    <p class="text-base font-medium">Hilo</p>
+                                </div>
+                                <div class="text-xs text-right">
+                                    <p>롤링된</p>
+                                    <p class="text-tit">₩51,210,121.06</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                 <div class="flex items-center gap-4">
+                                     <img class="w-20 rounded" src="./dist/custom_img/casino/casino_3.png" alt="">
+                                     <p class="text-base font-medium">Plinko</p>
+                                 </div>
+                                 <div class="text-xs text-right">
+                                     <p>롤링된</p>
+                                     <p class="text-tit">₩744,238.57</p>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+
+                    <!-- 롤링대회  데이터 없을때 -->
+                    <div class="p-3 mt-2 bg-white dark:bg-back rounded">
+                        <div class="flex justify-between items-center p-2">
+                            <p class="text-tit">롤링 대회</p>
+                        </div>
+                        <div class="flex flex-col justify-center pt-8 pb-16 text-center">
+                            <img class="w-48 mx-auto" src="./dist/custom_img/empty.webp">
+                            <div class="-mt-5 text-basic opacity-70 ">웁스! 아직 데이터가 없습니다!</div>
+                        </div>
+                    </div>
+
+                    <!-- 롤링대회  데이터 있을떄 -->
+                    <div class="p-3 mt-2 bg-white dark:bg-back rounded">
+                        <div class="flex justify-between items-center p-2">
+                            <p class="text-tit">롤링 대회</p>
+                        </div>
+                        <div class="py-2">
+                            <table class="table noline pad-s table-sm ">   
+                                <colgroup>
+                                    <col width="40%">
+                                    <col width="20%">
+                                    <col width="40%">
+                                </colgroup>
+                                <thead>
+                                    <tr class="text-center text-xs">
+                                        <th class="whitespace-nowrap">날짜</th>
+                                        <th class="whitespace-nowrap">위치</th>
+                                        <th class="whitespace-nowrap">상품/상금</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-left">2020. 8. 9. Daily</td>
+                                        <td class="text-center text-tit font-semibold">9th</td>
+                                        <td class="text-right text-tit font-extrabold">₩ 33,408.60<img class="inline-flex items-center ml-1 w-5" src="./dist/custom_img/coin/BTC.webp" alt=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">2020. 8. 2. Daily</td>
+                                        <td class="text-center text-tit font-semibold">9th</td>
+                                        <td class="text-right text-tit font-extrabold">₩ 30,536.35<img class="inline-flex items-center ml-1 w-5" src="./dist/custom_img/coin/BTC.webp" alt=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">2020. 6. 17. Daily</td>
+                                        <td class="text-center text-tit font-semibold">8th</td>
+                                        <td class="text-right text-tit font-extrabold">₩ 41,674.01<img class="inline-flex items-center ml-1 w-5" src="./dist/custom_img/coin/BTC.webp" alt=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">2020. 6. 12. Daily</td>
+                                        <td class="text-center text-tit font-semibold">5th</td>
+                                        <td class="text-right text-tit font-extrabold">₩ 174,209.31<img class="inline-flex items-center ml-1 w-5" src="./dist/custom_img/coin/BTC.webp" alt=""></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="flex gap-2 items-center justify-end mt-4">
+                                <p class="text-xs">총 1</p>
+                                <div class="flex gap-0 text-base px-4 py-1 bg-back2 rounded font-medium">
+                                    <button class="w-6 h-6 basic-hover active font-extrabold">1</button>
+                                    <button class="w-6 h-6 basic-hover">2</button>
+                                    <button class="w-6 h-6 basic-hover">3</button>
+                                </div>
+                                <div class="flex gap-1">
+                                    <button class="btn-normal w-8 h-8 basic-hover rounded"><svg class="w-4 h-4 mx-auto rotate-180"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                    <button class="btn-normal w-8 h-8 basic-hover rounded"><svg class="w-4 h-4 mx-auto"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="py-4 text-xs text-center opacity-70">
+                        가입일 2023. 4. 3.
+                    </div>
+                </div>
+            </div>
+
+            <!-- 메달 -->
+            <div class="profile_medal modal-body modal-in bg-modaldark relative rounded">
+                <div class="relative flex items-center justify-between p-4">
+                    <div class="flex items-center gap-2">
+                        <button onclick="modalInHandle('profile_info-modal','profile_medal')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        <p class="text-tit font-extrabold text-base">메달</p>
+                    </div>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+
+                <div class="w-full py-6 px-3 overflow-y-auto scrollbar h-auto sm:h-[640px] bg-white dark:bg-back2">
+                    <div class="grid grid-cols-3 gap-1 p-3">
+
+                        <div class="flex flex-col justify-between pt-9 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto" src="./dist/custom_img/profile/achieve_1.png" alt="">
+                            <div class="text-xs text-center pt-7">
+                                <p>수다쟁이</p>
+                                <p class="text-sub mt-1">2023. 10. 1. 얻기</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col justify-between pt-9 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto" src="./dist/custom_img/profile/achieve_6.png" alt="">
+                            <div class="text-xs text-center pt-7">
+                                <p>비 소환사</p>
+                                <p class="text-sub mt-1">2023. 8. 24. 얻기</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col justify-between pt-9 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto" src="./dist/custom_img/profile/achieve_7.png" alt="">
+                            <div class="text-xs text-center pt-7">
+                                <p>코코러버</p>
+                                <p class="text-sub mt-1">2023. 7. 20. 얻기</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col justify-between pt-9 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto" src="./dist/custom_img/profile/achieve_10.png" alt="">
+                            <div class="text-xs text-center pt-7">
+                                <p>룰 제왕</p>
+                                <p class="text-sub mt-1">2023. 11. 7. 얻기</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col justify-between pt-9 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto" src="./dist/custom_img/profile/achieve_15.png" alt="">
+                            <div class="text-xs text-center pt-7">
+                                <p>올드 타이머</p>
+                                <p class="text-sub mt-1">2023. 12. 10. 얻기</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="pt-2 text-center">
+                        <button class="text-primary underline text-xs" onclick="modalInHandle('profile_info-modal','profile_medal_master')">BC 마스터 메달</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 메달 상세 -->
+            <div class="profile_medal_detail z-20 modal-body modal-in bg-modaldark relative rounded">
+                <div class="relative flex items-center justify-between p-4">
+                    <div class="flex items-center gap-2">
+                        <button onclick="modalInHandle('profile_info-modal','profile_medal_detail')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        <p class="text-tit font-extrabold text-base">더 알아보기</p>
+                    </div>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+
+                <div class="w-full p-6 overflow-y-auto scrollbar h-auto sm:h-[640px] bg-white dark:bg-back2">
+                    <div class="pb-10">
+                        <img class="w-24 mx-auto" src="./dist/custom_img/profile/achieve_1.png" alt="">
+                        <p class="text-center text-lg opacity-70">수다쟁이</p>
+                    </div>
+                    <div class="border-primary border-solid border rounded text-primary py-3 px-5">총 200일 동안 아무 방에서나 채팅하여 이 메달을 획득하세요. (연속 200일 필요는 없습니다!)</div>
+                    <div class="flex items-center justify-between mt-4 bg-back h-14 rounded py-3 px-5">
+                        <p class="text-sub">수량</p>
+                        <p>제한없는</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-2 bg-back h-14 rounded py-3 px-5">
+                        <p class="text-sub">지속시간</p>
+                        <p>제한없는</p>
+                    </div>
+                    <div class="flex items-center justify-center border border-solid border-slate-300 mt-8 h-14 rounded py-3 px-5">
+                        <p class="text-sub font-medium"><svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg>8369</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- bc 마스터 메달 -->
+            <div class="profile_medal_master modal-body modal-in bg-modaldark relative rounded">
+                <div class="relative flex items-center justify-between p-4">
+                    <div class="flex items-center gap-2">
+                        <button onclick="modalInHandle('profile_info-modal','profile_medal_master')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        <p class="text-tit font-extrabold text-base">마스터 메달</p>
+                    </div>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+
+                <div class="w-full p-6 overflow-y-auto scrollbar h-auto sm:h-[640px] bg-white dark:bg-back">
+
+                    <div class="flex gap-2 items-center justify-between">
+                        <div class="bg-modaldark py-4 px-2 w-full rounded">
+                            <img class="w-8 mx-auto" src="./dist/custom_img/profile/start.png" alt="">
+                            <p class="text-sub text-center text-xs pt-1">0</p>
+                        </div>
+                        <div class="bg-modaldark py-4 px-2 w-full rounded">
+                            <img class="w-8 mx-auto" src="./dist/custom_img/profile/box.webp" alt="">
+                            <p class="text-sub text-center text-xs pt-1">5</p>
+                        </div>
+                        <div class="bg-modaldark py-4 px-2 w-full rounded">
+                            <img class="w-8 mx-auto" src="./dist/custom_img/profile/box.webp" alt="">
+                            <p class="text-sub text-center text-xs pt-1">10</p>
+                        </div>
+                        <div class="bg-modaldark py-4 px-2 w-full rounded">
+                            <img class="w-8 mx-auto" src="./dist/custom_img/profile/box.webp" alt="">
+                            <p class="text-sub text-center text-xs pt-1">15</p>
+                        </div>
+                        <div class="bg-modaldark py-4 px-2 w-full rounded">
+                            <img class="w-8 mx-auto" src="./dist/custom_img/profile/box.webp" alt="">
+                            <p class="text-sub text-center text-xs pt-1">max</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-2 py-3 p-4 rounded bg-modaldark">
+                        <div class="relative rounded bg-white dark:bg-back h-[7px] progressbar">
+                            <div class="pointer active"></div>
+                            <div class="pointer"></div>
+                            <div class="pointer"></div>
+                            <div class="pointer"></div>
+                            <div class="pointer"></div>
+                            <div class="bar h-full rounded bg-primary" style="width:7%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 p-3 bg-modaldark rounded text-xs leading-5">
+                        메달 <span class="text-primary font-bold">5개</span> 달성: 20 BCD<br/>
+                        메달 <span class="text-primary font-bold">10개</span> 달성: 800 BCD<br/>
+                        달성 <span class="text-primary font-bold">15 </span>메달 획득: 2400 BCD<br/>
+                        달성 <span class="text-primary font-bold">20개의</span> 메달: 10000 BCD<br/>
+                        획득
+                    </div>
+
+                    <div class="text-tit font-bold pt-6 pb-2">잠금 해제</div>
+                    <div class="grid grid-cols-3 gap-1">
+
+                    </div>
+
+                    <div class="border-t border-solid border-slate-300 mt-4"></div>
+
+                    <div class="text-tit font-bold pt-6 pb-2">잠금 해제 대기 중</div>
+                    <div class="grid grid-cols-3 gap-1">
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_1.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">수다쟁이</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 8369
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_2.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">두려움이 없는 자</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 6
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_3.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">만물의 왕</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 1
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_4.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">최고액 베터</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 9
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_5.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">탑건</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 23
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_6.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">비 소환사</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 12878
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_7.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">코코러버</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 6011
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_8.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">무적의 행운별</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 7987
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_9.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">콘테스트 마스터</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 38
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_10.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">틀 제왕</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 1372
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_11.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">폭풍우의 노블레스</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 2235
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_12.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">치킨 디너!</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 12495
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_13.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">로얄 플레이어</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 2193
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_14.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">'부자왕'이라고 불러다오</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 4806
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_15.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">올드 타이머</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 6530131
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_16.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">보스</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 4408
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_17_ETH.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">ETHTOP 1</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 2
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_17_BTC.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">BTCTOP 1</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 2
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_17_DOGE.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">DOGETOP 1</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 2
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between pt-6 pb-4 bg-modaldark cursor-pointer rounded" onclick="modalInHandle('profile_info-modal','profile_medal_detail')">
+                            <img class="w-12 mx-auto opacity-50" src="./dist/custom_img/profile/achieve_17_EOS.png" alt="">
+                            <div class="text-xs text-center pt-3">
+                                <p class="mb-3">EOSTOP 1</p>
+                                <button class="h-9 min-w-[62px] px-2 btn-normal text-primary font-bold rounded">
+                                    <svg class="inline-flex w-3 h-3 mr-1 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Firends"></use></svg> 2
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="py-8 text-xs text-center text-primary">
+                        <svg class="inline-flex w-4 h-4 fill-primary"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                        팁! JB는 메달 계산에 포함되지 않습니다.<br/>24시간마다 통계가 업데이트 됩니다.
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 통계 -->
+            <div class="profile_statis modal-body modal-in bg-modaldark relative rounded">
+                <div class="relative flex items-center justify-between p-4">
+                    <div class="flex items-center gap-2">
+                        <button onclick="modalInHandle('profile_info-modal','profile_statis')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        <p class="text-tit font-extrabold text-base">자세히</p>
+                    </div>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+
+                <div class="w-full p-6 overflow-y-auto scrollbar h-auto sm:h-[640px]">
+                    <div class="flex items-center gap-3">
+                        <p class="text-tit text-base font-bold">통계</p>
+                        <div class="custom_select flex-1">
+                            <button class="btn w-32 h-9 flex px-2 items-center justify-between border-none bg-white dark:bg-back">
+                                <span></span>
+                                <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                            </button>
+                            <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
+                                <li class="py-2">글로벌</li>
+                                <li class="py-2">Crash</li>
+                                <li class="py-2">Crash Trenball</li>
+                                <li class="py-2">Fast Parity</li>
+                                <li class="py-2">Limbo</li>
+                                <li class="py-2">Classic Dice</li>
+                                <li class="py-2">Hash Dice</li>
+                                <li class="py-2">Plinko</li>
+                                <li class="py-2">Ultimate Dice</li>
+                                <li class="py-2">Keno</li>
+                                <li class="py-2">Wheel</li>
+                                <li class="py-2">Cave Of Plunder</li>
+                                <li class="py-2">Mines</li>
+                                <li class="py-2">Twist</li>
+                                <li class="py-2">CoinFlip</li>
+                                <li class="py-2">Tower Legend</li>
+                                <li class="py-2">Hilo</li>
+                                <li class="py-2">Roulette</li>
+                                <li class="py-2">Ring of Fortune</li>
+                                <li class="py-2">Beauties</li>
+                                <li class="py-2">Video Poker</li>
+                                <li class="py-2">Sword</li>
+                                <li class="py-2">Baccarat</li>
+                                <li class="py-2">Double</li>
+                                <li class="py-2">Blackjack</li>
+                                <li class="py-2">Roulette Multiplayer</li>
+                                <li class="py-2">Baccarat Multiplayer</li>
+                                <li class="py-2">Keno Multiplayer</li>
+                                <li class="py-2">BC Blackjack A</li>
+                                <li class="py-2">BCGAME Speed Blackjack </li>
+                                <li class="py-2">BCGAME VIP Blackjack </li>
+                                <li class="py-2">BC Speed Baccareat </li>
+                                <li class="py-2">BC ONE BlackJack </li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="overflow-hidden w-9 mx-auto rounded-full border-2 border-solid border-slate-300">
+                                <img src="./dist/custom_img/profile_img.png" alt="">
+                            </div>
+                            <p class="text-tit font-bold">StanSmirnoff</p>
+                        </div>
+                    </div>
+
+                    <div class="p-3 mt-3 bg-white dark:bg-back rounded">
+                        <div class="flex nowrap w-full gap-2">
+                            <div class="w-1/3 bg-back2 text-center rounded p-4">
+                                <div class="text-xs"><svg class="inline-flex mr-1 items-center w-4 h-4 fill-title"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Bet"></use></svg>총승리</div>
+                                <div class="text-tit text-base font-extrabold pt-1 truncate">6</div>
+                            </div>
+                            <div class="w-1/3 bg-back2 text-center rounded p-4">
+                                <div class="text-xs"><svg class="inline-flex mr-1 items-center w-4 h-4 fill-yellow"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Coin"></use></svg>총베팅</div>
+                                <div class="text-tit text-base font-extrabold pt-1 truncate">11</div>
+                            </div>
+                            <div class="w-1/3 bg-back2 text-center rounded p-4">
+                                <div class="text-xs"><svg class="inline-flex mr-1 items-center w-4 h-4 fill-yellow"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_TotalWager"></use></svg>총롤링</div>
+                                <div class="text-tit text-base font-extrabold pt-1 truncate">₩1,271.41</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-3 mt-2 bg-white dark:bg-back rounded">
+                        <div class="py-2">
+                            <table class="table noline pad-s table-sm ">   
+                                <colgroup>
+                                    <col width="30%">
+                                    <col width="20%">
+                                    <col width="20%">
+                                    <col width="30%">
+                                </colgroup>
+                                <thead>
+                                    <tr class="text-center text-xs">
+                                        <th class="whitespace-nowrap text-left">화폐</th>
+                                        <th class="whitespace-nowrap">승리</th>
+                                        <th class="whitespace-nowrap">벳</th>
+                                        <th class="whitespace-nowrap text-right">롤링된</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-tit font-extrabold">
+                                    <tr>
+                                        <td class="text-left"><img class="inline-flex items-center mr-2 w-5" src="./dist/custom_img/coin/BCD.webp" alt="">BCD</td>
+                                        <td class="text-center">3</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-right">0.981514</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left"><img class="inline-flex items-center mr-2 w-5" src="./dist/custom_img/coin/JB.webp" alt="">JB</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">4</td>
+                                        <td class="text-right">1537.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left"><img class="inline-flex items-center mr-2 w-5" src="./dist/custom_img/coin/BTC.webp" alt="">BTC</td>
+                                        <td class="text-center">0</td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-right">0.0000001</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left"><img class="inline-flex items-center mr-2 w-5" src="./dist/custom_img/coin/XLM.webp" alt="">XLM</td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-right">0.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="flex gap-2 items-center justify-end mt-4">
+                                <p class="text-xs">총 1</p>
+                                <div class="flex gap-0 text-base px-4 py-1 bg-back2 rounded font-medium">
+                                    <button class="w-6 h-6 basic-hover active font-extrabold">1</button>
+                                    <button class="w-6 h-6 basic-hover">2</button>
+                                    <button class="w-6 h-6 basic-hover">3</button>
+                                </div>
+                                <div class="flex gap-1">
+                                    <button class="btn-normal w-8 h-8 basic-hover rounded"><svg class="w-4 h-4 mx-auto rotate-180"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                    <button class="btn-normal w-8 h-8 basic-hover rounded"><svg class="w-4 h-4 mx-auto"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col justify-center py-40 text-center">
+                        <img class="w-48 mx-auto" src="./dist/custom_img/empty.webp">
+                        <div class="-mt-5 text-basic opacity-70 ">웁스! 아직 데이터가 없습니다!</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- 프로필 - 유저정보 - 시크릿 모드 -->
+<div id="profile_info_secret-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body bg-modaldark relative rounded">
+                <div class="relative flex items-center justify-between p-4">
+                    <p class="text-tit font-extrabold text-base">유저정보</p>
+                    <!-- vip-bat 클래스 : bronze silver gold plat dia -->
+                    <div class="vip-bat gold absolute right-14 top-0 text-center">
+                        <span class="text-white font-extrabold">V30</span>
+                    </div>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+
+                <div class="w-full p-6 overflow-y-auto scrollbar h-auto sm:h-[640px]">
+
+                    <div class="relative pb-8 text-center">
+                        <div class="absolute left-0 top-0 flex text-tit gap-2 bg-white dark:bg-back p-1.5 px-3 rounded">
+                            <svg class="w-5 h-5 fill-place fill-red"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Like"></use></svg>
+                            266
+                        </div>
+                        <div class="overflow-hidden w-[70px] mx-auto rounded-full border-2 border-solid border-slate-300">
+                            <img src="./dist/custom_img/profile_img2.png" alt="">
+                        </div>
+                        <div class="mt-2 text-tit text-xl font-bold">Tauruz🐂</div>
+                        <div class="mt-1 text-basic cursor-pointer" onclick="viewAlert('copy_alert')">사용자 ID: Zatouyb</div>
+                    </div>
+
+                    <div class="p-3 mt-2 bg-white dark:bg-back2 rounded">
+                        <div class="flex justify-between items-center p-2">
+                            <p class="text-tit font-semibold">통계</p>
+                        </div>
+                        <div>
+                            <div class="flex flex-col justify-center pt-8 pb-16 text-center">
+                                <img class="w-48 mx-auto" src="./dist/custom_img/privacy.png">
+                                <div class="-mt-5 text-basic opacity-70 text-xs">통계숨기기</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-4 text-xs text-center opacity-70">
+                        가입일 2023. 4. 3.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- 공통 모달 영역 : E -->
 
 <script src='https://design01.codeidea.io/link_script.js'></script>

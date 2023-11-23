@@ -291,6 +291,22 @@ const topbarHandle = ()=>{
     }
     smallBtn.addEventListener("change",smallHandle)
 
+    // custom select
+    $('.custom_select > button').on('click',function(){
+        $(this).parent().toggleClass('on')
+    })
+    $('.custom_select ul li').on('click',function(){
+        $(this).parents('.custom_select').removeClass('on')
+        $(this).parents('.custom_select').find('button span').text($(this).text())
+        $(this).addClass('on').siblings().removeClass('on')
+    })
+    document.addEventListener('click',(e)=>{
+        const select = document.querySelector('.custom_select')
+        if(select && !select.contains(e.target)){
+            document.querySelector('.custom_select').classList.remove('on')
+        }
+    })
+
 
 }
 
@@ -517,4 +533,28 @@ const viewAlert = (id)=>{
     setTimeout(()=>{
         alertBox.classList.remove('show')
     },3000)
+}
+
+
+//=======================================================
+//   모달 내부 컨텐츠 이동
+//=======================================================
+const modalInHandle = (modal,content)=>{
+    const modalWrap = document.querySelector(`#${modal}`)
+    const modalcont = modalWrap.querySelector('.modal-content');
+    const cont = modalWrap.querySelector(`.${content}`)
+
+    if(!cont.classList.contains('open')){
+        modalcont.classList.add('on')
+        cont.classList.add('open')
+        if(content == "profile_medal_detail" || content == "profile_medal_master"){
+            modalWrap.querySelector('.profile_medal').classList.add('on')
+        }
+    }else{
+        modalcont.classList.remove('on')
+        cont.classList.remove('open')
+        if(content == "profile_medal_detail" || content == "profile_medal_master"){
+            modalWrap.querySelector('.profile_medal').classList.remove('on')
+        }
+    }
 }
