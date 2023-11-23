@@ -31,7 +31,7 @@
                                 <label for="cash_input"><svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Search"></use></svg></label>
                                 <input type="text" id="cash_input" class="form-control type02 pl-10" placeholder="검색" />
                             </div>
-                            <button class="p-2"><svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_AddSub"></use></svg></button>
+                            <button class="p-2" data-tw-toggle="modal" data-tw-target="#currency_setting-modal" ><svg class="w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_AddSub"></use></svg></button>
                         </div>
                         <div class="px-6 pb-4">
                             <ul class="nav nav-boxed-tabs bg-back rounded p-0.5" role="tablist">
@@ -3009,6 +3009,61 @@
                         가입일 2023. 4. 3.
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 화폐 설정 모달 -->
+<div id="currency_setting-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body relative">
+                <div class="relative flex items-center justify-between p-5 py-3 bg-modaldark">
+                    <div class="relative w-full">
+                        <label for="cash_input"><svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Search"></use></svg></label>
+                        <input type="text" id="cash_input" class="form-control type02 pl-10" placeholder="검색" />
+                    </div>
+                    
+                    <button class="basic-hover px-2 ml-4" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+
+                <div class="px-6 py-4">
+                    <ul class="nav nav-boxed-tabs bg-back rounded" role="tablist">
+                        <li id="currency-1-tab" class="nav-item" role="presentation">
+                            <button class="rounded w-full h-9 active" data-tw-toggle="pill" data-tw-target="#currency-tab-1" type="button" role="tab" aria-controls="currency-tab-1" aria-selected="false">크립토</button>
+                        </li>
+                        <li id="currency-2-tab" class="nav-item" role="presentation">
+                            <button class="rounded w-full h-9 "  data-tw-toggle="pill" data-tw-target="#currency-tab-2" type="button" role="tab" aria-controls="currency-tab-2" aria-selected="false">법정화폐</button>
+                        </li>
+                        <li id="currency-3-tab" class="nav-item" role="presentation">
+                            <button class="rounded w-full h-9 "  data-tw-toggle="pill" data-tw-target="#currency-tab-3" type="button" role="tab" aria-controls="currency-tab-3" aria-selected="false">mNFT</button>
+                        </li>
+                        <li id="currency-4-tab" class="nav-item" role="presentation">
+                            <button class="rounded w-full h-9 "  data-tw-toggle="pill" data-tw-target="#currency-tab-4" type="button" role="tab" aria-controls="currency-tab-4" aria-selected="false">즐겨찾기</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-content">
+                    <div id="currency-tab-1" class="tab-pane leading-relaxed p-5 active" role="tabpanel" aria-labelledby="currency-1-tab">
+                        1111
+                    </div>
+                    <div id="currency-tab-2" class="tab-pane leading-relaxed p-5" role="tabpanel" aria-labelledby="currency-2-tab">
+                        122222
+                    </div>
+                    <div id="currency-tab-3" class="tab-pane leading-relaxed p-5" role="tabpanel" aria-labelledby="currency-3-tab">
+                        3333
+                    </div>
+                    <div id="currency-tab-4" class="tab-pane leading-relaxed p-5" role="tabpanel" aria-labelledby="currency-4-tab">
+                        44444
+                    </div>
+                </div>
+
+                <!-- <div class="w-full p-6 overflow-y-auto scrollbar h-auto sm:h-[640px]">
+
+                </div> -->
             </div>
         </div>
     </div>
