@@ -94,8 +94,16 @@ echo txtRecord('./@record/');
                             <button class="pop-modal" data-tw-toggle="modal" data-tw-target="#profile_info-modal">유저 정보 모달</button>
                             <button class="pop-modal" data-tw-toggle="modal" data-tw-target="#profile_info_secret-modal">유저 정보 모달 - 시크릿 모드</button>
                         </li>
+                        <li>
+                            <button class="pop-modal" data-tw-toggle="modal" data-tw-target="#chat_info-modal">채팅 규칙 모달</button>
+                        </li>
 					</ul>
 				</li>
+                <li class="mt20" data-label="알림">
+                    <ul>
+                        <li><button class="pop-modal" onclick="viewAlert('copy_alert')">복사 확인 알림</button></li>
+                    </ul>
+                </li>
 			</ul>
 		</li>
 
@@ -106,6 +114,22 @@ echo txtRecord('./@record/');
 		</li>
 	</ul>
 </div>
+
+<!-- 공통 알림 영역 : S -->
+
+<!-- 복사 확인 알림 -->
+<div class="alert copy_alert bg-back mb-2 border-none" id="copy_alert">
+    <div class="flex justify-between ">
+        <p>복사되었습니다</p>
+        <div class="loading_svg">
+            <svg viewBox="25 25 50 50">
+                <circle cx="50" cy="50" r="20" fill="none" stroke-width="8" pathLength="1" stroke-dashoffset="0px" stroke-dasharray="0.6186666666666667px 1px"></circle>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<!-- 공통 알림 영역 : E -->
 
 
 <!-- 공통 모달 영역 : S -->
@@ -3031,6 +3055,41 @@ echo txtRecord('./@record/');
                         가입일 2023. 4. 3.
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 채팅규칙 모달 -->
+<div id="chat_info-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body bg-modaldark relative rounded">
+                <div class="relative flex items-center justify-between p-4">
+                    <p class="text-tit font-extrabold text-base">채팅규칙</p>
+                    
+                    <button class="basic-hover" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="./dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+
+                <div class="p-6 font-semibold">
+                    <p class="">1. 스팸을 보내거나 괴롭히거나 다른 사용자에게 불쾌감을 주지 마십시오!</p>
+
+                    <p class="mt-3">2. 대출, 비, 팁 및 두 배로 동전을 구걸하거나 요구하지 마십시오.</p>
+
+                    <p class="mt-3">3. 잠재적인 사기로 볼 수 있는 의심스러운 행동을 하지 않습니다.</p>
+
+                    <p class="mt-3">4. 어떠한 형태의 광고/거래/판매/구매 또는 서비스 제공에 참여하지 마십시오.</p>
+
+                    <p class="mt-3">5. URL 단축기를 사용하지 마십시오. 항상 원본 링크를 제출하십시오.</p>
+
+                    <p class="mt-3">6. 지정된 언어 대화방을 이용하세요..</p>
+
+                    <p class="mt-3">전체 규칙 목록은 포럼에서 찾을 수 있습니다.</p>
+                </div>
+
+
+                   
             </div>
         </div>
     </div>

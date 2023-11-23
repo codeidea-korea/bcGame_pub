@@ -86,6 +86,8 @@
 /* select  */
 .custom_select {position:relative; }
 .custom_select > button {width:100%;}
+.custom_select > button svg {transition:all 0.3s; }
+.custom_select.on > button svg {transform:rotate(90deg); }
 .custom_select ul {z-index:10; position:absolute; left:0; top:100%; visibility: hidden; opacity:0; width: 100%; height:260px; margin-top:30px; transition:all 0.3s; }
 .custom_select.on ul {visibility: visible; opacity:1; margin-top:0; }
 .custom_select ul li {cursor:pointer; border-radius:4px; padding-left:8px; }
