@@ -11,24 +11,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url("layout.css");
 
-.form-control {height:42px; border-radius:3px; }
-.form-control:focus {border:1px solid var(--primary-color) !important; box-shadow:none; outline:0 none; }
-
-
-.dark .form-control.type02 {background-color:#222328; border-color:#2d3035; }
-.form-control.type02 {background-color:#fff; border:1px solid #e9eaf2; }
-/*
-#=========================================#
-        checkbox
-#=========================================#
-*/
-.form-switch .form-check-input {width:28px; height:16px; padding:0; background-color:#bfc3c7; }
-.form-switch .form-check-input:focus {box-shadow:none; outline:none; }
-.form-switch .form-check-input:before {width:16px; height:16px; background-color: #fff;}
-.form-switch .form-check-input:checked {border:0 none; background-color: #3bc11733 !important;}
-.form-switch .form-check-input:checked::before {background-color: var(--primary-color) !important;}
-.dark .form-switch .form-check-input {background-color: #3A4047;}
-.dark .form-switch .form-check-input:before {background-color: #737c86;}
 
 /*
 #=========================================#
@@ -71,15 +53,31 @@
         form
 #=========================================#
 */
-/* input */
+.form-control {height:42px; border-radius:3px; }
+.form-control:focus {border:1px solid var(--primary-color) !important; box-shadow:none; outline:0 none; }
+.form-control.nofocus:focus {border:0 none !important;}
+
+
+.dark .form-control.type02 {background-color:#222328; border-color:#2d3035; }
+.form-control.type02 {background-color:#fff; border:1px solid #e9eaf2; }
+
 .dark .form-control {background-color: var(--standard-color);}
 .form-control {box-shadow:none; background-color: var(--background-color); border:0 none; color:var(--title-color); }
 
 .dark .form-control.bg-back2 {background-color:#1a1c20; }
 .form-control.bg-back2 {background-color:#fff; }
 
+.dark .form-control.bg-modaldark {background-color:var(--modal-darkbg); }
+
 /* checkbox */
-.form-check-input[type="checkbox"] {/*border:1px solid var(--primary-color) !important;*/ box-shadow:none; }
+.form-check-input[type="checkbox"] {border:1px solid var(--primary-color) !important; box-shadow:none; }
+.form-switch .form-check-input {width:28px; height:16px; padding:0; background-color:#bfc3c7; border:0 none !important; }
+.form-switch .form-check-input:focus {box-shadow:none; outline:none; }
+.form-switch .form-check-input:before {width:16px; height:16px; background-color: #fff;}
+.form-switch .form-check-input:checked {border:0 none; background-color: #3bc11733 !important;}
+.form-switch .form-check-input:checked::before {background-color: var(--primary-color) !important;}
+.dark .form-switch .form-check-input {background-color: #3A4047;}
+.dark .form-switch .form-check-input:before {background-color: #737c86;}
 
 
 /* select  */
@@ -87,13 +85,24 @@
 .custom_select > button {width:100%;}
 .custom_select > button svg {transition:all 0.3s; }
 .custom_select.on > button svg {transform:rotate(90deg); }
-.custom_select ul {z-index:10; position:absolute; left:0; top:100%; visibility: hidden; opacity:0; width: 100%; height:260px; margin-top:30px; transition:all 0.3s; }
+.custom_select ul {z-index:10; position:absolute; left:0; top:100%; visibility: hidden; opacity:0; width: 100%; max-height:260px; margin-top:30px; transition:all 0.3s; }
 .custom_select.on ul {visibility: visible; opacity:1; margin-top:0; }
 .custom_select ul li {cursor:pointer; border-radius:4px; padding-left:8px; }
 .custom_select ul li:hover {background-color:var(--background-color); }
 .custom_select ul li.on {position:relative; border:1px solid #3bc11766;}
 .custom_select ul li.on:after {content: ""; position: absolute; width: 0.5rem; height: 0.5rem; border-radius: 50%; top: 50%; margin-top: -0.25rem; right: 0.625rem; background-color: var(--primary-color); box-shadow: 0 0 0 0.3125rem #3bc11726;}
 
+
+.custom_select2 {position:relative; }
+.custom_select2 > button {width:100%;}
+.custom_select2 > button svg.arr {transition:all 0.3s; }
+.custom_select2.on > button svg.arr {transform:rotate(90deg); }
+.custom_select2 > div {z-index:10; position:absolute; left:0; top:100%; visibility: hidden; opacity:0; width: 100%; margin-top:30px; transition:all 0.3s; }
+.custom_select2 > div.right {left:auto; right:0; }
+.custom_select2.on > div {visibility: visible; opacity:1; margin-top:0; }
+.custom_select2 ul li {cursor:pointer; border-radius:4px; padding-left:8px; }
+.custom_select2 ul li:hover {background-color:var(--background-color); }
+.custom_select2 ul li.on {position:relative; border:1px solid #3bc11766;}
 
 /*
 #=========================================#
@@ -152,6 +161,15 @@
     .alert {width:calc(100% - 40px); }
 }
 
+/*
+#=========================================#
+        tooltip 커스텀
+#=========================================#
+*/
+.tooltip_custom {position:relative; cursor:pointer; }
+.tooltip_custom .hover_box {display:none; position:absolute; left:0; top:100%; left:50%; transform:translateX(-50%); }
+.tooltip_custom .hover_box.top {top:auto; bottom:100%; }
+.tooltip_custom:hover .hover_box {display:block; }
 
 /*
 #=========================================#
@@ -284,4 +302,18 @@
 .progressbar .pointer:nth-of-type(4) {left:71%; }
 .progressbar .pointer:nth-of-type(5) {left:94%; }
 
+
+
+/*
+#=========================================#
+        캐시버튼
+#=========================================#
+*/
+.cash_btn_box {display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+.cash_btn_box .cash_btn {position:relative; width:100%; height:50px; background-color:var(--background-color); }
+.cash_btn_box .cash_btn .bonus {position:absolute; right:0; top:0; background-color:#E1810C; color:#fff; font-weight:normal;}
+.dark .cash_btn_box .cash_btn.on {background:linear-gradient(100.51deg,#2F7624 6.83%,#0B0B0C 93.94%); }
+.cash_btn_box .cash_btn.on {background:linear-gradient(100.51deg,#7BD962 6.83%,#FCFDFF 93.94%); border:1px solid var(--primary-color); font-weight:800;  }
+.cash_btn_box .cash_btn.on:after {content:''; position:absolute; right:-1px; bottom:0; width:28px; height:18.96px; background:url('../custom_img/cash_btn_checked.png') no-repeat center center / 100% auto; }
+.cash_btn_box .cash_btn.on .bonus {background-color:#FFE600; color:#393939; }
 

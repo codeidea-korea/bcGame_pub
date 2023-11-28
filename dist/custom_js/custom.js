@@ -4,7 +4,7 @@
 // html load
 
 // 왼쪽메뉴 
-fetch("./_left_menu.html")
+fetch("/bcGame/_left_menu.html")
     .then((response) => response.text())
     .then((htmlData) => {
         $(".sidebar").prepend(htmlData);
@@ -14,9 +14,10 @@ fetch("./_left_menu.html")
     });
 
 // 탑바 로드
-fetch("./_top_bar.html")
+fetch("/bcGame/_top_bar.html")
     .then((response) => response.text())
     .then((html) => {
+       
         if(!$('.content').hasClass('logout')){
             $(".content").prepend(html);
             leftMenuHandle()
@@ -27,8 +28,21 @@ fetch("./_top_bar.html")
         console.log(error);
     });
 
+
+// 모달 로드
+fetch("/bcGame/_modal.html")
+    .then((response) => response.text())
+    .then((html) => {
+        $(".content").prepend(html);
+        leftMenuHandle()
+        topbarHandle()
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
 // 탑바 로드 - 로그인 안했을때
-fetch("./_top_bar_logout.html")
+fetch("/bcGame/_top_bar_logout.html")
     .then((response) => response.text())
     .then((html) => {
         if($('.content').hasClass('logout')){
@@ -42,7 +56,7 @@ fetch("./_top_bar_logout.html")
     });
 
 // 푸터 로드
-fetch("./_footer.html")
+fetch("/bcGame/_footer.html")
     .then((response) => response.text())
     .then((html) => {
         $(".container_wrap").append(html);
@@ -53,7 +67,7 @@ fetch("./_footer.html")
     });
 
 // 우측영역 추가
-fetch("./_right_area.html")
+fetch("/bcGame/_right_area.html")
     .then((response) => response.text())
     .then((html) => {
         $(".content").prepend(html);
@@ -162,7 +176,7 @@ const rightAreaHandle = ()=>{
 
     // 이모지 클릭
     $('.right-area .emoji_btn').on('click',function(){
-        fetch("./_emoji_box.html")
+        fetch("/bcGame/_emoji_box.html")
             .then((response) => response.text())
             .then((html) => {
                 $(".right-area .chat_bottom .gif_wrap > div").remove();
@@ -192,7 +206,7 @@ const rightAreaHandle = ()=>{
     })
     // gif 클릭
     $('.right-area .gif_btn').on('click',function(){
-        fetch("./_gif_box.html")
+        fetch("/bcGame/_gif_box.html")
             .then((response) => response.text())
             .then((html) => {
                 $(".right-area .chat_bottom .emoji_wrap > div").remove();
@@ -301,12 +315,32 @@ const topbarHandle = ()=>{
         $(this).addClass('on').siblings().removeClass('on')
     })
     document.addEventListener('click',(e)=>{
-        const select = document.querySelector('.custom_select')
+        const select = document.querySelector('.custom_select.on')
         if(select && !select.contains(e.target)){
-            document.querySelector('.custom_select').classList.remove('on')
+            select.classList.remove('on')
         }
     })
 
+    // custom select
+    $('.custom_select2 > button').on('click',function(){
+        $(this).parent().toggleClass('on')
+    })
+    $('.custom_select2 ul li').on('click',function(){
+        $(this).parents('.custom_select2').removeClass('on')
+        $(this).parents('.custom_select2').find('button .name').html($(this).find('.name').html())
+        $(this).addClass('on').siblings().removeClass('on')
+    })
+    document.addEventListener('click',(e)=>{
+        const select = document.querySelector('.custom_select2.on')
+        if(select && !select.contains(e.target)){
+            select.classList.remove('on')
+        }
+    })
+
+    // 금액단위 버튼 클릭시 on off
+    $('.cash_btn_box .cash_btn').on('click',function(){
+        $(this).addClass('on').siblings().removeClass('on');
+    })
 
 }
 
@@ -331,7 +365,7 @@ const rightOpen = (target)=>{
         // 닫기버튼 or 같은버튼을 두번 눌렀을때,
         content.classList.remove('right_open')
         right.classList.remove('open')
-        $('.top-bar .chat_btn use').attr('xlink:href','./dist/custom_img/symbol-defs.svg#icon_Chat')
+        $('.top-bar .chat_btn use').attr('xlink:href','/bcGame/dist/custom_img/symbol-defs.svg#icon_Chat')
 
         rightOpen_item = "";
     }else{
@@ -340,7 +374,7 @@ const rightOpen = (target)=>{
         $(`.right-area .${target}`).show().siblings().hide();
     
         if(target == "chat_area"){
-            $('.top-bar .chat_btn use').attr('xlink:href','./dist/custom_img/symbol-defs.svg#icon_CloseChat')
+            $('.top-bar .chat_btn use').attr('xlink:href','/bcGame/dist/custom_img/symbol-defs.svg#icon_CloseChat')
         }
         rightOpen_item = target;
     }
@@ -463,11 +497,11 @@ const passwordView = (e)=>{
     if(e.classList.contains('on')){
         e.classList.remove('on')
         e.previousElementSibling.setAttribute('type','password')
-        svg.setAttribute('xlink:href','./dist/custom_img/symbol-defs.svg#icon_View')
+        svg.setAttribute('xlink:href','/bcGame/dist/custom_img/symbol-defs.svg#icon_View')
     }else{
         e.classList.add('on')
         e.previousElementSibling.setAttribute('type','text')
-        svg.setAttribute('xlink:href','./dist/custom_img/symbol-defs.svg#icon_Hide')
+        svg.setAttribute('xlink:href','/bcGame/dist/custom_img/symbol-defs.svg#icon_Hide')
     }
 }
 const joinPhoneHandle = (text)=>{

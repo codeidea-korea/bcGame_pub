@@ -27,8 +27,11 @@ button:focus {box-shadow:none !important; }
 .bg-back2 {background-color: var(--background-type-color);}
 .bg-modaldark {background-color: var(--modal-darkbg);}
 .bg-gradient-green {background:var(--green-gradient); }
+.bg-tag {background:linear-gradient(to right,#E15A0F,#F7931A); }
 .dark .dark\:bg-back2 {background-color: var(--background-type-color);}
 .dark .dark\:bg-back {background-color: var(--background-color);}
+.dark .dark\:bg-modaldark {background-color: var(--modal-darkbg);}
+
 
 .text-tit {color: var(--title-color);}
 .text-basic {color: var(--text-color);}
