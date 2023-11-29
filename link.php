@@ -95,6 +95,10 @@ echo txtRecord('./@record/');
                             <button class="pop-modal" data-tw-toggle="modal" data-tw-target="#profile_info_secret-modal">유저 정보 모달 - 시크릿 모드</button>
                         </li>
                         <li>
+                            <button class="pop-modal" data-tw-toggle="modal" data-tw-target="#currency_setting-modal">화폐 설정 모달</button>
+                            <button class="pop-modal" data-tw-toggle="modal" data-tw-target="#deposit-modal">입금 모달</button>
+                        </li>
+                        <li>
                             <button class="pop-modal" data-tw-toggle="modal" data-tw-target="#chat_info-modal">채팅 규칙 모달</button>
                         </li>
 					</ul>
@@ -3060,6 +3064,2312 @@ echo txtRecord('./@record/');
     </div>
 </div>
 
+<!-- 화폐 설정 모달 -->
+<div id="currency_setting-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body relative">
+                <div class="relative flex items-center justify-between p-5 py-3 bg-modaldark rounded-t">
+                    <div class="relative w-full">
+                        <label for="cash_input"><svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Search"></use></svg></label>
+                        <input type="text" id="cash_input" class="form-control type02 pl-10" placeholder="검색" />
+                    </div>
+                    
+                    <button class="basic-hover px-2 ml-4" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+
+                <div class="px-6 py-4">
+                    <ul class="nav nav-boxed-tabs bg-back rounded" role="tablist">
+                        <li id="currency-1-tab" class="nav-item w-full" role="presentation">
+                            <button class="rounded w-full h-9 active" data-tw-toggle="pill" data-tw-target="#currency-tab-1" type="button" role="tab" aria-controls="currency-tab-1" aria-selected="false">크립토</button>
+                        </li>
+                        <li id="currency-2-tab" class="nav-item w-full" role="presentation">
+                            <button class="rounded w-full h-9 "  data-tw-toggle="pill" data-tw-target="#currency-tab-2" type="button" role="tab" aria-controls="currency-tab-2" aria-selected="false">법정화폐</button>
+                        </li>
+                        <li id="currency-3-tab" class="nav-item w-full" role="presentation">
+                            <button class="rounded w-full h-9 "  data-tw-toggle="pill" data-tw-target="#currency-tab-3" type="button" role="tab" aria-controls="currency-tab-3" aria-selected="false">mNFT</button>
+                        </li>
+                        <li id="currency-4-tab" class="nav-item w-full" role="presentation">
+                            <button class="rounded w-full h-9 "  data-tw-toggle="pill" data-tw-target="#currency-tab-4" type="button" role="tab" aria-controls="currency-tab-4" aria-selected="false">즐겨찾기</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-content">
+                    <div id="currency-tab-1" class="tab-pane leading-relaxed active" role="tabpanel" aria-labelledby="currency-1-tab">
+                        <div class="flex justify-between items-center px-6">
+                            <p>즐겨찾는 코인</p>
+                            <button><svg class="w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_ReverseOrder"></use></svg></button>
+                        </div>
+                        <div class="w-full px-6 py-4 pb-6 overflow-y-auto scrollbar h-auto sm:h-[560px]">
+
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check01">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BTC.webp" />
+                                    BTC
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Bitcoin
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check01" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check02">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BCD.webp" />
+                                    BCD
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    BCD
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check02" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check03">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/SATS.webp" />
+                                    SATS
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Satoshi
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check03" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check04">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/ETH.webp" />
+                                    ETH
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Ethereum
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check04" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check05">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BNB.webp" />
+                                    BNB
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Binance Coin
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check05" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check06">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/DOGE.webp" />
+                                    DOGE
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Doge Coin
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check06" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check07">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/USDT.webp" />
+                                    USDT
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Tether
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check07" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check08">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/XRP.webp" />
+                                    XRP
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Ripple
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check08" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check09">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/LTC.webp" />
+                                    LTC
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Litecoin
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check09" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check10">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BCH.webp" />
+                                    BCH
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Bitcoin Cash
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check10" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check11">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/TRX.webp" />
+                                    TRX
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    TRON
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check11" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check12">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/XLM.webp" />
+                                    XLM
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Stellar
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check12" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check13">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/DOT.webp" />
+                                    DOT
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Polkadot
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check13" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check14">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/LINK.webp" />
+                                    LINK
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    ChainLink
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check14" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check15">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/EOS.webp" />
+                                    EOS
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    EOS
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check15" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check16">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/DAI.webp" />
+                                    DAI
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Multi-collateral DAI
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check16" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check17">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/USDC.webp" />
+                                    USDC
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    USDC Coin
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check17" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check18">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/XMR.webp" />
+                                    XMR
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Monero
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check18" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check19">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BSV.webp" />
+                                    BSV
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    BItcoin SV
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check19" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check20">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/UNI.webp" />
+                                    UNI
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Uniswap
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check20" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check21">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/KSM.webp" />
+                                    KSM
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Kusama
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check21" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check22">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/AMPL.webp" />
+                                    AMPL
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Ampleforth
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check22" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check23">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/SUSHI.webp" />
+                                    SUSHI
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Sushi
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check23" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check24">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/WBTC.webp" />
+                                    WBTC
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Wrapped BTC
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check24" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check25">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/SNX.webp" />
+                                    SNX
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Synthetix Network
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check25" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check26">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/CRO.webp" />
+                                    CRO
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Crypto.com Coin
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check26" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check27">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/AAVE.webp" />
+                                    AAVE
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Aave Token
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check27" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check28">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/YFI.webp" />
+                                    YFI
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    yearn.finance
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check28" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check29">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/ATOM.webp" />
+                                    ATOM
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Cosmos
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check29" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check30">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/MANA.webp" />
+                                    MANA
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Decentraland
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check30" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check31">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/DASH.webp" />
+                                    DASH
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Dash
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check31" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check32">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BAT.webp" />
+                                    BAT
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Basic Attention Token
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check32" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check33">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/APT.webp" />
+                                    APT
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    APT
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check33" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check34">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/ENJ.webp" />
+                                    ENJ
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Enjin Coin
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check34" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check35">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/CRV.webp" />
+                                    CRV
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Curve DAO Token
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check35" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check36">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/XEN.webp" />
+                                    XEN
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    XEN
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check36" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check37">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/WLD.webp" />
+                                    WLD
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    WLD
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check37" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check38">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/HNT.webp" />
+                                    HNT
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    HNT
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check38" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check39">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/RUNE.webp" />
+                                    RUNE
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    RUNE
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check39" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check40">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/SUI.webp" />
+                                    SUI
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    SUI
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check40" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check41">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BTCB.webp" />
+                                    BTCB
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    BTCB
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check41" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check42">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/ARB.webp" />
+                                    ARB
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    ARB
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check42" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check43">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/GMX.webp" />
+                                    GMX
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    GMX
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check43" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check44">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BTG.webp" />
+                                    BTG
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Bitcoin Gold
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check44" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check45">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/ALGO.webp" />
+                                    ALGO
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Algorand
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check45" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check46">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BIGTIME.webp" />
+                                    BIGTIME
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    BIGTIME
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check46" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check47">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/ICP.webp" />
+                                    ICP
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Internet Computer
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check47" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check48">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BLUR.webp" />
+                                    BLUR
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    BLUR
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check48" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check49">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/USDC.webp" />
+                                    USDC.e
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    USDC.E
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check49" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check50">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/HBAR.webp" />
+                                    HBAR
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Hedera
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency_check50" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+
+                        </div>
+                    </div>
+                    <div id="currency-tab-2" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="currency-2-tab">
+                        <div class="flex justify-between items-center px-6">
+                            <p>즐겨찾는 코인</p>
+                            <button><svg class="w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_ReverseOrder"></use></svg></button>
+                        </div>
+                        <div class="w-full px-6 py-4 pb-6 overflow-y-auto scrollbar h-auto sm:h-[560px]">
+
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check01">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/ARS.webp" />
+                                    ARS
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Argentine Peso
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check01" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check02">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/CLP.webp" />
+                                    CLP
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Chilean Peso
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check02" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check03">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/IDR.webp" />
+                                    IDR
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Indonesian Rupiah
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check03" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check04">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/COP.webp" />
+                                    COP
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Colombian Pesos
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check04" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check05">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/UAH.webp" />
+                                    UAH
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    UAH
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check05" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check06">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/KES.webp" />
+                                    KES
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Kenyan Shilling
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check06" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check07">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/XOF.webp" />
+                                    XOF
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    CFA Franc BCEAO
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check07" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check08">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/XAF.webp" />
+                                    XAF
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Central African CFA
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check08" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check09">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/UZS.webp" />
+                                    UZS
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Uzbekistani Som
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check09" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check10">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/KRW.webp" />
+                                    KRW
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Korean won
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check10" class="form-check-input small_check" type="checkbox" checked> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check11">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/KGS.webp" />
+                                    KGS
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Kyrgystani Som
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check11" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check12">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/EUR.webp" />
+                                    EUR
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    EUR
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check12" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check13">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/MXN.webp" />
+                                    MXN
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Peso mexicano
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check13" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check14">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/MMK.webp" />
+                                    MMK
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Burmese Kyat
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check14" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check15">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/GBP.webp" />
+                                    GBP
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    GBP
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check15" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check16">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/TZS.webp" />
+                                    TZS
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Tanzanian Shilling
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check16" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check17">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/VND.webp" />
+                                    VND
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Vietnamese Dong
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check17" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check18">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/RUB.webp" />
+                                    RUB
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Russian Rubles
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check18" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check19">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/EGP.webp" />
+                                    EGP
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Egyptian Pound
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check19" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency1_check20">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/AZN.webp" />
+                                    AZN
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Azerbaijani Manat
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency1_check20" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+
+                        </div>
+                    </div>
+                    <div id="currency-tab-3" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="currency-3-tab">
+                        <div class="flex justify-between items-center px-6">
+                            <p>즐겨찾는 코인</p>
+                            <button><svg class="w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_ReverseOrder"></use></svg></button>
+                        </div>
+                        <div class="w-full px-6 py-4 pb-6 overflow-y-auto scrollbar h-auto sm:h-[560px]">
+                            
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency2_check01">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/mDegenPass.webp" />
+                                    mDegenPass
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    DegenPass
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency2_check01" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency2_check02">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/mBAYC.webp" />
+                                    mBAYC
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Bored Ape Yacht Club
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency2_check02" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency2_check03">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/mPunks.webp" />
+                                    mPunks
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Punks
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency2_check03" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency2_check04">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/mMeka.webp" />
+                                    mMeka
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Mekaverse
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency2_check04" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency2_check05">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/mMfers.webp" />
+                                    mMfers
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Mfers
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency2_check05" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency2_check06">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/mClonex.webp" />
+                                    mClonex
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    CloneX
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency2_check06" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency2_check07">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/mDoodles.webp" />
+                                    mDoodles
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Doodles
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency2_check07" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="flex justify-between items-center w-full py-2 px-1" for="top-currency2_check08">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/mAzuki.webp" />
+                                    mAzuki
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Azuki
+                                    <div class="form-check form-switch"> 
+                                        <input id="top-currency2_check08" class="form-check-input small_check" type="checkbox"> 
+                                    </div>
+                                </div>
+                            </label>
+
+                        </div>
+                    </div>
+                    <div id="currency-tab-4" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="currency-4-tab">
+                        <div class="flex justify-between items-center px-6">
+                            <p>즐겨찾는 코인</p>
+                            <button><svg class="w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_ReverseOrder"></use></svg></button>
+                        </div>
+                        <div class="w-full px-6 py-4 pb-6 overflow-y-auto scrollbar h-auto sm:h-[560px]">
+
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check02">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BCD.webp" />
+                                    BCD
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    BCD
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check03">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/SATS.webp" />
+                                    SATS
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Satoshi
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check04">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/ETH.webp" />
+                                    ETH
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Ethereum
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check05">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BNB.webp" />
+                                    BNB
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Binance Coin
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check06">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/DOGE.webp" />
+                                    DOGE
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Doge Coin
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check07">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/USDT.webp" />
+                                    USDT
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Tether
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check08">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/XRP.webp" />
+                                    XRP
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Ripple
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check09">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/LTC.webp" />
+                                    LTC
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Litecoin
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check10">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BCH.webp" />
+                                    BCH
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Bitcoin Cash
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check11">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/TRX.webp" />
+                                    TRX
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    TRON
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check12">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/XLM.webp" />
+                                    XLM
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Stellar
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check13">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/DOT.webp" />
+                                    DOT
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Polkadot
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check14">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/LINK.webp" />
+                                    LINK
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    ChainLink
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check15">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/EOS.webp" />
+                                    EOS
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    EOS
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check16">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/DAI.webp" />
+                                    DAI
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Multi-collateral DAI
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check17">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/USDC.webp" />
+                                    USDC
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    USDC Coin
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check18">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/XMR.webp" />
+                                    XMR
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Monero
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check19">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BSV.webp" />
+                                    BSV
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    BItcoin SV
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check20">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/UNI.webp" />
+                                    UNI
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Uniswap
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check21">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/KSM.webp" />
+                                    KSM
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Kusama
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check22">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/AMPL.webp" />
+                                    AMPL
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Ampleforth
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check23">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/SUSHI.webp" />
+                                    SUSHI
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Sushi
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check24">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/WBTC.webp" />
+                                    WBTC
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Wrapped BTC
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check25">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/SNX.webp" />
+                                    SNX
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Synthetix Network
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check26">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/CRO.webp" />
+                                    CRO
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Crypto.com Coin
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check27">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/AAVE.webp" />
+                                    AAVE
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Aave Token
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check28">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/YFI.webp" />
+                                    YFI
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    yearn.finance
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check29">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/ATOM.webp" />
+                                    ATOM
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Cosmos
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check30">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/MANA.webp" />
+                                    MANA
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Decentraland
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check31">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/DASH.webp" />
+                                    DASH
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Dash
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check32">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BAT.webp" />
+                                    BAT
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Basic Attention Token
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check33">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/APT.webp" />
+                                    APT
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    APT
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check34">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/ENJ.webp" />
+                                    ENJ
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Enjin Coin
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check35">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/CRV.webp" />
+                                    CRV
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Curve DAO Token
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check36">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/XEN.webp" />
+                                    XEN
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    XEN
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check37">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/WLD.webp" />
+                                    WLD
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    WLD
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check38">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/HNT.webp" />
+                                    HNT
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    HNT
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check39">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/RUNE.webp" />
+                                    RUNE
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    RUNE
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check40">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/SUI.webp" />
+                                    SUI
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    SUI
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check41">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BTCB.webp" />
+                                    BTCB
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    BTCB
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check42">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/ARB.webp" />
+                                    ARB
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    ARB
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check43">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/GMX.webp" />
+                                    GMX
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    GMX
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check44">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BTG.webp" />
+                                    BTG
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Bitcoin Gold
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check45">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/ALGO.webp" />
+                                    ALGO
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Algorand
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check46">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BIGTIME.webp" />
+                                    BIGTIME
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    BIGTIME
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check47">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/ICP.webp" />
+                                    ICP
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Internet Computer
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check48">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BLUR.webp" />
+                                    BLUR
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    BLUR
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check49">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/USDC.webp" />
+                                    USDC.e
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    USDC.E
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center w-full py-2 px-1" for="top-currency_check50">
+                                <div class="flex items-center gap-2">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/HBAR.webp" />
+                                    HBAR
+                                </div>
+                                <div class="flex items-center gap-2 text-xs">
+                                    Hedera
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+  
+<!-- 입금 모달 -->
+<div id="deposit-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+    <div class="modal-content overflow-hidden relative rounded">
+        <!-- 기본 -->
+        <div class="modal-body relative">
+            <div class="relative px-5 bg-modaldark rounded-t">
+                <div class="flex items-center justify-between py-3">
+                    <p class="text-tit font-extrabold text-base">입금</p>
+                    <button class="basic-hover px-2 ml-4" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+                <div class="px-5 pb-3">
+                    <ul class="nav nav-boxed-tabs bg-slate-200 dark:bg-back" role="tablist">
+                        <li id="deposit-1-tab" class="nav-item w-full" role="presentation">
+                            <button class="w-full h-9 active" data-tw-toggle="pill" data-tw-target="#deposit-tab-1" type="button" role="tab" aria-controls="deposit-tab-1" aria-selected="false">크립토</button>
+                        </li>
+                        <li id="deposit-2-tab" class="nav-item w-full" role="presentation">
+                            <button class="w-full h-9 "  data-tw-toggle="pill" data-tw-target="#deposit-tab-2" type="button" role="tab" aria-controls="deposit-tab-2" aria-selected="false">법정화폐</button>
+                        </li>
+                        <li id="deposit-3-tab" class="nav-item w-full" role="presentation">
+                            <button class="w-full h-9 "  data-tw-toggle="pill" data-tw-target="#deposit-tab-3" type="button" role="tab" aria-controls="deposit-tab-3" aria-selected="false">가상화폐 구매하기</button>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <div class="tab-content overflow-y-auto scrollbar h-[680px] text-sub">
+                <div id="deposit-tab-1" class="tab-pane leading-relaxed p-6 px-10 active" role="tabpanel" aria-labelledby="deposit-1-tab">
+                    <div>입금화폐</div>
+                    <div class="flex flex-wrap gap-1 items-center mt-1 font-medium">
+                        <button class="flex items-center h-7 border border-solid border-slate-300 px-3 rounded-3xl hover:bg-slate-300 hover:bg-opacity-50"><img class="w-3.5 mr-1" src="/bcGame/dist/custom_img/coin/USDT.webp" /> USDT</button>
+                        <button class="flex items-center h-7 border border-solid border-slate-300 px-3 rounded-3xl hover:bg-slate-300 hover:bg-opacity-50"><img class="w-3.5 mr-1" src="/bcGame/dist/custom_img/coin/TRX.webp" /> TRX</button>
+                        <button class="flex items-center h-7 border border-solid border-slate-300 px-3 rounded-3xl hover:bg-slate-300 hover:bg-opacity-50"><img class="w-3.5 mr-1" src="/bcGame/dist/custom_img/coin/XRP.webp" /> XRP</button>
+                        <button class="flex items-center h-7 border border-solid border-slate-300 px-3 rounded-3xl hover:bg-slate-300 hover:bg-opacity-50"><img class="w-3.5 mr-1" src="/bcGame/dist/custom_img/coin/BNB.webp" /> BNB</button>
+                        <button class="flex items-center h-7 border border-solid border-slate-300 px-3 rounded-3xl hover:bg-slate-300 hover:bg-opacity-50"><img class="w-3.5 mr-1" src="/bcGame/dist/custom_img/coin/LTC.webp" /> LTC</button>
+                        <button class="flex items-center h-7 border border-solid border-slate-300 px-3 rounded-3xl hover:bg-slate-300 hover:bg-opacity-50">더보기 <img class="w-3.5 ml-1" src="/bcGame/dist/custom_img/coin/TRX.webp" /><img class="w-3.5 -ml-1" src="/bcGame/dist/custom_img/coin/DOGE.webp" /><img class="w-3.5 -ml-1" src="/bcGame/dist/custom_img/coin/LTC.webp" /> <svg class="w-3 ml-1 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                    </div>
+                    <div class="custom_select2 flex-1 mt-3">
+                        <button class="btn w-32 h-12 flex px-4 items-center justify-between border-none  bg-modaldark">
+                            <div class="flex items-center gap-3 text-tit name text-base ">
+                                <img class="w-7" src="/bcGame/dist/custom_img/coin/BTC.webp" />
+                                BTC
+                            </div>
+                            <div class="flex items-center gap-1">
+                                잔고현황
+                                <div class="cash text-tit">0</div>
+                                <i class="ml-2"><svg class="w-3.5 h-3.5 fill-basic arr"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                            </div>
+                        </button>
+                        <div class="bg-white dark:bg-back2 shadow-lg">
+                            <div class="p-4 pb-2">
+                                <div class="relative w-full">
+                                    <label for="cash_input"><svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Search"></use></svg></label>
+                                    <input type="text" id="cash_input" class="form-control bg-modaldark pl-10" placeholder="검색" />
+                                </div>
+                            </div>
+                            <ul class="overflow-y-auto scrollbar h-64 p-2 rounded text-sub">
+                                <li class="p-2 px-4 flex items-center justify-between on">
+                                    <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                        <img class="w-7" src="/bcGame/dist/custom_img/coin/BTC.webp" />
+                                        BTC
+                                    </div>
+                                    <div class="text-right text-xs">
+                                        <b class="block text-tit text-sm">₩ 0.00</b>
+                                        0.00
+                                    </div>
+                                </li>
+                                <li class="p-2 px-4 mt-1 flex items-center justify-between">
+                                    <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                        <img class="w-7" src="/bcGame/dist/custom_img/coin/BCD.webp" />
+                                        BCD 
+                                        <svg class="w-5 h-5 fill-primary"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    </div>
+                                    <div class="text-right text-xs">
+                                        <b class="block text-tit text-sm">₩ 0.00</b>
+                                        0.00
+                                    </div>
+                                </li>
+                                <li class="p-2 px-4 flex items-center justify-between">
+                                    <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                        <img class="w-7" src="/bcGame/dist/custom_img/coin/SATS.webp" />
+                                        SATS
+                                    </div>
+                                    <div class="text-right text-xs">
+                                        <b class="block text-tit text-sm">₩ 0.00</b>
+                                        0.00
+                                    </div>
+                                </li>
+                                <li class="p-2 px-4 flex items-center justify-between">
+                                    <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                        <img class="w-7" src="/bcGame/dist/custom_img/coin/ETH.webp" />
+                                        ETH
+                                    </div>
+                                    <div class="text-right text-xs">
+                                        <b class="block text-tit text-sm">₩ 0.00</b>
+                                        0.00
+                                    </div>
+                                </li>
+                                <li class="p-2 px-4 flex items-center justify-between">
+                                    <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                        <img class="w-7" src="/bcGame/dist/custom_img/coin/BNB.webp" />
+                                        BNB
+                                    </div>
+                                    <div class="text-right text-xs">
+                                        <b class="block text-tit text-sm">₩ 0.00</b>
+                                        0.00
+                                    </div>
+                                </li>
+                                <li class="p-2 px-4 flex items-center justify-between">
+                                    <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                        <img class="w-7" src="/bcGame/dist/custom_img/coin/DOGE.webp" />
+                                        DOGE
+                                    </div>
+                                    <div class="text-right text-xs">
+                                        <b class="block text-tit text-sm">₩ 0.00</b>
+                                        0.00
+                                    </div>
+                                </li>
+                                <li class="p-2 px-4 flex items-center justify-between">
+                                    <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                        <img class="w-7" src="/bcGame/dist/custom_img/coin/USDT.webp" />
+                                        USDT
+                                    </div>
+                                    <div class="text-right text-xs">
+                                        <b class="block text-tit text-sm">₩ 0.00</b>
+                                        0.00
+                                    </div>
+                                </li>
+                                <li class="p-2 px-4 flex items-center justify-between">
+                                    <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                        <img class="w-7" src="/bcGame/dist/custom_img/coin/XRP.webp" />
+                                        XRP
+                                    </div>
+                                    <div class="text-right text-xs">
+                                        <b class="block text-tit text-sm">₩ 0.00</b>
+                                        0.00
+                                    </div>
+                                </li>
+                                <li class="p-2 px-4 flex items-center justify-between">
+                                    <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                        <img class="w-7" src="/bcGame/dist/custom_img/coin/LTC.webp" />
+                                        LTC
+                                    </div>
+                                    <div class="text-right text-xs">
+                                        <b class="block text-tit text-sm">₩ 0.00</b>
+                                        0.00
+                                    </div>
+                                </li>
+                                <li class="p-2 px-4 flex items-center justify-between">
+                                    <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                        <img class="w-7" src="/bcGame/dist/custom_img/coin/BCH.webp" />
+                                        BCH
+                                    </div>
+                                    <div class="text-right text-xs">
+                                        <b class="block text-tit text-sm">₩ 0.00</b>
+                                        0.00
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">네트워크 선택</div>
+
+                    <div class="custom_select flex-1 mt-3">
+                        <button class="btn w-32 h-12 flex px-4 items-center justify-between border-none bg-modaldark">
+                            <span>Segwit</span>
+                            <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                        </button>
+                        <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
+                            <li class="py-2">Segwit</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex items-center mt-3">
+                        <p>
+                            최소 <b class="text-tit">180%</b> 예치금으로 추가 <b class="text-tit">0.001 BTC</b> 보너스 받기 
+                        </p>
+                        <div class="tooltip_custom ml-1">
+                            <svg class="inline-flex w-5 h-5 fill-primary"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                            <div class="hover_box top w-56 shadow p-2 rounded bg-back">
+                                <p class="text-tit">1st 입금 보너스</p>
+                                <span>180% 최대 0.53700060 BTC<br/>최소 입금 0.001 BTC</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#f5f6fa] dark:bg-[#1b1c1f] flex items-center gap-4 p-4">
+                        <img class="w-36" src="/bcGame/dist/custom_img/bc.png" alt="">
+                        <div>
+                            <p>입금 주소</p>
+                            <div class="flex items-center gap-2 bg-back2 py-3 px-2">
+                                <p class="break-all"><span class="text-primary">bc1q</span>nxp2zlsfur2uu7c5hulwcw6n6mygkm7gmp<span class="text-primary">tu6p</span></p>
+                                <button class="btn-normal basic-hover w-24 h-10 rounded" onclick="viewAlert('copy_alert')">복사 하기</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="mt-4 bg-primary p-2 px-4 rounded bg-opacity-20 text-primary text-xs font-semibold">
+                        참고: <span class="text-tit">BTC만 이 주소로 보내십시오. 코인은 2번의 네트워크 확인 후에 입금됩니다.</span>
+                    </div>
+                </div>
+                <div id="deposit-tab-2" class="tab-pane leading-relaxed p-6" role="tabpanel" aria-labelledby="deposit-2-tab">
+                    <div class="flex items-center justify-between">
+                        <p>입금 화폐</p>
+                        <div class="custom_select2 w-32">
+                            <button class="btn w-32 h-12 flex px-4 items-center justify-between border-none ">
+                                <div class="flex flex-row-reverse items-center gap-3 text-tit name text-base ">
+                                    <img class="w-7" src="/bcGame/dist/custom_img/coin/KRW.webp" />
+                                    KRW
+                                </div>
+                                <i class="ml-2"><svg class="w-3.5 h-3.5 fill-basic arr"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                            </button>
+                            <div class="bg-white dark:bg-back2 right !w-72 shadow-2xl">
+                                <div class="p-4 pb-2">
+                                    <div class="relative w-full">
+                                        <label for="cash_input"><svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Search"></use></svg></label>
+                                        <input type="text" id="cash_input" class="form-control bg-modaldark pl-10" placeholder="검색" />
+                                    </div>
+                                </div>
+                                <ul class="overflow-y-auto scrollbar h-64 p-2 rounded text-sub">
+                                    <li class="p-2 px-4 flex items-center justify-between on">
+                                        <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                            <img class="w-7" src="/bcGame/dist/custom_img/coin/KRW.webp" />
+                                            KRW
+                                        </div>
+                                        <div class="text-right text-xs">
+                                            <b class="block text-tit text-sm">₩ 0.00</b>
+                                            0.00
+                                        </div>
+                                    </li>
+                                    <li class="p-2 px-4 flex items-center justify-between ">
+                                        <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                            <img class="w-7" src="/bcGame/dist/custom_img/coin/ARS.webp" />
+                                            ARS
+                                        </div>
+                                        <div class="text-right text-xs">
+                                            <b class="block text-tit text-sm">₩ 0.00</b>
+                                            0.00
+                                        </div>
+                                    </li>
+                                    <li class="p-2 px-4 flex items-center justify-between ">
+                                        <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                            <img class="w-7" src="/bcGame/dist/custom_img/coin/CLP.webp" />
+                                            CLP
+                                        </div>
+                                        <div class="text-right text-xs">
+                                            <b class="block text-tit text-sm">₩ 0.00</b>
+                                            0.00
+                                        </div>
+                                    </li>
+                                    <li class="p-2 px-4 flex items-center justify-between ">
+                                        <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                            <img class="w-7" src="/bcGame/dist/custom_img/coin/IDR.webp" />
+                                            IDR
+                                        </div>
+                                        <div class="text-right text-xs">
+                                            <b class="block text-tit text-sm">₩ 0.00</b>
+                                            0.00
+                                        </div>
+                                    </li>
+                                    <li class="p-2 px-4 flex items-center justify-between ">
+                                        <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                            <img class="w-7" src="/bcGame/dist/custom_img/coin/AUD.webp" />
+                                            AUD
+                                        </div>
+                                        <div class="text-right text-xs">
+                                            <b class="block text-tit text-sm">₩ 0.00</b>
+                                            0.00
+                                        </div>
+                                    </li>
+                                    <li class="p-2 px-4 flex items-center justify-between ">
+                                        <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                            <img class="w-7" src="/bcGame/dist/custom_img/coin/AZN.webp" />
+                                            AZN
+                                        </div>
+                                        <div class="text-right text-xs">
+                                            <b class="block text-tit text-sm">₩ 0.00</b>
+                                            0.00
+                                        </div>
+                                    </li>
+                                    <li class="p-2 px-4 flex items-center justify-between ">
+                                        <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                            <img class="w-7" src="/bcGame/dist/custom_img/coin/BDT.webp" />
+                                            BDT
+                                        </div>
+                                        <div class="text-right text-xs">
+                                            <b class="block text-tit text-sm">₩ 0.00</b>
+                                            0.00
+                                        </div>
+                                    </li>
+                                    <li class="p-2 px-4 flex items-center justify-between ">
+                                        <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                            <img class="w-7" src="/bcGame/dist/custom_img/coin/CAD.webp" />
+                                            CAD
+                                        </div>
+                                        <div class="text-right text-xs">
+                                            <b class="block text-tit text-sm">₩ 0.00</b>
+                                            0.00
+                                        </div>
+                                    </li>
+                                    <li class="p-2 px-4 flex items-center justify-between ">
+                                        <div class="flex items-center gap-2 text-tit font-extrabold name">
+                                            <img class="w-7" src="/bcGame/dist/custom_img/coin/COP.webp" />
+                                            COP
+                                        </div>
+                                        <div class="text-right text-xs">
+                                            <b class="block text-tit text-sm">₩ 0.00</b>
+                                            0.00
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-tab-wrap">
+                        <!-- 결제방법 선택 -->
+                        <div class="deposit-list">
+                            <div class="mt-4">결제방법 선택하기</div>
+                            <div class="bg-modaldark mt-2 p-3 rounded">
+                                <p class="mb-2">추천</p>
+                                <button class="relative flex items-center justify-between w-full py-2 px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="ModalTab('deposit-tab-2','deposit-detail')">
+                                    <span class="absolute right-0 top-0 px-5 text-white bg-tag text-xs rounded-bl">가장 빠른</span>
+                                    <div class="flex items-center gap-4">
+                                        <img class="w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer.png" />
+                                        <i class="border-r border-solid border-slate-300 h-9"></i>
+                                        <p class="text-tit">은행 이체</p>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-xs text-sub">
+                                        10,000~2,500,000 KRW
+                                        <i><svg class="w-4 h-4 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                    </div>
+                                </button>
+                                <button class="mt-2 relative flex items-center justify-between w-full py-2 px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="ModalTab('deposit-tab-2','deposit-detail')">
+                                    <span class="absolute right-0 top-0 px-5 text-white bg-tag text-xs rounded-bl">인기</span>
+                                    <div class="flex items-center gap-4">
+                                        <img class="w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer2.png" />
+                                        <i class="border-r border-solid border-slate-300 h-9"></i>
+                                        <p class="text-tit">은행 이체</p>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-xs text-sub">
+                                        30,000~9,000,000 KRW
+                                        <i><svg class="w-4 h-4 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                    </div>
+                                </button>
+                                <button class="mt-2 relative flex items-center justify-between w-full py-2 px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="ModalTab('deposit-tab-2','deposit-detail')">
+                                    <span class="absolute right-0 top-0 px-5 text-white bg-tag text-xs rounded-bl">추천</span>
+                                    <div class="flex items-center gap-4">
+                                        <img class="w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer3.png" />
+                                        <i class="border-r border-solid border-slate-300 h-9"></i>
+                                        <p class="text-tit">QRIS</p>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-xs text-sub">
+                                        10,000~10,000,000 IDR
+                                        <i><svg class="w-4 h-4 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                    </div>
+                                </button>
+
+                                <p class="mt-2 mb-2">E지갑</p>
+                                <button class="relative flex items-center justify-between w-full py-2 px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="ModalTab('deposit-tab-2','deposit-detail')">
+                                    <div class="flex items-center gap-4">
+                                        <img class="w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer4.png" />
+                                        <i class="border-r border-solid border-slate-300 h-9"></i>
+                                        <p class="text-tit">DANA</p>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-xs text-sub">
+                                        10,000~10,000,000 IDR
+                                        <i><svg class="w-4 h-4 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                    </div>
+                                </button>
+                                <button class="mt-2 relative flex items-center justify-between w-full py-2 px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="ModalTab('deposit-tab-2','deposit-detail')">
+                                    <div class="flex items-center gap-4">
+                                        <img class="w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer3.png" />
+                                        <i class="border-r border-solid border-slate-300 h-9"></i>
+                                        <p class="text-tit">QRIS</p>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-xs text-sub">
+                                        10,000~10,000,000 IDR
+                                        <i><svg class="w-4 h-4 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                    </div>
+                                </button>
+                                <button class="mt-2 relative flex items-center justify-between w-full py-2 px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="ModalTab('deposit-tab-2','deposit-detail')">
+                                    <div class="flex items-center gap-4">
+                                        <img class="w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer5.png" />
+                                        <i class="border-r border-solid border-slate-300 h-9"></i>
+                                        <p class="text-tit">OVO</p>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-xs text-sub">
+                                        10,000~10,000,000 IDR
+                                        <i><svg class="w-4 h-4 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                    </div>
+                                </button>
+                                <button class="text-primary w-full text-center p-2">더 보기</button>
+                            </div>
+                        </div>
+
+                        <!-- 입금 -->
+                        <div class="hidden deposit-detail">
+                            <div class="mt-4">결제방법 선택하기</div>
+                            <div class="bg-modaldark mt-2 p-2 rounded">
+                                <button class="relative flex items-center justify-between w-full p-1 rounded" onclick="ModalTab('deposit-tab-2','deposit-list')">
+                                    <div class="flex items-center gap-4">
+                                        <img class="h-8" src="/bcGame/dist/custom_img/bank_transfer2.png" />
+                                        <p>은행 이체</p>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-xs text-sub">
+                                        <i><svg class="w-4 h-4 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="mt-3">10000 - 2500000 KRW</div>
+
+                            <div class="flex items-center justify-between mt-1 bg-modaldark p-2 rounded">
+                                <div class="flex items-center gap-4 text-base">
+                                    <p class="pl-4 text-tit">₩</p>
+                                    <input type="text" class="form-control nofocus !bg-transparent pl-2 text-tit text-base" value="19655" />
+                                </div>
+                                <div class="text-primary">추가 +₩35415.0</div>
+                            </div>
+
+                            <div class="flex items-center mt-3">
+                                <p>
+                                    최소 <b class="text-tit">180%</b> 예치금으로 추가 <b class="text-tit">20000 KRW</b> 보너스 받기 
+                                </p>
+                                <div class="tooltip_custom ml-1">
+                                    <svg class="inline-flex w-5 h-5 fill-primary"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box top w-56 shadow p-2 rounded bg-back">
+                                        <p class="text-tit">1st 입금 보너스</p>
+                                        <span>180% 최대 0.53700060 BTC<br/>최소 입금 0.001 BTC</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cash_btn_box mt-2">
+                                <button class="cash_btn text-base text-tit rounded on"><span class="bonus text-xs px-2 rounded-bl">+180%</span>₩ 30,000</button>
+                                <button class="cash_btn text-base text-tit rounded"><span class="bonus text-xs px-2 rounded-bl">+180%</span>₩ 90,000</button>
+                                <button class="cash_btn text-base text-tit rounded"><span class="bonus text-xs px-2 rounded-bl">+180%</span>₩ 900,000</button>
+                                <button class="cash_btn text-base text-tit rounded"><span class="bonus text-xs px-2 rounded-bl">+180%</span>₩ 9,000,000</button>
+                            </div>
+
+                            <div class="mt-3">은행이름</div>
+                            <div class="custom_select flex-1 mt-1">
+                                <button class="btn w-32 h-12 flex px-4 items-center justify-between border-none bg-modaldark">
+                                    <span>국민은행</span>
+                                    <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                </button>
+                                <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
+                                    <li class="py-1 on">국민은행</li>
+                                    <li class="py-1">신한은행</li>
+                                    <li class="py-1">우리은행</li>
+                                    <li class="py-1">NH농협은행</li>
+                                    <li class="py-1">기업은행</li>
+                                    <li class="py-1">SC제일은행</li>
+                                    <li class="py-1">농축협조합(지역농협)</li>
+                                    <li class="py-1">카카오뱅크</li>
+                                    <li class="py-1">KEB하나은행</li>
+                                    <li class="py-1">부산은행</li>
+                                    <li class="py-1">한국씨티은행</li>
+                                    <li class="py-1">대구은행</li>
+                                    <li class="py-1">새마을금고</li>
+                                    <li class="py-1">제주은행</li>
+                                    <li class="py-1">우체국</li>
+                                    <li class="py-1">산업은행</li>
+                                    <li class="py-1">케이뱅크은행</li>
+                                    <li class="py-1">수협</li>
+                                    <li class="py-1">신협</li>
+                                    <li class="py-1">저축은행</li>
+                                    <li class="py-1">전북은행</li>
+                                    <li class="py-1">광주은행</li>
+                                </ul>
+                            </div>
+
+                            <div class="mt-3">계좌 번호</div>
+                            <input class="mt-1 form-control bg-modaldark nofocus pl-2 text-tit" />
+
+
+
+                            <div class="mt-4 bg-primary p-2 px-4 rounded bg-opacity-20 text-primary font-semibold">
+                                공지: <span class="text-tit">실명 인증 후 주문하십시오</span>
+                            </div>
+
+                            <div class="text-center mt-10">
+                                <button class="btn-green w-1/2 h-12 font-bold">은행 이체으로 입금</button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    
+                </div>
+                <div id="deposit-tab-3" class="tab-pane leading-relaxed p-6" role="tabpanel" aria-labelledby="deposit-3-tab">
+                    
+                    <div>지불을</div>
+                    <div class="flex items-center justify-between mt-1 bg-modaldark p-2 rounded">
+                        <input class="form-control nofocus pl-2 text-tit text-xl font-extrabold !bg-transparent" value="30" />
+                        <button class="flex items-center shrink-0 justify-center gap-3 btn-normal h-11 w-32 rounded text-tit" onclick="modalInHandle('deposit-modal','deposit-body')">
+                            <img class="w-7" src="/bcGame/dist/custom_img/coin/USD.png" />
+                            USD 
+                            <svg class="w-3.5 h-3.5 fill-basic rotate-90"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                        </button>
+                    </div>
+                    <div class="mt-2">얻다</div>
+                    <div class="flex items-center justify-between mt-1 bg-modaldark p-2 rounded">
+                        <input class="form-control nofocus pl-2 text-tit text-xl font-extrabold !bg-transparent" value="29.55" />
+                        <button class="flex items-center shrink-0 justify-center gap-3 btn-normal h-11 w-32 rounded text-tit" onclick="modalInHandle('deposit-modal','deposit_pot-body')">
+                            <img class="w-7" src="/bcGame/dist/custom_img/coin/USDT.webp" />
+                            USDT
+                            <svg class="w-3.5 h-3.5 fill-basic rotate-90"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                        </button>
+                    </div>
+
+                    <div class="mt-2">결제 세부사항</div>
+                    <div class="bg-back p-2 mt-3">
+                        <div class="flex items-center justify-between p-2">
+                            <div>제공사</div>
+                            <div class="flex items-center gap-2 text-tit"><img class="w-5" src="/bcGame/dist/custom_img/MoonPay.webp" /> MoonPay</div>
+                        </div>
+                        <div class="flex items-center justify-between p-2">
+                            <div>방법</div>
+                            <div class="flex items-center gap-2 text-tit">Credit Card <img class="h-5" src="/bcGame/dist/custom_img/visa_mastercard.webp" /></div>
+                        </div>
+                        <div class="flex items-center justify-between p-2">
+                            <div>계정으로 입금</div>
+                            <div class="text-tit">setgbsea</div>
+                        </div>
+                    </div>  
+                    
+                    <div class="bg-back p-2 mt-3">
+                        <div class="flex items-center justify-between p-2">
+                            <div>총액 (수수료 포함)</div>
+                            <div class="text-tit">30 USD</div>
+                        </div>
+                        <div class="flex items-center justify-between p-2">
+                            <div>얻을 것입니다.</div>
+                            <div class="text-primary text-base font-extrabold">29.55 USDT</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 bg-primary p-2 px-4 rounded bg-opacity-20 text-primary font-semibold text-xs">
+                        공지: <span class="text-tit">블록체인에 따라 보증금이 도착하는 데 몇 분에서 1시간이 걸릴 수 있습니다.</span>
+                    </div>
+
+                    <div class="flex items-center gap-2 mt-4">
+                        <input type="checkbox" class="form-check-input" id="deposit-agree" />
+                        <label for="deposit-agree" class="flex items-center text-tit">
+                            본인은 다음 사항을 읽었으며 동의합니다 - 
+                            <div class="tooltip_custom ml-1">
+                                <button class="underline">거부자</button>
+                                <div class="hover_box top w-[400px] shadow p-2 rounded bg-back text-sub">
+                                    <p class="text-tit">거부자: </p>
+                                    <span>타사에서 제공하는 MoonPay 결제 서비스로 리디렉션됩니다. 서비스를 이용하기 전에 MoonPay 이용약관을 읽고 동의해 주십시오. 결제와 관련된 질문은 MoonPay 지원팀에 문의하세요. BC.GAME은 이 결제 서비스 사용으로 인해 발생하는 손실이나 손상에 대해 책임을 지지 않습니다.</span>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="text-center mt-10">
+                        <button class="btn-green w-1/2 h-12 font-bold flex items-center gap-1 justify-center mx-auto"><img class="w-7" src="/bcGame/dist/custom_img/moonpay_icon.png" alt="">Via MoonPay 구매</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 지불 -->
+        <div class="deposit-body modal-in modal-body relative rounded bg-stand">
+            <div class="relative flex items-center justify-between p-4 py-6 bg-modaldark">
+                <div class="flex items-center gap-2">
+                    <button onclick="modalInHandle('deposit-modal','deposit-body')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                </div>
+                <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+            </div>
+            <div class="w-full p-6 px-4">
+                <div class="flex items-center gap-3 px-4">
+                    <div class="relative w-full">
+                        <label for="cash_input"><svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Search"></use></svg></label>
+                        <input type="text" id="cash_input" class="form-control type02 pl-10" placeholder="검색">
+                    </div>
+                </div>
+                <div class="overflow-y-auto scrollbar h-auto sm:h-[640px] p-4">
+
+                    <div class="flex justify-between items-center w-full py-3 px-3 cursor-pointer hover:bg-slate-300 hover:bg-opacity-30 rounded border border-solid border-primary" onclick="modalInHandle('deposit-modal','deposit-body')">
+                        <div class="flex items-center gap-2">
+                            <img class="w-7" src="/bcGame/dist/custom_img/coin/AUD-1.webp">
+                            AUD
+                        </div>
+                        <div class="flex items-center gap-2 text-xs">
+                            Australian Dollar
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center w-full py-3 px-3 cursor-pointer hover:bg-slate-300 hover:bg-opacity-30 rounded" onclick="modalInHandle('deposit-modal','deposit-body')">
+                        <div class="flex items-center gap-2">
+                            <img class="w-7" src="/bcGame/dist/custom_img/coin/BGN.webp">
+                            BGN
+                        </div>
+                        <div class="flex items-center gap-2 text-xs">
+                            Bulgarian Lev
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center w-full py-3 px-3 cursor-pointer hover:bg-slate-300 hover:bg-opacity-30 rounded" onclick="modalInHandle('deposit-modal','deposit-body')">
+                        <div class="flex items-center gap-2">
+                            <img class="w-7" src="/bcGame/dist/custom_img/coin/BRL.webp">
+                            BRL
+                        </div>
+                        <div class="flex items-center gap-2 text-xs">
+                            Brazilian Real
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center w-full py-3 px-3 cursor-pointer hover:bg-slate-300 hover:bg-opacity-30 rounded" onclick="modalInHandle('deposit-modal','deposit-body')">
+                        <div class="flex items-center gap-2">
+                            <img class="w-7" src="/bcGame/dist/custom_img/coin/CAD.webp">
+                            CAD
+                        </div>
+                        <div class="flex items-center gap-2 text-xs">
+                            Canadian Dollar
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center w-full py-3 px-3 cursor-pointer hover:bg-slate-300 hover:bg-opacity-30 rounded" onclick="modalInHandle('deposit-modal','deposit-body')">
+                        <div class="flex items-center gap-2">
+                            <img class="w-7" src="/bcGame/dist/custom_img/coin/CHF.webp">
+                            CHF
+                        </div>
+                        <div class="flex items-center gap-2 text-xs">
+                            Swiss Franc
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center w-full py-3 px-3 cursor-pointer hover:bg-slate-300 hover:bg-opacity-30 rounded" onclick="modalInHandle('deposit-modal','deposit-body')">
+                        <div class="flex items-center gap-2">
+                            <img class="w-7" src="/bcGame/dist/custom_img/coin/COP.webp">
+                            COP
+                        </div>
+                        <div class="flex items-center gap-2 text-xs">
+                            Colombian Peso
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center w-full py-3 px-3 cursor-pointer hover:bg-slate-300 hover:bg-opacity-30 rounded" onclick="modalInHandle('deposit-modal','deposit-body')">
+                        <div class="flex items-center gap-2">
+                            <img class="w-7" src="/bcGame/dist/custom_img/coin/CZK.webp">
+                            CZK
+                        </div>
+                        <div class="flex items-center gap-2 text-xs">
+                            Czech Koruna
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center w-full py-3 px-3 cursor-pointer hover:bg-slate-300 hover:bg-opacity-30 rounded" onclick="modalInHandle('deposit-modal','deposit-body')">
+                        <div class="flex items-center gap-2">
+                            <img class="w-7" src="/bcGame/dist/custom_img/coin/DKK.webp">
+                            DKK
+                        </div>
+                        <div class="flex items-center gap-2 text-xs">
+                            Danish Krone
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center w-full py-3 px-3 cursor-pointer hover:bg-slate-300 hover:bg-opacity-30 rounded" onclick="modalInHandle('deposit-modal','deposit-body')">
+                        <div class="flex items-center gap-2">
+                            <span class="flex items-center justify-center w-7 h-7 rounded-full text-white font-extrabold font-base" style="background:rgb(240, 134, 146)">D</span>
+                            DOP
+                        </div>
+                        <div class="flex items-center gap-2 text-xs">
+                            Dominican Peso
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center w-full py-3 px-3 cursor-pointer hover:bg-slate-300 hover:bg-opacity-30 rounded" onclick="modalInHandle('deposit-modal','deposit-body')">
+                        <div class="flex items-center gap-2">
+                            <img class="w-7" src="/bcGame/dist/custom_img/coin/EGP.webp">
+                            EGP
+                        </div>
+                        <div class="flex items-center gap-2 text-xs">
+                            Egyptian Pound
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center w-full py-3 px-3 cursor-pointer hover:bg-slate-300 hover:bg-opacity-30 rounded" onclick="modalInHandle('deposit-modal','deposit-body')">
+                        <div class="flex items-center gap-2">
+                            <img class="w-7" src="/bcGame/dist/custom_img/coin/EUR.webp">
+                            EUR
+                        </div>
+                        <div class="flex items-center gap-2 text-xs">
+                            Euro
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center w-full py-3 px-3 cursor-pointer hover:bg-slate-300 hover:bg-opacity-30 rounded" onclick="modalInHandle('deposit-modal','deposit-body')">
+                        <div class="flex items-center gap-2">
+                            <img class="w-7" src="/bcGame/dist/custom_img/coin/GBP.webp">
+                            GBP
+                        </div>
+                        <div class="flex items-center gap-2 text-xs">
+                            Pound Sterling
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center w-full py-3 px-3 cursor-pointer hover:bg-slate-300 hover:bg-opacity-30 rounded" onclick="modalInHandle('deposit-modal','deposit-body')">
+                        <div class="flex items-center gap-2">
+                            <img class="w-7" src="/bcGame/dist/custom_img/coin/HKD.webp">
+                            HKD
+                        </div>
+                        <div class="flex items-center gap-2 text-xs">
+                            Hong Kong Dollar
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center w-full py-3 px-3 cursor-pointer hover:bg-slate-300 hover:bg-opacity-30 rounded" onclick="modalInHandle('deposit-modal','deposit-body')">
+                        <div class="flex items-center gap-2">
+                            <img class="w-7" src="/bcGame/dist/custom_img/coin/IDR.webp">
+                            IDR
+                        </div>
+                        <div class="flex items-center gap-2 text-xs">
+                            Indonesian Rupiah
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center w-full py-3 px-3 cursor-pointer hover:bg-slate-300 hover:bg-opacity-30 rounded" onclick="modalInHandle('deposit-modal','deposit-body')">
+                        <div class="flex items-center gap-2">
+                            <img class="w-7" src="/bcGame/dist/custom_img/coin/ILS.webp">
+                            ILS
+                        </div>
+                        <div class="flex items-center gap-2 text-xs">
+                            Israeli New Shekel
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- 자산 포트폴리오 -->
+        <div class="deposit_pot-body modal-in modal-body relative rounded bg-stand">
+            <div class="relative flex items-center justify-between p-4 py-2 bg-modaldark">
+                <div class="flex items-center gap-2">
+                    <button onclick="modalInHandle('deposit-modal','deposit_pot-body')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                    <p class="text-tit font-extrabold text-base">자산 포트폴리오</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="relative w-full">
+                        <label for="cash_input"><svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Search"></use></svg></label>
+                        <input type="text" id="cash_input" class="form-control type02 pl-10" placeholder="검색">
+                    </div>
+                    <button class="basic-hover ml-4" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+            </div>
+            <div class="w-full p-6 px-0">
+
+                <div class="px-10 pb-4">
+                    <ul class="nav nav-boxed-tabs bg-back rounded p-0.5" role="tablist">
+                        <li id="deposit-pot_tab01" class="nav-item w-full" role="presentation"> 
+                            <button class="w-full py-1 text-basic active" data-tw-toggle="pill" data-tw-target="#deposit-pot_tab01" type="button" role="tab" aria-controls="deposit-pot_tab01" aria-selected="true">화폐</button>
+                        </li>
+                        <li id="deposit-pot_tab02" class="nav-item w-full" role="presentation"> 
+                            <button class="w-full py-1 text-basic" data-tw-toggle="pill" data-tw-target="#deposit-pot_tab02" type="button" role="tab" aria-controls="deposit-pot_tab02" aria-selected="false">mNFT</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="overflow-y-auto scrollbar h-auto sm:h-[560px] p-4 px-8">
+                    <div class="tab-content">
+                        <div id="deposit-pot_tab01" class="tab-pane active" role="tabpanel" aria-labelledby="deposit-pot_tab01" >
+                            <div class="flex justify-between p-3 rounded cursor-pointer border border-solid border-primary">
+                                <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/KRW.webp" alt=""><b class="text-tit font-extrabold">KRW</b></p>
+                                <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                            </div>
+                            <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/ARS.webp" alt=""><b class="text-tit font-extrabold">ARS</b></p>
+                                <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                            </div>
+                            <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/CLP.webp" alt=""><b class="text-tit font-extrabold">CLP</b></p>
+                                <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                            </div>
+                            <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/IDR.webp" alt=""><b class="text-tit font-extrabold">IDR</b></p>
+                                <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                            </div>
+                            <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/AUD.webp" alt=""><b class="text-tit font-extrabold">AUD</b></p>
+                                <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                            </div>
+                            <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/AZN.webp" alt=""><b class="text-tit font-extrabold">AZN</b></p>
+                                <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                            </div>
+                            <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/BDT.webp" alt=""><b class="text-tit font-extrabold">BDT</b></p>
+                                <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                            </div>
+                            <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/CAD.webp" alt=""><b class="text-tit font-extrabold">CAD</b></p>
+                                <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                            </div>
+                            <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/COP.webp" alt=""><b class="text-tit font-extrabold">COP</b></p>
+                                <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                            </div>
+                            <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/EGP.webp" alt=""><b class="text-tit font-extrabold">EGP</b></p>
+                                <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                            </div>
+                            <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/EUR.webp" alt=""><b class="text-tit font-extrabold">EUR</b></p>
+                                <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                            </div>
+                            <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/GBP.webp" alt=""><b class="text-tit font-extrabold">GBP</b></p>
+                                <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                            </div>
+                            <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/GHS.webp" alt=""><b class="text-tit font-extrabold">GHS</b></p>
+                                <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                            </div>
+                            <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/JPY.webp" alt=""><b class="text-tit font-extrabold">JPY</b></p>
+                                <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                            </div>
+                            <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/KES.webp" alt=""><b class="text-tit font-extrabold">KES</b></p>
+                                <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                            </div>
+                            <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/KGS.webp" alt=""><b class="text-tit font-extrabold">KGS</b></p>
+                                <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                            </div>
+                        </div>
+                        <div id="deposit-pot_tab02" class="tab-pane" role="tabpanel" aria-labelledby="deposit-pot_tab02">
+                            <div class="h-80 py-10 text-center ">
+                                <img class="w-48 mx-auto" src="/bcGame/dist/custom_img/empty.webp" alt="">
+                                <p class="-mt-5 text-basic opacity-70">코인 또는 토큰을 찾을 수 없음</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="p-6 px-10 border-t border-slate-200 border-solid flex items-center justify-between">
+                    <div>
+                        <div class="form-check form-switch"> 
+                            <input id="top-cash_check" class="form-check-input legal_check" type="checkbox" checked> 
+                            <label class="form-check-label" for="top-cash_check">법정화폐로 보기</label> 
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-check form-switch"> 
+                            <input id="top-cash_check02" class="form-check-input small_check" type="checkbox"> 
+                            <label class="form-check-label" for="top-cash_check02">작게보기</label> 
+                        </div>
+                    </div>
+                </div>
+
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
 <!-- 채팅규칙 모달 -->
 <div id="chat_info-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
@@ -3100,10 +5410,13 @@ echo txtRecord('./@record/');
 
 <script src='https://design01.codeidea.io/link_script.js'></script>
 <script src="./dist/js/app.js"></script>
+<script src="/bcGame/dist/js/jquery-1.12.4.js"></script>
 <script src="./dist/custom_js/custom.js"></script>
 <script src="./dist/js/jquery-ui.js"></script>
 
 <script>
+    topbarHandle()
+
 	jQuery(document).ready(function() {
 		jQuery('.ghost_mode').click(function() {
 			jQuery('#Ghost_alert').addClass('show');

@@ -78,6 +78,8 @@ fetch("/bcGame/_right_area.html")
         })
 
         rightAreaHandle();
+        leftMenuHandle()
+        topbarHandle()
     })
     .catch((error) => {
         console.log(error);
@@ -584,11 +586,23 @@ const modalInHandle = (modal,content)=>{
         if(content == "profile_medal_detail" || content == "profile_medal_master"){
             modalWrap.querySelector('.profile_medal').classList.add('on')
         }
+        if(content == "deposit_pot-body"){
+            modalWrap.querySelector('.modal-dialog').classList.remove("modal-lg")
+        }
+        if(content == "rain_lock-body"){
+            modalWrap.querySelector('.modal-dialog').classList.add("modal-xl")
+        }
     }else{
         modalcont.classList.remove('on')
         cont.classList.remove('open')
         if(content == "profile_medal_detail" || content == "profile_medal_master"){
             modalWrap.querySelector('.profile_medal').classList.remove('on')
+        }
+        if(content == "deposit_pot-body"){
+            modalWrap.querySelector('.modal-dialog').classList.add("modal-lg")
+        }
+        if(content == "rain_lock-body"){
+            modalWrap.querySelector('.modal-dialog').classList.remove("modal-xl")
         }
     }
 }

@@ -53,6 +53,7 @@ button:focus {box-shadow:none !important; }
 
 .shadow-bottom {background-image: var(--page-bottom-shadow);}
 
+button:disabled {opacity:.7; }
 
 .btn-top {border:0 none; box-shadow:none; border-radius:3px; color:var(--text-color)}
 .dark .btn-top.active,
