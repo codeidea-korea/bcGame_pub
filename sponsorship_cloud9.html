@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <link href="/bcGame/dist/custom_img/stake_favicon.png" rel="shortcut icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <title>BC.GAME</title>
+    <!-- ** css 시작 ** -->
+    <link rel="stylesheet" href="/bcGame/dist/css/app.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <!-- 커스텀 css 추가 -->
+    <link rel="stylesheet" href="/bcGame/dist/custom_css/custom.css" />
+    <!-- ** css 끝 ** -->
+</head>
+
+<body class="bg-back">
+
+    <div class="flex relative">
+        <!--  ** 사이드 메뉴 시작 ** -->
+        <div class="sidebar"></div>
+        <!--  ** 사이드 메뉴 끝 ** -->
+
+        <!--  ** 메인 보드 시작 ** -->
+        <div class="content">
+            <!-- ** 페이지 로딩 ** -->
+            <div id="loadingContainer">
+                <svg width="25" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" fill="#3BC117" class="w-12 h-12">
+                    <circle cx="15" cy="15" r="15">
+                        <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                    <circle cx="60" cy="15" r="9" fill-opacity="0.3">
+                        <animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                    <circle cx="105" cy="15" r="15">
+                        <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                </svg>
+            </div>
+            <!-- ** 페이지 로딩 끝 ** -->
+            
+            <!-- ** 탑바 시작 ** -->
+            <!-- ** 탑바 끝 ** -->
+
+            <!-- ** 내용시작 ** -->
+            <div class="container_wrap" style="height:1000px;">
+
+                <div class="sponsorship_visual bg-sponsor ">
+                    <div class="container relative">
+                        <div class="absolute left-0 bottom-4 md:bottom-0 md:relative z-10 flex flex-col md:flex-row items-center gap-3 md:gap-8 h-auto md:h-80 w-full">
+                            <img class="w-16 md:w-24 xl:w-36" src="/bcGame/dist/custom_img/sponsor/cloud9_logo.webp" alt="">
+                            <div>
+                                <h3 class="text-xl md:text-3xl xl:text-4xl text-tit font-bold pb-1 md:pb-2 md:text-left text-center">Cloud9 e스포츠 조직</h3>
+                                <p class="flex items-center justify-center md:justify-start gap-2 text-xs md:text-sm xl:text-base">
+                                    공식 홈페이지 <span class="text-tit">Cloud9</span> 
+                                    <a href="https://cloud9.gg/" target="_blank" class="flex items-center gap-1 text-xs sponsor_link">
+                                        <svg class="w-3 h-3 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Link"></use></svg>
+                                        Cloud9.gg
+                                        <svg class="w-3 h-3 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <img class="absolute right-0 top-auto bottom-0 h-full hidden md:block" src="/bcGame/dist/custom_img/sponsor/cloud9_main.webp" alt="">
+                        <img class="block md:hidden" src="/bcGame/dist/custom_img/sponsor/cloud9_main_mo.png" alt="">
+                    </div>
+                </div>
+                <div class="container pt-8">
+                    <div class="inline-flex items-center gap-2 p-2 px-4 bg-backlight rounded">
+                        <span>스폰서쉽</span>
+                        <svg class="w-3 h-3 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                        <b class="font-bold text-tit">Cloud9</b>
+                    </div>
+                    <div class="flex items-start justify-between flex-col xl:flex-row gap-8 mt-6">
+                        <div class="w-full xl:w-1/2 font-medium">
+                            <h4 class="text-tit text-lg font-bold">Cloud9 공식 파트너</h4>
+                            <p class="mt-3 text-[15px]">BC.GAME가 정식으로 Cloud9의 공식 파트너가 되었습니다! BC.GAME 커뮤니티에 Cloud9이 이끄는 성장하는 iSports 커뮤니티의 일원이 될 수 있는 기회를 제공하기 위해 새로운 파트너십이 형성되었습니다. 올해의 Crypto Casino 타이틀을 보유하는 것 외에도 BC.GAME는 모든 CS:GO 관련 이니셔티브에서 Cloud9을 지원하는 동시에 다음 iGaming 타이틀을 집으로 가져가는 것을 지속적으로 목표로 합니다.</p>
+                            <p class="mt-3 text-[15px]">Cloud9은 리그 챔피언십 시리즈와 리그 오브 레전드에 참가하여 인지도가 높습니다. 이 조직은 전 세계 최고 수준의 e스포츠 선수들의 본거지입니다. iGaming 및 eSports에 중대한 변화를 가져오는 동시에 전설적인 팀과 연결되어 영광입니다.</p>
+                            <h4 class="mt-10 text-tit text-lg font-bold">e스포츠와 iGaming의 새로운 시대</h4>
+                            <p class="mt-3 text-[15px]">eSports와 iGaming이 만나 두 커뮤니티가 서로 상호 작용할 수 있는 하나의 거대한 시너지를 형성하는 것을 상상해 본 적이 있습니까?</p>
+                            <p class="mt-3 text-[15px]">암호화 카지노가 온라인 비디오 게임을 만나는 eSports 및 iGaming의 새로운 시대에 오신 것을 환영합니다! {0}과 Cloud9의 새로운 파트너십은 새로운 디지털 게임 혁명을 위한 시작입니다. 기술이 발전하고 있으므로 {0}과 함께하는 iGaming도 마찬가지입니다!</p>
+                        </div>
+                        <div class="w-full xl:w-1/2 shadow p-4 rounded-sm bg-backlight"><img src="/bcGame/dist/custom_img/sponsor/cloud9_img1.png" alt=""></div>
+                    </div>
+                    <div class="flex items-start flex-col xl:flex-row-reverse justify-between gap-8 mt-16">
+                        <div class="w-full xl:w-1/2 font-medium">
+                            <h4 class="text-tit text-lg font-bold">Cloud9 공식 파트너</h4>
+                            <p class="mt-3 text-[15px]">Cloud9과 관계를 구축한 후 BC.GAME은 스포츠 및 게임 산업의 다른 커뮤니티와 연결하여 확장할 예정입니다.</p>
+                            <p class="mt-3 text-[15px]">성장하는 커뮤니티의 일원이 되십시오. 곧 BC.GAME, Cloud9 및 기타 디지털 게임의 주요 이름이 함께 모여 플레이어와 팬에게 더 많은 유틸리티를 제공할 것입니다.</p>
+                            <h4 class="mt-10 text-tit text-lg font-bold">e스포츠와 iGaming의 새로운 시대</h4>
+                            <p class="mt-3 text-[15px]">Cloud9 및 BC.GAME 파트너십을 통해 향후 BC.GAME 커뮤니티가 상품 추첨, 암호화 경품 등과 같은 주요 경품 행사에 참여할 수 있는 대규모 이벤트가 있습니다. 기존 관계의 일부로 BC.GAME는 모든 CS:GO 이벤트를 통해 Cloud9를 지원할 것입니다. 더 많은 활동이 공개될 예정이니 성장하는 BC.GAME 생태계의 일부인지 확인하세요!</p>
+                        </div>
+                        <div class="w-full xl:w-1/2 shadow p-4 rounded-sm bg-backlight"><img src="/bcGame/dist/custom_img/sponsor/cloud9_img2.webp" alt=""></div>
+                    </div>
+                    <div class="mt-6 xl:mt-24 pb-12">
+                        <div class="relative w-full xl:w-2/3 shadow p-4 rounded-sm bg-backlight mx-auto">
+                            <p class="absolute left-0 top-1/4 w-full text-center text-2xl md:text-5xl text-tit tracking-[0.4em] font-medium">환영합니다</p>
+                            <img src="/bcGame/dist/custom_img/sponsor/cloud9_bottom.webp" alt="">
+                            <p class="absolute left-0 top-3/4 w-full text-center text-base md:text-xl text-tit font-medium">암호화폐 카지노 스폰서</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+                <!-- ** 푸터 시작 ** -->
+                <!-- ** 푸터 끝 ** -->
+            
+            </div>
+            <!-- ** 내용 끝 ** -->
+
+        </div>
+        <!--  ** 메인 보드 끝 ** -->
+
+        <!--  ** 오른쪽 보드 시작 ** -->
+        <div class="right-sidebar "></div>
+        <!--  ** 오른쪽 보드 끝 ** -->
+
+        <!--  ** 모달영역 시작 ** -->
+       
+        <!--  ** 모달영역 끝 ** -->
+
+    </div>
+    <!-- ** JS 시작 ** -->
+    <script
+    src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="/bcGame/dist/custom_js/custom.js"></script>
+    <script src="/bcGame/dist/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- 필수 jquery library -->
+    <script src="/bcGame/dist/js/jquery-1.12.4.js"></script>
+    <script src="/bcGame/dist/js/jquery-ui.js"></script>
+
+    
+
+
+
+</body>
+
+</html>

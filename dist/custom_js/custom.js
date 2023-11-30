@@ -20,8 +20,6 @@ fetch("/bcGame/_top_bar.html")
        
         if(!$('.content').hasClass('logout')){
             $(".content").prepend(html);
-            leftMenuHandle()
-            topbarHandle()
         }
     })
     .catch((error) => {
@@ -34,8 +32,6 @@ fetch("/bcGame/_modal.html")
     .then((response) => response.text())
     .then((html) => {
         $(".content").prepend(html);
-        leftMenuHandle()
-        topbarHandle()
     })
     .catch((error) => {
         console.log(error);
@@ -47,8 +43,6 @@ fetch("/bcGame/_top_bar_logout.html")
     .then((html) => {
         if($('.content').hasClass('logout')){
             $(".content").prepend(html);
-            leftMenuHandle()
-            topbarHandle()
         }
     })
     .catch((error) => {
@@ -234,6 +228,11 @@ const rightAreaHandle = ()=>{
     $('.right-area .chat_bottom .send-input input').on('click',function(){
         $(".right-area .chat_bottom .emoji_wrap > div").remove();
         $(".right-area .chat_bottom .gif_wrap > div").remove();
+    })
+
+    // 랭킹아이콘 클릭시
+    $('.right-area .rank_btn , .right-area .ranking_close').on('click',function(){
+        $('.ranking_wrap').toggleClass('hidden')
     })
 
 }
@@ -592,6 +591,9 @@ const modalInHandle = (modal,content)=>{
         if(content == "rain_lock-body"){
             modalWrap.querySelector('.modal-dialog').classList.add("modal-xl")
         }
+        if(content == "rain_detail-body"){
+            modalWrap.querySelector('.modal-dialog').classList.remove("modal-xl")
+        }
     }else{
         modalcont.classList.remove('on')
         cont.classList.remove('open')
@@ -603,6 +605,9 @@ const modalInHandle = (modal,content)=>{
         }
         if(content == "rain_lock-body"){
             modalWrap.querySelector('.modal-dialog').classList.remove("modal-xl")
+        }
+        if(content == "rain_detail-body"){
+            modalWrap.querySelector('.modal-dialog').classList.add("modal-xl")
         }
     }
 }

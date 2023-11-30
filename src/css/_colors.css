@@ -36,6 +36,9 @@
     --background-type-color:#f2f2f7;
     --green-gradient:linear-gradient(145deg,#cff47e,#f5f6fa 50%);
     --modal-darkbg: #f5f6fa;
+    --btn-dark : #EAECF3;
+    --background-light: #ffffff;
+    --sponsor-visual:#EAECF3; 
 }
 
 /* Default dark-mode colors */
@@ -76,6 +79,9 @@
     --background-type-color:#1e2024;
     --green-gradient:linear-gradient(145deg,#395231,#1c1e22 50%);
     --modal-darkbg: #17181b;
+    --btn-dark : #282A30;
+    --background-light: #2D3035;
+    --sponsor-visual:#1A1C20; 
 }
 
 /* Theme 1 colors */
