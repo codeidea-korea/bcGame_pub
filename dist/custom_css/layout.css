@@ -30,6 +30,7 @@ button:focus {box-shadow:none !important; }
 .bg-tag {background:linear-gradient(to right,#E15A0F,#F7931A); }
 .bg-backlight {background-color: var(--background-light);}
 .bg-sponsor {background-color: var(--sponsor-visual);}
+.bg-list {background-color: var(--casino-listbg);}
 .dark .dark\:bg-back2 {background-color: var(--background-type-color);}
 .dark .dark\:bg-back {background-color: var(--background-color);}
 .dark .dark\:bg-modaldark {background-color: var(--modal-darkbg);}
@@ -64,8 +65,12 @@ button:disabled {opacity:.7; }
 .btn-top.active,
 .btn-top:hover {background-color: #F6F7FA;}
 .btn-top svg {fill:#9FA5AC; }
+.dark .btn-top.active svg,
 .dark .btn-top:hover svg {fill:#fff; }
+.btn-top.active svg,
 .btn-top:hover svg {fill:#000; }
+.btn-top.type02  {background-color:rgba(0, 0, 0, 0.2)}
+.btn-top:disabled {opacity:0.6; }
 
 .btn-green {border:0 none; box-shadow:none; background-color:#1d803ab3; background-image:conic-gradient(from 1turn,rgba(88,175,16,1),rgba(29,128,58,1)); color:#fff; border-radius:3px; }
 .btn-purple {border:0 none; box-shadow:none; background-color:#6e34e2b3; background-image:conic-gradient(from 1turn,rgba(136,83,252,1),rgba(110,52,226,1)); color:#fff; border-radius:3px; }
@@ -301,7 +306,7 @@ button:disabled {opacity:.7; }
 .content {position:relative; margin-left:260px; transition:margin 0.3s; }
 .content.right_open {margin-right:360px; }
 .content.fold {margin-left:64px; }
-.content #loadingContainer {z-index:50; position:absolute; left:0; top:0; display:flex; align-items:center; justify-content:center; width:100%; height:100%;}
+.content #loadingContainer {z-index:50; position:absolute; left:0; top:0; display:flex; align-items:center; justify-content:center; width:100%; height:100%; background-color: var(--background-color);}
 
 .container {
     width: 100%;

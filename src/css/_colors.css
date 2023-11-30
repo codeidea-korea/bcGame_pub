@@ -39,6 +39,7 @@
     --btn-dark : #EAECF3;
     --background-light: #ffffff;
     --sponsor-visual:#EAECF3; 
+    --casino-listbg:#ffffff;
 }
 
 /* Default dark-mode colors */
@@ -82,6 +83,7 @@
     --btn-dark : #282A30;
     --background-light: #2D3035;
     --sponsor-visual:#1A1C20; 
+    --casino-listbg:#32343B;
 }
 
 /* Theme 1 colors */

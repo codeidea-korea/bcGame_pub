@@ -91,7 +91,7 @@ echo txtRecord('./@record/');
 							<button class="pop-modal" data-tw-toggle="modal" data-tw-target="#profile_reward-modal">추천 그리고 보상 모달</button>
 						</li>
                         <li>
-                            <button class="pop-modal" data-tw-toggle="modal" data-tw-target="#profile_info-modal">유저 정보 모달</button>
+                            <button class="pop-modal" data-tw-toggle="modal" data-tw-target="#profile_info-modal" onclick="modalInHandle('profile_info-modal','basic')">유저 정보 모달</button>
                             <button class="pop-modal" data-tw-toggle="modal" data-tw-target="#profile_info_secret-modal">유저 정보 모달 - 시크릿 모드</button>
                         </li>
                         <li>
@@ -116,6 +116,14 @@ echo txtRecord('./@record/');
 		<li class="mt20" data-label="메인">
 			<ul>
 				<li><a href="/bcGame/index.html" target="_blank" class="">메인</a></li>
+			</ul>
+		</li>
+        <li class="mt20" data-label="카지노">
+			<ul>
+				<!-- <li><a href="/bcGame/casino/index.html" target="_blank" class="">메인</a></li> -->
+				<li><a href="/bcGame/casino/picks_for_you.html" target="_blank" class="">당신을 위해 선택</a></li>
+				<li><a href="/bcGame/casino/favorite.html" target="_blank" class="">가장 좋아하는</a></li>
+				<li><a href="/bcGame/casino/recent.html" target="_blank" class="">최근</a></li>
 			</ul>
 		</li>
 

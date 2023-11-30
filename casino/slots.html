@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <link href="/bcGame/dist/custom_img/stake_favicon.png" rel="shortcut icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <title>BC.GAME</title>
+    <!-- ** css 시작 ** -->
+    <link rel="stylesheet" href="/bcGame/dist/css/app.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <!-- 커스텀 css 추가 -->
+    <link rel="stylesheet" href="/bcGame/dist/custom_css/custom.css" />
+    <!-- ** css 끝 ** -->
+</head>
+
+<body class="bg-back">
+
+    <div class="flex relative">
+        <!--  ** 사이드 메뉴 시작 ** -->
+        <div class="sidebar"></div>
+        <!--  ** 사이드 메뉴 끝 ** -->
+
+        <!--  ** 메인 보드 시작 ** -->
+        <div class="content">
+            <!-- ** 페이지 로딩 ** -->
+            <div id="loadingContainer">
+                <svg width="25" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" fill="#3BC117" class="w-12 h-12">
+                    <circle cx="15" cy="15" r="15">
+                        <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                    <circle cx="60" cy="15" r="9" fill-opacity="0.3">
+                        <animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                    <circle cx="105" cy="15" r="15">
+                        <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                </svg>
+            </div>
+            <!-- ** 페이지 로딩 끝 ** -->
+            
+            <!-- ** 탑바 시작 ** -->
+            <!-- ** 탑바 끝 ** -->
+
+            <!-- ** 내용시작 ** -->
+            <div class="container_wrap" style="height:1000px;">
+
+                <div class="container py-8">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="inline-flex items-center gap-2 p-2 px-4 bg-backlight rounded">
+                                <span>카지노</span>
+                                <svg class="w-3 h-3 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                                <b class="font-bold text-tit">슬롯</b>
+                            </div>
+                            <div class="form-check form-switch"> 
+                                <input id="view_check" class="form-check-input small_check" type="checkbox"> 
+                                <label class="form-check-label" for="view_check">보기 차단</label> 
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6">
+                            <div class="flex items-center gap-3">
+                                <p>정렬 기준</p>
+                                <div class="w-44">
+                                    <div class="custom_select flex-1">
+                                        <button class="btn h-10 flex px-4 items-center justify-between border-none bg-modaldark">
+                                            <span>좋아 할만한</span>
+                                            <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                        </button>
+                                        <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
+                                            <li class="py-2 on">좋아 할만한</li>
+                                            <li class="py-2">인기</li>
+                                            <li class="py-2">A-Z</li>
+                                            <li class="py-2">Z-A</li>
+                                            <li class="py-2">New</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <p>제공사</p>
+                                <div class="w-44">
+                                    <div class="custom_select flex-1">
+                                        <button class="btn h-10 flex px-4 items-center justify-between border-none bg-modaldark">
+                                            <span>좋아 할만한</span>
+                                            <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                        </button>
+                                        <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
+                                            <li class="py-2">좋아 할만한</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="casino_list mt-4">
+                        
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_4.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_5.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_6.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_7.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                          <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_1.png" alt=""></a>
+                          <div class="flex items-center justify-between px-2 py-3">
+                              <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                              <div class="casino_gameinfo ">
+                                  <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                  <div class="hover_box p-4 bg-back2">
+                                      <div class="flex items-center justify-between bg-modaldark p-1">
+                                          <span>RTP:</span>
+                                          <span class="text-primary">99%</span>
+                                      </div>
+                                      <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                          <span>최근 큰 승리:</span>
+                                          <span>9900.00X</span>
+                                      </div>
+                                      <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                          <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                          <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                          <span class="ml-auto">BC Originals</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="cursor-pointer bg-list rounded">
+                          <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_2.png" alt=""></a>
+                          <div class="flex items-center justify-between px-2 py-3">
+                              <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                              <div class="casino_gameinfo ">
+                                  <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                  <div class="hover_box p-4 bg-back2">
+                                      <div class="flex items-center justify-between bg-modaldark p-1">
+                                          <span>RTP:</span>
+                                          <span class="text-primary">99%</span>
+                                      </div>
+                                      <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                          <span>최근 큰 승리:</span>
+                                          <span>9900.00X</span>
+                                      </div>
+                                      <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                          <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                          <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                          <span class="ml-auto">BC Originals</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="cursor-pointer bg-list rounded">
+                          <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_3.png" alt=""></a>
+                          <div class="flex items-center justify-between px-2 py-3">
+                              <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                              <div class="casino_gameinfo ">
+                                  <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                  <div class="hover_box p-4 bg-back2">
+                                      <div class="flex items-center justify-between bg-modaldark p-1">
+                                          <span>RTP:</span>
+                                          <span class="text-primary">99%</span>
+                                      </div>
+                                      <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                          <span>최근 큰 승리:</span>
+                                          <span>9900.00X</span>
+                                      </div>
+                                      <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                          <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                          <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                          <span class="ml-auto">BC Originals</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_8.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_9.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_10.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_11.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_12.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_1.png" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_2.png" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_3.png" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_4.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_5.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_9.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_10.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_12.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_6.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_7.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_8.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_9.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_10.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_11.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cursor-pointer bg-list rounded">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/casino/casino_12.avif" alt=""></a>
+                            <div class="flex items-center justify-between px-2 py-3">
+                                <p class="font-medium truncate"><a href="javascript:;">BC Originals</a></p>
+                                <div class="casino_gameinfo ">
+                                    <svg class="w-5 h-5 fill-basic cursor-pointer"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    <div class="hover_box p-4 bg-back2">
+                                        <div class="flex items-center justify-between bg-modaldark p-1">
+                                            <span>RTP:</span>
+                                            <span class="text-primary">99%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between bg-modaldark mt-1 p-1">
+                                            <span>최근 큰 승리:</span>
+                                            <span>9900.00X</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-3 text-xs gap-1">
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">BC Originals</a>
+                                            <a href="javascript:;" class="bg-modaldark p-1 truncate">Animals</a>
+                                            <span class="ml-auto">BC Originals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- pager -->
+                    <div class="text-center mt-12">
+                        <div class="flex items-center justify-center gap-2 font-medium">
+                            <p>40 / 747</p>
+                            <div class="relative w-20 h-1.5 bg-list rounded overflow-hidden"><span class="absolute left-0 top-0 h-full bg-primary rounded" style="width:10%"></span></div>
+                            <p>5%</p>
+                        </div>
+                        <button class="btn btn-normal h-11 w-36 mt-4 font-bold text-tit">더보기</button>
+                    </div>
+                </div>
+                
+
+                 <!-- BEGIN: Custom Tooltip Toggle --> 
+                
+                <!-- ** 푸터 시작 ** -->
+                <!-- ** 푸터 끝 ** -->
+            
+            </div>
+            <!-- ** 내용 끝 ** -->
+
+        </div>
+        <!--  ** 메인 보드 끝 ** -->
+
+        <!--  ** 오른쪽 보드 시작 ** -->
+        <div class="right-sidebar "></div>
+        <!--  ** 오른쪽 보드 끝 ** -->
+
+        <!--  ** 모달영역 시작 ** -->
+       
+        <!--  ** 모달영역 끝 ** -->
+
+    </div>
+    <!-- ** JS 시작 ** -->
+    <script
+    src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="/bcGame/dist/custom_js/custom.js"></script>
+    <script src="/bcGame/dist/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- 필수 jquery library -->
+    <script src="/bcGame/dist/js/jquery-1.12.4.js"></script>
+    <script src="/bcGame/dist/js/jquery-ui.js"></script>
+
+   
+
+
+
+</body>
+
+</html>
