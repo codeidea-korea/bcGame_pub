@@ -117,7 +117,7 @@ button:disabled {opacity:.7; }
 #=========================================#
 */
 .dark .top-bar {background-color: var(--background-color);}
-.top-bar {z-index:90; position:sticky; top:1px; margin-top:-1px; background-color: #FFF;}
+.top-bar {z-index:90; position:sticky; top:1px; width:100%; margin-top:-1px; background-color: #FFF; transition:width 0.3s; }
 .top-bar:before {
     content:''; position:absolute; left:0; bottom:-0.75rem;
     width:100%; height:0.75rem; opacity:0.3; 
@@ -128,6 +128,7 @@ button:disabled {opacity:.7; }
 .btn-top:hover .casino_i {fill:var(--primary-color) !important; }
 .btn-top:hover .sports_i {fill:#ea6518 !important; }
 .btn-top:hover .horse_i {fill:#ffbf39 !important; }
+.btn-top:hover .lottery_i {fill:#3296f1 !important; }
 
 .top-bar .mo_left {display:none; }
 .top-bar .chat_btn {position:relative}
@@ -148,15 +149,18 @@ button:disabled {opacity:.7; }
     .top-bar .container {justify-content:space-between; }
     .top-bar .mo_left {display:block; }
     .top-bar .chat_btn,
+    .top-bar .profile_btn,
+    .top-bar .lang_btn,
     .top-bar .cash_btn {display:none; }
     .top-login.top-bar .notice_btn {display:none; }
+    .top-login.top-bar .lang_btn {display:block; }
 }
 
 @media all and (max-width:1500px){
-    .content.right_open .top-bar .left > button {display:none;}
+    .content.right_open .top-bar .left > * {display:none;}
 }
 @media all and (max-width:1200px){
-    .content.right_open .top-bar .left > button {display:flex;}
+    .content.right_open .top-bar .left > * {display:flex;}
 }
 
 .walletDropdown {width:420px !important; max-width:100%; }

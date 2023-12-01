@@ -8,6 +8,7 @@
             <a href="/bcGame/casino/index.html" class="btn btn-top h-11 px-5"><svg class="w-5 h-5 mr-2 fill-basic casino_i"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Casino"></use></svg> 카지노</a>
             <button class="btn btn-top h-11 px-5"><svg class="w-5 h-5 mr-2 fill-basic sports_i"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Sports"></use></svg> 스포츠</button>
             <button class="btn btn-top h-11 px-5"><svg class="w-5 h-5 mr-2 fill-basic horse_i"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Horse"></use></svg> 레이싱</button>
+            <button class="btn btn-top h-11 px-5"><svg class="w-5 h-5 mr-2 fill-basic lottery_i"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Lottery"></use></svg> 복권</button>
         </div>
         <div class="right flex items-center">
             
@@ -181,9 +182,12 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-purple h-10 sm:h-11 w-16 sm:w-28 mr-0 sm:mr-4 font-bold" data-tw-toggle="modal" data-tw-target="#deposit-modal" >
-                <svg class="sm:block hidden w-4 h-4 fill-white mr-2"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Wallet"></use></svg>
+            <button class="btn btn-purple h-10 sm:h-11 w-16 sm:w-28 mr-0 sm:mr-4 font-bold hidden sm:block" data-tw-toggle="modal" data-tw-target="#deposit-modal" >
+                <svg class="inline-flex w-4 h-4 fill-white mr-2"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Wallet"></use></svg>
                 입금
+            </button>
+            <button class="btn btn-green h-10 w-10 mr-0 sm:mr-4 font-bold sm:hidden block" data-tw-toggle="modal" data-tw-target="#deposit-modal" >
+                <svg class="w-4 h-4 fill-white mr-2"width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.54785 11H19.5479" stroke="white" stroke-width="3" stroke-linecap="round"></path><path d="M10.5479 2L10.5479 20" stroke="white" stroke-width="3" stroke-linecap="round"></path></svg>
             </button>
             <button class="btn btn-top h-11 px-4 relative notice_btn" onclick="rightOpen('notice_area')"><svg class="w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Notice"></use></svg><span class="z-10 absolute -right-1 -top-1 px-2.5 bg-primary text-white rounded-xl">1</span></button>
 
@@ -247,6 +251,8 @@
             <button class="btn btn-top h-11 px-4 lang_btn" data-tw-toggle="modal" data-tw-target="#lang_currency_modal" onclick="ModalNav('lang_currency_modal','lang-tab-1')"><svg class="w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Language"></use></svg></button>
             <i class="sm:block hidden border-r border-solid border-slate-500 h-6"></i>
             <button class="btn btn-top h-11 px-2 cash_btn" data-tw-toggle="modal" data-tw-target="#lang_currency_modal" onclick="ModalNav('lang_currency_modal','lang-tab-2')">₩ KRW</button>
+            <button class="btn btn-top h-11 px-4 gift_btn block sm:hidden"><svg class="w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Gift"></use></svg></button>
+
         </div>
     </div>
 </div>

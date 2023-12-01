@@ -26,17 +26,6 @@ fetch("/bcGame/_top_bar.html")
         console.log(error);
     });
 
-
-// 모달 로드
-fetch("/bcGame/_modal.html")
-    .then((response) => response.text())
-    .then((html) => {
-        $(".content").prepend(html);
-    })
-    .catch((error) => {
-        console.log(error);
-    });
-
 // 탑바 로드 - 로그인 안했을때
 fetch("/bcGame/_top_bar_logout.html")
     .then((response) => response.text())
@@ -44,6 +33,16 @@ fetch("/bcGame/_top_bar_logout.html")
         if($('.content').hasClass('logout')){
             $(".content").prepend(html);
         }
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+// 모달 로드
+fetch("/bcGame/_modal.html")
+    .then((response) => response.text())
+    .then((html) => {
+        $(".content").prepend(html);
     })
     .catch((error) => {
         console.log(error);
