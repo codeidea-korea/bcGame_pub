@@ -19,6 +19,7 @@
 */
 .dark .nav-boxed-tabs .active {background-color: #2D3035; }
 .nav-boxed-tabs .active {background-color: #fff; color:var(--title-color); font-weight:bold; }
+.nav-boxed-tabs button.type02 {background-color:rgba(0, 0, 0, 0.2); }
 
 .dark .nav.nav-link-tabs .nav-item .nav-link {border-color:rgba(49,56,61,.6); color:inherit; }
 .dark .nav.nav-link-tabs .nav-item .nav-link.active {border-color:var(--primary-color); color:var(--title-color); }
@@ -158,6 +159,11 @@
 .dark .table.table-striped tr:nth-of-type(odd) td {background-color: rgb(var(--color-slate-400) / 0.4) !important;}
 .table.table-striped tr:nth-of-type(odd) td {background-color: #fff !important;}
 
+
+@media (max-width:640px){
+    .mo_pad-s.table th,
+    .mo_pad-s.table td {padding:8px 4px; }
+}
 /*
 #=========================================#
         알림

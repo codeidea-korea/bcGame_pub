@@ -58,7 +58,7 @@
     --color-darkmode-50: 87 103 132;
     --color-darkmode-100: 74 90 121;
     --color-darkmode-200: 65 81 114;
-    --color-darkmode-300: 53 69 103;
+    --color-darkmode-300: theme("colors.rgb.zinc.800");
     --color-darkmode-400: 48 61 93;
     --color-darkmode-500: 41 53 82;
     --color-darkmode-600: 40 51 78;
