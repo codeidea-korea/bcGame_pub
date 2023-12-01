@@ -71,6 +71,7 @@
 
 /* checkbox */
 .form-check-input[type="checkbox"] {border:1px solid var(--primary-color) !important; box-shadow:none; }
+.form-check-input[type="checkbox"].grayborder {border:1px solid var(--placeholder-color) !important; }
 .form-switch .form-check-input {width:28px; height:16px; padding:0; background-color:#bfc3c7; border:0 none !important; }
 .form-switch .form-check-input:focus {box-shadow:none; outline:none; }
 .form-switch .form-check-input:before {width:16px; height:16px; background-color: #fff;}
@@ -88,9 +89,11 @@
 .custom_select ul {z-index:10; position:absolute; left:0; top:100%; visibility: hidden; opacity:0; width: 100%; max-height:260px; margin-top:-10px; transition:all 0.3s; }
 .custom_select.on ul {visibility: visible; opacity:1; margin-top:0; }
 .custom_select ul li {cursor:pointer; border-radius:4px; padding-left:8px; }
-.custom_select ul li:hover {background-color:var(--background-color); }
+.custom_select ul li:not(.nohover):hover {background-color:var(--background-color); }
 .custom_select ul li.on {position:relative; border:1px solid #3bc11766;}
 .custom_select ul li.on:after {content: ""; position: absolute; width: 0.5rem; height: 0.5rem; border-radius: 50%; top: 50%; margin-top: -0.25rem; right: 0.625rem; background-color: var(--primary-color); box-shadow: 0 0 0 0.3125rem #3bc11726;}
+.custom_select[data-select="count"] input[type="checkbox"]:checked + label {color:var(--text-color); }
+.custom_select[data-select="count"] ul {max-height:400px; }
 
 
 .custom_select2 {position:relative; }

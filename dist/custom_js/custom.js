@@ -311,10 +311,39 @@ const topbarHandle = ()=>{
         $(this).parent().toggleClass('on')
     })
     $('.custom_select ul li').on('click',function(){
-        $(this).parents('.custom_select').removeClass('on')
-        $(this).parents('.custom_select').find('button span').text($(this).text())
-        $(this).addClass('on').siblings().removeClass('on')
+        const parent = $(this).parents('.custom_select'); 
+
+        if(parent.data('select') != "count"){
+            parent.removeClass('on')
+            parent.find('button span').text($(this).text())
+            $(this).addClass('on').siblings().removeClass('on')
+        }
+    });
+
+    $('.custom_select[data-select="count"] ul input').on('change',function(){
+        const parent = $(this).parents('.custom_select'); 
+
+        if(parent.data('select') == "count"){
+            let count = 0
+            parent.find('li input').each((index,item)=>{
+                if($(item).prop('checked')){count++}
+            })
+            if(count == 0){
+                parent.find('button span.count').text('모든 제공업체')
+            }else{
+                parent.find('button span.count').text(count)
+            }
+        }
     })
+    $('.custom_select[data-select="count"] .select_reset').on('click',function(){
+        const parent = $(this).parents('.custom_select'); 
+        parent.find('button span.count').text('모든 제공업체')
+        parent.find('li input').each((index,item)=>{
+            $(item).prop('checked',false)
+        })
+        
+    })
+
     document.addEventListener('click',(e)=>{
         const select = document.querySelector('.custom_select.on')
         if(select && !select.contains(e.target)){

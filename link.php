@@ -124,6 +124,13 @@ echo txtRecord('./@record/');
 				<li><a href="/bcGame/casino/picks_for_you.html" target="_blank" class="">당신을 위해 선택</a></li>
 				<li><a href="/bcGame/casino/favorite.html" target="_blank" class="">가장 좋아하는</a></li>
 				<li><a href="/bcGame/casino/recent.html" target="_blank" class="">최근</a></li>
+                <li><a href="/bcGame/casino/slots.html" target="_blank" class="">슬롯</a></li>
+				<li><a href="/bcGame/casino/live.html" target="_blank" class="">라이브 카지노</a></li>
+				<li><a href="/bcGame/casino/hot.html" target="_blank" class="">Hot</a></li>
+				<li><a href="/bcGame/casino/new.html" target="_blank" class="">New 출시</a></li>
+				<li><a href="/bcGame/casino/feature_buy.html" target="_blank" class="">보너스 바이</a></li>
+				<li><a href="/bcGame/casino/blackjack.html" target="_blank" class="">Blackjack</a></li>
+				<li><a href="/bcGame/casino/table_game.html" target="_blank" class="">테이블 게임</a></li>
 			</ul>
 		</li>
 
