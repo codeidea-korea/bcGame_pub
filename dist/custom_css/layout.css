@@ -115,6 +115,8 @@ button:disabled {opacity:.7; }
     .mo_hide {display:none !important; }
 }
 
+.animate-spin-slow {animation:spin 5s linear infinite; }
+
 /*
 #=========================================#
         탑바
