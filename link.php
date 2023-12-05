@@ -120,10 +120,17 @@ echo txtRecord('./@record/');
 		</li>
         <li class="mt20" data-label="카지노">
 			<ul>
-				<!-- <li><a href="/bcGame/casino/index.html" target="_blank" class="">메인</a></li> -->
+				<li>
+                    <a href="/bcGame/casino/index.html" target="_blank" class="">메인</a>
+                    <ul>
+                        <li><button class="pop-modal" data-tw-toggle="modal" data-tw-target="#racing_lank-modal">최신베팅&레이스 > 롤링대회 > 내역 모달</button></li>
+                        <li><button class="pop-modal" data-tw-toggle="modal" data-tw-target="#rolling_info-modal">롤링안내 모달</button></li>
+                    </ul>
+                </li>
 				<li><a href="/bcGame/casino/picks_for_you.html" target="_blank" class="">당신을 위해 선택</a></li>
 				<li><a href="/bcGame/casino/favorite.html" target="_blank" class="">가장 좋아하는</a></li>
 				<li><a href="/bcGame/casino/recent.html" target="_blank" class="">최근</a></li>
+				<li><a href="/bcGame/casino/index.html?casino-8-tab" target="_blank" class="">BC 브랜드</a></li>
                 <li><a href="/bcGame/casino/slots.html" target="_blank" class="">슬롯</a></li>
 				<li><a href="/bcGame/casino/live.html" target="_blank" class="">라이브 카지노</a></li>
 				<li><a href="/bcGame/casino/hot.html" target="_blank" class="">Hot</a></li>
@@ -5433,547 +5440,547 @@ echo txtRecord('./@record/');
 
 <!-- 레인 모달 -->
 <div id="chat_rain-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
-<div class="modal-dialog">
-<div class="modal-content overflow-hidden relative rounded">
-    <!-- 기본 -->
-    <div class="modal-body relative rounded">
-        <div class="relative flex items-center justify-between bg-modaldark p-4">
-            <p class="text-tit font-extrabold text-base">레인</p>
-            <button class="basic-hover" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
-        </div>
-        <div class="p-6 pb-20 h-[670px]">
-            <div class="flex items-center justify-between">
-                <p>양</p>
-                <p>최소: 0.00002645 BTC</p>
-            </div>
-            <div class="relative mt-2">
-                <input type="text" class="form-control type02 !h-14 text-tit" value="0.00002645">
-                <button class="absolute right-0 top-2 flex items-center gap-2 h-10 px-6 text-base font-extrabold border-l border-solid border-slate-300 text-tit" onclick="modalInHandle('chat_rain-modal','rain_pot-body')">
-                    <img class="w-7" src="/bcGame/dist/custom_img/coin/BTC.webp" alt="">
-                    BTC
-                    <svg class="w-3 h-3 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
-                </button>
-            </div>
-            <div class="flex justify-between mt-2">
-                <div>이용 가능 :<b class="text-tit">₩0.00</b></div>
-                <div><span class="underline cursor-pointer" onclick="modalInHandle('chat_rain-modal','rain_lock-body')">잠김 금액 :</span><b class="text-tit">₩0.00</b></div>
-            </div>
-            <div class="mt-5">사람 수</div>
-            <div class="relative mt-2">
-                <input type="text" class="form-control type02 !h-14 text-tit" value="50">
-                <div class="absolute right-0 top-2 flex items-center h-10 px-6  text-sub">
-                    1~100
+    <div class="modal-dialog">
+        <div class="modal-content overflow-hidden relative rounded">
+            <!-- 기본 -->
+            <div class="modal-body relative rounded">
+                <div class="relative flex items-center justify-between bg-modaldark p-4">
+                    <p class="text-tit font-extrabold text-base">레인</p>
+                    <button class="basic-hover" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
                 </div>
-            </div>
-            <div class="mt-5">메세지 (옵션)</div>
-            <div class="relative mt-2">
-                <span class="absolute right-0 bottom-0 p-4 text-sub">0/20</span>
-                <textarea class="form-control type02 !h-32 text-tit resize-none"></textarea>
-            </div>
-            <div class="text-center mt-10">
-                <button class="btn-green w-2/3 h-12 font-bold" disabled>비가 쏟아집니다</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 화폐 -->
-    <div class="rain_pot-body modal-body relative modal-in bg-stand rounded">
-        <div class="relative flex items-center justify-between p-4 py-2 bg-modaldark">
-            <div class="flex items-center gap-2">
-                <button onclick="modalInHandle('chat_rain-modal','rain_pot-body')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
-                <p class="text-tit font-extrabold text-base">자산 포트폴리오</p>
-            </div>
-            <div class="flex items-center gap-2">
-                <div class="relative w-full">
-                    <label for="cash_input"><svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Search"></use></svg></label>
-                    <input type="text" id="cash_input" class="form-control type02 pl-10" placeholder="검색">
-                </div>
-                <button class="basic-hover ml-4" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
-            </div>
-        </div>
-        <div class="w-full p-6 px-4">
-
-            <div class="px-4 pb-4">
-                <ul class="nav nav-boxed-tabs bg-back rounded p-0.5" role="tablist">
-                    <li id="deposit-pot_tab01" class="nav-item w-full" role="presentation"> 
-                        <button class="w-full py-1 text-basic active" data-tw-toggle="pill" data-tw-target="#deposit-pot_tab01" type="button" role="tab" aria-controls="deposit-pot_tab01" aria-selected="true">화폐</button>
-                    </li>
-                    <li id="deposit-pot_tab02" class="nav-item w-full" role="presentation"> 
-                        <button class="w-full py-1 text-basic" data-tw-toggle="pill" data-tw-target="#deposit-pot_tab02" type="button" role="tab" aria-controls="deposit-pot_tab02" aria-selected="false">mNFT</button>
-                    </li>
-                </ul>
-            </div>
-            <div class="overflow-y-auto scrollbar h-[525px] p-4 px-4">
-                <div class="tab-content">
-                    <div id="deposit-pot_tab01" class="tab-pane active" role="tabpanel" aria-labelledby="deposit-pot_tab01" >
-                        <div class="py-1 wallet_tit">법정화폐</div>
-                        <div class="flex justify-between p-3 rounded cursor-pointer border border-solid border-primary">
-                            <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/KRW.webp" alt=""><b class="text-tit font-extrabold">KRW</b></p>
-                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
-                        </div>
-                        <div class="flex justify-between p-3 rounded  cursor-pointer">
-                            <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/ARS.webp" alt=""><b class="text-tit font-extrabold">ARS</b></p>
-                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
-                        </div>
-                        <div class="flex justify-between p-3 rounded  cursor-pointer">
-                            <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/CLP.webp" alt=""><b class="text-tit font-extrabold">CLP</b></p>
-                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
-                        </div>
-                        <div class="flex justify-between p-3 rounded  cursor-pointer">
-                            <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/IDR.webp" alt=""><b class="text-tit font-extrabold">IDR</b></p>
-                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
-                        </div>
-                        <div class="flex justify-between p-3 rounded  cursor-pointer">
-                            <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/AUD.webp" alt=""><b class="text-tit font-extrabold">AUD</b></p>
-                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
-                        </div>
-                        <div class="flex justify-between p-3 rounded  cursor-pointer">
-                            <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/AZN.webp" alt=""><b class="text-tit font-extrabold">AZN</b></p>
-                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
-                        </div>
-                        <div class="flex justify-between p-3 rounded  cursor-pointer">
-                            <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/BDT.webp" alt=""><b class="text-tit font-extrabold">BDT</b></p>
-                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
-                        </div>
-                        <div class="flex justify-between p-3 rounded  cursor-pointer">
-                            <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/CAD.webp" alt=""><b class="text-tit font-extrabold">CAD</b></p>
-                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
-                        </div>
-                        <div class="flex justify-between p-3 rounded  cursor-pointer">
-                            <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/COP.webp" alt=""><b class="text-tit font-extrabold">COP</b></p>
-                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
-                        </div>
-                        <div class="flex justify-between p-3 rounded  cursor-pointer">
-                            <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/EGP.webp" alt=""><b class="text-tit font-extrabold">EGP</b></p>
-                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
-                        </div>
-                        <div class="flex justify-between p-3 rounded  cursor-pointer">
-                            <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/EUR.webp" alt=""><b class="text-tit font-extrabold">EUR</b></p>
-                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
-                        </div>
-                        <div class="flex justify-between p-3 rounded  cursor-pointer">
-                            <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/GBP.webp" alt=""><b class="text-tit font-extrabold">GBP</b></p>
-                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
-                        </div>
-                        <div class="flex justify-between p-3 rounded  cursor-pointer">
-                            <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/GHS.webp" alt=""><b class="text-tit font-extrabold">GHS</b></p>
-                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
-                        </div>
-                        <div class="flex justify-between p-3 rounded  cursor-pointer">
-                            <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/JPY.webp" alt=""><b class="text-tit font-extrabold">JPY</b></p>
-                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
-                        </div>
-                        <div class="flex justify-between p-3 rounded  cursor-pointer">
-                            <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/KES.webp" alt=""><b class="text-tit font-extrabold">KES</b></p>
-                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
-                        </div>
-                        <div class="flex justify-between p-3 rounded  cursor-pointer">
-                            <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/KGS.webp" alt=""><b class="text-tit font-extrabold">KGS</b></p>
-                            <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                <div class="p-6 pb-20 h-[670px]">
+                    <div class="flex items-center justify-between">
+                        <p>양</p>
+                        <p>최소: 0.00002645 BTC</p>
+                    </div>
+                    <div class="relative mt-2">
+                        <input type="text" class="form-control type02 !h-14 text-tit" value="0.00002645">
+                        <button class="absolute right-0 top-2 flex items-center gap-2 h-10 px-6 text-base font-extrabold border-l border-solid border-slate-300 text-tit" onclick="modalInHandle('chat_rain-modal','rain_pot-body')">
+                            <img class="w-7" src="/bcGame/dist/custom_img/coin/BTC.webp" alt="">
+                            BTC
+                            <svg class="w-3 h-3 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                        </button>
+                    </div>
+                    <div class="flex justify-between mt-2">
+                        <div>이용 가능 :<b class="text-tit">₩0.00</b></div>
+                        <div><span class="underline cursor-pointer" onclick="modalInHandle('chat_rain-modal','rain_lock-body')">잠김 금액 :</span><b class="text-tit">₩0.00</b></div>
+                    </div>
+                    <div class="mt-5">사람 수</div>
+                    <div class="relative mt-2">
+                        <input type="text" class="form-control type02 !h-14 text-tit" value="50">
+                        <div class="absolute right-0 top-2 flex items-center h-10 px-6  text-sub">
+                            1~100
                         </div>
                     </div>
-                    <div id="deposit-pot_tab02" class="tab-pane" role="tabpanel" aria-labelledby="deposit-pot_tab02">
-                        <div class="h-80 py-10 text-center ">
-                            <img class="w-48 mx-auto" src="/bcGame/dist/custom_img/empty.webp" alt="">
-                            <p class="-mt-5 text-basic opacity-70">코인 또는 토큰을 찾을 수 없음</p>
-                        </div>
+                    <div class="mt-5">메세지 (옵션)</div>
+                    <div class="relative mt-2">
+                        <span class="absolute right-0 bottom-0 p-4 text-sub">0/20</span>
+                        <textarea class="form-control type02 !h-32 text-tit resize-none"></textarea>
                     </div>
-                </div>
-                
-            </div>
-            <div class="p-6 px-4 border-t border-slate-200 border-solid flex items-center justify-between">
-                <div>
-                    <div class="form-check form-switch"> 
-                        <input id="top-cash_check" class="form-check-input legal_check" type="checkbox" checked> 
-                        <label class="form-check-label" for="top-cash_check">법정화폐로 보기</label> 
-                    </div>
-                </div>
-                <div>
-                    <div class="form-check form-switch"> 
-                        <input id="top-cash_check02" class="form-check-input small_check" type="checkbox"> 
-                        <label class="form-check-label" for="top-cash_check02">작게보기</label> 
+                    <div class="text-center mt-10">
+                        <button class="btn-green w-2/3 h-12 font-bold" disabled>비가 쏟아집니다</button>
                     </div>
                 </div>
             </div>
 
-            
-            
-        </div>
-    </div>
+            <!-- 화폐 -->
+            <div class="rain_pot-body modal-body relative modal-in bg-stand rounded">
+                <div class="relative flex items-center justify-between p-4 py-2 bg-modaldark">
+                    <div class="flex items-center gap-2">
+                        <button onclick="modalInHandle('chat_rain-modal','rain_pot-body')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        <p class="text-tit font-extrabold text-base">자산 포트폴리오</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="relative w-full">
+                            <label for="cash_input"><svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Search"></use></svg></label>
+                            <input type="text" id="cash_input" class="form-control type02 pl-10" placeholder="검색">
+                        </div>
+                        <button class="basic-hover ml-4" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                    </div>
+                </div>
+                <div class="w-full p-6 px-4">
 
-    <!-- 롤오버 개요 -->
-    <div class="rain_lock-body modal-body relative modal-in bg-stand rounded">
-        <div class="relative flex items-center justify-between p-4 bg-modaldark">
-            <div class="flex items-center gap-2">
-                <button onclick="modalInHandle('chat_rain-modal','rain_lock-body')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
-                <p class="text-tit font-extrabold text-base">롤오버 개요</p>
+                    <div class="px-4 pb-4">
+                        <ul class="nav nav-boxed-tabs bg-back rounded p-0.5" role="tablist">
+                            <li id="deposit-pot_tab01" class="nav-item w-full" role="presentation"> 
+                                <button class="w-full py-1 text-basic active" data-tw-toggle="pill" data-tw-target="#deposit-pot_tab01" type="button" role="tab" aria-controls="deposit-pot_tab01" aria-selected="true">화폐</button>
+                            </li>
+                            <li id="deposit-pot_tab02" class="nav-item w-full" role="presentation"> 
+                                <button class="w-full py-1 text-basic" data-tw-toggle="pill" data-tw-target="#deposit-pot_tab02" type="button" role="tab" aria-controls="deposit-pot_tab02" aria-selected="false">mNFT</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="overflow-y-auto scrollbar h-[525px] p-4 px-4">
+                        <div class="tab-content">
+                            <div id="deposit-pot_tab01" class="tab-pane active" role="tabpanel" aria-labelledby="deposit-pot_tab01" >
+                                <div class="py-1 wallet_tit">법정화폐</div>
+                                <div class="flex justify-between p-3 rounded cursor-pointer border border-solid border-primary">
+                                    <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/KRW.webp" alt=""><b class="text-tit font-extrabold">KRW</b></p>
+                                    <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                </div>
+                                <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                    <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/ARS.webp" alt=""><b class="text-tit font-extrabold">ARS</b></p>
+                                    <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                </div>
+                                <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                    <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/CLP.webp" alt=""><b class="text-tit font-extrabold">CLP</b></p>
+                                    <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                </div>
+                                <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                    <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/IDR.webp" alt=""><b class="text-tit font-extrabold">IDR</b></p>
+                                    <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                </div>
+                                <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                    <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/AUD.webp" alt=""><b class="text-tit font-extrabold">AUD</b></p>
+                                    <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                </div>
+                                <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                    <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/AZN.webp" alt=""><b class="text-tit font-extrabold">AZN</b></p>
+                                    <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                </div>
+                                <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                    <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/BDT.webp" alt=""><b class="text-tit font-extrabold">BDT</b></p>
+                                    <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                </div>
+                                <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                    <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/CAD.webp" alt=""><b class="text-tit font-extrabold">CAD</b></p>
+                                    <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                </div>
+                                <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                    <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/COP.webp" alt=""><b class="text-tit font-extrabold">COP</b></p>
+                                    <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                </div>
+                                <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                    <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/EGP.webp" alt=""><b class="text-tit font-extrabold">EGP</b></p>
+                                    <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                </div>
+                                <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                    <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/EUR.webp" alt=""><b class="text-tit font-extrabold">EUR</b></p>
+                                    <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                </div>
+                                <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                    <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/GBP.webp" alt=""><b class="text-tit font-extrabold">GBP</b></p>
+                                    <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                </div>
+                                <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                    <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/GHS.webp" alt=""><b class="text-tit font-extrabold">GHS</b></p>
+                                    <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                </div>
+                                <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                    <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/JPY.webp" alt=""><b class="text-tit font-extrabold">JPY</b></p>
+                                    <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                </div>
+                                <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                    <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/KES.webp" alt=""><b class="text-tit font-extrabold">KES</b></p>
+                                    <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                </div>
+                                <div class="flex justify-between p-3 rounded  cursor-pointer">
+                                    <p class="flex gap-2 items-center"><img class="w-7" src="/bcGame/dist/custom_img/coin/KGS.webp" alt=""><b class="text-tit font-extrabold">KGS</b></p>
+                                    <p class="text-right"><strong class="block text-tit font-extrabold">₩ 0.00</strong><span class="block text-xs">0.00</span></p>
+                                </div>
+                            </div>
+                            <div id="deposit-pot_tab02" class="tab-pane" role="tabpanel" aria-labelledby="deposit-pot_tab02">
+                                <div class="h-80 py-10 text-center ">
+                                    <img class="w-48 mx-auto" src="/bcGame/dist/custom_img/empty.webp" alt="">
+                                    <p class="-mt-5 text-basic opacity-70">코인 또는 토큰을 찾을 수 없음</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="p-6 px-4 border-t border-slate-200 border-solid flex items-center justify-between">
+                        <div>
+                            <div class="form-check form-switch"> 
+                                <input id="top-cash_check" class="form-check-input legal_check" type="checkbox" checked> 
+                                <label class="form-check-label" for="top-cash_check">법정화폐로 보기</label> 
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-check form-switch"> 
+                                <input id="top-cash_check02" class="form-check-input small_check" type="checkbox"> 
+                                <label class="form-check-label" for="top-cash_check02">작게보기</label> 
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+                </div>
             </div>
-            <button class="basic-hover ml-4" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
-        </div>
-        <div class="w-full">
-            <div class="flex items-center gap-3 px-4 py-6">
-                <div class="custom_select w-48">
-                    <button class="btn w-32 h-9 flex px-4 items-center justify-between border-none bg-white dark:bg-back">
-                        <span>모든 유형</span>
-                        <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
-                    </button>
-                    <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
-                        <li class="py-2 on">모든 유형</li>
-                        <li class="py-2">입금</li>
-                        <li class="py-2">보너스</li>
+
+            <!-- 롤오버 개요 -->
+            <div class="rain_lock-body modal-body relative modal-in bg-stand rounded">
+                <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                    <div class="flex items-center gap-2">
+                        <button onclick="modalInHandle('chat_rain-modal','rain_lock-body')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        <p class="text-tit font-extrabold text-base">롤오버 개요</p>
+                    </div>
+                    <button class="basic-hover ml-4" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+                <div class="w-full">
+                    <div class="flex items-center gap-3 px-4 py-6">
+                        <div class="custom_select w-48">
+                            <button class="btn w-32 h-9 flex px-4 items-center justify-between border-none bg-white dark:bg-back">
+                                <span>모든 유형</span>
+                                <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                            </button>
+                            <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
+                                <li class="py-2 on">모든 유형</li>
+                                <li class="py-2">입금</li>
+                                <li class="py-2">보너스</li>
+                            </ul>
+                        </div>
+                        <div class="custom_select w-48">
+                            <button class="btn w-32 h-9 flex px-4 items-center justify-between border-none bg-white dark:bg-back">
+                                <span>모든 상태</span>
+                                <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                            </button>
+                            <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
+                                <li class="py-2 on">모든 상태</li>
+                                <li class="py-2">아직 시작하지 않았습니다.</li>
+                                <li class="py-2">진행 중</li>
+                                <li class="py-2">완료</li>
+                                <li class="py-2">취소</li>
+                                <li class="py-2">만료되었습니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-4 px-4 h-[490px] overflow-y-auto scrollbar">
+                        <table class="table table-hover noline pad-s text-xs sm:text-sm">   
+                            <colgroup>
+                                <col width="25%">
+                                <col width="25%">
+                                <col class="hidden sm:table-cell" width="25%">
+                                <col width="25%">
+                            </colgroup>
+                            <thead class="bg-back">
+                                <tr class="text-center">
+                                    <th class="whitespace-nowrap text-left">유형</th>
+                                    <th class="whitespace-nowrap text-center">양</th>
+                                    <th class="whitespace-nowrap text-center hidden sm:table-cell">시간</th>
+                                    <th class="whitespace-nowrap text-right">상태</th>
+                                </tr>
+                            </thead>
+                            <tbody class="cursor-pointer">
+                                <tr onclick="modalInHandle('chat_rain-modal','rain_detail-body')">
+                                    <td class="text-left text-tit">신규 럭키 스핀 보너스</td>
+                                    <td class="text-center">
+                                        <div class="flex items-center justify-center gap-1">₩ 6,429.02 <img class="w-3 h-3" src="/bcGame/dist/custom_img/coin/USDC.webp" alt=""></div>
+                                    </td>
+                                    <td class="text-center hidden sm:table-cell">2023. 11. 8. 오전 10:21:12</td>
+                                    <td class="text-right text-tit">
+                                        <div class="flex items-center justify-end gap-2">
+                                            <i class="w-1.5 h-1.5 bg-[#9ba7b4] rounded-full"></i>
+                                            만료되었습니다.
+                                            <svg class="w-3 h-3 ml-1 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr onclick="modalInHandle('chat_rain-modal','rain_detail-body')">
+                                    <td class="text-left text-tit">신규 럭키 스핀 보너스</td>
+                                    <td class="text-center">
+                                        <div class="flex items-center justify-center gap-1">₩ 6,429.02 <img class="w-3 h-3" src="/bcGame/dist/custom_img/coin/USDC.webp" alt=""></div>
+                                    </td>
+                                    <td class="text-center hidden sm:table-cell">2023. 11. 8. 오전 10:21:12</td>
+                                    <td class="text-right text-tit">
+                                        <div class="flex items-center justify-end gap-2">
+                                            <i class="w-1.5 h-1.5 bg-[#9ba7b4] rounded-full"></i>
+                                            만료되었습니다.
+                                            <svg class="w-3 h-3 ml-1 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="flex gap-2 items-center justify-end mt-4 py-4 px-4 bg-back2">
+                        <p class="text-xs">총 1</p>
+                        <div class="flex gap-0 text-base px-4 py-1 bg-back2 rounded font-medium">
+                            <button class="w-6 h-6 basic-hover active font-extrabold">1</button>
+                            <button class="w-6 h-6 basic-hover">2</button>
+                            <button class="w-6 h-6 basic-hover">3</button>
+                        </div>
+                        <div class="flex gap-1">
+                            <button class="btn-normal w-8 h-8 basic-hover rounded"><svg class="w-4 h-4 mx-auto rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                            <button class="btn-normal w-8 h-8 basic-hover rounded"><svg class="w-4 h-4 mx-auto"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 롤오버 디테일 -->
+            <div class="rain_detail-body modal-body relative modal-in bg-stand rounded">
+                <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                    <div class="flex items-center gap-2">
+                        <button onclick="modalInHandle('chat_rain-modal','rain_detail-body')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        <p class="text-tit font-extrabold text-base">롤오버 디테일</p>
+                    </div>
+                    <button class="basic-hover ml-4" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+                <div class="w-full p-4">
+                    <div class="text-center pt-2 pb-6">
+                        <img class="w-12 mx-auto" src="./dist/custom_img/coin/USDC.webp" alt="">
+                        <p class="mt-1 text-tit text-base">+ <b>5.00383700</b> USDC</p>
+                    </div>
+
+                    <div class="flex items-center justify-between py-2">
+                        <div>상태</div>
+                        <div class="text-tit"><i class="inline-flex w-1.5 h-1.5 bg-[#9ba7b4] rounded-full"></i> 만료되었습니다.</div>
+                    </div>
+                    <div class="flex items-center justify-between py-2">
+                        <div>유형</div>
+                        <div class="text-tit">신규 럭키 스핀 보너스</div>
+                    </div>
+                    <div class="flex items-center justify-between py-2">
+                        <div>가능 게임</div>
+                        <div class="text-primary cursor-pointer underline" onclick="modalInHandle('chat_rain-modal','rain_bonusgame-body')">게임 보기</div>
+                    </div>
+                    <div class="flex items-center justify-between py-2">
+                        <div>생성일</div>
+                        <div class="text-tit">2023. 11. 8. 오전 10:21:12</div>
+                    </div>
+                    <div class="flex items-center justify-between py-2">
+                        <div>만료</div>
+                        <div class="text-tit">2023. 11. 15. 오전 10:21:12</div>
+                    </div>
+
+                    <div class="my-3 border-t border-solid border-slate-300"></div>
+
+                    <div class="flex items-center justify-between py-2">
+                        <div>롤오버 배수</div>
+                        <div class="text-tit">60.00x</div>
+                    </div>
+                    <div class="flex items-center justify-between py-2">
+                        <div>총 필요 롤링</div>
+                        <div class="text-tit">₩386,262.04</div>
+                    </div>
+                    <div class="flex items-center justify-between py-2">
+                        <div>롤링 완료</div>
+                        <div class="text-tit">₩0.00</div>
+                    </div>
+                    <div class="flex items-center justify-between py-2">
+                        <div>롤링 필요</div>
+                        <div class="text-tit">₩386,262.04</div>
+                    </div>
+                    <div class="flex items-center justify-between py-2">
+                        <div>출금 가능 자금</div>
+                        <div class="text-tit">₩6,437.70
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 보너스를 위한 게임 -->
+            <div class="rain_bonusgame-body modal-body relative modal-in bg-stand rounded">
+                <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                    <div class="flex items-center gap-2">
+                        <button onclick="modalInHandle('chat_rain-modal','rain_bonusgame-body')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        <p class="text-tit font-extrabold text-base">보너스를 위한 게임</p>
+                    </div>
+                    <button class="basic-hover ml-4" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+                <div class="h-[670px] overflow-y-auto scrollbar w-full p-4">
+                    <ul class="grid grid-cols-4 gap-4">
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img1.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img2.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img3.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img4.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img5.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img6.png" alt="">
+                                <p class="py-2 text-center text-tit">Platipus/p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img7.png" alt="">
+                                <p class="py-2 text-center text-tit">Platipus</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img8.png" alt="">
+                                <p class="py-2 text-center text-tit">Platipus</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img1.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img2.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img3.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img4.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img5.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img6.png" alt="">
+                                <p class="py-2 text-center text-tit">Platipus/p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img7.png" alt="">
+                                <p class="py-2 text-center text-tit">Platipus</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img8.png" alt="">
+                                <p class="py-2 text-center text-tit">Platipus</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img1.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img2.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img3.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img4.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img5.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img6.png" alt="">
+                                <p class="py-2 text-center text-tit">Platipus/p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img7.png" alt="">
+                                <p class="py-2 text-center text-tit">Platipus</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img8.png" alt="">
+                                <p class="py-2 text-center text-tit">Platipus</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img1.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img2.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img3.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img4.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img5.png" alt="">
+                                <p class="py-2 text-center text-tit">FA CHAI</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img6.png" alt="">
+                                <p class="py-2 text-center text-tit">Platipus/p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img7.png" alt="">
+                                <p class="py-2 text-center text-tit">Platipus</p>
+                            </a>
+                        </li>
+                        <li class="bg-modaldark">
+                            <a href="javascript:;">
+                                <img src="/bcGame/dist/custom_img/game/game_img8.png" alt="">
+                                <p class="py-2 text-center text-tit">Platipus</p>
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                <div class="custom_select w-48">
-                    <button class="btn w-32 h-9 flex px-4 items-center justify-between border-none bg-white dark:bg-back">
-                        <span>모든 상태</span>
-                        <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
-                    </button>
-                    <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
-                        <li class="py-2 on">모든 상태</li>
-                        <li class="py-2">아직 시작하지 않았습니다.</li>
-                        <li class="py-2">진행 중</li>
-                        <li class="py-2">완료</li>
-                        <li class="py-2">취소</li>
-                        <li class="py-2">만료되었습니다.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-4 px-4 h-[490px] overflow-y-auto scrollbar">
-                <table class="table table-hover noline pad-s text-xs sm:text-sm">   
-                    <colgroup>
-                        <col width="25%">
-                        <col width="25%">
-                        <col class="hidden sm:table-cell" width="25%">
-                        <col width="25%">
-                    </colgroup>
-                    <thead class="bg-back">
-                        <tr class="text-center">
-                            <th class="whitespace-nowrap text-left">유형</th>
-                            <th class="whitespace-nowrap text-center">양</th>
-                            <th class="whitespace-nowrap text-center hidden sm:table-cell">시간</th>
-                            <th class="whitespace-nowrap text-right">상태</th>
-                        </tr>
-                    </thead>
-                    <tbody class="cursor-pointer">
-                        <tr onclick="modalInHandle('chat_rain-modal','rain_detail-body')">
-                            <td class="text-left text-tit">신규 럭키 스핀 보너스</td>
-                            <td class="text-center">
-                                <div class="flex items-center justify-center gap-1">₩ 6,429.02 <img class="w-3 h-3" src="/bcGame/dist/custom_img/coin/USDC.webp" alt=""></div>
-                            </td>
-                            <td class="text-center hidden sm:table-cell">2023. 11. 8. 오전 10:21:12</td>
-                            <td class="text-right text-tit">
-                                <div class="flex items-center justify-end gap-2">
-                                    <i class="w-1.5 h-1.5 bg-[#9ba7b4] rounded-full"></i>
-                                    만료되었습니다.
-                                    <svg class="w-3 h-3 ml-1 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr onclick="modalInHandle('chat_rain-modal','rain_detail-body')">
-                            <td class="text-left text-tit">신규 럭키 스핀 보너스</td>
-                            <td class="text-center">
-                                <div class="flex items-center justify-center gap-1">₩ 6,429.02 <img class="w-3 h-3" src="/bcGame/dist/custom_img/coin/USDC.webp" alt=""></div>
-                            </td>
-                            <td class="text-center hidden sm:table-cell">2023. 11. 8. 오전 10:21:12</td>
-                            <td class="text-right text-tit">
-                                <div class="flex items-center justify-end gap-2">
-                                    <i class="w-1.5 h-1.5 bg-[#9ba7b4] rounded-full"></i>
-                                    만료되었습니다.
-                                    <svg class="w-3 h-3 ml-1 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="flex gap-2 items-center justify-end mt-4 py-4 px-4 bg-back2">
-                <p class="text-xs">총 1</p>
-                <div class="flex gap-0 text-base px-4 py-1 bg-back2 rounded font-medium">
-                    <button class="w-6 h-6 basic-hover active font-extrabold">1</button>
-                    <button class="w-6 h-6 basic-hover">2</button>
-                    <button class="w-6 h-6 basic-hover">3</button>
-                </div>
-                <div class="flex gap-1">
-                    <button class="btn-normal w-8 h-8 basic-hover rounded"><svg class="w-4 h-4 mx-auto rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
-                    <button class="btn-normal w-8 h-8 basic-hover rounded"><svg class="w-4 h-4 mx-auto"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
-                </div>
             </div>
 
         </div>
     </div>
-
-    <!-- 롤오버 디테일 -->
-    <div class="rain_detail-body modal-body relative modal-in bg-stand rounded">
-        <div class="relative flex items-center justify-between p-4 bg-modaldark">
-            <div class="flex items-center gap-2">
-                <button onclick="modalInHandle('chat_rain-modal','rain_detail-body')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
-                <p class="text-tit font-extrabold text-base">롤오버 디테일</p>
-            </div>
-            <button class="basic-hover ml-4" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
-        </div>
-        <div class="w-full p-4">
-            <div class="text-center pt-2 pb-6">
-                <img class="w-12 mx-auto" src="./dist/custom_img/coin/USDC.webp" alt="">
-                <p class="mt-1 text-tit text-base">+ <b>5.00383700</b> USDC</p>
-            </div>
-
-            <div class="flex items-center justify-between py-2">
-                <div>상태</div>
-                <div class="text-tit"><i class="inline-flex w-1.5 h-1.5 bg-[#9ba7b4] rounded-full"></i> 만료되었습니다.</div>
-            </div>
-            <div class="flex items-center justify-between py-2">
-                <div>유형</div>
-                <div class="text-tit">신규 럭키 스핀 보너스</div>
-            </div>
-            <div class="flex items-center justify-between py-2">
-                <div>가능 게임</div>
-                <div class="text-primary cursor-pointer underline" onclick="modalInHandle('chat_rain-modal','rain_bonusgame-body')">게임 보기</div>
-            </div>
-            <div class="flex items-center justify-between py-2">
-                <div>생성일</div>
-                <div class="text-tit">2023. 11. 8. 오전 10:21:12</div>
-            </div>
-            <div class="flex items-center justify-between py-2">
-                <div>만료</div>
-                <div class="text-tit">2023. 11. 15. 오전 10:21:12</div>
-            </div>
-
-            <div class="my-3 border-t border-solid border-slate-300"></div>
-
-            <div class="flex items-center justify-between py-2">
-                <div>롤오버 배수</div>
-                <div class="text-tit">60.00x</div>
-            </div>
-            <div class="flex items-center justify-between py-2">
-                <div>총 필요 롤링</div>
-                <div class="text-tit">₩386,262.04</div>
-            </div>
-            <div class="flex items-center justify-between py-2">
-                <div>롤링 완료</div>
-                <div class="text-tit">₩0.00</div>
-            </div>
-            <div class="flex items-center justify-between py-2">
-                <div>롤링 필요</div>
-                <div class="text-tit">₩386,262.04</div>
-            </div>
-            <div class="flex items-center justify-between py-2">
-                <div>출금 가능 자금</div>
-                <div class="text-tit">₩6,437.70
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- 보너스를 위한 게임 -->
-    <div class="rain_bonusgame-body modal-body relative modal-in bg-stand rounded">
-        <div class="relative flex items-center justify-between p-4 bg-modaldark">
-            <div class="flex items-center gap-2">
-                <button onclick="modalInHandle('chat_rain-modal','rain_bonusgame-body')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
-                <p class="text-tit font-extrabold text-base">보너스를 위한 게임</p>
-            </div>
-            <button class="basic-hover ml-4" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
-        </div>
-        <div class="h-[670px] overflow-y-auto scrollbar w-full p-4">
-            <ul class="grid grid-cols-4 gap-4">
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img1.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img2.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img3.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img4.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img5.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img6.png" alt="">
-                        <p class="py-2 text-center text-tit">Platipus/p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img7.png" alt="">
-                        <p class="py-2 text-center text-tit">Platipus</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img8.png" alt="">
-                        <p class="py-2 text-center text-tit">Platipus</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img1.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img2.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img3.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img4.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img5.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img6.png" alt="">
-                        <p class="py-2 text-center text-tit">Platipus/p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img7.png" alt="">
-                        <p class="py-2 text-center text-tit">Platipus</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img8.png" alt="">
-                        <p class="py-2 text-center text-tit">Platipus</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img1.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img2.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img3.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img4.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img5.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img6.png" alt="">
-                        <p class="py-2 text-center text-tit">Platipus/p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img7.png" alt="">
-                        <p class="py-2 text-center text-tit">Platipus</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img8.png" alt="">
-                        <p class="py-2 text-center text-tit">Platipus</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img1.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img2.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img3.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img4.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img5.png" alt="">
-                        <p class="py-2 text-center text-tit">FA CHAI</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img6.png" alt="">
-                        <p class="py-2 text-center text-tit">Platipus/p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img7.png" alt="">
-                        <p class="py-2 text-center text-tit">Platipus</p>
-                    </a>
-                </li>
-                <li class="bg-modaldark">
-                    <a href="javascript:;">
-                        <img src="/bcGame/dist/custom_img/game/game_img8.png" alt="">
-                        <p class="py-2 text-center text-tit">Platipus</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-</div>
-</div>
 </div>
 
 <!-- 코인드롭 모달 -->
@@ -6524,6 +6531,140 @@ echo txtRecord('./@record/');
     </div>
 </div>
 
+ <!-- 최신베팅&레이스 > 롤링대회 > 내역 모달 -->
+ <div id="racing_lank-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-2lg">
+        <div class="modal-content">
+            <div class="modal-body bg-stand relative rounded">
+                <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                    <div class="flex items-center gap-3">
+                        <p class="text-tit font-extrabold text-base">내역</p>
+                        <span>2023. 12. 1. ~ 2023. 12. 2.</span>
+                    </div>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+                <div class="p-5">
+                    <div class="overflow-x-auto scrollbar_x">
+                        <table class="table table-hover noline mo_pad-s rounded min-w-[580px]">
+                            <thead class="text-center text-xs text-sub">
+                                <tr>
+                                    <th class="whitespace-nowrap text-left">#</th>
+                                    <th class="whitespace-nowrap">플레이어</th>
+                                    <th class="whitespace-nowrap">롤링된</th>
+                                    <th class="whitespace-nowrap text-right">상품/상금</th>
+                                </tr>
+                            </thead>
+                            <tbody class="font-extrabold text-center cursor-pointer">
+                                <tr>
+                                    <td class="text-left font-normal"><img class="w-5" src="/bcGame/dist/custom_img/chat_gold.svg" /></td>
+                                    <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img.png"/><b class="text-tit font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal">M■■</b></td>
+                                    <td><b class="text-primary">₩8,138,540,579.90</td>
+                                    <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left font-normal"><img class="w-5" src="/bcGame/dist/custom_img/chat_silver.svg" /></td>
+                                    <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img2.png"/><b class="text-tit font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal">NotFrank</b></td>
+                                    <td><b class="text-primary">₩8,138,540,579.90</td>
+                                    <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left font-normal"><img class="w-5" src="/bcGame/dist/custom_img/chat_copper.svg" /></td>
+                                    <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img3.png"/><b class="font-extrabold"><svg class="inline-flex w-3.5 h-3.5 mb-0.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Hidden"></use></svg> 숨기기</b></td>
+                                    <td><b class="text-primary">₩8,138,540,579.90</td>
+                                    <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left font-normal">4th</td>
+                                    <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img3.png"/><b class="font-extrabold"><svg class="inline-flex w-3.5 h-3.5 mb-0.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Hidden"></use></svg> 숨기기</b></td>
+                                    <td><b class="text-primary">₩8,138,540,579.90</td>
+                                    <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left font-normal">5th</td>
+                                    <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img.png"/><b class="text-tit font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal">M■■</b></td>
+                                    <td><b class="text-primary">₩8,138,540,579.90</td>
+                                    <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left font-normal">6th</td>
+                                    <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img2.png"/><b class="text-tit font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal">NotFrank</b></td>
+                                    <td><b class="text-primary">₩8,138,540,579.90</td>
+                                    <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left font-normal">7th</td>
+                                    <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img3.png"/><b class="font-extrabold"><svg class="inline-flex w-3.5 h-3.5 mb-0.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Hidden"></use></svg> 숨기기</b></td>
+                                    <td><b class="text-primary">₩8,138,540,579.90</td>
+                                    <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left font-normal">8th</td>
+                                    <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img.png"/><b class="text-tit font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal">M■■</b></td>
+                                    <td><b class="text-primary">₩8,138,540,579.90</td>
+                                    <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left font-normal">9th</td>
+                                    <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img2.png"/><b class="text-tit font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal">NotFrank</b></td>
+                                    <td><b class="text-primary">₩8,138,540,579.90</td>
+                                    <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left font-normal">10th</td>
+                                    <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img3.png"/><b class="font-extrabold"><svg class="inline-flex w-3.5 h-3.5 mb-0.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Hidden"></use></svg> 숨기기</b></td>
+                                    <td><b class="text-primary">₩8,138,540,579.90</td>
+                                    <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 롤링 모달 -->
+<div id="rolling_info-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body bg-stand relative rounded">
+                <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                    <p class="text-tit font-extrabold text-base">롤</p>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+                <div class="p-4 py-6">
+                    <div class="text-base font-bold">규칙-데일리 롤링 대회</div>
+                    <div class="text-sub">2023. 12. 3. ~ 2023. 12. 4.</div>
+                    <div class="mt-2 text-xs">
+                        1. 콘테스트 상금 풀은 자금에 따라 크게 달라지며 더 많은 플레이어가 베팅할수록 그 금액도 커집니다. 현재 상금 풀은 콘테스트 페이지에 표시됩니다.<br/>
+                        2. 10 대부분의 베팅 플레이어는 상금 풀을 분할합니다.<br/>
+                        3. 이 대회는 다음 베팅을 지원합니다: XEN, MATIC, COP, APT, UAH, mDegenPass, IOTX, SHIB, KES, XOF, NEAR, mBAYC, WLD, HNT, FLOOR, IDR, RUNE, DOG, DGB, VNDC, BCD, BSV, NBX, BCH, SUI, CAKE, DOT, BCL, JST, BANANO, SUNOLD, BTCB, GMT, BTC, TWT, ARB, AVAX, TON, GMX, BTG, AMPL, XAF, UZS, mPunks, FTM, BTTOLD, ONE, JPEG, SUSHI, ALGO, KRW, ATOM, BIGTIME, WBTC, GODS, SAMO, SNX, KUMA, KGS, mMeka, MANA, mMfers, EUR, ROSE, WAXP, SATS, ARS, DAI, VTHO, MXN, USD, SOL, ETC, BNB, ICP, USTC, BLUR, ETH, CELO, KLAY, TOMO, ADA, ICX, PAR, VET, MMK, DOGE, GBP, USDC.e, USDT, HBAR, RVN, mClonex, DASH, NANO, TZS, WAVES, VND, WBNB, XRP, RUB, SNACK, FLOKI, EGP, TRX, NFT, AZN, JPY, MYR, SUNNEW, GHS, JOE, KAVA, SAND, AMP, AUD, BRL, mDoodles, BDT, AVC, UGX, THB, DCR, KZT, PEN, TUSD, NZD, USDT.e, EGLD, LTC, USDC, KAS, KHR, THETA, VSYS, ENJ, CRO, CRV, CLP, NEXO, TFUEL, LUNA, NEWBTT, AAVE, EURS, NGN, UNI, MDL, mAzuki, MAGIC, NOK, CAD, XLM, LINK, PHP, QTUM, YFI, XTZ, OP, KSM, ELON, GM, INR, TAMA, EOS, FIL, GST, WETH, BIT, AXE, GALA, BAT, APE, YGG, HEX, PEOPLE, AXS, XMR, ZIL, WCK, PKR<br/>
+                        4. 위의 모든 암호화폐로 베팅할 수 있으며 모두 현재 환율로 USDT로 전환됩니다.<br/>
+                        5. 모든 상품은 BCD에 발송됩니다.<br/>
+                        6. 경품은 콘테스트가 종료되면 공지사항 페이지를 통해 발송됩니다.<br/>
+                        7. BC.GAME는 콘테스트의 어느 단계에서나 규칙을 위반한 플레이어를 제외할 권리를 보유합니다.<br/>
+                        8. BC.GAME은(는) 단독 재량에 따라 사전 통지 없이 규칙과 조건을 변경할 권리를 보유합니다.<br/><br/>
+                        🌟🌟 행운이 함께하기를 바랍니다. 재미있게 즐겨 보세요! 🌟🌟
+                    </div>
+                    <div class="text-base font-bold mt-4">상금 계산 공식</div>
+                    <div class="mt-1 text-xs">
+                        1st위 - 50% 콘테스트 상금 풀 중 데일리<br/>
+                        2nd위 - 25% 콘테스트 상금 풀 중 데일리<br/>
+                        3rd위 - 12% 콘테스트 상금 풀 중 데일리<br/>
+                        4th위 - 6% 콘테스트 상금 풀 중 데일리<br/>
+                        5th위 - 3% 콘테스트 상금 풀 중 데일리<br/>
+                        6th위 - 1.5% 콘테스트 상금 풀 중 데일리<br/>
+                        7th위 - 0.9% 콘테스트 상금 풀 중 데일리<br/>
+                        8th위 - 0.7% 콘테스트 상금 풀 중 데일리<br/>
+                        9th위 - 0.5% 콘테스트 상금 풀 중 데일리<br/>
+                        10th위 - 0.4% 콘테스트 상금 풀 중 데일리<br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- 공통 모달 영역 : E -->
 

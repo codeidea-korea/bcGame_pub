@@ -117,12 +117,18 @@ button:disabled {opacity:.7; }
 
 .animate-spin-slow {animation:spin 5s linear infinite; }
 
+.dark .dark_hide {display:none; }
+.dark .dark_view {display:block; }
+.dark_hide {display:block; }
+.dark_view {display:none; }
+
 /*
 #=========================================#
         탑바
 #=========================================#
 */
-.dark .top-bar {background-color: var(--background-color);}
+.dark .top-bar ,.dark .top-bar .container{background-color: var(--background-color);}
+.top-bar .container {background-color: #fff;}
 .top-bar {z-index:90; position:sticky; top:1px; width:100%; margin-top:-1px; background-color: #FFF; transition:width 0.3s; }
 .top-bar:before {
     content:''; position:absolute; left:0; bottom:-0.75rem;
@@ -184,6 +190,23 @@ button:disabled {opacity:.7; }
 .wallet_top_btn strong {display:block;}
 .nolegal .wallet_search .wallet_list span {display:block; padding-top:6px; color:var(--title-color); font-weight:bold; font-size:16px; }
 .nolegal .wallet_search .wallet_list strong {display:none; }
+
+.top-bar .casino_search {display:none;}
+.casino .top-bar .casino_search {display:block;}
+.top-bar .casino_search .close_btn {display:none; }
+.top-bar .casino_search .close_btn.on {display:block; }
+
+.top-bar .casino_search_box_bg {position:fixed; left:0; top:64px; display:none; width:100%; height:calc(100vh - 64px); background:rgba(0,0,0,.5)}
+.top-bar .casino_search_box_bg.on {display:block; }
+.top-bar .casino_search_area {position:absolute; left:50%; top:-100vh;  max-height:calc(100vh - 64px); background-color: var(--background-color); transition:top 0.5s; transform:translateX(-50%); }
+.top-bar .casino_search_area.on {top:100%; }
+.top-bar .casino_search_area .search_history:hover button {display:block; }
+.top-bar .casino_search_area .search_history button {display:none; }
+
+@media all and (max-width:1400px){
+    .casino .top-bar .casino_search {display:none;}
+}
+
 /*
 #=========================================#
         사이드 메뉴 커스텀

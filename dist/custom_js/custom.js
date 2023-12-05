@@ -21,6 +21,38 @@ fetch("/bcGame/_top_bar.html")
         if(!$('.content').hasClass('logout')){
             $(".content").prepend(html);
         }
+         // 슬롯 슬라이드
+         var swiper = new Swiper(".casino_recom .slide_box", {
+            slidesPerView: 2.2,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".casino_recom .swiper-next",
+                prevEl: ".casino_recom .swiper-prev",
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                },
+                815:{
+                    slidesPerView: 4,
+                    spaceBetween: 10,
+                },
+                990:{
+                    slidesPerView: 5,
+                    spaceBetween: 10,
+                },
+                1100:{
+                    slidesPerView: 6,
+                    spaceBetween: 10,
+                },
+                1335:{
+                    slidesPerView: 7,
+                    spaceBetween: 10,
+                    slidesPerGroup: 7,
+                }
+            }
+        });
     })
     .catch((error) => {
         console.log(error);
@@ -238,6 +270,20 @@ const rightAreaHandle = ()=>{
 
 
 const topbarHandle = ()=>{
+    // search 추가
+    $('.top-bar .casino_search input').on('focus',function(){
+        $('.top-bar .casino_search_area').addClass('on')
+        $('.top-bar .casino_search_box_bg').addClass('on')
+        $('.top-bar .casino_search .close_btn').addClass('on')
+        
+    })
+    $('.top-bar .casino_search_box_bg,.top-bar .casino_search .close_btn').on('click',function(){
+        $('.top-bar .casino_search_area').removeClass('on')
+        $('.top-bar .casino_search_box_bg').removeClass('on')
+        $('.top-bar .casino_search .close_btn').removeClass('on')
+    })
+
+
     // 화폐
     const walletList = document.querySelectorAll('.wallet_list > div')
     const walletHandle = (e)=>{

@@ -1585,6 +1585,9 @@ select{
 .left-\[-7px\]{
     left: -7px;
 }
+.left-2{
+    left: 0.5rem;
+}
 .z-10{
     z-index: 10;
 }
@@ -1618,6 +1621,10 @@ select{
 .my-1{
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
+}
+.mx-2{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 .-ml-1{
     margin-left: -0.25rem;
@@ -1849,6 +1856,12 @@ select{
 }
 .max-h-9{
     max-height: 2.25rem;
+}
+.max-h-\[500px\]{
+    max-height: 500px;
+}
+.max-h-\[430px\]{
+    max-height: 430px;
 }
 .\!w-72{
     width: 18rem !important;
@@ -2150,6 +2163,9 @@ select{
 }
 .rounded-xl{
     border-radius: 0.75rem;
+}
+.rounded-lg{
+    border-radius: 0.5rem;
 }
 .rounded-b{
     border-bottom-right-radius: 0.25rem;
@@ -2501,6 +2517,12 @@ select{
 }
 .pr-3{
     padding-right: 0.75rem;
+}
+.pl-8{
+    padding-left: 2rem;
+}
+.pl-9{
+    padding-left: 2.25rem;
 }
 .text-left{
     text-align: left;
