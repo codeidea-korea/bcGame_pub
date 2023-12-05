@@ -3242,8 +3242,8 @@
                                 <li id="batting-2-tab" class="nav-item bg-sponsor " role="presentation"> 
                                     <button class="w-24 sm:w-40 h-14" data-tw-toggle="pill" data-tw-target="#batting-tab-2" type="button" role="tab" aria-controls="batting-tab-2" aria-selected="false"> 하이롤러 </button> 
                                 </li>
-                                <li id="batting-3-tab" class="nav-item bg-sponsor rounded-r overflow-hidden" role="presentation"> 
-                                    <button class="w-24 sm:w-40 h-14" data-tw-toggle="pill" data-tw-target="#batting-tab-3" type="button" role="tab" aria-controls="batting-tab-3" aria-selected="false"> 롤링 대회 </button> 
+                                <li id="batting-3-tab" class="nav-item bg-sponsor rounded-r overflow-hidden" role="presentation" > 
+                                    <button class="w-24 sm:w-40 h-14" onclick="aniNum()" data-tw-toggle="pill" data-tw-target="#batting-tab-3" type="button" role="tab" aria-controls="batting-tab-3" aria-selected="false"> 롤링 대회 </button> 
                                 </li>
                             </ul>
                             <div class="tab-content mt-5 ">
@@ -3360,7 +3360,7 @@
                                                         <img class="w-3" src="/bcGame/dist/custom_img/grass_right.svg" />
                                                     </div>
                                                     <p class="my-1">대회 상금 규모</p>
-                                                    <div class="bg-backlight text-yellow p-2 px-3 text-2xl font-bold rounded">₩13,863,211.62</div>
+                                                    <div class="bg-backlight text-yellow p-2 px-3 text-2xl font-bold rounded">₩<span class="aniNum">13,739,824.37</span></div>
                                                 </div>
                                             </div>
                                             <div class="flex flex-col items-center justify-center bg-back p-3 text-center h-[150px] rounded" style="flex:3">
@@ -3408,23 +3408,23 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="flex items-center justify-between bg-back mt-5 p-3 rounded">
-                                            <div class="flex items-center" style="flex:1;">
-                                                <img class="w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img.png"/>
+                                        <div class="flex flex-wrap items-center justify-between gap-3 bg-back mt-5 p-5 rounded">
+                                            <div class="flex items-center pr-3" style="flex:1;">
+                                                <img class="w-7 h-7 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img.png"/>
                                                 <span class="text-tit font-bold">setasdf</span>
                                             </div>
-                                            <div  style="flex:1;">
-                                                <span class="text-xs">나의 역할</span>
+                                            <div class="pl-5 border-l border-solid border-slate-300" style="flex:1;">
+                                                <span class="text-xs block">나의 역할</span>
                                                 <b class="font-bold text-yellow">50th+</b>
                                             </div>
-                                            <div style="flex:1;">
-                                                <span class="text-xs">롤링된</span>
+                                            <div class="pl-5 border-l border-solid border-slate-300"style="flex:1;">
+                                                <span class="text-xs block">롤링된</span>
                                                 <b class="font-bold text-yellow">₩0.00</b>
                                             </div>
-                                            <div class="text-xs" style="flex:1.5;">
+                                            <div class="text-xs pl-5 border-l border-solid border-slate-300" style="flex:1.5;">
                                                 <span class="text-tit font-bold">₩774,865,577.34</span>
                                                 까지
-                                                <span class="text-yellow p-1 bg-yellow-700 rounded">맨 위로 10</span>
+                                                <span class="text-yellow p-1 bg-yellow-700 bg-opacity-50 rounded">맨 위로 10</span>
                                                 롤링이 남았습니다.
                                             </div>
                                         </div>
@@ -7439,7 +7439,6 @@
                 </div>
                 
 
-
                  <!-- BEGIN: Custom Tooltip Toggle --> 
                 
                 <!-- ** 푸터 시작 ** -->
@@ -7469,80 +7468,81 @@
                             </div>
                             <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
                         </div>
-
-                        <div class="overflow-x-auto scrollbar_x">
-                            <table class="table table-hover noline mo_pad-s rounded min-w-[580px]">
-                                <thead class="text-center text-xs text-sub">
-                                    <tr>
-                                        <th class="whitespace-nowrap text-left">#</th>
-                                        <th class="whitespace-nowrap">플레이어</th>
-                                        <th class="whitespace-nowrap">롤링된</th>
-                                        <th class="whitespace-nowrap text-right">상품/상금</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="font-extrabold text-center cursor-pointer">
-                                    <tr>
-                                        <td class="text-left font-normal"><img class="w-5" src="/bcGame/dist/custom_img/chat_gold.svg" /></td>
-                                        <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img.png"/><b class="text-tit font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal">M■■</b></td>
-                                        <td><b class="text-primary">₩8,138,540,579.90</td>
-                                        <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left font-normal"><img class="w-5" src="/bcGame/dist/custom_img/chat_silver.svg" /></td>
-                                        <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img2.png"/><b class="text-tit font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal">NotFrank</b></td>
-                                        <td><b class="text-primary">₩8,138,540,579.90</td>
-                                        <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left font-normal"><img class="w-5" src="/bcGame/dist/custom_img/chat_copper.svg" /></td>
-                                        <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img3.png"/><b class="font-extrabold"><svg class="inline-flex w-3.5 h-3.5 mb-0.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Hidden"></use></svg> 숨기기</b></td>
-                                        <td><b class="text-primary">₩8,138,540,579.90</td>
-                                        <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left font-normal">4th</td>
-                                        <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img3.png"/><b class="font-extrabold"><svg class="inline-flex w-3.5 h-3.5 mb-0.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Hidden"></use></svg> 숨기기</b></td>
-                                        <td><b class="text-primary">₩8,138,540,579.90</td>
-                                        <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left font-normal">5th</td>
-                                        <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img.png"/><b class="text-tit font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal">M■■</b></td>
-                                        <td><b class="text-primary">₩8,138,540,579.90</td>
-                                        <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left font-normal">6th</td>
-                                        <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img2.png"/><b class="text-tit font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal">NotFrank</b></td>
-                                        <td><b class="text-primary">₩8,138,540,579.90</td>
-                                        <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left font-normal">7th</td>
-                                        <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img3.png"/><b class="font-extrabold"><svg class="inline-flex w-3.5 h-3.5 mb-0.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Hidden"></use></svg> 숨기기</b></td>
-                                        <td><b class="text-primary">₩8,138,540,579.90</td>
-                                        <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left font-normal">8th</td>
-                                        <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img.png"/><b class="text-tit font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal">M■■</b></td>
-                                        <td><b class="text-primary">₩8,138,540,579.90</td>
-                                        <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left font-normal">9th</td>
-                                        <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img2.png"/><b class="text-tit font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal">NotFrank</b></td>
-                                        <td><b class="text-primary">₩8,138,540,579.90</td>
-                                        <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left font-normal">10th</td>
-                                        <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img3.png"/><b class="font-extrabold"><svg class="inline-flex w-3.5 h-3.5 mb-0.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Hidden"></use></svg> 숨기기</b></td>
-                                        <td><b class="text-primary">₩8,138,540,579.90</td>
-                                        <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="p-5">
+                            <div class="overflow-x-auto scrollbar_x">
+                                <table class="table table-hover noline mo_pad-s rounded min-w-[580px]">
+                                    <thead class="text-center text-xs text-sub">
+                                        <tr>
+                                            <th class="whitespace-nowrap text-left">#</th>
+                                            <th class="whitespace-nowrap">플레이어</th>
+                                            <th class="whitespace-nowrap">롤링된</th>
+                                            <th class="whitespace-nowrap text-right">상품/상금</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="font-extrabold text-center cursor-pointer">
+                                        <tr>
+                                            <td class="text-left font-normal"><img class="w-5" src="/bcGame/dist/custom_img/chat_gold.svg" /></td>
+                                            <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img.png"/><b class="text-tit font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal">M■■</b></td>
+                                            <td><b class="text-primary">₩8,138,540,579.90</td>
+                                            <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left font-normal"><img class="w-5" src="/bcGame/dist/custom_img/chat_silver.svg" /></td>
+                                            <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img2.png"/><b class="text-tit font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal">NotFrank</b></td>
+                                            <td><b class="text-primary">₩8,138,540,579.90</td>
+                                            <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left font-normal"><img class="w-5" src="/bcGame/dist/custom_img/chat_copper.svg" /></td>
+                                            <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img3.png"/><b class="font-extrabold"><svg class="inline-flex w-3.5 h-3.5 mb-0.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Hidden"></use></svg> 숨기기</b></td>
+                                            <td><b class="text-primary">₩8,138,540,579.90</td>
+                                            <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left font-normal">4th</td>
+                                            <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img3.png"/><b class="font-extrabold"><svg class="inline-flex w-3.5 h-3.5 mb-0.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Hidden"></use></svg> 숨기기</b></td>
+                                            <td><b class="text-primary">₩8,138,540,579.90</td>
+                                            <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left font-normal">5th</td>
+                                            <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img.png"/><b class="text-tit font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal">M■■</b></td>
+                                            <td><b class="text-primary">₩8,138,540,579.90</td>
+                                            <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left font-normal">6th</td>
+                                            <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img2.png"/><b class="text-tit font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal">NotFrank</b></td>
+                                            <td><b class="text-primary">₩8,138,540,579.90</td>
+                                            <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left font-normal">7th</td>
+                                            <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img3.png"/><b class="font-extrabold"><svg class="inline-flex w-3.5 h-3.5 mb-0.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Hidden"></use></svg> 숨기기</b></td>
+                                            <td><b class="text-primary">₩8,138,540,579.90</td>
+                                            <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left font-normal">8th</td>
+                                            <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img.png"/><b class="text-tit font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal">M■■</b></td>
+                                            <td><b class="text-primary">₩8,138,540,579.90</td>
+                                            <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left font-normal">9th</td>
+                                            <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img2.png"/><b class="text-tit font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal">NotFrank</b></td>
+                                            <td><b class="text-primary">₩8,138,540,579.90</td>
+                                            <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left font-normal">10th</td>
+                                            <td><img class="inline-flex w-6 h-6 mr-3 rounded-full" src="/bcGame/dist/custom_img/profile_img3.png"/><b class="font-extrabold"><svg class="inline-flex w-3.5 h-3.5 mb-0.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Hidden"></use></svg> 숨기기</b></td>
+                                            <td><b class="text-primary">₩8,138,540,579.90</td>
+                                            <td class="text-right text-primary">₩6,071,620.61 <span class="text-sub">(50%)</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -7607,7 +7607,21 @@
     <script src="/bcGame/dist/js/jquery-1.12.4.js"></script>
     <script src="/bcGame/dist/js/jquery-ui.js"></script>
 
+    <script src="/bcGame/dist/js/counterup/jquery.counterup.js"></script>
+    <script src="/bcGame/dist/js/counterup/waypoints.min.js"></script>
+
+
     <script>
+
+        function aniNum(obj){
+            if(!obj){ var obj = '.aniNum';};
+            $(obj).counterUp({
+                delay: 50,
+                time: 2000
+            });
+        }
+
+
         // 메인슬라이드
         var swiper = new Swiper(".casino_visual .slide_box", {
             loop:true,

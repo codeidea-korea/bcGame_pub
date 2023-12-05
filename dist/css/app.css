@@ -2260,11 +2260,22 @@ select{
     --tw-bg-opacity: 1;
     background-color: rgb(161 98 7 / var(--tw-bg-opacity));
 }
+.bg-yellow-200{
+    --tw-bg-opacity: 1;
+    background-color: rgb(254 240 138 / var(--tw-bg-opacity));
+}
+.bg-yellow-500{
+    --tw-bg-opacity: 1;
+    background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
 .bg-opacity-100{
     --tw-bg-opacity: 1;
 }
 .bg-opacity-20{
     --tw-bg-opacity: 0.2;
+}
+.bg-opacity-50{
+    --tw-bg-opacity: 0.5;
 }
 .fill-blue-500{
     fill: #3b82f6;
@@ -2481,6 +2492,15 @@ select{
 }
 .pl-1{
     padding-left: 0.25rem;
+}
+.pl-5{
+    padding-left: 1.25rem;
+}
+.pr-5{
+    padding-right: 1.25rem;
+}
+.pr-3{
+    padding-right: 0.75rem;
 }
 .text-left{
     text-align: left;
