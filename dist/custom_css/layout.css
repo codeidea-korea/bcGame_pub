@@ -31,6 +31,7 @@ button:focus {box-shadow:none !important; }
 .bg-backlight {background-color: var(--background-light);}
 .bg-sponsor {background-color: var(--sponsor-visual);}
 .bg-list {background-color: var(--casino-listbg);}
+.bg-btndark {background-color: var(--btn-dark);}
 .dark .dark\:bg-back2 {background-color: var(--background-type-color);}
 .dark .dark\:bg-back {background-color: var(--background-color);}
 .dark .dark\:bg-modaldark {background-color: var(--modal-darkbg);}
@@ -117,10 +118,16 @@ button:disabled {opacity:.7; }
 
 .animate-spin-slow {animation:spin 5s linear infinite; }
 
+/* dark 모드에서 보이기 */
 .dark .dark_hide {display:none; }
 .dark .dark_view {display:block; }
 .dark_hide {display:block; }
 .dark_view {display:none; }
+
+
+.blur_box {position:relative;  }
+.blur_box:after {content:''; position:absolute; left:0; top:0; width:100%; height:100%; backdrop-filter:blur(6px); }
+.blur_box > * {position:relative; z-index:1;}
 
 /*
 #=========================================#
