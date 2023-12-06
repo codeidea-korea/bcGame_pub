@@ -33,6 +33,7 @@ button:focus {box-shadow:none !important; }
 .bg-list {background-color: var(--casino-listbg);}
 .bg-btndark {background-color: var(--btn-dark);}
 .bg-sub {background-color: var(--sub-text-color);}
+.bg-tab {background-color: var(--tab-bg);}
 .dark .dark\:bg-back2 {background-color: var(--background-type-color);}
 .dark .dark\:bg-back {background-color: var(--background-color);}
 .dark .dark\:bg-modaldark {background-color: var(--modal-darkbg);}
@@ -46,6 +47,7 @@ button:focus {box-shadow:none !important; }
 .text-place {color:var(--placeholder-color);}
 .text-yellow {color:var(--yellow-color);}
 .text-green-gradient {color:transparent; background:linear-gradient(90deg,#B5E916 22.99%,#43C111 73.57%); -webkit-background-clip:text; }
+.text-orange {color:#ed6300}
 
 
 .fill-title {fill: var(--title-color);}

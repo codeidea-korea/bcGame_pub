@@ -149,6 +149,13 @@ echo txtRecord('./@record/');
 			</ul>
 		</li>
 
+
+        <li class="mt20" data-label="BC 독점">
+            <ul>
+				<li><a href="/bcGame/bc_contest.html" target="_blank" class="">데일리 콘테스트</a></li>
+            </ul>
+        </li>
+
         <li class="mt20" data-label="스폰서쉽">
 			<ul>
 				<li><a href="/bcGame/sponsorship_afa.html" target="_blank" class="">AFA</a></li>
@@ -6641,7 +6648,7 @@ echo txtRecord('./@record/');
                     <p class="text-tit font-extrabold text-base">롤</p>
                     <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
                 </div>
-                <div class="p-4 py-6">
+                <div class="p-4 py-6 max-h-[660px] overflow-y-auto scrollbar">
                     <div class="text-base font-bold">규칙-데일리 롤링 대회</div>
                     <div class="text-sub">2023. 12. 3. ~ 2023. 12. 4.</div>
                     <div class="mt-2 text-xs">
