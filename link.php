@@ -115,7 +115,15 @@ echo txtRecord('./@record/');
 
 		<li class="mt20" data-label="메인">
 			<ul>
-				<li><a href="/bcGame/index.html" target="_blank" class="">메인</a></li>
+				<li>
+                    <a href="/bcGame/index.html" target="_blank" class="">메인 - 로그인시</a>
+                    <ul>
+                        <li><button class="pop-modal" data-tw-toggle="modal" data-tw-target="#racing_lank-modal">최신베팅&레이스 > 롤링대회 > 내역 모달</button></li>
+                        <li><button class="pop-modal" data-tw-toggle="modal" data-tw-target="#rolling_info-modal">롤링안내 모달</button></li>
+                        <li><button class="pop-modal" data-tw-toggle="modal" data-tw-target="#betslip-modal">벳슬립 모달</button></li>
+                    </ul>
+                </li>
+				<li><a href="/bcGame/index_logout.html" target="_blank" class="">메인 - 로그아웃시</a></li>
 			</ul>
 		</li>
         <li class="mt20" data-label="카지노">
@@ -6661,6 +6669,151 @@ echo txtRecord('./@record/');
                         10th위 - 0.4% 콘테스트 상금 풀 중 데일리<br/>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- 벳슬립 -->
+<div id="betslip-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content betslip_modal">
+            <div class="modal-body bg-modaldark relative rounded">
+                <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                    <p class="text-tit font-extrabold text-base">뱃슬립</p>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+                <div class="relative p-5 overflow-y-auto scrollbar max-h-[660px]">
+                    <img class="absolute left-0 top-0 w-full z-10" src="/bcGame/dist/custom_img/main/betslip_bg.webp" alt="">
+                    <div class="relative z-20 betslip_box">
+                        <div class="top_box px-4 text-center">
+                            <div class="py-4 border-b border-solid border-slate-500 border-opacity-40">
+                                <div class="text-tit font-bold">혜택</div>
+                                <div class="flex items-center justify-center gap-2">
+                                    <img class="w-6" src="/bcGame/dist/custom_img/coin/USDT.webp" alt="">
+                                    <span class="text-primary">₩22,519,790</span>
+                                    <b class="text-tit font-extrabold text-base">USDT</b>
+                                </div>
+                            </div>
+                            <div class="flex items-center py-4 text-xs">
+                                <div class="text-center w-1/2 border-r border-solid border-slate-500 border-opacity-40">
+                                    <p>베팅금액</p>
+                                    <div class="flex items-center justify-center gap-1 mt-1 text-tit text-sm">
+                                        <img class="w-4" src="/bcGame/dist/custom_img/coin/USDT.webp" alt="">
+                                        ₩460
+                                    </div>
+                                </div>
+                                <div class="text-center w-1/2">
+                                    <p>지불금액</p>
+                                    <div class="text-tit font-bold mt-1 text-sm">
+                                        49000 x
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mid_box">
+                            <div class="relative top_line border-b border-dashed border-slate-500 border-opacity-60"></div>
+                            <div class="flex items-center gap-2 p-5 py-6">
+                                <img class="w-11 h-11 rounded-full" src="/bcGame/dist/custom_img/profile_img.png" alt="">
+                                <div class="font-medium">
+                                    <p class="flex items-center gap-1">
+                                        <span class="text-tit">Ltymleubkwb</span>
+                                        <span>On</span>
+                                        <span>2023. 12. 6. 오전 7:24:29</span>
+                                    </p>
+                                    <p class="flex items-center gap-1">
+                                        <span>베팅아이디:</span>
+                                        <img class="w-3" src="/bcGame/dist/custom_img/main/verified_icon.svg" alt="">
+                                        <span class="text-tit">40684568715684723</span>
+                                        <button class="basic-hover" onclick="viewAlert('copy_alert')"><svg class="w-4 h-4"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Copy"></use></svg></button>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bot_box p-3">
+                            <div class="rounded bg-btndark flex items-center justify-between p-3">
+                                <div class="flex items-center gap-4 flex-1">
+                                    <img class="w-12 rounded" src="/bcGame/dist/custom_img/casino/casino_2.png" alt="">
+                                    <div class="font-medium">
+                                        <p class="text-tit">Crash</p>
+                                        <p class="mt-1">BC Originals</p>
+                                    </div>
+                                </div>
+                                <button class="basic-hover flex items-center gap-1">
+                                    지금 게임하기
+                                    <svg class="w-4 h-4"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                                </button>
+                            </div>  
+                            <div id="betslip-accr" class="accordion accordion-boxed mt-2">                   
+                                <div class="accordion-item bg-btndark">
+                                    <div id="betslip-accordion-content-1" class="accordion-header">
+                                            <button class="accordion-button basic-hover collapsed flex justify-between items-center" type="button" data-tw-toggle="collapse" data-tw-target="#betslip-accordion-content-1" aria-expanded="false" aria-controls="betslip-accordion-content-1">
+                                            <div class="text-basic">게임 세부 사항</div>
+                                            <span class="arrow"><svg class="w-4 h-4"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></span>
+                                            </button> 
+                                    </div>
+                                    <div id="betslip-accordion-content-1" class="accordion-collapse collapse" aria-labelledby="faq-accordion-content-6" data-tw-parent="#betslip-accr">
+                                        <div class="accordion-body text-slate-600 dark:text-slate-500 leading-relaxed"> 
+                                            <!-- 게임 세부 사항 -->
+                                            <div class="flex items-center bg-back2 rounded p-4 text-xs text-center">
+                                                <div class="w-1/3 flex-1 border-r border-solid border-slate-500 border-opacity-40">
+                                                    <p class="flex items-center justify-center gap-1"><svg class="w-4 h-4 fill-primary"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Result"></use></svg> 결과</p>
+                                                    <p class="mt-2">3.29x</p>
+                                                </div>
+                                                <div class="w-1/3 flex-1 border-r border-solid border-slate-500 border-opacity-40">
+                                                    <p class="flex items-center justify-center gap-1"><svg class="w-4 h-4 fill-blue"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Bet"></use></svg> 벳</p>
+                                                    <p class="mt-2">Classic</p>
+                                                </div>
+                                                <div class="w-1/3 flex-1">
+                                                    <p class="flex items-center justify-center gap-1"><svg class="w-4 h-4 fill-orange"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Chance"></use></svg> 찬스</p>
+                                                    <p class="mt-2">-</p>
+                                                </div>
+                                            </div>
+
+                                            <!-- 서버시드 -->
+                                            <div class="mb-1 mt-4">서버시드</div>
+                                            <input type="text" class="form-control form-control-rounded bg-back2" placeholder="시드가 아직 업데이트 되지 않았습니다." readonly>
+
+                                            <!-- 서버시드 (hash) -->
+                                            <div class="mb-1 mt-4">서버시드 (hash)</div>
+                                            <input type="text" class="form-control form-control-rounded bg-back2" value="62a6f86e87b6016f544eb3f8e1d2f1da7b98a06490e50401b61045a1d01676a7" readonly>
+
+                                            <!-- 해시 -->
+                                            <div class="flex items-center gap-2 mt-4">
+                                                <div class="w-1/2">
+                                                    <div class="mb-1">시드</div>
+                                                    <input type="text" class="form-control form-control-rounded bg-back2" value="62a6f86e87b6016f544eb3f8e1d2f1da7b98a06490e50401b61045a1d01676a7" readonly>
+                                                </div>
+                                                <div class="w-1/2">
+                                                    <div class="mb-1">nonce</div>
+                                                    <input type="text" class="form-control form-control-rounded bg-back2" value="108" readonly>
+                                                </div>
+                                            </div>
+
+                                            <!-- 게임아이디 -->
+                                            <!-- <div class="mb-1">게임아이디</div>
+                                            <input type="text" class="form-control form-control-rounded bg-back2" value="658721" readonly> -->
+
+                                            <!-- 해시 -->
+                                            <!-- <div class="mb-1 mt-4">해시</div>
+                                            <input type="text" class="form-control form-control-rounded bg-back2" value="62a6f86e87b6016f544eb3f8e1d2f1da7b98a06490e50401b61045a1d01676a7" readonly> -->
+
+                                            <!-- <div class="flex items-center gap-2 mt-4">
+                                                <button class="bg-sub font-extrabold text-tit w-1/3 h-12 rounded">
+                                                    모든 플레이어
+                                                    <svg class="inline-flex w-4 h-4 fill-title mb-0.5"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                                                </button>
+                                                <button class="btn-green font-extrabold w-2/3 h-12">인증</button>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
