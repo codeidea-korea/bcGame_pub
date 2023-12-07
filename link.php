@@ -150,6 +150,23 @@ echo txtRecord('./@record/');
 			</ul>
 		</li>
 
+        <li class="mt20" data-label="거래">
+            <ul>
+				<li><a href="/bcGame/trading.html" target="_blank" class="">거래</a></li>
+            </ul>
+        </li>
+        <li class="mt20" data-label="선물 거래">
+            <ul>
+				<li><a href="/bcGame/trading_contract.html" target="_blank" class="">선물 거래</a></li>
+            </ul>
+        </li>
+
+        <li class="mt20" data-label="빙고">
+            <ul>
+				<li><a href="/bcGame/bingolist.html" target="_blank" class="">빙고</a></li>
+            </ul>
+        </li>
+
 
         <li class="mt20" data-label="BC 독점">
             <ul>

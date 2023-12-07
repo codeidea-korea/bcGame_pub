@@ -7,7 +7,9 @@
 fetch("/bcGame/_left_menu.html")
     .then((response) => response.text())
     .then((htmlData) => {
-        $(".sidebar").prepend(htmlData);
+        if(!$('.content').hasClass('trading')){
+            $(".sidebar").prepend(htmlData);
+        }
     })
     .catch((error) => {
         console.log(error);

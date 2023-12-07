@@ -533,3 +533,17 @@ footer .icon_btn.icon-Ripple {background-position: -164px -82px; }
         검색모달
 #=========================================#
 */
+
+
+
+
+
+/*
+#=========================================#
+        거래 / 선물거래 페이지
+#=========================================#
+*/
+.top-bar .trading_logo {display:none;}
+.content.trading .trading_logo {display:block; }
+.content.trading {margin-left:0;}
+.content.trading .container {max-width:unset}
