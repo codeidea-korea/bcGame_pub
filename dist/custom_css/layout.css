@@ -37,7 +37,7 @@ button:focus {box-shadow:none !important; }
 .dark .dark\:bg-back2 {background-color: var(--background-type-color);}
 .dark .dark\:bg-back {background-color: var(--background-color);}
 .dark .dark\:bg-modaldark {background-color: var(--modal-darkbg);}
-
+.hover\:bg-stand:hover {background-color: var(--standard-color);}
 
 .text-tit {color: var(--title-color);}
 .text-basic {color: var(--text-color);}

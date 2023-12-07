@@ -541,3 +541,17 @@
 
 .dark .setting_box_bg {background:url('../custom_img/setting_box_bg_black.png') no-repeat center center / 100% 100%; }
 .setting_box_bg {background:url('../custom_img/setting_box_bg.png') no-repeat center center / 100% 100%; }
+
+.avatar_list a {border:3px solid transparent; }
+.avatar_list a.active {border-color:var(--primary-color); }
+
+
+
+/*
+#=========================================#
+        jquery UI
+#=========================================#
+*/
+.slide_type01.ui-widget.ui-widget-content {height:1px; border:0 none; background-color: var(--text-color); }
+.slide_type01.ui-slider-horizontal .ui-slider-handle {top:-0.5em; width:2em; height:1em; border:0 none; background-color: var(--text-color); }
+

@@ -11,6 +11,7 @@
     <title>BC.GAME</title>
     <!-- ** css 시작 ** -->
     <link rel="stylesheet" href="/bcGame/dist/css/app.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
     <!-- 커스텀 css 추가 -->
@@ -52,17 +53,17 @@
             <!-- ** 내용시작 ** -->
             <div class="container_wrap">
 
-                <div class="container py-6">
+                <div class="container pt-3 pb-6 md:pt-6 md:pb-6">
                     <!-- 타이틀 -->
-                    <div class="flex items-center justify-between">
+                    <div class="items-center justify-between md:flex hidden">
                         <h2 class="text-base font-bold flex items-center text-tit">
                             글로벌 세팅
                         </h2>
                     </div>
 
                     <!-- 내용 -->
-                    <div class="flex gap-5 mt-4">
-                        <div class="w-1/5">
+                    <div class="flex gap-5 md:mt-4">
+                        <div class="w-1/5 md:block hidden">
                             <ul class="p-2 py-4 rounded bg-tab font-semibold setting_tab" role="tablist">
                                 <li id="account">
                                     <button class="p-3 w-full text-left rounded flex items-center gap-2 active" type="button" data-tw-toggle="pill" data-tw-target="#tab_con01" role="tab" aria-controls="tab_con01" aria-selected="false">
@@ -90,10 +91,16 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="w-4/5">
+                        <div class="w-full md:w-4/5">
                             <div class="tab-content setting_right_wrap">
                                 <div id="tab_con01" class="tab-pane leading-relaxed active" role="tabpanel" aria-labelledby="tab01">
                                     <!-- 프로필 정보 -->
+                                    <div class="items-center flex md:hidden mb-2">
+                                        <a class="p-2" href="/bcGame/global_setting_mo.html"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></a>
+                                        <h2 class="text-base font-extrabold flex items-center text-tit">
+                                            계정 정보
+                                        </h2>
+                                    </div>
                                     <div class="border border-slate-300 bg-tab rounded-lg p-5">
                                         <div class="border-b border-slate-300 pb-2">
                                             <h3 class="text-base text-tit font-extrabold ">프로필 정보</h3>
@@ -106,7 +113,7 @@
                                                     <p>사용자 ID: 24047578</p>
                                                 </div>
                                             </div>
-                                            <button class="bg-primary w-28 h-9 rounded text-white font-extrabold">
+                                            <button class="bg-primary w-28 h-9 rounded text-white font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_edit-modal">
                                                 <svg class="inline-flex w-4 h-4 fill-white mr-1"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Edit"></use></svg>편집
                                             </button>
                                         </div>
@@ -125,12 +132,12 @@
                                                     <span class="absolute right-2 top-3 flex items-center gap-1 text-primary text-[10px] font-bold"><img class="w-4" src="/bcGame/dist/custom_img/check.png" alt="">인증되었습니다.</span>
                                                 </div>
                                             </div>
-                                            <div class="flex items-center justify-between pt-5">
+                                            <div class="flex items-center justify-between flex-col md:flex-row pt-5">
                                                 <div>
                                                     <b class="text-tit">전화번호</b>
                                                     <p>전화번호를 인증하면 해당 전화를 두 번째 로그인 방법으로 사용할 수 있습니다.</p>
                                                 </div>
-                                                <button class="bg-primary w-28 h-9 rounded text-white font-extrabold">
+                                                <button class="bg-primary w-full md:w-28 md:mt-0 mt-2 h-9 rounded text-white font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_phone-modal">
                                                     <svg class="inline-flex w-4 h-4 fill-white mr-1"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Edit"></use></svg>추가하기
                                                 </button>
                                             </div>
@@ -140,25 +147,31 @@
                                 </div>
                                 <div id="tab_con02" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="tab02">
                                     <!-- 인증과정 -->
+                                    <div class="items-center flex md:hidden mb-2">
+                                        <a class="p-2" href="/bcGame/global_setting_mo.html"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></a>
+                                        <h2 class="text-base font-extrabold flex items-center text-tit">
+                                            보안
+                                        </h2>
+                                    </div>
                                     <div class="border border-slate-300 bg-tab rounded-lg p-5">
                                         <div class="border-b border-slate-300 pb-2">
                                             <h3 class="text-base text-tit font-extrabold ">인증과정</h3>
                                         </div>
                                         <div>
-                                            <div class="flex items-center justify-between pt-5">
-                                                <div>
+                                            <div class="flex items-center justify-start md:justify-between flex-col md:flex-row pt-5">
+                                                <div class="md:w-auto w-full">
                                                     <b class="text-tit">비밀번호 변경</b>
                                                 </div>
-                                                <button class="bg-primary w-28 h-9 rounded text-white font-extrabold">
+                                                <button class="bg-primary w-full md:w-28 mt-2 md:mt-0 h-9 rounded text-white font-extrabold" data-tw-toggle="modal" data-tw-target="#password_change-modal">
                                                     <svg class="inline-flex w-4 h-4 fill-white mr-1"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Edit"></use></svg>바꾸기
                                                 </button>
                                             </div>
-                                            <div class="flex items-center justify-between pt-5">
-                                                <div>
+                                            <div class="flex items-center justify-between flex-col md:flex-row pt-5">
+                                                <div class="md:w-auto w-full">
                                                     <b class="text-tit">이중인증</b>
                                                     <p>무단 액세스로부터 계정을 보호하려면 Google 인증기를 사용하여 2단계 인증을 활성화하세요.</p>
                                                 </div>
-                                                <button class="bg-primary w-28 h-9 rounded text-white font-extrabold">2FA 활성화</button>
+                                                <button class="bg-primary w-full md:w-28 mt-2 md:mt-0 h-9 rounded text-white font-extrabold" data-tw-toggle="modal" data-tw-target="#fa2_active-modal">2FA 활성화</button>
                                             </div>
                                         </div>
                                     </div>
@@ -169,36 +182,51 @@
                                             <h3 class="text-base text-tit font-extrabold ">세션</h3>
                                         </div>
                                         <div>
-                                            <table class="table rounded noline">   
+                                            <table class="table rounded noline mo_pad-s">   
                                                 <thead class="bg-modaldark">
                                                     <tr class="text-center text-xs">
                                                         <th class="whitespace-nowrap text-left">기기</th>
-                                                        <th class="whitespace-nowrap">위치</th>
-                                                        <th class="whitespace-nowrap">IP주소</th>
-                                                        <th class="whitespace-nowrap">마지막 사용</th>
+                                                        <th class="whitespace-nowrap md:table-cell hidden">위치</th>
+                                                        <th class="whitespace-nowrap md:table-cell hidden">IP주소</th>
+                                                        <th class="whitespace-nowrap md:table-cell hidden">마지막 사용</th>
                                                         <th class="whitespace-nowrap text-right"></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="text-center">
                                                     <tr class="border-b border-slate-300">
-                                                        <td class="text-left text-tit font-semibold"><img class="inline-flex w-4 mr-1 mb-0.5" src="/bcGame/dist/custom_img/pc_img.png" alt="">Mac OS X (Chrome 11)</td>
-                                                        <td>KR</td>
-                                                        <td>112.127.1.137</td>
-                                                        <td>오후 4:00:41</td>
+                                                        <td class="text-left text-tit font-semibold">
+                                                            <img class="inline-flex w-4 mr-1 mb-0.5" src="/bcGame/dist/custom_img/pc_img.png" alt="">Mac OS X (Chrome 11)
+                                                            <div class="block md:hidden text-xs text-basic mt-1">
+                                                                KR | 112.127.1.137<br/>오후 4:00:41
+                                                            </div>
+                                                        </td>
+                                                        <td class=" md:table-cell hidden">KR</td>
+                                                        <td class=" md:table-cell hidden">112.127.1.137</td>
+                                                        <td class=" md:table-cell hidden">오후 4:00:41</td>
                                                         <td class="text-right"><button class="text-orange hover:underline">디바이스 삭제</button></td>
                                                     </tr>
                                                     <tr class="border-b border-slate-300">
-                                                        <td class="text-left text-tit font-semibold"><img class="inline-flex w-4 mr-1 mb-0.5" src="/bcGame/dist/custom_img/pc_img.png" alt="">Mac OS X (Chrome 11)</td>
-                                                        <td>KR</td>
-                                                        <td>112.127.1.137</td>
-                                                        <td>오후 4:00:41</td>
+                                                        <td class="text-left text-tit font-semibold">
+                                                            <img class="inline-flex w-4 mr-1 mb-0.5" src="/bcGame/dist/custom_img/pc_img.png" alt="">Mac OS X (Chrome 11)
+                                                            <div class="block md:hidden text-xs text-basic mt-1">
+                                                                KR | 112.127.1.137<br/>오후 4:00:41
+                                                            </div>
+                                                        </td>
+                                                        <td class=" md:table-cell hidden">KR</td>
+                                                        <td class=" md:table-cell hidden">112.127.1.137</td>
+                                                        <td class=" md:table-cell hidden">오후 4:00:41</td>
                                                         <td class="text-right"><button class="text-orange hover:underline">디바이스 삭제</button></td>
                                                     </tr>
                                                     <tr class="border-b border-slate-300">
-                                                        <td class="text-left text-tit font-semibold"><img class="inline-flex w-4 mr-1 mb-0.5" src="/bcGame/dist/custom_img/pc_img.png" alt="">Mac OS X (Chrome 11)</td>
-                                                        <td>KR</td>
-                                                        <td>112.127.1.137</td>
-                                                        <td>오후 4:00:41</td>
+                                                        <td class="text-left text-tit font-semibold">
+                                                            <img class="inline-flex w-4 mr-1 mb-0.5" src="/bcGame/dist/custom_img/pc_img.png" alt="">Mac OS X (Chrome 11)
+                                                            <div class="block md:hidden text-xs text-basic mt-1">
+                                                                KR | 112.127.1.137<br/>오후 4:00:41
+                                                            </div>
+                                                        </td>
+                                                        <td class=" md:table-cell hidden">KR</td>
+                                                        <td class=" md:table-cell hidden">112.127.1.137</td>
+                                                        <td class=" md:table-cell hidden">오후 4:00:41</td>
                                                         <td class="text-right"><button class="text-orange hover:underline">디바이스 삭제</button></td>
                                                     </tr>
                                                 </tbody>
@@ -222,6 +250,12 @@
                                 </div>
                                 <div id="tab_con03" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="tab03">
                                     <!-- 계정 설정 -->
+                                    <div class="items-center flex md:hidden mb-2">
+                                        <a class="p-2" href="/bcGame/global_setting_mo.html"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></a>
+                                        <h2 class="text-base font-extrabold flex items-center text-tit">
+                                            선호 사항
+                                        </h2>
+                                    </div>
                                     <div class="border border-slate-300 bg-tab rounded-lg p-5">
                                         <div class="border-b border-slate-300 pb-2">
                                             <h3 class="text-base text-tit font-extrabold ">계정 설정</h3>
@@ -327,13 +361,19 @@
                                 </div>
                                 <div id="tab_con04" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="tab04">
                                     <!-- 인증과정 -->
+                                    <div class="items-center flex md:hidden mb-2">
+                                        <a class="p-2" href="/bcGame/global_setting_mo.html"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></a>
+                                        <h2 class="text-base font-extrabold flex items-center text-tit">
+                                            개인신분인증
+                                        </h2>
+                                    </div>
                                     <div class="border border-slate-300 bg-tab rounded-lg p-5">
                                         <div class="border-b border-slate-300 pb-2">
-                                            <h3 class="text-base text-tit font-extrabold ">인증과정</h3>
+                                            <h3 class="text-base text-tit font-extrabold md:block hidden">인증과정</h3>
                                             <p class="mt-1 leading-4">더 나은 서비스를 제공하기 위해 원본 식별 문서를 제공할 것을 요청합니다. 이렇게 하면 계정 복구 시 계정을 보호할 수 있습니다. 또한 받은 선물이나 실제 보상이 올바르게 전달되도록 하는 데 도움이 됩니다.</p>
                                         </div>
-                                        <div class="flex items-center gap-5 py-5">
-                                            <div class="p-4 setting_box_bg rounded w-1/2">
+                                        <div class="flex items-center flex-col lg:flex-row gap-5 py-5">
+                                            <div class="p-4 setting_box_bg rounded w-full lg:w-1/2">
                                                 <h4 class="text-center text-tit py-2 font-extrabold text-base">기본 인증</h4>
                                                 <div class="flex items-center gap-2 font-medium">
                                                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="25" fill="none" height="25" viewBox="0 0 25 25"><path fill-rule="evenodd" clip-rule="evenodd" fill="#98A7B5" d="M20.0414 5.49726C19.1335 4.58928 17.6613 4.58929 16.7534 5.4973L10.9474 11.3036L10.8113 11.4397L10.7483 11.6215L10.1976 13.2117C9.74021 14.5323 11.0067 15.7988 12.3274 15.3414L13.9175 14.7907L14.0994 14.7277L14.2354 14.5916L20.0415 8.78528C20.9494 7.8773 20.9494 6.40522 20.0414 5.49726ZM17.9372 6.68103C18.1913 6.42682 18.6035 6.42681 18.8577 6.68102C19.1119 6.93521 19.1119 7.34735 18.8577 7.60155L13.1878 13.2718L11.7795 13.7596L12.2672 12.3512L17.9372 6.68103ZM6.39673 7.95337C6.39673 7.49108 6.77149 7.11633 7.23377 7.11633H10.8462C11.3085 7.11633 11.6833 6.74157 11.6833 6.27929C11.6833 5.81701 11.3085 5.44225 10.8462 5.44225H7.23377C5.84692 5.44225 4.72266 6.56652 4.72266 7.95337V17.9979C4.72266 19.3847 5.84692 20.509 7.23377 20.509H17.2782C18.665 20.509 19.7893 19.3847 19.7893 17.9979V14.9845C19.7893 14.5222 19.4146 14.1475 18.9523 14.1475C18.49 14.1475 18.1152 14.5222 18.1152 14.9845V17.9979C18.1152 18.4602 17.7405 18.8349 17.2782 18.8349H7.23377C6.77149 18.8349 6.39673 18.4602 6.39673 17.9979V7.95337Z"></path><path d="M17.4369 6.77714L18.8494 8.18959L17.7227 9.31628L16.3102 7.90384L17.4369 6.77714Z" fill="#98A7B5"></path></svg>
@@ -353,7 +393,7 @@
                                                     검토 시간: 몇 분
                                                 </div>
                                             </div>
-                                            <div class="p-4 setting_box_bg rounded w-1/2">
+                                            <div class="p-4 setting_box_bg rounded w-full lg:w-1/2">
                                                 <h4 class="text-center text-tit py-2 font-extrabold text-base">고급 인증</h4>
                                                 <div class="flex items-center gap-2 font-medium">
                                                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.72266 7.40712C3.72266 6.12682 4.76055 5.08893 6.04085 5.08893H18.4045C19.6848 5.08893 20.7227 6.12682 20.7227 7.40712V18.2254C20.7227 19.5057 19.6848 20.5436 18.4045 20.5436H6.04085C4.76054 20.5436 3.72266 19.5057 3.72266 18.2254V7.40712ZM6.04085 6.63439C5.61408 6.63439 5.26812 6.98035 5.26812 7.40712V18.2254C5.26812 18.6522 5.61408 18.9981 6.04085 18.9981H18.4045C18.8312 18.9981 19.1772 18.6522 19.1772 18.2254V7.40712C19.1772 6.98035 18.8312 6.63439 18.4045 6.63439H6.04085ZM13.0812 10.2406C13.0812 9.76638 13.4657 9.38197 13.9398 9.38197H16.5156C16.9898 9.38197 17.3742 9.76638 17.3742 10.2406C17.3742 10.7148 16.9898 11.0992 16.5156 11.0992H13.9398C13.4657 11.0992 13.0812 10.7148 13.0812 10.2406ZM13.9398 14.5335C13.4657 14.5335 13.0812 14.9179 13.0812 15.3921C13.0812 15.8663 13.4657 16.2507 13.9398 16.2507H16.5156C16.9898 16.2507 17.3742 15.8663 17.3742 15.3921C17.3742 14.9179 16.9898 14.5335 16.5156 14.5335H13.9398ZM11.5724 8.77486C11.2371 8.43956 10.6934 8.43956 10.3581 8.77486L9.14394 9.98907L8.53684 9.38197C8.20154 9.04667 7.65792 9.04667 7.32262 9.38197C6.98732 9.71728 6.98732 10.2609 7.32262 10.5962L8.53223 11.8058L8.53681 11.8104C8.7025 11.9761 8.91906 12.0599 9.13621 12.0619C9.35852 12.0639 9.58145 11.9801 9.75107 11.8104L9.7557 11.8058L11.5724 9.98909C11.9077 9.65379 11.9077 9.11016 11.5724 8.77486ZM10.3581 13.9264C10.6934 13.5911 11.2371 13.5911 11.5724 13.9264L9.7557 16.9573L9.75103 16.962C9.41573 17.2973 8.87211 17.2973 8.53681 16.962L8.53221 16.9574L7.32262 15.7478C6.98732 15.4125 6.98732 14.8688 7.32262 14.5335C7.65792 14.1982 8.20154 14.1982 8.53684 14.5335L9.14394 15.1406L10.3581 13.9264Z" fill="#98A7B5"></path></svg>
@@ -398,11 +438,399 @@
         <div class="right-sidebar "></div>
         <!--  ** 오른쪽 보드 끝 ** -->
 
+
+        <!-- 공통 알림 영역 : S -->
+
+        <!-- 사용불가 이름 알림 -->
+        <div class="alert bg-back mb-2 border-none" id="noname_alert">
+            <div class="flex justify-between ">
+                <p>이 이름은 사용할 수 없습니다. 다른 이름을 선택하십시오.</p>
+                <div class="loading_svg">
+                    <svg viewBox="25 25 50 50">
+                        <circle cx="50" cy="50" r="20" fill="none" stroke-width="8" pathLength="1" stroke-dashoffset="0px" stroke-dasharray="0.6186666666666667px 1px"></circle>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- 공통 알림 영역 : E -->
+
+
         <!--  ** 모달영역 시작 ** -->
 
         <!-- 프로필 정보 편집 모달 -->
+        <div id="profile_edit-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content overflow-hidden relative rounded">
+
+                    <!-- 나의 프로필 -->
+                    <div class="modal-body bg-stand relative rounded">
+                        <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                            <p class="text-tit font-extrabold text-base">나의 프로필</p>
+                            <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                        </div>
+                        <div class="relative p-6 overflow-y-auto scrollbar h-[660px]">
+                            <div class="py-10">
+                                <div class="w-44 h-44 mx-auto text-center " onclick="modalInHandle('profile_edit-modal','profile_avatar')">
+                                    <a class="block w-full h-full border-4 border-slate-300 rounded-full overflow-hidden" href="javascript:;">
+                                        <img src="/bcGame/dist/custom_img/profile_img.png" alt="">
+                                    </a>
+                                    <button class="btn-normal p-3 py-2 rounded -mt-2 text-tit">아바타 편집하기</button>
+                                </div>
+                            </div>
+                            <div class="pt-20">
+                                <div class="mb-3 text-sub">유저이름</div>
+                                <input type="text" class="form-control type02 !h-14" value="wtbsersdr">
+                                <p class="p-2 text-xs text-sub">특수 구두점을 사용하지 마십시오. 그렇지 않으면 계정이 지원되지 않을 수 있습니다.</p>
+                                <div class="text-center mt-8">
+                                    <button class="btn-green w-3/4 h-12 font-extrabold" onclick="viewAlert('noname_alert')">수정</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 아바타 편집하기 -->
+                    <div class="profile_avatar modal-body modal-in bg-stand relative rounded">
+                        <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                            <div class="flex items-center gap-2">
+                                <button onclick="modalInHandle('profile_edit-modal','profile_avatar')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                <p class="text-tit font-extrabold text-base">아바타 편집하기</p>
+                            </div>
+                            <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                        </div>
+                        <div class="relative overflow-y-auto scrollbar h-[660px]">
+                            <div class="relative h-80 overflow-hidden">
+                                <div class="img_crop">
+                                    <img class="absolute left-0 top-0 right-0 bottom-0 m-auto max-w-full max-h-full" src="/bcGame/dist/custom_img/profile/head1.png" alt="">
+                                    <div class="absolute left-1/2 top-1/2 w-[300px] h-[300px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full text-black text-opacity-80" style="box-shadow:0 0 0 9999em;"></div>
+                                </div>
+                                <div class="absolute left-2 bottom-2 flex gap-1 text-white">
+                                    <svg class="w-5 h-5 fill-white"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Gesture"></use></svg>
+                                    <div>확대/축소 및 조정</div>
+                                </div>
+                                <button class="absolute left-1/2 top-1/2  -translate-x-1/2 -translate-y-1/2">
+                                    <svg class="w-8 h-8 fill-white"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Camera"></use></svg>
+                                    <input type="file" class="absolute left-0 top-0 w-full h-full opacity-0 cursor-pointer" >
+                                </button>
+                            </div>
+                            <div class="p-5">
+                                <div class="flex items-center rounded bg-back">
+                                    <button class="basic-hover hover:bg-stand w-16 h-12"><svg class="w-4 h-4 mx-auto"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_ZoomOut"></use></svg></button>
+                                    <div class="flex-1 px-8">
+                                        <div id="slider" class="slide_type01"></div>
+                                    </div>
+                                    <button class="basic-hover hover:bg-stand w-16 h-12"><svg class="w-4 h-4 mx-auto"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_ZoomIn"></use></svg></button>
+                                    <button class="basic-hover hover:bg-stand w-16 h-12"><svg class="w-4 h-4 mx-auto"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Rotate"></use></svg></button>
+                                    <button class="basic-hover hover:bg-stand w-16 h-12"><svg class="w-4 h-4 mx-auto -scale-x-100"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Rotate"></use></svg></button>
+                                </div>
+                                <div class="mb-3 mt-5 font-medium">기본아바타</div>
+                                <div class="flex items-center justify-between gap-1 avatar_list">
+                                    <a class="w-12 h-12 rounded-full overflow-hidden" href="javascript:;"><img src="/bcGame/dist/custom_img/profile/head1.png" alt=""></a>
+                                    <a class="w-12 h-12 rounded-full overflow-hidden" href="javascript:;"><img src="/bcGame/dist/custom_img/profile/head2.png" alt=""></a>
+                                    <a class="w-12 h-12 rounded-full overflow-hidden" href="javascript:;"><img src="/bcGame/dist/custom_img/profile/head3.png" alt=""></a>
+                                    <a class="w-12 h-12 rounded-full overflow-hidden" href="javascript:;"><img src="/bcGame/dist/custom_img/profile/head4.png" alt=""></a>
+                                    <a class="w-12 h-12 rounded-full overflow-hidden" href="javascript:;"><img src="/bcGame/dist/custom_img/profile/head5.png" alt=""></a>
+                                    <a class="w-12 h-12 rounded-full overflow-hidden" href="javascript:;"><img src="/bcGame/dist/custom_img/profile/head6.png" alt=""></a>
+                                    <button class="relative w-12 h-12 rounded-full flex items-center justify-center border border-primary text-tit font-extrabold text-2xl">+<input type="file" class="absolute left-0 top-0 w-full h-full opacity-0 cursor-pointer" ></button>
+                                </div>
+                                <div class="text-center mt-8">
+                                    <button class="btn-green w-3/4 h-12 font-extrabold" onclick="modalInHandle('profile_edit-modal','profile_avatar')">제출하기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 전화번호 추가 모달 -->
+        <div id="profile_phone-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content overflow-hidden relative rounded">
+
+                    <!-- 휴대폰 인증 -->
+                    <div class="modal-body bg-back relative rounded">
+                        <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                            <p class="text-tit font-extrabold text-base"></p>
+                            <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                        </div>
+                        <div class="relative p-6 overflow-y-auto scrollbar h-[660px]">
+                            <div class="py-5">
+                                <div class="text-center font-medium mb-5">
+                                    <img class="w-10 mx-auto" src="/bcGame/dist/custom_img/profile/phone.png" alt="">
+                                    <p class="text-tit text-lg font-bold mt-1">휴대폰 인증</p>
+                                    <p class="mt-1">인증 코드를 받으려면 아래에 새 전화번호를 입력하세요.</p>
+                                </div>
+                                <div class="relative">
+                                    <p class="absolute left-0 top-0 w-14 h-full flex items-center justify-center cursor-pointer join_phone_btn" onclick="joinPhoneHandle()"><span class="text-xs text-tit">+82</span><svg class="w-3 h-3 ml-1 fill-basic rotate-90"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></p>
+                                    <div class="join_phone_box bg-stand">
+                                        <div class="relative border-b border-solid border-slate-300">
+                                            <svg class="absolute left-0 top-3 w-4 h-4 mx-4 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Search"></use></svg>
+                                            <input type="text" class="form-control form-control-rounded pl-12">
+                                        </div>
+                                        <div class="overflow-y-auto scrollbar h-60 p-1 cursor-pointer">
+                                            <div class="flex items-center justify-between rounded p-3 hover:bg-slate-200" onclick="joinPhoneClick(this)"> 
+                                                <p>Andorra</p>
+                                                <p>+376</p>
+                                            </div>
+                                            <div class="flex items-center justify-between rounded p-3 hover:bg-slate-200" onclick="joinPhoneClick(this)">
+                                                <p>United Arab Emirates (‫الإمارات العربية المتحدة‬‎)</p>
+                                                <p>+971</p>
+                                            </div>
+                                            <div class="flex items-center justify-between rounded p-3 hover:bg-slate-200" onclick="joinPhoneClick(this)">
+                                                <p>Antigua and Barbuda</p>
+                                                <p>+1268</p>
+                                            </div>
+                                            <div class="flex items-center justify-between rounded p-3 hover:bg-slate-200" onclick="joinPhoneClick(this)">
+                                                <p>Anguilla</p>
+                                                <p>+1264</p>
+                                            </div>
+                                            <div class="flex items-center justify-between rounded p-3 hover:bg-slate-200" onclick="joinPhoneClick(this)">
+                                                <p>Angola</p>
+                                                <p>+244</p>
+                                            </div>
+                                            <div class="flex items-center justify-between rounded p-3 hover:bg-slate-200" onclick="joinPhoneClick(this)">
+                                                <p>Antarctica</p>
+                                                <p>+672</p>
+                                            </div>
+                                            <div class="flex items-center justify-between rounded p-3 hover:bg-slate-200" onclick="joinPhoneClick(this)">
+                                                <p>Australia</p>
+                                                <p>+61</p>
+                                            </div>
+                                            <div class="flex items-center justify-between rounded p-3 hover:bg-slate-200" onclick="joinPhoneClick(this)">
+                                                <p>Aruba</p>
+                                                <p>+297</p>
+                                            </div>
+                                            <div class="flex items-center justify-between rounded p-3 hover:bg-slate-200" onclick="joinPhoneClick(this)">
+                                                <p>Barbados</p>
+                                                <p>+1246</p>
+                                            </div>
+                                            <div class="flex items-center justify-between rounded p-3 hover:bg-slate-200" onclick="joinPhoneClick(this)">
+                                                <p>Bolibia</p>
+                                                <p>+591</p>
+                                            </div>
+                                            <div class="flex items-center justify-between rounded p-3 hover:bg-slate-200" onclick="joinPhoneClick(this)">
+                                                <p>Belize</p>
+                                                <p>+501</p>
+                                            </div>
+                                            <div class="flex items-center justify-between rounded p-3 hover:bg-slate-200" onclick="joinPhoneClick(this)">
+                                                <p>Canada</p>
+                                                <p>+1</p>
+                                            </div>
+                                            <div class="flex items-center justify-between rounded p-3 hover:bg-slate-200 active" onclick="joinPhoneClick(this)">
+                                                <p>South Korea (대한민국)</p>
+                                                <p>+82</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control pl-16" placeholder="전화번호를 입력하세요">
+                                </div>
+
+                                <button class="btn-green w-full h-12 font-extrabold mt-5">인증</button>
+                            </div>
+
+                            <div class="py-5">
+                                <div class="text-center font-medium mb-5">
+                                    <img class="w-10 mx-auto" src="/bcGame/dist/custom_img/profile/phone.png" alt="">
+                                    <p class="text-tit text-lg font-bold mt-1">휴대폰 인증</p>
+                                    <p class="mt-1">(으)로 인증 코드를 보냈습니다. 아래 6자리 코드를 입력하세요.</p>
+                                </div>
+                                <div class="flex gap-2 justify-center">
+                                    <div class="w-11">
+                                        <input type="text" class="form-control type02 !h-14 !border-slate-300" >
+                                    </div>
+                                    <div class="w-11">
+                                        <input type="text" class="form-control type02 !h-14 !border-slate-300" >
+                                    </div>
+                                    <div class="w-11">
+                                        <input type="text" class="form-control type02 !h-14 !border-slate-300" >
+                                    </div>
+                                    <div class="w-11">
+                                        <input type="text" class="form-control type02 !h-14 !border-slate-300" >
+                                    </div>
+                                    <div class="w-11">
+                                        <input type="text" class="form-control type02 !h-14 !border-slate-300" >
+                                    </div>
+                                    <div class="w-11">
+                                        <input type="text" class="form-control type02 !h-14 !border-slate-300" >
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="javascript:;" class="text-primary hover:underline">보내기</a>
+                                    <p class="mt-1">어려움이 있으신가요? <a href="javascript:;" class="text-tit hover:underline" data-tw-toggle="modal" data-tw-target="#phone_message-modal">지금 참여하세요</a></p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
 
 
+        <!-- 인증코드 모달 -->
+        <div id="phone_message-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body bg-modaldark relative rounded">
+                        <div class="relative flex items-center justify-between p-4">
+                            <p class="text-tit font-extrabold text-base">인증 코드를 받지 못하셨나요?</p>
+                            <button class="basic-hover" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                        </div>
+
+                        <div class="p-6 font-semibold">
+                            <p class="">휴대전화로 SMS가 전송되었습니다. 여러 번 시도한 후에도 코드를 받지 못한 경우 다음을 시도해 보세요.</p>
+                            <p class="mt-3">1. 전화 요금이 연체되었는지 확인하세요.</p>
+                            <p class="mt-3">2. 다음을 확인하세요. 메시지가 SMS 휴지통에 있을 수 있습니다.</p>
+                            <p class="mt-3">3. 메시지가 몇 분 동안 지연될 수 있습니다. 10분 후에 다시 시도하세요.</p>
+                            <p class="mt-3">4. 이 전화번호가 이미 있는 경우 보내드리지 않습니다. 인증 코드.</p>
+                            <button class="btn-green w-full h-12 font-extrabold mt-5" data-tw-dismiss="modal">예</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 비밀번호 변경 모달 -->
+        <div id="password_change-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content overflow-hidden relative rounded">
+
+                    <!-- 비밀번호 변경 -->
+                    <div class="modal-body bg-back relative rounded">
+                        <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                            <p class="text-tit font-extrabold text-base"></p>
+                            <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                        </div>
+                        <div class="relative p-6 overflow-y-auto scrollbar h-[660px]">
+                            <div class="py-5">
+                                <div class="text-center font-medium mb-5">
+                                    <img class="w-10 mx-auto" src="/bcGame/dist/custom_img/profile/password.png" alt="">
+                                    <p class="text-tit text-lg font-bold mt-1">비밀번호 변경</p>
+                                    <p class="mt-1">귀하의 안전을 위해 먼저 이전 비밀번호를 확인해야 합니다.</p>
+                                </div>
+                                <p>이전 비밀번호</p>
+                                <div class="relative mt-2">
+                                    <input type="password" class="form-control form-control-rounded bg-back2" placeholder="비밀번호 설정">
+                                    <button class="absolute right-3 top-[14px] basic-hover" onclick="passwordView(this)"><svg class="w-4 h-4"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_View"></use></svg></button>
+                                </div>
+
+                                <button class="btn-green w-full h-12 font-extrabold mt-5" onclick="modalInHandle('password_change-modal','password_setting')">확인</button>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+
+                    <!-- 비밀번호 설정 -->
+                    <div class="modal-body bg-back password_setting modal-in relative rounded">
+                        <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                            <div class="flex items-center gap-2">
+                                <button onclick="modalInHandle('profile_edit-modal','profile_avatar')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                <p class="text-tit font-extrabold text-base"></p>
+                            </div>
+                            <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                        </div>
+                        <div class="relative p-6 overflow-y-auto scrollbar h-[660px]">
+                            <div class="py-5">
+                                <div class="text-center font-medium mb-5">
+                                    <img class="w-10 mx-auto" src="/bcGame/dist/custom_img/profile/password.png" alt="">
+                                    <p class="text-tit text-lg font-bold mt-1">비밀번호 설정</p>
+                                </div>
+                                <p>이전 비밀번호</p>
+                                <div class="relative mt-2">
+                                    <input type="password" class="form-control form-control-rounded bg-back2" placeholder="비밀번호 설정">
+                                    <button class="absolute right-3 top-[14px] basic-hover" onclick="passwordView(this)"><svg class="w-4 h-4"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_View"></use></svg></button>
+                                </div>
+
+                                <p class="mt-5">비밀번호 확인</p>
+                                <div class="relative mt-2">
+                                    <input type="password" class="form-control form-control-rounded bg-back2" placeholder="비밀번호 확인">
+                                    <button class="absolute right-3 top-[14px] basic-hover" onclick="passwordView(this)"><svg class="w-4 h-4"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_View"></use></svg></button>
+                                </div>
+
+                                <div class="flex items-center gap-1 mt-6 text-xs">
+                                    <svg class="w-4 h-4 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                    비밀번호 변경 후 재로그인이 필요합니다.
+                                </div>
+
+                                <button class="btn-green w-full h-12 font-extrabold mt-5">확인</button>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+
+        <!-- 2fa 활성화 -->
+        <div id="fa2_active-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content overflow-hidden relative rounded">
+                    <div class="modal-body bg-back relative rounded">
+                        <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                            <p class="text-tit font-extrabold text-base"></p>
+                            <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                        </div>
+                        <div class="relative p-6 overflow-y-auto scrollbar h-[660px]">
+                            <div class="text-tit text-base font-bold">2FA 활성화</div>
+                            <div class="mt-1">무단 액세스로부터 계정을 보호하려면 이중 인증을 활성화하세요.</div>
+
+                            <div class="bg-back2 p-3 mt-2">
+                                <div class="w-36 h-36 p-3 rounded bg-white mx-auto">
+                                    <img class="w-full" src="/bcGame/dist/custom_img/bc.png" alt="">
+                                </div>
+                                <div class="mt-2 text-xs text-tit">Google Authenticator 앱</div>
+                                <div class="flex items-center gap-3 mt-2">
+                                    <button class="bg-list flex items-center justify-center gap-3 h-9 w-full rounded">
+                                        <img class="w-6" src="/bcGame/dist/custom_img/profile/apple.png" alt="">
+                                        <p class="text-left text-xs">Free Download <b class="block text-tit">Apple Store</b></p>
+                                    </button>
+                                    <button class="bg-list flex items-center justify-center gap-3 h-9 w-full rounded">
+                                        <img class="w-6" src="/bcGame/dist/custom_img/profile/google-play.png" alt="">
+                                        <p class="text-left text-xs">Free Download <b class="block text-tit">Google Play</b></p>
+                                    </button>
+                                </div>
+                                <div class="text-xs text-tit mt-3">으로 QR 코드를 스캔하거나 비밀 키를 수동으로 입력하세요.</div>
+                                <div class="relative mt-2">
+                                    <input type="text" class="form-control form-control-rounded bg-back2 type02" value="vaser15wersgwer6asdgerhy6uty">
+                                    <button class="absolute right-3 top-[14px] basic-hover" onclick="viewAlert('copy_alert')"><svg class="w-4 h-4"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Copy"></use></svg></button>
+                                </div>
+                                <div class="mt-2 text-xs">이 코드를 적어두고 다른 사람에게 절대 공개하지 마십시오. 인증자에 대한 액세스 권한이 없는 경우 이를 사용하여 계정에 대한 액세스 권한을 다시 얻을 수 있습니다.</div>
+                            </div>
+
+                            <div class="text-tit font-bold mt-3">2FA 인증 코드</div>
+                            <div class="flex gap-2 justify-between mt-2">
+                                <div class="w-12">
+                                    <input type="text" class="form-control type02 !h-14 !border-slate-300" >
+                                </div>
+                                <div class="w-12">
+                                    <input type="text" class="form-control type02 !h-14 !border-slate-300" >
+                                </div>
+                                <div class="w-12">
+                                    <input type="text" class="form-control type02 !h-14 !border-slate-300" >
+                                </div>
+                                <div class="w-12">
+                                    <input type="text" class="form-control type02 !h-14 !border-slate-300" >
+                                </div>
+                                <div class="w-12">
+                                    <input type="text" class="form-control type02 !h-14 !border-slate-300" >
+                                </div>
+                                <div class="w-12">
+                                    <input type="text" class="form-control type02 !h-14 !border-slate-300" >
+                                </div>
+                            </div>
+                            <button class="btn-green w-full h-12 font-extrabold mt-5">활성화</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
         <!--  ** 모달영역 끝 ** -->
 
@@ -425,6 +853,16 @@
                 $(`#${search} button`).click();
             }
         })
+
+        $( function() {
+            $( "#slider" ).slider();
+        } );
+
+        // 아바타 편집 모달 > 아바타 클릭
+        $('.avatar_list a').on('click',function(){
+            $(this).toggleClass('active').siblings().removeClass('active')
+        })
+
     </script>
 
 
