@@ -34,6 +34,11 @@ button:focus {box-shadow:none !important; }
 .bg-btndark {background-color: var(--btn-dark);}
 .bg-sub {background-color: var(--sub-text-color);}
 .bg-tab {background-color: var(--tab-bg);}
+.bg-gradient-purple2 {background:linear-gradient(180deg,rgba(111,77,204,.7) 0%,rgba(90,52,190,.7) 100%); }
+
+.dark .bg-gradient-purple {background-image:linear-gradient(180deg,rgba(95,49,204,.5) -93.97%,#1E2024 71.55%); }
+.bg-gradient-purple {background-image:linear-gradient(180deg,#723FE0 0%,#FFFFFF 100%); background-size:100% 7.5rem; background-repeat:no-repeat; }
+
 .dark .dark\:bg-back2 {background-color: var(--background-type-color);}
 .dark .dark\:bg-back {background-color: var(--background-color);}
 .dark .dark\:bg-modaldark {background-color: var(--modal-darkbg);}
@@ -82,6 +87,7 @@ button:disabled {opacity:.7; }
 .btn-green {border:0 none; box-shadow:none; background-color:#1d803ab3; background-image:conic-gradient(from 1turn,rgba(88,175,16,1),rgba(29,128,58,1)); color:#fff; border-radius:3px; }
 .btn-purple {border:0 none; box-shadow:none; background-color:#6e34e2b3; background-image:conic-gradient(from 1turn,rgba(136,83,252,1),rgba(110,52,226,1)); color:#fff; border-radius:3px; }
 .btn-yellow {border:0 none; box-shadow:none; color: #fff; background-color: #f19511b3; background-image: conic-gradient(from 1turn,#F6C722,#F19511);}
+.btn-bronze {border:0 none; box-shadow:none; color: #fff; background-color: rgb(255, 158, 106); background-image: conic-gradient(from 1turn, rgb(172, 76, 25), rgb(255, 158, 106));}
 
 .dark .btn-normal { background-color: rgba(45,48,53,.6);}
 .btn-normal {border:0 none; box-shadow:none; background-color: rgba(218,221,230,.6);}
@@ -218,6 +224,8 @@ button:disabled {opacity:.7; }
 @media all and (max-width:1400px){
     .casino .top-bar .casino_search {display:none;}
 }
+
+
 
 /*
 #=========================================#

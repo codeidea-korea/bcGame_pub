@@ -419,6 +419,38 @@ const topbarHandle = ()=>{
         $(this).addClass('on').siblings().removeClass('on');
     })
 
+    // 스핀
+    $('.spin_box .spin_btn button').on('click',function(){
+        const color = ['rgb(101, 49, 32)','rgb(235, 145, 6)','rgb(105, 14, 224)']
+        const text = ['브론즈','골드','다이아몬드'];
+        const level = ['레벨 0 이상','레벨 22 이상','레벨 70 이상']
+        const btnN = $(this).index();
+
+        $(this).addClass('active').siblings().removeClass('active')
+        $('.spin_box .spin_info').css('background-color',color[btnN])
+        $('.spin_box .tag-img').css('color',color[btnN])
+        $('.spin_box .tag-img').text(text[btnN])
+        $('.spin_box .tag-img + b').text(level[btnN])
+
+        $('.spin_wrap > div').eq(btnN).addClass('active').siblings().removeClass('active')
+    })
+
+    // 슬롯 슬라이드
+    var swiper = new Swiper(".spin_bonus-body .spin_bonus_wrap", {
+        direction: "vertical",
+        slidesPerView: 16,
+        autoplay:{
+            delay: 200,
+            disableOnInteraction: false,
+        },
+    });
+
+
+    setInterval(()=>{
+        $('.spin_box .spin_area .spin-light').toggleClass('active')
+    },500)
+
+
 }
 
 const sendFocus = ()=>{

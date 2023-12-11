@@ -7259,6 +7259,738 @@ echo txtRecord('./@record/');
     </div>
 </div>
 
+<!-- 좌측메뉴 - 퀘스트허브 -->
+<div id="left_quest-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content overflow-hidden relative rounded">
+            <!-- 기본 -->
+            <div class="modal-body relative">
+
+                <div class="relative flex items-center justify-between p-4 bg-modaldark rounded-t">
+                    <p class="text-tit font-extrabold text-base">친구 추천하기</p>
+                    
+                    <button class="basic-hover px-2 ml-4" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+
+                <div class="p-5 bg-gradient-purple overflow-y-auto scrollbar h-[660px]">
+                    <div class="text-white dark:text-purple-400">월요일</div>
+                    <div class="flex items-center justify-between mt-5">
+                        <div class="text-tit">
+                            <p>누적 보상:</p>
+                            <div class="flex items-center gap-1 text-2xl font-extrabold"><img class="w-5" src="/bcGame/dist/custom_img/coin/BCD.webp"/> 0 <i>BCD</i></div>
+                        </div>
+                        <button class="btn-normal btn-top w-36 h-10" onclick="modalInHandle('left_quest-modal','prev_quest-body')">이전 퀘스트</button>
+                    </div>
+
+                    <ul class="nav nav-link-tabs mt-2" role="tablist">
+                        <li id="quest-1-tab" class="nav-item flex-1" role="presentation"> 
+                            <button class="nav-link w-full py-2 active" data-tw-toggle="pill" data-tw-target="#quest-tab-1" type="button" role="tab" aria-controls="quest-tab-1" aria-selected="true"> 
+                                일일 퀘스트
+                            </button> 
+                        </li>
+                        <li id="quest-2-tab" class="nav-item flex-1" role="presentation"> 
+                            <button class="nav-link w-full py-2" data-tw-toggle="pill" data-tw-target="#quest-tab-2" type="button" role="tab" aria-controls="quest-tab-2" aria-selected="false">
+                                주간 미션
+                            </button> 
+                        </li>
+                    </ul>
+                    <div class="tab-content mt-5">
+                        <div id="quest-tab-1" class="tab-pane leading-relaxed active" role="tabpanel" aria-labelledby="quest-1-tab"> 
+                            <div class="flex items-center gap-4">만료 <b class="text-tit">23 : 28 : 22</b></div>
+
+                            <div class="flex items-center gap-4 py-4 p-3 bg-back rounded mt-4">
+                                <div>
+                                    <svg class="w-16 h-16" viewBox="0 0 64 64">
+                                        <circle w="64" h="64" stroke-width="7" r="28.5" cx="32" cy="32" fill="transparent" stroke="#46434C"></circle>
+                                        <circle w="64" h="64" stroke-width="0" r="20" cx="32" cy="32" fill="#46434C"></circle>
+                                        <circle w="64" h="64" stroke-width="7" r="28.5" cx="32" cy="32" fill="transparent" stroke="#8651FA" stroke-dasharray="179.0707812546182" stroke-dashoffset="240" style="transform: rotate(-90deg); transform-origin: center center;"></circle>
+                                        <text fill="#ffffff" x="32" y="37" text-anchor="middle" style="font-size: 12px;">0/3</text>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-tit font-bold">룰렛 멀티플레이어 마스터</p>
+                                    <div class="flex items-center justify-between gap-2 py-1">
+                                        <p class="text-xs text-sub">$ 0.4 이상의 베팅으로 룰렛 멀티플레이어에서 3 라운드 연속 승리.</p>
+                                        <button class="btn-green w-40 h-8">이동하기</button>
+                                    </div>
+                                    <div class="flex items-center gap-1">
+                                        <img class="w-5" src="/bcGame/dist/custom_img/coin/BCD.webp"/>
+                                        <p class="text-yellow text-base font-extrabold">수익 <i>0.1 BCD</i></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 py-4 p-3 bg-back rounded mt-2">
+                                <div>
+                                    <img class="w-16" src="/bcGame/dist/custom_img/refer.webp"/>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 text-tit font-bold">
+                                        빅 윈!
+                                        <div class="tooltip_custom">
+                                            <svg class="w-5 h-5 fill-primary"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                            <div class="hover_box top w-72 p-2 bg-back text-xs rounded">좋아하는 게임에 가서 게임이 50 이상의 지불금을 받을 수 있는지 확인하십시오. 그렇다면 이길 때까지 $ 0.4보다 큰 금액으로 계속 베팅하십시오.</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between py-1">
+                                        <p class="text-xs text-sub">$ 0.4 이상의 베팅으로 모든 게임에서 50x 이상의 지불금을 획득하십시오.</p>
+                                    </div>
+                                    <div class="flex items-center gap-1">
+                                        <img class="w-5" src="/bcGame/dist/custom_img/coin/BCD.webp"/>
+                                        <p class="text-yellow text-base font-extrabold">수익 <i>0.2 BCD</i></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 py-4 p-3 bg-back rounded mt-2">
+                                <div>
+                                    <svg class="w-16 h-16" viewBox="0 0 64 64">
+                                        <circle w="64" h="64" stroke-width="7" r="28.5" cx="32" cy="32" fill="transparent" stroke="#46434C"></circle>
+                                        <circle w="64" h="64" stroke-width="0" r="20" cx="32" cy="32" fill="#46434C"></circle>
+                                        <circle w="64" h="64" stroke-width="7" r="28.5" cx="32" cy="32" fill="transparent" stroke="#8651FA" stroke-dasharray="179.0707812546182" stroke-dashoffset="179.0707812546182" style="transform: rotate(-90deg); transform-origin: center center;"></circle>
+                                        <text fill="#ffffff" x="32" y="37" text-anchor="middle" style="font-size: 12px;">0/100</text>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 text-tit font-bold">
+                                        롤링금액 달성
+                                        <div class="tooltip_custom">
+                                            <svg class="w-5 h-5 fill-primary"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                            <div class="hover_box top w-72 p-2 bg-back text-xs rounded">오늘 모든 게임에서 누적 베팅 총액이 $100에 도달할 때까지 계속 베팅하세요.</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between py-1">
+                                        <p class="text-xs">일일 롤링 $ 100에 도달하세요.</p>
+                                    </div>
+                                    <div class="flex items-center gap-1">
+                                        <img class="w-5" src="/bcGame/dist/custom_img/coin/BCD.webp"/>
+                                        <p class="text-yellow text-base font-extrabold">수익 <i>0.2 BCD</i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="quest-tab-2" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="quest-2-tab">
+                            <div class="flex items-center gap-4">만료 <b class="text-tit">5D 23 : 28 : 22</b></div>
+
+                            <div class="flex items-center gap-4 py-4 p-3 bg-back rounded mt-4">
+                                <div>
+                                    <svg class="w-16 h-16" viewBox="0 0 64 64">
+                                        <circle w="64" h="64" stroke-width="7" r="28.5" cx="32" cy="32" fill="transparent" stroke="#46434C"></circle>
+                                        <circle w="64" h="64" stroke-width="0" r="20" cx="32" cy="32" fill="#46434C"></circle>
+                                        <circle w="64" h="64" stroke-width="7" r="28.5" cx="32" cy="32" fill="transparent" stroke="#8651FA" stroke-dasharray="179.0707812546182" stroke-dashoffset="179.0707812546182" style="transform: rotate(-90deg); transform-origin: center center;"></circle>
+                                        <text fill="#ffffff" x="32" y="37" text-anchor="middle" style="font-size: 12px;">0/700</text>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 text-tit font-bold">
+                                        주간 롤링
+                                        <div class="tooltip_custom">
+                                            <svg class="w-5 h-5 fill-primary"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Inform"></use></svg>
+                                            <div class="hover_box top w-72 p-2 bg-back text-xs rounded">이번 주 내 모든 게임에서 누적 베팅 총액이 $700에 도달할 때까지 베팅을 계속하세요.</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between py-1">
+                                        <p class="text-xs text-sub">주간 롤링 $ 700에 도달하세요.</p>
+                                    </div>
+                                    <div class="flex items-center gap-1">
+                                        <img class="w-5" src="/bcGame/dist/custom_img/coin/BCD.webp"/>
+                                        <p class="text-yellow text-base font-extrabold">수익 <i>0.7 BCD</i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <!-- 이전퀘스트 -->
+            <div class="prev_quest-body modal-in modal-body relative rounded bg-stand">
+                <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                    <div class="flex items-center gap-2">
+                        <button onclick="modalInHandle('left_quest-modal','prev_quest-body')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        <p class="text-tit font-extrabold text-base">이전 퀘스트</p>
+                    </div>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+                <div class="w-full p-6 px-4 overflow-y-auto scrollbar h-[660px]">
+                    <div class="flex flex-col justify-center h-full text-center">
+                        <img class="w-48 mx-auto -mt-32" src="/bcGame/dist/custom_img/empty.webp">
+                        <div class="-mt-5 text-basic opacity-70">웁스! 아직 데이터가 없습니다!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 좌측메뉴 - 스핀 -->
+<div id="left_spin-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content overflow-hidden relative rounded">
+            <!-- 기본 -->
+            <div class="modal-body relative">
+                <button class="absolute right-1 top-2 basic-hover px-1" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+
+                <div class="spin_box py-6 p-5">
+                    <div class="bg-1"></div>
+                    <div class="bg-2"></div>
+                    <div class="flex items-center gap-1">
+                        <div class="flex items-center justify-between gap-1 w-1/2 bg-[#151617] p-1 spin_btn rounded">
+                            <button class="rounded p-1 w-1/3 lucky_btn active">
+                                <img src="/bcGame/dist/custom_img/spin/tbtn_luckspin_1.webp" />
+                                <img class="active" src="/bcGame/dist/custom_img/spin/tbtn_luckspin_2.webp" />
+                            </button>
+                            <button class="rounded p-1 w-1/3 super_btn">
+                                <img src="/bcGame/dist/custom_img/spin/tbtn_superspin_1.webp" />
+                                <img class="active" src="/bcGame/dist/custom_img/spin/tbtn_superspin_2.png" />
+                            </button>
+                            <button class="rounded p-1 w-1/3 mega_btn">
+                                <img src="/bcGame/dist/custom_img/spin/tbtn_megaspin_1.webp" />
+                                <img class="active" src="/bcGame/dist/custom_img/spin/tbtn_megaspin_2.webp" />
+                            </button>
+                        </div>
+                        <div class="w-1/2 bg-[#151617] p-1 rounded ">
+                            <div class="text-center rounded py-2 spin_info" style="background-color: rgb(101, 49, 32);">
+                                <div class="tag-img" style="color: rgb(101, 49, 32);">브론즈</div>
+                                <b class="font-extrabold text-white">레벨 0 이상</b>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="spin_wrap mt-4 mx-auto">
+                        <!-- lucky spin -->
+                        <div class="active spin_bronze ">
+                            <div class="spin_area relative mx-auto">
+                                <div class="zoom_box">
+                                        
+                                    <img class="spin-img mx-auto" src="/bcGame/dist/custom_img/spin/spin_bronze.webp" alt="">
+                                    <img class="spin-light absolute left-0 top-0" src="/bcGame/dist/custom_img/spin/spinLight.webp" alt="">
+                                    <!-- <img class="absolute left-0 top-0" src="/bcGame/dist/custom_img/spin/diamond_fuck.webp" alt=""> -->
+                                    
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(0deg);">
+                                        <span class="amount text-white font-semibold">1.00000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/BTC.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(22.5deg);">
+                                        <span class="amount text-white font-semibold">50.0000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/USDC.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(45deg);">
+                                        <span class="amount text-white font-semibold">50.0000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/BCD.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(67.5deg);">
+                                        <span class="amount text-white font-semibold">20.0000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/USDT.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(90deg);">
+                                        <span class="amount text-white font-semibold">0.00857</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/ETH.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(112.5deg);">
+                                        <span class="amount text-white font-semibold">15.4000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/XRP.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(135deg);">
+                                        <span class="amount text-white font-semibold">10.0000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/BCD.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(157.5deg);">
+                                        <span class="amount text-white font-semibold">0.06880</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/SOL.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(180deg);">
+                                        <span class="amount text-white font-semibold">0.02100</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/BNB.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(202.5deg);">
+                                        <span class="amount text-white font-semibold">10.0000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/DOGE.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(225deg);">
+                                        <span class="amount text-white font-semibold">1.00000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/BCD.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(247.5deg);">
+                                        <span class="amount text-white font-semibold">0.76100</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/XLM.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(270deg);">
+                                        <span class="amount text-white font-semibold">0.93200</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/TRX.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(292.5deg);">
+                                        <span class="amount text-white font-semibold">0.19300</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/CRO.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(315deg);">
+                                        <span class="amount text-white font-semibold">1950.00</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/SHIB.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(337.5deg);">
+                                        <span class="amount text-white font-semibold">5.00000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/BCD.webp">
+                                    </div>
+
+                                    <img class="absolute left-[63%] top-[36.5%] w-[46%]" src="/bcGame/dist/custom_img/spin/point_bronze.webp" alt="" style="opacity: 1; transform: none;">
+
+                                </div>
+
+                                <button class="z-20 absolute left-1/2 top-1/2 w-[30%] -translate-x-1/2 -translate-y-1/2">
+                                    <img src="/bcGame/dist/custom_img/spin/spin_center1.webp" alt="">
+                                    <img class="absolute left-1/2 top-1/2  btn-txt" src="/bcGame/dist/custom_img/spin/btn_luckspin.webp" alt="">
+                                </button>
+                            </div>
+                            <div class="spin_logo relative z-10 -mt-8"><img class="w-full mx-auto" src="/bcGame/dist/custom_img/spin/banner_bronze.webp" /></div>
+                            <button class="block btn-bronze w-2/3 h-12 mx-auto mt-4 font-extrabold rounded">스핀 돌리기</button>
+                        </div>
+                        <!-- super spin -->
+                        <div class="spin_gold">
+                            <div class="spin_area relative mx-auto">
+                                <div class="zoom_box">
+                                        
+                                    <img class="spin-img mx-auto" src="/bcGame/dist/custom_img/spin/spin_bronze.webp" alt="">
+                                    <img class="spin-light absolute left-0 top-0" src="/bcGame/dist/custom_img/spin/spinLight.webp" alt="">
+                                    <!-- <img class="absolute left-0 top-0" src="/bcGame/dist/custom_img/spin/diamond_fuck.webp" alt=""> -->
+                                    
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(0deg);">
+                                        <span class="amount text-white font-semibold">1.00000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/BTC.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(22.5deg);">
+                                        <span class="amount text-white font-semibold">50.0000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/USDC.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(45deg);">
+                                        <span class="amount text-white font-semibold">50.0000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/BCD.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(67.5deg);">
+                                        <span class="amount text-white font-semibold">20.0000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/USDT.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(90deg);">
+                                        <span class="amount text-white font-semibold">0.00857</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/ETH.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(112.5deg);">
+                                        <span class="amount text-white font-semibold">15.4000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/XRP.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(135deg);">
+                                        <span class="amount text-white font-semibold">10.0000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/BCD.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(157.5deg);">
+                                        <span class="amount text-white font-semibold">0.06880</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/SOL.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(180deg);">
+                                        <span class="amount text-white font-semibold">0.02100</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/BNB.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(202.5deg);">
+                                        <span class="amount text-white font-semibold">10.0000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/DOGE.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(225deg);">
+                                        <span class="amount text-white font-semibold">1.00000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/BCD.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(247.5deg);">
+                                        <span class="amount text-white font-semibold">0.76100</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/XLM.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(270deg);">
+                                        <span class="amount text-white font-semibold">0.93200</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/TRX.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(292.5deg);">
+                                        <span class="amount text-white font-semibold">0.19300</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/CRO.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(315deg);">
+                                        <span class="amount text-white font-semibold">1950.00</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/SHIB.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(337.5deg);">
+                                        <span class="amount text-white font-semibold">5.00000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/BCD.webp">
+                                    </div>
+
+                                    <img class="absolute left-[63%] top-[36.5%] w-[46%]" src="/bcGame/dist/custom_img/spin/point_bronze.webp" alt="" style="opacity: 1; transform: none;">
+
+                                </div>
+
+                                <button class="z-20 absolute left-1/2 top-1/2 w-[30%] -translate-x-1/2 -translate-y-1/2">
+                                    <img src="/bcGame/dist/custom_img/spin/spin_center1.webp" alt="">
+                                    <img class="absolute left-1/2 top-1/2  btn-txt" src="/bcGame/dist/custom_img/spin/btn_luckspin.webp" alt="">
+                                </button>
+                            </div>
+                            <div class="spin_logo relative z-10 -mt-8"><img class="w-full mx-auto" src="/bcGame/dist/custom_img/spin/banner_gold.png" /></div>
+                            <button class="block btn-yellow w-2/3 h-12 mx-auto mt-4 font-extrabold rounded">스핀 돌리기</button>
+                        </div>
+                        <!-- mega spin -->
+                        <div class="spin_diamond">
+                            <div class="spin_area relative mx-auto">
+                                <div class="zoom_box">
+                                        
+                                    <img class="spin-img mx-auto" src="/bcGame/dist/custom_img/spin/spin_bronze.webp" alt="">
+                                    <img class="spin-light absolute left-0 top-0" src="/bcGame/dist/custom_img/spin/spinLight.webp" alt="">
+                                    <!-- <img class="absolute left-0 top-0" src="/bcGame/dist/custom_img/spin/diamond_fuck.webp" alt=""> -->
+                                    
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(0deg);">
+                                        <span class="amount text-white font-semibold">1.00000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/BTC.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(22.5deg);">
+                                        <span class="amount text-white font-semibold">50.0000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/USDC.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(45deg);">
+                                        <span class="amount text-white font-semibold">50.0000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/BCD.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(67.5deg);">
+                                        <span class="amount text-white font-semibold">20.0000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/USDT.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(90deg);">
+                                        <span class="amount text-white font-semibold">0.00857</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/ETH.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(112.5deg);">
+                                        <span class="amount text-white font-semibold">15.4000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/XRP.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(135deg);">
+                                        <span class="amount text-white font-semibold">10.0000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/BCD.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(157.5deg);">
+                                        <span class="amount text-white font-semibold">0.06880</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/SOL.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(180deg);">
+                                        <span class="amount text-white font-semibold">0.02100</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/BNB.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(202.5deg);">
+                                        <span class="amount text-white font-semibold">10.0000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/DOGE.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(225deg);">
+                                        <span class="amount text-white font-semibold">1.00000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/BCD.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(247.5deg);">
+                                        <span class="amount text-white font-semibold">0.76100</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/XLM.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(270deg);">
+                                        <span class="amount text-white font-semibold">0.93200</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/TRX.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(292.5deg);">
+                                        <span class="amount text-white font-semibold">0.19300</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/CRO.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(315deg);">
+                                        <span class="amount text-white font-semibold">1950.00</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/SHIB.webp">
+                                    </div>
+                                    <div class="spin-item flex items-center gap-1" style="opacity: 1; height: 24px; transform: rotate(337.5deg);">
+                                        <span class="amount text-white font-semibold">5.00000</span>
+                                        <img class="coin-icon w-6" src="/bcGame/dist/custom_img/coin/BCD.webp">
+                                    </div>
+
+                                    <img class="absolute left-[63%] top-[36.5%] w-[46%]" src="/bcGame/dist/custom_img/spin/point_bronze.webp" alt="" style="opacity: 1; transform: none;">
+
+                                </div>
+
+                                <button class="z-20 absolute left-1/2 top-1/2 w-[30%] -translate-x-1/2 -translate-y-1/2">
+                                    <img src="/bcGame/dist/custom_img/spin/spin_center1.webp" alt="">
+                                    <img class="absolute left-1/2 top-1/2  btn-txt" src="/bcGame/dist/custom_img/spin/btn_luckspin.webp" alt="">
+                                </button>
+                            </div>
+                            <div class="spin_logo relative z-10 -mt-8"><img class="w-full mx-auto" src="/bcGame/dist/custom_img/spin/banner_diamond.webp" /></div>
+                            <button class="block btn-purple w-2/3 h-12 mx-auto mt-4 font-extrabold rounded">스핀 돌리기</button>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-1 mt-4 rounded bg-[#151617] p-1 ">
+                        <div class="flex items-center justify-center flex-col p-2 px-4 text-center" style="background-color: rgb(25, 26, 27);">
+                            <p class="text-xs">스핀 보너스 총계</p>
+                            <b class="text-base" style="color:#e9d317;">$9,178,524.90</b>
+                        </div>
+                        <div class="relative flex flex-1 items-start gap-2 p-4 cursor-pointer" style="background-color: rgb(25, 26, 27);"  onclick="modalInHandle('left_spin-modal','spin_bonus-body')">
+                            <svg class="absolute right-2 top-1/2 -translate-y-1/2 w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+
+                            <img class="w-7 h-7 rounded-full" src="/bcGame/dist/custom_img/profile_img.png" alt="">
+                            <div class="font-medium">
+                                <p>Pqtjrrjioyb</p>
+                                <p class="text-sub">Win: <span class="text-primary">15.5</span> <span class="text-white">XRP</span></p>
+                                <p class="text-sub">in <b style="color:rgb(255, 90, 196);">LUCKY SPIN</b></p>
+                                <!-- <p class="text-sub">in <b style="color:rgb(255, 172, 4);">SUPER SPIN</b></p> -->
+                                <!-- <p class="text-sub">in <b style="color:rgb(105, 14, 224);">MEGA SPIN</b></p> -->
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+
+                </div>
+
+
+
+            </div>
+
+            <!-- 스핀 보너스 -->
+            <div class="spin_bonus-body modal-in modal-body relative rounded bg-modaldark">
+                <div class="relative flex items-center justify-between p-2 bg-modaldark">
+                    <div class="flex items-center gap-2">
+                        <button onclick="modalInHandle('left_spin-modal','spin_bonus-body')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                    </div>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+                <div class="w-full p-6 pb-2 px-4 overflow-y-auto scrollbar h-[690px]">
+                    <div>
+                        <img class=" w-12 mx-auto" src="/bcGame/dist/custom_img/crown.png"/>
+                        <div class="flex items-center justify-center mt-1 gap-1">
+                            <img class="w-3" src="/bcGame/dist/custom_img/grass_left.svg"/>
+                            <b class="text-tit text-xl font-extrabold">스핀 보너스</b>
+                            <img class="w-3" src="/bcGame/dist/custom_img/grass_right.svg"/>
+                        </div>
+                    </div>
+                    <div class="bg-stand mt-4 p-2 rounded">
+                        <div class="flex items-center justify-between py-3">
+                            <p class="text-left w-[30%]">유저이름</p>
+                            <p class="text-center w-[30%]">스핀 레벨</p>
+                            <p class="text-right w-[40%]">상품/상금</p>
+                        </div>
+                        <div class="spin_bonus_wrap h-[500px] overflow-hidden">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Sosidnwetasdf</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">84.60</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/BTC.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Uriqiaahnyb</p>
+                                        <p class="text-center w-[30%] text-tit">SUPER SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">0.967</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/MYR.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Yog_Leo</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">8.33</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/GBP.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Manuel Abril</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">15.50</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/XRP.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">bloodman123</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">4.38</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/BTC.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Jmvybpfplyb</p>
+                                        <p class="text-center w-[30%] text-tit">MEGA SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><b class="text-primary text-yellow">150.00</b> <img class="w-5" src="/bcGame/dist/custom_img/coin/BCD.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Sosidnwetasdf</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">84.60</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/BTC.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Uriqiaahnyb</p>
+                                        <p class="text-center w-[30%] text-tit">SUPER SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">0.967</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/MYR.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Yog_Leo</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">8.33</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/GBP.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Manuel Abril</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">15.50</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/XRP.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">bloodman123</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">4.38</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/BTC.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Jmvybpfplyb</p>
+                                        <p class="text-center w-[30%] text-tit">MEGA SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><b class="text-primary text-yellow">150.00</b> <img class="w-5" src="/bcGame/dist/custom_img/coin/BCD.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Sosidnwetasdf</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">84.60</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/BTC.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Uriqiaahnyb</p>
+                                        <p class="text-center w-[30%] text-tit">SUPER SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">0.967</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/MYR.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Yog_Leo</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">8.33</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/GBP.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Manuel Abril</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">15.50</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/XRP.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">bloodman123</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">4.38</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/BTC.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Jmvybpfplyb</p>
+                                        <p class="text-center w-[30%] text-tit">MEGA SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><b class="text-primary text-yellow">150.00</b> <img class="w-5" src="/bcGame/dist/custom_img/coin/BCD.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Sosidnwetasdf</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">84.60</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/BTC.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Uriqiaahnyb</p>
+                                        <p class="text-center w-[30%] text-tit">SUPER SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">0.967</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/MYR.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Yog_Leo</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">8.33</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/GBP.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Manuel Abril</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">15.50</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/XRP.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">bloodman123</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">4.38</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/BTC.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Jmvybpfplyb</p>
+                                        <p class="text-center w-[30%] text-tit">MEGA SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><b class="text-primary text-yellow">150.00</b> <img class="w-5" src="/bcGame/dist/custom_img/coin/BCD.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Sosidnwetasdf</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">84.60</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/BTC.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Uriqiaahnyb</p>
+                                        <p class="text-center w-[30%] text-tit">SUPER SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">0.967</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/MYR.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Yog_Leo</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">8.33</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/GBP.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Manuel Abril</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">15.50</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/XRP.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">bloodman123</p>
+                                        <p class="text-center w-[30%] text-tit">LUCKY SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><span class="text-primary">4.38</span> <img class="w-5" src="/bcGame/dist/custom_img/coin/BTC.webp"></p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="text-left w-[30%] text-tit font-extrabold truncate pr-8">Jmvybpfplyb</p>
+                                        <p class="text-center w-[30%] text-tit">MEGA SPIN</p>
+                                        <p class="text-right w-[40%] flex items-center justify-end gap-1"><b class="text-primary text-yellow">150.00</b> <img class="w-5" src="/bcGame/dist/custom_img/coin/BCD.webp"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 <!-- 공통 모달 영역 : E -->
 

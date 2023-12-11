@@ -562,5 +562,90 @@
 */
 .dark .bingo_list .bottom_box {background:linear-gradient(0deg,#1E2024 69.86%,rgba(30,32,36,.36) 100%); }
 .bingo_list .bottom_box {min-height:5rem; padding:10px 0 14px; background:linear-gradient(0deg,#fff 69.86%,rgba(255,255,255,.66) 100%); }
-.bingo_list li:hover .hover_box {opacity:1; }
+.bingo_list li,:hover .hover_box {opacity:1; }
 
+/*
+#=========================================#
+        spin 모달
+#=========================================#
+*/
+.spin_wrap {position:relative; width: 21.75rem; max-width:90%; }
+.spin_wrap > div {position:absolute; left:0; top:0; width:100%; opacity:0; z-index:-100;}
+.spin_wrap > div.active {opacity:1; z-index:10; }
+.spin_wrap > div.spin_bronze {position:relative; }
+
+.spin_wrap > div .zoom_box {transform: scale(0) rotate(-60deg); transition:all 0.6s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.spin_wrap > div.active .zoom_box {transform: scale(1) rotate(0);}
+
+.spin_wrap > div .spin_logo {transform: scale(0); transition:all 0.6s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.spin_wrap > div.active .spin_logo {transform: scale(1);}
+
+.spin_box { background-image: linear-gradient(8deg,#31343c -16%,#1e2025 -5%,#1e2025 6%,#1d2024 40%,#1e2025 74%,#1e2025 113%);}
+.spin_box .spin_btn button {background-color: rgb(25, 26, 27);}
+.spin_box .spin_btn button.lucky_btn.active {background-color:rgb(101, 49, 32); }
+.spin_box .spin_btn button.super_btn.active {background-color:rgb(235, 145, 6); }
+.spin_box .spin_btn button.mega_btn.active {background-color:rgb(105, 14, 224); }
+.spin_box .spin_btn button img {width:85%; margin:0 auto; }
+.spin_box .spin_btn button.active img {display:none; }
+.spin_box .spin_btn button.active img.active {display:block; }
+.spin_box .spin_btn img.active {display:none; }
+.spin_box .tag-img {width: 8.75rem; height: 1.875rem; margin: 0 auto; position: relative; text-align: center; line-height: 1.625rem; background: url('../custom_img/spin/tag.webp') no-repeat; background-size: 100% 100%; font-weight: 800; font-size: 1rem;}
+
+.spin_box .spin_area {width: 100%; }
+.spin_box .spin_area .spin-light.active {transform: rotate(22.5deg);}
+.spin_box .spin_area .btn-txt {animation:btnzoom 2s infinite linear; }
+.spin_box .spin_area .spin-item {position:absolute; left:50%; top:50%; width:5.5rem; transform-origin:-3.8124rem center; margin-top:-0.75rem; margin-left:3.875rem;}
+
+@keyframes btnzoom {
+    0% {transform: translate(-50%,-50%) rotate(-5deg) scaleZ(1);}
+    50% {transform: translate(-50%,-50%) rotate(0) scale3d(1.1,1.1,1.1);}
+    100% {transform: translate(-50%,-50%) rotate(-5deg) scaleZ(1);}
+}
+
+
+/*
+#=========================================#
+        보너스 - 로그아웃시
+#=========================================#
+*/
+.dark .bonus_visual .container {background:url('../custom_img/bonus/bg.png') no-repeat center center / auto 100%; }
+.bonus_visual .container {background:url('../custom_img/bonus/bg_w.webp') no-repeat center center / auto 100%; }
+
+.bonus_free_box div span {background:rgba(216,216,216,.3);  }
+.dark .bonus_free_box div span {background:rgba(255,255,255,.1); }
+
+.bonus_free_box .img_box {position: absolute; width: 80%; min-width: 17.5rem; height: 100%; top: 0; right: 0;  transform: translate(48%); display:flex; align-items: center;}
+.bonus_free_box .img_box img {width:auto; height:55%; margin-left:5%; transform:translateY(-10%); }
+
+.bonus_free_box .quest {background:linear-gradient(219.02deg,#FFFFFF 13.3%,#DECEFF 104.04%); }
+.dark .bonus_free_box .quest {background:linear-gradient(214.28deg,#24262B 12.04%,#321869 86.72%); }
+.bonus_free_box .quest span {color:#b28dff;}
+.bonus_free_box .quest .img_box {background:radial-gradient(50% 50% at 50% 50%,rgba(118,54,255,.4) 0%,rgba(118,54,255,0) 100%); }
+.dark .bonus_free_box .quest .img_box {background:radial-gradient(50% 50% at 50% 50%,#7636FF 0%,rgba(118,54,255,0) 100%)}
+
+.bonus_free_box .spin {background:linear-gradient(216.13deg,#FFFFFF 12.54%,#E9CCFF 98.68%); }
+.dark .bonus_free_box .spin {background:linear-gradient(214.28deg,#24262B 12.04%,#461869 86.72%); }
+.bonus_free_box .spin span {color:#d763ff;}
+.bonus_free_box .spin .img_box {background:radial-gradient(50% 50% at 50% 50%,rgba(203,54,255,.4) 0%,rgba(203,54,255,0) 100%); }
+.dark .bonus_free_box .spin .img_box {background:radial-gradient(50% 50% at 50% 50%,#CB36FF 0%,rgba(203,54,255,0) 100%)}
+
+.bonus_free_box .roll {background:linear-gradient(218.18deg,#FFFFFF 13.08%,#FEEDD3 103.62%); }
+.dark .bonus_free_box .roll {background:linear-gradient(214.28deg,#24262B 12.04%,#563A0B 86.72%); }
+.bonus_free_box .roll span {color:#f0aa32;}
+.bonus_free_box .roll .img_box {background:radial-gradient(50% 50% at 50% 50%,rgba(236,156,36,.4) 0%,rgba(236,156,36,0) 100%); }
+.dark .bonus_free_box .roll .img_box {background:radial-gradient(50% 50% at 50% 50%,#B8730C 0%,rgba(184,115,12,0) 100%)}
+
+.dark .bonus_cashback {background:linear-gradient(180deg,#24262B 0%,#1D1E23 100%); }
+.bonus_cashback {background:linear-gradient(180deg,#F6F7FA 0%,#FFFFFF 100%); }
+
+.dark .bonus_cashback .cashback_box {background:linear-gradient(180deg,rgba(36,38,43,.32) 0%,rgba(64,66,84,.32) 100%); }
+.bonus_cashback .cashback_box {background:linear-gradient(180deg,rgba(249,249,249,.7) 0%,rgba(223,228,244,.7) 100%); backdrop-filter:blur(8px);}
+
+.bonus_cashback .cashback_box .cashback_bg_1 {background:radial-gradient(50% 50% at 50% 50%,#7F21F8 0%,rgba(127,33,248,0) 100%); filter:blur(2.5px); }
+.bonus_cashback .cashback_box .cashback_bg_2 {background:radial-gradient(50% 50% at 50% 50%,rgba(13,143,65,.7) 0%,rgba(13,143,65,0) 100%); filter:blur(2.5px); }
+.bonus_cashback .cashback_box .cashback_bg_3 {background:radial-gradient(50% 50% at 50% 50%,rgba(214,22,218,.6) 0%,rgba(214,22,218,0) 100%); filter:blur(2.5px); }
+
+@media all and (max-width:767px){
+    .dark .bonus_visual .container {background:url('../custom_img/bonus/bg_m.png') no-repeat center center / 100% auto; }
+    .bonus_visual .container {background:url('../custom_img/bonus/bg_w_m.webp') no-repeat center center / 100% auto; }
+}
