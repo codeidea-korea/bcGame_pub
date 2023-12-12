@@ -3217,6 +3217,12 @@ select{
 .leading-4{
     line-height: 1rem; 
 }
+.leading-tight{
+    line-height: 1.25; 
+}
+.leading-none{
+    line-height: 1; 
+}
 .tracking-\[0\.4em\]{
     letter-spacing: 0.4em; 
 }
@@ -14328,6 +14334,9 @@ html body{
 .hover\:bg-opacity-50:hover{
     --tw-bg-opacity: 0.5; 
 }
+.hover\:fill-primary:hover{
+    fill: rgb(var(--color-primary)); 
+}
 .hover\:text-white:hover{
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity)); 
@@ -14646,6 +14655,9 @@ html body{
     }
     .md\:p-10{
         padding: 2.5rem; 
+    }
+    .md\:p-6{
+        padding: 1.5rem; 
     }
     .md\:py-4{
         padding-top: 1rem;

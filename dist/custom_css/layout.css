@@ -45,6 +45,11 @@ button:focus {box-shadow:none !important; }
 .dark .dark\:bg-backlight {background-color: var(--background-light);}
 .hover\:bg-stand:hover {background-color: var(--standard-color);}
 
+@media (min-width:768px){
+    .md\:bg-tab {background-color: var(--tab-bg);}
+}
+
+
 .text-tit {color: var(--title-color);}
 .text-basic {color: var(--text-color);}
 .text-sub {color: var(--sub-text-color);}
