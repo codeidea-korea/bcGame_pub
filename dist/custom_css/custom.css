@@ -167,6 +167,9 @@
 .pad-s.table th,
 .pad-s.table td {padding:8px 4px; }
 
+.pad-bl.table th {padding:8px 6px; }
+.pad-bl.table td {padding:15px 6px; }
+
 .table.rounded tr td:first-of-type,
 .table.rounded tr th:first-of-type {border-top-left-radius: 5px; border-bottom-left-radius: 5px;}
 .table.rounded tr td:last-of-type,
@@ -174,6 +177,8 @@
 
 .dark .table.table-striped tr:nth-of-type(odd) td {background-color: rgb(var(--color-slate-400) / 0.4) !important;}
 .table.table-striped tr:nth-of-type(odd) td {background-color: #fff !important;}
+
+.dark .table.table-striped.striped-dark tr:nth-of-type(odd) td {background-color: var(--modal-darkbg) !important; }
 
 
 @media (max-width:640px){
@@ -202,7 +207,8 @@
 #=========================================#
 */
 .tooltip_custom {position:relative; cursor:pointer; }
-.tooltip_custom .hover_box {display:none; position:absolute; left:0; top:100%; left:50%; transform:translateX(-50%); }
+.tooltip_custom .hover_box {display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); }
+.tooltip_custom .hover_box.left_side {left:0; transform:translateX(-30%); }
 .tooltip_custom .hover_box.top {top:auto; bottom:100%; }
 .tooltip_custom:hover .hover_box {display:block; }
 
@@ -344,6 +350,13 @@
 .cash_btn_box .cash_btn.on:after {content:''; position:absolute; right:-1px; bottom:0; width:28px; height:18.96px; background:url('../custom_img/cash_btn_checked.png') no-repeat center center / 100% auto; }
 .cash_btn_box .cash_btn.on .bonus {background-color:#FFE600; color:#393939; }
 
+/*
+#=========================================#
+        아코디언 
+#=========================================#
+*/
+.accordian_item .title .arrow {transform:rotate(90deg); transition:all 0.5s; }
+.accordian_item.on .title .arrow {transform:rotate(-90deg)}
 
 /*
 #=========================================#
@@ -605,9 +618,10 @@
 
 /*
 #=========================================#
-        보너스 - 로그아웃시
+        보너스
 #=========================================#
 */
+/* 보너스 - 로그아웃시 */
 .dark .bonus_visual .container {background:url('../custom_img/bonus/bg.png') no-repeat center center / auto 100%; }
 .bonus_visual .container {background:url('../custom_img/bonus/bg_w.webp') no-repeat center center / auto 100%; }
 
@@ -645,7 +659,61 @@
 .bonus_cashback .cashback_box .cashback_bg_2 {background:radial-gradient(50% 50% at 50% 50%,rgba(13,143,65,.7) 0%,rgba(13,143,65,0) 100%); filter:blur(2.5px); }
 .bonus_cashback .cashback_box .cashback_bg_3 {background:radial-gradient(50% 50% at 50% 50%,rgba(214,22,218,.6) 0%,rgba(214,22,218,0) 100%); filter:blur(2.5px); }
 
+.bonus_benefit .bg_1:before {content:''; position:absolute; left:0; top:0; width:100%; height:100%; background:radial-gradient(50% 50% at 50% 50%,rgba(255,54,175,.7) 0%,rgba(255,54,175,0) 100%); filter:blur(12.5px); }
+.bonus_benefit .bg_2:before {content:''; position:absolute; left:0; top:0; width:100%; height:100%; background:radial-gradient(50% 50% at 50% 50%,rgba(21,210,62,.6) 0%,rgba(21,210,62,0) 100%); filter:blur(12.5px); }
+.bonus_benefit .bg_3:before {content:''; position:absolute; left:0; top:0; width:100%; height:100%; background:radial-gradient(50% 50% at 50% 50%,rgba(54,62,255,.9) 0%,rgba(54,62,255,0) 100%); filter:blur(12.5px); }
+
+.bonus_bottom:before {content:''; position:absolute; left:50%; top:0; width:400px; height:340px; transform:translate3d(-50%,-60%,0); background-color:#6149ea; opacity:0.34; filter:blur(75px); }
+
 @media all and (max-width:767px){
     .dark .bonus_visual .container {background:url('../custom_img/bonus/bg_m.png') no-repeat center center / 100% auto; }
     .bonus_visual .container {background:url('../custom_img/bonus/bg_w_m.webp') no-repeat center center / 100% auto; }
 }
+
+/* 보너스 - 로그인시 */
+.vip_bonus .bg_box:before {content:''; position:absolute; left:-50%; top:0; width:250px; height:200px; }
+
+.dark .vip_bonus .bg_1:before {background:radial-gradient(50% 50% at 50% 50%,rgba(255,89,188,.8) 0%,rgba(248,60,172,0) 100%);  }
+.vip_bonus .bg_1:before {background:radial-gradient(50% 50% at 50% 50%,rgba(255,89,188,.8) 0%,rgba(248,60,172,0) 100%); }
+
+.dark .vip_bonus .bg_2:before {background:radial-gradient(50% 50% at 50% 50%,rgba(9,148,123,.5) 0%,rgba(9,148,123,0) 100%);  }
+.vip_bonus .bg_2:before {background:radial-gradient(50% 50% at 50% 50%,rgba(14,208,173,.3) 0%,rgba(14,208,173,0) 100%); }
+
+.dark .vip_bonus .bg_3:before {background:radial-gradient(50% 50% at 50% 50%,rgba(82,54,255,.7) 0%,rgba(82,54,255,0) 100%);  }
+.vip_bonus .bg_3:before {background:radial-gradient(50% 50% at 50% 50%,rgba(82,54,255,.3) 0%,rgba(82,54,255,0) 100%); }
+
+.dark .vip_bonus .bg_4:before {background:radial-gradient(50% 50% at 50% 50%,rgba(255,54,151,.7) 0%,rgba(255,54,151,0) 100%);  }
+.vip_bonus .bg_4:before {background:radial-gradient(50% 50% at 50% 50%,rgba(255,54,151,.3) 0%,rgba(255,54,151,0) 100%); }
+
+.dark .vip_bonus .bg_5:before {background:radial-gradient(50% 50% at 50% 50%,rgba(13,147,10,.7) 0%,rgba(13,147,10,0) 100%);  }
+.vip_bonus .bg_5:before {background:radial-gradient(50% 50% at 50% 50%,rgba(13,147,10,.3) 0%,rgba(13,147,10,0) 100%); }
+
+.dark .vip_bonus .bg_6:before {background:radial-gradient(50% 50% at 50% 50%,rgba(118,54,255,.7) 0%,rgba(118,54,255,0) 100%);  }
+.vip_bonus .bg_6:before {background:radial-gradient(50% 50% at 50% 50%,rgba(118,54,255,.3) 0%,rgba(118,54,255,0) 100%); }
+
+.dark .vip_bonus .bg_7:before {background:radial-gradient(50% 50% at 50% 50%,rgba(208,73,255,.7) 0%,rgba(197,31,255,0) 100%);  }
+.vip_bonus .bg_7:before {background:radial-gradient(50% 50% at 50% 50%,rgba(208,73,255,.3) 0%,rgba(197,31,255,0) 100%); }
+
+.dark .vip_bonus .bg_8:before {background:radial-gradient(50% 50% at 50% 50%,rgba(203,127,13,.7) 0%,rgba(203,127,13,0) 100%);  }
+.vip_bonus .bg_8:before {background:radial-gradient(50% 50% at 50% 50%,rgba(203,127,13,.3) 0%,rgba(203,127,13,0) 100%); }
+
+
+
+@media all and (max-width:1279px){
+    .vip_bonus .bg_box:before {left:-40%}
+}
+
+
+/* 롤 모달 */
+.roll-modal .scroll_box {height:80px; transition:all 2s; }
+.roll-modal .scroll_box.type02 {transition:all 2.7s; }
+.roll-modal .scroll_box.type03 {transition:all 2.3s; }
+.roll-modal .num_box span {display:block; height:80px; font-size:46px; line-height:86px; color:#000; }
+
+/* bcd 모달 */
+.dark .bcd-modal .bcd_bg {background:linear-gradient(180deg,rgba(27,162,122,.6) 0%,rgba(27,162,122,0) 100%),#1C1E22; }
+.bcd-modal .bcd_bg {background:linear-gradient(180deg,rgba(27,162,122,.6) 0%,rgba(27,162,122,0) 100%),#FFFFFF; }
+.bcd-modal .bcd_bg > * {position:relative; z-index:10; }
+.bcd-modal .bcd_bg:before {content:''; z-index:1; position:absolute; left:0; top:0; width:100%; height:100%; background:url('../custom_img/bonus/bonus_bg.png') no-repeat center center / 100% auto; }
+
+

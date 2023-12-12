@@ -451,6 +451,20 @@ const topbarHandle = ()=>{
     },500)
 
 
+
+    //=======================================================
+    //   아코디언박스 - 커스텀
+    //=======================================================
+    $('.accordian_item .title').on('click',function(){
+        $(this).parent().toggleClass('on')
+        $(this).parent().siblings().removeClass('on')
+
+        $(this).next('.summary').slideToggle();
+        $(this).parent().siblings().find('.summary').slideUp();
+
+    })
+
+
 }
 
 const sendFocus = ()=>{
@@ -702,6 +716,9 @@ const modalInHandle = (modal,content)=>{
         if(content == "rain_detail-body"){
             modalWrap.querySelector('.modal-dialog').classList.remove("modal-xl")
         }
+        if(content == "bcd_bonus_recode"){
+            modalWrap.querySelector('.modal-dialog').classList.remove("modal-lg")
+        }
     }else{
         modalcont.classList.remove('on')
         cont.classList.remove('open')
@@ -717,5 +734,9 @@ const modalInHandle = (modal,content)=>{
         if(content == "rain_detail-body"){
             modalWrap.querySelector('.modal-dialog').classList.add("modal-xl")
         }
+        if(content == "bcd_bonus_recode"){
+            modalWrap.querySelector('.modal-dialog').classList.add("modal-lg")
+        }
     }
 }
+
