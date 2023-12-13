@@ -197,6 +197,19 @@ echo txtRecord('./@record/');
         <li class="mt20" data-label="BC 독점">
             <ul>
 				<li><a href="/bcGame/bc_contest.html" target="_blank" class="">데일리 콘테스트</a></li>
+				<li>
+                    <a href="/bcGame/bc_promotion.html" target="_blank" class="">프로모션</a>
+                    <ul>
+                        <li><a href="/bcGame/bc_promotion_detail.html" target="_blank" class="">프로모션 - 상세</a></li>
+                    </ul>
+                </li>
+                <li><a href="/bcGame/bc_weekly-raffle.html" target="_blank" class="">주간 추첨</a></li>
+            </ul>
+        </li>
+
+        <li class="mt20" data-label="공정성">
+            <ul>
+				<li><a href="/bcGame/provably_fair.html" target="_blank" class="">공정성</a></li>
             </ul>
         </li>
 

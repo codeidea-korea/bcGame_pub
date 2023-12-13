@@ -58,6 +58,8 @@ button:focus {box-shadow:none !important; }
 .text-place {color:var(--placeholder-color);}
 .text-yellow {color:var(--yellow-color);}
 .text-green-gradient {color:transparent; background:linear-gradient(90deg,#B5E916 22.99%,#43C111 73.57%); -webkit-background-clip:text; }
+.text-yellow-gradient {color:transparent; background:linear-gradient(180deg,#FFD339 47.13%,#F59E00 77.08%); -webkit-background-clip:text; }
+
 .text-orange {color:#ed6300}
 
 
@@ -94,6 +96,9 @@ button:disabled {opacity:.7 !important; }
 .btn-purple {border:0 none; box-shadow:none; background-color:#6e34e2b3; background-image:conic-gradient(from 1turn,rgba(136,83,252,1),rgba(110,52,226,1)); color:#fff; border-radius:3px; }
 .btn-yellow {border:0 none; box-shadow:none; color: #fff; background-color: #f19511b3; background-image: conic-gradient(from 1turn,#F6C722,#F19511); border-radius:3px; }
 .btn-bronze {border:0 none; box-shadow:none; color: #fff; background-color: rgb(255, 158, 106); background-image: conic-gradient(from 1turn, rgb(172, 76, 25), rgb(255, 158, 106)); border-radius:3px; }
+.btn-orange {border:0 none; box-shadow:none; color: #fff; background-image: conic-gradient(from 1turn,#cc5600,#ff832b); border-radius:3px; }
+.btn-purple2 {border:0 none; box-shadow:none; color: #fff; background-image: conic-gradient(from 1turn,#831db8,#ab46cf); border-radius:3px; }
+.btn-blue {border:0 none; box-shadow:none; color: #fff; background-image: conic-gradient(from 1turn,#3f128c,#7121fc); border-radius:3px; }
 
 .dark .btn-normal { background-color: rgba(45,48,53,.6);}
 .btn-normal {border:0 none; box-shadow:none; background-color: rgba(218,221,230,.6);}
@@ -374,15 +379,24 @@ button:disabled {opacity:.7 !important; }
     padding-right:40px;
     max-width: 1430px
 }
+.container2 {
+    width: 100%;
+    margin: 0 auto;
+    padding-left:40px;
+    padding-right:40px;
+    max-width: 900px
+}
 
 @media all and (max-width:1200px){
     .content {margin-left:64px; }
     .content.right_open {margin-right:0; }
 }
+
 @media all and (max-width:640px){
     .content {margin-left:0; }
     .content.fold {margin-left:0; }
-    .container {padding-left:10px; padding-right:10px; }
+    .container {padding-left:15px; padding-right:15px; }
+    .container2 {padding-left:15px; padding-right:15px; }
 }
 
 

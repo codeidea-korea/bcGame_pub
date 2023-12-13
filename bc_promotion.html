@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <link href="/bcGame/dist/custom_img/stake_favicon.png" rel="shortcut icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <title>BC.GAME</title>
+    <!-- ** css 시작 ** -->
+    <link rel="stylesheet" href="/bcGame/dist/css/app.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <!-- 커스텀 css 추가 -->
+    <link rel="stylesheet" href="/bcGame/dist/custom_css/custom.css" />
+    <!-- ** css 끝 ** -->
+</head>
+
+<body class="bg-back">
+
+    <div class="flex relative">
+        <!--  ** 사이드 메뉴 시작 ** -->
+        <div class="sidebar"></div>
+        <!--  ** 사이드 메뉴 끝 ** -->
+
+        <!--  ** 메인 보드 시작 ** -->
+        <div class="content">
+            <!-- ** 페이지 로딩 ** -->
+            <div id="loadingContainer">
+                <svg width="25" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" fill="#3BC117" class="w-12 h-12">
+                    <circle cx="15" cy="15" r="15">
+                        <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                    <circle cx="60" cy="15" r="9" fill-opacity="0.3">
+                        <animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                    <circle cx="105" cy="15" r="15">
+                        <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                </svg>
+            </div>
+            <!-- ** 페이지 로딩 끝 ** -->
+            
+            <!-- ** 탑바 시작 ** -->
+            <!-- ** 탑바 끝 ** -->
+
+            <!-- ** 내용시작 ** -->
+            <div class="container_wrap">
+
+                <div class="container">
+                    <div class="py-5">
+                        <h3 class="text-tit text-base font-bold">프로모션</h3>
+                    </div>
+                    <div class="flex flex-col lg:flex-row gap-4 promotion_box p-6 md:ml-0 md:mr-0 -ml-5 -mr-5">
+                        <div class="left shrink-0 relative text-white font-medium cursor-pointer" data-tw-toggle="modal" data-tw-target="#bonus_deposit-modal">
+                            <p class="text-3xl">훌륭한 보너스<br/><span class="text-yellow">매충전시</span></p>
+                            <div class="my-2 text-2xl">
+                                <p class="promotion_speed flex items-center gap-1 py-2">최대 <b class="text-4xl text-yellow">360%</b></p>
+                            </div>
+                            <p class="text-base">모든 플레이어 사용 가능<br/><span class="text-xl">2024. 1. 1 이전</span></p>
+                            <button class="!absolute right-0 left-auto lg:right-auto lg:left-0 top-0 lg:top-auto bottom-auto lg:bottom-0 ">자세히 <svg class="inline-flex w-3 h-3 mb-0.5 fill-primary"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        </div>
+                        <div class="right flex items-center gap-2 md:gap-4">
+                            <div class="item active">
+                                <div class="img_box rounded-t-lg relative">
+                                    <p class="relative z-20 py-2 pt-3 text-black text-xl text-center font-bold">180% <span class="md:inline block md:text-xl text-xs">보너스</span></p>
+                                    <div class="mask"></div>
+                                    <img class="relative z-20" src="/bcGame/dist/custom_img/bc/front1.webp" alt="">
+                                    <p class="absolute z-30 left-0 bottom-0 w-full md:scale-100 scale-75 pb-2 md:pb-4 text-black text-center font-semibold md:text-sm text-xs">첫번째 충전</p>
+                                    <img class="effect_01" src="/bcGame/dist/custom_img/bc/effect-coin.webp" alt="">
+                                    <img class="effect_02" src="/bcGame/dist/custom_img/bc/effect-coin-left.webp" alt="">
+                                    <div class="arrow flex items-center justify-center">
+                                        <svg width="32" height="24" xmlns="http://www.w3.org/2000/svg" class="icon"><path d="M21.908.814l.128.112 7.878 7.563a4.662 4.662 0 01.172 6.615l-.172.174-7.878 7.563a2.06 2.06 0 01-2.829 0 1.864 1.864 0 01-.117-2.593l.117-.122 7.879-7.564a.932.932 0 00.083-1.267l-.083-.09-7.879-7.564a1.866 1.866 0 010-2.715 2.062 2.062 0 012.701-.112zm-9 0l.128.112 7.878 7.563a4.662 4.662 0 01.172 6.615l-.172.174-7.878 7.563a2.06 2.06 0 01-2.829 0 1.864 1.864 0 01-.117-2.593l.117-.122 7.879-7.564a.932.932 0 00.083-1.267l-.083-.09-7.879-7.564a1.866 1.866 0 010-2.715 2.062 2.062 0 012.701-.112zm-9 0l.128.112 7.878 7.563a4.662 4.662 0 01.172 6.615l-.172.174-7.878 7.563a2.06 2.06 0 01-2.829 0 1.864 1.864 0 01-.117-2.593l.117-.122 7.879-7.564a.932.932 0 00.083-1.267l-.083-.09L1.207 3.64a1.866 1.866 0 010-2.715A2.062 2.062 0 013.908.814z"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="md:block hidden text-center mt-2">
+                                    <button class="btn-yellow w-4/5 h-11 !text-black font-bold">지금 입금하기</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="img_box rounded-t-lg relative">
+                                    <p class="relative z-20 py-2 pt-3 text-black text-xl text-center font-bold">240% <span class="md:inline block md:text-xl text-xs">보너스</span></p>
+                                    <div class="mask"></div>
+                                    <img class="relative z-20" src="/bcGame/dist/custom_img/bc/front2.webp" alt="">
+                                    <p class="absolute z-30 left-0 bottom-0 w-full md:scale-100 scale-75 pb-2 md:pb-4 text-black text-center font-semibold md:text-sm text-xs">두번째 충전</p>
+                                    <img class="effect_01" src="/bcGame/dist/custom_img/bc/effect-coin.webp" alt="">
+                                    <img class="effect_02" src="/bcGame/dist/custom_img/bc/effect-coin-left.webp" alt="">
+                                    <div class="arrow flex items-center justify-center">
+                                        <svg width="32" height="24" xmlns="http://www.w3.org/2000/svg" class="icon"><path d="M21.908.814l.128.112 7.878 7.563a4.662 4.662 0 01.172 6.615l-.172.174-7.878 7.563a2.06 2.06 0 01-2.829 0 1.864 1.864 0 01-.117-2.593l.117-.122 7.879-7.564a.932.932 0 00.083-1.267l-.083-.09-7.879-7.564a1.866 1.866 0 010-2.715 2.062 2.062 0 012.701-.112zm-9 0l.128.112 7.878 7.563a4.662 4.662 0 01.172 6.615l-.172.174-7.878 7.563a2.06 2.06 0 01-2.829 0 1.864 1.864 0 01-.117-2.593l.117-.122 7.879-7.564a.932.932 0 00.083-1.267l-.083-.09-7.879-7.564a1.866 1.866 0 010-2.715 2.062 2.062 0 012.701-.112zm-9 0l.128.112 7.878 7.563a4.662 4.662 0 01.172 6.615l-.172.174-7.878 7.563a2.06 2.06 0 01-2.829 0 1.864 1.864 0 01-.117-2.593l.117-.122 7.879-7.564a.932.932 0 00.083-1.267l-.083-.09L1.207 3.64a1.866 1.866 0 010-2.715A2.062 2.062 0 013.908.814z"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="md:block hidden text-center mt-2">
+                                    <button class="btn-orange w-4/5 h-11 !text-black font-bold">지금 입금하기</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="img_box rounded-t-lg relative">
+                                    <p class="relative z-20 py-2 pt-3 text-yellow text-xl text-center font-bold">300% <span class="md:inline block md:text-xl text-xs">보너스</span></p>
+                                    <div class="mask"></div>
+                                    <img class="relative z-20" src="/bcGame/dist/custom_img/bc/front3.webp" alt="">
+                                    <p class="absolute z-30 left-0 bottom-0 w-full md:scale-100 scale-75 pb-2 md:pb-4 text-black text-center font-semibold md:text-sm text-xs">세번째 충전</p>
+                                    <img class="effect_01" src="/bcGame/dist/custom_img/bc/effect-coin.webp" alt="">
+                                    <img class="effect_02" src="/bcGame/dist/custom_img/bc/effect-coin-left.webp" alt="">
+                                    <div class="arrow flex items-center justify-center">
+                                        <svg width="32" height="24" xmlns="http://www.w3.org/2000/svg" class="icon"><path d="M21.908.814l.128.112 7.878 7.563a4.662 4.662 0 01.172 6.615l-.172.174-7.878 7.563a2.06 2.06 0 01-2.829 0 1.864 1.864 0 01-.117-2.593l.117-.122 7.879-7.564a.932.932 0 00.083-1.267l-.083-.09-7.879-7.564a1.866 1.866 0 010-2.715 2.062 2.062 0 012.701-.112zm-9 0l.128.112 7.878 7.563a4.662 4.662 0 01.172 6.615l-.172.174-7.878 7.563a2.06 2.06 0 01-2.829 0 1.864 1.864 0 01-.117-2.593l.117-.122 7.879-7.564a.932.932 0 00.083-1.267l-.083-.09-7.879-7.564a1.866 1.866 0 010-2.715 2.062 2.062 0 012.701-.112zm-9 0l.128.112 7.878 7.563a4.662 4.662 0 01.172 6.615l-.172.174-7.878 7.563a2.06 2.06 0 01-2.829 0 1.864 1.864 0 01-.117-2.593l.117-.122 7.879-7.564a.932.932 0 00.083-1.267l-.083-.09L1.207 3.64a1.866 1.866 0 010-2.715A2.062 2.062 0 013.908.814z"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="md:block hidden text-center mt-2">
+                                    <button class="btn-purple2 w-4/5 h-11  font-bold">지금 입금하기</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="img_box rounded-t-lg relative">
+                                    <p class="relative z-20 py-2 pt-3 text-yellow text-xl text-center font-bold">360% <span class="md:inline block md:text-xl text-xs">보너스</span></p>
+                                    <div class="mask"></div>
+                                    <img class="relative z-20" src="/bcGame/dist/custom_img/bc/front4.webp" alt="">
+                                    <p class="absolute z-30 left-0 bottom-0 w-full md:scale-100 scale-75 pb-2 md:pb-4 text-black text-center font-semibold md:text-sm text-xs">네번째 충전</p>
+                                    <img class="effect_01" src="/bcGame/dist/custom_img/bc/effect-coin.webp" alt="">
+                                    <img class="effect_02" src="/bcGame/dist/custom_img/bc/effect-coin-left.webp" alt="">
+                                </div>
+                                <div class="md:block hidden text-center mt-2">
+                                    <button class="btn-blue w-4/5 h-11 font-bold">지금 입금하기</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="block md:hidden text-center mt-10">
+                            <button class="btn-yellow w-4/5 h-11  font-bold">지금 입금하기</button>
+                        </div>
+                    </div>
+
+                    <ul class="nav nav-boxed-tabs !w-auto mt-5" role="tablist">
+                        <li id="promotion-1-tab" class="nav-item bg-sponsor rounded-l overflow-hidden" role="presentation"> 
+                            <button class="w-24 sm:w-40 h-12 active" data-tw-toggle="pill" data-tw-target="#promotion-tab-1" type="button" role="tab" aria-controls="promotion-tab-1" aria-selected="true"> 최신 프로모션 </button> 
+                        </li>
+                        <li id="promotion-2-tab" class="nav-item bg-sponsor " role="presentation"> 
+                            <button class="w-24 sm:w-40 h-12" data-tw-toggle="pill" data-tw-target="#promotion-tab-2" type="button" role="tab" aria-controls="promotion-tab-2" aria-selected="false"> 달성 </button> 
+                        </li>
+                    </ul>
+
+                    <div class="tab-content mt-5 mb-10">
+                        <div id="promotion-tab-1" class="tab-pane leading-relaxed active" role="tabpanel" aria-labelledby="promotion-1-tab"> 
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                                <div class="promotion_item bg-stand hover:opacity-80">
+                                    <a href="/bcGame/bc_promotion_detail.html"><img class="rounded" src="/bcGame/dist/custom_img/bc/bc_thumb_1.avif" alt=""></a>
+                                    <div class="flex items-center justify-between px-3 py-4 cursor-pointer" onclick="window.location.href='/bcGame/bc_promotion_detail.html'">
+                                        <div class="w-2/3 font-semibold">
+                                            <div class="truncate text-tit text-opacity-70">2024. 1. 1. 오전 12:58:20에 종료</div>
+                                            <div class="truncate">Snowy Showdown 랭킹 챌린지</div>
+                                        </div>
+                                        <button class="shrink-0 btn-normal p-2 px-5 text-primary font-bold">진행중</button>
+                                    </div>
+                                </div>
+                                <div class="promotion_item bg-stand hover:opacity-80">
+                                    <a href="/bcGame/bc_promotion_detail.html"><img class="rounded" src="/bcGame/dist/custom_img/bc/bc_thumb_2.avif" alt=""></a>
+                                    <div class="flex items-center justify-between px-3 py-4 cursor-pointer" onclick="window.location.href='/bcGame/bc_promotion_detail.html'">
+                                        <div class="w-2/3 font-semibold">
+                                            <div class="truncate text-tit text-opacity-70">2023. 12. 25. 오전 9:00:00에 종료</div>
+                                            <div class="truncate">에볼루션 겨울 윈페스트</div>
+                                        </div>
+                                        <button class="shrink-0 btn-normal p-2 px-5 text-primary font-bold">진행중</button>
+                                    </div>
+                                </div>
+                                <div class="promotion_item bg-stand hover:opacity-80">
+                                    <a href="/bcGame/bc_promotion_detail.html"><img class="rounded" src="/bcGame/dist/custom_img/bc/bc_thumb_3.avif" alt=""></a>
+                                    <div class="flex items-center justify-between px-3 py-4 cursor-pointer" onclick="window.location.href='/bcGame/bc_promotion_detail.html'">
+                                        <div class="w-2/3 font-semibold">
+                                            <div class="truncate text-tit text-opacity-70">2023. 12. 28. 오전 12:58:20에 종료</div>
+                                            <div class="truncate">산타의 선물 딜라이트</div>
+                                        </div>
+                                        <button class="shrink-0 btn-normal p-2 px-5 text-primary font-bold">진행중</button>
+                                    </div>
+                                </div>
+                                <div class="promotion_item bg-stand hover:opacity-80">
+                                    <a href="/bcGame/bc_promotion_detail.html"><img class="rounded" src="/bcGame/dist/custom_img/bc/bc_thumb_4.avif" alt=""></a>
+                                    <div class="flex items-center justify-between px-3 py-4 cursor-pointer" onclick="window.location.href='/bcGame/bc_promotion_detail.html'">
+                                        <div class="w-2/3 font-semibold">
+                                            <div class="truncate text-tit text-opacity-70">2024. 1. 1. 오전 12:58:20에 종료</div>
+                                            <div class="truncate">Drops & Wins Slots - Philippines Exclusive</div>
+                                        </div>
+                                        <button class="shrink-0 btn-normal p-2 px-5 text-primary font-bold">진행중</button>
+                                    </div>
+                                </div>
+                                <div class="promotion_item bg-stand hover:opacity-80">
+                                    <a href="/bcGame/bc_promotion_detail.html"><img class="rounded" src="/bcGame/dist/custom_img/bc/bc_thumb_5.avif" alt=""></a>
+                                    <div class="flex items-center justify-between px-3 py-4 cursor-pointer" onclick="window.location.href='/bcGame/bc_promotion_detail.html'">
+                                        <div class="w-2/3 font-semibold">
+                                            <div class="truncate text-tit text-opacity-70">2024. 1. 1. 오전 12:58:20에 종료</div>
+                                            <div class="truncate">드롭 & 윈즈 12월 슬롯</div>
+                                        </div>
+                                        <button class="shrink-0 btn-normal p-2 px-5 text-primary font-bold">진행중</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="promotion-tab-2" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="promotion-2-tab">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                                <div class="promotion_item bg-stand hover:opacity-80">
+                                    <a href="/bcGame/bc_promotion_detail.html"><img class="rounded" src="/bcGame/dist/custom_img/bc/bc_thumb_1.avif" alt=""></a>
+                                    <div class="flex items-center justify-between px-3 py-4 cursor-pointer opacity-50" onclick="window.location.href='/bcGame/bc_promotion_detail.html'">
+                                        <div class="w-2/3 font-semibold">
+                                            <div class="truncate text-tit text-opacity-70">2024. 1. 1. 오전 12:58:20에 종료</div>
+                                            <div class="truncate">Snowy Showdown 랭킹 챌린지</div>
+                                        </div>
+                                        <button class="shrink-0 btn-normal p-2 px-5 font-bold">이벤트 종료</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+                
+                <!-- ** 푸터 시작 ** -->
+                <!-- ** 푸터 끝 ** -->
+            
+            </div>
+            <!-- ** 내용 끝 ** -->
+
+        </div>
+        <!--  ** 메인 보드 끝 ** -->
+
+        <!--  ** 오른쪽 보드 시작 ** -->
+        <div class="right-sidebar "></div>
+        <!--  ** 오른쪽 보드 끝 ** -->
+
+
+        <!-- 공통 알림 영역 : S -->
+
+        <!-- 공통 알림 영역 : E -->
+
+
+        <!--  ** 모달영역 시작 ** -->
+
+        <!--  ** 모달영역 끝 ** -->
+
+    </div>
+    <!-- ** JS 시작 ** -->
+    <script
+    src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="/bcGame/dist/custom_js/custom.js"></script>
+    <script src="/bcGame/dist/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- 필수 jquery library -->
+    <script src="/bcGame/dist/js/jquery-1.12.4.js"></script>
+    <script src="/bcGame/dist/js/jquery-ui.js"></script>
+
+
+  
+
+
+
+
+</body>
+
+</html>

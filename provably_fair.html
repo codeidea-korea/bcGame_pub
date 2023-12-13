@@ -95,8 +95,8 @@
 
                     <!-- 내용 -->
                     <div class="flex gap-1 md:mt-4">
-                        <div class="w-1/5 md:block hidden">
-                            <ul class="p-4 rounded bg-tab font-semibold setting_tab" role="tablist">
+                        <div class="w-1/5 md:block hidden rounded bg-tab">
+                            <ul class="p-4 font-semibold setting_tab" role="tablist">
                                 <li><button id="tab_01" class="p-3 py-2 w-full text-left rounded flex items-center gap-2 active" type="button" data-tw-toggle="pill" data-tw-target="#tab_con01" role="tab" aria-controls="tab_con01" aria-selected="false">
                                         공정성
                                 </button></li>
@@ -159,22 +159,463 @@
                         <div class="w-full md:w-4/5 md:bg-tab rounded">
                             <div class="tab-content setting_right_wrap font-medium">
                                 <div id="tab_con01" class="tab-pane p-1 pt-6 md:p-6 active" role="tabpanel" aria-labelledby="tab01">
-                                    공정성
+                                    <p>게임</p>
+                                    <div class="custom_select w-full my-4">
+                                        <button class="btn w-full h-9 flex px-4 items-center justify-between border-none bg-modaldark">
+                                            <span>Crash</span>
+                                            <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                        </button>
+                                        <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub game_select">
+                                            <li class="py-2 on">Crash</li>
+                                            <li class="py-2">Fast Parity</li>
+                                            <li class="py-2">Limbo</li>
+                                            <li class="py-2">Classic Dice</li>
+                                            <li class="py-2">Plinko</li>
+                                            <li class="py-2">Hash Dice</li>
+                                            <li class="py-2">Ultimate Dice</li>
+                                            <li class="py-2">Keno</li>
+                                            <li class="py-2">Twist</li>
+                                            <li class="py-2">Wheel</li>
+                                            <li class="py-2">Mines</li>
+                                            <li class="py-2">Cave Of Plunder</li>
+                                            <li class="py-2">Tower Legend</li>
+                                            <li class="py-2">CoinFlip</li>
+                                            <li class="py-2">Hilo</li>
+                                            <li class="py-2">Roulette</li>
+                                            <li class="py-2">Ring of Fortune</li>
+                                            <li class="py-2">Beauties</li>
+                                            <li class="py-2">Video Poker</li>
+                                        </ul>
+                                    </div>
+                                    <p>공정성</p>
+                                    <div class="game_fair mt-2">
+                                        <div>
+                                            <p class="font-semibold">게임은 공정한가요?</p>
+                                            <p class="mt-2">
+                                                우리는 공정하고 공정한 예측 및 추측 플랫폼입니다. 우리의 목표는 모든 부당한 요소를 제거하고 플레이어를 만드는 것입니다. 편안하고 즐겁게 지내십시오.<br/><br/>
+
+                                                우리는 총 1000만 개의 해시를 생성했습니다(생성 체인은 검증 가능함). 각 해시는 충돌 승수에 해당합니다.<br/><br/>
+
+                                                우리는 이 1000만 개의 숫자를 각각 역순으로 공개합니다. 게임의 한 턴에 해당합니다(즉, 1000만 총 회전).<br/><br/>
+
+                                                즉, 각 턴의 충돌 횟수는 이미 존재하고 게임이 시작된 후에는 계산되지 않습니다. 따라서 플레이어는 걱정 없이 베팅하세요.
+                                            </p>
+
+                                            <p class="mt-8 font-semibold">플랫폼이 게임을 조작하나요? <a href="javascript:;" class="text-primary mr-3">GitHub</a><a href="javascript:;" class="text-primary">검증</a></p>
+                                            <p class="mt-2">
+                                                무결성 검사 값은 무결성 검사가 있는지 여부를 확인하는 핵심입니다. 공식적인 조작; 테스트 알고리즘은 다음과 같이 제공됩니다. 다음과 같습니다.<br/><br/>
+                                                예: 6b5124897c3c48d0e46cc9249f08c7e560792459f1bad1171224643b5d2be231
+                                            </p>
+                                            <ul class="list-decimal pl-4 mt-2 text-xs">
+                                                <li>2^52 범위, 즉 16^13에서 임의의 값을 취합니다. 13비트 16진수(해시 값이 16진수, 2^52 === 16^13)6b5124897c3c4 (0x6b5124897c3c4 십진법에서 1887939992208324와 같음).</li>
+                                                <li class="mt-2">임의의 값을 0~1로 나누어서 13fs의 최대값, 즉 0x6b5124897c3c4/0x10000000000000. 해시 값의 불연속적인 무작위 특성을 감안할 때 모든 해시 값이 임의의 값으로 변환될 수 있다고 생각할 수 있습니다. 0~1의 수, 1887939992208324/4503599627370496 = 0.419206889692064.</li>
+                                                <li class="mt-2">하우스 엣지를 1%로 만드십시오. 추가로 99/(1-X)를 계산합니다. 여기서 X 2단계에서 계산된 임의의 값입니다. X가 0일 때, 결과는 99입니다. X가 1이면 결과는 양의 무한대입니다. X가 0.01이면 결과는 100입니다. X가 0.01 미만일 때, 결과는 100 미만입니다.<br/>결론: 전체 난수 분포는 99에서 양의 무한; 난수 분포 0~0.01이면 결과는 100보다 작습니다.<br/>99/(1-0.419206889692064) = 170.45656748150867</li>
+                                                <li class="mt-2">All values less than 100 will be set to 100. 다시 말해서, 100이 나타날 확률은 1%입니다. 완전하게 숫자를 100으로 나누어 최종 결과를 얻습니다.<br/>170/100 = 1.70</li>
+                                            </ul>
+                                            <p class="mt-2">
+                                                결론: 게임에서 사용하는 해시 값은 역순입니다. 따라서 SHA256 알고리즘을 사용하면 게임은 후속 해시에서 계산할 수 있습니다. 거기 이후로 키와 값 사이의 일대일 대응입니다. 해시를 사용하면 다음과 같은 결론을 내릴 수 있습니다. 그 앞에 오는 해시를 계산하면 이 해시는 다음과 같아야 합니다. 선행 상품이 발표될 때 이미 생성되었습니다. 마찬가지로 전체 해시 체인이 바로 생성됩니다. 시작되며 일단 생성되면 변경할 수 없습니다. 그렇지 않으면 SHA256에 의한 확인을 통과할 수 없으며 지불금이 이것은 확률 게임에 지나지 않습니다. 충돌은 주어진다. 공식 주최측은 어떠한 조작도 할 수 없습니다. 게임 세트. 따라서 CRASH는 다른 것보다 투명합니다. 도박 방법. 이것이 우리 게임의 초석입니다. 세워짐.
+                                                <br/><br/>
+                                                간단한 계산:
+                                                <br/><br/>
+                                                13비트 해시 값이 8000000000000 = 1.98일 때 0xb000000000 = 3.168, 0xc000000000 = 3.96, 즉 첫 번째 숫자는 8((16-8)/16≈0.5)보다 크면 결과는 약 2x입니다. 첫 번째 숫자가 b((16-11)/16≈0.3)보다 크면 결과는 약 3x입니다. 첫 번째 숫자가 더 클 때 c((16-12)/16≈0.25)보다 결과는 약 4x이고 나머지에도 동일한 규칙이 적용됩니다.
+                                                <br/><br/>
+                                                13비트 해시 값이 f000000000000 = 15.84일 때, ff00000000000 = 253.44, ff000000
+                                            </p>
+                                        </div>
+                                        <div class="hidden">
+                                            <p class="font-semibold">Fairness Verification</p>
+                                            <div class="mt-2 p-5 bg-back text-tit">
+                                                import CryptoJS from "crypto-js";<br/>
+                                                    const salt = "0000000000000000000301e2801a9a9598bfb114e574a91a887f2132f33047e6";<br/><br/>
+                                                    
+                                                    function parityValueFromHash(seed, salt) {<br/>
+                                                    let hash = String(CryptoJS.HmacSHA256(CryptoJS.enc.Hex.parse(seed), salt));
+                                                    const hex = hash.slice(0, 8);<br/>
+                                                    const hexNumber = parseInt(hex, 16);<br/><br/>
+                                                    
+                                                    return Math.floor((hexNumber*10)/0x100000000);<br/>
+                                                    }<br/><br/>
+                                                    
+                                                    const hash = "game hash";<br/>
+                                                    console.log( "result =>", parityValueFromHash(hash, salt));
+                                            </div>
+                                        </div>
+                                        <div class="hidden">
+                                            <p class="font-semibold">결과는 어떻게 계산되나요?</p>
+                                            <p class="mt-2">
+                                                결과 얻기.<br/><br/>
+                                                16진수 문자열: 해시 = HMAC_SHA256(clientSeed:nonce, serverSeed)<br/><br/>
+                                                예: 6b5124897c3c48d0e46cc9249f08c7e560792459f1bad1171224643b5d2be231
+                                            </p>
+                                            <ul class="list-decimal pl-4 mt-2 text-xs">
+                                                <li>2^52 범위, 즉 16^13, 즉 13비트에서 임의의 값을 가져옵니다. 16진수(해시 값이 16진수이므로 2^52 === 16^13)6b5124897c3c4 (6b5124897c3c4는 1887939992208324와 같습니다. 십진법).</li>
+                                                <li class="mt-2">임의의 값을 최대값으로 나누어 0~1로 분배 13 fs의 값, 즉 6b5124897c3c4/ffffffffffffff. 주어진 해시 값의 불연속적인 임의의 특성으로 인해 다음과 같이 생각할 수 있습니다. 임의의 해시 값은 0~1의 난수로 변환될 수 있습니다. (ffffffffffffff는 십진법에서 45035996270496과 같습니다.) 1887939992208324/4503599627370496 = 0.419206889692064.</li>
+                                                <li class="mt-2">하우스 엣지를 1%로 만드십시오. 추가로 99/(1-X)를 계산합니다. 여기서 X는 2단계에서 계산한 임의의 값. X가 0이면 결과는 다음과 같습니다. 99; X가 1이면 결과는 양의 무한대입니다. X가 0.01일 때, 결과는 100입니다. X가 0.01보다 작으면 결과가 작습니다. 100보다.<br/>99/(1-0.419206889692064) = 170.45656748150867</li>
+                                                <li class="mt-2">100 미만의 모든 값은 100으로 설정됩니다. 즉, 거기에 100이 나타날 확률은 1%입니다. 숫자를 반올림 최종 결과를 얻기 위해 100으로 나눕니다.<br/>170/100 = 1.70</li>
+                                            </ul>
+
+                                            <p class="mt-2">
+                                                참고: 이전 데이터를 확인하려면 새 시드를 설정해야 합니다(서버 시드가 암호화됨).
+                                                <br/><br/>
+                                                이런것을 알고 계셨나요? 그렇지 않을 거예요 이것은 증명할 수 있는 공정에서 투명성과 정확성을 기대하는 사람들의 찬스입니다.
+                                                <br/><br/>
+                                                우리는 "카드를 탁자 위에 올려놓습니다.”
+                                                <br/><br/>
+                                                행운을 빕니다!
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <button class="mt-5 btn-purple w-full h-12 font-extrabold">확인</button>
                                 </div>
                                 <div id="tab_con02" class="tab-pane p-1 pt-6 md:p-6" role="tabpanel" aria-labelledby="tab02">
-                                    개인정보정책
+                                    <p class="text-tit font-semibold">BlockDance B.V.Privacy Policy</p>
+                                    <p class="mt-2">
+                                        BlockDance B.V. (owner and operator of the BC.GAME, herinafter as "BC.GAME" or "we"), a company registered and established under the Law of Curaçao, with Commercial register of Curaçao number 158182, Emancipatie Boulevard Dominico F. "Don" Martina 31, Curaçao, under a sublicense CIL pursuant to Master gaming License #5536/JAZ.
+                                        <br/><br/>
+                                        The BlockDance B.V. Privacy Policy is intended to describe the BC.GAME services (as defined in the BC.GAME’ Terms of Use) and our privacy practices that display or reference the principles.
+                                        <br/><br/>
+                                        This Privacy Policy sets out how BC.GAME will manage your personal data which we collect as a result of your membership of BC.GAME, your use of our websites located at https://BC.GAME and any pages or websites under the BC.GAME’ brand including any mobile phone or tablet applications that are owned and/or operate d by us or whenever we otherwise deal with you. We are committed to ensuring that the personal information we collect about you is protected and is used, stored, and disclosed in accordance with the applicable privacy Act and this Privacy Policy.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">Personal Data Collect from You</p>
+                                    <p class="mt-2">
+                                        When you apply for commercial credit, activate our service, register for a service on the BC.GAME website, connect to our services, contact us (including by social media), participate in an online survey, or otherwise interact with the BC.GAME, we may collect a variety of information, including:
+                                        <br/><br/>
+                                        1.Account Information. Your BC.GAME ID and related account details, including email address, devices registered, account status, and age.
+                                        <br/><br/>
+                                        2.Device Information. Data from which your device could be identified, such as device serial number, or about your device, such as browser type.
+                                        <br/><br/>
+                                        3.Contact Information. Data such as name, email address, physical address, phone number, or other contact information.
+                                        <br/><br/>
+                                        4.Payment Information. Data about your billing address and method of payment, such as bank details, credit, debit, or other payment card information.
+                                        <br/><br/>
+                                        5.Fraud Prevention Information. Data used to help identify and prevent fraud, including a device trust score and KYC information.
+                                        <br/><br/>
+                                        6.Usage Data. Data about your activity on and use of our offerings, such as service launches, including browsing history; product interaction; crash data, performance and other diagnostic data; and other usage data.
+                                        <br/><br/>
+                                        7.Government ID Data. In certain jurisdictions, we may ask for a government-issued ID in limited circumstances, including when activating our service for you, for the purpose of extending commercial credit, managing reservations, or as required by law.
+                                        <br/><br/>
+                                        8.Other Information You Provide to Us. Details such as the content of your communications with Apple, including interactions with customer support and contacts through social media channels.
+                                        <br/><br/>
+                                        In some cases, BC.GAME may collect "sensitive" personal information. (including information about race and national origin, political opinions, religious beliefs and other beliefs of a similar nature, trade union.
+                                        <br/><br/>
+                                        membership, and information about sex life or sexual orientation), or health information, and where permitted by law relating to, alleging or substantiated criminal information.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">Use of Personal Data</p>
+                                    <p class="mt-2">
+                                        We may combine and use information we hold about you (including information received on and off our Services) to understand how you use and interact with our Services and to understand who you are connected to and interested in. things to provide, personalize and improve our services. We may also use the information we hold about you globally for the following purposes:
+                                        <br/><br/>
+                                        1.Provide, maintain, improve and develop related functionality, content and services.
+                                        <br/><br/>
+                                        2.Analyze your content and other information.
+                                        <br/><br/>
+                                        3.Fulfill your requirements and use when authorized by you.
+                                        <br/><br/>
+                                        4.Help connect advertisers and application/website operators to provide relevant advertisements in their applications and websites.
+                                        <br/><br/>
+                                        5.Match and serve targeted marketing ads (regardless of device or use of our services) and provide targeted marketing ads based on your device activity, estimated interests and targeting information.
+                                        <br/><br/>
+                                        6.Contact you with account-related information, or send marketing messages according to your wishes.
+                                        <br/><br/>
+                                        7.Associate your activities on our various services and your different devices, and associate all accounts you may use on various BC.GAME services. We may associate activity and accounts under a single user ID.
+                                        <br/><br/>
+                                        8.Conduct or support marketing promotion activities.
+                                        <br/><br/>
+                                        9.Conduct research and support innovation.
+                                        <br/><br/>
+                                        10.Provide analysis and reports on the usage and trends of our services and advertising to external parties (including partners, application/website operators, advertisers, applications, third parties and the public), including displaying and reporting to partners Trends related to public preferences, ad performance, and user experience information. These analyzes and reports may include aggregated or pseudonymized information.
+                                        <br/><br/>
+                                        11.Provide services, ads, search results, and other content that match your targeting settings based on your targeting information.
+                                        <br/><br/>
+                                        12.Combine the information we hold about you with information we obtain from business partners or other companies (such as your activity on other websites and apps).
+                                        <br/><br/>
+                                        13.Detects and prevents fraud, abuse or illegal activity.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">Sharing and Disclosing of Personal Data</p>
+                                    <p class="mt-2">
+                                        1.Disclosure to Other Data Controllers
+                                        <br/><br/>
+                                        In order to achieve the above purposes, our company will share your personal details within companies belonging to the same BC.GAME series.
+                                        <br/><br/>
+                                        We will also disclose your personal details to other third party data controllers with your consent (where required by applicable law) or to provide any services you request (such as third party integrations). The Services may also be used by third party data controllers to collect and process your personal details. If you use an email address associated with a business domain to access BC.GAME's services, our company may provide your personal details to that business.
+                                        <br/><br/>
+                                        2.Disclosure of Information for Fraud Prevention and Security Considerations
+                                        <br/><br/>
+                                        We will disclose personal details to companies that help us operate our business to detect, prevent or otherwise address fraud, deception, illegal activity, abuse of BC.GAME services, and security or technical issues.
+                                        <br/><br/>
+                                        In addition, if the Company believes in good faith that access, use, preservation or disclosure of information is reasonably necessary to detect, prevent or avoid such fraud, deceptive or illegal activities, abuse of services and software, or security or technical issues, or is reasonably necessary , in accordance with legal regulations and permission, in order to protect the rights, property or safety of our employees, BC.GAME users, children or the public, our company will disclose personal details to companies, organizations, government agencies or individuals other than us.
+                                        <br/><br/>
+                                        3.Disclosure to Data Processors
+                                        <br/><br/>
+                                        For the purposes identified above, we will also disclose your personal details to companies that process personal details on our behalf to assist us in performing our business. Such companies include customer support service providers (including providers who record or store communications), analytics technology providers (including session reenactment partners) who record and analyze your in teractions with our website to help us improve user experience ), payment processing services, frau dmonitoring and prevention, detection and protection against fraudulent or illegal activity or abuse of our services, email, social media, and other marketing platforms and service providers, and hosting services. We have entered into agreements with these companies as required by applicable law and require these companies to protect your personal details in accordance with these Privacy Princi ples.
+                                        <br/><br/>
+                                        4.Other Data Disclosed
+                                        <br/><br/>
+                                        We may also disclose your personal details in the following circumstances:
+                                        <br/><br/>
+                                        ● When you consent to disclosure;
+                                        <br/><br/>
+                                        ● If we believe in good faith that we are required to provide information in response to a subpoena, court order, or other applicable law or legal process or to respond to an emergency involv ing adanger of death or serious bodily injury;
+                                        <br/><br/>
+                                        ● If the Company merges with or is acquired by another company, sells the BC.GAME website, application or business unit, or if all or substantially all of the Company's assets are acquired by another company, your information may be disclosed to potential purchasers, the Company's a dvisors and the advisors of any potential purchaser, and will be one of the assets transferred to the new ownership.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">● Protection of Personal Data</p>
+                                    <p class="mt-2">
+                                        The BC.GAME uses administrative, technical, and physical safeguards to protect your personal data, taking into account the nature of the personal data and the processing, and the threats posed. The BC.GAME is co nstantly working to improve on these safeguards to help keep your personal data secure.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">● External Links from The BC.GAME Website</p>
+                                    <p class="mt-2">
+                                        The BC.GAME website may provide Internet links to other websites. You can also click to enter other websites through the links provided by our website. However, the privacy policy of our website does not apply to the linked website. You must refer to the privacy policy of the linked website.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">● Cookies</p>
+                                    <p class="mt-2">
+                                        The BC.GAME may set and access cookies on your computer when you visit https://BC.GAME and any pages or websites under the BC.GAME’ brand. Cookies are used to provide our system with the basic information to provide the services you are requesting. Cookies can be cleared at any time from your internet browser settings.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">● Changes to Our Privacy Policy</p>
+                                    <p class="mt-2">
+                                        We may make changes to our Privacy Policy in the future, however, the most current version of the policy will govern our processing of your personal data and will always be available to you. If we make a change to this policy that, in our sole discretion, is material, we will notify you by an update or email, where possible. By continuing to access or use our services, you agree to be bound to the terms of our Privacy Policy.
+                                        <br/><br/>
+                                        The BC.GAME is committed to protecting the privacy of your personal information online. If you have any questions or comments about our management of your personal information, please contact usat feedback@bcgame.com. If you have any questions about this privacy statement, you can also report it to us through the above email address.If you are not satisfied with the response you receive, you can continue to report your concerns to us via the email address.
+                                        <br/><br/>
+                                        We will confirm your email within three (3) days and strive to resolve your problem within one (1) month after receipt or within an appropriate period not exceeding the legal requirements. If the relevant issue is more complex or a large number of issues are received, we will notify you that it will take more than 1 month to resolve the issue, and we will try to resolve your issue within 2 months after we first receive the issue. We ma y accept your question in accordance with the law. We may reject requests that are unreasonable or outside legal requirements, including requests that are highly impractical, require a disproportionate amount of tech nical effort, or may expose us to operational risks such as condoning fraud.
+                                    </p>
                                 </div>
                                 <div id="tab_con03" class="tab-pane p-1 pt-6 md:p-6" role="tabpanel" aria-labelledby="tab03">
-                                    서비스약관
+                                    <p class="text-tit font-semibold">Terms of Service</p>
+                                    <p class="mt-4 text-tit font-semibold">서비스 약관</p>
+                                    <p class="mt-2">
+                                        This end user agreement (the "Agreement") should be read by you (the "User" or "you") in its entirety prior to your use of BC.GAME’s service or products. Please note that the Agreement constitutes a legally binding agreement between you and BC.GAME (referred to herein as "BC.GAME", "us" or "we") which owns and operates the Internet site found and games described at BC.GAME (the "Service"). By clicking the "I Agree" button if and where provided and/or using the Service, you consent to the terms and conditions set forth in this Agreement.<br/><br/>
+
+                                        이 최종 사용자 계약("계약")은 BC.GAME의 서비스 또는 제품을 사용하기 전에 귀하("사용자" 또는 "귀하")가 완전히 읽어야 합니다. 본 계약은 BC.GAME("서비스")에 설명된 게임 및 발견된 인터넷 사이트를 소유 및 운영하는 귀하와 BC.GAME(여기에서 "BC.GAME", "당사" 또는 "당사"라고 함) 간의 법적 구속력이 있는 계약을 구성합니다. . 제공되는 경우 및/또는 서비스를 사용하는 경우 "동의" 버튼을 클릭하면 본 계약에 명시된 이용 약관에 동의하는 것입니다.<br/><br/>
+
+                                        1. Grant of License<br/><br/>
+
+                                        1. 라이선스 부여<br/><br/>
+                                    </p>
+                                    <ul class="list-disc pl-4 mt-2">
+                                        <li>1.1. Subject to the terms and conditions contained herein, BC.GAME grants the User a non-exclusive, personal, non-transferable right to use the Service on your personal computer or other device that accesses the Internet in order to access the games ava</li>
+                                        <li class="mt-2">1.1. 여기에 포함된 이용 약관에 따라 BC.GAME는 게임에 액세스하기 위해 인터넷에 액세스하는 개인용 컴퓨터 또는 기타 장치에서 서비스를 사용할 수 있는 비독점적이고 개인적이며 양도 불가능한 권한을 사용자에게 부여합니다.</li>
+                                        <li class="mt-2">1.2. The Service is not for use by (i) individuals under 18 years of age, (ii) individuals under the legal age of majority in their jurisdiction and (iii) individuals accessing the Service from jurisdictions from which it is illegal to do so. BC.GAME is not able to verify the legality of the Service in each jurisdiction and it is the User’s responsibility to ensure that their use of the Service is lawful.</li>
+                                        <li class="mt-2">1.2. 서비스는 (i) 18세 미만의 개인, (ii) 해당 관할권에서 법적 성년 미만의 개인 및 (iii) 불법적인 관할권에서 서비스에 액세스하는 개인이 사용할 수 없습니다. BC.GAME는 각 관할 구역에서 서비스의 적법성을 확인할 수 없으며 서비스 사용이 합법적인지 확인하는 것은 사용자의 책임입니다.</li>
+                                        <li class="mt-2">1.3. BC.GAME and its licensors are the sole holders of all rights in and to the Service and code, structure and organization, including copyright, trade secrets, intellectual property and other rights. You may not, within the limits prescribed by applicable laws: (a) copy, distribute, publish, reverse engineer, decompile, disassemble, modify, or translate the website; or (b) use the Service in a manner prohibited by applicable laws or regulations (each of the above is an "Unauthorized Use"). BC.GAME reserves any and all rights implied or otherwise, which are not expressly granted to the User hereunder and retain all rights, title and interest in and to the Service. You agree that you will be solely liable for any damage, costs or expenses arising out of or in connection with the commission by you of any Unauthorized Use. You shall notify BC.GAME immediately upon becoming aware of the commission by any person of any Unauthorized Use and shall provide BC.GAME with reasonable assistance with any investigations it conducts in light of the information provided by you in this respect.</li>
+                                        <li class="mt-2">1.3. BC.GAME 및 해당 라이선스 제공자는 저작권, 영업 비밀, 지적 재산권 및 기타 권리를 포함하여 서비스 및 코드, 구조 및 조직에 대한 모든 권리를 단독으로 보유합니다. 귀하는 관련 법률에서 규정한 한도 내에서 (a) 웹사이트를 복사, 배포, 출판, 역설계, 디컴파일, 분해, 수정 또는 번역할 수 없습니다. 또는 (b) 관련 법률 또는 규정에서 금지하는 방식으로 서비스를 사용하는 행위(위의 각 항목은 "무단 사용"입니다). BC.GAME는 본 계약에 따라 사용자에게 명시적으로 부여되지 않은 묵시적 ​​또는 기타 모든 권리를 보유하며 서비스에 대한 모든 권리, 소유권 및 이익을 보유합니다. 귀하는 무단 사용으로 인한 귀하의 수수료로 인해 또는 이와 관련하여 발생하는 모든 손해, 비용 또는 경비에 대해 전적으로 책임을 진다는 데 동의합니다. 귀하는 무단 사용에 대한 모든 사람의 수수료를 알게 된 즉시 BC.GAME에 알려야 하며 이와 관련하여 귀하가 제공한 정보에 비추어 조사를 수행하는 데 합당한 지원을 BC.GAME에 제공해야 합니다.</li>
+                                        <li class="mt-2">1.4. The term "BC.GAME", its domain names and any other trade marks, or service marks used by BC.GAME as part of the Service (the "Trade Marks"), are solely owned by BC.GAME In addition, all content on the website, including, but not limited to, the images, pictures, graphics, photographs, animations, videos, music, audio and text (the "Site Content") belongs to BC.GAME and is protected by copyright and/or other intellectual property or other rights. You hereby acknowledge that by using the Service, you obtain no rights in the Site Content and/or the Trade Marks, or any part thereof. Under no circumstances may you use the Site Content and/or the Trade Marks without BC.GAME’s prior written consent. Additionally, you agree not to do anything that will harm or potentially harm the rights, including the intellectual property rights of BC.GAME</li>
+                                        <li class="mt-2">1.4. "BC.GAME"라는 용어, 도메인 이름 및 기타 상표 또는 서비스의 일부로 BC.GAME에서 사용하는 서비스 마크("상표")는 BC.GAME가 단독으로 소유합니다. 또한 다음을 포함하여 웹사이트의 모든 콘텐츠는 다음과 같습니다. 이미지, 사진, 그래픽, 사진, 애니메이션, 비디오, 음악, 오디오 및 텍스트("사이트 콘텐츠")는 BC.GAME에 속하며 저작권 및/또는 기타 지적 재산권 또는 기타 권리로 보호됩니다. 이로써 귀하는 서비스를 사용함으로써 사이트 콘텐츠 및/또는 상표 또는 그 일부에 대한 권리를 얻지 못한다는 것을 인정합니다. 어떠한 경우에도 BC.GAME의 사전 서면 동의 없이 사이트 콘텐츠 및/또는 상표를 사용할 수 없습니다. 또한 귀하는 BC.GAME의 지적 재산권을 포함하여 권리에 해를 입히거나 잠재적으로 해를 끼치는 행위를 하지 않을 것에 동의합니다.</li>
+                                    </ul>
+                                    <p class="mt-2">
+                                        2. No Warranties<br/><br/>
+                                        2. 보증 없음
+                                    </p>
+                                    <ul class="list-disc pl-4 mt-2">
+                                        <li>2.1. BC.GAME disclaims any and all warranties, expressed or implied, in connection with the service which is provided to you "as is" and we provide you with no warranty or representation whatsoever regarding its quality, fitness for purpose, completeness or accuracy.</li>
+                                        <li class="mt-2">2.1. BC.GAME는 귀하에게 "있는 그대로" 제공되는 서비스와 관련하여 명시적이든 묵시적이든 모든 보증을 부인하며 품질, 목적 적합성, 완전성 또는 정확성과 관련하여 어떠한 보증이나 진술도 제공하지 않습니다.</li>
+                                        <li class="mt-2">2.2. Regardless of BC.GAME’s efforts, BC.GAME makes no warranty that the service will be uninterrupted, timely or error-free, or that defects will be corrected.</li>
+                                        <li class="mt-2">2.2. BC.GAME의 노력과 상관없이 BC.GAME는 서비스가 중단되지 않고 적시에 또는 오류가 없거나 결함이 수정될 것이라는 보증을 하지 않습니다.</li>
+                                    </ul>
+                                    <p class="mt-2">
+                                        3. Authority/Terms of Service You agree to the game rules described on the BC.GAME website. BC.GAME retains authority over the issuing, maintenance, and closing of the Service. The decision of BC.GAME’s management, concerning any use of the Service, or dispute resolution, is final and shall not be open to review or appeal.
+                                        <br/><br/>
+                                        3. 권한/서비스 약관 귀하는 BC.GAME 웹사이트에 설명된 게임 규칙에 동의합니다. BC.GAME는 서비스의 발행, 유지 관리 및 종료에 대한 권한을 보유합니다. 서비스 사용 또는 분쟁 해결에 관한 BC.GAME 경영진의 결정은 최종적이며 검토하거나 항소할 수 없습니다.
+                                    </p>
                                 </div>
                                 <div id="tab_con04" class="tab-pane p-1 pt-6 md:p-6" role="tabpanel" aria-labelledby="tab04">
-                                    스포츠약관
+                                    <p class="text-tit font-semibold">1.Introduction</p>
+                                    <p class="mt-2">
+                                        소<br/><br/>
+                                        1.1 This set of terms and conditions govern the use of the Sportsbook platform. When placing a bet with Sportsbook platform, the Account Holder is therefore agreeing that the Account Holder has read, understood and will be adhering to these Terms and Conditions including the general Terms and Conditions at any time applicable to Sportsbook platform, click .<br/><br/>
+
+                                        1.1 이 이용약관은 Sportsbook 플랫폼의 사용에 적용됩니다. 따라서 Sportsbook 플랫폼에 베팅할 때 계정 소유자는 계정 소유자가 Sportsbook 플랫폼에 적용되는 언제든지 일반 이용 약관을 포함하여 본 이용 약관을 읽고 이해했으며 준수할 것이라는 데 동의합니다 를 클릭하십시오.<br/><br/>
+                                        1.2 The use of this Sportsbook platform is subject to the regulations imposed by the <b class="font-extrabold text-tit">(Curaçao license.)</b>.<br/><br/>
+
+                                        이 Sportsbook 플랫폼의 사용은 쿠라소 라이센스에 의해 규정의 관리됩니다.<br/><br/>
+                                        1.3 Any dispute relating in any way to the use of this Sportsbook platform should be emailed to <b class="font-extrabold text-tit">(support@bc.game)</b>. Should the reply not be considered satisfactory, arequest for confidential arbitration can be sent to the <b class="font-extrabold text-tit">(info@curacaolicensing.com)</b>. Their decision shall be binding and may be entered as a judgment in any court of competent jurisdiction.<br/><br/>
+
+                                        1.3 이 스포츠북 플랫폼의 사용과 관련된 모든 분쟁은 <b class="font-extrabold text-tit">(support@bc.game)</b>로 이메일을 보내야 합니다. 답변이 만족스럽지 않은 경우 비밀 중재 요청서를 다음 기관에 보낼 수 있습니다. <b class="font-extrabold text-tit">(info@curacaolicensing.com)</b>. 그들의 결정은 구속력을 가지며 관할 법원에 판결로 제출될 수 있습니다.<br/><br/>
+                                        1.4 Sportsbook platform reserves the right to make changes to the site, betting limits, payout limits and offerings.<br/><br/>
+                                        1.4 Sportsbook 플랫폼은 사이트, 베팅 한도, 지불 한도 및 제안을 변경할 권리가 있습니다.<br/><br/>
+                                        1.5 Sportsbook platform may update, amend, edit and supplement these Terms and Conditions at any time.<br/><br/>
+
+                                        1.5 Sportsbook 플랫폼은 본 이용 약관을 언제든지 업데이트, 수정, 편집 및 보완할 수 있습니다.<br/><br/>
+                                        1.6 Any reference in these Terms and Conditions to words/objects that appear in singular also applies to plural. References to gender are non-binding and to be treated for information<br/><br/>
+
+                                        purposes only.<br/><br/>
+
+                                        1.6 본 이용 약관에서 단수로 나타나는 단어/객체에 대한 언급은 복수에도 적용됩니다. 성별에 대한 언급은 구속력이 없으며 정보 제공의 목적으로만 취급됩니다.<br/><br/>
+
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">2. Definition</p>
+                                    <p class="mt-2">
+                                        정의<br/><br/>
+                                        2.1 Sportsbook platform - legal entity engaged in betting activities in accordance with the licensing and legislative requirements of the country.<br/><br/>
+
+                                        스포프북 플랫폼 - 국가의 라이선스 및 법적 요구 사항에 따라 베팅 활동에 참여하는 법인.<br/><br/>
+                                        2.2 Client - an individual who has agreed to the Rules for accepting bets, registered on the site <b class="font-extrabold text-tit">(https://BC.GAME/)</b> (and other subdomain versions of the site).<br/><br/>
+
+                                        2.2 클라이언트 - 사이트 <b class="font-extrabold text-tit">(https://BC.GAME/)</b> ( 및 사이트의 다른 하위 도메인 버전).<br/><br/>
+                                        2.3 Bet - risk-based agreement concluded between the Client and the Betting Company on the outcome of an event in which they do not participate, involving a win. Bets are made on terms previously proposed by the Sportsbook platform.<br/><br/>
+
+                                        2.3 배팅 - 고객과 배팅 회사가 참여하지 않고 승리를 포함하는 이벤트의 결과에 대해 체결한 위험 기반 계약입니다. 베팅은 스포츠북 플랫폼에서 이전에 제안한 조건에 따라 이루어집니다.<br/><br/>
+                                        2.4 Stake - the amount of money transferred by the client to Sportsbook platform and which are the main condition for participation in a bet in accordance with these Rules.<br/><br/>
+
+                                        2.4 지분 - 고객이 스포츠 플랫폼으로 이체한 금액이며 이 규칙에 따라 베팅에 참여하기 위한 주요 조건입니다.<br/><br/>
+                                        2.5 The outcome is the result of the event on which the Sportsbook platform is invited to make a bet.<br/><br/>
+
+                                        2.5 결과는 스포츠북 플랫폼이 베팅을 하도록 초대된 이벤트의 결과입니다.<br/><br/>
+                                        2.6 배당률 — the number by which the bet amount of the stakeholder is multiplied when determining the payout amount if bet wins.<br/><br/>
+
+                                        2.6 홀수 — 배팅이 이긴 경우 지불 금액을 결정할 때 이해 관계자의 배팅 금액을 곱하는 숫자입니다.<br/><br/>
+                                        2.7 Winnings - cash to be paid to the Client upon the outcome, on which a bet was made.<br/><br/>
+
+                                        2.7 상금 - 베팅이 이루어진 결과에 따라 고객에게 지급될 현금.<br/><br/>
+                                        2.8 Bonuses:<br/><br/>
+
+                                        보너스<br/><br/>
+                                        2.81 Bet refund - bet refund, client gets just won amount on his account. For example, freebet 5 on odd 3.5 client get 5*3.5 - 5 = 12.50<br/><br/>
+
+                                        2.81 배팅 환불 - 배팅 환불, 고객은 자신의 계정에서 방금 이긴 금액을 받습니다. 예를 들어, 배당률 3.5 클라이언트의 freebet 5는 5*3.5 - 5 = 12.50을 얻습니다.<br/><br/>
+                                        2.82 Free money - client gets bet amount and won on his account. For example, freebet 5 on odd 3.5 client get 5*3.5 = 18.50<br/><br/>
+
+                                        2.82 무료 돈 - 고객이 베팅 금액을 받고 자신의 계정에서 이겼습니다. 예를 들어, 배당률 3.5 클라이언트의 freebet 5는 5*3.5 = 18.50을 얻습니다.<br/><br/>
+                                        2.83 No risk bet - player uses his money for bet, but if bet loses he gets his money back.<br/><br/>
+
+                                        2.83 무위험 배팅 - 플레이어는 자신의 돈을 배팅에 사용하지만 배팅에서 지면 돈을 돌려받습니다.<br/><br/>
+                                    </p>
                                 </div>
                                 <div id="tab_con05" class="tab-pane p-1 pt-6 md:p-6" role="tabpanel" aria-labelledby="tab05">
-                                    보너스약관
+                                    <p class="text-tit font-semibold">Deposit bonus terms</p>
+                                    <p class="mt-2">
+                                        During the availability period of the deposit bonus promotion, completing a deposit will earn you an additional bonus. Users must make a deposit of a specified amount to qualify for the deposit bonus. The exact amount is prominently displayed in the deposit window.<br/><br/>
+
+                                        The bonus amount obtained through the deposit bonus will be credited to Rakeback. As users wager, the bonus amount will be unlocked at a rate of wager * 1% * 20%, until the entire bonus is unlocked. To claim the unlocked bonus, it needs to reach an equivalent amount of $5.<br/><br/>
+
+                                        In each round of the deposit bonus promotion, you can make up to 4 qualifying deposits to receive corresponding rewards:
+                                    </p>
+                                    <ul class="list-disc pl-4 mt-2">
+                                        <li>The first deposit earns you 180% (or 300% for new registrations within 7 minutes), up to a maximum of $20,000 or an equivalent amount in other currencies.</li>
+                                        <li class="mt-2">The second deposit earns you 240%, up to a maximum of $40,000 or an equivalent amount in other currencies.</li>
+                                        <li class="mt-2">The third deposit earns you 300%, up to a maximum of $60,000 or an equivalent amount in other currencies.</li>
+                                        <li class="mt-2">The fourth deposit earns you 360%, up to a maximum of $100,000 or an equivalent amount in other currencies.</li>
+                                    </ul>
+                                    <p class="mt-2">
+                                        BC.GAME management reserve the right to void any bonuses and/or winnings obtained by fraudulent behavior.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">No deposit bonus terms</p>
+                                    <p class="mt-2">
+                                        The maximum winnings that will be paid out resulting from no deposit bonus(including but not limited to Newbie Task Bonus, Newbie Lucky Spin Bonus), without any deposit being required will be $5. Any winnings exceeding this amount will be forfeited.<br/><br/>
+
+                                        No deposit bonus will be awarded with a wagering requirement of 60(sixty).<br/><br/>
+
+                                        When wagering to unlock the No Deposit Bonus, the turnover generated from Slots is calculated at 50%, while the turnover generated from Originals is calculated at 5%.<br/><br/>
+
+                                        No deposit bonus and winnings will expire forfeited after 7 days.<br/><br/>
+
+                                        No deposit bonus funds can only be used in the games listed below:
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">Free lottery bonus terms</p>
+                                    <p class="mt-2">
+                                        Please note that the Free Lottery bonuses we offer can be claimed once a day. Any unredeemed lottery bonuses within 24 hours of issuance will be forfeited for that day, but you can continue to claim the lottery bonuses for the following days if there's any lottery bonuses left.<br/><br/>
+
+                                        To make a withdrawal after winning with a free lottery ticket, a 60x wagering requirement must be fulfilled. The maximum withdrawal amount is limited to the lottery prize amount, any excess amount is non-withdrawable.<br/><br/>
+
+                                        If one of the free lottery tickets you claimed with wins, we have the right to request that you complete the KYC (Know Your Customer) verification before receiving the winning amount. For KYC purposes, the following documents will be necessary for verification: a government-approved identity card (ID card, passport, or driver's license) with a photograph, and we may also request proof of residency, such as a utility bill (issued within the past 90 days). This verification process ensures the security and legitimacy of prize claims.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">General bonus terms</p>
+                                    <p class="mt-2">
+                                        For any no deposit bonus withdrawals(including but not limited to Newbie Task Bonus, Newbie Lucky Spin Bonus), we reserve the right to request a KYC. Regarding the KYC (Know Your Customer), the following documents will be needed for verification: One government approved identity card (ID card, passport and driver's license) with a picture, and we may also request your proof of residency such as a utility bill (which has been issued in the past 90 days). If your deposit was via a credit card we will require a photo of the credit card (front and back) showing all 4 corners.<br/><br/>
+
+                                        When playing with Bonus money, the generated wager is only used to calculate Rollover progress and is not counted towards any requirements that require Real money, such as VIP upgrades, Commissions, recharges, etc.<br/><br/>
+
+                                        The following games do not contribute towards the completion of the wagering requirement of a bonus:<br/><br/>
+
+                                        Bonus round and free spins do not qualify for the jackpot bonuses pursuant to casino software provider rules. Only real money rounds qualify for the jackpot bonuses.<br/><br/>
+
+                                        Until the 40 times(60 times for No Deposit Bonus) roll over requirements have been met, the maximum bet that is allowed to be placed is $5 or equivalent assets.<br/><br/>
+
+                                        Since $0.2 falls below the game's minimum bet, the system will cancel any Bonus balance less than $0.2 and also remove the associated wagering requirements for that reward.<br/><br/>
+
+                                        Minimal risk bets on any games (i.e. betting in proportions on different outcomes in the same hand to create "action" with minimal risk) do not qualify for completing the wagering requirement. Examples of minimal risk bets include betting on red and black simultaneously in Roulette, and betting player and banker simultaneously in Baccarat.<br/><br/>
+
+                                        All withdrawals will be subject to an internal audit before being processed. BC.GAME reserves all rights to void Bonuses or any winnings for failed audits. The Player hereby consents in advance to the same. If, upon such a review, it appears that a Player(s) are participating in actions, taking advantage of any software or system bug or failure, BC.GAME reserves the right to revoke the entitlement of such a Player to receive or benefit from the promotion (and/or withhold the payout of the proceeds of such abuse to the Player/s in question). Only fully settled bets (i.e. bets that result in a win or loss) will be counted towards wagering.<br/><br/>
+
+                                        The use of bonus funds purely to progress through the bonus stages is prohibited. For example when a bonus or cash funds are used purely to progress through the bonus stages (e.g. collecting 9 out of 10 coins to reach that bonus feature) and then final stages (e.g. playing to collect the final coin to reach 10 out of 10 coins to reach the bonus feature) completed with cash bets when bonus funds have been forfeited, lost or wagering met and converted to cash. All the winnings gained during that play may be considered void.<br/><br/>
+
+                                        Multiple accounts are not permitted. Creating more than one accounts with BC.GAME in order to claim any bonuses is deemed as bonus abuse and may result in confiscated funds.<br/><br/>
+
+                                        The English version of these Bonus Terms is general and final. Translations into other languages may be made as a service and are made in good faith. However, in the event of differences between the English version and a translation, the English version has priority over any translation.<br/><br/>
+
+                                        BC.GAME management has the right to update these rules at any time.
+                                    </p>
                                 </div>
                                 <div id="tab_con06" class="tab-pane p-1 pt-6 md:p-6" role="tabpanel" aria-labelledby="tab06">
-                                    코인정확도
+                                    <p class="text-tit font-semibold">코인 정확도 제한</p>
+                                    <p class="mt-2">
+                                        데이터 저장 정확도의 한계로 인해 일정 금액 미만의 변경 사항은 적용되지 않습니다. 대부분의 코인의 최소 정확도는 블록체인의 통화 정확도와 일치합니다. 예를 들어 SATS의 최소 단위는 1입니다. 각 코인의 최소 데이터 저장 정확도는 다음 표와 같습니다.
+                                    </p>
+                                    <table class="table mt-2 table-striped noline rounded text-center"> 
+                                        <colgroup>
+                                            <col width="50%">
+                                            <col width="50%">
+                                        </colgroup>
+                                        <thead> 
+                                            <tr> 
+                                                <th class="whitespace-nowrap text-center">화폐</th> 
+                                                <th class="whitespace-nowrap text-center">코인 정확도 제한</th> 
+                                            </tr> 
+                                        </thead> 
+                                        <tbody class="text-tit text-center"> 
+                                            <tr>
+                                                <td>BCD</td>
+                                                <td>0.000001</td>
+                                            </tr> 
+                                            <tr>
+                                                <td>USDT</td>
+                                                <td>0.0001</td>
+                                            </tr>
+                                            <tr>
+                                                <td>ETH</td>
+                                                <td>0.0000001</td>
+                                            </tr>
+                                            <tr>
+                                                <td>BTC</td>
+                                                <td>0.0000001</td>
+                                            </tr>
+                                            <tr>
+                                                <td>TRX</td>
+                                                <td>0.0001</td>
+                                            </tr>
+                                            <tr>
+                                                <td>BNB</td>
+                                                <td>0.000000001</td>
+                                            </tr>
+                                            <tr>
+                                                <td>LTC</td>
+                                                <td>0.000001</td>
+                                            </tr>
+                                            <tr>
+                                                <td>XRP</td>
+                                                <td>0.0001</td>
+                                            </tr>
+                                            <tr>
+                                                <td>LINK</td>
+                                                <td>0.000000001</td>
+                                            </tr>
+                                            <tr>
+                                                <td>BUSD</td>
+                                                <td>0.000000001
+                                                </td>
+                                            </tr>
+                                        </tbody> 
+                                    </table> 
                                 </div>
                                 <div id="tab_con07" class="tab-pane p-1 pt-6 md:p-6" role="tabpanel" aria-labelledby="tab07">
                                     <div>
@@ -213,10 +654,191 @@
                                     </p>
                                 </div>
                                 <div id="tab_con10" class="tab-pane p-1 pt-6 md:p-6" role="tabpanel" aria-labelledby="tab10">
-                                    faq
+                                    <p class="text-tit font-semibold">여정을 시작하세요!
+                                    </p>
+                                    <p class="mt-2">
+                                        귀하의 웹사이트에 등록할 수 있습니까?<br/><br/>
+
+                                        귀하는 18세 이상이거나 귀하의 규정에 따라 성년에 도달해야 합니다. 귀하는 법률에 따라 온라인 게임을 할 수 있도록 허가를 받아야 합니다. 자세한 내용은 이용약관을 참조하여 주십시오.<br/><br/>
+
+                                        게임은 중독성이 있을 수 있으므로 플레이어는 자제해야 합니다.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">계정 정보</p>
+                                    <p class="mt-2 text-tit font-semibold">1. 비밀번호를 잊은 경우 어떻게 합니까?</p>
+                                    <p class="mt-2">
+                                        비밀번호를 잊은 경우 "비밀번호 찾기" 링크를 통해 15초 이내에 재설정할 수 있습니다. 비밀번호 재설정 신청 후 다음을 따라주세요. 비밀번호를 재설정하기 위해 귀하에게 보내는 이메일의 지침.
+                                    </p>
+                                    <p class="mt-2 text-tit font-semibold">2. 휴대폰을 잃어버렸습니다. 내 Google OTP를 어떻게 재설정합니까?</p>
+                                    <p class="mt-2">
+                                        Google 인증기 2FA를 제거하려면 당사에 문의하십시오. 귀하의 신청서가 접수된 후 계정의 안전을 위해 귀하는 삭제하려면 몇 가지 보안 질문에 올바르게 답해야 합니다. 2FA.
+                                    </p>
+                                    <p class="mt-2 text-tit font-semibold">3. 사용자 이름이나 등록된 이메일 주소를 변경할 수 있습니까?</p>
+                                    <p class="mt-2">
+                                        죄송합니다. 이메일은 업데이트할 수 없습니다. 만약 사용자 이름 및/또는 등록된 이메일을 변경하려면 현재 계정을 지우고 새 계정을 등록하십시오.
+                                    </p>
+                                    <p class="mt-2 text-tit font-semibold">4. VIP가 되려면 어떻게 해야 하나요?</p>
+                                    <p class="mt-2">
+                                        전용 VIP 클럽은 초대를 통해서만 가능합니다. 당신이 조건에 도달하면 곧 이메일로 VIP 상태에 대한 알림을 받게 될 것입니다.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">내 지갑</p>
+                                    <p class="mt-2">
+                                        『내 지갑』은 플레이어 계정의 일부입니다. 당신은 모든 암호화폐, 입출금 및 쿼리 트랜잭션 및 기록 균형을 볼 수 있습니다 또한 검토 없이 연이율(APR)이 5%인 Vault Pro. BC 스왑에 액세스할 수 있습니다.
+                                    </p>
+                                    <ul class="list-decimal pl-4 mt-2">
+                                        <li>『내 지갑』 페이지에서 입금 페이지 클릭 후 지갑 복사 주소를 입력하거나 QR 코드를 스캔하여 결제하세요.</li>
+                                        <li class="mt-2">암호화폐 구매를 사용하여 MoonPay 및 Banxa에서 제공하는 지원되는 통화를 입금하세요.</li>
+                                        <li class="mt-2">협동 지갑에서 직접 빠르게 입출금하세요.</li>
+                                    </ul>
+                                    <p class="mt-2"><a class="text-primary" href="javascript:;"  data-tw-toggle="modal" data-tw-target="#deposit-modal">입금 <svg class="inline-flex w-3 h-3 fill-primary"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_NewWindow"></use></svg></a></p>
+
+                                    <p class="mt-8 text-tit font-semibold">BC 스왑이란?</p>
+                                    <p class="mt-2">
+                                        BC 스왑을 사용하여 검토를 기다리지 않고 암호화폐를 교환할 수 있습니다.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">볼트프로란?</p>
+                                    <p class="mt-2">
+                                        연이율(APR)을 받을 수 있는 BC 전용 은행입니다. Vault Pro의 예치금에서 5%.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">출금하는 법</p>
+                                    <p class="mt-2">
+                                        『내 지갑』 페이지를 찾아 출금 페이지를 열고 출금할 지갑 주소와 금액을 입력합니다. (수수료 주의).
+                                    </p>
+                                    <p class="mt-2"><a class="text-primary" href="javascript:;" >출금 <svg class="inline-flex w-3 h-3 fill-primary"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_NewWindow"></use></svg></a></p>
+                                    
+                                    <p class="mt-8 text-tit font-semibold">최소 출금 금액</p>
+                                    <p class="mt-2">
+                                        각 암호화폐의 가치가 다르기 때문에 최소 출금 금액도 다름
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">입금 및 출금에 얼마나 걸립니까?</p>
+                                    <p class="mt-2">
+                                        블록체인의 각 거래는 확인을 위해 여러 주기가 필요합니다.<br/><br/>
+
+                                        일반적으로 각 거래는 거래가 완료되기까지 5-10분이 소요됩니다.<br/><br/>
+
+                                        입금 또는 출금 중에 문제가 발생하면 다음을 방문하십시오. www.blockchain.info에서 귀하의 거래하거나 기술 지원에 문의하십시오.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">인출하기 전에 입금 확인이 몇 번 필요합니까?</p>
+                                    <p class="mt-2">
+                                        인출하기 전에 전체 입금액에 대해 최소 3번의 확인이 필요합니다. 현재를 확인할 수 있습니다 출납원 페이지에서 입금 링크를 클릭하여 진행 상황을 확인하십시오.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">거래 확인은 어디에서 옵니까?</p>
+                                    <p class="mt-2">
+                                        모든 확인 정보는 지갑 공급업체인 블록체인에서 가져옵니다.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">거래를 확인하는 데 얼마나 걸립니까?</p>
+                                    <p class="mt-2">
+                                        블록체인과 전송 수수료에 따라 다릅니다. 10분 정도 소요될 수 있습니다 또는 몇 시간.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">당신의 게임은 공정하고 공정합니까?</p>
+                                    <p class="mt-2">
+                                        우리는 Ethereum 스마트 계약을 기반으로 합니다. 모든 데이터와 핵심 로직은 블록체인은상에서 투명하며 조작이 불가능합니다. 모든 싱글 블록체인의 트랜잭션은 etherscan에서 추적할 수 있습니다. 공정성, 우리 게임 플랫폼의 개방성과 정당성은 보장됩니다.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">게임이 멈추거나 문제가 발생하면 어떻게 해야 하나요?</p>
+                                    <p class="mt-2">
+                                        게임을 플레이하는 동안 기술적인 문제가 발생하면 다음을 시도하십시오. 게임을 새로고침합니다. 일반적으로 새로 고침 후 작동합니다. 문제가 지속 된다면, 저희에게 연락하십시오.
+                                    </p>
                                 </div>
                                 <div id="tab_con11" class="tab-pane p-1 pt-6 md:p-6" role="tabpanel" aria-labelledby="tab11">
-                                    화폐
+                                    <p class="text-tit font-semibold">가상화폐란?</p>
+                                    <p class="mt-2">
+                                        암호화폐는 실물에 의존하지 않는 디지털 화폐입니다. 암호화를 사용합니다. 비트코인, 라이트코인, 비트쉐어 등 생성, 유통, 유지되는 디지털 화폐입니다. 암호화 및 검증 기술을 기반으로 합니다. 암호화폐의 특징으로는 P2P 기술의 적용과 모두가 그것을 발행한다는 것입니다.<br/><br/>
+                                        Cryptocurrency는 익명 거래를 지원하는 온라인 결제 시스템이기도 합니다. Bitcoin은 최고의 암호 화폐이며 많은 국가에서 법률로 인정됩니다.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">가상화폐를 왜 이용해야 하는가?</p>
+                                    <p class="mt-2">
+                                        몇 가지 이유로 암호화폐는 가장 인기있게 사용되고 널리 사용되는 디지털 통화입니다. 기존의 이체와 달리 암호화폐 이체 몇 시간을 기다릴 필요가 없으며 금액 또는 사용자의 지역간 전송의 영향을 받지 않습니다. 수수료도 훨씬 저렴하고 일반적으로 몇 센트입니다. 암호화폐는 환불되지 않으며 부정행위도 없습니다. 어떤 은행, 정부 기관 또는 개인도 조작할 수 없습니다. 암호화폐는 기존 화폐와 달리 거래는 익명이며 압수 위협이 없습니다.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">암호화폐 거래는 어떻게 이루어지나요?</p>
+                                    <p class="mt-2">
+                                        암호 화폐 거래는 실제로 매우 간단합니다. 기본적으로 그것은 온라인 지갑에서 다른 지갑으로 암호 화폐를 보냅니다. 전체 프로세스의 첫 번째 단계는 지불인이 개인 키(무작위로 생성된 일련의 숫자)를 쓰면 그 후 트랜잭션은 0에서 5개의 유효성 검사를 거칩니다. 일반 트랜잭션은 1개의 유효성 검사를 거칩니다. 금액이 매우 크면 여러 번 수행하는 것이 좋습니다. 단일 유효성 검사에 약 10분이 소요됩니다. 유효성 검사 후 블록체인의 모든 사람이 확인할 수 있습니다. 이 트랜잭션은 민감한 정보를 볼 수 없습니다.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">암호화폐 구매는 어떻게 하나요?</p>
+                                    <p class="mt-2">
+                                        암호화폐는 다음 장소에서 구입할 수 있습니다.<br/><br/>
+
+                                        시장 교환: 구매자가 프라이버시에 별로 신경 쓰지 않는다면 온라인 시장 거래소는 암호화폐를 구매하는 최선의 선택입니다. 시장 교환은 일반적으로 구매자에게 신분증을 제공하도록 요구합니다. 구매자는 시장 거래소에서 암호화폐를 구매하고 보관할 수 있습니다.<br/><br/>
+
+                                        Over the counter: 두 사람이 암호화폐 거래를 수행함을 의미합니다. 면 대면. 일반적으로 암호 화폐 거래가 수행됩니다. 두 당사자 사이에 익명으로. 대면접근법이지만 여전히 매우 인기가 있습니다. 판매자와 구매자가 많은 웹사이트를 통해 서로 연락할 수 있습니다.<br/><br/>
+
+                                        Cryptocurrency ATM: 이 ATM은 일반 ATM과 다르지 않습니다. 구매자는 현금 대신 특정 코드가 있는 영수증을 받습니다. 코드를 스캔하면 비트코인이 구매자의 지갑으로 전송됩니다.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">암호화폐는 합법인가요?</p>
+                                    <p class="mt-2">
+                                        간단히 말해서, 암호화폐의 법적 지위가 좋아지고 있습니다. 지난 몇 개월 동안 일본은 비트코인을 법적 통화로 인정한다고 발표했습니다. 러시아는 또한 비트코인을 금융 도구로 인정하겠다는 계획을 선언했습니다. 비트코인은 원래 러시아에서 금지였습니다..<br/><br/>
+                                        암호화폐가 점차 강력하고 중요한 글로벌화되면서 통화, 이런 종류의 변화도 증가할 것입니다. 암호 화폐에 대한 세금은 여전히 국가마다 다릅니다. 반면에 새로운 법률 및 규칙은 항상 게시됩니다. 암호화폐 및 잠재력에 대한 정부의 입장에 대한 세부 정보에 대해서 알고 싶다면 향후 변경 사항에 대해서는 법률 고문에게 문의하십시오.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">비트코인 지갑</p>
+                                    <p class="mt-2">
+                                        사용할 수 있는 비트코인 지갑이 많이 있습니다. 다음과 같은 클라우드 기반 지갑이 있습니다. 개인용 컴퓨터, 태블릿, 컴퓨터, 휴대폰에 다운로드할 수 있는 지갑뿐만 아니라 물리적 하드웨어 지갑을 얻을 수도 있습니다. 각 지갑들의 다양한 기능에는 공통 기능이 있으나 각 지갑마다 고유한 장점이 있습니다.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">클라우드 기반 지갑</p>
+                                    <p class="mt-2">
+                                        클라우드 기반 지갑은 가장 쉽고 편리하게 사용할 수 있는 지갑입니다. 그러나 암호화폐를 클라우드에 저장한다는 것은 귀하의 암호 화폐를 보관하는 회사에 보관할 책임이 있습니다. 따라서 양 당사자 간의 상호 신뢰는 저장에 중요합니다. 클라우드 기반 지갑의 암호화폐.<br/><br/>
+                                        다음 클라우드 기반 지갑을 권장합니다.
+                                    </p>
+                                    <ul class="list-disc pl-4 mt-2">
+                                        <li><a href="https://copay.io/" target="_blank" rel="noopener noreferrer"> copay.io <svg class="inline-flex w-3 h-3 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_NewWindow"></use></svg></a></li>
+                                        <li class="mt-2"><a href="https://www.bitgo.com/" target="_blank" rel="noopener noreferrer"> bitgo.com <svg class="inline-flex w-3 h-3 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_NewWindow"></use></svg></a></li>
+                                    </ul>
+
+                                    <p class="mt-8 text-tit font-semibold">소프트웨어 지갑</p>
+                                    <p class="mt-2">
+                                        소프트웨어 지갑은 컴퓨터에서 실행할 수 있는 다운로드 가능한 프로그램으로, 태블릿 컴퓨터 또는 휴대폰. 소프트웨어 지갑보다 안전합니다. 당신이 그것을 완전히 제어할 수 있기 때문에 클라우드 기반입니다. 그러나, 소프트웨어 지갑에는 여전히 위험이 있습니다.<br/><br/>
+                                        다음 소프트웨어 지갑을 권장합니다.
+                                    </p>
+                                    <ul class="list-disc pl-4 mt-2">
+                                        <li><a href="https://copay.io/" target="_blank" rel="noopener noreferrer"> copay.io <svg class="inline-flex w-3 h-3 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_NewWindow"></use></svg></a></li>
+                                        <li class="mt-2"><a href="javascript:;" target="_blank" rel="noopener noreferrer"> Breadwallet <svg class="inline-flex w-3 h-3 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_NewWindow"></use></svg></a></li>
+                                        <li class="mt-2"><a href="https://www.mycelium.com/" target="_blank" rel="noopener noreferrer"> mycelium <svg class="inline-flex w-3 h-3 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_NewWindow"></use></svg></a></li>
+                                    </ul>
+
+                                    <p class="mt-8 text-tit font-semibold">하드웨어 지갑</p>
+                                    <p class="mt-2">
+                                        하드웨어 지갑은 사용자의 개인 키를 안전한 하드웨어 장치에 저장합니다. 소프트웨어 지갑에 비해 하드웨어 지갑의 주요 장점 중 하나는 컴퓨터 바이러스에 대한 면역입니다. 또한 개인 키는 마이크로컨트롤러의 보호 영역에 저장되며 전송할 수 없습니다. 장치에서 일반 텍스트로.<br/><br/>
+                                        다음 하드웨어 지갑을 권장합니다.
+                                    </p>
+                                    <ul class="list-disc pl-4 mt-2">
+                                        <li><a href="https://trezor.io/" target="_blank" rel="noopener noreferrer"> trezor <svg class="inline-flex w-3 h-3 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_NewWindow"></use></svg></a></li>
+                                        <li class="mt-2"><a href="https://www.ledger.com/" target="_blank" rel="noopener noreferrer"> ledger <svg class="inline-flex w-3 h-3 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_NewWindow"></use></svg></a></li>
+                                    </ul>
+                                    <p class="mt-2">
+                                        다양한 비트코인 지갑에 대해 자세히 알아보려면 Bitcoin.org를 방문하세요.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">지갑 보호</p>
+                                    <p class="mt-2">
+                                        적절하게 사용하면 비트코인은 매우 안전합니다. 항상 기억해주세요. 귀하의 자금을 보호하기 위한 조치를 취할 귀하의 책임에 있습니다.<br/><br/>
+
+                                        다음 사항을 고려해야 합니다.<br/><br/>
+
+                                        법정 화폐와 마찬가지로 모든 돈을 한 지갑에 넣지 마십시오.<br/><br/>
+
+                                        온라인 지갑을 신중하게 선택하십시오. 2FA는 좋은 추가 보증입니다.<br/><br/>
+
+                                        정기적으로 지갑을 백업하십시오. 인터넷에 노출되어 있는 백업을 암호화하는 것도 좋은 방법입니다.<br/><br/>
+
+                                        암호를 안전한 위치에 저장하십시오. 비밀번호를 기억하거나 안전한 물리적 위치에 보관하십시오.<br/><br/>
+
+                                        문자, 숫자 및 기호를 포함하고 길이가 16자 이상인 강력한 암호를 선택하십시오.<br/><br/>
+
+                                        콜드 스토리지라고도 하는 오프라인 지갑은 최고의 보안을 제공합니다. 당신의 예금을 위해. 인터넷이 연결되지 않는 안전한 장소에 지갑을 숨기는 것입니다. 제대로 구현된 경우 이 옵션은 컴퓨터 취약점에 대한 탁월한 보호를 제공할 수 있습니다.
+                                    </p>
                                 </div>
                                 <div id="tab_con12" class="tab-pane p-1 pt-6 md:p-6" role="tabpanel" aria-labelledby="tab12">
                                     <p class="text-tit font-semibold">등록 및 로그인</p>
@@ -283,10 +905,76 @@
                                     </ul>
                                 </div>
                                 <div id="tab_con16" class="tab-pane p-1 pt-6 md:p-6" role="tabpanel" aria-labelledby="tab16">
-                                    게임사
+                                    <p class="text-tit font-semibold">공급자 가용성 정책</p>
+                                    <ul class="list-decimal pl-4 mt-2 text-xs">
+                                        <li>
+                                            절대 제한<br/>
+                                            NetEnt는 적절한 라이선스 없이 NetEnt 카지노 게임을 아래 관할 구역에서 운영하는 법인에 공급하는 것을 허용하지 않습니다(해당 관할 구역의 법인이 NetEnt 카지노 게임을 공급하는지 여부에 관계 없음).<br/>
+                                            Belgium, Bulgaria, Colombia, Croatia, Czech Republic, Denmark, Estonia, France, Italy, Latvia, Lithuania, Mexico, Portugal, Romania, Spain, Sweden, Switzerland, United Kingdom, United States of America.
+                                        </li>
+                                        <li class="mt-2">
+                                            블랙리스트 지역<br/>
+                                            모든 NetEnt 카지노 게임은 다음에서 제공되지 않을 수 있습니다.<br/>
+                                            Afghanistan, Albania, Algeria, Angola, Australia, Bahamas, Botswana, Belgium, Bulgaria, Colombia, Croatia, Czech Republic, Denmark, Estonia, Ecuador, Ethiopia, France, Ghana, Guyana, Hong Kong, Italy, Iran, Iraq, Israel, Kuwait, Latvia, Lithuania, Mexico, Namibia, Nicaragua, North Korea, Pakistan, Panama, Philippines, Portugal, Romania, Singapore, Spain, Sweden, Switzerland, Sudan, Syria, Taiwan, Trinidad and Tobago, Tunisia, Uganda, United Kingdom, United States of America, Yemen, Zimbabwe
+                                        </li>
+                                        <li class="mt-2">
+                                            블랙리스트에 오른 브랜드 게임 지역<br/>
+                                            다음 NetEnt Braded Games에는 몇 가지 추가 제한 사항이 있습니다. 위에 명시된 블랙리스트 지역에 추가:
+                                            <ul class="mt-2 pl-4" style="list-style:lower-roman">
+                                                <li>
+                                                    2항에 명시된 관할권 외에도 Planet Apes 비디오 슬롯은 다음에서 제공되어서는 안 됩니다. 영토:<br/>
+                                                    Azerbaijan, China, India, Malaysia, Qatar, Russia, Thailand, Turkey, Ukraine.
+                                                </li>
+                                                <li class="mt-2">
+                                                    2항에 명시된 관할권 외에도 Vikings 비디오 슬롯은 다음 관할 지역에서 제공되어서는 안 됩니다.<br/>
+                                                    Azerbaijan, Cambodia, Canada, China, France, India, Indonesia, Laos, Malaysia, Myanmar, Papua New Guinea, Qatar, Russia, South Korea, Thailand, Turkey, Ukraine, United States of America.
+                                                </li>
+                                                <li class="mt-2">
+                                                    2항에 명시된 관할권 외에도 Narcos는 비디오 슬롯은 다음 지역에서 제공되지 않아야 합니다.<br/>
+                                                    Indonesia, South Korea.
+                                                </li>
+                                                <li class="mt-2">
+                                                    단락 2에 명시된 관할권 외에도 street fighter 비디오 슬롯은 다음 영토에서 제공되지 않아야 합니다. :<br/>
+                                                    Anguilla, Antigua & Barbuda, Argentina, Aruba, Barbados, Bahamas, Belize, Bermuda, Bolivia, Bonaire, Brazil, British Virgin Islands, Canada, Cayman Islands, China, Chile, Clipperton Island, Columbia, Costa Rica, Cuba, Curacao, Dominica, Dominican Republic, El Salvador, Greenland, Grenada, Guadeloupe, Guatemala, Guyana, Haiti, Honduras, Jamaica, Japan, Martinique, Mexico, Montserrat, Navassa Island, Paraguay, Peru, Puerto Rico, Saba, Saint Barthelemy, Saint Eustatius, Saint Kitts and Nevis, Saint Lucia, Saint Maarten, Saint Martin, Saint Pierre and Miquelon, Saint Vincent and the Grenadines, South Korea, Suriname, Turks and Caicos Islands, United States of America, Uruguay, US Virgin Islands, Venezuela.
+                                                </li>
+                                                <li class="mt-2">
+                                                    단락 2에 명시된 관할권 외에도 Fashion TV Video Slot은 다음 지역에서 제공되지 않아야 합니다.<br/>
+                                                    Cuba, Jordan, Turkey, Saudi Arabia.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="mt-2">
+                                            Universal Monsters (Dracula, Creature from the Black Lagoon, Phantoms Curse and The Invisible Man)은 다음에서만 플레이할 수 있습니다. 영토:<br/>
+                                            Andorra, Austria, Armenia, Azerbaijan, Belarus, Bosnia and Herzegovina, Cyprus, Finland, Georgia, Germany, Greece, Hungary, Iceland, Ireland, Liechtenstein, Luxembourg, Malta, Moldova, Monaco, Montenegro, Netherlands, North Macedonia, Norway, Poland, Russia, San Marino, Serbia, Slovakia, Slovenia, Turkey and Ukraine.
+                                        </li>
+                                    </ul>
                                 </div>
                                 <div id="tab_con17" class="tab-pane p-1 pt-6 md:p-6" role="tabpanel" aria-labelledby="tab17">
-                                    자금세탁
+                                    <p class="text-tit font-semibold">비지니스 모델</p>
+                                    <p class="mt-2">
+                                        BC.GAME은(는) BlockDance B.V.(Curaçao 상업 등록 번호 158182, Emancipatie Boulevard Dominico F. "Don" Martina 31, Curaçao)에서 마스터 게임 라이선스 #5536/JAZ.회사 정책 선언문에 따라 하위 라이선스 CIL에 따라 운영합니다. BlockDance B.V.는 Curacao 법률에 따른 AML 의무 범위에 속합니다. 따라서 고위 경영진은 Curacao의 관련 AML 법률에 명시된 표준을 충족하는 시스템과 절차를 구현했습니다.
+                                    </p>
+
+                                    <p class="mt-8 text-tit font-semibold">ML의 정의</p>
+                                    <p class="mt-2">
+                                        자금 세탁: 불법적으로 얻은 수익을 합법적으로 보이게 만드는 과정. 이 프로세스는 일반적으로 배치, 레이어링 및 통합의 세 단계로 나뉩니다. 배치: 예금 또는 기타 방법을 통해 불법적인 수익을 전통적인 금융 기관에 배치하는 프로세스입니다. 계층화: 현금을 여행자 수표, 우편환, 전신환, 신용장, 주식, 채권 또는 자산 구매로 전환하는 것과 같은 복잡한 금융 거래의 계층을 통해 범죄 활동 수익을 출처에서 분리하는 프로세스입니다. 통합: 합법적인 거래를 사용하여 불법 수익을 가장하여 세탁된 자금이 범죄자에게 다시 분배되도록 합니다. 이제 깨끗한 돈을 다시 정상적인 사용으로 통합합니다.
+                                    </p>
+                                    
+                                    <p class="mt-8 text-tit font-semibold">AML(자금세탁방지) 정책</p>
+                                    <p class="mt-2">
+                                        BlockDance B.V.는 온라인 게임과 관련된 서비스를 제공하는 것이 자금 세탁 및 테러 자금 조달의 위험이 있음을 알고 있습니다. 자금 세탁 및 테러 자금 조달의 위험을 식별, 예방 및 제한합니다. BlockDance B.V.는 BlockDance B.V.가 수행하는 BlockDance B.V.의 클라이언트 및 서비스의 특성을 고려하는 조치, 프로세스 및 내부 통제를 일상적인 비즈니스 운영에 구현했습니다. 해당 Curacao 법률에서 요구하는 자금 세탁 및 테러 자금 조달 방지 조치와 관련된 요구 사항. BlockDance B.V.는 자금 세탁의 법적 정의를 충족하는 모든 종류의 거래에 대해 BlockDance B.V.의 서비스를 사용하려는 모든 시도를 탐지, 예방 및 국가 당국에 보고하겠다는 약속을 증명하기 위해 자금 세탁 방지에 관한 AML 정책을 마련했습니다. 및/또는 테러 자금 조달, 또는 기타 형태의 불법 금융 거래를 나타내는 것. AML 정책은 업계의 법률 및 모범 사례를 변경하여 수정 및 업그레이드됩니다. AML 정책의 내용은 다음과 같습니다.
+                                    </p>
+                                    <ul class="list-disc pl-4 mt-2">
+                                        <li>자금 세탁 방지와 관련된 프로세스의 내부 조직</li>
+                                        <li class="mt-2">실사 프로세스("Know your customer 또는 KYC"라고도 함)</li>
+                                        <li class="mt-2">자금 세탁 위험 평가;</li>
+                                        <li class="mt-2">부적격 및 적격 범주의 고객</li>
+                                        <li class="mt-2">강화된 실사 조치;</li>
+                                        <li class="mt-2">보고 의무(관할 당국에 대한).</li>
+                                    </ul>
+                                    <p class="mt-2">
+                                        In order to comply with Anti-Money Laundering (AML) procedures, we require a 1x mandatory wager on all deposits before initiating a withdrawal request. Failure to meet this requirement may result in restrictions or denial of withdrawal until it is fulfilled. Once the one-time turnover requirement is met, users can request withdrawals based on the profit earned from their deposit. For instance, if User A deposits $100, they must engage in $100 worth of wagers to initiate a withdrawal. If User A subsequently generates a profit of $58 from this 1x wagering activity, the accurate withdrawal amount for User A is $158. Users can participate in additional wagering activities to accumulate further rewards.
+                                    </p>
                                 </div>
                                 <div id="tab_con18" class="tab-pane p-1 pt-6 md:p-6" role="tabpanel" aria-labelledby="tab18">
                                     <p class="text-tit font-semibold">자기금지(탈퇴)</p>
@@ -317,7 +1005,84 @@
                                     </ul>
                                 </div>
                                 <div id="tab_con19" class="tab-pane p-1 pt-6 md:p-6" role="tabpanel" aria-labelledby="tab19">
-                                    책임도박
+                                    <p class="text-tit font-semibold">Responsible Gambling At BC.GAME</p>
+                                    <p class="mt-2">
+                                        At BC.GAME is strictly forbidden to play for people under 18 years old.<br/><br/>
+
+                                        Online gambling is a fun, and potentially rewarding way to spend your time. However, we at BC.GAME have our players’ best interests at heart. We support responsible gambling.<br/><br/>
+
+                                        As online gambling has grown over the last decade, online gambling sites for casino, sports, lottery and other games have become easily accessible at a touch of a button. Anytime and anywhere. This makes it harder for players to set boundaries.<br/><br/>
+
+                                        BC.GAME casino and sports betting section is designed to offer a maximized entertainment portal that is made for pure enjoyment. However, we wish for our gamblers to play within their means.
+                                    </p>
+                                    <p class="mt-8 text-tit font-semibold">Always Keep In Mind:</p>
+                                    <p class="mt-2"></p>
+                                    <ul class="list-disc pl-4 mt-2">
+                                        <li>Gambling is intended as to be fun and entertaining as opposed to a means to an end to making money</li>
+                                        <li class="mt-2">Gambling is not a way to resolve financial difficulties.</li>
+                                        <li class="mt-2">Decide on a gambling budget and stick to it. Keep track of your spending and only play with the amount initially decided.</li>
+                                        <li class="mt-2">Do not chase after losses or play with money allocated to other areas of your budget.</li>
+                                        <li class="mt-2">Check that you are only playing in your free time allocated to hobbies. Gambling is not supposed to keep you from your routine daily activities. Monitor the time you spend gambling.</li>
+                                    </ul>
+                                    <p class="mt-8 text-tit font-semibold">Are You A Compulsive Gambler</p>
+                                    <p class="mt-2">According to Gamblers Anonymous, if you answer 7 or more of these with a yes, you should seek help for your gambling addiction.</p>
+                                    <ul class="list-decimal pl-4 mt-2">
+                                        <li>Did you lose time gambling?</li>
+                                        <li class="mt-2">Has gambling affected your home life negatively?</li>
+                                        <li class="mt-2">Has your reputation been damaged from gambling?</li>
+                                        <li class="mt-2">Have you ever felt remorse after gambling?</li>
+                                        <li class="mt-2">Do you ever gamble to solve financial difficulties?</li>
+                                        <li class="mt-2">Has gambling caused a decrease in your ambition or efficiency?</li>
+                                        <li class="mt-2">Have you gambled, or carried on gambling, to win back your losses?</li>
+                                        <li class="mt-2">After a win, do you have an urge to return and win more?</li>
+                                        <li class="mt-2">Do you often gamble until your last money is gone?</li>
+                                        <li class="mt-2">Do you ever borrow to finance your gambling?</li>
+                                        <li class="mt-2">Have you ever sold anything to finance gambling?</li>
+                                        <li class="mt-2">Are you reluctant to use "gambling money" for normal expenditures?</li>
+                                        <li class="mt-2">Does gambling make you careless with the welfare of yourself or your family?</li>
+                                        <li class="mt-2">Do you ever gamble longer than you had planned?</li>
+                                        <li class="mt-2">Have you ever gambled to escape worries?</li>
+                                        <li class="mt-2">Have you ever committed, or considered committing, an illegal act to finance gambling?</li>
+                                        <li class="mt-2">Does gambling cause you to have difficulty sleeping?</li>
+                                        <li class="mt-2">Do you get the urge to gamble when you are emotionally upset?</li>
+                                        <li class="mt-2">Did you get the urge to gamble to celebrate any good fortune in your life?</li>
+                                        <li class="mt-2">Have you ever contemplated self-harm or suicide as a result of your gambling?</li>
+                                    </ul>
+                                    <p class="mt-8 text-tit font-semibold">Under Age Gambling</p>
+                                    <p class="mt-2">
+                                        People under the age of 18 are strictly forbidden from gambling at BC.GAME. We conduct random checks via payment portals used to deposit money. If players are found to be under 18 all winnings are forfeited, accounts closed, and police will be contacted in the country of the child's residence.<br/><br/>
+
+                                        We strongly advise parents to be fully aware and engaged in what activities their children use on gaming devices. It is also advisable to install software filters.<br/><br/>
+
+                                        Where To Get Help If You Feel You Have A Gambling Problem<br/><br/>
+
+                                        International Contact Details if you feel you need assistance is as follows:
+                                    </p>
+                                    <ul class="list-disc pl-4 mt-2">
+                                        <li>Gamblers Anonymous International Service Office <br/>Website: http://www.gamblersanonymous.org/ga/</li>
+                                        <li class="mt-2">National Council On Problem Gambling<br/>Website: www.ncpgambling.org</li>
+                                        <li class="mt-2">Gamcare<br/>Website: http://www.gamcare.org.uk/</li>
+                                    </ul>
+                                    <p class="mt-8 text-tit font-semibold">What BC.GAME Has In Place To Help Our Players</p>
+                                    <p class="mt-2">To assist players in keeping within their limits, we always suggest that gamblers who enter throughout site always check for the following guidelines and tools on the casinos' site:</p>
+                                    <ul class="list-disc pl-4 mt-2">
+                                        <li>Game Session Timers</li>
+                                        <li class="mt-2">Deposit Limits to can be set at the beginning of play.</li>
+                                        <li class="mt-2">Set limits and provide tools to prevent underage gambling</li>
+                                        <li class="mt-2">Offer a self-exclusion option</li>
+                                        <li class="mt-2">A 24/7 support team to discuss concerns or queries on your problem</li>
+                                        <li class="mt-2">We provide links to self-help information and organisations</li>
+                                    </ul>
+                                    <p class="mt-8 text-tit font-semibold">Protect Yourself And Gamble Responsibly</p>
+                                    <p class="mt-2">
+                                        If you cannot gamble responsibly, the only option is to not gamble at all. This way, you will avoid putting yourself and your loved ones at risk. Many people have ruined their lives by not adhering to signs of irresponsible gambling. By playing at BC.GAME, you will have help at your fingertips at all times, and we will always welcome the communication and opportunity to help.<br/><br/>
+
+                                        All casinos and games have a built-in RTP or return to player and a set house edge which has a favorable long-term outcome for the casino. In conclusion, it is important to remember that the money you are betting with should only be disposable income because gambling is about maximizing enjoyment and having fun. These are games of chance, and you may win, but you could equally lose.<br/><br/>
+
+                                        Join BC.GAME to have fun on games and have the support to stay on track.
+
+
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -326,7 +1091,13 @@
 
 
 
-
+                <p class="text-tit font-semibold"></p>
+                <p class="mt-2">
+                </p>
+                <ul class="list-disc pl-4 mt-2">
+                    <li></li>
+                    <li class="mt-2"></li>
+                </ul>
                 
                 <!-- ** 푸터 시작 ** -->
                 <!-- ** 푸터 끝 ** -->
@@ -373,6 +1144,11 @@
         $('.setting_menu li').on('click',function(){
             const liN = $(this).index();
             $('.setting_tab li').eq(liN).find('button').click();
+        })
+
+        $('.game_select li').on('click',function(){
+            const liN = $(this).index();
+            $('.game_fair > div').eq(liN).removeClass('hidden').siblings().addClass('hidden')
         })
     </script>
 

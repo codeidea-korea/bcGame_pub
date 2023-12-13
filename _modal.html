@@ -5803,6 +5803,536 @@
     </div>
   </div>
 
+<!-- 보너스정보 모달 -->
+<div id="bonus_info-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content overflow-hidden relative rounded">
+            <div class="modal-body">
+                <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                    <p class="text-tit font-extrabold text-base">보너스 정보</p>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+
+                <div class="w-full p-6 overflow-y-auto scrollbar h-auto sm:h-[640px]">
+
+                    <div class="text-tit font-bold text-base">보너스 카테고리</div>
+                    <div class="bg-modaldark dark:bg-backlight p-3 rounded flex flex-wrap gap-y-4">
+                        <div class="w-1/5">
+                            <p class="flex items-center justify-center text-xs gap-1"><img class="w-5" src="/bcGame/dist/custom_img/bonus/icon/quests.webp" alt=""><span class="truncate">퀘스트</span></p>
+                            <b class="block mt-1 pl-2 text-tit font-bold">$0.00</b>
+                        </div>
+                        <div class="w-1/5">
+                            <p class="flex items-center justify-center text-xs gap-1"><img class="w-5" src="/bcGame/dist/custom_img/bonus/icon/spin.webp" alt=""><span class="truncate">럭키스핀</span></p>
+                            <b class="block mt-1 pl-2 text-tit font-bold">$5.00</b>
+                        </div>
+                        <div class="w-1/5">
+                            <p class="flex items-center justify-center text-xs gap-1"><img class="w-5" src="/bcGame/dist/custom_img/bonus/icon/roll.webp" alt=""><span class="truncate">롤</span></p>
+                            <b class="block mt-1 pl-2 text-tit font-bold">$0.00</b>
+                        </div>
+                        <div class="w-1/5">
+                            <p class="flex items-center justify-center text-xs gap-1"><img class="w-5" src="/bcGame/dist/custom_img/bonus/icon/recharge.webp" alt=""><span class="truncate">재충전</span></p>
+                            <b class="block mt-1 pl-2 text-tit font-bold">$0.00</b>
+                        </div>
+                        <div class="w-1/5">
+                            <p class="flex items-center justify-center text-xs gap-1"><img class="w-5" src="/bcGame/dist/custom_img/bonus/icon/weekly.webp" alt=""><span class="truncate">주간 캐시백</span></p>
+                            <b class="block mt-1 pl-2 text-tit font-bold">$0.00</b>
+                        </div>
+                        <div class="w-1/5">
+                            <p class="flex items-center justify-center text-xs gap-1"><img class="w-5" src="/bcGame/dist/custom_img/bonus/icon/monthly.webp" alt=""><span class="truncate">월간 캐시백</span></p>
+                            <b class="block mt-1 pl-2 text-tit font-bold">$0.00</b>
+                        </div>
+                        <div class="w-1/5">
+                            <p class="flex items-center justify-center text-xs gap-1"><img class="w-5" src="/bcGame/dist/custom_img/bonus/icon/sports.webp" alt=""><span class="truncate">스포츠 주간 캐쉬백</span></p>
+                            <b class="block mt-1 pl-2 text-tit font-bold">$5.00</b>
+                        </div>
+                        <div class="w-1/5">
+                            <p class="flex items-center justify-center text-xs gap-1"><img class="w-5" src="/bcGame/dist/custom_img/bonus/icon/levelup.webp" alt=""><span class="truncate">레벨업 보너스</span></p>
+                            <b class="block mt-1 pl-2 text-tit font-bold">$0.00</b>
+                        </div>
+                        <div class="w-1/5">
+                            <p class="flex items-center justify-center text-xs gap-1"><img class="w-5" src="/bcGame/dist/custom_img/bonus/icon/freespin.webp" alt=""><span class="truncate">무료 스핀</span></p>
+                            <b class="block mt-1 pl-2 text-tit font-bold">$0.00</b>
+                        </div>
+                        <div class="w-1/5">
+                            <p class="flex items-center justify-center text-xs gap-1"><img class="w-5" src="/bcGame/dist/custom_img/bonus/icon/deposit.webp" alt=""><span class="truncate">입금 보너스</span></p>
+                            <b class="block mt-1 pl-2 text-tit font-bold">$0.00</b>
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center justify-between mt-5">
+                        <div class="text-tit text-base font-bold">보너스 거래 내역</div>
+
+                        <div class="custom_select w-48">
+                            <button class="btn h-10 flex px-4 items-center justify-between border-none bg-modaldark dark:bg-backlight">
+                                <span>총 보너스</span>
+                                <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                            </button>
+                            <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
+                                <li class="py-2 on">총 보너스</li>
+                                <li class="py-2">퀘스트</li>
+                                <li class="py-2">럭키스핀</li>
+                                <li class="py-2">롤</li>
+                                <li class="py-2">입금 보너스</li>
+                                <li class="py-2">재충전</li>
+                                <li class="py-2">주간 캐쉬백</li>
+                                <li class="py-2">월간 캐쉬백</li>
+                                <li class="py-2">스포츠 주간 캐쉬백</li>
+                                <li class="py-2">Levelup Bonus</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-1">최근 60일 거래만 아래에 표시됩니다.</div>
+
+                    <div class="p-3 mt-2 bg-modaldark dark:bg-backlight rounded">
+                        <div class="py-2">
+                            <table class="table noline pad-s table-sm ">   
+                                <colgroup>
+                                    <col width="20%">
+                                    <col width="30%">
+                                    <col width="50%">
+                                </colgroup>
+                                <thead class="bg-back">
+                                    <tr class="text-center text-xs">
+                                        <th class="whitespace-nowrap text-left">보너스 유형</th>
+                                        <th class="whitespace-nowrap">수령한 금액</th>
+                                        <th class="whitespace-nowrap text-right">시간</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-left">럭키 스핀</td>
+                                        <td class="text-center">5.0038<img class="inline-flex items-center ml-1 w-5" src="/bcGame/dist/custom_img/coin/BTC.webp" alt=""></td>
+                                        <td class="text-right">2023. 11. 8. 오전 10:21:12</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">럭키 스핀</td>
+                                        <td class="text-center">5.0038<img class="inline-flex items-center ml-1 w-5" src="/bcGame/dist/custom_img/coin/BTC.webp" alt=""></td>
+                                        <td class="text-right">2023. 11. 8. 오전 10:21:12</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 items-center justify-end mt-4">
+                        <p class="text-xs">총 1</p>
+                        <div class="flex gap-0 text-base px-4 py-1 bg-back2 rounded font-medium">
+                            <button class="w-6 h-6 basic-hover active font-extrabold">1</button>
+                            <button class="w-6 h-6 basic-hover">2</button>
+                            <button class="w-6 h-6 basic-hover">3</button>
+                        </div>
+                        <div class="flex gap-1">
+                            <button class="btn-normal w-8 h-8 basic-hover rounded"><svg class="w-4 h-4 mx-auto rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                            <button class="btn-normal w-8 h-8 basic-hover rounded"><svg class="w-4 h-4 mx-auto"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- 입금 보너스 모달 -->
+<div id="bonus_deposit-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content overflow-hidden relative rounded">
+            <div class="modal-body">
+                <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                    <p class="text-tit font-extrabold text-base">입금 보너스 규칙</p>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+
+                <div class="w-full p-6 overflow-y-auto scrollbar h-auto sm:h-[640px]">
+                    <div>BC.GAME은(는) 예외적인 4개의 보상 입금 매치 보너스를 제공합니다. 이것은 추가 Crypto를 획득하고 귀하의 재량에 따라 사용할 수 있는 고유한 Crypto 코인인 BC Dollar(BCD)를 획득할 수 있는 절호의 기회입니다. 따라서 이 환상적인 기회를 활용하여 BC.GAME의 탁월한 보너스로 암호화폐 보유량을 늘리십시오.</div>
+                    
+                    <div class="grid grid-cols-2 gap-3 mt-4">
+                        <div class="rounded bg-backlight pb-3">
+                            <div class="relative text-black">
+                                <img src="/bcGame/dist/custom_img/bonus/1st.webp" alt="">
+                                <span class="absolute left-0 top-4 w-full text-center text-base font-bold">1st 입금</span>
+                                <p class="absolute left-0 bottom-4 w-full text-center text-lg font-bold"><b class="block text-4xl">180%</b>보너스</p>
+                            </div>
+                            <div class="flex justify-between text-xs px-2">
+                                <span>최소 입금</span>
+                                <b class="text-tit font-bold">$ 10</b>
+                            </div>
+                            <div class="flex justify-between mt-1 text-xs px-2">
+                                <span>획득 가능한 최대 수량</span>
+                                <b class="text-tit font-bold">20,000 BCD</b>
+                            </div>
+                        </div>
+                        <div class="rounded bg-backlight pb-3">
+                            <div class="relative text-black">
+                                <img src="/bcGame/dist/custom_img/bonus/2nd.webp" alt="">
+                                <span class="absolute left-0 top-4 w-full text-center text-base font-bold">2nd 입금</span>
+                                <p class="absolute left-0 bottom-4 w-full text-center text-lg font-bold"><b class="block text-4xl">240%</b>보너스</p>
+                            </div>
+                            <div class="flex justify-between text-xs px-2">
+                                <span>최소 입금</span>
+                                <b class="text-tit font-bold">$ 50</b>
+                            </div>
+                            <div class="flex justify-between mt-1 text-xs px-2">
+                                <span>획득 가능한 최대 수량</span>
+                                <b class="text-tit font-bold">40,000 BCD</b>
+                            </div>
+                        </div>
+                        <div class="rounded bg-backlight pb-3">
+                            <div class="relative text-black">
+                                <img src="/bcGame/dist/custom_img/bonus/3rd.webp" alt="">
+                                <span class="absolute left-0 top-4 w-full text-center text-base font-bold">3rd 입금</span>
+                                <p class="absolute left-0 bottom-4 w-full text-center text-lg font-bold"><b class="block text-4xl">300%</b>보너스</p>
+                            </div>
+                            <div class="flex justify-between text-xs px-2">
+                                <span>최소 입금</span>
+                                <b class="text-tit font-bold">$ 100</b>
+                            </div>
+                            <div class="flex justify-between mt-1 text-xs px-2">
+                                <span>획득 가능한 최대 수량</span>
+                                <b class="text-tit font-bold">60,000 BCD</b>
+                            </div>
+                        </div>
+                        <div class="rounded bg-backlight pb-3">
+                            <div class="relative text-black">
+                                <img src="/bcGame/dist/custom_img/bonus/4th.webp" alt="">
+                                <span class="absolute left-0 top-4 w-full text-center text-base font-bold">4th 입금</span>
+                                <p class="absolute left-0 bottom-4 w-full text-center text-lg font-bold"><b class="block text-4xl">360%</b>보너스</p>
+                            </div>
+                            <div class="flex justify-between text-xs px-2">
+                                <span>최소 입금</span>
+                                <b class="text-tit font-bold">$ 200</b>
+                            </div>
+                            <div class="flex justify-between mt-1 text-xs px-2">
+                                <span>획득 가능한 최대 수량</span>
+                                <b class="text-tit font-bold">100,000 BCD</b>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- 롤 모달 -->
+<div id="bonus_roll-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content roll-modal overflow-hidden relative rounded">
+            <div class="modal-body">
+                <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                    <p class="text-tit font-extrabold text-base">롤</p>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+
+                <div class="w-full p-6 overflow-y-auto scrollbar h-auto sm:h-[640px]">
+                    <div>
+                        <h4 class="text-tit text-base font-extrabold">롤 포인트 게임</h4>
+                        <p class=text-xs>베팅을 한 플레이어는 매일 한 번의 롤 기회를 갖습니다.<b class="text-primary font-bold">(VIP3)</b></p>
+                    </div>
+
+                    <div class="my-5 bg-modaldark rounded p-2 py-10">
+                        <div class="relative flex justify-center">
+                            <div class="absolute left-0 top-0 w-full h-full flex items-center justify-center text-center overflow-hidden font-bold">
+                                <div class="w-16 mx-4">
+                                    <div class="scroll_box relative" style="top:80px">
+                                        <div class="num_box">
+                                            <span>1</span>
+                                            <span>2</span>
+                                            <span>3</span>
+                                            <span>4</span>
+                                            <span>5</span>
+                                            <span>6</span>
+                                            <span>7</span>
+                                            <span>8</span>
+                                            <span>9</span>
+                                            <span>0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-16 mx-4">
+                                    <div class="scroll_box type02 relative" style="top:160px">
+                                        <div class="num_box">
+                                            <span>1</span>
+                                            <span>2</span>
+                                            <span>3</span>
+                                            <span>4</span>
+                                            <span>5</span>
+                                            <span>6</span>
+                                            <span>7</span>
+                                            <span>8</span>
+                                            <span>9</span>
+                                            <span>0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-16 mx-4">
+                                    <div class="scroll_box type03 relative" style="top:0">
+                                        <div class="num_box">
+                                            <span>1</span>
+                                            <span>2</span>
+                                            <span>3</span>
+                                            <span>4</span>
+                                            <span>5</span>
+                                            <span>6</span>
+                                            <span>7</span>
+                                            <span>8</span>
+                                            <span>9</span>
+                                            <span>0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <img class="w-16 mx-4" src="/bcGame/dist/custom_img/bonus/egg.png" alt="">
+                            <img class="w-16 mx-4" src="/bcGame/dist/custom_img/bonus/egg.png" alt="">
+                            <img class="w-16 mx-4" src="/bcGame/dist/custom_img/bonus/egg.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn-green w-4/5 h-12 font-bold" disabled>롤</button>
+                    </div>
+                    <div class="flex items-center justify-between py-5 text-xs border-b border-slate-300 border-opacity-40">
+                        <p>카운트다운: 21:55:33</p>
+                        <p>남은번호: <span class="text-primary">0</span></p>
+                    </div>
+
+                    <div class="mt-6 text-tit text-xs">오늘의 보상: <span class="text-primary">50 BCD</span></div>
+
+                    <div class="py-4">
+                        <table class="table noline table-striped striped-dark rounded text-xs pad-bl">   
+                            <thead>
+                                <tr class="text-center">
+                                    <th class="whitespace-nowrap text-left">랭킹</th>
+                                    <th class="whitespace-nowrap">플레이어</th>
+                                    <th class="whitespace-nowrap">결과</th>
+                                    <th class="whitespace-nowrap text-right">보너스</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr>
+                                    <td>1</td>
+                                    <td class="text-tit font-bold">Orengenas</td>
+                                    <td>998</td>
+                                    <td class="text-right text-tit font-bold">20 BCD <img class="inline-flex w-5" src="/bcGame/dist/custom_img/coin/BCD.webp" alt=""></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="text-tit font-bold">Xhyaigvfnyb</td>
+                                    <td>997</td>
+                                    <td class="text-right text-tit font-bold">10 BCD <img class="inline-flex w-5" src="/bcGame/dist/custom_img/coin/BCD.webp" alt=""></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td class="text-tit font-bold">orignal007</td>
+                                    <td>997</td>
+                                    <td class="text-right text-tit font-bold">5 BCD <img class="inline-flex w-5" src="/bcGame/dist/custom_img/coin/BCD.webp" alt=""></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td class="text-tit font-bold">Ciko☘️</td>
+                                    <td>997</td>
+                                    <td class="text-right text-tit font-bold">2.5 BCD <img class="inline-flex w-5" src="/bcGame/dist/custom_img/coin/BCD.webp" alt=""></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td class="text-tit font-bold">✦𝐊𝐄𝐕𝐈𝐍✦</td>
+                                    <td>997</td>
+                                    <td class="text-right text-tit font-bold">2.5 BCD <img class="inline-flex w-5" src="/bcGame/dist/custom_img/coin/BCD.webp" alt=""></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td class="text-tit font-bold">infinite19</td>
+                                    <td>997</td>
+                                    <td class="text-right text-tit font-bold">2 BCD <img class="inline-flex w-5" src="/bcGame/dist/custom_img/coin/BCD.webp" alt=""></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td class="text-tit font-bold">Ldwckxpinyb</td>
+                                    <td>996</td>
+                                    <td class="text-right text-tit font-bold">2 BCD <img class="inline-flex w-5" src="/bcGame/dist/custom_img/coin/BCD.webp" alt=""></td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td class="text-tit font-bold">SøFìYâÑ</td>
+                                    <td>995</td>
+                                    <td class="text-right text-tit font-bold">2 BCD <img class="inline-flex w-5" src="/bcGame/dist/custom_img/coin/BCD.webp" alt=""></td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td class="text-tit font-bold">bigger117</td>
+                                    <td>995</td>
+                                    <td class="text-right text-tit font-bold">2 BCD <img class="inline-flex w-5" src="/bcGame/dist/custom_img/coin/BCD.webp" alt=""></td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td class="text-tit font-bold">Milky Gunter</td>
+                                    <td>995</td>
+                                    <td class="text-right text-tit font-bold">2 BCD <img class="inline-flex w-5" src="/bcGame/dist/custom_img/coin/BCD.webp" alt=""></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                    </div>
+
+
+                    <div>
+                        <h6 class="font-bold">롤 시간</h6>
+                        <p class="mt-1 text-xs">매일 UTC+0 02:00부터 02:10까지 시작; 보상은 나중에 분배됩니다.</p>
+                        <h6 class="mt-3 font-bold">롤 게임 방법</h6>
+                        <ul class="pl-4 list-decimal text-xs mt-1">
+                            <li>플랫폼 다른 통화와 금액을 보상으로 받습니다.</li>
+                            <li>베팅 플레이어는 (JB) 플레이어를 제외하고 상위 10개 롤 포인트를 기준으로 보상을 받을 기회를 얻을 수 있습니다.</li>
+                            <li>롤은 0에서 999 사이의 임의의 숫자입니다. 행운을 빕니다!</li>
+                            <li>다른 플레이어라면 같은 양을 굴리면 시간에 따라 순위가 결정됩니다.</li>
+                        </ul>
+                    </div>
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- BCD 레이크백 모달 -->
+<div id="bonus_bcd-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bcd-modal overflow-hidden relative rounded">
+            <!-- 기본 -->
+            <div class="modal-body">
+                <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                    <p class="text-tit font-extrabold text-base">BCD 레이크백</p>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+
+                <div class="w-full p-3 overflow-y-auto scrollbar h-[660px]">
+
+                    <div class="text-center pt-1 pb-5 bcd_bg relative">
+                        <img class="w-14 mx-auto" src="/bcGame/dist/custom_img/bonus/bcd.webp" alt="">
+                        <p class="mt-1">잠금해제 BCD</p>
+                        <div class="flex items-center justify-center gap-2 mt-2 w-1/2 h-11 mx-auto bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-40 rounded">
+                            <img class="w-6" src="/bcGame/dist/custom_img/coin/BCD.webp">
+                            <span class="text-primary text-xl font-bold">0.00</span>
+                        </div>
+                        <button type="button" class="btn-yellow h-11 w-48 mt-4 font-bold" disabled>수령</button>
+                        <div class="mt-2 text-xs">최소 수령: <span class="text-tit">5 BCD</pan></div>
+                    </div> 
+
+                    <div class="flex items-center justify-between mb-3 p-4 px-8 border border-slate-300 border-opacity-50 bg-backlight rounded">
+                        <div>
+                            <svg class="inline-flex w-3 h-3 fill-basic opacity-50"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Locked"></use></svg>
+                            잠금 BCD:
+                        </div>
+                        <p class="text-tit"><b class="text-lg">0</b> BCD</p>
+                    </div>
+
+                    <div class="py-2 text-center text-tit font-bold text-base">수령 방법</div>
+                    <div class="bg-back p-6">
+                        <p class="text-tit">잠긴금액 = 롤링금액 * 1% * <b>20%</b></p>
+                        <div class="mt-2">잠금 해제 가능한 최소 금액인 ₩3,286,490에 도달하려면 여전히 5 BCD. 정도 더 베팅해야 합니다. <button class="text-primary hover:underline" onclick="modalInHandle('bonus_bcd-modal','bcd_lakeback')">상세 보기</button></div>
+                        <div class="w-full h-[1px] my-4 bg-place opacity-50"></div>
+                        <div class="flex gap-3">
+                            <button class="btn-purple w-full h-11 font-extrabold">카지노로 가기</button>
+                            <button class="btn-green w-full h-11 font-extrabold">스포츠 가기</button>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <button class="btn-normal p-2 px-4 rounded" onclick="modalInHandle('bonus_bcd-modal','bcd_bonus_recode')">BCD 보너스 기록 <svg class="inline-flex w-3 h-3 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                    </div>
+                    
+
+                </div>
+            </div>
+
+            <!-- BCD 보너스 기록 -->
+            <div class="modal-body bcd_bonus_recode modal-in bg-stand rounded">
+                <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                    <div class="flex items-center gap-2">
+                        <button onclick="modalInHandle('bonus_bcd-modal','bcd_bonus_recode')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        <p class="text-tit font-extrabold text-base">BCD 보너스 기록</p>
+                    </div>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+                <div class="w-full p-3 overflow-y-auto scrollbar h-[660px]">
+                    <div class="flex flex-col justify-center text-center py-10">
+                        <img class="w-48 mx-auto" src="/bcGame/dist/custom_img/empty.webp">
+                        <div class="-mt-5 text-basic opacity-70">웁스! 아직 데이터가 없습니다!</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- BCD 레이크백 -->
+            <div class="modal-body bcd_lakeback modal-in bg-stand rounded">
+                <div class="relative flex items-center justify-between p-4 bg-modaldark">
+                    <div class="flex items-center gap-2">
+                        <button onclick="modalInHandle('bonus_bcd-modal','bcd_lakeback')"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        <p class="text-tit font-extrabold text-base">BCD 레이크백</p>
+                    </div>
+                    <button class="basic-hover ml-8" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+                <div class="w-full p-3 overflow-y-auto scrollbar h-[660px]">
+                    <div class="relative">
+                        <img src="/bcGame/dist/custom_img/bonus/bcd-1.webp" alt="">
+                        <a href="javascript:;" class="absolute left-11 bottom-1/3 text-white">컨트랙트 보기 <svg class="inline-flex w-4 h-4 fill-white"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_NewWindow"></use></svg></a>
+                    </div>
+
+                    <div class="accordian_list mt-6">
+                        <div class="accordian_item">
+                            <div class="title flex items-center justify-between bg-back shadow py-3 px-4 text-base text-tit font-bold cursor-pointer">
+                                BCD을(를) 잠금 해제하고 청구하는 방법은 무엇입니까?
+                                <svg class="arrow w-6 h-6 fill-basic opacity-50"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                            </div>
+                            <div class="summary hidden bg-backlight px-4 py-6 font-medium">
+                                <p>
+                                    <span class="text-tit">BCD 를 어떻게 잠금해제 하나요?</span><br/><br/>
+                                    잠긴 BCD는 예금 보너스 및 럭키 스핀과 같은 특정 보너스를 통해 얻습니다.<br/><br/>
+                                    BCD 잠금 해제는 쉽습니다! 본질적으로 레이크백과 동일하며 베팅을 통해 비례적으로 잠금 해제됩니다.
+                                </p>
+                                <div class="bg-primary bg-opacity-20 my-2 text-tit font-extrabold px-4 py-2 rounded">잠긴금액 = 롤링금액 * 1% * 20%</div>
+                                <p>
+                                    0 BCD를 모두 잠금 해제하려면 0.00 베팅이 필요합니다.<br/><br/>
+                                    <span class="text-tit">잠금 해제된 BCD를 청구하는 방법은 무엇입니까?</span><br/><br/>
+
+                                    베팅을 하면 <span class="text-primary">BC 스왑</span> 보물 상자가 잠금 해제된 로 채워집니다.<br/><br/>
+
+                                    보물 상자를 최소 5BCD로 채운 후 '청구'를 클릭하면 잠금 해제된 BCD이(가) 잔액으로 바로 전송됩니다.<br/><br/>
+
+                                    쉽죠?! 이제 BCD를 즉시 사용할 수 있습니다!
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordian_item mt-2">
+                            <div class="title flex items-center justify-between bg-back shadow py-3 px-4 text-base text-tit font-bold cursor-pointer">
+                                BCD 에 대하여
+                                <svg class="arrow w-6 h-6 fill-basic opacity-50"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                            </div>
+                            <div class="summary hidden bg-backlight px-4 py-6 font-medium">
+                                <p>
+                                    <span class="text-tit">BCD 를 다른 가상화폐로 환전할 수 있나요?</span><br/><br/>
+
+                                    전적으로! BCD를 <span class="text-primary">BC 스왑</span>로 언제든지 다른 통화로 교환할 수 있습니다.<br/><br/>
+
+                                    <span class="text-tit">BCD 의 특별한 점은 무엇인가요??</span><br/><br/>
+
+                                    볼트프로에 BCD를 저장하시면 최대 10%의 연간 수익률을 누릴 수 있습니다. BCD 수집을 즐기십시오!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
   <!-- 공통 모달 영역 : E -->
 
   

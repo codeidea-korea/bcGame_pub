@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <link href="/bcGame/dist/custom_img/stake_favicon.png" rel="shortcut icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <title>BC.GAME</title>
+    <!-- ** css 시작 ** -->
+    <link rel="stylesheet" href="/bcGame/dist/css/app.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <!-- 커스텀 css 추가 -->
+    <link rel="stylesheet" href="/bcGame/dist/custom_css/custom.css" />
+    <!-- ** css 끝 ** -->
+</head>
+
+<body class="bg-back">
+
+    <div class="flex relative">
+        <!--  ** 사이드 메뉴 시작 ** -->
+        <div class="sidebar"></div>
+        <!--  ** 사이드 메뉴 끝 ** -->
+
+        <!--  ** 메인 보드 시작 ** -->
+        <div class="content">
+            <!-- ** 페이지 로딩 ** -->
+            <div id="loadingContainer">
+                <svg width="25" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" fill="#3BC117" class="w-12 h-12">
+                    <circle cx="15" cy="15" r="15">
+                        <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                    <circle cx="60" cy="15" r="9" fill-opacity="0.3">
+                        <animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                    <circle cx="105" cy="15" r="15">
+                        <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                </svg>
+            </div>
+            <!-- ** 페이지 로딩 끝 ** -->
+            
+            <!-- ** 탑바 시작 ** -->
+            <!-- ** 탑바 끝 ** -->
+
+            <!-- ** 내용시작 ** -->
+            <div class="container_wrap">
+
+                <div class="bg-modaldark top_notice">
+                    <div class="container">
+                        <div class="slide_box h-10 overflow-hidden">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <div class="flex items-center gap-2 p-1 py-2">
+                                        <img class="w-6 h-6 rounded-full" src="/bcGame/dist/custom_img/profile_img.png" alt="">
+                                        <b class="text-tit cursor-pointer font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal" onclick="modalInHandle('profile_info-modal','basic')">Elinebpvmpyb</b>
+                                        <p class="font-medium"><b class="text-primary">1</b> 티켓을 얻었습니다</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="flex items-center gap-2 p-1 py-2">
+                                        <img class="w-6 h-6 rounded-full" src="/bcGame/dist/custom_img/profile_img.png" alt="">
+                                        <b class="text-tit cursor-pointer font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal" onclick="modalInHandle('profile_info-modal','basic')">Elinebpvmpyb</b>
+                                        <p class="font-medium"><b class="text-primary">1</b> 티켓을 얻었습니다</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="flex items-center gap-2 p-1 py-2">
+                                        <img class="w-6 h-6 rounded-full" src="/bcGame/dist/custom_img/profile_img.png" alt="">
+                                        <b class="text-tit cursor-pointer font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal" onclick="modalInHandle('profile_info-modal','basic')">Elinebpvmpyb</b>
+                                        <p class="font-medium"><b class="text-primary">1</b> 티켓을 얻었습니다</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="flex items-center gap-2 p-1 py-2">
+                                        <img class="w-6 h-6 rounded-full" src="/bcGame/dist/custom_img/profile_img.png" alt="">
+                                        <b class="text-tit cursor-pointer font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal" onclick="modalInHandle('profile_info-modal','basic')">Elinebpvmpyb</b>
+                                        <p class="font-medium"><b class="text-primary">1</b> 티켓을 얻었습니다</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="flex items-center gap-2 p-1 py-2">
+                                        <img class="w-6 h-6 rounded-full" src="/bcGame/dist/custom_img/profile_img.png" alt="">
+                                        <b class="text-tit cursor-pointer font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal" onclick="modalInHandle('profile_info-modal','basic')">Elinebpvmpyb</b>
+                                        <p class="font-medium"><b class="text-primary">1</b> 티켓을 얻었습니다</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="flex items-center gap-2 p-1 py-2">
+                                        <img class="w-6 h-6 rounded-full" src="/bcGame/dist/custom_img/profile_img.png" alt="">
+                                        <b class="text-tit cursor-pointer font-extrabold" data-tw-toggle="modal" data-tw-target="#profile_info-modal" onclick="modalInHandle('profile_info-modal','basic')">Elinebpvmpyb</b>
+                                        <p class="font-medium"><b class="text-primary">1</b> 티켓을 얻었습니다</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container md:!px-10 !px-0">
+                    <!-- 상단배너 -->
+                    <div class="raffle_visual pt-2 pb-10 md:pb-5 mx:px-10 px-5">
+                        <div class="flex items-center justify-between">
+                            <div>게임아이디 : <b class="text-tit">456415238652365</b></div>
+                            <a href="#playinfo" class="text-primary opacity-80">플레이방법?</a>
+                        </div>
+
+                        <div class="inner_box inline-block text-center md:ml-[6%] mt-12 md:mt-4 px-4 bg-black bg-opacity-30 rounded-xl backdrop-blur md:backdrop-none">
+                            <h3 class="text-3xl font-extrabold leading-[0.3] mb-5">슈퍼 럭키 추첨</h3>
+                            <p class="text-5xl font-extrabold">₩ 26,000,000</p>
+                            <div class="border-t border-slate-300 border-opacity-50 py-2 mt-1 text-white">
+                                <span class="text-xs">다음 추첨 시작</span>
+                                <b class="block text-2xl font-extrabold">05d:05h:27m:01s</b>
+                            </div>
+                            <div class="border-t border-slate-300 border-opacity-50 py-2">
+                                <a href="#playinfo" class="flex items-center justify-center btn-purple w-1/3 h-12 mx-auto font-extrabold">티켓 벌기</a>
+                                <div class="mt-2 text-xs">이번 라운드에 [113813]개의 티켓이 전송되었습니다.!</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-stand mt-4 p-4">
+                        <div class="bg-back text-center py-2 italic text-tit font-bold">복권 티켓을 얻는 방법</div>
+                        <div class="flex gap-4 md:flex-row flex-col mt-4">
+                            <div class="w-full md:w-1/2 flex items-center gap-4 h-32 raffle_item_bg px-4">
+                                <img class="h-full px-2 lg:px-4" src="/bcGame/dist/custom_img/bc/ticket.webp" alt="">
+                                <div class="text-base">
+                                    로그인 및 매일 <i class="font-bold text-yellow">₩ 130,000</i> 내기 :<br/>
+                                    <b class="text-tit">+ 1 티켓</b>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2 flex items-center gap-4 h-32 raffle_item_bg px-4">
+                                <img class="h-full px-2 lg:px-4" src="/bcGame/dist/custom_img/bc/ticket_more.webp" alt="">
+                                <div class="text-base">
+                                    모든 베팅 <i class="font-bold text-yellow">₩ 130,000</i><br/>
+                                    <b class="text-tit">+ 1 티켓</b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="w-40 h-12 mt-10 bg-backlight rounded text-tit font-bold"> 결과 </button>
+                    <div class="mt-3 bg-stand">
+                        <div class="py-2 px-4 flex items-center gap-2 border-b border-slate-300 border-opacity-30">
+                            <span>라운드</span>
+                            <button class="p-1 rounded bg-backlight"><svg class="w-3 h-3 fill-basic opacity-70 rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                            <div class="custom_select w-48">
+                                <button class="btn w-32 h-9 flex px-4 items-center justify-between border !border-slate-300 border-opacity-50 bg-white dark:bg-back !rounded-none">
+                                    <span class="text-tit">20231211120000</span>
+                                    <i><svg class="w-3.5 h-3.5 fill-title"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                </button>
+                                <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
+                                    <li class="py-2 on">20231211120000</li>
+                                    <li class="py-2">20231204120000</li>
+                                    <li class="py-2">20231127120000</li>
+                                </ul>
+                            </div>
+                            <button class="p-1 rounded bg-backlight"><svg class="w-3 h-3 fill-basic opacity-70"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                            <button class="p-1 rounded bg-backlight"><svg class="w-3 h-3 fill-basic opacity-70"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Final"></use></svg></button>
+                        </div>
+                        <div class="px-0 md:px-6 py-6">
+                            <div class="flex items-center md:flex-row flex-col justify-between">
+                                <div class="font-medium">추첨 시간: 2023. 12. 11. 오후 9:00:00</div>
+                                <div><img class="inline-flex w-7 mb-1" src="/bcGame/dist/custom_img/bc/tickets.png">이번 라운드의 총 참가 티켓 <b class="text-tit font-bold">406,906</b></div>
+                            </div>
+                            <div class="flex items-center justify-center gap-1 text-base font-bold text-tit">
+                                <svg class="w-2 h-2 fill-title"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Favorites1"></use></svg>
+                                당첨자 목록
+                                <svg class="w-2 h-2 fill-title"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Favorites1"></use></svg>
+                            </div>
+
+                            <div class="overflow-x-auto scrollbar_x">
+                                <table class="table mo_pad-s rounded table-border">
+                                    <colgroup>
+                                        <col width="10%">
+                                        <col width="30%">
+                                        <col width="35%">
+                                        <col width="*">
+                                    </colgroup>
+                                    <thead class="text-left md:text-sm text-xs">
+                                        <tr>
+                                            <th class="whitespace-nowrap">No.</th>
+                                            <th class="whitespace-nowrap">당첨자 아이디</th>
+                                            <th class="whitespace-nowrap">티켓 번호</th>
+                                            <th class="whitespace-nowrap text-right">상품/상금</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="font-bold text-left md:text-sm text-xs">
+                                        <tr>
+                                            <td class="text-left text-primary text-xs md:text-base">No. 1</td>
+                                            <td>
+                                                <img class="hidden md:inline-flex w-8 h-8 mr-1 rounded-full" src="/bcGame/dist/custom_img/profile_img.png"/>
+                                                <b class="text-tit font-extrabold cursor-pointer" data-tw-toggle="modal" data-tw-target="#profile_info-modal">NR Radadiya</b>
+                                            </td>
+                                            <td><div class="raffle_ticket flex items-center justify-center"><span class="text-sm md:text-xl font-bold text-white tracking-[0.3rem]">59326964</span></div></td>
+                                            <td class="text-right text-xs md:text-base text-primary">+ ₩6,071,620.61 </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left text-tit">No. 2</td>
+                                            <td>
+                                                <img class="hidden md:inline-flex w-8 h-8 mr-1 rounded-full" src="/bcGame/dist/custom_img/profile_img2.png"/>
+                                                <b class="text-tit font-extrabold cursor-pointer" data-tw-toggle="modal" data-tw-target="#profile_info-modal">mmxxxx</b>
+                                            </td>
+                                            <td><div class="raffle_ticket flex items-center justify-center"><span class="text-sm md:text-xl font-bold text-white tracking-[0.3rem]">65093860</span></div></td>
+                                            <td class="text-right text-primary">+ ₩ 4,616,141</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left text-tit">No. 3</td>
+                                            <td>
+                                                <img class="hidden md:inline-flex w-8 h-8 mr-1 rounded-full" src="/bcGame/dist/custom_img/profile_img3.png"/>
+                                                <b class="text-tit font-extrabold cursor-pointer" data-tw-toggle="modal" data-tw-target="#profile_info-modal">mmxxxx</b>
+                                            </td>
+                                            <td><div class="raffle_ticket flex items-center justify-center"><span class="text-sm md:text-xl font-bold text-white tracking-[0.3rem]">22925058</span></div></td>
+                                            <td class="text-right text-primary">+ ₩ 3,116,141</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left text-tit">No. 4</td>
+                                            <td>
+                                                <img class="hidden md:inline-flex w-8 h-8 mr-1 rounded-full" src="/bcGame/dist/custom_img/profile_img3.png"/>
+                                                <b class="text-tit font-extrabold cursor-pointer" data-tw-toggle="modal" data-tw-target="#profile_info-modal">Mardini</b>
+                                            </td>
+                                            <td><div class="raffle_ticket flex items-center justify-center"><span class="text-sm md:text-xl font-bold text-white tracking-[0.3rem]">32820336</span></div></td>
+                                            <td class="text-right text-primary">+ ₩ 1,980,800</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="flex gap-2 items-center justify-end mt-4">
+                                    <p class="text-xs">총 1</p>
+                                    <div class="flex gap-0 text-base px-4 py-1 bg-modaldark rounded font-medium">
+                                        <button class="w-6 h-6 basic-hover active font-extrabold">1</button>
+                                        <button class="w-6 h-6 basic-hover">2</button>
+                                        <button class="w-6 h-6 basic-hover">3</button>
+                                    </div>
+                                    <div class="flex gap-1">
+                                        <button class="btn-normal w-8 h-8 basic-hover rounded"><svg class="w-4 h-4 mx-auto rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                        <button class="btn-normal w-8 h-8 basic-hover rounded"><svg class="w-4 h-4 mx-auto"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div id="playinfo" class="accordian_list mt-6 bg-stand px-5">
+
+                        <div class="accordian_item on">
+                            <div class="title flex items-center justify-between py-4 text-base text-tit font-bold cursor-pointer">
+                                추첨 규칙
+                                <svg class="arrow w-6 h-6 fill-basic opacity-50"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                            </div>
+                            <div class="summary py-6 font-medium border-t border-slate-300">
+                                <p class="text-tit font-bold ">참가 방법:</p>
+                                <ul class="list-disc pl-4 mt-1">
+                                    <li>매일 로그인하고 $100를 베팅하여 티켓 1장을 받으세요. 이 조건에서 일주일에 최대 7장의 티켓을 얻을 수 있습니다.</li>
+                                    <li class="mt-1">미화 1000달러를 베팅할 때마다 추가 티켓 1장을 받게 됩니다. 베팅 금액에 따라 얻을 수 있는 티켓 수가 증가합니다.</li>
+                                    <li class="mt-1">모든 항목은 항목 번호와 관련됩니다.</li>
+                                    <li class="mt-1">참가 번호는 같은 페이지에서 찾을 수 있습니다.</li>
+                                    <li class="mt-1">1인당 최대 누적 티켓은 주당 최대 100매까지 가능합니다.</li>
+                                </ul>
+
+                                <p class="mt-8 text-tit font-bold ">주간 추첨:</p>
+                                <ul class="list-disc pl-4 mt-1">
+                                    <li>주간 추첨은 매주 월요일 12:00:00 UTC에 추첨됩니다. 당첨자는 같은 페이지에 발표됩니다.</li>
+                                </ul>
+
+                                <p class="mt-8 text-tit font-bold ">이용 약관:</p>
+                                <ul class="list-disc pl-4 mt-1">
+                                    <li>BC.GAME에 계정이 있어야 합니다.</li>
+                                    <li class="mt-1">주간 추첨에는 BCL 및 JB 사용을 제외한 "카지노" 및 "스포츠"의 모든 유형의 베팅이 포함됩니다.</li>
+                                    <li class="mt-1">주간에는 BCL 및 JB 사용을 기록하는 "카지노" 및 "스포츠"의 모든 유형의 수익이 포함됩니다.</li>
+                                    <li class="mt-1">참가자가 사기, 허위 진술, 해킹 또는 착취에 연루된 것으로 밝혀지면 참가가 무효로 선언됩니다.</li>
+                                    <li class="mt-1">BC.GAME은 주간 복권 보상을 받는 조건으로 추가 KYC/AML 확인을 수행할 권리를 보유합니다.</li>
+                                </ul>
+
+                                <p class="mt-8 text-tit font-bold ">당첨금 정보:</p>
+                                <table class="table mo_pad-s noline">
+                                    <colgroup>
+                                        <col width="50%">
+                                        <col width="50%">
+                                    </colgroup>
+                                    <thead class="text-left md:text-sm text-xs">
+                                        <tr>
+                                            <th class="whitespace-nowrap">결과</th>
+                                            <th class="whitespace-nowrap">상품/상금</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-left md:text-sm text-xs">
+                                        <tr class="text-sm md:text-base font-bold">
+                                            <td><i class="text-primary">No.1</i></td>
+                                            <td class="text-primary">₩ 6,594,400.38</td>
+                                        </tr>
+                                        <tr>
+                                            <td>No.2</td>
+                                            <td class="text-primary">₩ 4,616,080.27</td>
+                                        </tr>
+                                        <tr>
+                                            <td>No.3</td>
+                                            <td class="text-primary">₩ 4,616,080.27</td>
+                                        </tr>
+                                        <tr>
+                                            <td>No.4</td>
+                                            <td class="text-primary">₩ 2,637,760.15</td>
+                                        </tr>
+                                        <tr>
+                                            <td>No.5</td>
+                                            <td class="text-primary">₩ 1,978,320.11</td>
+                                        </tr>
+                                        <tr>
+                                            <td>No.6</td>
+                                            <td class="text-primary">₩ 1,318,880.08</td>
+                                        </tr>
+                                        <tr>
+                                            <td>No.7</td>
+                                            <td class="text-primary">₩ 659,440.04</td>
+                                        </tr>
+                                        <tr>
+                                            <td>No.8</td>
+                                            <td class="text-primary">₩ 659,440.04</td>
+                                        </tr>
+                                        <tr>
+                                            <td>No.9</td>
+                                            <td class="text-primary">₩ 659,440.04</td>
+                                        </tr>
+                                        <tr>
+                                            <td>No.10</td>
+                                            <td class="text-primary">₩ 659,440.04</td>
+                                        </tr>
+                                        <tr>
+                                            <td>No.11 ~ No.20</td>
+                                            <td class="text-primary">₩ 131,888.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td>No.21 ~ No.50</td>
+                                            <td class="text-primary">₩ 65,944.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>No.51 ~ No.150</td>
+                                            <td class="text-primary">₩ 26,377.60</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="my-10 bg-stand py-8 px-4 md:px-10">
+                        <div class="text-tit text-center text-lg md:text-4xl font-extrabold">자주 묻는 질문</div>
+
+                        <div class="accordial_list mt-2">
+                            <div class="accordian_item border-b border-slate-300">
+                                <div class="title flex items-center justify-between py-5 text-sm md:text-base text-tit font-bold cursor-pointer">
+                                    "티켓"을 얻는 방법? 얼마나 많은 티켓을 모을 수 있나요?
+                                    <button class="shrink-0 plus_btn md:w-8 md:h-8 w-5 h-5 rounded-full">
+                                        <img class="off w-1/2 mx-auto" src="/bcGame/dist/custom_img/bc/plus.webp" alt="">
+                                        <img class="on w-1/2 mx-auto" src="/bcGame/dist/custom_img/bc/close.webp" alt="">
+                                    </button>
+                                </div>
+                                <div class="summary hidden pt-3 pb-5 font-medium md:text-sm text-xs">
+                                    <ul class="list-disc ml-4">
+                                        <li>매일 로그인하고 같은 날에 $100를 베팅하면 티켓 1장, 주당 최대 7장의 티켓을 얻을 수 있습니다.</li>
+                                        <li class="mt-2">$1,000를 베팅할 때마다 추가 티켓 1장을 얻게 됩니다. 베팅이 많을수록 티켓이 많아집니다.</li>
+                                        <li class="mt-2">1인당 최대 티켓 수는 일주일에 최대 100매까지 가능합니다.</li>
+                                        <li class="mt-2">티켓은 10분마다 갱신되며 '내 티켓' 섹션에서 확인하세요.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="accordian_item border-b border-slate-300">
+                                <div class="title flex items-center justify-between py-5 text-sm md:text-base text-tit font-bold cursor-pointer">
+                                    당첨자 발표는 언제?
+                                    <button class="shrink-0 plus_btn md:w-8 md:h-8 w-5 h-5 rounded-full">
+                                        <img class="off w-1/2 mx-auto" src="/bcGame/dist/custom_img/bc/plus.webp" alt="">
+                                        <img class="on w-1/2 mx-auto" src="/bcGame/dist/custom_img/bc/close.webp" alt="">
+                                    </button>
+                                </div>
+                                <div class="summary hidden pt-3 pb-5 font-medium md:text-sm text-xs">
+                                    <ul class="list-disc ml-4">
+                                        <li>당첨자는 매주 월요일 12:00:00 UTC에 발표됩니다. 당첨자 명단은 같은 페이지에서 확인하실 수 있습니다.</li>
+                                        <li class="mt-2">추첨 보상은 48시간 이내에 BC.GAME 계정에 적립됩니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="accordian_item border-b border-slate-300">
+                                <div class="title flex items-center justify-between py-5 text-sm md:text-base text-tit font-bold cursor-pointer">
+                                    주간 추첨에서 여러 보상을 받을 수 있나요?
+                                    <button class="shrink-0 plus_btn md:w-8 md:h-8 w-5 h-5 rounded-full">
+                                        <img class="off w-1/2 mx-auto" src="/bcGame/dist/custom_img/bc/plus.webp" alt="">
+                                        <img class="on w-1/2 mx-auto" src="/bcGame/dist/custom_img/bc/close.webp" alt="">
+                                    </button>
+                                </div>
+                                <div class="summary hidden pt-3 pb-5 font-medium md:text-sm text-xs">
+                                    <ul class="list-disc ml-4">
+                                        <li>불행하게도. One(1) 사용자는 일주일에 한(1) 번 당첨될 수 있습니다. 당첨 확률을 높이려면 더 많은 티켓을 모으세요.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="accordian_item border-b border-slate-300">
+                                <div class="title flex items-center justify-between py-5 text-sm md:text-base text-tit font-bold cursor-pointer">
+                                    "Old Ticket"으로 다음 추첨에 참여할 수 있습니까?
+                                    <button class="shrink-0 plus_btn md:w-8 md:h-8 w-5 h-5 rounded-full">
+                                        <img class="off w-1/2 mx-auto" src="/bcGame/dist/custom_img/bc/plus.webp" alt="">
+                                        <img class="on w-1/2 mx-auto" src="/bcGame/dist/custom_img/bc/close.webp" alt="">
+                                    </button>
+                                </div>
+                                <div class="summary hidden pt-3 pb-5 font-medium md:text-sm text-xs">
+                                    <ul class="list-disc ml-4">
+                                        <li>불행하게도. 사용자는 새로운 주간 추첨에 참여하기 위해 새로운 티켓을 다시 축적해야 합니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="accordian_item border-b border-slate-300">
+                                <div class="title flex items-center justify-between py-5 text-sm md:text-base text-tit font-bold cursor-pointer">
+                                    기간에 대해 자세히 알 수 있습니까?
+                                    <button class="shrink-0 plus_btn md:w-8 md:h-8 w-5 h-5 rounded-full">
+                                        <img class="off w-1/2 mx-auto" src="/bcGame/dist/custom_img/bc/plus.webp" alt="">
+                                        <img class="on w-1/2 mx-auto" src="/bcGame/dist/custom_img/bc/close.webp" alt="">
+                                    </button>
+                                </div>
+                                <div class="summary hidden pt-3 pb-5 font-medium md:text-sm text-xs">
+                                    <ul class="list-disc ml-4">
+                                        <li>"매일 로그인 및 내기 $100"의 경우 사용자는 티켓을 얻기 위해 00:00 UTC ~ 23:59 UTC 사이에 요구 사항을 완료해야 합니다.</li>
+                                        <li class="mt-2">"추가 티켓을 얻기 위해 $1,000를 베팅할 때마다"에는 시간 제한이 없습니다.</li>
+                                        <li class="mt-2">주간 추첨은 매주 월요일 12:00:00 UTC부터 일요일 11:59:59 UTC까지 시작됩니다. (한 주 동안 누적된 모든 티켓은 다음 주에 집계되지 않습니다.)</li>
+                                        <li class="mt-2">행운의 당첨자 명단은 매주 월요일 12:00:00 UTC까지 같은 페이지에 업데이트되며, 보상은 48시간 이내에 지급됩니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                   
+
+
+                </div>
+
+
+
+
+                
+                <!-- ** 푸터 시작 ** -->
+                <!-- ** 푸터 끝 ** -->
+            
+            </div>
+            <!-- ** 내용 끝 ** -->
+
+        </div>
+        <!--  ** 메인 보드 끝 ** -->
+
+        <!--  ** 오른쪽 보드 시작 ** -->
+        <div class="right-sidebar "></div>
+        <!--  ** 오른쪽 보드 끝 ** -->
+
+
+        <!-- 공통 알림 영역 : S -->
+
+        <!-- 공통 알림 영역 : E -->
+
+
+        <!--  ** 모달영역 시작 ** -->
+
+        <!--  ** 모달영역 끝 ** -->
+
+    </div>
+    <!-- ** JS 시작 ** -->
+    <script
+    src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="/bcGame/dist/custom_js/custom.js"></script>
+    <script src="/bcGame/dist/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- 필수 jquery library -->
+    <script src="/bcGame/dist/js/jquery-1.12.4.js"></script>
+    <script src="/bcGame/dist/js/jquery-ui.js"></script>
+
+    <script>
+        var swiper = new Swiper(".top_notice .slide_box", {
+             direction: "vertical",
+            slidesPerView: 1,
+            autoplay:{
+                delay: 1000,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+
+
+  
+
+
+
+
+</body>
+
+</html>
