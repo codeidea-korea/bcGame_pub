@@ -272,8 +272,8 @@ button:disabled {opacity:.7 !important; }
 
 .side-nav .menu_list { height:46px; font-size:15px;}
 .side-nav .menu_list span {white-space:nowrap;}
-.side-nav .menu_list.quest {background:linear-gradient(26.79deg,rgba(109,43,255,.480402) 1.86%,rgba(109,43,255,.04) 85.25%,rgba(109,43,255,.04) 85.25%),rgba(216,216,216,.05); }
-.side-nav .menu_list.spin {background:linear-gradient(19.92deg,rgba(175,13,132,.511772) -6.45%,rgba(175,13,132,.04) 78.77%),rgba(216,216,216,.05)}
+.menu_list.quest {background:linear-gradient(26.79deg,rgba(109,43,255,.480402) 1.86%,rgba(109,43,255,.04) 85.25%,rgba(109,43,255,.04) 85.25%),rgba(216,216,216,.05); }
+.menu_list.spin {background:linear-gradient(19.92deg,rgba(175,13,132,.511772) -6.45%,rgba(175,13,132,.04) 78.77%),rgba(216,216,216,.05)}
 .dark .side-nav .menu_list.quest,
 .dark .side-nav .menu_list.spin {color:#fff;}
 .side-nav .menu_list.quest,
@@ -292,10 +292,10 @@ button:disabled {opacity:.7 !important; }
 .dark .side-nav .menu_list .vip_text {color:#fff;}
 .side-nav .menu_list .vip_text {color:#000; }
 
-.side-nav .menu_list.spin .spin-anim {position:relative; }
-.side-nav .menu_list.spin .spin-anim .img-spinbg {position: absolute; left: 50%; width: 1.9375rem; height: 1.9375rem; z-index: 1; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translate(-50%); top: 6%; opacity: 0 }
-.side-nav .menu_list.spin .spin-anim .img-turntable {width:2rem; height:2rem; animation:rotate 2s infinite linear; }
-.side-nav .menu_list.spin .spin-anim .img-pointer {position: absolute; top: -.375rem; left: 49%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translate(-50%); width: 1.125rem; height: auto; z-index: 3 }
+.menu_list.spin .spin-anim {position:relative; }
+.menu_list.spin .spin-anim .img-spinbg {position: absolute; left: 50%; width: 1.9375rem; height: 1.9375rem; z-index: 1; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translate(-50%); top: 6%; opacity: 0 }
+.menu_list.spin .spin-anim .img-turntable {width:2rem; height:2rem; animation:rotate 2s infinite linear; }
+.menu_list.spin .spin-anim .img-pointer {position: absolute; top: -.375rem; left: 49%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translate(-50%); width: 1.125rem; height: auto; z-index: 3 }
 @keyframes rotate {
     0% { -webkit-transform: rotate(0);-ms-transform: rotate(0);transform: rotate(0)}
     to { -webkit-transform: rotate(360deg);-ms-transform: rotate(360deg);transform: rotate(360deg)}
@@ -521,6 +521,8 @@ button:disabled {opacity:.7 !important; }
 .dark .mo_quick_menu .wallet_mo_btn {border-color:#1C1E22; background-color:#373C48;}
 .mo_quick_menu .wallet_mo_btn {margin-top:-24px; border:5px solid #ffffff; background-color:#eaecf3; }
 
+.mo_quick_menu .chat-dot {position: absolute; right: 18px; top: 6px; z-index: 1; width: .625rem; height: .625rem; border-radius: 50%; background-color: var(--primary-color)}
+
 @media all and (max-width:767px){
     .mo_quick_menu {display:block; }
 }
@@ -568,12 +570,16 @@ button:disabled {opacity:.7 !important; }
 .mo_menu_list .menu_wrap .menu_depth {background-color:#E9EBF2; }
 .mo_menu_list .menu_wrap .menu_depth .menu_list.active span {font-weight:800; }
 
+/* 모바일 계정 */
+.mo_profile_list {z-index:49; position:fixed; left:0; top:100%; width:100%; height:calc(100% - 106px); background-color:var(--background-color); transition:all 0.3s;   }
+.mo_profile_list.on {top:50px;}
+
+
+
 /* 모바일 카지노 검색 */
 .mo_casino_search_area {z-index:49; position:fixed; left:0; top:100%; width:100%; height:calc(100% - 106px); background-color:var(--background-color); transition:all 0.3s;  }
 .mo_casino_search_area.on {top:50px; }
 
-@media all and (max-width:767px){
-}
 
 
 /*

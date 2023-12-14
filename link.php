@@ -7319,7 +7319,7 @@ echo txtRecord('./@record/');
             <div class="modal-body relative">
 
                 <div class="relative flex items-center justify-between p-4 bg-modaldark rounded-t">
-                    <p class="text-tit font-extrabold text-base">친구 추천하기</p>
+                    <p class="text-tit font-extrabold text-base">퀘스트허브</p>
                     
                     <button class="basic-hover px-2 ml-4" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
                 </div>

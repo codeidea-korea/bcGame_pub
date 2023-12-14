@@ -285,6 +285,7 @@
 .vip-cont .hover_box > div {display:none; }
 .vip-cont .hover_box:hover > div {display:block; }
 
+.vip-process.primary > div {background:var(--primary-color) !important; }
 
 .vip_grade {padding:1px; background:linear-gradient(180deg,#798DA4 0%,#627C9B 100%); }
 .dark .vip_grade > div {background:linear-gradient(82.85deg,#475565 -.8%,#6F7F93 103.54%); }

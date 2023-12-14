@@ -307,7 +307,23 @@ const topbarHandle = ()=>{
         if(!$(this).hasClass('active')){
             $(this).siblings('.home').addClass('active')
         }
+
+        $('.mo_profile_list').removeClass('on')
     })
+
+    $('.mo_quick_menu li.profile').on('click',function(){
+        $(this).toggleClass('active').siblings().removeClass('active')
+        $('.mo_profile_list').toggleClass('on')
+        $('body').toggleClass('overflow-hidden')
+
+        if(!$(this).hasClass('active')){
+            $(this).siblings('.home').addClass('active')
+        }
+
+        $('.mo_menu_list').removeClass('on')
+        $('.mo_top_menu').removeClass('active')
+    })
+
 
 
     // 화폐
