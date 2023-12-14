@@ -27,7 +27,7 @@
         <!--  ** 사이드 메뉴 끝 ** -->
 
         <!--  ** 메인 보드 시작 ** -->
-        <div class="content trading">
+        <div class="content trading motop_open">
             <!-- ** 페이지 로딩 ** -->
             <div id="loadingContainer">
                 <svg width="25" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" fill="#3BC117" class="w-12 h-12">
@@ -93,6 +93,11 @@
     <script src="/bcGame/dist/js/jquery-1.12.4.js"></script>
     <script src="/bcGame/dist/js/jquery-ui.js"></script>
 
+    <script>
+        $(window).on('load',function(){
+            $('.mo_top_menu .trading').addClass('active');
+        })
+    </script>
 
   
 

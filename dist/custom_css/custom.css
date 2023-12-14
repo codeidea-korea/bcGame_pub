@@ -76,6 +76,9 @@
 .dark .form-control.type02 {background-color:#222328; border-color:#2d3035; }
 .form-control.type02 {background-color:#fff; border:1px solid #e9eaf2; }
 
+.dark .form-control.type03 {border-color:#67707B; }
+.form-control.type03 {background-color:transparent; border:1px solid #98A7B5; }
+
 .dark .form-control {background-color: var(--standard-color);}
 .form-control {box-shadow:none; background-color: var(--background-color); border:0 none; color:var(--title-color); }
 

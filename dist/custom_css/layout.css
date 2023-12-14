@@ -161,7 +161,8 @@ button:disabled {opacity:.7 !important; }
         탑바
 #=========================================#
 */
-.dark .top-bar ,.dark .top-bar .container{background-color: var(--background-color);}
+.dark .top-bar ,
+.dark .top-bar .container{background-color: var(--background-color);}
 .top-bar .container {background-color: #fff;}
 .top-bar {z-index:90; position:sticky; top:1px; width:100%; margin-top:-1px; background-color: #FFF; transition:width 0.3s; }
 .top-bar:before {
@@ -191,15 +192,15 @@ button:disabled {opacity:.7 !important; }
     .top-bar .container {justify-content:flex-end; }
     .top-bar .left {display:none; }
 }
-@media all and (max-width:640px){
-    .top-bar .container {justify-content:space-between; }
+@media all and (max-width:767px){
+    .top-bar {height:50px; }
+    .top-bar .container {justify-content:space-between; padding-left:0px; padding-right:0px; }
     .top-bar .mo_left {display:block; }
     .top-bar .chat_btn,
     .top-bar .profile_btn,
     .top-bar .lang_btn,
     .top-bar .cash_btn {display:none; }
     .top-login.top-bar .notice_btn {display:none; }
-    .top-login.top-bar .lang_btn {display:block; }
 }
 
 @media all and (max-width:1500px){
@@ -240,7 +241,6 @@ button:disabled {opacity:.7 !important; }
 @media all and (max-width:1400px){
     .casino .top-bar .casino_search {display:none;}
 }
-
 
 
 /*
@@ -400,8 +400,8 @@ button:disabled {opacity:.7 !important; }
 @media all and (max-width:640px){
     .content {margin-left:0; }
     .content.fold {margin-left:0; }
-    .container {padding-left:15px; padding-right:15px; }
-    .container2 {padding-left:15px; padding-right:15px; }
+    .container {padding-left:10px; padding-right:10px; }
+    .container2 {padding-left:10px; padding-right:10px; }
 }
 
 
@@ -504,11 +504,77 @@ button:disabled {opacity:.7 !important; }
 .right-area .ranking_wrap {position:absolute; left:3%; bottom:calc(100% + 8px); width:94%; }
 
 
+@media all and (max-width:767px){
+    .right-area {right:-100%; width:100%; }
+}
+
 /*
 #=========================================#
         모바일 메뉴 
 #=========================================#
 */
+.dark .mo_quick_menu {background-color:#1C1E22; }
+.mo_quick_menu {z-index:50; position:fixed; left:0; bottom:0; display:none; width:100%; height:56px; background-color:#FFFFFF; }
+.mo_quick_menu li.active svg {fill:var(--title-color); }
+.mo_quick_menu li.active a {color:var(--title-color); }
+
+.dark .mo_quick_menu .wallet_mo_btn {border-color:#1C1E22; background-color:#373C48;}
+.mo_quick_menu .wallet_mo_btn {margin-top:-24px; border:5px solid #ffffff; background-color:#eaecf3; }
+
+@media all and (max-width:767px){
+    .mo_quick_menu {display:block; }
+}
+
+
+.dark .mo_top_menu {background-color:#24262B;}
+.mo_top_menu {z-index:48; position:sticky; left:0; top:50px; overflow-x:auto; display:none; width:100%; padding:10px 15px; background-color:#F6F7FA;}
+.mo_top_menu::-webkit-scrollbar {width:0; height:0; }
+.dark .mo_top_menu li.active a {background-color:#32343B ;}
+.mo_top_menu li.active a {background-color:#EAECF3 ; border-radius:20px; }
+.mo_top_menu svg {display:inline-flex; }
+
+
+@media all and (max-width:767px){
+    .mo_top_menu.active {display:block; }
+    .motop_open .mo_top_menu {display:block; }
+}
+
+/* 모바일 더보기 메뉴 */
+.mo_menu_list {z-index:47; position:fixed; left:0; top:100%; width:100%; height:calc(100% - 162px); background-color:var(--background-color); transition:all 0.3s;  }
+.mo_menu_list.on {top:106px; }
+
+.casino_side .casino_menu_box {display:block; }
+.casino_menu_box {display:none; }
+
+
+.dark .mo_menu_list .menu_list.open {background-color: #3D4049; color:#fff; }
+.dark .mo_menu_list .menu_list.open svg {fill:#fff; }
+.mo_menu_list .menu_list.open {background-color: #E9EBF2; color:#000; border-bottom-left-radius: 0; border-bottom-right-radius: 0;}
+.mo_menu_list .menu_list.open svg {fill:#000; }
+.mo_menu_list .menu_list i svg { transition:transform 0.5s;}
+.mo_menu_list .menu_list.open i svg {transform:rotate(90deg); }
+
+.mo_menu_list .menu_list { height:44px; font-size:14px; color:var(--title-color); }
+.mo_menu_list .menu_list span {white-space:nowrap;}
+.dark .mo_menu_list .menu_list.active { background:#2D3035 !important; color:#fff !important; }
+.dark .mo_menu_list .menu_list svg { fill:#98A7B5; }
+.mo_menu_list .menu_list.active,
+.mo_menu_list .menu_list svg { fill:#9FA5AC; }
+.dark .mo_menu_list .menu_list .vip_text {color:#fff;}
+.mo_menu_list .menu_list .vip_text {color:#000; }
+
+.dark .mo_menu_list .menu_wrap .menu_depth,
+.dark .mo_menu_list .menu_wrap .menu_depth .menu_list {background-color: #3D4049;}
+.mo_menu_list .menu_wrap .menu_depth {background-color:#E9EBF2; }
+.mo_menu_list .menu_wrap .menu_depth .menu_list.active span {font-weight:800; }
+
+/* 모바일 카지노 검색 */
+.mo_casino_search_area {z-index:49; position:fixed; left:0; top:100%; width:100%; height:calc(100% - 106px); background-color:var(--background-color); transition:all 0.3s;  }
+.mo_casino_search_area.on {top:50px; }
+
+@media all and (max-width:767px){
+}
+
 
 /*
 #=========================================#

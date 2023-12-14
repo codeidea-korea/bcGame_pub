@@ -22,7 +22,7 @@
 
     <div class="flex relative">
         <!--  ** 사이드 메뉴 시작 ** -->
-        <div class="sidebar"></div>
+        <div class="sidebar casino_side"></div>
         <!--  ** 사이드 메뉴 끝 ** -->
 
         <!--  ** 메인 보드 시작 ** -->
@@ -396,7 +396,11 @@
     <!-- 필수 jquery library -->
     <script src="/bcGame/dist/js/jquery-1.12.4.js"></script>
     <script src="/bcGame/dist/js/jquery-ui.js"></script>
-
+    <script>
+        $(window).on('load',function(){
+            $('.mo_top_menu .casino').addClass('active');
+        })
+    </script>
    <script>
     
         // 추천게임 슬라이드

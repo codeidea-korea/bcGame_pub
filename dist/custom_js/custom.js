@@ -285,6 +285,30 @@ const topbarHandle = ()=>{
         $('.top-bar .casino_search .close_btn').removeClass('on')
     })
 
+    // 모바일 Search
+    $('.casino_main .casino_search input').on('focus',function(){
+        $('.mo_casino_search_area').addClass('on')
+        $('.mo_casino_search_area .close_btn').addClass('on')
+        $('.mo_casino_search_area .casino_search input').focus();
+        
+    })
+    $('.mo_casino_search_area .close_btn').on('click',function(){
+        $('.mo_casino_search_area').removeClass('on')
+        $('.mo_casino_search_area .close_btn').removeClass('on')
+    })
+
+    // 모바일 퀵메뉴
+    $('.mo_quick_menu li.more').on('click',function(){
+        $(this).toggleClass('active').siblings().removeClass('active')
+        $('.mo_menu_list').toggleClass('on')
+        $('.mo_top_menu').toggleClass('active')
+        $('body').toggleClass('overflow-hidden')
+
+        if(!$(this).hasClass('active')){
+            $(this).siblings('.home').addClass('active')
+        }
+    })
+
 
     // 화폐
     const walletList = document.querySelectorAll('.wallet_list > div')
@@ -461,8 +485,9 @@ const topbarHandle = ()=>{
 
         $(this).next('.summary').slideToggle();
         $(this).parent().siblings().find('.summary').slideUp();
-
     })
+
+   
 
 
 }
