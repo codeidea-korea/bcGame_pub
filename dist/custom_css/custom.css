@@ -146,10 +146,16 @@
     .modal .modal-dialog.modal-2lg {
         width:600px;
     }
+    .modal .modal-dialog.modal-base {
+        width:600px;
+    }
 }
 @media (min-width:1024px){
     .modal .modal-dialog.modal-2lg {
         width:800px;
+    }
+    .modal .modal-dialog.modal-base {
+        width:680px;
     }
 }
 @media (max-width:640px){
@@ -829,6 +835,8 @@
 .dark .affiliate_visual {background:url('../custom_img/affiliate/banner_bg.png') no-repeat center center / cover; }
 .affiliate_visual {height:360px; background:url('../custom_img/affiliate/banner_bg_w.png') no-repeat center center / cover; }
 
+.dark .affiliate_bg1 {background:url('../custom_img/affiliate/circle.png') no-repeat center center / auto 100%; }
+.affiliate_bg1 {background:url('../custom_img/affiliate/circle_w.png') no-repeat center center / auto 100%; }
 
 @media all and (max-width:767px){
     .affiliate_visual {height:auto; background:url('../custom_img/affiliate/bg_m.png') no-repeat center center / cover !important; }
@@ -836,4 +844,21 @@
 
 
 
+/* 커미션 모달 */
 
+.comission_modal .bg1 {background:var(--background-color) url('../custom_img/affiliate/wager_1.png') no-repeat 96% 0% / auto 100%; }
+.comission_modal .bg2 {background:var(--background-color) url('../custom_img/affiliate/wager_2.png') no-repeat 96% 0% / auto 100%; }
+.comission_modal .bg3 {background:var(--background-color) url('../custom_img/affiliate/wager_3.png') no-repeat 96% 0% / auto 100%; }
+
+.dark .referral_rule_modal .bg1 {background:url('../custom_img/affiliate/rule_left.png') no-repeat right center / auto 100%; }
+.referral_rule_modal .bg1 {background:url('../custom_img/affiliate/rule_left_w.png') no-repeat right center / auto 100%; }
+.dark .referral_rule_modal .bg2 {background:url('../custom_img/affiliate/rule_center.png') no-repeat right center / auto 100%; }
+.referral_rule_modal .bg2 {background:url('../custom_img/affiliate/rule_center_w.png') no-repeat right center / auto 100%; }
+.dark .referral_rule_modal .bg3 {background:url('../custom_img/affiliate/rule_right.png') no-repeat right center / auto 100%; }
+.referral_rule_modal .bg3 {background:url('../custom_img/affiliate/rule_right_w.png') no-repeat right center / auto 100%; }
+
+@media all and (max-width:767px){
+    .referral_rule_modal .bg1 {background:var(--background-color) url('../custom_img/affiliate/rule_left_m.png') no-repeat right top / auto 80% !important; }
+    .referral_rule_modal .bg2 {background:var(--background-color) url('../custom_img/affiliate/rule_center_m.png') no-repeat right top / auto 80% !important; }
+    .referral_rule_modal .bg3 {background:var(--background-color) url('../custom_img/affiliate/rule_right_m.png') no-repeat right top / auto 80% !important; }
+}

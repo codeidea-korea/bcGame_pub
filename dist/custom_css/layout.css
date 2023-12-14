@@ -20,6 +20,7 @@ button:focus {box-shadow:none !important; }
 #=========================================#
 */
 .bg-tit {background-color: var(--title-color);}
+.bg-sub {background-color: var(--sub-text-color);}
 .bg-back {background-color: var(--background-color);}
 .bg-place {background-color: var(--placeholder-color);}
 .bg-stand {background-color: var(--standard-color);}
@@ -44,6 +45,8 @@ button:focus {box-shadow:none !important; }
 .dark .dark\:bg-modaldark {background-color: var(--modal-darkbg);}
 .dark .dark\:bg-backlight {background-color: var(--background-light);}
 .hover\:bg-stand:hover {background-color: var(--standard-color);}
+.dark .hover\:bg-gradient-green:hover {background: linear-gradient(90deg,rgba(69,217,30,.3) 8.96%,rgba(69,217,30,0) 100%),#25282B;}
+.hover\:bg-gradient-green:hover {background: linear-gradient(90deg,rgba(69,217,30,.3) 8.96%,rgba(69,217,30,0) 100%),#F6F7FA;}
 
 @media (min-width:768px){
     .md\:bg-tab {background-color: var(--tab-bg);}
@@ -54,6 +57,7 @@ button:focus {box-shadow:none !important; }
 .text-basic {color: var(--text-color);}
 .text-sub {color: var(--sub-text-color);}
 .text-primary {color: var(--primary-color);}
+.text-back {color: var(--background-color);}
 .text-stand {color:var(--standard-color);}
 .text-place {color:var(--placeholder-color);}
 .text-yellow {color:var(--yellow-color);}
@@ -138,6 +142,7 @@ button:disabled {opacity:.7 !important; }
     .mo_hide {display:none !important; }
 }
 
+.animate-ping {animation-duration:2.5s; }
 .animate-spin-slow {animation:spin 5s linear infinite; }
 
 /* dark 모드에서 보이기 */
