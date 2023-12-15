@@ -7,12 +7,13 @@ import Litepicker from "litepicker";
     // Litepicker
     $(".datepicker").each(function () {
         let options = {
-            autoApply: false,
+            autoApply: true,
             singleMode: false,
-            numberOfColumns: 2,
-            numberOfMonths: 2,
-            showWeekNumbers: true,
-            format: "D MMM, YYYY",
+            numberOfColumns: 1,
+            numberOfMonths: 1,
+            showWeekNumbers: false,
+            format: "YYYY.MM.DD",
+            showTooltip:false,
             dropdowns: {
                 minYear: 1990,
                 maxYear: null,
@@ -31,13 +32,13 @@ import Litepicker from "litepicker";
             options.format = $(this).data("format");
         }
 
-        if (!$(this).val()) {
-            let date = dayjs().format(options.format);
-            date += !options.singleMode
-                ? " - " + dayjs().add(1, "month").format(options.format)
-                : "";
-            $(this).val(date);
-        }
+        // if (!$(this).val()) {
+        //     let date = dayjs().format(options.format);
+        //     date += !options.singleMode
+        //         ? " - " + dayjs().add(1, "month").format(options.format)
+        //         : "";
+        //     $(this).val(date);
+        // }
 
         new Litepicker({
             element: this,

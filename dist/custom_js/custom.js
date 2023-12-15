@@ -400,6 +400,12 @@ const topbarHandle = ()=>{
     $('.custom_select ul li').on('click',function(){
         const parent = $(this).parents('.custom_select'); 
 
+        if($(this).hasClass('noclick')){
+            parent.find('button span').text('사용자 정의')
+            $(this).addClass('on').siblings().removeClass('on')
+            return false;
+        }
+
         if(parent.data('select') != "count"){
             parent.removeClass('on')
             parent.find('button span').text($(this).text())
@@ -433,6 +439,11 @@ const topbarHandle = ()=>{
 
     document.addEventListener('click',(e)=>{
         const select = document.querySelector('.custom_select.on')
+        const datapicker = document.querySelector('.litepicker')
+
+        if(datapicker.style.display == "block"){
+            return false
+        }
         if(select && !select.contains(e.target)){
             select.classList.remove('on')
         }
@@ -595,6 +606,7 @@ const resizeHandle = ()=>{
             $(".side-nav-bg").fadeOut(200);
         }
     }
+    $('body').removeClass('overflow-hidden')
 }
 window.addEventListener("resize",resizeHandle)
 

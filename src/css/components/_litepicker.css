@@ -153,7 +153,7 @@
 
 .dark {
     .litepicker {
-        @apply bg-darkmode-600;
+        background:#2D3035; 
         &:before,
         &:after {
             border-right-color: transparent;
@@ -173,6 +173,7 @@
                 .button-next-month:hover svg,
                 .button-next-month svg {
                     @apply border-slate-200;
+                    border-color:rgba(153, 164, 176, 0.6);
                 }
                 div > .month-item-name,
                 div > .month-item-year {
@@ -180,29 +181,41 @@
                 }
                 div > .month-item-name,
                 div > .month-item-year {
-                    @apply border-darkmode-400;
+                    border:1px solid rgba(153, 164, 176, 0.6);
+                    color:rgba(153, 164, 176, 0.6);
                 }
+            }
+            .month-item-weekdays-row {
+                color:rgba(153, 164, 176, 0.6);
             }
         }
         .container__days {
             .day-item {
-                @apply text-slate-200;
+                color:rgba(153, 164, 176, 0.6);
+                border:1px solid transparent;
+
                 &:hover {
-                    @apply bg-darkmode-400;
+                    border:1px solid #3bc117;
+                    background-color:transparent;
                 }
                 &.is-start-date,
                 &.is-start-date:hover,
                 &.is-end-date,
                 &.is-end-date:hover {
-                    @apply bg-primary text-slate-200;
+                    border:1px solid transparent;
+                    background-color:rgba(0, 0, 0, 0.1);
+                }
+                &.is-start-date:hover,
+                &.is-end-date:hover {
+                    border:1px solid #3bc117;
                 }
                 &.is-in-range,
                 &.is-in-range:hover {
-                    @apply bg-darkmode-400;
+                    background:rgba(0, 0, 0, 0.1);
                 }
                 &.is-today,
                 &.is-today:hover {
-                    @apply text-slate-200;
+                    color:rgba(153, 164, 176, 0.4);
                 }
             }
         }
@@ -213,7 +226,8 @@
             }
         }
         .container__tooltip {
-            @apply bg-darkmode-400;
+            background-color:#17181b; 
+            color:#fff;
             &:before,
             &:after {
                 border-top-color: theme("colors.darkmode.600");

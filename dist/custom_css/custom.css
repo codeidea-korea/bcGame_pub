@@ -28,6 +28,9 @@
 .nav.nav-link-tabs.type02 .nav-item .nav-link {border-bottom-width:2px; }
 .nav.nav-link-tabs.type02 .nav-item .nav-link.active {background:transparent; }
 
+.dark .nav.nav-link-tabs.type03 {border-bottom:1px solid #3C404A; }
+.nav.nav-link-tabs.type03 {border-bottom:1px solid #F1F3F7; }
+
 .nav.nav-tabs {border:0 none; }
 .nav.nav-tabs .nav-item .nav-link {border:0 none !important; }
 .nav.nav-tabs .nav-item .nav-link:hover {background-color: var(--background-color) !important;}
@@ -77,7 +80,7 @@
 .form-control.type02 {background-color:#fff; border:1px solid #e9eaf2; }
 
 .dark .form-control.type03 {border-color:#67707B; }
-.form-control.type03 {background-color:transparent; border:1px solid #98A7B5; }
+.form-control.type03 {background-color:transparent !important; border:1px solid #98A7B5; }
 
 .dark .form-control {background-color: var(--standard-color);}
 .form-control {box-shadow:none; background-color: var(--background-color); border:0 none; color:var(--title-color); }
@@ -112,6 +115,16 @@
 .custom_select ul li.on:after {content: ""; position: absolute; width: 0.5rem; height: 0.5rem; border-radius: 50%; top: 50%; margin-top: -0.25rem; right: 0.625rem; background-color: var(--primary-color); box-shadow: 0 0 0 0.3125rem #3bc11726;}
 .custom_select[data-select="count"] input[type="checkbox"]:checked + label {color:var(--text-color); }
 .custom_select[data-select="count"] ul {max-height:400px; }
+.custom_select.top.on > button svg {transform:rotate(-90deg); } 
+.custom_select.top ul {top:auto; bottom:100%;}
+
+.custom_select .date {padding-left:0 !important; }
+.custom_select .date.on {border:0 none !important; }
+.custom_select .date.on:after {display:none !important; }
+.custom_select .date input {width:100%; height:32px !important; padding:0 23px 0 8px; background-color:transparent !important; color:var(--sub-text-color); cursor:pointer; font-size:13px;}
+.custom_select .date input:not(:placeholder-shown) {border:1px solid #3bc11766; }
+.custom_select .date input::placeholder {color:var(--sub-text-color) }
+.custom_select .date input::-webkit-input-placeholder {color:var(--sub-text-color)}
 
 
 .custom_select2 {position:relative; }
@@ -162,7 +175,9 @@
     }
 }
 @media (max-width:640px){
-    .mo_full.modal.show > .modal-dialog {margin:0; width:100%; }
+    .mo_full.modal.show > .modal-dialog {margin:0; width:100%; height:100%;}
+    .mo_full.modal.show .modal-content,
+    .mo_full.modal.show .modal-body {height:100%;}
 }
 
 /*
@@ -849,7 +864,6 @@
 
 
 /* 커미션 모달 */
-
 .comission_modal .bg1 {background:var(--background-color) url('../custom_img/affiliate/wager_1.png') no-repeat 96% 0% / auto 100%; }
 .comission_modal .bg2 {background:var(--background-color) url('../custom_img/affiliate/wager_2.png') no-repeat 96% 0% / auto 100%; }
 .comission_modal .bg3 {background:var(--background-color) url('../custom_img/affiliate/wager_3.png') no-repeat 96% 0% / auto 100%; }
@@ -866,3 +880,10 @@
     .referral_rule_modal .bg2 {background:var(--background-color) url('../custom_img/affiliate/rule_center_m.png') no-repeat right top / auto 80% !important; }
     .referral_rule_modal .bg3 {background:var(--background-color) url('../custom_img/affiliate/rule_right_m.png') no-repeat right top / auto 80% !important; }
 }
+
+
+/* 로딩아이콘 */
+.loading_icon {width:23px; height:23px; padding:3px; }
+.loading_icon svg {width:100%; height:100%; transform: rotate(270deg) scaleX(-1); }
+.loading_icon circle {stroke:var(--primary-color); stroke-dasharray: 1px, 1px; transition-delay: 1s;}
+.loading_icon.on circle { stroke-dasharray: 0px, 1px; transition:stroke-dasharray 3s linear; }
