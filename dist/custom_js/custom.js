@@ -336,13 +336,20 @@ const topbarHandle = ()=>{
         e.currentTarget.classList.add('active');
 
         const img = e.currentTarget.querySelector('img').src
-        const text = e.currentTarget.querySelector('p.text-right strong').innerText
+        let text = ""
+        if(parentNode.dataset.type == 'name'){
+            text = e.currentTarget.querySelector('p:first-of-type b').innerText
+        }else{
+            text = e.currentTarget.querySelector('p.text-right strong').innerText
+        }
         const text2 = e.currentTarget.querySelector('p.text-right span').innerText
 
-        const button = document.querySelector(`.${parentNode.dataset.btn}`)
-        button.querySelector('img').src = img
-        button.querySelector('strong').innerText = text
-        button.querySelector('span').innerText = text2
+        const button = document.querySelectorAll(`.${parentNode.dataset.btn}`)
+        button.forEach((item)=>{
+            item.querySelector('img').src = img
+            item.querySelector('span').innerText = text2
+            item.querySelector('strong').innerText = text
+        })
 
         setTimeout(function () {
             var el = document.querySelector(".walletDropdown");
@@ -406,11 +413,12 @@ const topbarHandle = ()=>{
             return false;
         }
 
-        if(parent.data('select') != "count"){
+        if(parent.data('select') != "count" && parent.data('select') != "add" ){
             parent.removeClass('on')
             parent.find('button span').text($(this).text())
             $(this).addClass('on').siblings().removeClass('on')
         }
+
     });
 
     $('.custom_select[data-select="count"] ul input').on('change',function(){
@@ -428,6 +436,19 @@ const topbarHandle = ()=>{
             }
         }
     })
+
+    $('.custom_select[data-select="add"] ul input').on('change',function(){
+        const parent = $(this).parents('.custom_select'); 
+
+        if(parent.data('select') == "add"){
+            let count = []
+            parent.find('li input').each((index,item)=>{
+                if($(item).prop('checked')){count.push($(item).val())}
+            })
+            parent.find('button span.add_name').text(count.join('/'))
+        }
+    })
+
     $('.custom_select[data-select="count"] .select_reset').on('click',function(){
         const parent = $(this).parents('.custom_select'); 
         parent.find('button span.count').text('모든 제공업체')

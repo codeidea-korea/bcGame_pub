@@ -158,6 +158,7 @@ echo txtRecord('./@record/');
 				<li>
                     <a href="/bcGame/casino/index.html" target="_blank" class="">메인</a>
                     <ul>
+                        <li><a href="/bcGame/casino/detail.html" target="_blank" class="">카지노 상세 페이지</a></li>
                         <li><button class="pop-modal" data-tw-toggle="modal" data-tw-target="#racing_lank-modal">최신베팅&레이스 > 롤링대회 > 내역 모달</button></li>
                         <li><button class="pop-modal" data-tw-toggle="modal" data-tw-target="#rolling_info-modal">롤링안내 모달</button></li>
                     </ul>
@@ -165,7 +166,12 @@ echo txtRecord('./@record/');
 				<li><a href="/bcGame/casino/picks_for_you.html" target="_blank" class="">당신을 위해 선택</a></li>
 				<li><a href="/bcGame/casino/favorite.html" target="_blank" class="">가장 좋아하는</a></li>
 				<li><a href="/bcGame/casino/recent.html" target="_blank" class="">최근</a></li>
-				<li><a href="/bcGame/casino/index.html?casino-8-tab" target="_blank" class="">BC 브랜드</a></li>
+				<li>
+                    <a href="/bcGame/casino/index.html?casino-8-tab" target="_blank" class="">BC 브랜드</a>
+                    <ul>
+                        <li><a href="/bcGame/casino/bc_detail.html" target="_blank" class="">상세 페이지</a></li>
+                    </ul>
+                </li>
                 <li><a href="/bcGame/casino/slots.html" target="_blank" class="">슬롯</a></li>
 				<li><a href="/bcGame/casino/live.html" target="_blank" class="">라이브 카지노</a></li>
 				<li><a href="/bcGame/casino/hot.html" target="_blank" class="">Hot</a></li>

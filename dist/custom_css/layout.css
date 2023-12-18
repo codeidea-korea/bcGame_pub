@@ -40,6 +40,8 @@ button:focus {box-shadow:none !important; }
 .dark .bg-gradient-purple {background-image:linear-gradient(180deg,rgba(95,49,204,.5) -93.97%,#1E2024 71.55%); }
 .bg-gradient-purple {background-image:linear-gradient(180deg,#723FE0 0%,#FFFFFF 100%); background-size:100% 7.5rem; background-repeat:no-repeat; }
 
+.bg-gradient-yellow {background-image:linear-gradient(90deg,#40391f 8.96%,#a37c0c);; }
+
 .dark .dark\:bg-back2 {background-color: var(--background-type-color);}
 .dark .dark\:bg-back {background-color: var(--background-color);}
 .dark .dark\:bg-modaldark {background-color: var(--modal-darkbg);}
@@ -370,6 +372,12 @@ button:disabled {opacity:.7 !important; }
     .side-nav {display:none !important; }
 }
 
+/* bc 페이지일때 */
+.bc_page .menu-hover_wrap .game_wrap {width:50px; }
+.bc_page .menu-hover_wrap .game_wrap:hover {width:240px; }
+.bc_page .menu-hover_wrap .game_wrap .game_list {padding-left:6px; }
+.bc_page .menu-hover_wrap .game_wrap .game_list svg {margin-right:6px; }
+
 /*
 #=========================================#
         컨텐츠
@@ -642,12 +650,6 @@ footer .icon_btn.icon-Ripple {background-position: -164px -82px; }
     footer .network_list li:nth-of-type(6n) > div,
     footer .network_list li:nth-of-type(6n-1) > div {left:auto; right:0;}
 }
-
-/*
-#=========================================#
-        검색모달
-#=========================================#
-*/
 
 
 

@@ -117,6 +117,8 @@
 .custom_select[data-select="count"] ul {max-height:400px; }
 .custom_select.top.on > button svg {transform:rotate(-90deg); } 
 .custom_select.top ul {top:auto; bottom:100%;}
+.custom_select[data-select="add"] ul li.on {border:0px solid transparent; }
+.custom_select[data-select="add"] ul li.on:after {display:none;}
 
 .custom_select .date {padding-left:0 !important; }
 .custom_select .date.on {border:0 none !important; }
@@ -179,6 +181,27 @@
     .mo_full.modal.show .modal-content,
     .mo_full.modal.show .modal-body {height:100%;}
 }
+
+/* 드래그 모달 */
+.draggable_modal.show{
+    scale: 1;
+    z-index: 99;
+}
+.draggable_modal{
+    position: fixed;
+    top:15%;
+    left: 23%; 
+    z-index: -99;
+    scale: 0;
+}
+.draggable_modal_header{
+    cursor: move;
+    touch-action:auto !important;
+}
+@media (max-width:767px){
+    .draggable_modal {top:10px; left:10px; }
+}
+
 
 /*
 #=========================================#
@@ -911,6 +934,16 @@
     .wallet_pagination {position:fixed; left:0; bottom:0; width:100%;}
 }
 
+/*
+#=========================================#
+        카지노 디테일
+#=========================================#
+*/
+.bookmark_btn.on {color:var(--yellow-color); }
+.bookmark_btn.on svg {fill:var(--yellow-color); }
+.zzim_btn.on {color:#ec4016; }
+.zzim_btn.on svg {fill:#ec4016; }
+.good_btn.on {color:var(--primary-color)}
+.good_btn.on svg {fill:var(--primary-color)}
 
-
-
+.comment_align:hover .hover_box {display:block; }
