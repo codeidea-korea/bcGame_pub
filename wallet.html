@@ -51,7 +51,48 @@
             <!-- ** 탑바 끝 ** -->
 
             <!-- ** 내용시작 ** -->
-            <div class="container_wrap">
+            <div class="container_wrap wallet_cont">
+
+                <!-- 모바일 상단바 -->
+                <div class="flex items-center justify-between p-3 bg-modaldark wallet_mo_top">
+                    <p class="text-tit font-bold">지갑</p>
+                    <div class="flex items-center gap-1">
+                        <div class="flex items-center gap-2 mo_wallet_menu">
+                            <button onclick="tabchange('nfts',this)">나의 NFTs</button>
+                            <button onclick="tabchange('roll',this)">롤오버</button>
+                            <button onclick="tabchange('transaction',this)">
+                                <svg class="w-4 h-4 close_btn cursor-pointer fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_History"></use></svg>
+                            </button>
+                        </div>
+                        <a href="/bcGame/index.html" class="basic-hover px-2 ml-4">
+                            <svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 모바일 하단바 -->
+                <div class="flex items-center wallet_mo_bottom mo_wallet_menu bg-back text-xs">
+                    <button class="w-1/5 text-center" onclick="tabchange('deposit',this)">
+                        <svg class="w-5 h-5 mx-auto mb-1 cursor-pointer fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Deposit"></use></svg>
+                        <span>입금</span>
+                    </button>
+                    <button class="w-1/5 text-center" onclick="tabchange('withdrawal',this)">
+                        <svg class="w-5 h-5 mx-auto mb-1 cursor-pointer fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_WithDraw"></use></svg>
+                        <span>출금</span>
+                    </button>
+                    <button class="w-1/5 text-center" onclick="tabchange('buycrypto',this)">
+                        <svg class="w-5 h-5 mx-auto mb-1 cursor-pointer fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_BuyCrypto"></use></svg>
+                        <span class="block truncate">가상화폐 구매하기</span>
+                    </button>
+                    <button class="w-1/5 text-center" onclick="tabchange('swap',this); loadingOn()" >
+                        <svg class="w-5 h-5 mx-auto mb-1 cursor-pointer fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Swap"></use></svg>
+                        <span>BC 스왑</span>
+                    </button>
+                    <button class="w-1/5 text-center" onclick="tabchange('vault',this)">
+                        <svg class="w-5 h-5 mx-auto mb-1 cursor-pointer fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Vault"></use></svg>
+                        <span>볼트프로</span>
+                    </button>
+                </div>
 
                 <div class="container pt-3 pb-6 md:pt-6 md:pb-6">
                     <!-- 타이틀 -->
@@ -324,12 +365,12 @@
                                         
                                         <div>
                                             <ul class="nav nav-link-tabs type02 type03" role="tablist">
-                                                <li id="wallet_deposit-1-tab" class="nav-item min-w-[200px] max-w-1/2" role="presentation"> 
+                                                <li id="wallet_deposit-1-tab" class="nav-item w-1/2 md:w-auto md:min-w-[200px] max-w-1/2" role="presentation"> 
                                                     <button class="nav-link w-full py-2 active" data-tw-toggle="pill" data-tw-target="#wallet_deposit-tab-1" type="button" role="tab" aria-controls="wallet_deposit-tab-1" aria-selected="true"> 
                                                         크립토
                                                     </button>
                                                 </li>
-                                                <li id="wallet_deposit-2-tab" class="nav-item min-w-[200px] max-w-1/2" role="presentation"> 
+                                                <li id="wallet_deposit-2-tab" class="nav-item w-1/2 md:w-auto md:min-w-[200px] max-w-1/2" role="presentation"> 
                                                     <button class="nav-link w-full py-2" data-tw-toggle="pill" data-tw-target="#wallet_deposit-tab-2" type="button" role="tab" aria-controls="wallet_deposit-tab-2" aria-selected="false"> 
                                                         법정화폐
                                                     </button>
@@ -496,7 +537,7 @@
                                                     </div>
                                                 </div>
                         
-                                                <div class="mt-2 bg-[#f5f6fa] dark:bg-[#1b1c1f] flex items-center gap-4 p-4">
+                                                <div class="mt-2 bg-[#f5f6fa] dark:bg-[#1b1c1f] flex items-center md:flex-row flex-col gap-4 p-4">
                                                     <img class="w-36" src="/bcGame/dist/custom_img/bc.png" alt="">
                                                     <div>
                                                         <p>입금 주소</p>
@@ -634,10 +675,10 @@
                                                         <div class="mt-4">결제방법 선택하기</div>
                                                         <div class="bg-modaldark mt-2 p-3 rounded">
                                                             <p class="mb-2">추천</p>
-                                                            <button class="relative flex items-center justify-between w-full py-2 px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_deposit-tab-2','deposit-detail')">
+                                                            <button class="relative flex items-center justify-between w-full py-2 px-2 md:px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_deposit-tab-2','deposit-detail')">
                                                                 <span class="absolute right-0 top-0 px-5 text-white bg-tag text-xs rounded-bl">가장 빠른</span>
-                                                                <div class="flex items-center gap-4">
-                                                                    <img class="w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer.png" />
+                                                                <div class="flex items-center gap-2 md:gap-4">
+                                                                    <img class="w-12 md:w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer.png" />
                                                                     <i class="border-r border-solid border-slate-300 h-9"></i>
                                                                     <p class="text-tit">은행 이체</p>
                                                                 </div>
@@ -646,10 +687,10 @@
                                                                     <i><svg class="w-4 h-4 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
                                                                 </div>
                                                             </button>
-                                                            <button class="mt-2 relative flex items-center justify-between w-full py-2 px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_deposit-tab-2','deposit-detail')">
+                                                            <button class="mt-2 relative flex items-center justify-between w-full py-2 px-2 md:px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_deposit-tab-2','deposit-detail')">
                                                                 <span class="absolute right-0 top-0 px-5 text-white bg-tag text-xs rounded-bl">인기</span>
-                                                                <div class="flex items-center gap-4">
-                                                                    <img class="w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer2.png" />
+                                                                <div class="flex items-center gap-2 md:gap-4">
+                                                                    <img class="w-12 md:w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer2.png" />
                                                                     <i class="border-r border-solid border-slate-300 h-9"></i>
                                                                     <p class="text-tit">은행 이체</p>
                                                                 </div>
@@ -658,10 +699,10 @@
                                                                     <i><svg class="w-4 h-4 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
                                                                 </div>
                                                             </button>
-                                                            <button class="mt-2 relative flex items-center justify-between w-full py-2 px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_deposit-tab-2','deposit-detail')">
+                                                            <button class="mt-2 relative flex items-center justify-between w-full py-2 px-2 md:px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_deposit-tab-2','deposit-detail')">
                                                                 <span class="absolute right-0 top-0 px-5 text-white bg-tag text-xs rounded-bl">추천</span>
-                                                                <div class="flex items-center gap-4">
-                                                                    <img class="w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer3.png" />
+                                                                <div class="flex items-center gap-2 md:gap-4">
+                                                                    <img class="w-12 md:w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer3.png" />
                                                                     <i class="border-r border-solid border-slate-300 h-9"></i>
                                                                     <p class="text-tit">QRIS</p>
                                                                 </div>
@@ -672,9 +713,9 @@
                                                             </button>
                           
                                                             <p class="mt-2 mb-2">E지갑</p>
-                                                            <button class="relative flex items-center justify-between w-full py-2 px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_deposit-tab-2','deposit-detail')">
-                                                                <div class="flex items-center gap-4">
-                                                                    <img class="w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer4.png" />
+                                                            <button class="relative flex items-center justify-between w-full py-2 px-2 md:px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_deposit-tab-2','deposit-detail')">
+                                                                <div class="flex items-center gap-2 md:gap-4">
+                                                                    <img class="w-12 md:w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer4.png" />
                                                                     <i class="border-r border-solid border-slate-300 h-9"></i>
                                                                     <p class="text-tit">DANA</p>
                                                                 </div>
@@ -683,9 +724,9 @@
                                                                     <i><svg class="w-4 h-4 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
                                                                 </div>
                                                             </button>
-                                                            <button class="mt-2 relative flex items-center justify-between w-full py-2 px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_deposit-tab-2','deposit-detail')">
-                                                                <div class="flex items-center gap-4">
-                                                                    <img class="w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer3.png" />
+                                                            <button class="mt-2 relative flex items-center justify-between w-full py-2 px-2 md:px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_deposit-tab-2','deposit-detail')">
+                                                                <div class="flex items-center gap-2 md:gap-4">
+                                                                    <img class="w-12 md:w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer3.png" />
                                                                     <i class="border-r border-solid border-slate-300 h-9"></i>
                                                                     <p class="text-tit">QRIS</p>
                                                                 </div>
@@ -694,9 +735,9 @@
                                                                     <i><svg class="w-4 h-4 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
                                                                 </div>
                                                             </button>
-                                                            <button class="mt-2 relative flex items-center justify-between w-full py-2 px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_deposit-tab-2','deposit-detail')">
-                                                                <div class="flex items-center gap-4">
-                                                                    <img class="w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer5.png" />
+                                                            <button class="mt-2 relative flex items-center justify-between w-full py-2 px-2 md:px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_deposit-tab-2','deposit-detail')">
+                                                                <div class="flex items-center gap-2 md:gap-4">
+                                                                    <img class="w-12 md:w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer5.png" />
                                                                     <i class="border-r border-solid border-slate-300 h-9"></i>
                                                                     <p class="text-tit">OVO</p>
                                                                 </div>
@@ -815,12 +856,12 @@
                                         
                                         <div>
                                             <ul class="nav nav-link-tabs type02 type03" role="tablist">
-                                                <li id="wallet_withdrawal-1-tab" class="nav-item min-w-[200px] max-w-1/2" role="presentation"> 
+                                                <li id="wallet_withdrawal-1-tab" class="nav-item w-1/2 md:w-auto md:min-w-[200px] max-w-1/2" role="presentation"> 
                                                     <button class="nav-link w-full py-2 active" data-tw-toggle="pill" data-tw-target="#wallet_withdrawal-tab-1" type="button" role="tab" aria-controls="wallet_withdrawal-tab-1" aria-selected="true"> 
                                                         크립토
                                                     </button>
                                                 </li>
-                                                <li id="wallet_withdrawal-2-tab" class="nav-item min-w-[200px] max-w-1/2" role="presentation"> 
+                                                <li id="wallet_withdrawal-2-tab" class="nav-item w-1/2 md:w-auto md:min-w-[200px] max-w-1/2" role="presentation"> 
                                                     <button class="nav-link w-full py-2" data-tw-toggle="pill" data-tw-target="#wallet_withdrawal-tab-2" type="button" role="tab" aria-controls="wallet_withdrawal-tab-2" aria-selected="false"> 
                                                         법정화폐
                                                     </button>
@@ -1140,9 +1181,9 @@
                                                         <div class="mt-4">로 출금</div>
                                                         <div class="bg-modaldark mt-2 p-3 rounded">
                                                             <p class="mb-2">계좌이체</p>
-                                                            <button class="relative flex items-center justify-between w-full py-2 px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_withdrawal-tab-2','deposit-detail')">
-                                                                <div class="flex items-center gap-4">
-                                                                    <img class="w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer.png" />
+                                                            <button class="relative flex items-center justify-between w-full py-2 px-2 md:px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_withdrawal-tab-2','deposit-detail')">
+                                                                <div class="flex items-center gap-2 md:gap-4">
+                                                                    <img class="w-12 md:w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer.png" />
                                                                     <i class="border-r border-solid border-slate-300 h-9"></i>
                                                                     <p class="text-tit text-left leading-none text-xs"> 은행 이체<br/><span class="text-basic">EAT: 35min</span></p>
                                                                 </div>
@@ -1151,9 +1192,9 @@
                                                                     <i><svg class="w-4 h-4 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
                                                                 </div>
                                                             </button>
-                                                            <button class="mt-2 relative flex items-center justify-between w-full py-2 px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_withdrawal-tab-2','deposit-detail')">
-                                                                <div class="flex items-center gap-4">
-                                                                    <img class="w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer2.png" />
+                                                            <button class="mt-2 relative flex items-center justify-between w-full py-2 px-2 md:px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_withdrawal-tab-2','deposit-detail')">
+                                                                <div class="flex items-center gap-2 md:gap-4">
+                                                                    <img class="w-12 md:w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer2.png" />
                                                                     <i class="border-r border-solid border-slate-300 h-9"></i>
                                                                     <p class="text-tit text-left leading-none text-xs"> 은행 이체<br/><span class="text-basic">EAT: 35min</span></p>
                                                                 </div>
@@ -1162,9 +1203,9 @@
                                                                     <i><svg class="w-4 h-4 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
                                                                 </div>
                                                             </button>
-                                                            <button class="mt-2 relative flex items-center justify-between w-full py-2 px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_withdrawal-tab-2','deposit-detail')">
-                                                                <div class="flex items-center gap-4">
-                                                                    <img class="w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer3.png" />
+                                                            <button class="mt-2 relative flex items-center justify-between w-full py-2 px-2 md:px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_withdrawal-tab-2','deposit-detail')">
+                                                                <div class="flex items-center gap-2 md:gap-4">
+                                                                    <img class="w-12 md:w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer3.png" />
                                                                     <i class="border-r border-solid border-slate-300 h-9"></i>
                                                                     <p class="text-tit text-left leading-none text-xs">QRIS<br/><span class="text-basic">EAT: 35min</span></p>
                                                                 </div>
@@ -1175,9 +1216,9 @@
                                                             </button>
                           
                                                             <p class="mt-2 mb-2">E지갑</p>
-                                                            <button class="relative flex items-center justify-between w-full py-2 px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_withdrawal-tab-2','deposit-detail')">
-                                                                <div class="flex items-center gap-4">
-                                                                    <img class="w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer4.png" />
+                                                            <button class="relative flex items-center justify-between w-full py-2 px-2 md:px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_withdrawal-tab-2','deposit-detail')">
+                                                                <div class="flex items-center gap-2 md:gap-4">
+                                                                    <img class="w-12 md:w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer4.png" />
                                                                     <i class="border-r border-solid border-slate-300 h-9"></i>
                                                                     <p class="text-tit text-left leading-none text-xs">DANA<br/><span class="text-basic">EAT: 35min</span></p>
                                                                 </div>
@@ -1186,9 +1227,9 @@
                                                                     <i><svg class="w-4 h-4 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
                                                                 </div>
                                                             </button>
-                                                            <button class="mt-2 relative flex items-center justify-between w-full py-2 px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_withdrawal-tab-2','deposit-detail')">
-                                                                <div class="flex items-center gap-4">
-                                                                    <img class="w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer3.png" />
+                                                            <button class="mt-2 relative flex items-center justify-between w-full py-2 px-2 md:px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_withdrawal-tab-2','deposit-detail')">
+                                                                <div class="flex items-center gap-2 md:gap-4">
+                                                                    <img class="w-12 md:w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer3.png" />
                                                                     <i class="border-r border-solid border-slate-300 h-9"></i>
                                                                     <p class="text-tit text-left leading-none text-xs">QRIS<br/><span class="text-basic">EAT: 35min</span></p>
                                                                 </div>
@@ -1197,9 +1238,9 @@
                                                                     <i><svg class="w-4 h-4 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
                                                                 </div>
                                                             </button>
-                                                            <button class="mt-2 relative flex items-center justify-between w-full py-2 px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_withdrawal-tab-2','deposit-detail')">
-                                                                <div class="flex items-center gap-4">
-                                                                    <img class="w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer5.png" />
+                                                            <button class="mt-2 relative flex items-center justify-between w-full py-2 px-2 md:px-4 bg-slate-200 dark:bg-back hover:bg-primary hover:bg-opacity-20 rounded" onclick="pageTab('wallet_withdrawal-tab-2','deposit-detail')">
+                                                                <div class="flex items-center gap-2 md:gap-4">
+                                                                    <img class="w-12 md:w-16 max-h-9" src="/bcGame/dist/custom_img/bank_transfer5.png" />
                                                                     <i class="border-r border-solid border-slate-300 h-9"></i>
                                                                     <p class="text-tit text-left leading-none text-xs">OVO<br/><span class="text-basic">EAT: 35min</span></p>
                                                                 </div>
@@ -1467,72 +1508,76 @@
 
                                 <!-- 볼트프로 -->
                                 <div id="tab_con06" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="tab06">
-                                    <div class="bg-tab rounded p-2 py-4 md:p-5">
+                                    <div class="md:bg-tab bg-back rounded p-2 py-4 md:p-5">
                                         <ul class="nav nav-link-tabs type02 type03" role="tablist">
-                                            <li id="vault-1-tab" class="nav-item min-w-[200px] max-w-1/3" role="presentation"> 
+                                            <li id="vault-1-tab" class="nav-item w-1/2 md:w-auto md:min-w-[200px] max-w-1/3" role="presentation"> 
                                                 <button class="nav-link w-full py-2 active" data-tw-toggle="pill" data-tw-target="#vault-tab-1" type="button" role="tab" aria-controls="vault-tab-1" aria-selected="true">
                                                      입금
                                                 </button> 
                                             </li>
-                                            <li id="vault-2-tab" class="nav-item min-w-[200px] max-w-1/3" role="presentation"> 
+                                            <li id="vault-2-tab" class="nav-item w-1/2 md:w-auto md:min-w-[200px] max-w-1/3" role="presentation"> 
                                                 <button class="nav-link w-full py-2" data-tw-toggle="pill" data-tw-target="#vault-tab-2" type="button" role="tab" aria-controls="vault-tab-2" aria-selected="false"> 
                                                     출금
                                                 </button> 
                                             </li>
-                                            <li class="flex-1 text-right">
+                                            <li class="flex-1 text-right md:block hidden">
                                                 <button class="h-full text-primary" data-tw-toggle="modal" data-tw-target="#vault_rule-modal">보안규정 <svg class="inline-flex w-2 h-2 fill-primary"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
                                             </li>
                                         </ul>
                                         <div class="tab-content mt-5">
                                             <div id="vault-tab-1" class="tab-pane leading-relaxed active" role="tabpanel" aria-labelledby="vault-1-tab"> 
-                                                <div class="flex items-center gap-4 w-full">
-                                                    <div class="w-2/3">
+                                                <div class="flex items-center flex-col md:flex-row gap-4 w-full">
+                                                    <div class="w-full md:w-2/3">
                                                         <div class="flex items-center justify-between bg-back2 p-1.5 rounded">
                                                             <input class="form-control nofocus pl-2 text-tit text-xl font-extrabold !bg-transparent" value="0">
                                                             <button class="btn-normal h-10 px-4 shrink-0 mr-1 rounded">최대</button>
-                                                            <button class="flex items-center shrink-0 justify-center gap-3 btn-normal h-10 w-32 rounded text-tit text-xs" data-tw-toggle="modal" data-tw-target="#asset_portfolio-modal">
+                                                            <button class="flex items-center shrink-0 justify-center gap-3 btn-normal h-10 w-32 rounded text-tit text-xs" data-tw-toggle="modal" data-tw-target="#asset_portfolio2-modal">
                                                                 <img class="w-6" src="/bcGame/dist/custom_img/coin/SATS.webp">
                                                                 SATS 
                                                                 <svg class="w-3.5 h-3.5 fill-basic rotate-90"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
                                                             </button>
                                                         </div>
-                                                        <div class="mt-2 flex items-center justify-between">
-                                                            <p>이용가능: <b class="text-tit font-bold">0.00 SATS</b></p>
-                                                            <p>잠김 금액: <b class="text-tit font-bold">0.00 SATS</b></p>
+                                                        <div class="mt-2 flex items-center justify-between flex-col md:flex-row">
+                                                            <p class="flex md:w-auto w-full items-center md:justify-start justify-between">이용가능: <b class="text-tit font-bold">0.00 SATS</b></p>
+                                                            <p class="flex md:w-auto w-full items-center md:justify-start justify-between">잠김 금액: <b class="text-tit font-bold">0.00 SATS</b></p>
+                                                            <p class="md:hidden flex md:w-auto w-full items-center justify-between">연율: <b class="font-extrabold text-primary">5%</b></p>
                                                         </div>
                                                     </div>
-                                                    <div class="w-1/3">
-                                                        <button class="btn-green w-full h-12 font-bold flex items-center gap-1 justify-center mx-auto">볼트프로로 전송하기</button>
-                                                        <div class="mt-2 text-center">연율: <b class="font-extrabold text-primary">5%</b></div>
+                                                    <div class="w-full md:w-1/3">
+                                                        <button class="btn-green w-full h-12 font-bold flex items-center gap-1 justify-center mx-auto" disabled>볼트프로로 전송하기</button>
+                                                        <div class="md:block hidden mt-2 text-center">연율: <b class="font-extrabold text-primary">5%</b></div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div id="vault-tab-2" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="vault-2-tab">
-                                                <div class="flex items-center gap-4 w-full">
-                                                    <div class="w-2/3">
+                                                <div class="flex items-center flex-col md:flex-row gap-4 w-full">
+                                                    <div class="w-full md:w-2/3">
                                                         <div class="flex items-center justify-between bg-back2 p-1.5 rounded">
                                                             <input class="form-control nofocus pl-2 text-tit text-xl font-extrabold !bg-transparent" value="0">
                                                             <button class="btn-normal h-10 px-4 shrink-0 mr-1 rounded">최대</button>
-                                                            <button class="flex items-center shrink-0 justify-center gap-3 btn-normal h-10 w-32 rounded text-tit text-xs" data-tw-toggle="modal" data-tw-target="#asset_portfolio-modal">
+                                                            <button class="flex items-center shrink-0 justify-center gap-3 btn-normal h-10 w-32 rounded text-tit text-xs" data-tw-toggle="modal" data-tw-target="#asset_portfolio2-modal">
                                                                 <img class="w-6" src="/bcGame/dist/custom_img/coin/SATS.webp">
                                                                 SATS 
                                                                 <svg class="w-3.5 h-3.5 fill-basic rotate-90"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
                                                             </button>
                                                         </div>
                                                         <div class="mt-2 flex items-center justify-between">
-                                                            <p>볼트 잔액: <b class="text-tit font-bold">0 SATS</b></p>
+                                                            <p class="flex md:w-auto w-full items-center md:justify-start justify-between">볼트 잔액: <b class="text-tit font-bold">0 SATS</b></p>
                                                         </div>
                                                     </div>
-                                                    <div class="w-1/3">
-                                                        <button class="btn-green w-full h-12 font-bold flex items-center gap-1 justify-center mx-auto">지갑으로 출금하기</button>
-                                                        <div class="mt-2 text-center">연율: <b class="font-extrabold text-primary">5%</b></div>
+                                                    <div class="w-full md:w-1/3">
+                                                        <button class="btn-green w-full h-12 font-bold flex items-center gap-1 justify-center mx-auto" disabled>지갑으로 출금하기</button>
+                                                        <div class="md:block hidden mt-2 text-center">연율: <b class="font-extrabold text-primary">5%</b></div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="text-center mt-2 md:hidden block">
+                                            <button class="h-full text-primary" data-tw-toggle="modal" data-tw-target="#vault_rule-modal">보안규정 <svg class="inline-flex w-2 h-2 fill-primary"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                        </div>
                                     </div>
 
-                                    <div class="mt-4 bg-tab rounded p-2 py-4 md:p-5 text-center">
+                                    <div class="mt-4 md:bg-tab bg-back rounded p-2 py-4 md:p-5 text-center">
                                         <img class="w-12 mx-auto" src="/bcGame/dist/custom_img/n_coin.webp" alt="">
                                         <p class="mt-2 font-bold text-tit">자산이 아직 없습니다</p>
                                         <p>자산을 Vault Pro로 이전하여 수익을 창출해 보세요</p>
@@ -1544,7 +1589,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="mt-4 bg-tab rounded p-2 py-4 md:p-5">
+                                    <div class="mt-4 md:bg-tab bg-back rounded p-2 py-4 md:p-5">
                                         <div class="text-tit text-center font-extrabold text-lg">자주 묻는 질문</div>
                                         <div class="accordian_list mt-2">
                                             <div class="accordian_item border-b border-slate-300">
@@ -1706,9 +1751,9 @@
 
                                 <!-- 거래 -->
                                 <div id="tab_con08" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="tab08">
-                                    <div class="flex items-center gap-3 py-6">
-                                        <div class="custom_select w-36">
-                                            <button class="btn w-32 h-12 flex px-4 items-center justify-between border-none bg-tab">
+                                    <div class="flex flex-wrap items-center md:justify-start justify-between gap-3 py-3 md:py-6 md:px-0 px-3">
+                                        <div class="custom_select w-[48%] md:w-36">
+                                            <button class="btn w-32 h-12 flex px-4 items-center justify-between border-none bg-modaldark md:bg-tab">
                                                 <span>입금</span>
                                                 <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
                                             </button>
@@ -1721,8 +1766,8 @@
                                                 <li class="py-2">보너스</li>
                                             </ul>
                                         </div>
-                                        <div class="custom_select2 w-36">
-                                            <button class="btn w-32 h-12 flex px-4 items-center justify-between border-none bg-tab">
+                                        <div class="custom_select2 w-[48%] md:w-36">
+                                            <button class="btn w-32 h-12 flex px-4 items-center justify-between border-none bg-modaldark md:bg-tab">
                                                 <div class="flex items-center gap-2 name">
                                                     모든자산
                                                 </div>
@@ -1804,8 +1849,8 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="custom_select w-36">
-                                            <button class="btn w-32 h-12 flex px-4 items-center justify-between border-none bg-tab">
+                                        <div class="custom_select w-[48%] md:w-36">
+                                            <button class="btn w-32 h-12 flex px-4 items-center justify-between border-none bg-modaldark md:bg-tab">
                                                 <span>지난 60 일</span>
                                                 <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
                                             </button>
@@ -1824,8 +1869,8 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="custom_select w-36">
-                                            <button class="btn w-32 h-12 flex px-4 items-center justify-between border-none bg-tab">
+                                        <div class="custom_select w-[48%] md:w-36">
+                                            <button class="btn w-32 h-12 flex px-4 items-center justify-between border-none bg-modaldark md:bg-tab">
                                                 <span>모든 상태</span>
                                                 <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
                                             </button>
@@ -1839,7 +1884,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="mt-4 p-3 bg-tab">
+                                    <div class="mt-2 md:mt-4 py-3 bg-tab">
                                         <table class="table table-border mo_pad-s text-xs sm:text-sm">   
                                             <colgroup>
                                                 <col width="25%">
@@ -1893,8 +1938,8 @@
                                         </table>
                                     </div>
 
-                                    <div class="flex gap-2 items-center justify-end py-2 px-4 bg-back2 rounded-b">
-                                        <div class="custom_select top w-24 mr-4">
+                                    <div class="flex gap-2 items-center justify-end py-2 px-4 bg-back2 rounded-b wallet_pagination">
+                                        <div class="custom_select top w-24 mr-4 md:block hidden">
                                             <button class="btn w-32 h-9 flex px-4 items-center justify-between border-none bg-modaldark">
                                                 <span>20</span>
                                                 <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
@@ -1923,9 +1968,9 @@
                                 <!-- 롤오버 개요 -->
                                 <div id="tab_con09" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="tab09">
 
-                                    <div class="flex items-center gap-3 py-6">
+                                    <div class="flex items-center gap-3 py-3 md:py-6 md:px-0 px-3">
                                         <div class="custom_select w-48">
-                                            <button class="btn w-32 h-12 flex px-4 items-center justify-between border-none bg-tab">
+                                            <button class="btn w-32 h-12 flex px-4 items-center justify-between border-none bg-modaldark md:bg-tab">
                                                 <span>모든 유형</span>
                                                 <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
                                             </button>
@@ -1936,7 +1981,7 @@
                                             </ul>
                                         </div>
                                         <div class="custom_select w-48">
-                                            <button class="btn w-32 h-12 flex px-4 items-center justify-between border-none bg-tab">
+                                            <button class="btn w-32 h-12 flex px-4 items-center justify-between border-none bg-modaldark md:bg-tab">
                                                 <span>모든 상태</span>
                                                 <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
                                             </button>
@@ -1950,7 +1995,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="mt-4 p-3 bg-tab">
+                                    <div class="mt-2 md:mt-4 md:p-3 bg-tab">
                                         <table class="table table-border mo_pad-s text-xs sm:text-sm">   
                                             <colgroup>
                                                 <col width="25%">
@@ -1998,8 +2043,8 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="flex gap-2 items-center justify-end py-2 px-4 bg-back2 rounded-b">
-                                        <div class="custom_select top w-24 mr-4">
+                                    <div class="flex gap-2 items-center justify-end py-2 px-4 bg-back2 rounded-b wallet_pagination">
+                                        <div class="custom_select top w-24 mr-4 md:block hidden">
                                             <button class="btn w-32 h-9 flex px-4 items-center justify-between border-none bg-modaldark">
                                                 <span>20</span>
                                                 <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
@@ -2206,8 +2251,17 @@
 
 
         // 탭변경
-        const tabchange = (tabname)=>{
+        const tabchange = (tabname,e)=>{
+            $('.mo_wallet_menu button.on').removeClass('on')
+            $(e).addClass('on');
+            
             $(`#${tabname} button`).click();
+
+            if(tabname == "roll" || tabname == "transaction"){
+                $('.container_wrap').addClass('type02')
+            }else{
+                $('.container_wrap').removeClass('type02')
+            }
         }
 
         const pageTab = (id,cont)=>{

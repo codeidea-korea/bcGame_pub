@@ -2216,6 +2216,9 @@ select{
 .w-full{
     width: 100%; 
 }
+.w-\[48\%\]{
+    width: 48%; 
+}
 .min-w-\[160px\]{
     min-width: 160px; 
 }
@@ -14272,6 +14275,9 @@ html body{
     .sm\:h-full{
         height: 100%; 
     }
+    .sm\:h-\[650px\]{
+        height: 650px; 
+    }
     .sm\:max-h-\[820px\]{
         max-height: 820px; 
     }
@@ -14492,8 +14498,17 @@ html body{
     .md\:w-44{
         width: 11rem; 
     }
+    .md\:w-16{
+        width: 4rem; 
+    }
+    .md\:w-36{
+        width: 9rem; 
+    }
     .md\:min-w-\[320px\]{
         min-width: 320px; 
+    }
+    .md\:min-w-\[200px\]{
+        min-width: 200px; 
     }
     .md\:-translate-y-1\/2{
         --tw-translate-y: -50%;
@@ -14558,6 +14573,9 @@ html body{
     .md\:p-6{
         padding: 1.5rem; 
     }
+    .md\:p-3{
+        padding: 0.75rem; 
+    }
     .md\:\!px-10{
         padding-left: 2.5rem !important;
         padding-right: 2.5rem !important; 
@@ -14585,6 +14603,18 @@ html body{
     .md\:py-4{
         padding-top: 1rem;
         padding-bottom: 1rem; 
+    }
+    .md\:px-4{
+        padding-left: 1rem;
+        padding-right: 1rem; 
+    }
+    .md\:px-0{
+        padding-left: 0px;
+        padding-right: 0px; 
+    }
+    .md\:py-6{
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem; 
     }
     .md\:pb-0{
         padding-bottom: 0px; 
@@ -14669,6 +14699,9 @@ html body{
     .md\:text-xl{
         font-size: 1.25rem;
         line-height: 1.75rem; 
+    }
+    .first-letter\:md\:w-16::first-letter{
+        width: 4rem; 
     } 
 }
 @media (min-width: 1024px){
