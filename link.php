@@ -158,7 +158,14 @@ echo txtRecord('./@record/');
 				<li>
                     <a href="/bcGame/casino/index.html" target="_blank" class="">메인</a>
                     <ul>
-                        <li><a href="/bcGame/casino/detail.html" target="_blank" class="">카지노 상세 페이지</a></li>
+                        <li>
+                            <a href="/bcGame/casino/detail.html" target="_blank" class="">카지노 상세 페이지</a>
+                            <ul>
+                                <li><button class="pop-modal" data-tw-toggle="modal" data-tw-target="#detail_share-modal">게임 공유하기 모달</button></li>
+                                <li><button class="pop-modal" data-tw-toggle="modal" data-tw-target="#house_edge-modal">하우스엣지 모달</button></li>
+                                <li><button class="pop-modal draggable_modal_open">실시간 통계 모달</button></li>
+                            </ul>
+                        </li>
                         <li><button class="pop-modal" data-tw-toggle="modal" data-tw-target="#racing_lank-modal">최신베팅&레이스 > 롤링대회 > 내역 모달</button></li>
                         <li><button class="pop-modal" data-tw-toggle="modal" data-tw-target="#rolling_info-modal">롤링안내 모달</button></li>
                     </ul>
@@ -169,7 +176,14 @@ echo txtRecord('./@record/');
 				<li>
                     <a href="/bcGame/casino/index.html?casino-8-tab" target="_blank" class="">BC 브랜드</a>
                     <ul>
-                        <li><a href="/bcGame/casino/bc_detail.html" target="_blank" class="">상세 페이지</a></li>
+                        <li>
+                            <a href="/bcGame/casino/bc_detail.html" target="_blank" class="">상세 페이지</a>
+                            <ul>
+                                <li><button class="pop-modal" data-tw-toggle="modal" data-tw-target="#detail_share-modal">게임 공유하기 모달</button></li>
+                                <li><button class="pop-modal" data-tw-toggle="modal" data-tw-target="#house_edge-modal">하우스엣지 모달</button></li>
+                                <li><button class="pop-modal draggable_modal_open">실시간 통계 모달</button></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li><a href="/bcGame/casino/slots.html" target="_blank" class="">슬롯</a></li>
@@ -11456,6 +11470,169 @@ echo txtRecord('./@record/');
     </div>
 </div>
 
+<!-- 게임 공유하기 모달 -->
+<div id="detail_share-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body bg-modaldark relative rounded">
+                <div class="relative flex items-center justify-end p-4">
+                    <button class="basic-hover" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                </div>
+
+                <div class="px-6 pb-10 font-semibold">
+                    <p class="text-tit font-extrabold text-lg text-center">게임 공유하기</p>
+
+                    <div class="flex items-center flex-wrap justify-center gap-4 mt-5">
+                        <a href="javascript:;"><img class="w-10" src="/bcGame/dist/custom_img/share_icon/share_3.webp" alt=""></a>
+                        <a href="javascript:;"><img class="w-10" src="/bcGame/dist/custom_img/share_icon/share_8.webp" alt=""></a>
+                        <a href="javascript:;"><img class="w-10" src="/bcGame/dist/custom_img/share_icon/share_7.webp" alt=""></a>
+                        <a href="javascript:;"><img class="w-10" src="/bcGame/dist/custom_img/share_icon/share_11.webp" alt=""></a>
+                        <a href="javascript:;"><img class="w-10" src="/bcGame/dist/custom_img/share_icon/share_12.webp" alt=""></a>
+                        <a href="javascript:;"><img class="w-10" src="/bcGame/dist/custom_img/share_icon/share_13.webp" alt=""></a>
+                        <a href="javascript:;"><img class="w-10" src="/bcGame/dist/custom_img/share_icon/share_14.webp" alt=""></a>
+                        <a href="javascript:;"><img class="w-10" src="/bcGame/dist/custom_img/share_icon/share_16.webp" alt=""></a>
+                        <a href="javascript:;"><img class="w-10" src="/bcGame/dist/custom_img/share_icon/share_17.webp" alt=""></a>
+                    </div>
+                </div>
+
+
+                    
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 하우스엣지 모달 -->
+<div id="house_edge-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body bg-modaldark relative rounded">
+                <div class="px-6 py-10 font-semibold">
+                    <p class="text-tit font-extrabold text-lg text-center">하우스엣지: 4%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 실시간 통계 모달 -->
+<div class="draggable_modal w-[300px] transition-all bg-white md:bg-modaldark shadow-md">
+    <div class="draggable_modal_header relative p-3 bg-grey-600 rounded-t-md">
+        <p class="text-tit font-extrabold text-base text-center">실시간 통계</p>
+        <button class="absolute right-0 top-1.5 p-2 basic-hover draggable_modal_close"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+    </div>
+    <div class="py-5 px-3 overflow-y-auto scrollbar h-[350px] sm:h-[580px]">
+        <div class="custom_select flex-1 text-xs" data-select="add">
+            <button class="btn h-10 flex px-4 items-center justify-between border-none bg-back2">
+                <span class="add_name">벳</span>
+                <i><svg class="w-3.5 h-3.5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+            </button>
+            <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-back">
+                <li class="py-1 flex items-center gap-2 nohover on">
+                    <input type="checkbox" class="form-check-input grayborder" id="live-01" value="벳" checked>
+                    <label for="live-01" class="flex items-center justify-between flex-1 w-3/4 pr-1">
+                        <span class="truncate">벳</span>
+                    </label>
+                </li>
+                <li class="border-t my-2 border-slate-300"></li>
+                <li class="py-1 flex items-center gap-2 nohover">
+                    <input type="checkbox" class="form-check-input grayborder" id="live-02" value="롤링 대회">
+                    <label for="live-02" class="flex items-center justify-between flex-1 w-3/4 pr-1">
+                        <span class="truncate">롤링 대회</span>
+                    </label>
+                </li>
+                <li class="py-1 flex items-center gap-2 nohover">
+                    <input type="checkbox" class="form-check-input grayborder" id="live-03" value="BCD 보물 상자">
+                    <label for="live-03" class="flex items-center justify-between flex-1 w-3/4 pr-1">
+                        <span class="truncate">BCD 보물 상자</span>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="mt-2 bg-back2 p-2 text-xs rounded">
+            <div class="flex items-center justify-between py-1 gap-2">
+                <p class="text-tit">벳</p>
+                <button><svg class="w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Clear"></use></svg></button>
+            </div>
+            <div class="py-3">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <span class="block">롤링된</span>
+                        <b class="text-tit">0.00 <img class="inline-flex w-3 h-3" src="/bcGame/dist/custom_img/coin/BTC.webp"></b>
+                    </div>
+                    <div>
+                        <span class="block">혜택</span>
+                        <b class="text-primary">0.00 <img class="inline-flex w-3 h-3" src="/bcGame/dist/custom_img/coin/BTC.webp"></b>
+                    </div>
+                </div>
+            </div>
+            <div class="h-40"></div>
+            <div class="flex items-center justify-between py-3 text-xs">
+                <div>승리 <span class="text-primary font-bold">0</span></div>
+                <div>패배 <span class="text-danger font-bold">0</span></div>
+            </div>
+        </div>
+        <div class="mt-2 bg-back2 p-2 text-xs rounded">
+            <div class="flex items-center justify-between py-1 gap-2">
+                <p class="text-tit">벳</p>
+            </div>
+            <button class="bg-tab text-tit w-full py-3 font-bold">daily</button>
+            <div class="flex items-start justify-between mt-2">
+                <div>
+                    <p>Daily Contest End In</p>
+                    <div class="flex items-center gap-1 mt-2 font-bold">
+                        <div class="flex items-center justify-center w-8 h-9 rounded text-tit text-sm bg-tab">08</div>
+                        :
+                        <div class="flex items-center justify-center w-8 h-9 rounded text-tit text-sm bg-tab">03</div>
+                        :
+                        <div class="flex items-center justify-center w-8 h-9 rounded text-tit text-sm bg-tab">30</div>
+                    </div>
+                </div>
+                <div>
+                    <p class="mb-4">현재 랭킹</p>
+                    <b class="text-tit text-base font-bold">50th+</b>
+                </div>
+            </div>
+            <div class="flex items-center justify-center gap-1 py-3 border-b border-slate-300" style="font-size:10px;">
+                <i class="w-1 h-1 rounded-full bg-primary"></i>
+                <p>692986.8932 에 도달하기 위해 더 BCD 걸기</p>
+                <span class="text-tit">TOP 10</span>
+            </div>
+            <div class="flex items-center justify-between mt-2">
+                <div>
+                    <span class="block">롤링된</span>
+                    <b class="text-tit">0.00 <img class="inline-flex w-3 h-3" src="/bcGame/dist/custom_img/coin/BTC.webp"></b>
+                </div>
+                <div>
+                    <span class="block">상품/상금</span>
+                    <b class="text-primary">0.00 <img class="inline-flex w-3 h-3" src="/bcGame/dist/custom_img/coin/BTC.webp"></b>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-2 bg-back2 p-2 text-xs rounded">
+            <div class="flex items-center justify-between py-1 gap-2">
+                <p class="text-tit">BCD 보물 상자</p>
+                <div><img class="inline-flex w-3 h-3" src="/bcGame/dist/custom_img/coin/BTC.webp"> 0.00</div>
+            </div>
+            <div class="relative rounded bg-white dark:bg-back h-[7px] progressbar my-2">
+                <div class="relative bar h-full rounded bg-gradient-yellow " style="width:10%;">
+                    <img class="absolute -right-2 -top-1 w-4" src="/bcGame/dist/custom_img/bcdprogress_coin.png" alt="">
+                </div>
+            </div>
+            <div>
+                청구에 필요한 최소 요건: <img class="inline-flex w-5 h-5" src="/bcGame/dist/custom_img/coin/BTC.webp"> 5
+            </div>
+            <div class="flex items-end justify-between w-full">
+                <button class="text-primary" data-tw-toggle="modal" data-tw-target="#bonus_bcd-modal">보너스 잠금해제 <svg class="inline-flex w-3 h-3 fill-primary"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                <img class="inline-flex w-1/3" src="/bcGame/dist/custom_img/bg_live_img.png">
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
 <!-- 공통 모달 영역 : E -->
 
 <script src='https://design01.codeidea.io/link_script.js'></script>
@@ -11468,6 +11645,29 @@ echo txtRecord('./@record/');
      $( function() {
             $( "#slider" ).slider();
         } );
+
+    // 드래그
+    $(window).on('load',function() {
+        const DraggModal = $(".draggable_modal");
+        
+        $('.draggable_modal_open').on('click', function() {
+            DraggModal.addClass('show');
+
+            // show 클래스가 추가된 후 300ms 지연
+            setTimeout(function() {
+                DraggModal.removeClass('transition-all');
+            }, 200);
+        });
+        
+        DraggModal.draggable({ handle: ".draggable_modal_header" });
+        
+        $('.draggable_modal_close').on('click', function() {
+            DraggModal.removeClass('show');
+            DraggModal.addClass('transition-all');
+        });
+
+        
+    });
 
     topbarHandle()
 
