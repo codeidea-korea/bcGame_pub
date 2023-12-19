@@ -49,6 +49,7 @@ button:focus {box-shadow:none !important; }
 .hover\:bg-stand:hover {background-color: var(--standard-color);}
 .hover\:bg-place:hover {background-color: var(--placeholder-color);}
 .hover\:bg-tab:hover {background-color: var(--tab-bg);}
+.hover\:bg-btndark:hover {background-color: var(--btn-dark);}
 .dark .hover\:bg-gradient-green:hover {background: linear-gradient(90deg,rgba(69,217,30,.3) 8.96%,rgba(69,217,30,0) 100%),#25282B;}
 .hover\:bg-gradient-green:hover {background: linear-gradient(90deg,rgba(69,217,30,.3) 8.96%,rgba(69,217,30,0) 100%),#F6F7FA;}
 
@@ -72,9 +73,11 @@ button:focus {box-shadow:none !important; }
 
 
 .fill-title {fill: var(--title-color);}
+.fill-title2 {fill: var(--text2-color);}
 .fill-basic {fill: var(--text-color);}
 .fill-sub {fill: var(--sub-text-color);}
 .fill-place {fill: var(--placeholder-color);}
+.fill-stand {color:var(--standard-color);}
 .fill-primary {fill: var(--primary-color) !important;}
 .fill-yellow {fill:var(--yellow-color); }
 .fill-red {fill:#eb4926}
@@ -138,6 +141,9 @@ button:disabled {opacity:.7 !important; }
 .scrollbar::-webkit-scrollbar {width:5px; }
 .scrollbar::-webkit-scrollbar-thumb {background-color: var(--placeholder-color); border-radius:4px;}
 .scrollbar::-webkit-scrollbar-track {background-color: transparent;}
+.scrollbar.type02::-webkit-scrollbar-thumb {background-color: var(--background-light); }
+
+.noscrolbar::-webkit-scrollbar {display:none; }
 
 .scrollbar_x::-webkit-scrollbar {height:5px; }
 .scrollbar_x::-webkit-scrollbar-thumb {background-color: var(--placeholder-color); border-radius:4px;}

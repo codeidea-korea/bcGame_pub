@@ -21,6 +21,7 @@
     --color-slate-900: theme("colors.rgb.gray.900");
 
     --title-color: #000000;
+    --text2-color: #444444;
     --text-color: #31373D;
     --sub-text-color: #5F6975;
     --placeholder-color: #BEC1CC;
@@ -68,6 +69,7 @@
     --color-darkmode-900: 15 23 42;
 
     --title-color: #ffffff;
+    --text2-color: #cccccc;
     --text-color: #98A7B5;
     --sub-text-color: #656E78;
     --placeholder-color: #4D565E;
