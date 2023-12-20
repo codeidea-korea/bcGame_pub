@@ -1063,5 +1063,29 @@
 }
 
 
+/*
+#=========================================#
+        스포츠
+#=========================================#
+*/
+.sports_wrap {width:100%; height:calc(100vh - 64px); color:var(--text2-color); }
+
+.sports_left {width:295px; }
+.sports_center {width:calc(100vw - 595px); }
+.sports_right {width:300px; }
+
+@media all and (max-width:1024px){
+    .sports_wrap {height:auto; }
+    .sports_center {width:100%; }
+    .sports_left ,
+    .sports_right {z-index:51; position:fixed; left:100%; top:50px; width:100%; height:calc(100% - 50px); background-color: var(--background-color); transition:left 0.5s;  }
+    .sports_left.on,
+    .sports_right.on {left:0;}
+}
+
+
+.sports_like_btn img:last-of-type {display:none; }
+.sports_like_btn.on img:first-of-type {display:none; }
+.sports_like_btn.on img:last-of-type {display:block; }
 
 

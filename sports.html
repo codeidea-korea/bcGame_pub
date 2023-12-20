@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <link href="/bcGame/dist/custom_img/stake_favicon.png" rel="shortcut icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <title>BC.GAME</title>
+    <!-- ** css 시작 ** -->
+    <link rel="stylesheet" href="/bcGame/dist/css/app.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <!-- 커스텀 css 추가 -->
+    <link rel="stylesheet" href="/bcGame/dist/custom_css/custom.css" />
+    <!-- ** css 끝 ** -->
+</head>
+
+<body class="bg-back">
+
+    <div class="flex relative">
+        <!--  ** 사이드 메뉴 시작 ** -->
+        <div class="sidebar"></div>
+        <!--  ** 사이드 메뉴 끝 ** -->
+
+        <!--  ** 메인 보드 시작 ** -->
+        <div class="content trading motop_open">
+            <!-- ** 페이지 로딩 ** -->
+            <div id="loadingContainer">
+                <svg width="25" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" fill="#3BC117" class="w-12 h-12">
+                    <circle cx="15" cy="15" r="15">
+                        <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                    <circle cx="60" cy="15" r="9" fill-opacity="0.3">
+                        <animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                    <circle cx="105" cy="15" r="15">
+                        <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                </svg>
+            </div>
+            <!-- ** 페이지 로딩 끝 ** -->
+            
+            <!-- ** 탑바 시작 ** -->
+            <!-- ** 탑바 끝 ** -->
+
+            <!-- ** 내용시작 ** -->
+            <div class="container_wrap">
+
+                <div class="flex sports_wrap">
+                    <!-- 좌측 : 예정 레이스 -->
+                    <div class="sports_left h-full scrollbar overflow-y-auto type02 py-4 px-2.5 shrink-0">
+                      
+                        <div class="relative w-full">
+                            <label for="sports_input"><svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Search"></use></svg></label>
+                            <input type="text" id="sports_input" class="form-control type02 pl-10" placeholder="Search events...">
+                        </div>
+
+                        <div class="flex items-center justify-between gap-2 px-3 py-3 mt-2 bg-stand hover:bg-btndark cursor-pointer rounded">
+                            <img class="w-5 h-5" src="/bcGame/dist/custom_img/sports/like_done.svg" alt="">
+                            <b class="flex-1">Favourites</b>
+                            <svg class="w-4 h-4 fill-basic "><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                        </div>
+
+                        <div class="p-0.5 bg-btndark">
+                            <div>TOP<br/>COMPETITIONS</div>
+                            <div>
+                                <svg width="24" height="24" class="icon" ><title>Tennis</title><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-2"></use></svg>
+                            </div>
+                        </div>
+
+                            
+                    </div>
+
+                    <!-- 중앙 -->
+                    <div class="sports_center h-full scrollbar overflow-y-auto type02">
+                       
+                    </div>
+
+                    <!-- 우측 : 베팅 슬립 -->
+                    <div class="sports_right h-full scrollbar overflow-y-auto type02 py-4 px-2.5 shrink-0">
+                        
+                       
+                    </div>
+                </div>
+
+                
+                <!-- ** 푸터 시작 ** -->
+                <!-- ** 푸터 끝 ** -->
+            
+            </div>
+            <!-- ** 내용 끝 ** -->
+
+        </div>
+        <!--  ** 메인 보드 끝 ** -->
+
+        <!--  ** 오른쪽 보드 시작 ** -->
+        <div class="right-sidebar "></div>
+        <!--  ** 오른쪽 보드 끝 ** -->
+
+
+        <!-- 공통 알림 영역 : S -->
+
+        <!-- 공통 알림 영역 : E -->
+
+
+        <!--  ** 모달영역 시작 ** -->
+
+        <!--  ** 모달영역 끝 ** -->
+
+    </div>
+    <!-- ** JS 시작 ** -->
+    <script
+    src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="/bcGame/dist/custom_js/custom.js"></script>
+    <script src="/bcGame/dist/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- 필수 jquery library -->
+    <script src="/bcGame/dist/js/jquery-1.12.4.js"></script>
+    <script src="/bcGame/dist/js/jquery-ui.js"></script>
+
+    <script>
+        $(window).on('load',function(){
+            $('.mo_top_menu .racing').addClass('active');
+        })
+       
+        $('.sports_like_btn').on('click',function(){
+            $(this).toggleClass('on')
+        })
+    </script>
+
+  
+
+</body>
+
+</html>

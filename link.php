@@ -242,7 +242,6 @@ echo txtRecord('./@record/');
                 <li><a href="/bcGame/bc_weekly-raffle.html" target="_blank" class="">주간 추첨</a></li>
             </ul>
         </li>
-        .
         <li class="mt20" data-label="제휴">
             <ul>
 				<li>
@@ -253,6 +252,7 @@ echo txtRecord('./@record/');
                         <li><button class="pop-modal" data-tw-toggle="modal" data-tw-target="#commission_info-modal">커미션 보상 규칙 모달</button></li>
                     </ul>
                 </li>
+                <li><a href="/bcGame/affiliate.html" target="_blank" class="">제휴 - 로그인</a></li>
             </ul>
         </li>
 
