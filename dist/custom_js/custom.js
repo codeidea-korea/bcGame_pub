@@ -462,8 +462,10 @@ const topbarHandle = ()=>{
         const select = document.querySelector('.custom_select.on')
         const datapicker = document.querySelector('.litepicker')
 
-        if(datapicker.style.display == "block"){
-            return false
+        if(datapicker){
+            if(datapicker.style.display == "block"){
+                return false
+            }
         }
         if(select && !select.contains(e.target)){
             select.classList.remove('on')

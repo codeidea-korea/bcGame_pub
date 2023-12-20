@@ -203,6 +203,15 @@ echo txtRecord('./@record/');
             </ul>
         </li>
 
+        <li class="mt20" data-label="복권">
+            <ul>
+				<li><a href="/bcGame/lottery.html" target="_blank" class="">복권</a></li>
+				<li><a href="/bcGame/lottery_detail.html" target="_blank" class="">복권 - 상세 </a></li>
+				<li><a href="/bcGame/lottery_favorite.html" target="_blank" class="">복권 - 가장 좋아하는</a></li>
+				<li><a href="/bcGame/lottery_bet.html" target="_blank" class="">복권 - 나의 베팅</a></li>
+            </ul>
+        </li>
+
         <li class="mt20" data-label="거래">
             <ul>
 				<li><a href="/bcGame/trading.html" target="_blank" class="">거래</a></li>

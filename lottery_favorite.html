@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <link href="/bcGame/dist/custom_img/stake_favicon.png" rel="shortcut icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <title>BC.GAME</title>
+    <!-- ** css 시작 ** -->
+    <link rel="stylesheet" href="/bcGame/dist/css/app.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <!-- 커스텀 css 추가 -->
+    <link rel="stylesheet" href="/bcGame/dist/custom_css/custom.css" />
+    <!-- ** css 끝 ** -->
+</head>
+
+<body class="bg-back">
+
+    <div class="flex relative">
+        <!--  ** 사이드 메뉴 시작 ** -->
+        <div class="sidebar lottery_side"></div>
+        <!--  ** 사이드 메뉴 끝 ** -->
+
+        <!--  ** 메인 보드 시작 ** -->
+        <div class="content lottery motop_open">
+            <!-- ** 페이지 로딩 ** -->
+            <div id="loadingContainer">
+                <svg width="25" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" fill="#3BC117" class="w-12 h-12">
+                    <circle cx="15" cy="15" r="15">
+                        <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                    <circle cx="60" cy="15" r="9" fill-opacity="0.3">
+                        <animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                    <circle cx="105" cy="15" r="15">
+                        <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                </svg>
+            </div>
+            <!-- ** 페이지 로딩 끝 ** -->
+            
+            <!-- ** 탑바 시작 ** -->
+            <!-- ** 탑바 끝 ** -->
+
+            <!-- ** 내용시작 ** -->
+            <div class="container_wrap lottery_wrap">
+
+
+                <!-- 좌측 : 검색 -->
+                <div class="lottery_left bg-back2 overflow-y-auto scrollbar">
+
+                    <!-- 상단고정부분 -->
+                    <div class="lottery_top bg-back2 pb-5 pt-1">
+                        <div class="hidden md:grid grid-cols-4 lottery_top_btn px-3">
+                            <button class="py-3" onclick="window.location.href='/bcGame/lottery.html'"><svg class="w-6 h-6 mx-auto" xmlns="http://www.w3.org/2000/svg" width="23" height="20" viewBox="0 0 23 20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.169 2.60213C11.7887 2.25986 11.2113 2.25986 10.831 2.60213L2.83104 9.80211C2.62032 9.99181 2.5 10.2619 2.5 10.5454V16.6547C2.5 17.207 2.94772 17.6547 3.5 17.6547H6.7727C7.325 17.6547 7.7727 17.207 7.7727 16.6547V15.2547C7.7727 13.5978 9.1159 12.2547 10.7727 12.2547H12.2273C13.8841 12.2547 15.2273 13.5978 15.2273 15.2547V16.6547C15.2273 17.207 15.675 17.6547 16.2273 17.6547H19.5C20.0523 17.6547 20.5 17.207 20.5 16.6547V10.5454C20.5 10.2619 20.3797 9.99181 20.169 9.80211L12.169 2.60213ZM9.4931 1.11555C10.634 0.088721 12.366 0.088721 13.5069 1.11555L21.5069 8.31551C22.139 8.88451 22.5 9.69501 22.5 10.5454V16.6547C22.5 18.3115 21.1569 19.6547 19.5 19.6547H16.2273C14.5704 19.6547 13.2273 18.3115 13.2273 16.6547V15.2547C13.2273 14.7024 12.7796 14.2547 12.2273 14.2547H10.7727C10.2204 14.2547 9.7727 14.7024 9.7727 15.2547V16.6547C9.7727 18.3115 8.4296 19.6547 6.7727 19.6547H3.5C1.84315 19.6547 0.5 18.3115 0.5 16.6547V10.5454C0.5 9.69501 0.86096 8.88451 1.49311 8.31551L9.4931 1.11555Z" fill=""></path></svg></button>
+                            <button class="py-3 on"><svg class="w-6 h-6 mx-auto" xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.1254 0.940613C11.5996 -0.313537 13.4005 -0.313537 13.8746 0.940613L16.1994 7.0896L23.0777 7.2991C24.3616 7.3383 25.1024 9.0188 23.9139 9.8991L18.5169 13.8962L20.4146 20.138C20.62 20.8138 20.3039 21.4229 19.8534 21.7351C19.4076 22.044 18.7593 22.1206 18.2036 21.7608L12.5 18.0679L6.79647 21.7608C6.24078 22.1206 5.59244 22.044 5.14668 21.7351C4.69615 21.4229 4.38005 20.8138 4.5855 20.138L6.48316 13.8962L1.08619 9.8991C-0.102383 9.0188 0.638407 7.3383 1.92235 7.2991L8.80057 7.0896L11.1254 0.940613ZM12.5 2.96023L10.5424 8.138C10.3266 8.709 9.78647 9.0605 9.21317 9.078L3.57001 9.2499L7.98987 12.5233C8.46867 12.8779 8.69417 13.4993 8.51357 14.0935L6.93397 19.2891L11.6943 16.207C12.1833 15.8903 12.8168 15.8903 13.3058 16.207L18.0661 19.2891L16.4865 14.0935C16.3058 13.4993 16.5314 12.8779 17.0102 12.5233L21.43 9.2499L15.7869 9.078C15.2136 9.0605 14.6735 8.709 14.4577 8.138L12.5 2.96023Z" fill=""></path></svg></button>
+                            <button class="py-3 bet" onclick="window.location.href='/bcGame/lottery_bet.html'"><svg class="w-6 h-6 mx-auto" xmlns="http://www.w3.org/2000/svg" width="19" height="22" viewBox="0 0 19 22" fill="none"><path d="M6.5 7.00009H12.5" stroke="" stroke-width="2" stroke-linecap="round"></path><path d="M6.5 11.0001H12.5" stroke="var(--g52yms)" stroke-width="2" stroke-linecap="round"></path><path d="M6.5 15.0001H12.5" stroke="" stroke-width="2" stroke-linecap="round"></path><rect x="1.5" y="1.00009" width="16" height="20" rx="1" stroke="" stroke-width="2" stroke-linejoin="round"></rect></svg></button>
+                            <button class="py-3 search_btn"><svg class="w-6 h-6 mx-auto" xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.99999 9.17163C4.99999 5.30563 8.134 2.17163 12 2.17163C15.866 2.17163 19 5.30563 19 9.17163C19 13.0376 15.866 16.1716 12 16.1716C8.134 16.1716 4.99999 13.0376 4.99999 9.17163ZM12 0.171631C7.0294 0.171631 2.99999 4.20107 2.99999 9.17163C2.99999 11.4642 3.85719 13.5565 5.2686 15.1457L0.29289 20.1213C-0.09763 20.5119 -0.09763 21.145 0.29289 21.5356C0.68342 21.9261 1.31658 21.9261 1.70711 21.5356L6.7559 16.4868C8.2325 17.5472 10.0433 18.1716 12 18.1716C16.9706 18.1716 21 14.1422 21 9.17163C21 4.20107 16.9706 0.171631 12 0.171631Z"></path></svg></button>
+                        </div>
+                        <div class="search_box hidden px-4 py-2">
+                            <div class="relative w-full">
+                                <label for="lottery_search">
+                                    <svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic opacity-50"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Search"></use></svg>
+                                </label>
+                                <input type="text" id="lottery_search" class="form-control bg-backlight pl-10" placeholder="Search lottery">
+                            </div>
+                            <div class="custom_select w-full mt-2">
+                                <button class="w-32 h-9 flex px-4 items-center justify-between border-none bg-backlight rounded-sm">
+                                    <span>All country</span>
+                                    <i><svg class="w-3.5 h-3.5 fill-basic rotate-90 opacity-50"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                </button>
+                                <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
+                                    <li class="py-1 on">All country</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""> USA</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""> Australia</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Uruguay.webp" alt=""> Uruguay</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/singapore.png" alt=""> singapore</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""> USA</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""> Australia</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Uruguay.webp" alt=""> Uruguay</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/singapore.png" alt=""> singapore</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-4 px-4 gap-2 mt-2 font-extrabold lottery_top_btn">
+                            <button class="btn-normal rounded py-1">A - F</button>
+                            <button class="btn-normal rounded py-1">G - L</button>
+                            <button class="btn-normal rounded py-1">M - R</button>
+                            <button class="btn-normal rounded py-1">S - Z</button>
+                        </div>
+                    </div>
+
+                    <!-- 하단 리스트 -->
+                    <div class="px-4">
+                        <div class="font-bold text-tit">A</div>
+                        <div class="my-4">
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Arizona Triple Twist 6/42</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">All or Nothing Morning Texas 12/24</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Australia Powerball 7/35</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Australia Powerball 7/35</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Arizona Triple Twist 6/42</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">All or Nothing Morning Texas 12/24</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="font-bold text-tit">B</div>
+                        <div class="my-4">
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Arizona Triple Twist 6/42</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">All or Nothing Morning Texas 12/24</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Australia Powerball 7/35</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Australia Powerball 7/35</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Arizona Triple Twist 6/42</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">All or Nothing Morning Texas 12/24</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="font-bold text-tit">C</div>
+                        <div class="my-4">
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Arizona Triple Twist 6/42</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">All or Nothing Morning Texas 12/24</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Australia Powerball 7/35</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Australia Powerball 7/35</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Arizona Triple Twist 6/42</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">All or Nothing Morning Texas 12/24</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 배팅슬립 -->
+                <div class="batting_slip">
+                    <div class="top_box flex items-center justify-between bg-primary px-5 w-[350px] h-14 rounded-t cursor-pointer">
+                        <div class="flex items-center gap-2">
+                            <img class="" src="/bcGame/dist/custom_img/lottery/bet-icon.png" alt="">
+                            <p class="text-white text-base font-bold">배팅 슬립</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 bg-white text-primary font-extrabold rounded-2xl font-base">0</span>
+                            <svg class="w-6 h-6 fill-white -rotate-90"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                        </div>
+                    </div>
+                    <div class="cont bg-back2 p-4">
+                        <div class="flex items-center p-5 border-b border-slate-300">
+                            <div class="flex items-end justify-center w-12 h-12 mx-4 rounded-full bg-primary bg-opacity-50"><img src="/bcGame/dist/custom_img/lottery/bet-icon2.png" alt=""></div>
+                            <div>
+                                <p class="text-tit font-bold mb-2">배팅하기</p>
+                                <p>선택 사항이 이 영역에 나타납니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!-- 중앙 : 컨텐츠 -->
+
+                <!-- 모바일 상단 -->
+                <div class="md:hidden block lottery_top bg-back2">
+                    <div class="grid grid-cols-4 lottery_top_btn px-3">
+                        <button class="py-3" onclick="window.location.href='/bcGame/lottery.html'"><svg class="w-6 h-6 mx-auto" xmlns="http://www.w3.org/2000/svg" width="23" height="20" viewBox="0 0 23 20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.169 2.60213C11.7887 2.25986 11.2113 2.25986 10.831 2.60213L2.83104 9.80211C2.62032 9.99181 2.5 10.2619 2.5 10.5454V16.6547C2.5 17.207 2.94772 17.6547 3.5 17.6547H6.7727C7.325 17.6547 7.7727 17.207 7.7727 16.6547V15.2547C7.7727 13.5978 9.1159 12.2547 10.7727 12.2547H12.2273C13.8841 12.2547 15.2273 13.5978 15.2273 15.2547V16.6547C15.2273 17.207 15.675 17.6547 16.2273 17.6547H19.5C20.0523 17.6547 20.5 17.207 20.5 16.6547V10.5454C20.5 10.2619 20.3797 9.99181 20.169 9.80211L12.169 2.60213ZM9.4931 1.11555C10.634 0.088721 12.366 0.088721 13.5069 1.11555L21.5069 8.31551C22.139 8.88451 22.5 9.69501 22.5 10.5454V16.6547C22.5 18.3115 21.1569 19.6547 19.5 19.6547H16.2273C14.5704 19.6547 13.2273 18.3115 13.2273 16.6547V15.2547C13.2273 14.7024 12.7796 14.2547 12.2273 14.2547H10.7727C10.2204 14.2547 9.7727 14.7024 9.7727 15.2547V16.6547C9.7727 18.3115 8.4296 19.6547 6.7727 19.6547H3.5C1.84315 19.6547 0.5 18.3115 0.5 16.6547V10.5454C0.5 9.69501 0.86096 8.88451 1.49311 8.31551L9.4931 1.11555Z" fill=""></path></svg></button>
+                        <button class="py-3 on"><svg class="w-6 h-6 mx-auto" xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.1254 0.940613C11.5996 -0.313537 13.4005 -0.313537 13.8746 0.940613L16.1994 7.0896L23.0777 7.2991C24.3616 7.3383 25.1024 9.0188 23.9139 9.8991L18.5169 13.8962L20.4146 20.138C20.62 20.8138 20.3039 21.4229 19.8534 21.7351C19.4076 22.044 18.7593 22.1206 18.2036 21.7608L12.5 18.0679L6.79647 21.7608C6.24078 22.1206 5.59244 22.044 5.14668 21.7351C4.69615 21.4229 4.38005 20.8138 4.5855 20.138L6.48316 13.8962L1.08619 9.8991C-0.102383 9.0188 0.638407 7.3383 1.92235 7.2991L8.80057 7.0896L11.1254 0.940613ZM12.5 2.96023L10.5424 8.138C10.3266 8.709 9.78647 9.0605 9.21317 9.078L3.57001 9.2499L7.98987 12.5233C8.46867 12.8779 8.69417 13.4993 8.51357 14.0935L6.93397 19.2891L11.6943 16.207C12.1833 15.8903 12.8168 15.8903 13.3058 16.207L18.0661 19.2891L16.4865 14.0935C16.3058 13.4993 16.5314 12.8779 17.0102 12.5233L21.43 9.2499L15.7869 9.078C15.2136 9.0605 14.6735 8.709 14.4577 8.138L12.5 2.96023Z" fill=""></path></svg></button>
+                        <button class="py-3 bet" onclick="window.location.href='/bcGame/lottery_bet.html'"><svg class="w-6 h-6 mx-auto" xmlns="http://www.w3.org/2000/svg" width="19" height="22" viewBox="0 0 19 22" fill="none"><path d="M6.5 7.00009H12.5" stroke="" stroke-width="2" stroke-linecap="round"></path><path d="M6.5 11.0001H12.5" stroke="var(--g52yms)" stroke-width="2" stroke-linecap="round"></path><path d="M6.5 15.0001H12.5" stroke="" stroke-width="2" stroke-linecap="round"></path><rect x="1.5" y="1.00009" width="16" height="20" rx="1" stroke="" stroke-width="2" stroke-linejoin="round"></rect></svg></button>
+                        <button class="py-3 mo_search_btn"><svg class="w-6 h-6 mx-auto" xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.99999 9.17163C4.99999 5.30563 8.134 2.17163 12 2.17163C15.866 2.17163 19 5.30563 19 9.17163C19 13.0376 15.866 16.1716 12 16.1716C8.134 16.1716 4.99999 13.0376 4.99999 9.17163ZM12 0.171631C7.0294 0.171631 2.99999 4.20107 2.99999 9.17163C2.99999 11.4642 3.85719 13.5565 5.2686 15.1457L0.29289 20.1213C-0.09763 20.5119 -0.09763 21.145 0.29289 21.5356C0.68342 21.9261 1.31658 21.9261 1.70711 21.5356L6.7559 16.4868C8.2325 17.5472 10.0433 18.1716 12 18.1716C16.9706 18.1716 21 14.1422 21 9.17163C21 4.20107 16.9706 0.171631 12 0.171631Z"></path></svg></button>
+                    </div>
+                </div>
+
+                <!-- 컨텐츠 -->
+                <div class="px-3 md:px-10 py-5">
+                   
+
+                    <!-- 가장 좋아하는 -->
+                    <div class="py-3">
+                        <div class="flex items-center justify-between">
+                            <h4 class="text-lg text-tit font-bold">가장 좋아하는</h4>
+                        </div>
+                        <div class="flex flex-wrap items-center justify-between gap-3 mt-2 mb-4">
+                            <div class="custom_select w-full md:w-36">
+                                <button class="w-full h-9 flex px-4 items-center justify-between border-none bg-backlight rounded-sm">
+                                    <span>All country</span>
+                                    <i><svg class="w-3.5 h-3.5 fill-basic rotate-90 opacity-50"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                </button>
+                                <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
+                                    <li class="py-1 on">All country</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""> USA</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""> Australia</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Uruguay.webp" alt=""> Uruguay</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/singapore.png" alt=""> singapore</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""> USA</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""> Australia</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Uruguay.webp" alt=""> Uruguay</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/singapore.png" alt=""> singapore</li>
+                                </ul>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="custom_select w-48">
+                                    <button class="w-32 h-9 flex px-4 items-center justify-between border-none bg-backlight rounded-sm">
+                                        <p>Sort By: <span>Added Date</span></p>
+                                        <i><svg class="w-3.5 h-3.5 fill-basic rotate-90 opacity-50"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                    </button>
+                                    <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
+                                        <li class="py-1 on">Added Date</li>
+                                        <li class="py-1.5 ">Drow Date</li>
+                                        <li class="py-1.5 ">Popularity</li>
+                                    </ul>
+                                </div>
+                                <div class="relative flex-1 md:w-48">
+                                    <label for="cash_input"><svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Search"></use></svg></label>
+                                    <input type="text" id="cash_input" class="form-control bg-back2 pl-10 !h-9" placeholder="Search lottery name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="favorite_slide_box overflow-hidden mt-2">
+                            <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
+                                <li class="relative p-4 bg-back2 rounded">
+                                    <button class="absolute left-4 top-4 lottery_like_btn on shrink-0">
+                                        <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                        <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                    </button>
+                                    <img class="w-6 mx-auto" src="/bcGame/dist/custom_img/lottery/USA.webp" alt="">
+                                    <div class="py-2 text-tit font-medium truncate text-base text-center border-b border-slate-300">Arizona Triple Twist 6/42</div>
+                                    <div class="py-2 text-xs truncate text-center">다음추첨 02h 28m 22s</div>
+                                    <div class="flex items-center gap-1 mt-3">
+                                        <button class="bg-list w-full h-12 font-extrabold text-tit rounded">2개 볼 베팅</button>
+                                        <button class="bg-list w-full h-12 font-extrabold text-tit rounded">3개 볼 베팅</button>
+                                    </div>
+                                </li>
+                                <li class="relative p-4 bg-back2 rounded">
+                                    <button class="absolute left-4 top-4 lottery_like_btn on shrink-0">
+                                        <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                        <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                    </button>
+                                    <img class="w-6 mx-auto" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt="">
+                                    <div class="py-2 text-tit font-medium truncate text-base text-center border-b border-slate-300">6aus49 6/49</div>
+                                    <div class="py-2 text-xs truncate text-center">다음추첨 02h 28m 22s</div>
+                                    <div class="flex items-center gap-1 mt-3">
+                                        <button class="bg-list w-full h-12 font-extrabold text-tit rounded">2개 볼 베팅</button>
+                                        <button class="bg-list w-full h-12 font-extrabold text-tit rounded">3개 볼 베팅</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                  
+                </div>
+
+                
+                <!-- ** 푸터 시작 ** -->
+                <!-- ** 푸터 끝 ** -->
+            
+            </div>
+            <!-- ** 내용 끝 ** -->
+
+        </div>
+        <!--  ** 메인 보드 끝 ** -->
+
+        <!--  ** 오른쪽 보드 시작 ** -->
+        <div class="right-sidebar "></div>
+        <!--  ** 오른쪽 보드 끝 ** -->
+
+
+        <!-- 공통 알림 영역 : S -->
+
+        <!-- 공통 알림 영역 : E -->
+
+
+        <!--  ** 모달영역 시작 ** -->
+
+        <!--  ** 모달영역 끝 ** -->
+
+    </div>
+    <!-- ** JS 시작 ** -->
+    <script
+    src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="/bcGame/dist/custom_js/custom.js"></script>
+    <script src="/bcGame/dist/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- 필수 jquery library -->
+    <script src="/bcGame/dist/js/jquery-1.12.4.js"></script>
+    <script src="/bcGame/dist/js/jquery-ui.js"></script>
+
+    <script>
+        $(window).on('load',function(){
+            $('.mo_top_menu .rotto').addClass('active');
+        })
+        $('.lottery_top_btn button').on('click',function(){
+            if($(this).hasClass('search_btn')){
+                $('.search_box').removeClass('hidden')
+            }else{
+                $('.search_box').addClass('hidden')
+            }
+
+            if($(window).innerWidth() < 767) {
+                if($(this).hasClass('mo_search_btn')){
+                    $('.search_box').removeClass('hidden')
+                    $('.lottery_left').addClass('on')
+                    $('body').addClass('overflow-hidden')
+                }else{
+                    $('.search_box').addClass('hidden')
+                    $('.lottery_left').removeClass('on')
+                    $('body').removeClass('overflow-hidden')
+                }
+            }
+
+            $(this).addClass('on').siblings().removeClass('on')
+        })
+        $('.lottery_like_btn').on('click',function(){
+            $(this).toggleClass('on')
+        })
+
+        // 배팅슬립
+        $('.batting_slip .top_box').on('click',function(){
+            $(this).parent().toggleClass('on')
+        })
+
+
+
+    </script>
+
+  
+
+
+
+
+</body>
+
+</html>

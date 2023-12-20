@@ -23,11 +23,11 @@
 
     <div class="flex relative">
         <!--  ** 사이드 메뉴 시작 ** -->
-        <div class="sidebar"></div>
+        <div class="sidebar lottery_side"></div>
         <!--  ** 사이드 메뉴 끝 ** -->
 
         <!--  ** 메인 보드 시작 ** -->
-        <div class="content trading motop_open">
+        <div class="content lottery motop_open">
             <!-- ** 페이지 로딩 ** -->
             <div id="loadingContainer">
                 <svg width="25" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" fill="#3BC117" class="w-12 h-12">
@@ -55,15 +55,978 @@
 
 
                 <!-- 좌측 : 검색 -->
-                <div class="lottery_left bg-back2">
+                <div class="lottery_left bg-back2 overflow-y-auto scrollbar">
 
                     <!-- 상단고정부분 -->
+                    <div class="lottery_top bg-back2 pb-5 pt-1">
+                        <div class="hidden md:grid grid-cols-4 lottery_top_btn px-3">
+                            <button class="py-3"><svg class="w-6 h-6 mx-auto" xmlns="http://www.w3.org/2000/svg" width="23" height="20" viewBox="0 0 23 20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.169 2.60213C11.7887 2.25986 11.2113 2.25986 10.831 2.60213L2.83104 9.80211C2.62032 9.99181 2.5 10.2619 2.5 10.5454V16.6547C2.5 17.207 2.94772 17.6547 3.5 17.6547H6.7727C7.325 17.6547 7.7727 17.207 7.7727 16.6547V15.2547C7.7727 13.5978 9.1159 12.2547 10.7727 12.2547H12.2273C13.8841 12.2547 15.2273 13.5978 15.2273 15.2547V16.6547C15.2273 17.207 15.675 17.6547 16.2273 17.6547H19.5C20.0523 17.6547 20.5 17.207 20.5 16.6547V10.5454C20.5 10.2619 20.3797 9.99181 20.169 9.80211L12.169 2.60213ZM9.4931 1.11555C10.634 0.088721 12.366 0.088721 13.5069 1.11555L21.5069 8.31551C22.139 8.88451 22.5 9.69501 22.5 10.5454V16.6547C22.5 18.3115 21.1569 19.6547 19.5 19.6547H16.2273C14.5704 19.6547 13.2273 18.3115 13.2273 16.6547V15.2547C13.2273 14.7024 12.7796 14.2547 12.2273 14.2547H10.7727C10.2204 14.2547 9.7727 14.7024 9.7727 15.2547V16.6547C9.7727 18.3115 8.4296 19.6547 6.7727 19.6547H3.5C1.84315 19.6547 0.5 18.3115 0.5 16.6547V10.5454C0.5 9.69501 0.86096 8.88451 1.49311 8.31551L9.4931 1.11555Z" fill=""></path></svg></button>
+                            <button class="py-3" onclick="window.location.href='/bcGame/lottery_favorite.html'"><svg class="w-6 h-6 mx-auto" xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.1254 0.940613C11.5996 -0.313537 13.4005 -0.313537 13.8746 0.940613L16.1994 7.0896L23.0777 7.2991C24.3616 7.3383 25.1024 9.0188 23.9139 9.8991L18.5169 13.8962L20.4146 20.138C20.62 20.8138 20.3039 21.4229 19.8534 21.7351C19.4076 22.044 18.7593 22.1206 18.2036 21.7608L12.5 18.0679L6.79647 21.7608C6.24078 22.1206 5.59244 22.044 5.14668 21.7351C4.69615 21.4229 4.38005 20.8138 4.5855 20.138L6.48316 13.8962L1.08619 9.8991C-0.102383 9.0188 0.638407 7.3383 1.92235 7.2991L8.80057 7.0896L11.1254 0.940613ZM12.5 2.96023L10.5424 8.138C10.3266 8.709 9.78647 9.0605 9.21317 9.078L3.57001 9.2499L7.98987 12.5233C8.46867 12.8779 8.69417 13.4993 8.51357 14.0935L6.93397 19.2891L11.6943 16.207C12.1833 15.8903 12.8168 15.8903 13.3058 16.207L18.0661 19.2891L16.4865 14.0935C16.3058 13.4993 16.5314 12.8779 17.0102 12.5233L21.43 9.2499L15.7869 9.078C15.2136 9.0605 14.6735 8.709 14.4577 8.138L12.5 2.96023Z" fill=""></path></svg></button>
+                            <button class="py-3 bet" onclick="window.location.href='/bcGame/lottery_bet.html'"><svg class="w-6 h-6 mx-auto" xmlns="http://www.w3.org/2000/svg" width="19" height="22" viewBox="0 0 19 22" fill="none"><path d="M6.5 7.00009H12.5" stroke="" stroke-width="2" stroke-linecap="round"></path><path d="M6.5 11.0001H12.5" stroke="var(--g52yms)" stroke-width="2" stroke-linecap="round"></path><path d="M6.5 15.0001H12.5" stroke="" stroke-width="2" stroke-linecap="round"></path><rect x="1.5" y="1.00009" width="16" height="20" rx="1" stroke="" stroke-width="2" stroke-linejoin="round"></rect></svg></button>
+                            <button class="py-3 search_btn"><svg class="w-6 h-6 mx-auto" xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.99999 9.17163C4.99999 5.30563 8.134 2.17163 12 2.17163C15.866 2.17163 19 5.30563 19 9.17163C19 13.0376 15.866 16.1716 12 16.1716C8.134 16.1716 4.99999 13.0376 4.99999 9.17163ZM12 0.171631C7.0294 0.171631 2.99999 4.20107 2.99999 9.17163C2.99999 11.4642 3.85719 13.5565 5.2686 15.1457L0.29289 20.1213C-0.09763 20.5119 -0.09763 21.145 0.29289 21.5356C0.68342 21.9261 1.31658 21.9261 1.70711 21.5356L6.7559 16.4868C8.2325 17.5472 10.0433 18.1716 12 18.1716C16.9706 18.1716 21 14.1422 21 9.17163C21 4.20107 16.9706 0.171631 12 0.171631Z"></path></svg></button>
+                        </div>
+                        <div class="search_box hidden px-4 py-2">
+                            <div class="relative w-full">
+                                <label for="lottery_search">
+                                    <svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic opacity-50"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Search"></use></svg>
+                                </label>
+                                <input type="text" id="lottery_search" class="form-control bg-backlight pl-10" placeholder="Search lottery">
+                            </div>
+                            <div class="custom_select w-full mt-2">
+                                <button class="w-32 h-9 flex px-4 items-center justify-between border-none bg-backlight rounded-sm">
+                                    <span>All country</span>
+                                    <i><svg class="w-3.5 h-3.5 fill-basic rotate-90 opacity-50"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                </button>
+                                <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
+                                    <li class="py-1 on">All country</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""> USA</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""> Australia</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Uruguay.webp" alt=""> Uruguay</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/singapore.png" alt=""> singapore</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""> USA</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""> Australia</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Uruguay.webp" alt=""> Uruguay</li>
+                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/singapore.png" alt=""> singapore</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-4 px-4 gap-2 mt-2 font-extrabold lottery_top_btn">
+                            <button class="btn-normal rounded py-1">A - F</button>
+                            <button class="btn-normal rounded py-1">G - L</button>
+                            <button class="btn-normal rounded py-1">M - R</button>
+                            <button class="btn-normal rounded py-1">S - Z</button>
+                        </div>
+                    </div>
 
                     <!-- 하단 리스트 -->
+                    <div class="px-4">
+                        <div class="font-bold text-tit">A</div>
+                        <div class="my-4">
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Arizona Triple Twist 6/42</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">All or Nothing Morning Texas 12/24</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Australia Powerball 7/35</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Australia Powerball 7/35</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Arizona Triple Twist 6/42</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">All or Nothing Morning Texas 12/24</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="font-bold text-tit">B</div>
+                        <div class="my-4">
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Arizona Triple Twist 6/42</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">All or Nothing Morning Texas 12/24</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Australia Powerball 7/35</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Australia Powerball 7/35</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Arizona Triple Twist 6/42</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">All or Nothing Morning Texas 12/24</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="font-bold text-tit">C</div>
+                        <div class="my-4">
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Arizona Triple Twist 6/42</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">All or Nothing Morning Texas 12/24</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Australia Powerball 7/35</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Australia Powerball 7/35</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">Arizona Triple Twist 6/42</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 py-4">
+                                <div class="shrink-0"><img class="w-6 h-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                <div class="w-[68%]">
+                                    <div class="truncate text-tit font-medium">All or Nothing Morning Texas 12/24</div>
+                                    <div class="text-xs">Start in <b class="font-medium">01h 25m 38s</b></div>
+                                </div>
+                                <button class="lottery_like_btn shrink-0">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                    <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 배팅슬립 -->
+                <div class="batting_slip">
+                    <div class="top_box flex items-center justify-between bg-primary px-5 w-[350px] h-14 rounded-t cursor-pointer">
+                        <div class="flex items-center gap-2">
+                            <img class="" src="/bcGame/dist/custom_img/lottery/bet-icon.png" alt="">
+                            <p class="text-white text-base font-bold">배팅 슬립</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 bg-white text-primary font-extrabold rounded-2xl font-base">0</span>
+                            <svg class="w-6 h-6 fill-white -rotate-90"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                        </div>
+                    </div>
+                    <div class="cont bg-back2 p-4">
+                        <div class="flex items-center p-5 border-b border-slate-300">
+                            <div class="flex items-end justify-center w-12 h-12 mx-4 rounded-full bg-primary bg-opacity-50"><img src="/bcGame/dist/custom_img/lottery/bet-icon2.png" alt=""></div>
+                            <div>
+                                <p class="text-tit font-bold mb-2">배팅하기</p>
+                                <p>선택 사항이 이 영역에 나타납니다.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 
                 <!-- 중앙 : 컨텐츠 -->
+
+                <!-- 모바일 상단 -->
+                <div class="md:hidden block lottery_top bg-back2">
+                    <div class="grid grid-cols-4 lottery_top_btn px-3">
+                        <button class="py-3"><svg class="w-6 h-6 mx-auto" xmlns="http://www.w3.org/2000/svg" width="23" height="20" viewBox="0 0 23 20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.169 2.60213C11.7887 2.25986 11.2113 2.25986 10.831 2.60213L2.83104 9.80211C2.62032 9.99181 2.5 10.2619 2.5 10.5454V16.6547C2.5 17.207 2.94772 17.6547 3.5 17.6547H6.7727C7.325 17.6547 7.7727 17.207 7.7727 16.6547V15.2547C7.7727 13.5978 9.1159 12.2547 10.7727 12.2547H12.2273C13.8841 12.2547 15.2273 13.5978 15.2273 15.2547V16.6547C15.2273 17.207 15.675 17.6547 16.2273 17.6547H19.5C20.0523 17.6547 20.5 17.207 20.5 16.6547V10.5454C20.5 10.2619 20.3797 9.99181 20.169 9.80211L12.169 2.60213ZM9.4931 1.11555C10.634 0.088721 12.366 0.088721 13.5069 1.11555L21.5069 8.31551C22.139 8.88451 22.5 9.69501 22.5 10.5454V16.6547C22.5 18.3115 21.1569 19.6547 19.5 19.6547H16.2273C14.5704 19.6547 13.2273 18.3115 13.2273 16.6547V15.2547C13.2273 14.7024 12.7796 14.2547 12.2273 14.2547H10.7727C10.2204 14.2547 9.7727 14.7024 9.7727 15.2547V16.6547C9.7727 18.3115 8.4296 19.6547 6.7727 19.6547H3.5C1.84315 19.6547 0.5 18.3115 0.5 16.6547V10.5454C0.5 9.69501 0.86096 8.88451 1.49311 8.31551L9.4931 1.11555Z" fill=""></path></svg></button>
+                        <button class="py-3" onclick="window.location.href='/bcGame/lottery_favorite.html'"><svg class="w-6 h-6 mx-auto" xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.1254 0.940613C11.5996 -0.313537 13.4005 -0.313537 13.8746 0.940613L16.1994 7.0896L23.0777 7.2991C24.3616 7.3383 25.1024 9.0188 23.9139 9.8991L18.5169 13.8962L20.4146 20.138C20.62 20.8138 20.3039 21.4229 19.8534 21.7351C19.4076 22.044 18.7593 22.1206 18.2036 21.7608L12.5 18.0679L6.79647 21.7608C6.24078 22.1206 5.59244 22.044 5.14668 21.7351C4.69615 21.4229 4.38005 20.8138 4.5855 20.138L6.48316 13.8962L1.08619 9.8991C-0.102383 9.0188 0.638407 7.3383 1.92235 7.2991L8.80057 7.0896L11.1254 0.940613ZM12.5 2.96023L10.5424 8.138C10.3266 8.709 9.78647 9.0605 9.21317 9.078L3.57001 9.2499L7.98987 12.5233C8.46867 12.8779 8.69417 13.4993 8.51357 14.0935L6.93397 19.2891L11.6943 16.207C12.1833 15.8903 12.8168 15.8903 13.3058 16.207L18.0661 19.2891L16.4865 14.0935C16.3058 13.4993 16.5314 12.8779 17.0102 12.5233L21.43 9.2499L15.7869 9.078C15.2136 9.0605 14.6735 8.709 14.4577 8.138L12.5 2.96023Z" fill=""></path></svg></button>
+                        <button class="py-3 bet" onclick="window.location.href='/bcGame/lottery_bet.html'"><svg class="w-6 h-6 mx-auto" xmlns="http://www.w3.org/2000/svg" width="19" height="22" viewBox="0 0 19 22" fill="none"><path d="M6.5 7.00009H12.5" stroke="" stroke-width="2" stroke-linecap="round"></path><path d="M6.5 11.0001H12.5" stroke="var(--g52yms)" stroke-width="2" stroke-linecap="round"></path><path d="M6.5 15.0001H12.5" stroke="" stroke-width="2" stroke-linecap="round"></path><rect x="1.5" y="1.00009" width="16" height="20" rx="1" stroke="" stroke-width="2" stroke-linejoin="round"></rect></svg></button>
+                        <button class="py-3 mo_search_btn"><svg class="w-6 h-6 mx-auto" xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.99999 9.17163C4.99999 5.30563 8.134 2.17163 12 2.17163C15.866 2.17163 19 5.30563 19 9.17163C19 13.0376 15.866 16.1716 12 16.1716C8.134 16.1716 4.99999 13.0376 4.99999 9.17163ZM12 0.171631C7.0294 0.171631 2.99999 4.20107 2.99999 9.17163C2.99999 11.4642 3.85719 13.5565 5.2686 15.1457L0.29289 20.1213C-0.09763 20.5119 -0.09763 21.145 0.29289 21.5356C0.68342 21.9261 1.31658 21.9261 1.70711 21.5356L6.7559 16.4868C8.2325 17.5472 10.0433 18.1716 12 18.1716C16.9706 18.1716 21 14.1422 21 9.17163C21 4.20107 16.9706 0.171631 12 0.171631Z"></path></svg></button>
+                    </div>
+                </div>
+
+                <!-- 상단배너 -->
+                <div class="relative">
+                    <img class="md:block hidden" src="/bcGame/dist/custom_img/lottery/banner-pc.png" alt="">
+                    <img class="md:hidden block" src="/bcGame/dist/custom_img/lottery/banner-m.png" alt="">
+                    <div class="absolute left-0 top-0 h-full w-2/3 pl-5 md:pl-10 flex flex-col justify-center gap-1 md:gap-2 lg:gap-4">
+                        <div>
+                            <h3 class="inline-flex text-lg sm:text-3xl lg:text-5xl font-extrabold text-tit text-shadow">
+                                복권
+                                <svg class="-mt-2 md:-mt-5 fill-title w-3 md:w-7" xmlns="http://www.w3.org/2000/svg" width="27" height="25" viewBox="0 0 27 25" fill="none" class="banner-title-name-icon"><path d="M20.7999 23.6013C20.7331 23.6511 20.6499 23.7076 20.5521 23.7706L20.2101 23.9796L19.7749 24.228C19.2108 24.5526 18.4703 24.5484 17.7661 24.2858C15.2533 23.3492 12.257 21.8589 9.36878 20.1869C5.80687 18.1241 2.94176 15.9419 0.808753 13.6983C0.166385 13.0225 -0.051329 12.007 0.214849 11.1416L0.291807 10.9288L0.727542 9.91258L1.09979 9.0692C1.25492 8.72124 1.67769 8.55748 2.04531 8.70425C2.37158 8.83424 2.54386 9.16483 2.46937 9.48099L2.43011 9.59793L1.95846 10.6699L1.63525 11.4281C1.45783 11.8567 1.5581 12.4424 1.88321 12.7838C5.36282 16.4435 11.2845 20.2136 18.3061 23.0988C18.4077 23.1407 18.6226 23.1408 18.7853 23.1115L18.8947 23.0843L19.0023 23.0367L19.5566 22.7002C19.927 22.5306 20.2073 22.5149 20.5787 22.7345C21.0335 23.0031 21.139 23.3514 20.8018 23.6018L20.7999 23.6013ZM7.02713 7.83408L6.93015 8.08553L6.82695 8.31313C6.66091 8.65635 6.23158 8.80672 5.86963 8.64929C5.50769 8.49185 5.34921 8.08665 5.51542 7.74426C6.11517 6.50808 5.75505 5.45624 4.35395 4.4138C4.17357 4.27958 4.07409 4.07456 4.07984 3.85963L4.09569 3.73009L4.13477 3.61231L5.00519 1.65529C5.16032 1.30734 5.58308 1.14357 5.9507 1.29035C6.23268 1.40242 6.40395 1.6683 6.39094 1.947L6.37245 2.07275L6.33465 2.1842L5.63275 3.64864L5.69318 3.6988C7.09504 4.92111 7.55364 6.33394 7.02646 7.83508L7.02713 7.83408ZM26.4527 12.5473L25.7969 14.1582C25.7123 14.1121 25.6226 14.0713 25.5295 14.0354C24.0641 13.4672 22.3635 13.9027 21.5525 15.6686C20.7415 17.4345 21.39 19.273 22.7611 19.9684C22.9479 20.0633 23.146 20.1247 23.3509 20.1562L22.6577 21.856C22.448 22.3647 21.85 22.6095 21.3212 22.4026C21.3094 22.398 21.2975 22.3926 21.2857 22.3881C17.379 20.6819 13.9415 18.9039 10.9746 17.0521C8.09442 15.2555 5.74032 13.4293 3.911 11.5755C3.53772 11.1988 3.44507 10.6393 3.67846 10.1726L4.49525 8.55695C4.60346 8.66069 4.71606 8.74796 4.83144 8.81563C5.86059 9.4231 7.80923 9.20005 8.73033 7.36179C9.65143 5.52353 9.00899 3.82052 7.91273 2.86824C7.78498 2.75718 7.64526 2.67276 7.49597 2.61364L8.30469 1.01002C8.49096 0.641092 8.95348 0.49097 9.33732 0.674296C9.40936 0.708275 9.47506 0.753916 9.53282 0.808079C12.0342 3.1499 14.6258 5.16549 17.3083 6.85468C19.9909 8.54386 22.8517 10.0129 25.8919 11.2623C26.4092 11.4742 26.6587 12.0463 26.4528 12.5481L26.4527 12.5473ZM11.3405 8.76694C11.1126 8.37138 10.5832 8.23378 10.1589 8.45928C9.73474 8.68478 9.575 9.18858 9.80314 9.58496C10.0311 9.98052 10.5605 10.1181 10.9847 9.89262C11.4089 9.66712 11.5687 9.16332 11.3405 8.76694ZM18.2665 12.5437L18.2049 12.4722L16.8126 11.1926L17.1018 9.32298C17.1167 9.22912 17.0961 9.13287 17.0439 9.05161C16.9396 8.88911 16.7365 8.82176 16.5567 8.87868L16.4697 8.91782L14.8528 9.87301L13.1727 9.07706C13.0936 9.03932 13.0048 9.02687 12.9177 9.04179C12.7234 9.07393 12.5849 9.2316 12.5745 9.4137L12.581 9.50674L12.9317 11.4069L11.5824 12.831C11.5206 12.8954 11.4836 12.9781 11.4753 13.0654C11.4577 13.2551 11.5802 13.4269 11.7597 13.4851L11.8535 13.5044L13.703 13.6751L14.5405 15.3017C14.5835 15.3857 14.6557 15.4525 14.744 15.491C14.9245 15.5698 15.1308 15.5153 15.2453 15.3703L15.2937 15.2905L16.1009 13.5435L18.0045 13.159C18.0868 13.1424 18.1611 13.1024 18.2188 13.044C18.3547 12.9068 18.3685 12.6998 18.2645 12.5467L18.2665 12.5437ZM20.0873 14.279C19.8593 13.8834 19.3299 13.7458 18.9057 13.9713C18.4815 14.1968 18.3218 14.7006 18.5499 15.097C18.7779 15.4926 19.3073 15.6302 19.7315 15.4047C20.1557 15.1792 20.3154 14.6754 20.0873 14.279Z" ></path></svg>
+                            </h3>
+                        </div>
+                        <p class="text-xs md:text-base lg:text-lg font-extrabold text-tit">200개 이상의 핫 복권을 플레이하고 대박을 터뜨려보세요!</p>
+                        <div class="md:pt-2">
+                            <a class="px-3 py-1 bg-tit text-stand font-semibold rounded md:text-sm text-xs" href="#playway">플레이 방법?</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 컨텐츠 -->
+                <div class="px-3 md:px-10 py-5">
+                    <!-- 다가오는 추첨 -->
+                    <div class="py-3">
+                        <div class="flex items-center justify-between">
+                            <h4 class="text-lg text-tit font-bold">다가오는 추첨</h4>
+                            <div>
+                                <button class="btn btn-top type02 h-9 soon-swiper-prev"><svg class="w-3 h-3 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                <button class="btn btn-top type02 h-9 soon-swiper-next"><svg class="w-3 h-3 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                            </div>
+                        </div>
+                        <div class="soon_slide_box overflow-hidden mt-2">
+                            <ul class="swiper-wrapper">
+                                <li class="relative swiper-slide flex flex-col justify-between !h-56 p-4 bg-back2 rounded overflow-hidden grayscale">
+                                    <div class="absolute -right-4 -top-4 w-20 h-20 bg-back2 p-1.5 rounded-full"><img class="w-full h-full" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                    <div class="w-2/3 text-tit font-medium">Greece KENO 20/80</div>
+                                    <div class="text-lg text-tit font-bold italic">₩360</div>
+                                    <div class="border-t border-slate-600 border-opacity-60 mt-3 pt-3 text-xs text-title2">다음 추첨 시작</div>
+                                    <div class="flex items-center gap-1 my-3 text-tit">
+                                        <p class="text-tit font-bold px-4 bg-slate-200 bg-opacity-90 rounded">00h</p> : <p class="text-tit font-bold px-4 bg-slate-200 bg-opacity-90 rounded">03m</p> : <p class="text-tit font-bold px-4 bg-slate-200 bg-opacity-90 rounded">07s</p>
+                                    </div>
+                                    <button class="btn-green w-full h-9 font-extrabold text-tit rounded">지금 베팅</button>
+                                </li>
+                                <li class="relative swiper-slide flex flex-col justify-between !h-56 p-4 bg-back2 rounded overflow-hidden">
+                                    <div class="absolute -right-4 -top-4 w-20 h-20 bg-back2 p-1.5 rounded-full"><img class="w-full h-full" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""></div>
+                                    <div class="w-2/3 text-tit font-medium">Greece KENO 20/80</div>
+                                    <div class="text-lg text-tit font-bold italic">₩360</div>
+                                    <div class="border-t border-slate-600 border-opacity-60 mt-3 pt-3 text-xs text-title2">다음 추첨 시작</div>
+                                    <div class="flex items-center gap-1 my-3 text-tit">
+                                        <p class="text-tit font-bold px-4 bg-slate-200 bg-opacity-90 rounded">00h</p> : <p class="text-tit font-bold px-4 bg-slate-200 bg-opacity-90 rounded">03m</p> : <p class="text-tit font-bold px-4 bg-slate-200 bg-opacity-90 rounded">07s</p>
+                                    </div>
+                                    <button class="btn-green w-full h-9 font-extrabold text-tit rounded">지금 베팅</button>
+                                </li>
+                                <li class="relative swiper-slide flex flex-col justify-between !h-56 p-4 bg-back2 rounded overflow-hidden">
+                                    <div class="absolute -right-4 -top-4 w-20 h-20 bg-back2 p-1.5 rounded-full"><img class="w-full h-full" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""></div>
+                                    <div class="w-2/3 text-tit font-medium">NZL Lotto 6/40</div>
+                                    <div class="text-lg text-tit font-bold italic">₩9</div>
+                                    <div class="border-t border-slate-600 border-opacity-60 mt-3 pt-3 text-xs text-title2">다음 추첨 시작</div>
+                                    <div class="flex items-center gap-1 my-3 text-tit">
+                                        <p class="text-tit font-bold px-4 bg-slate-200 bg-opacity-90 rounded">00h</p> : <p class="text-tit font-bold px-4 bg-slate-200 bg-opacity-90 rounded">03m</p> : <p class="text-tit font-bold px-4 bg-slate-200 bg-opacity-90 rounded">07s</p>
+                                    </div>
+                                    <button class="btn-green w-full h-9 font-extrabold text-tit rounded">지금 베팅</button>
+                                </li>
+                                <li class="relative swiper-slide flex flex-col justify-between !h-56 p-4 bg-back2 rounded overflow-hidden">
+                                    <div class="absolute -right-4 -top-4 w-20 h-20 bg-back2 p-1.5 rounded-full"><img class="w-full h-full" src="/bcGame/dist/custom_img/lottery/Slovakia.webp" alt=""></div>
+                                    <div class="w-2/3 text-tit font-medium">Slovakia EKlub Keno 20/80</div>
+                                    <div class="text-lg text-tit font-bold italic">₩150</div>
+                                    <div class="border-t border-slate-600 border-opacity-60 mt-3 pt-3 text-xs text-title2">다음 추첨 시작</div>
+                                    <div class="flex items-center gap-1 my-3 text-tit">
+                                        <p class="text-tit font-bold px-4 bg-slate-200 bg-opacity-90 rounded">00h</p> : <p class="text-tit font-bold px-4 bg-slate-200 bg-opacity-90 rounded">03m</p> : <p class="text-tit font-bold px-4 bg-slate-200 bg-opacity-90 rounded">07s</p>
+                                    </div>
+                                    <button class="btn-green w-full h-9 font-extrabold text-tit rounded">지금 베팅</button>
+                                </li>
+                                <li class="relative swiper-slide flex flex-col justify-between !h-56 p-4 bg-back2 rounded overflow-hidden">
+                                    <div class="absolute -right-4 -top-4 w-20 h-20 bg-back2 p-1.5 rounded-full"><img class="w-full h-full" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""></div>
+                                    <div class="w-2/3 text-tit font-medium">NZL Lotto 6/40</div>
+                                    <div class="text-lg text-tit font-bold italic">₩9</div>
+                                    <div class="border-t border-slate-600 border-opacity-60 mt-3 pt-3 text-xs text-title2">다음 추첨 시작</div>
+                                    <div class="flex items-center gap-1 my-3 text-tit">
+                                        <p class="text-tit font-bold px-4 bg-slate-200 bg-opacity-90 rounded">00h</p> : <p class="text-tit font-bold px-4 bg-slate-200 bg-opacity-90 rounded">03m</p> : <p class="text-tit font-bold px-4 bg-slate-200 bg-opacity-90 rounded">07s</p>
+                                    </div>
+                                    <button class="btn-green w-full h-9 font-extrabold text-tit rounded">지금 베팅</button>
+                                </li>
+                                <li class="relative swiper-slide flex flex-col justify-between !h-56 p-4 bg-back2 rounded overflow-hidden">
+                                    <div class="absolute -right-4 -top-4 w-20 h-20 bg-back2 p-1.5 rounded-full"><img class="w-full h-full" src="/bcGame/dist/custom_img/lottery/Slovakia.webp" alt=""></div>
+                                    <div class="w-2/3 text-tit font-medium">Slovakia EKlub Keno 20/80</div>
+                                    <div class="text-lg text-tit font-bold italic">₩150</div>
+                                    <div class="border-t border-slate-600 border-opacity-60 mt-3 pt-3 text-xs text-title2">다음 추첨 시작</div>
+                                    <div class="flex items-center gap-1 my-3 text-tit">
+                                        <p class="text-tit font-bold px-4 bg-slate-200 bg-opacity-90 rounded">00h</p> : <p class="text-tit font-bold px-4 bg-slate-200 bg-opacity-90 rounded">03m</p> : <p class="text-tit font-bold px-4 bg-slate-200 bg-opacity-90 rounded">07s</p>
+                                    </div>
+                                    <button class="btn-green w-full h-9 font-extrabold text-tit rounded">지금 베팅</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 인기 -->
+                    <div class="py-3">
+                        <div class="flex items-center justify-between">
+                            <h4 class="text-lg text-tit font-bold">인기</h4>
+                            <div>
+                                <button class="btn btn-top type02 h-9 popular-swiper-prev"><svg class="w-3 h-3 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                <button class="btn btn-top type02 h-9 popular-swiper-next"><svg class="w-3 h-3 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                            </div>
+                        </div>
+                        <div class="popular_slide_box overflow-hidden mt-2">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide p-4 bg-back2 rounded">
+                                    <div class="flex items-center justify-between">
+                                        <button class="lottery_like_btn shrink-0">
+                                            <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                            <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                        </button>
+                                        <div class="flex items-center border border-primary rounded-2xl">
+                                            <span class="px-2 text-xs text-tit font-bold">BC Exclusive</span>
+                                            <img class="w-6" src="/bcGame/dist/custom_img/lottery/bc-small.svg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="mt-1 text-xs truncate">다음추첨 02h 28m 22s</div>
+                                    <div class="text-tit font-medium truncate pt-4">BC Lottery</div>
+                                    <div class="flex items-center justify-between py-4">
+                                        <p class="font-medium">탑 보상</p>
+                                        <i class="italic text-tit font-bold">₩100000</i>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <button class="bg-list w-full h-9 font-extrabold text-tit rounded">지금 베팅</button>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide p-4 bg-back2 rounded">
+                                    <div class="flex items-center justify-between">
+                                        <button class="lottery_like_btn shrink-0">
+                                            <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                            <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                        </button>
+                                        <img class="w-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt="">
+                                    </div>
+                                    <div class="mt-1 text-xs truncate">다음추첨 02h 28m 22s</div>
+                                    <div class="text-tit font-medium truncate pt-4">BC Lottery</div>
+                                    <div class="flex items-center justify-between py-4">
+                                        <p class="font-medium">탑 보상</p>
+                                        <i class="italic text-tit font-bold">₩100000</i>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <button class="bg-list w-full h-9 font-extrabold text-tit rounded">2개 볼 베팅</button>
+                                        <button class="bg-list w-full h-9 font-extrabold text-tit rounded">3개 볼 베팅</button>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide p-4 bg-back2 rounded">
+                                    <div class="flex items-center justify-between">
+                                        <button class="lottery_like_btn shrink-0">
+                                            <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                            <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                        </button>
+                                        <img class="w-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt="">
+                                    </div>
+                                    <div class="mt-1 text-xs truncate">다음추첨 02h 28m 22s</div>
+                                    <div class="text-tit font-medium truncate pt-4">BC Lottery</div>
+                                    <div class="flex items-center justify-between py-4">
+                                        <p class="font-medium">탑 보상</p>
+                                        <i class="italic text-tit font-bold">₩100000</i>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <button class="bg-list w-full h-9 font-extrabold text-tit rounded">2개 볼 베팅</button>
+                                        <button class="bg-list w-full h-9 font-extrabold text-tit rounded">3개 볼 베팅</button>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide p-4 bg-back2 rounded">
+                                    <div class="flex items-center justify-between">
+                                        <button class="lottery_like_btn shrink-0">
+                                            <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                            <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                        </button>
+                                        <img class="w-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt="">
+                                    </div>
+                                    <div class="mt-1 text-xs truncate">다음추첨 02h 28m 22s</div>
+                                    <div class="text-tit font-medium truncate pt-4">BC Lottery</div>
+                                    <div class="flex items-center justify-between py-4">
+                                        <p class="font-medium">탑 보상</p>
+                                        <i class="italic text-tit font-bold">₩100000</i>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <button class="bg-list w-full h-9 font-extrabold text-tit rounded">2개 볼 베팅</button>
+                                        <button class="bg-list w-full h-9 font-extrabold text-tit rounded">3개 볼 베팅</button>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide p-4 bg-back2 rounded">
+                                    <div class="flex items-center justify-between">
+                                        <button class="lottery_like_btn shrink-0">
+                                            <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                            <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                        </button>
+                                        <img class="w-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt="">
+                                    </div>
+                                    <div class="mt-1 text-xs truncate">다음추첨 02h 28m 22s</div>
+                                    <div class="text-tit font-medium truncate pt-4">BC Lottery</div>
+                                    <div class="flex items-center justify-between py-4">
+                                        <p class="font-medium">탑 보상</p>
+                                        <i class="italic text-tit font-bold">₩100000</i>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <button class="bg-list w-full h-9 font-extrabold text-tit rounded">2개 볼 베팅</button>
+                                        <button class="bg-list w-full h-9 font-extrabold text-tit rounded">3개 볼 베팅</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 최근승자 / 최고 당첨 복권 -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 py-3 lottery_cont2">
+                        <div class="p-5 bg1 rounded-lg">
+                            <div class="flex items-center gap-2">
+                                <span class="w-4 h-4 rounded-full border-4 border-primary border-opacity-50"><i class="block w-full h-full bg-primary rounded-full"></i></span>
+                                <p class="text-tit font-bold">최근 승자</p>
+                            </div>
+                            <div class="flex items-center justify-between w-full mt-4 p-3 text-tit bg-slate-500 bg-opacity-20 rounded">
+                                <p>보상 지불</p>
+                                <b class="text-xl font-extrabold">₩ 46303.18</b>
+                            </div>
+                            <div class="mt-5">
+                                <div class="flex justify-between border-b border-slate-300 border-opacity-50 pb-2">
+                                    <div class="w-[30%]">플레이어</div>
+                                    <div class="w-[50%]">복권</div>
+                                    <div class="w-[20%] text-right">보상</div>
+                                </div>
+                                <div class="lottery_slide_box h-56 overflow-hidden">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide py-2 flex items-center justify-between text-tit font-medium">
+                                            <div class="flex items-center gap-2 w-[30%]">
+                                                <img class="w-4 h-4 rounded-full" src="/bcGame/dist/custom_img/profile_img.png" alt="">
+                                                <p>asgiwesv</p>
+                                            </div>
+                                            <div class="w-[50%]">
+                                                <div class="w-4/5 truncate">Keno Russia 20/80</div>
+                                            </div>
+                                            <div class="flex items-center justify-end gap-1 w-[20%] text-right">
+                                                <b class="text-primary font-extrabold">180</b>
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/coin/KRW.webp" alt="">
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide py-2 flex items-center justify-between text-tit font-medium">
+                                            <div class="flex items-center gap-2 w-[30%]">
+                                                <img class="w-4 h-4 rounded-full" src="/bcGame/dist/custom_img/profile_img2.png" alt="">
+                                                <p>aabseee</p>
+                                            </div>
+                                            <div class="w-[50%]">
+                                                <div class="w-4/5 truncate">Slovakia EKlub Keno 20/80</div>
+                                            </div>
+                                            <div class="flex items-center justify-end gap-1 w-[20%] text-right">
+                                                <b class="text-primary font-extrabold">180</b>
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/coin/KRW.webp" alt="">
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide py-2 flex items-center justify-between text-tit font-medium">
+                                            <div class="flex items-center gap-2 w-[30%]">
+                                                <img class="w-4 h-4 rounded-full" src="/bcGame/dist/custom_img/profile_img3.png" alt="">
+                                                <p>ffffeeeeww</p>
+                                            </div>
+                                            <div class="w-[50%]">
+                                                <div class="w-4/5 truncate">Slovakia EKlub Keno 20/80</div>
+                                            </div>
+                                            <div class="flex items-center justify-end gap-1 w-[20%] text-right">
+                                                <b class="text-primary font-extrabold">180</b>
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/coin/KRW.webp" alt="">
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide py-2 flex items-center justify-between text-tit font-medium">
+                                            <div class="flex items-center gap-2 w-[30%]">
+                                                <img class="w-4 h-4 rounded-full" src="/bcGame/dist/custom_img/profile_img.png" alt="">
+                                                <p>asgiwesv</p>
+                                            </div>
+                                            <div class="w-[50%]">
+                                                <div class="w-4/5 truncate">Keno Russia 20/80</div>
+                                            </div>
+                                            <div class="flex items-center justify-end gap-1 w-[20%] text-right">
+                                                <b class="text-primary font-extrabold">180</b>
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/coin/KRW.webp" alt="">
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide py-2 flex items-center justify-between text-tit font-medium">
+                                            <div class="flex items-center gap-2 w-[30%]">
+                                                <img class="w-4 h-4 rounded-full" src="/bcGame/dist/custom_img/profile_img2.png" alt="">
+                                                <p>aabseee</p>
+                                            </div>
+                                            <div class="w-[50%]">
+                                                <div class="w-4/5 truncate">Slovakia EKlub Keno 20/80</div>
+                                            </div>
+                                            <div class="flex items-center justify-end gap-1 w-[20%] text-right">
+                                                <b class="text-primary font-extrabold">180</b>
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/coin/KRW.webp" alt="">
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide py-2 flex items-center justify-between text-tit font-medium">
+                                            <div class="flex items-center gap-2 w-[30%]">
+                                                <img class="w-4 h-4 rounded-full" src="/bcGame/dist/custom_img/profile_img3.png" alt="">
+                                                <p>ffffeeeeww</p>
+                                            </div>
+                                            <div class="w-[50%]">
+                                                <div class="w-4/5 truncate">Slovakia EKlub Keno 20/80</div>
+                                            </div>
+                                            <div class="flex items-center justify-end gap-1 w-[20%] text-right">
+                                                <b class="text-primary font-extrabold">180</b>
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/coin/KRW.webp" alt="">
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide py-2 flex items-center justify-between text-tit font-medium">
+                                            <div class="flex items-center gap-2 w-[30%]">
+                                                <img class="w-4 h-4 rounded-full" src="/bcGame/dist/custom_img/profile_img.png" alt="">
+                                                <p>asgiwesv</p>
+                                            </div>
+                                            <div class="w-[50%]">
+                                                <div class="w-4/5 truncate">Keno Russia 20/80</div>
+                                            </div>
+                                            <div class="flex items-center justify-end gap-1 w-[20%] text-right">
+                                                <b class="text-primary font-extrabold">180</b>
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/coin/KRW.webp" alt="">
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide py-2 flex items-center justify-between text-tit font-medium">
+                                            <div class="flex items-center gap-2 w-[30%]">
+                                                <img class="w-4 h-4 rounded-full" src="/bcGame/dist/custom_img/profile_img2.png" alt="">
+                                                <p>aabseee</p>
+                                            </div>
+                                            <div class="w-[50%]">
+                                                <div class="w-4/5 truncate">Slovakia EKlub Keno 20/80</div>
+                                            </div>
+                                            <div class="flex items-center justify-end gap-1 w-[20%] text-right">
+                                                <b class="text-primary font-extrabold">180</b>
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/coin/KRW.webp" alt="">
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide py-2 flex items-center justify-between text-tit font-medium">
+                                            <div class="flex items-center gap-2 w-[30%]">
+                                                <img class="w-4 h-4 rounded-full" src="/bcGame/dist/custom_img/profile_img3.png" alt="">
+                                                <p>ffffeeeeww</p>
+                                            </div>
+                                            <div class="w-[50%]">
+                                                <div class="w-4/5 truncate">Slovakia EKlub Keno 20/80</div>
+                                            </div>
+                                            <div class="flex items-center justify-end gap-1 w-[20%] text-right">
+                                                <b class="text-primary font-extrabold">180</b>
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/coin/KRW.webp" alt="">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-5 bg2 rounded-lg">
+                            <div class="flex items-center gap-2">
+                                <img class="w-4" src="/bcGame/dist/custom_img/lottery/winner-icon.svg" alt="">
+                                <p class="text-tit font-bold">최고 당첨 복권</p>
+                            </div>
+                            <div class="mt-5">
+                                <div class="flex items-center justify-between gap-5 py-2">
+                                    <div class="text-5xl font-extrabold text-tit">1</div>
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-2">
+                                            <img class="w-6" src="/bcGame/dist/custom_img/lottery/USA.webp" alt="">
+                                            <span class="text-tit font-semibold truncate">Treasure Hunt 5/30</span>
+                                        </div>
+                                        <p class="mt-1 text-xs font-semibold truncate">다음 추첨: 13h26m19s</p>
+                                        <b class="text-base text-primary font-extrabold">₩ 7261.65</b>
+                                    </div>
+                                    <button class="btn-green w-24 h-9 font-bold shrink-0">지금 베팅</button>
+                                </div>
+                                <div class="flex items-center justify-between gap-5 border-t border-slate-400 py-2">
+                                    <div class="text-5xl font-extrabold text-tit">2</div>
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-2">
+                                            <img class="w-6" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt="">
+                                            <span class="text-tit font-semibold truncate">FAST KENO 20/80</span>
+                                        </div>
+                                        <p class="mt-1 text-xs font-semibold truncate">다음 추첨: 13h26m19s</p>
+                                        <b class="text-base text-primary font-extrabold">₩ 7261.65</b>
+                                    </div>
+                                    <button class="bg-back text-sub w-24 h-9 font-bold rounded shrink-0">추첨 중</button>
+                                </div>
+                                <div class="flex items-center justify-between gap-5 border-t border-slate-400 py-2">
+                                    <div class="text-5xl font-extrabold text-tit">3</div>
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-2">
+                                            <img class="w-6" src="/bcGame/dist/custom_img/lottery/Uruguay.webp" alt="">
+                                            <span class="text-tit font-semibold truncate">Rapido Russia 8/20</span>
+                                        </div>
+                                        <p class="mt-1 text-xs font-semibold truncate">다음 추첨: 13h26m19s</p>
+                                        <b class="text-base text-primary font-extrabold">₩ 7261.65</b>
+                                    </div>
+                                    <button class="btn-green w-24 h-9 font-bold shrink-0">지금 베팅</button>
+                                </div>
+                                <div class="flex items-center justify-between gap-5 border-t border-slate-400 py-2">
+                                    <div class="text-5xl font-extrabold text-tit">4</div>
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-2">
+                                            <img class="w-6" src="/bcGame/dist/custom_img/lottery/Slovakia.webp" alt="">
+                                            <span class="text-tit font-semibold truncate">Greece KENO 20/80</span>
+                                        </div>
+                                        <p class="mt-1 text-xs font-semibold truncate">다음 추첨: 13h26m19s</p>
+                                        <b class="text-base text-primary font-extrabold">₩ 7261.65</b>
+                                    </div>
+                                    <button class="btn-green w-24 h-9 font-bold shrink-0">지금 베팅</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- 가장 좋아하는 -->
+                    <div class="py-3">
+                        <div class="flex items-center justify-between">
+                            <h4 class="text-lg text-tit font-bold">가장 좋아하는</h4>
+                            <div>
+                                <a class="inline-flex px-4 py-2 bg-back2 text-tit rounded font-bold" href="javascript:;">모두보기</a>
+                                <button class="btn btn-top type02 h-9 favorite-swiper-prev"><svg class="w-3 h-3 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                <button class="btn btn-top type02 h-9 favorite-swiper-next"><svg class="w-3 h-3 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                            </div>
+                        </div>
+                        <div class="favorite_slide_box overflow-hidden mt-2">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide p-4 bg-back2 rounded">
+                                    <button class="absolute left-4 top-4 lottery_like_btn on shrink-0">
+                                        <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                        <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                    </button>
+                                    <img class="w-6 mx-auto" src="/bcGame/dist/custom_img/lottery/USA.webp" alt="">
+                                    <div class="py-2 text-tit font-medium truncate text-base text-center border-b border-slate-300">Arizona Triple Twist 6/42</div>
+                                    <div class="py-2 text-xs truncate text-center">다음추첨 02h 28m 22s</div>
+                                    <div class="flex items-center gap-1 mt-3">
+                                        <button class="bg-list w-full h-12 font-extrabold text-tit rounded">2개 볼 베팅</button>
+                                        <button class="bg-list w-full h-12 font-extrabold text-tit rounded">3개 볼 베팅</button>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide p-4 bg-back2 rounded">
+                                    <button class="absolute left-4 top-4 lottery_like_btn on shrink-0">
+                                        <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                        <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                    </button>
+                                    <img class="w-6 mx-auto" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt="">
+                                    <div class="py-2 text-tit font-medium truncate text-base text-center border-b border-slate-300">6aus49 6/49</div>
+                                    <div class="py-2 text-xs truncate text-center">다음추첨 02h 28m 22s</div>
+                                    <div class="flex items-center gap-1 mt-3">
+                                        <button class="bg-list w-full h-12 font-extrabold text-tit rounded">2개 볼 베팅</button>
+                                        <button class="bg-list w-full h-12 font-extrabold text-tit rounded">3개 볼 베팅</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 최근 결과 -->
+                    <div class="py-3">
+                        <h4 class="text-lg text-tit font-bold">최근 결과</h4>
+                        <div class="bg-back2 py-3 mt-2">
+                            <table class="table table-border table-hover mo_pad-s">   
+                                <colgroup>
+                                    <col class="lg:w-[250px] w-36">
+                                    <col width="*">
+                                    <col class="lg:w-[150px] w-8">
+                                </colgroup>
+                                <thead>
+                                    <tr class="lg:text-sm text-xs">
+                                        <th class="whitespace-nowrap">복권 이름</th>
+                                        <th class="whitespace-nowrap">잭팟 숫자</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="flex lg:items-center flex-col lg:flex-row gap-2">
+                                                <img class="w-6" src="/bcGame/dist/custom_img/lottery/Slovakia.webp" alt="">
+                                                <div class="w-full md:text-sm text-xs">
+                                                    <p class="text-tit font-bold">Slovakia EKlub Keno 20/80</p>
+                                                    <span>20/12/2023, 11:30:00</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="jackpot-num flex flex-wrap gap-2">
+                                                <span>5</span><span>10</span><span>12</span><span>15</span><span>17</span><span>21</span><span>23</span><span>28</span><span>29</span><span>31</span><span>33</span><span>38</span><span>42</span><span>45</span><span>51</span><span>53</span><span>56</span><span>59</span><span>63</span><span>80</span>
+                                            </div>
+                                        </td>
+                                        <td class="!py-0 !pr-0 md:bg-gradient-green2">
+                                            <button class="flex items-center gap-2 w-full h-full text-lg text-primary italic font-extrabold"><span class="hidden md:block">지금 베팅</span> <svg class="w-4 h-4 fill-primary"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="flex lg:items-center flex-col lg:flex-row gap-2">
+                                                <img class="w-6" src="/bcGame/dist/custom_img/lottery/Slovakia.webp" alt="">
+                                                <div class="w-full md:text-sm text-xs">
+                                                    <p class="text-tit font-bold">Slovakia EKlub Keno 20/80</p>
+                                                    <span>20/12/2023, 11:30:00</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="jackpot-num flex flex-wrap gap-2">
+                                                <span>3</span><span>4</span><span>5</span><span>6</span><span>10</span><span>15</span><span>18</span><span>20</span><span class="bonus">3</span>
+                                            </div>
+                                        </td>
+                                        <td class="!py-0 !pr-0 md:bg-gradient-green2">
+                                            <button class="flex items-center gap-2 w-full h-full text-lg text-primary italic font-extrabold"><span class="hidden md:block">지금 베팅</span> <svg class="w-4 h-4 fill-primary"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="flex lg:items-center flex-col lg:flex-row gap-2">
+                                                <img class="w-6" src="/bcGame/dist/custom_img/lottery/Slovakia.webp" alt="">
+                                                <div class="w-full md:text-sm text-xs">
+                                                    <p class="text-tit font-bold">Slovakia EKlub Keno 20/80</p>
+                                                    <span>20/12/2023, 11:30:00</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="jackpot-num flex flex-wrap gap-2">
+                                                <span>5</span><span>10</span><span>12</span><span>15</span><span>17</span><span>21</span><span>23</span><span>28</span><span>29</span><span>31</span><span>33</span><span>38</span><span>42</span><span>45</span><span>51</span><span>53</span><span>56</span><span>59</span><span>63</span><span>80</span>
+                                            </div>
+                                        </td>
+                                        <td class="!py-0 !pr-0 md:bg-gradient-green2">
+                                            <button class="flex items-center gap-2 w-full h-full text-lg text-primary italic font-extrabold"><span class="hidden md:block">지금 베팅</span> <svg class="w-4 h-4 fill-primary"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="flex gap-2 items-center justify-end mt-4">
+                                <p class="text-xs">합계 10</p>
+                                <div class="flex gap-0 text-base px-4 py-1 bg-back2 rounded font-medium">
+                                    <button class="w-6 h-6 basic-hover active font-extrabold">1</button>
+                                    <button class="w-6 h-6 basic-hover">2</button>
+                                    <button class="w-6 h-6 basic-hover">3</button>
+                                </div>
+                                <div class="flex gap-1">
+                                    <button class="btn-normal w-8 h-8 basic-hover rounded"><svg class="w-4 h-4 mx-auto rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                    <button class="btn-normal w-8 h-8 basic-hover rounded"><svg class="w-4 h-4 mx-auto"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 플레이방법 -->
+                    <div class="py-3" id="playway">
+                        <h4 class="text-lg text-tit font-bold">플레이 방법</h4>
+                        <ul class="grid grid-cols-2 lg:grid-cols-4 nav-boxed type03 gap-3 mt-3" role="tablist">
+                            <li id="playpath-1-tab" class="nav-item flex-1" role="presentation">
+                                <button class="relative w-full h-[75px] rounded-l active" data-tw-toggle="pill" data-tw-target="#playpath-tab-1" type="button" role="tab" aria-controls="playpath-tab-1" aria-selected="true">
+                                    <div class="flex items-center gap-2 text-basic px-3 lg:px-7">
+                                        <svg class="w-8 h-8 fill-title shrink-0" xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none"><path d="M23.269 21.0549C23.348 21.6009 23.407 22.8369 23.269 23.5229C22.749 26.1199 21.407 28.3439 19.244 30.1949L18.876 30.4999L18.159 30.1599C18.558 29.3029 18.797 28.4619 18.876 27.6349C18.994 26.3949 18.865 26.0849 18.876 26.0359C19.513 25.8999 20.211 25.2229 21.069 24.2749C21.957 23.2929 22.805 21.9019 23.269 21.0549ZM9.996 22.3739C10.61 23.1879 11.434 23.9129 12.469 24.5479C13.532 25.2009 14.718 25.6469 15.83 25.8899C15.574 26.0559 13.563 26.4949 11.87 25.4519C10.741 24.7569 10.116 23.7299 9.995 22.3729L9.996 22.3739ZM11.402 12.7189C10.35 14.7309 9.534 16.8149 8.955 18.9699C7.761 18.8819 6.589 19.3009 5.44 20.2269C5.19 19.8969 5.048 19.6689 5.011 19.5419C5.794 17.8599 7.584 15.6599 8.522 14.6679C9.524 13.6079 10.485 12.9589 11.402 12.7189ZM24.855 2.59091C24.989 2.66191 25.092 2.76891 25.158 2.89391L25.176 2.92491C25.969 4.32191 26.684 6.51091 26.86 8.29891C27.166 11.4009 26.933 11.9619 26.119 14.1239C26.112 14.1269 26.105 14.1309 26.098 14.1339C25.974 14.4389 25.833 14.7429 25.673 15.0429C25.456 15.4509 25.215 15.8349 24.953 16.1949C21.728 21.6229 19.625 24.5269 18.642 24.9049C17.898 25.2389 15.99 24.7879 13.861 23.6559C11.582 22.4439 10.032 20.9019 10.073 20.1069C9.928 18.9239 11.193 15.4589 13.868 9.71191L14.101 9.21391L14.235 8.96191C14.631 8.21791 15.107 7.55191 15.642 6.97391C16.471 5.88591 17.145 5.32391 19.286 4.16691C20.867 3.31291 22.75 2.62491 24.352 2.50091C24.396 2.49791 24.439 2.49891 24.482 2.50491C24.607 2.49991 24.735 2.52691 24.854 2.58991L24.855 2.59091ZM18.122 10.3829C16.757 9.80291 15.023 10.8139 14.249 12.6409C13.475 14.4679 13.953 16.4199 15.318 16.9999C16.683 17.5799 18.417 16.5689 19.191 14.7419C19.965 12.9149 19.487 10.9629 18.122 10.3829ZM16.954 11.6789L16.784 11.9989L17.412 11.8429L17.452 11.8339C17.519 11.8219 17.581 11.8269 17.636 11.8469L17.668 11.8609C17.719 11.8869 17.761 11.9279 17.79 11.9829L18.343 13.1539L18.355 13.1859C18.401 13.3309 18.371 13.5259 18.275 13.7059L17.406 15.3399L17.383 15.3809C17.28 15.5539 17.133 15.6729 16.991 15.6959L15.737 15.8429H15.701C15.642 15.8399 15.589 15.8179 15.543 15.7819L15.517 15.7579C15.475 15.7149 15.441 15.6579 15.42 15.5889L14.939 14.2269C14.893 14.0819 14.911 13.9099 14.988 13.7639L16.543 10.8399L16.55 10.8309C16.565 10.8149 16.595 10.7979 16.606 10.7999C16.662 10.8079 16.714 10.8199 16.76 10.8339L16.795 10.8449C17.12 10.9619 17.181 11.2519 16.954 11.6779V11.6789ZM17.258 12.7039L17.224 12.6899C16.757 12.5099 16.143 12.8179 15.835 13.3959C15.52 13.9879 15.608 14.7099 16.032 15.0079L16.07 15.0329C16.265 15.1509 16.497 15.1509 16.727 15.0519L16.734 15.0479C16.746 15.0389 16.762 15.0169 16.76 14.9969L16.758 14.9749C16.744 14.8039 16.697 14.3209 16.669 14.0639L16.649 13.8959V13.8809C16.651 13.8619 16.662 13.8479 16.679 13.8389L16.698 13.8289C16.9 13.7239 17.612 13.3379 17.634 13.3259L17.645 13.3179C17.661 13.3029 17.664 13.2819 17.662 13.2719L17.652 13.2199C17.596 12.9819 17.462 12.7959 17.256 12.7049L17.258 12.7039ZM16.718 13.0439C16.831 13.1209 16.785 13.3079 16.698 13.4169C16.611 13.5259 16.46 13.6259 16.336 13.5419C16.211 13.4579 16.293 13.2609 16.388 13.1499C16.483 13.0389 16.605 12.9669 16.718 13.0439Z" ></path></svg>
+                                        <div class="text-left md:text-sm text-xs">
+                                            <p>1 단계</p>
+                                            <b class="text-tit text-xs md:text-sm lg:text-base">게임 선택</b>
+                                        </div>
+                                    </div>
+                                    <div class="absolute right-0 top-0 arrow">
+                                        <svg class="bg-back" xmlns="http://www.w3.org/2000/svg" width="10" height="38" viewBox="0 0 10 38"><path d="M0 37.5H10L0 0V37.5Z"></path></svg>
+                                        <svg class="-mt-[1px] bg-back" xmlns="http://www.w3.org/2000/svg" width="10" height="38" viewBox="0 0 10 38" class="step-arrow-bottom"><path d="M0 0.5H10L0 38V0.5Z"></path></svg>
+                                    </div>
+                                </button>
+                            </li>
+                            <li id="playpath-2-tab" class="nav-item flex-1" role="presentation">
+                                <button class="relative w-full h-[75px]" data-tw-toggle="pill" data-tw-target="#playpath-tab-2" type="button" role="tab" aria-controls="playpath-tab-2" aria-selected="false">
+                                    <div class="flex items-center gap-2 text-basic px-3 lg:px-7">
+                                        <svg class="w-8 h-8 fill-title shrink-0" xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none"><path d="M15.9998 3.5C17.4358 3.5 18.5998 4.684 18.5998 6.144H26.6168C27.4548 6.144 28.1338 6.823 28.1338 7.661V7.712C28.1338 8.55 27.4548 9.229 26.6168 9.229H17.6098V26.415L21.4168 26.416C22.2548 26.416 22.9338 27.095 22.9338 27.933V27.984C22.9338 28.822 22.2548 29.501 21.4168 29.501H10.5838C9.74581 29.501 9.06681 28.822 9.06681 27.984V27.933C9.06681 27.095 9.74581 26.416 10.5838 26.416L14.5768 26.415V9.229H5.38381C4.54581 9.229 3.86681 8.55 3.86681 7.712V7.661C3.86681 6.823 4.54581 6.144 5.38381 6.144H13.4008C13.4008 4.684 14.5648 3.5 16.0008 3.5H15.9998ZM26.2548 10.739C26.5668 10.911 26.8208 11.189 26.9768 11.532L29.4088 16.878C30.4788 19.231 29.6118 22.092 27.4708 23.268C26.8688 23.599 26.2058 23.771 25.5328 23.771C23.1398 23.771 21.1998 21.639 21.1998 19.008C21.1998 18.269 21.3568 17.539 21.6568 16.878L24.0888 11.532C24.4878 10.656 25.4568 10.3 26.2548 10.739ZM7.18781 10.739C7.49981 10.911 7.75381 11.189 7.90981 11.532L10.3418 16.878C11.4118 19.231 10.5448 22.092 8.40381 23.268C7.80181 23.599 7.13881 23.771 6.46581 23.771C4.07281 23.771 2.13281 21.639 2.13281 19.008C2.13281 18.269 2.28981 17.539 2.58981 16.878L5.02181 11.532C5.42081 10.656 6.38981 10.3 7.18681 10.739H7.18781Z" fill="var(--1luid4b)"></path></svg>
+                                        <div class="text-left md:text-sm text-xs">
+                                            <p>2 단계</p>
+                                            <b class="text-tit text-xs md:text-sm lg:text-base">시장 선택</b>
+                                        </div>
+                                    </div>
+                                    <div class="absolute right-0 top-0 arrow">
+                                        <svg class="bg-back" xmlns="http://www.w3.org/2000/svg" width="10" height="38" viewBox="0 0 10 38"><path d="M0 37.5H10L0 0V37.5Z"></path></svg>
+                                        <svg class="-mt-[1px] bg-back" xmlns="http://www.w3.org/2000/svg" width="10" height="38" viewBox="0 0 10 38" class="step-arrow-bottom"><path d="M0 0.5H10L0 38V0.5Z"></path></svg>
+                                    </div>
+                                    <div class="absolute right-full top-0 arrow">
+                                        <svg class="bg-back" xmlns="http://www.w3.org/2000/svg" width="10" height="38" viewBox="0 0 10 38"><path d="M10 0H0L10 37.5V0Z"></path></svg>
+                                        <svg class="bg-back" xmlns="http://www.w3.org/2000/svg" width="10" height="38" viewBox="0 0 10 38"><path d="M10 38H0L10 0.5V38Z"></path></svg>
+                                    </div>
+                                </button>
+                            </li>
+                            <li id="playpath-3-tab" class="nav-item flex-1" role="presentation">
+                                <button class="relative w-full h-[75px]" data-tw-toggle="pill" data-tw-target="#playpath-tab-3" type="button" role="tab" aria-controls="playpath-tab-3" aria-selected="false">
+                                    <div class="flex items-center gap-2 text-basic px-3 lg:px-7">
+                                        <svg class="w-8 h-8 fill-title shrink-0" xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none"><path d="M28.7693 3.30005H4.62131C3.86931 3.30005 3.22431 3.72305 2.94031 4.40505C2.65631 5.08705 2.81231 5.83005 3.34931 6.34605L13.3053 15.904V28.493C13.3053 28.9851 13.6063 29.423 14.0713 29.6101C14.2233 29.6711 14.3823 29.7001 14.5393 29.7001C14.8633 29.7001 15.1803 29.574 15.4173 29.338L19.7323 25.036C19.9603 24.809 20.0853 24.5091 20.0853 24.191V15.904L30.0413 6.34605C30.5783 5.83005 30.7353 5.08705 30.4503 4.40505C30.1653 3.72305 29.5213 3.30005 28.7693 3.30005Z" fill="var(--1luid4b)"></path></svg>
+                                        <div class="text-left md:text-sm text-xs">
+                                            <p>3 단계</p>
+                                            <b class="text-tit text-xs md:text-sm lg:text-base">롤링하기</b>
+                                        </div>
+                                    </div>
+                                    <div class="absolute right-0 top-0 arrow">
+                                        <svg class="bg-back" xmlns="http://www.w3.org/2000/svg" width="10" height="38" viewBox="0 0 10 38"><path d="M0 37.5H10L0 0V37.5Z"></path></svg>
+                                        <svg class="-mt-[1px] bg-back" xmlns="http://www.w3.org/2000/svg" width="10" height="38" viewBox="0 0 10 38" class="step-arrow-bottom"><path d="M0 0.5H10L0 38V0.5Z"></path></svg>
+                                    </div>
+                                    <div class="absolute right-full top-0 arrow">
+                                        <svg class="bg-back" xmlns="http://www.w3.org/2000/svg" width="10" height="38" viewBox="0 0 10 38"><path d="M10 0H0L10 37.5V0Z"></path></svg>
+                                        <svg class="bg-back" xmlns="http://www.w3.org/2000/svg" width="10" height="38" viewBox="0 0 10 38"><path d="M10 38H0L10 0.5V38Z"></path></svg>
+                                    </div>
+                                </button>
+                            </li>
+                            <li id="playpath-4-tab" class="nav-item flex-1" role="presentation">
+                                <button class="relative w-full h-[75px] rounded-r" data-tw-toggle="pill" data-tw-target="#playpath-tab-4" type="button" role="tab" aria-controls="playpath-tab-4" aria-selected="false">
+                                    <div class="flex items-center gap-2 text-basic px-3 lg:px-7">
+                                        <svg class="w-8 h-8 fill-title shrink-0" xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none"><path d="M20.16 8.52498L20.31 8.42998C20.98 8.02298 21.774 7.71198 22.688 7.49298C23.894 7.20398 25.058 7.14198 26.173 7.31198C26.786 7.40598 27.204 7.95898 27.106 8.54698C27.071 8.75998 26.972 8.94898 26.832 9.09798L26.18 10.372C26.622 10.825 27.01 11.377 27.345 12.025C27.671 12.653 27.91 13.301 28.064 13.965H29.771C30.353 13.965 30.832 14.389 30.889 14.933L30.895 15.043V20.68C30.895 21.238 30.453 21.697 29.886 21.753L29.771 21.759H28.785C28.637 22.547 28.215 23.339 27.546 24.128C26.8 25.007 25.961 25.598 25.041 25.869L25.04 28.712L25.036 28.805C25.039 28.836 25.04 28.867 25.04 28.898C25.04 29.456 24.598 29.915 24.031 29.971L23.916 29.977H20.404C20.359 29.977 20.314 29.974 20.27 29.969C20.259 29.968 20.248 29.966 20.237 29.965C20.213 29.962 20.19 29.958 20.167 29.953C20.149 29.949 20.132 29.945 20.114 29.941C20.096 29.937 20.078 29.932 20.061 29.926L20.017 29.911C19.998 29.904 19.979 29.897 19.96 29.889C19.906 29.867 19.854 29.84 19.804 29.81L19.771 29.789C19.689 29.735 19.614 29.671 19.548 29.596C19.545 29.592 19.541 29.588 19.538 29.584L19.525 29.569L19.496 29.533C19.486 29.52 19.476 29.506 19.467 29.492C19.464 29.488 19.462 29.485 19.459 29.481L19.44 29.451C19.429 29.433 19.418 29.414 19.407 29.395L19.402 29.385L18.354 27.399H13.158V28.712C13.158 29.27 12.716 29.729 12.149 29.785L12.034 29.791L7.60698 29.786L7.53798 29.779C7.52498 29.777 7.51098 29.775 7.49698 29.772L7.47998 29.769C7.45798 29.765 7.43598 29.76 7.41398 29.754C7.40298 29.751 7.39198 29.748 7.38098 29.745C7.35898 29.739 7.33698 29.731 7.31498 29.724C7.25798 29.704 7.20198 29.679 7.14798 29.649C7.08698 29.615 7.02898 29.576 6.97598 29.533C6.97398 29.531 6.97098 29.529 6.96798 29.527C3.70598 26.804 1.96498 23.756 1.81898 20.413C1.72398 18.26 2.02098 16.449 2.76798 14.874L1.43998 13.616C0.997984 13.197 0.993984 12.515 1.42998 12.091C1.83698 11.696 2.48398 11.666 2.92798 12.004L3.01998 12.082L3.97098 12.983C4.35798 12.511 4.79998 12.06 5.29798 11.627L5.31598 11.718C4.51398 7.76098 7.20798 3.92898 11.334 3.15998C15.316 2.41798 19.177 4.79998 20.161 8.52498H20.16ZM22.795 24.876L22.796 24.865C22.796 24.868 22.796 24.87 22.795 24.873L22.805 24.795C22.807 24.782 22.809 24.769 22.812 24.757C22.815 24.74 22.819 24.724 22.823 24.707C22.828 24.687 22.834 24.666 22.84 24.646C22.843 24.638 22.845 24.63 22.848 24.622C22.857 24.596 22.867 24.571 22.878 24.546L22.893 24.513C22.902 24.494 22.911 24.476 22.921 24.458C22.931 24.44 22.942 24.422 22.953 24.404L22.977 24.368C22.987 24.353 22.997 24.339 23.008 24.325C23.019 24.311 23.03 24.297 23.042 24.283C23.054 24.268 23.067 24.254 23.08 24.24C23.091 24.228 23.103 24.216 23.115 24.205C23.124 24.196 23.133 24.188 23.142 24.179C23.159 24.163 23.177 24.148 23.196 24.133C23.205 24.125 23.215 24.118 23.225 24.111L23.279 24.073C23.292 24.065 23.306 24.056 23.32 24.047C23.338 24.036 23.356 24.026 23.373 24.017C23.387 24.01 23.401 24.002 23.416 23.996L23.468 23.973C23.484 23.966 23.501 23.96 23.518 23.954L23.577 23.934C23.588 23.931 23.599 23.927 23.61 23.924C23.636 23.917 23.661 23.911 23.687 23.906C23.695 23.904 23.704 23.903 23.712 23.901C23.734 23.897 23.757 23.894 23.779 23.891L23.791 23.89C23.817 23.887 23.843 23.885 23.869 23.884L23.894 23.883C24.532 23.87 25.158 23.527 25.804 22.766C26.408 22.055 26.642 21.472 26.589 20.994L26.573 20.893C26.476 20.417 26.722 19.954 27.145 19.737C27.275 19.668 27.42 19.623 27.575 19.608L27.69 19.602H28.648V16.121H27.103C27.048 16.121 26.993 16.117 26.94 16.109C26.846 16.095 26.756 16.071 26.671 16.036L26.574 15.991C26.446 15.925 26.333 15.835 26.24 15.727C26.16 15.634 26.096 15.527 26.052 15.411C26.021 15.329 26 15.242 25.99 15.152V15.147C25.914 14.402 25.697 13.683 25.335 12.984C24.986 12.311 24.591 11.825 24.16 11.514C23.664 11.156 23.563 10.48 23.936 10.004L24 9.92998L24.268 9.40698C23.933 9.44098 23.589 9.49898 23.237 9.58398C22.42 9.77998 21.773 10.056 21.287 10.402L21.131 10.52C21.068 10.57 21.004 10.612 20.936 10.646C20.921 10.654 20.907 10.66 20.893 10.667C20.873 10.676 20.852 10.685 20.831 10.693L20.792 10.708L20.721 10.73L20.676 10.742C20.657 10.746 20.638 10.75 20.619 10.754C20.602 10.757 20.586 10.76 20.569 10.762C20.544 10.766 20.519 10.768 20.494 10.77L20.463 10.772C20.439 10.773 20.414 10.774 20.389 10.773C20.371 10.773 20.353 10.772 20.336 10.771C20.319 10.77 20.299 10.768 20.281 10.766C20.261 10.764 20.24 10.761 20.22 10.758C20.21 10.756 20.199 10.754 20.188 10.752C15.406 9.82898 11.749 10.126 9.19198 11.579C5.28998 13.798 3.88798 16.195 4.06898 20.32C4.18298 22.924 5.51898 25.353 8.13798 27.633H10.914V26.32C10.914 25.724 11.417 25.242 12.038 25.242H19.06C19.088 25.242 19.116 25.244 19.143 25.246L19.124 25.244L19.173 25.248C19.197 25.251 19.221 25.254 19.245 25.258C19.259 25.26 19.273 25.263 19.287 25.266C19.304 25.27 19.321 25.274 19.338 25.278C19.354 25.282 19.37 25.286 19.385 25.291L19.431 25.306C19.453 25.313 19.475 25.322 19.497 25.331L19.538 25.349L19.595 25.377L19.628 25.395C19.648 25.406 19.667 25.418 19.686 25.43C19.699 25.438 19.712 25.447 19.725 25.456C19.741 25.468 19.757 25.48 19.773 25.493C19.82 25.53 19.863 25.571 19.903 25.616L19.932 25.649C19.942 25.661 19.952 25.673 19.961 25.685C19.97 25.697 19.981 25.712 19.99 25.726C19.993 25.73 19.995 25.733 19.998 25.737L20.016 25.765C20.028 25.784 20.039 25.803 20.05 25.823L20.055 25.833L21.103 27.818H22.8V24.959L22.802 24.914V24.913L22.804 24.875L22.795 24.876ZM21.177 13.214C22.162 13.214 22.961 13.98 22.961 14.925C22.961 15.87 22.162 16.636 21.177 16.636C20.192 16.636 19.393 15.87 19.393 14.925C19.393 13.98 20.192 13.214 21.177 13.214Z" fill="var(--1luid4b)"></path></svg>
+                                        <div class="text-left md:text-sm text-xs">
+                                            <p>4 단계</p>
+                                            <b class="text-tit text-xs md:text-sm lg:text-base">롤링 보기</b>
+                                        </div>
+                                    </div>
+                                    <div class="absolute right-full top-0 arrow">
+                                        <svg class="bg-back" xmlns="http://www.w3.org/2000/svg" width="10" height="38" viewBox="0 0 10 38"><path d="M10 0H0L10 37.5V0Z"></path></svg>
+                                        <svg class="bg-back" xmlns="http://www.w3.org/2000/svg" width="10" height="38" viewBox="0 0 10 38"><path d="M10 38H0L10 0.5V38Z"></path></svg>
+                                    </div>
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="tab-content mt-5">
+                            <div id="playpath-tab-1" class="tab-pane bg-list rounded active" role="tabpanel" aria-labelledby="playpath-1-tab">
+                                <div class="flex items-center lg:flex-row flex-col-reverse gap-4 p-5">
+                                    <div class="w-full lg:w-1/2 font-semibold">
+                                        베팅을 시작하려면 'BET' 버튼을 클릭하여 원하는 행운의 숫자 게임을 선택하세요.
+                                        <br/><br/>
+                                        행운의 숫자 페이지에서 이용 가능한 추첨을 검색하여 광범위한 국제 행운의 숫자 추첨 목록에서 선택하거나 가장 최근에 예정된 추첨은 홈페이지 캐러셀에 있습니다.
+                                        <br/><br/>
+                                        수많은 행운의 숫자 추첨이 정기적으로 진행되어 매주 매일 당첨될 수 있는 기회를 제공합니다.
+                                        <br/><br/>
+                                        일단 행운의 숫자를 선택하면 선택한 게임에 사용할 수 있는 베팅 시장 유형이 제공됩니다.
+                                    </div>
+                                    <div class="w-full lg:w-1/2">
+                                        <img src="/bcGame/dist/custom_img/lottery/step1.webp" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="playpath-tab-2" class="tab-pane bg-list rounded" role="tabpanel" aria-labelledby="playpath-2-tab">
+                                <div class="flex items-center lg:flex-row flex-col-reverse gap-4 p-5">
+                                    <div class="w-full lg:w-1/2 font-semibold">
+                                        다양한 선택 범위, 예상 합계 위 또는 아래, 홀수 또는 짝수 옵션을 쉽고 빠르게 선택할 수 있습니다.
+                                        <br/><br/>
+                                        시장 선택이 완료되면 베팅이 베팅 전표에 추가됩니다. 베팅을 마무리하세요. "BET" 버튼을 선택하세요.
+                                        <br/><br/>
+                                        일반 추첨 옵션을 선택하면 원하는 번호를 선택할 수 있습니다. 선택이 행운의 숫자 결과와 정확하게 일치하면 베팅에서 승리하게 됩니다. 상금은 다음의 배수가 됩니다. 베팅 시장 내의 판돈과 확률.
+                                        <br/><br/>
+                                        추첨 합계와 같은 다른 시장 유형에서는 행운의 숫자 결과에 대한 베팅을 허용합니다(예: 특정 추첨에서 추첨된 공의 합계가 홀수인지 여부). 또는 심지어 사이드 마켓의 경우 결과당, 베팅당 하나의 고유한 베팅만 가능하다는 점을 기억하세요.
+                                    </div>
+                                    <div class="w-full lg:w-1/2">
+                                        <img src="/bcGame/dist/custom_img/lottery/step2.webp" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="playpath-tab-3" class="tab-pane bg-list rounded" role="tabpanel" aria-labelledby="playpath-3-tab">
+                                <div class="flex items-center lg:flex-row flex-col-reverse gap-4 p-5">
+                                    <div class="w-full lg:w-1/2 font-semibold">
+                                        추첨 옵션을 변경하여 여러 개의 추첨에 베팅할 수 있습니다. 가능한 추첨은 일주일 이내의 추첨으로 제한됩니다. 매우 짧은 시간 내에 발생하는 빠른 행운의 숫자는 최대 10개의 추첨이 가능합니다.
+                                        <br/><br/>
+                                        마찬가지로 베팅당 판돈을 변경할 수 있습니다.
+                                        <br/><br/>
+                                        각 베팅 항목에는 선택한 모든 무승부에 대해 가능한 상금이 표시됩니다. 이 금액은 모든 베팅의 총합입니다. 모든 베팅에서 승리하셨습니다.
+                                        <br/><br/>
+                                        베팅 정보를 확인한 후 'BET' 버튼을 눌러 거래를 완료하세요.
+                                    </div>
+                                    <div class="w-full lg:w-1/2">
+                                        <img src="/bcGame/dist/custom_img/lottery/step3.webp" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="playpath-tab-4" class="tab-pane bg-list rounded" role="tabpanel" aria-labelledby="playpath-4-tab">
+                                <div class="flex items-center lg:flex-row flex-col-reverse gap-4 p-5">
+                                    <div class="w-full lg:w-1/2 font-semibold">
+                                        베팅 페이지에는 날짜, 설명, 상태, 총 판돈, 총 지불금 등 모든 거래가 요약되어 있습니다.
+                                        <br/><br/>
+                                        또한 베팅 세부정보 섹션에서 중요한 베팅을 포함하여 베팅에 대한 전체 분석을 제공합니다. 거래 날짜, 행운의 숫자 세부정보, 베팅 지분, 배당률, 행운의 숫자 결과, 추첨 ID, 베팅 시장 유형 및 지급액과 같은 정보입니다.
+                                    </div>
+                                    <div class="w-full lg:w-1/2">
+                                        <img src="/bcGame/dist/custom_img/lottery/step4.webp" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 
                 <!-- ** 푸터 시작 ** -->
@@ -104,6 +1067,138 @@
         $(window).on('load',function(){
             $('.mo_top_menu .rotto').addClass('active');
         })
+        $('.lottery_top_btn button').on('click',function(){
+            if($(this).hasClass('search_btn')){
+                $('.search_box').removeClass('hidden')
+            }else{
+                $('.search_box').addClass('hidden')
+            }
+
+            if($(window).innerWidth() < 767) {
+                    
+                if($(this).hasClass('mo_search_btn')){
+                    $('.search_box').removeClass('hidden')
+                    $('.lottery_left').addClass('on')
+                    $('body').addClass('overflow-hidden')
+                }else{
+                    $('.search_box').addClass('hidden')
+                    $('.lottery_left').removeClass('on')
+                    $('body').removeClass('overflow-hidden')
+                }
+            }
+
+            $(this).addClass('on').siblings().removeClass('on')
+        })
+        $('.lottery_like_btn').on('click',function(){
+            $(this).toggleClass('on')
+        })
+
+
+        // 배팅슬립
+        $('.batting_slip .top_box').on('click',function(){
+            $(this).parent().toggleClass('on')
+        })
+
+
+        // 다가오는 추첨
+        var swiper = new Swiper(".soon_slide_box", {
+            slidesPerView: 1.3,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".soon-swiper-next",
+                prevEl: ".soon-swiper-prev",
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                1000: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                1200:{
+                    slidesPerView: 4,
+                    spaceBetween: 10,
+                },
+                1400:{
+                    slidesPerView: 5,
+                    spaceBetween: 10,
+                },
+                1680:{
+                    slidesPerView: 6,
+                    spaceBetween: 10,
+                }
+            }
+        });
+        
+        // 인기
+        var swiper = new Swiper(".popular_slide_box", {
+            slidesPerView: 1.3,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".popular-swiper-next",
+                prevEl: ".popular-swiper-prev",
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                1150:{
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                },
+                1400:{
+                    slidesPerView: 4,
+                    spaceBetween: 10,
+                },
+                1680:{
+                    slidesPerView: 5,
+                    spaceBetween: 10,
+                }
+            }
+        });
+
+        // 좋아하는
+        var swiper = new Swiper(".favorite_slide_box", {
+            slidesPerView: 1.3,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".favorite-swiper-next",
+                prevEl: ".favorite-swiper-prev",
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                1150:{
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                },
+                1400:{
+                    slidesPerView: 4,
+                    spaceBetween: 10,
+                },
+                1680:{
+                    slidesPerView: 5,
+                    spaceBetween: 10,
+                }
+            }
+        });
+
+        // 최근 승자
+        var swiper = new Swiper(".lottery_slide_box", {
+            direction: "vertical",
+            slidesPerView: 5,
+            speed: 1000,
+            autoplay:{
+                delay: 1000,
+                disableOnInteraction: false,
+            },
+        });
+
     </script>
 
   

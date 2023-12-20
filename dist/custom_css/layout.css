@@ -42,6 +42,8 @@ button:focus {box-shadow:none !important; }
 
 .bg-gradient-yellow {background-image:linear-gradient(90deg,#40391f 8.96%,#a37c0c);; }
 
+.bg-gradient-green2 {background:linear-gradient(270deg,rgba(59,193,23,.14) 0%,rgba(59,193,23,0) 100%)}
+
 .dark .dark\:bg-back2 {background-color: var(--background-type-color);}
 .dark .dark\:bg-back {background-color: var(--background-color);}
 .dark .dark\:bg-modaldark {background-color: var(--modal-darkbg);}
@@ -54,6 +56,7 @@ button:focus {box-shadow:none !important; }
 .hover\:bg-gradient-green:hover {background: linear-gradient(90deg,rgba(69,217,30,.3) 8.96%,rgba(69,217,30,0) 100%),#F6F7FA;}
 
 @media (min-width:768px){
+    .md\:bg-gradient-green2 {background:linear-gradient(270deg,rgba(59,193,23,.14) 0%,rgba(59,193,23,0) 100%)}
     .md\:bg-tab {background-color: var(--tab-bg);}
 }
 
@@ -670,3 +673,9 @@ footer .icon_btn.icon-Ripple {background-position: -164px -82px; }
 .content.trading .trading_logo {display:block; }
 .content.trading {margin-left:0;}
 .content.trading .container {max-width:unset}
+
+/* 복권 페이지 */
+.lottery_side .side-nav-bg {display:none !important; }
+.lottery_side .side-nav {display:none; }
+.content.lottery {margin-left:0;}
+.content.lottery .container {max-width:unset}
