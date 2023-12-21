@@ -53,10 +53,22 @@
             <!-- ** 내용시작 ** -->
             <div class="container_wrap">
 
+                <!-- 모바일 하단메뉴 -->
+                <div class="flex items-center justify-evenly racing_mo_menu text-xs">
+                    <a class="inline-block text-center" href="/bcGame/sports.html"> 
+                        <svg class="w-5 h-5 mx-auto mb-1 fill-title2" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_3106_7338)"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.4729 0.532773L16.4187 5.48475C16.944 5.92189 17.2474 6.5699 17.2474 7.25326V15.6986C17.2474 16.9695 16.2169 18 14.9459 18H11.9999V13.09C11.9999 12.5377 11.5522 12.09 10.9999 12.09H6.99988C6.44759 12.09 5.99988 12.5377 5.99988 13.09V18H3.05426C1.78332 18 0.752808 16.9695 0.752808 15.6986V7.25326C0.752808 6.5699 1.05624 5.92189 1.58146 5.48475L7.5273 0.532773C8.38038 -0.177591 9.61982 -0.177591 10.4729 0.532773Z" fill=""></path></g><defs><clipPath id="clip0_3106_7338"><rect width="18" height="18" ></rect></clipPath></defs></svg>
+                        홈
+                    </a>
+                    <button onClick="tabClick('sports_right')"><svg class="w-5 h-5 mx-auto mb-1 fill-title2"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Rules"></use></svg> 베팅</button>
+                    <button onClick="tabClick('sports_left')"><svg class="w-5 h-5 mx-auto mb-1 fill-title2"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Search"></use></svg> 검색</button>
+                </div>
+
                 <div class="flex sports_wrap">
                     <!-- 좌측 : 예정 레이스 -->
-                    <div class="sports_left h-full scrollbar overflow-y-auto type02 py-4 px-2.5 shrink-0">
-                      
+                    <div class="sports_left h-full scrollbar overflow-y-auto type02 py-2 px-1.5 shrink-0">
+                        <div class="w-full justify-end mb-4 lg:hidden flex">
+                            <button onClick="tabClick('sports_left')"><svg class="w-5 h-5 fill-title2"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg> </button>
+                        </div>
                         <div class="relative w-full">
                             <label for="sports_input"><svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Search"></use></svg></label>
                             <input type="text" id="sports_input" class="form-control type02 pl-10" placeholder="Search events...">
@@ -68,24 +80,1722 @@
                             <svg class="w-4 h-4 fill-basic "><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
                         </div>
 
-                        <div class="p-0.5 bg-btndark">
-                            <div>TOP<br/>COMPETITIONS</div>
+                        <div class="p-0.5 mt-2 bg-btndark">
+                            <div class="p-2 text-tit font-bold">TOP<br/>COMPETITIONS</div>
                             <div>
-                                <svg width="24" height="24" class="icon" ><title>Tennis</title><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-2"></use></svg>
+                                <button class="flex items-center gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
+                                    <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-2"></use></svg>
+                                    <img class="w-5" src="/bcGame/dist/custom_img/sports/australian.svg" alt="">
+                                    <p class="truncate">Australian Open Men's 2024</p>
+                                </button>
+                                <button class="flex items-center gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
+                                    <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-1"></use></svg>
+                                    <img class="w-5" src="/bcGame/dist/custom_img/sports/fifa.svg" alt="">
+                                    <p class="truncate">FIFA Club World Cup</p>
+                                </button>
+                                <button class="flex items-center gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
+                                    <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-1"></use></svg>
+                                    <img class="w-5" src="/bcGame/dist/custom_img/sports/champions.svg" alt="">
+                                    <p class="truncate">Champions League</p>
+                                </button>
+                                <button class="flex items-center gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
+                                    <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-1"></use></svg>
+                                    <img class="w-5" src="/bcGame/dist/custom_img/sports/europa.svg" alt="">
+                                    <p class="truncate"> Europa League</p>
+                                </button>
+                                <button class="flex items-center gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
+                                    <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-1"></use></svg>
+                                    <img class="w-5" src="/bcGame/dist/custom_img/sports/conference.svg" alt="">
+                                    <p class="truncate">Conference League</p>
+                                </button>
+                                <button class="flex items-center gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
+                                    <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-3"></use></svg>
+                                    <img class="w-5" src="/bcGame/dist/custom_img/sports/nba.svg" alt="">
+                                    <p class="truncate">NBA</p>
+                                </button>
                             </div>
                         </div>
 
+                        <div class="p-0.5 mt-2 bg-btndark">
+                            <div class="p-2 text-tit font-bold">ALL SPORTS</div>
+                                                        
+                            <ul class="nav nav-link-tabs bg-stand" role="tablist">
+                                <li id="time-1-tab" class="nav-item" role="presentation">
+                                    <button class="nav-link !px-2 !py-1 text-xs active" data-tw-toggle="pill" data-tw-target="#time-tab-1" type="button" role="tab" aria-controls="time-tab-1" aria-selected="true">
+                                        ALL
+                                    </button>
+                                </li>
+                                <li id="time-2-tab" class="nav-item" role="presentation">
+                                    <button class="nav-link !px-2 !py-1 text-xs" data-tw-toggle="pill" data-tw-target="#time-tab-2" type="button" role="tab" aria-controls="time-tab-2" aria-selected="false">
+                                        24h
+                                    </button>
+                                </li>
+                                <li id="time-2-tab" class="nav-item" role="presentation">
+                                    <button class="nav-link !px-2 !py-1 text-xs" data-tw-toggle="pill" data-tw-target="#time-tab-2" type="button" role="tab" aria-controls="time-tab-2" aria-selected="false">
+                                        12h
+                                    </button>
+                                </li>
+                                <li id="time-2-tab" class="nav-item" role="presentation">
+                                    <button class="nav-link !px-2 !py-1 text-xs" data-tw-toggle="pill" data-tw-target="#time-tab-2" type="button" role="tab" aria-controls="time-tab-2" aria-selected="false">
+                                        6h
+                                    </button>
+                                </li>
+                                <li id="time-2-tab" class="nav-item" role="presentation">
+                                    <button class="nav-link !px-2 !py-1 text-xs" data-tw-toggle="pill" data-tw-target="#time-tab-2" type="button" role="tab" aria-controls="time-tab-2" aria-selected="false">
+                                        3h
+                                    </button>
+                                </li>
+                                <li id="time-2-tab" class="nav-item" role="presentation">
+                                    <button class="nav-link !px-2 !py-1 text-xs" data-tw-toggle="pill" data-tw-target="#time-tab-2" type="button" role="tab" aria-controls="time-tab-2" aria-selected="false">
+                                        1h
+                                    </button>
+                                </li>
+                            </ul>
+
+                            <div>
+                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
+                                    <div class="grid grid-flow-col items-center gap-2">
+                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-1"></use></svg>
+                                        <span class="truncate">Football</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span>602</span>
+                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
+                                    </div>
+                                </button>
+                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
+                                    <div class="grid grid-flow-col items-center gap-2">
+                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-48"></use></svg>
+                                        <span class="truncate">Baseball</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span>10</span>
+                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
+                                    </div>
+                                </button>
+                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
+                                    <div class="grid grid-flow-col items-center gap-2">
+                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-18"></use></svg>
+                                        <span class="truncate">Ice Hockey</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span>105</span>
+                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
+                                    </div>
+                                </button>
+                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
+                                    <div class="grid grid-flow-col items-center gap-2">
+                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-3"></use></svg>
+                                        <span class="truncate">Basketball</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span>249</span>
+                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
+                                    </div>
+                                </button>
+                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
+                                    <div class="grid grid-flow-col items-center gap-2">
+                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-2"></use></svg>
+                                        <span class="truncate">Tennis</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span>51</span>
+                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
+                                    </div>
+                                </button>
+                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
+                                    <div class="grid grid-flow-col items-center gap-2">
+                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-17"></use></svg>
+                                        <span class="truncate">Volleyball</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span>51</span>
+                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
+                                    </div>
+                                </button>
+                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
+                                    <div class="grid grid-flow-col items-center gap-2">
+                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-7"></use></svg>
+                                        <span class="truncate">Table Tennis</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span>51</span>
+                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
+                                    </div>
+                                </button>
+                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
+                                    <div class="grid grid-flow-col items-center gap-2">
+                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-39"></use></svg>
+                                        <span class="truncate">Handball</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span>51</span>
+                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
+                                    </div>
+                                </button>
+                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
+                                    <div class="grid grid-flow-col items-center gap-2">
+                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-54"></use></svg>
+                                        <span class="truncate">American Football</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span>51</span>
+                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
+                                    </div>
+                                </button>
+                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
+                                    <div class="grid grid-flow-col items-center gap-2">
+                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-52"></use></svg>
+                                        <span class="truncate">Boxing & UFC</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span>51</span>
+                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
                             
                     </div>
 
                     <!-- 중앙 -->
-                    <div class="sports_center h-full scrollbar overflow-y-auto type02">
-                       
+                    <div class="sports_center h-full scrollbar overflow-y-auto type02 py-4 md:px-2 bg-stand">
+                        <!-- MO -->
+                        <div class="md:hidden block mb-2 px-2">
+                            <div class="relative w-full">
+                                <label for="sports_input"><svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Search"></use></svg></label>
+                                <input type="text" id="sports_input" class="form-control type02 pl-10 !rounded-xl" placeholder="Search events...">
+                            </div>
+                        </div>
+
+                        <!-- 상단 롤링 --> 
+                        <div class="sports_slide_wrap text-xs flex justify-between gap-2">
+                            <button class="hidden md:!block bg-backlight px-1 rounded-l prev_btn"><svg class="w-4 h-4 fill-basic rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                            <div class="sports_slide_box overflow-hidden">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide bg-backlight rounded p-3 !w-64">
+                                        <div class="mb-1 text-center text-[10px]">
+                                            <p>Football. Spain. Laliga</p>
+                                            <p class="text-tit">Tomorrow | 05:30</p>
+                                        </div>
+                                        <div class="grid grid-cols-2 text-tit text-center">
+                                            <div>
+                                                <img class="w-7 mx-auto" src="/bcGame/dist/custom_img/sports/alaves.webp" alt="">
+                                                Deportivo Alaves
+                                            </div>
+                                            <div>
+                                                <img class="w-7 mx-auto" src="/bcGame/dist/custom_img/sports/madrid_2.webp" alt="">
+                                                Real Madrid
+                                            </div>
+                                        </div>
+                                        <div class="bet_box type02 flex items-center mt-1 gap-2">
+                                            <button class="bet_btn w-1/3 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                <span>1</span>
+                                                <b>+190</b>
+                                            </button>
+                                            <button class="bet_btn w-1/3 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                <span>X</span>
+                                                <b>+400</b>
+                                            </button>
+                                            <button class="bet_btn w-1/3 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                <span>2</span>
+                                                <b>+550</b>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide bg-backlight rounded p-3 !w-64">
+                                        <div class="mb-1 text-center text-[10px]">
+                                            <p>Football. Spain. Laliga</p>
+                                            <p class="text-tit">Tomorrow | 05:30</p>
+                                        </div>
+                                        <div class="grid grid-cols-2 text-tit text-center">
+                                            <div>
+                                                <img class="w-7 mx-auto" src="/bcGame/dist/custom_img/sports/alaves.webp" alt="">
+                                                Deportivo Alaves
+                                            </div>
+                                            <div>
+                                                <img class="w-7 mx-auto" src="/bcGame/dist/custom_img/sports/madrid_2.webp" alt="">
+                                                Real Madrid
+                                            </div>
+                                        </div>
+                                        <div class="bet_box type02 flex items-center mt-1 gap-2">
+                                            <button class="bet_btn w-1/3 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                <span>1</span>
+                                                <b>+190</b>
+                                            </button>
+                                            <button class="bet_btn w-1/3 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                <span>X</span>
+                                                <b>+400</b>
+                                            </button>
+                                            <button class="bet_btn w-1/3 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                <span>2</span>
+                                                <b>+550</b>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide bg-backlight rounded p-3 !w-64">
+                                        <div class="mb-1 text-center text-[10px]">
+                                            <p>Football. Spain. Laliga</p>
+                                            <p class="text-tit">Tomorrow | 05:30</p>
+                                        </div>
+                                        <div class="grid grid-cols-2 text-tit text-center">
+                                            <div>
+                                                <img class="w-7 mx-auto" src="/bcGame/dist/custom_img/sports/alaves.webp" alt="">
+                                                Deportivo Alaves
+                                            </div>
+                                            <div>
+                                                <img class="w-7 mx-auto" src="/bcGame/dist/custom_img/sports/madrid_2.webp" alt="">
+                                                Real Madrid
+                                            </div>
+                                        </div>
+                                        <div class="bet_box type02 flex items-center mt-1 gap-2">
+                                            <button class="bet_btn w-1/3 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                <span>1</span>
+                                                <b>+190</b>
+                                            </button>
+                                            <button class="bet_btn w-1/3 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                <span>X</span>
+                                                <b>+400</b>
+                                            </button>
+                                            <button class="bet_btn w-1/3 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                <span>2</span>
+                                                <b>+550</b>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide bg-backlight rounded p-3 !w-64">
+                                        <div class="mb-1 text-center text-[10px]">
+                                            <p>Football. Spain. Laliga</p>
+                                            <p class="text-tit">Tomorrow | 05:30</p>
+                                        </div>
+                                        <div class="grid grid-cols-2 text-tit text-center">
+                                            <div>
+                                                <img class="w-7 mx-auto" src="/bcGame/dist/custom_img/sports/alaves.webp" alt="">
+                                                Deportivo Alaves
+                                            </div>
+                                            <div>
+                                                <img class="w-7 mx-auto" src="/bcGame/dist/custom_img/sports/madrid_2.webp" alt="">
+                                                Real Madrid
+                                            </div>
+                                        </div>
+                                        <div class="bet_box type02 flex items-center mt-1 gap-2">
+                                            <button class="bet_btn w-1/3 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                <span>1</span>
+                                                <b>+190</b>
+                                            </button>
+                                            <button class="bet_btn w-1/3 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                <span>X</span>
+                                                <b>+400</b>
+                                            </button>
+                                            <button class="bet_btn w-1/3 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                <span>2</span>
+                                                <b>+550</b>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide bg-backlight rounded p-3 !w-64">
+                                        <div class="mb-1 text-center text-[10px]">
+                                            <p>Football. Spain. Laliga</p>
+                                            <p class="text-tit">Tomorrow | 05:30</p>
+                                        </div>
+                                        <div class="grid grid-cols-2 text-tit text-center">
+                                            <div>
+                                                <img class="w-7 mx-auto" src="/bcGame/dist/custom_img/sports/alaves.webp" alt="">
+                                                Deportivo Alaves
+                                            </div>
+                                            <div>
+                                                <img class="w-7 mx-auto" src="/bcGame/dist/custom_img/sports/madrid_2.webp" alt="">
+                                                Real Madrid
+                                            </div>
+                                        </div>
+                                        <div class="bet_box type02 flex items-center mt-1 gap-2">
+                                            <button class="bet_btn w-1/3 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                <span>1</span>
+                                                <b>+190</b>
+                                            </button>
+                                            <button class="bet_btn w-1/3 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                <span>X</span>
+                                                <b>+400</b>
+                                            </button>
+                                            <button class="bet_btn w-1/3 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                <span>2</span>
+                                                <b>+550</b>
+                                            </button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button class="hidden md:!block bg-backlight px-1 rounded-r next_btn"><svg class="w-4 h-4 fill-basic "><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                        </div>
+
+                        <!-- PC -->
+                        <div class="md:block hidden">
+                            <!-- 스포츠별 -->
+                            <div class="mt-4 bg-backlight rounded-lg">
+                                <div class="relative flex items-center justify-between px-4 pt-2 text-xs border-b border-slate-100 border-opacity-70">
+                                    <div class="sports_list w-[90%] overflow-x-hidden">
+                                        <button class="px-2">
+                                            <div class="w-8 h-8 mx-auto mt-auto">
+                                                <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#star"></use></svg>    
+                                            </div>
+                                            <p class="flex items-center justify-center h-7 whitespace-nowrap">Favourites</p>
+                                        </button>
+                                        <button class="px-2 on">
+                                            <div class="relative w-8 h-8 mx-auto mt-auto">
+                                                <span class="absolute -right-1 -top-2 px-1 p-0.5 bg-back rounded-lg text-xs num">20</span>
+                                                <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-1"></use></svg>    
+                                            </div>
+                                            <p class="flex items-center justify-center h-7 whitespace-nowrap">Football</p>
+                                        </button>
+                                        <button class="px-2">
+                                            <div class="relative w-8 h-8 mx-auto mt-auto">
+                                                <span class="absolute -right-1 -top-2 px-1 p-0.5 bg-back rounded-lg text-xs num">9</span>
+                                                <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-48"></use></svg>    
+                                            </div>
+                                            <p class="flex items-center justify-center h-7 whitespace-nowrap">Baseball</p>
+                                        </button>
+                                        <button class="px-2">
+                                            <div class="relative w-8 h-8 mx-auto mt-auto">
+                                                <span class="absolute -right-1 -top-2 px-1 p-0.5 bg-back rounded-lg text-xs num">105</span>
+                                                <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-18"></use></svg>    
+                                            </div>
+                                            <p class="flex items-center justify-center h-7 whitespace-nowrap">Ice Hockey</p>
+                                        </button>
+                                        <button class="px-2">
+                                            <div class="relative w-8 h-8 mx-auto mt-auto">
+                                                <span class="absolute -right-1 -top-2 px-1 p-0.5 bg-back rounded-lg text-xs num">228</span>
+                                                <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-3"></use></svg>    
+                                            </div>
+                                            <p class="flex items-center justify-center h-7 whitespace-nowrap">Basketball</p>
+                                        </button>
+                                        <button class="px-2">
+                                            <div class="relative w-8 h-8 mx-auto mt-auto">
+                                                <span class="absolute -right-1 -top-2 px-1 p-0.5 bg-back rounded-lg text-xs num">42</span>
+                                                <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-2"></use></svg>    
+                                            </div>
+                                            <p class="flex items-center justify-center h-7 whitespace-nowrap">Tennis</p>
+                                        </button>
+                                        <button class="px-2">
+                                            <div class="relative w-8 h-8 mx-auto mt-auto">
+                                                <span class="absolute -right-1 -top-2 px-1 p-0.5 bg-back rounded-lg text-xs num">49</span>
+                                                <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-17"></use></svg>    
+                                            </div>
+                                            <p class="flex items-center justify-center h-7 whitespace-nowrap">Volleyball</p>
+                                        </button>
+                                        <button class="px-2">
+                                            <div class="relative w-8 h-8 mx-auto mt-auto">
+                                                <span class="absolute -right-1 -top-2 px-1 p-0.5 bg-back rounded-lg text-xs num">116</span>
+                                                <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-7"></use></svg>    
+                                            </div>
+                                            <p class="flex items-center justify-center h-7 whitespace-nowrap">Table Tennis</p>
+                                        </button>
+                                    </div>
+                                    <button class="relative sports_list_btn">
+                                        <div class="relative w-8 h-8 mx-auto mt-auto">
+                                            <span class="absolute -right-1 -top-2 px-1 p-0.5 bg-back rounded-lg text-xs num">20</span>
+                                            <svg class="mx-auto pt-2" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#arrow-down"></use></svg>    
+                                        </div>
+                                        <p class="flex items-center justify-center h-7 whitespace-nowrap">More Sports</p>
+                                    </button>
+                                    <div class="sports_list_more_box hidden z-10 absolute left-0 top-full w-full px-4 py-2 bg-backlight text-xs rounded-b border-t border-slate-100 border-opacity-70">
+                                        <div class="sports_list flex flex-wrap ">
+                                            <button class="px-2">
+                                                <div class="relative w-8 h-8 mx-auto mt-auto">
+                                                    <span class="absolute -right-1 -top-2 px-1 p-0.5 bg-back rounded-lg text-xs num">20</span>
+                                                    <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-39"></use></svg>    
+                                                </div>
+                                                <p class="flex items-center justify-center h-7 whitespace-nowrap">Handball</p>
+                                            </button>
+                                            <button class="px-2">
+                                                <div class="relative w-8 h-8 mx-auto mt-auto">
+                                                    <span class="absolute -right-1 -top-2 px-1 p-0.5 bg-back rounded-lg text-xs num">9</span>
+                                                    <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-54"></use></svg>    
+                                                </div>
+                                                <p class="flex items-center justify-center h-7 whitespace-nowrap">American<br/>Football</p>
+                                            </button>
+                                            <button class="px-2">
+                                                <div class="relative w-8 h-8 mx-auto mt-auto">
+                                                    <span class="absolute -right-1 -top-2 px-1 p-0.5 bg-back rounded-lg text-xs num">9</span>
+                                                    <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-52"></use></svg>    
+                                                </div>
+                                                <p class="flex items-center justify-center h-7 whitespace-nowrap">Boxing &<br/>UFC</p>
+                                            </button>
+                                            <button class="px-2">
+                                                <div class="relative w-8 h-8 mx-auto mt-auto">
+                                                    <span class="absolute -right-1 -top-2 px-1 p-0.5 bg-back rounded-lg text-xs num">9</span>
+                                                    <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-21"></use></svg>    
+                                                </div>
+                                                <p class="flex items-center justify-center h-7 whitespace-nowrap">Australian<br/>Rules</p>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="relative flex items-center justify-between px-4 py-2">
+                                    <div class="sports_bet_box flex items-center gap-2 w-[80%] text-xs overflow-x-hidden">
+                                        <button class="px-3 py-2 rounded-2xl whitespace-nowrap on">All</button>
+                                        <button class="px-3 py-2 rounded-2xl whitespace-nowrap">Champions League</button>
+                                        <button class="px-3 py-2 rounded-2xl whitespace-nowrap">Europa League</button>
+                                        <button class="px-3 py-2 rounded-2xl whitespace-nowrap">Conference League</button>
+                                        <button class="px-3 py-2 rounded-2xl whitespace-nowrap">Euro 2024 Qualifiers</button>
+                                    </div>
+                                    <button class="sports_more_btn flex items-center gap-1 px-3 py-1 rounded-2xl text-xs"><svg width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#arrow-down"></use></svg> More</button>
+                                    <div class="sports_more_box hidden absolute left-0 top-full w-full px-4 py-2 bg-backlight text-xs rounded-b">
+                                        <div class="sports_bet_box">
+                                            <button class="px-3 py-2 rounded-2xl whitespace-nowrap">Champions league W</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 리스트 -->
+                            <div class="mt-2 text-xs">
+                                <!-- 타이틀 -->
+                                <div class="flex items-center justify-between">
+                                    <div class="w-48 flex items-center gap-1 p-2 text-tit">
+                                        <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/champions.svg" alt="">
+                                        Champions League
+                                    </div>
+                                    <div class="flex-1 flex text-center">
+                                        <div style="flex:3 1 0%">MATCH WINNER</div>
+                                        <div class="2xl:block hidden" style="flex:3 1 0%">DOUBLE CHANCE</div>
+                                        <div class="2xl:block hidden" style="flex:2 1 0%">HANDICAP</div>
+                                        <div class="xl:block hidden" style="flex:2 1 0%">TOTAL GOALS</div>
+                                    </div> 
+                                    <div class="w-12"></div>
+                                </div>
+                                    
+                                <div class="flex items-center justify-between">
+                                    <div class="w-48 flex items-center gap-1 p-2 text-tit">
+                                        14.02
+                                    </div>
+                                    <div class="flex-1 flex text-center">
+                                        <div class="flex" style="flex:3 1 0%">
+                                            <span class="flex-1">1</span>
+                                            <span class="flex-1">X</span>
+                                            <span class="flex-1">2</span>
+                                        </div>
+                                        <div class="2xl:flex hidden" style="flex:3 1 0%">
+                                            <span class="flex-1">1X</span>
+                                            <span class="flex-1">2X</span>
+                                            <span class="flex-1">12</span>
+                                        </div>
+                                        <div class="2xl:flex hidden" style="flex:2 1 0%">
+                                            <span class="flex-1">1</span>
+                                            <span class="flex-1">2</span>
+                                            <span class="w-6"></span>
+                                        </div>
+                                        <div class="xl:flex hidden" style="flex:2 1 0%">
+                                            <span class="flex-1">O</span>
+                                            <span class="flex-1">U</span>
+                                            <span class="w-6"></span>
+                                        </div>
+                                    </div> 
+                                    <div class="w-12 text-center">Extras</div>
+                                </div>
+
+                                <div class="flex items-center justify-between bg-backlight hover:bg-[#354036] rounded">
+                                    <div class="w-48 flex items-center justify-between bet_info">
+                                        <div class="p-2">
+                                            <div class="flex items-center gap-1 mb-1">
+                                                <span class="mr-1 text-tit">05:00</span>
+                                                ID 5438849
+                                            </div>
+                                            <div class="flex items-center gap-1 text-tit">
+                                                <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/leipzig.webp" alt="">
+                                                RB Leipzig
+                                            </div>
+                                            <div class="flex items-center gap-1 text-tit">
+                                                <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/madrid.webp" alt="">
+                                                Real Madrid
+                                            </div>
+                                        </div>
+                                        <button class="sports_like_btn shrink-0 bet_like_btn h-full px-1">
+                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                        </button>
+                                    </div>
+                                    <div class="flex-1 flex text-center">
+                                        <div class="flex bet_box" style="flex:3 1 0%">
+                                            <button class="flex-1 bet_btn">+200</button>
+                                            <button class="flex-1 bet_btn">+260</button>
+                                            <button class="flex-1 bet_btn">+120</button>
+                                        </div>
+                                        <div class="2xl:flex hidden bet_box" style="flex:3 1 0%">
+                                            <button class="flex-1 bet_btn">-150</button>
+                                            <button class="flex-1 bet_btn">-295</button>
+                                            <button class="flex-1 bet_btn">-375</button>
+                                        </div>
+                                        <div class="relative 2xl:flex hidden bet_box" style="flex:2 1 0%">
+                                            <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                            <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                            <button class="bet_more_btn h-full"></button>
+                                            <div class="absolute left-0 top-0 overflow-y-auto bet_more_box hidden shadow">
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="relative xl:flex hidden bet_box" style="flex:2 1 0%">
+                                            <button class="flex-1 bet_btn"><span>2.5</span><br/>-170</button>
+                                            <button class="flex-1 bet_btn"><span>2.5</span><br/>+125</button>
+                                            <button class="bet_more_btn h-full"></button>
+                                            <div class="absolute left-0 top-0 overflow-y-auto bet_more_box hidden shadow">
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="w-12">
+                                        <button class="w-full bet_btn"><span>+212</span><br/></button>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between mt-1 bg-backlight hover:bg-[#354036] rounded">
+                                    <div class="w-48 flex items-center justify-between bet_info">
+                                        <div class="p-2">
+                                            <div class="flex items-center gap-1 mb-1">
+                                                <span class="mr-1 text-tit">05:00</span>
+                                                ID 5438849
+                                            </div>
+                                            <div class="flex items-center gap-1 text-tit">
+                                                <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/leipzig.webp" alt="">
+                                                RB Leipzig
+                                            </div>
+                                            <div class="flex items-center gap-1 text-tit">
+                                                <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/madrid.webp" alt="">
+                                                Real Madrid
+                                            </div>
+                                        </div>
+                                        <button class="sports_like_btn shrink-0 bet_like_btn h-full px-1">
+                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                        </button>
+                                    </div>
+                                    <div class="flex-1 flex text-center">
+                                        <div class="flex bet_box" style="flex:3 1 0%">
+                                            <button class="flex-1 bet_btn">+200</button>
+                                            <button class="flex-1 bet_btn">+260</button>
+                                            <button class="flex-1 bet_btn">+120</button>
+                                        </div>
+                                        <div class="2xl:flex hidden bet_box" style="flex:3 1 0%">
+                                            <button class="flex-1 bet_btn">-150</button>
+                                            <button class="flex-1 bet_btn">-295</button>
+                                            <button class="flex-1 bet_btn">-375</button>
+                                        </div>
+                                        <div class="relative 2xl:flex hidden bet_box" style="flex:2 1 0%">
+                                            <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                            <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                            <button class="bet_more_btn h-full"></button>
+                                            <div class="absolute left-0 top-0 overflow-y-auto bet_more_box hidden shadow">
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="relative xl:flex hidden bet_box" style="flex:2 1 0%">
+                                            <button class="flex-1 bet_btn"><span>2.5</span><br/>-170</button>
+                                            <button class="flex-1 bet_btn"><span>2.5</span><br/>+125</button>
+                                            <button class="bet_more_btn h-full"></button>
+                                            <div class="absolute left-0 top-0 overflow-y-auto bet_more_box hidden shadow">
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="w-12">
+                                        <button class="w-full bet_btn"><span>+212</span><br/></button>
+                                    </div>
+                                </div>
+
+                                <!-- 중간 케이스 -->
+                                <div class="my-2 bg-backlight hover:bg-[#354036]">
+                                    <div class="flex items-center bet_case01_top">
+                                        <button class="sports_like_btn shrink-0 bet_like_btn h-full px-2"style="height:78px">
+                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                        </button>
+                                        <div class="w-48 px-2 flex flex-col items-start justify-evenly" style="height:78px">
+                                            <p><b>07.01 20:18</b> | ID 4543129</p>
+                                            <p class="w-full text-tit truncate">UEFA Champions League. 2023/2024</p>
+                                        </div>
+                                        <div class="sports_bet_box flex items-center gap-2 flex-1 text-xs overflow-x-hidden p-4"style="height:78px">
+                                            <button class="px-3 py-2 rounded-2xl whitespace-nowrap on">Outright Winner</button>
+                                            <button class="px-3 py-2 rounded-2xl whitespace-nowrap">To Reach Final</button>
+                                            <button class="px-3 py-2 rounded-2xl whitespace-nowrap">Player Top Goalscorer</button>
+                                        </div>
+                                        <div class="w-12">
+                                            <button class="w-full bet_btn"><span>+212</span><br></button>
+                                        </div>
+                                    </div>
+                                    <div class="bet_box type02 flex flex-wrap items-center">
+                                        <button class="bet_btn w-1/2 type02 flex items-center justify-between p-2">
+                                            <span>Manchester City</span>
+                                            <b>+190</b>
+                                        </button>
+                                        <button class="bet_btn w-1/2 type02 flex items-center justify-between p-2">
+                                            <span>FC Bayern Munich</span>
+                                            <b>+400</b>
+                                        </button>
+                                        <button class="bet_btn w-1/2 type02 flex items-center justify-between p-2">
+                                            <span>Real Madrid</span>
+                                            <b>+550</b>
+                                        </button>
+                                        <button class="bet_btn w-1/2 type02 flex items-center justify-between p-2">
+                                            <span>Arsenal</span>
+                                            <b>+600</b>
+                                        </button>
+                                        <button class="bet_btn w-1/2 type02 flex items-center justify-between p-2">
+                                            <span>Paris Saint Germain</span>
+                                            <b>+1200</b>
+                                        </button>
+                                        <button class="bet_btn w-1/2 type02 flex items-center justify-between p-2">
+                                            <span>Barcelona FC</span>
+                                            <b>+1400</b>
+                                        </button>
+                                    </div>
+                                </div>
+
+
+                                <div class="flex items-center justify-between">
+                                    <div class="w-48 flex items-center gap-1 p-2 text-tit">
+                                        14.02
+                                    </div>
+                                    <div class="flex-1 flex text-center">
+                                        <div class="flex" style="flex:3 1 0%">
+                                            <span class="flex-1">1</span>
+                                            <span class="flex-1">X</span>
+                                            <span class="flex-1">2</span>
+                                        </div>
+                                        <div class="2xl:flex hidden" style="flex:3 1 0%">
+                                            <span class="flex-1">1X</span>
+                                            <span class="flex-1">2X</span>
+                                            <span class="flex-1">12</span>
+                                        </div>
+                                        <div class="2xl:flex hidden" style="flex:2 1 0%">
+                                            <span class="flex-1">1</span>
+                                            <span class="flex-1">2</span>
+                                            <span class="w-6"></span>
+                                        </div>
+                                        <div class="xl:flex hidden" style="flex:2 1 0%">
+                                            <span class="flex-1">O</span>
+                                            <span class="flex-1">U</span>
+                                            <span class="w-6"></span>
+                                        </div>
+                                    </div> 
+                                    <div class="w-12 text-center">Extras</div>
+                                </div>
+
+                                <div class="flex items-center justify-between bg-backlight hover:bg-[#354036] rounded">
+                                    <div class="w-48 flex items-center justify-between bet_info">
+                                        <div class="p-2">
+                                            <div class="flex items-center gap-1 mb-1">
+                                                <span class="mr-1 text-tit">05:00</span>
+                                                ID 5438849
+                                            </div>
+                                            <div class="flex items-center gap-1 text-tit">
+                                                <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/leipzig.webp" alt="">
+                                                RB Leipzig
+                                            </div>
+                                            <div class="flex items-center gap-1 text-tit">
+                                                <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/madrid.webp" alt="">
+                                                Real Madrid
+                                            </div>
+                                        </div>
+                                        <button class="sports_like_btn shrink-0 bet_like_btn h-full px-1">
+                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                        </button>
+                                    </div>
+                                    <div class="flex-1 flex text-center">
+                                        <div class="flex bet_box" style="flex:3 1 0%">
+                                            <button class="flex-1 bet_btn">+200</button>
+                                            <button class="flex-1 bet_btn">+260</button>
+                                            <button class="flex-1 bet_btn">+120</button>
+                                        </div>
+                                        <div class="2xl:flex hidden bet_box" style="flex:3 1 0%">
+                                            <button class="flex-1 bet_btn">-150</button>
+                                            <button class="flex-1 bet_btn">-295</button>
+                                            <button class="flex-1 bet_btn">-375</button>
+                                        </div>
+                                        <div class="relative 2xl:flex hidden bet_box" style="flex:2 1 0%">
+                                            <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                            <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                            <button class="bet_more_btn h-full"></button>
+                                            <div class="absolute left-0 top-0 overflow-y-auto bet_more_box hidden shadow">
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="relative xl:flex hidden bet_box" style="flex:2 1 0%">
+                                            <button class="flex-1 bet_btn"><span>2.5</span><br/>-170</button>
+                                            <button class="flex-1 bet_btn"><span>2.5</span><br/>+125</button>
+                                            <button class="bet_more_btn h-full"></button>
+                                            <div class="absolute left-0 top-0 overflow-y-auto bet_more_box hidden shadow">
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="w-12">
+                                        <button class="w-full bet_btn"><span>+212</span><br/></button>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between mt-1 bg-backlight hover:bg-[#354036] rounded">
+                                    <div class="w-48 flex items-center justify-between bet_info">
+                                        <div class="p-2">
+                                            <div class="flex items-center gap-1 mb-1">
+                                                <span class="mr-1 text-tit">05:00</span>
+                                                ID 5438849
+                                            </div>
+                                            <div class="flex items-center gap-1 text-tit">
+                                                <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/leipzig.webp" alt="">
+                                                RB Leipzig
+                                            </div>
+                                            <div class="flex items-center gap-1 text-tit">
+                                                <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/madrid.webp" alt="">
+                                                Real Madrid
+                                            </div>
+                                        </div>
+                                        <button class="sports_like_btn shrink-0 bet_like_btn h-full px-1">
+                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                        </button>
+                                    </div>
+                                    <div class="flex-1 flex text-center">
+                                        <div class="flex bet_box" style="flex:3 1 0%">
+                                            <button class="flex-1 bet_btn">+200</button>
+                                            <button class="flex-1 bet_btn">+260</button>
+                                            <button class="flex-1 bet_btn">+120</button>
+                                        </div>
+                                        <div class="2xl:flex hidden bet_box" style="flex:3 1 0%">
+                                            <button class="flex-1 bet_btn">-150</button>
+                                            <button class="flex-1 bet_btn">-295</button>
+                                            <button class="flex-1 bet_btn">-375</button>
+                                        </div>
+                                        <div class="relative 2xl:flex hidden bet_box" style="flex:2 1 0%">
+                                            <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                            <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                            <button class="bet_more_btn h-full"></button>
+                                            <div class="absolute left-0 top-0 overflow-y-auto bet_more_box hidden shadow">
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="relative xl:flex hidden bet_box" style="flex:2 1 0%">
+                                            <button class="flex-1 bet_btn"><span>2.5</span><br/>-170</button>
+                                            <button class="flex-1 bet_btn"><span>2.5</span><br/>+125</button>
+                                            <button class="bet_more_btn h-full"></button>
+                                            <div class="absolute left-0 top-0 overflow-y-auto bet_more_box hidden shadow">
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <button class="flex-1 bet_btn"><span>+0.5</span><br/>-150</button>
+                                                    <button class="flex-1 bet_btn"><span>-0.5</span><br/>+115</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="w-12">
+                                        <button class="w-full bet_btn"><span>+212</span><br/></button>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <!-- MO -->
+                        <div class="md:hidden block">
+                            <!-- 상단 필터 -->
+                            <div class="bg-backlight my-2">
+                                <div class="p-2">
+                                    <div class="sports_bet_box flex items-center gap-2 w-full text-xs overflow-x-scroll">
+                                        <button class="px-4 py-2 rounded-2xl whitespace-nowrap on">All</button>
+                                        <button class="px-4 py-2 rounded-2xl whitespace-nowrap">24h</button>
+                                        <button class="px-4 py-2 rounded-2xl whitespace-nowrap">12h</button>
+                                        <button class="px-4 py-2 rounded-2xl whitespace-nowrap">6h</button>
+                                        <button class="px-4 py-2 rounded-2xl whitespace-nowrap">3h</button>
+                                        <button class="px-4 py-2 rounded-2xl whitespace-nowrap">1h</button>
+                                    </div>
+                                    <div class="sports_list w-full mt-2 overflow-x-scroll text-xs">
+                                        <button class="px-2">
+                                            <div class="w-8 h-8 mx-auto mt-auto">
+                                                <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#star"></use></svg>    
+                                            </div>
+                                            <p class="flex items-center justify-center h-7 whitespace-nowrap">Favourites</p>
+                                        </button>
+                                        <button class="px-2 on">
+                                            <div class="relative w-8 h-8 mx-auto mt-auto">
+                                                <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-1"></use></svg>    
+                                            </div>
+                                            <p class="flex items-center justify-center h-7 whitespace-nowrap">Football</p>
+                                        </button>
+                                        <button class="px-2">
+                                            <div class="relative w-8 h-8 mx-auto mt-auto">
+                                                <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-48"></use></svg>    
+                                            </div>
+                                            <p class="flex items-center justify-center h-7 whitespace-nowrap">Baseball</p>
+                                        </button>
+                                        <button class="px-2">
+                                            <div class="relative w-8 h-8 mx-auto mt-auto">
+                                                <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-18"></use></svg>    
+                                            </div>
+                                            <p class="flex items-center justify-center h-7 whitespace-nowrap">Ice Hockey</p>
+                                        </button>
+                                        <button class="px-2">
+                                            <div class="relative w-8 h-8 mx-auto mt-auto">
+                                                <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-3"></use></svg>    
+                                            </div>
+                                            <p class="flex items-center justify-center h-7 whitespace-nowrap">Basketball</p>
+                                        </button>
+                                        <button class="px-2">
+                                            <div class="relative w-8 h-8 mx-auto mt-auto">
+                                                <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-2"></use></svg>    
+                                            </div>
+                                            <p class="flex items-center justify-center h-7 whitespace-nowrap">Tennis</p>
+                                        </button>
+                                        <button class="px-2">
+                                            <div class="relative w-8 h-8 mx-auto mt-auto">
+                                                <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-17"></use></svg>    
+                                            </div>
+                                            <p class="flex items-center justify-center h-7 whitespace-nowrap">Volleyball</p>
+                                        </button>
+                                        <button class="px-2">
+                                            <div class="relative w-8 h-8 mx-auto mt-auto">
+                                                <svg class="mx-auto" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-7"></use></svg>    
+                                            </div>
+                                            <p class="flex items-center justify-center h-7 whitespace-nowrap">Table Tennis</p>
+                                        </button>
+                                    </div>
+                                </div>
+                                <ul class="nav nav-link-tabs " role="tablist">
+                                    <li id="mo_sport-1-tab" class="nav-item flex-1" role="presentation">
+                                        <button class="nav-link w-full active" data-tw-toggle="pill" data-tw-target="#mo_sport-tab-1" type="button" role="tab" aria-controls="mo_sport-tab-1" aria-selected="true">
+                                            Top Competitions
+                                        </button>
+                                    </li>
+                                    <li id="time-2-tab" class="nav-item flex-1" role="presentation">
+                                        <button class="nav-link w-full" data-tw-toggle="pill" data-tw-target="#mo_sport-tab-2" type="button" role="tab" aria-controls="mo_sport-tab-2" aria-selected="false">
+                                            All events
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- 내용 -->
+                            <div class="mo_sports_list on">
+                                <!-- 타이틀 -->
+                                <div class="mo_sports_title flex items-center justify-between px-4 py-3 bg-backlight">
+                                    <div class="flex items-center gap-2 text-xs">
+                                        <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/fifa.svg" alt="">
+                                        FIFA Club World Cup
+                                    </div>
+                                    <div class="flex items-center">
+                                        <button class="px-3 border-r border-slate-300">
+                                            <svg class="pin_btn" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
+                                        </button>
+                                        <button class="px-3 arrow">
+                                            <svg class="w-4 h-4 fill-basic "><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mo_sports_cont text-xs mt-0.5">
+                                    <div class="bg-backlight p-4 mb-1.5">
+                                        <div><b class="text-tit">22.12 23:30</b> ID 5446034 <i>+592</i></div>
+                                        <div class="flex items-center justify-between mt-2 pb-2 border-b border-slate-100 border-opacity-70">
+                                            <div>
+                                                <div class="flex items-center gap-1 text-tit">
+                                                    <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/leipzig.webp" alt="">
+                                                    RB Leipzig
+                                                </div>
+                                                <div class="flex items-center gap-1 mt-1 text-tit">
+                                                    <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/madrid.webp" alt="">
+                                                    Real Madrid
+                                                </div>
+                                            </div>
+                                            <button class="sports_like_btn shrink-0 bet_like_btn h-full px-1">
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                            </button>
+                                        </div>
+                                        <div class="flex gap-2 w-full overflow-x-auto mt-2">
+                                            <div>
+                                                <p>Match Winner</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>1</span>
+                                                        <b>+190</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>X</span>
+                                                        <b>+400</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>2</span>
+                                                        <b>+550</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>Double Chance</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>1</span>
+                                                        <b>+190</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>X</span>
+                                                        <b>+400</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>2</span>
+                                                        <b>+550</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>Handicap</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>1(+0.5)</span>
+                                                        <b>-125</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>2(-0.5)</span>
+                                                        <b>+110</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>Total Goals</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>O(2.5)</span>
+                                                        <b>-155</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>U(2.5)</span>
+                                                        <b>+135</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="bg-backlight p-4 mb-1.5">
+                                        <div><b class="text-tit">22.12 23:30</b> ID 5446034 <i>+592</i></div>
+                                        <div class="flex items-center justify-between mt-2 pb-2 border-b border-slate-100 border-opacity-70">
+                                            <div>
+                                                <div class="flex items-center gap-1 text-tit">
+                                                    <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/leipzig.webp" alt="">
+                                                    RB Leipzig
+                                                </div>
+                                                <div class="flex items-center gap-1 mt-1 text-tit">
+                                                    <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/madrid.webp" alt="">
+                                                    Real Madrid
+                                                </div>
+                                            </div>
+                                            <button class="sports_like_btn shrink-0 bet_like_btn h-full px-1">
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                            </button>
+                                        </div>
+                                        <div class="flex gap-2 w-full overflow-x-auto mt-2">
+                                            <div>
+                                                <p>Match Winner</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>1</span>
+                                                        <b>+190</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>X</span>
+                                                        <b>+400</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>2</span>
+                                                        <b>+550</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>Double Chance</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>1</span>
+                                                        <b>+190</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>X</span>
+                                                        <b>+400</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>2</span>
+                                                        <b>+550</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>Handicap</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>1(+0.5)</span>
+                                                        <b>-125</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>2(-0.5)</span>
+                                                        <b>+110</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>Total Goals</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>O(2.5)</span>
+                                                        <b>-155</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>U(2.5)</span>
+                                                        <b>+135</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mo_sports_list">
+                                <!-- 타이틀 -->
+                                <div class="mo_sports_title flex items-center justify-between px-4 py-3 bg-backlight">
+                                    <div class="flex items-center gap-2 text-xs">
+                                        <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/fifa.svg" alt="">
+                                        FIFA Club World Cup
+                                    </div>
+                                    <div class="flex items-center">
+                                        <button class="px-3 border-r border-slate-300">
+                                            <svg class="pin_btn" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
+                                        </button>
+                                        <button class="px-3 arrow">
+                                            <svg class="w-4 h-4 fill-basic "><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mo_sports_cont text-xs mt-0.5">
+                                    <div class="bg-backlight p-4 mb-1.5">
+                                        <div><b class="text-tit">22.12 23:30</b> ID 5446034 <i>+592</i></div>
+                                        <div class="flex items-center justify-between mt-2 pb-2 border-b border-slate-100 border-opacity-70">
+                                            <div>
+                                                <div class="flex items-center gap-1 text-tit">
+                                                    <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/leipzig.webp" alt="">
+                                                    RB Leipzig
+                                                </div>
+                                                <div class="flex items-center gap-1 mt-1 text-tit">
+                                                    <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/madrid.webp" alt="">
+                                                    Real Madrid
+                                                </div>
+                                            </div>
+                                            <button class="sports_like_btn shrink-0 bet_like_btn h-full px-1">
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                            </button>
+                                        </div>
+                                        <div class="flex gap-2 w-full overflow-x-auto mt-2">
+                                            <div>
+                                                <p>Match Winner</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>1</span>
+                                                        <b>+190</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>X</span>
+                                                        <b>+400</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>2</span>
+                                                        <b>+550</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>Double Chance</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>1</span>
+                                                        <b>+190</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>X</span>
+                                                        <b>+400</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>2</span>
+                                                        <b>+550</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>Handicap</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>1(+0.5)</span>
+                                                        <b>-125</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>2(-0.5)</span>
+                                                        <b>+110</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>Total Goals</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>O(2.5)</span>
+                                                        <b>-155</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>U(2.5)</span>
+                                                        <b>+135</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="bg-backlight p-4 mb-1.5">
+                                        <div><b class="text-tit">22.12 23:30</b> ID 5446034 <i>+592</i></div>
+                                        <div class="flex items-center justify-between mt-2 pb-2 border-b border-slate-100 border-opacity-70">
+                                            <div>
+                                                <div class="flex items-center gap-1 text-tit">
+                                                    <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/leipzig.webp" alt="">
+                                                    RB Leipzig
+                                                </div>
+                                                <div class="flex items-center gap-1 mt-1 text-tit">
+                                                    <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/madrid.webp" alt="">
+                                                    Real Madrid
+                                                </div>
+                                            </div>
+                                            <button class="sports_like_btn shrink-0 bet_like_btn h-full px-1">
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                            </button>
+                                        </div>
+                                        <div class="flex gap-2 w-full overflow-x-auto mt-2">
+                                            <div>
+                                                <p>Match Winner</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>1</span>
+                                                        <b>+190</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>X</span>
+                                                        <b>+400</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>2</span>
+                                                        <b>+550</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>Double Chance</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>1</span>
+                                                        <b>+190</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>X</span>
+                                                        <b>+400</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>2</span>
+                                                        <b>+550</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>Handicap</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>1(+0.5)</span>
+                                                        <b>-125</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>2(-0.5)</span>
+                                                        <b>+110</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>Total Goals</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>O(2.5)</span>
+                                                        <b>-155</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>U(2.5)</span>
+                                                        <b>+135</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mo_sports_list">
+                                <!-- 타이틀 -->
+                                <div class="mo_sports_title flex items-center justify-between px-4 py-3 bg-backlight">
+                                    <div class="flex items-center gap-2 text-xs">
+                                        <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/fifa.svg" alt="">
+                                        FIFA Club World Cup
+                                    </div>
+                                    <div class="flex items-center">
+                                        <button class="px-3 border-r border-slate-300">
+                                            <svg class="pin_btn" width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
+                                        </button>
+                                        <button class="px-3 arrow">
+                                            <svg class="w-4 h-4 fill-basic "><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mo_sports_cont text-xs mt-0.5">
+                                    <div class="bg-backlight p-4 mb-1.5">
+                                        <div><b class="text-tit">22.12 23:30</b> ID 5446034 <i>+592</i></div>
+                                        <div class="flex items-center justify-between mt-2 pb-2 border-b border-slate-100 border-opacity-70">
+                                            <div>
+                                                <div class="flex items-center gap-1 text-tit">
+                                                    <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/leipzig.webp" alt="">
+                                                    RB Leipzig
+                                                </div>
+                                                <div class="flex items-center gap-1 mt-1 text-tit">
+                                                    <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/madrid.webp" alt="">
+                                                    Real Madrid
+                                                </div>
+                                            </div>
+                                            <button class="sports_like_btn shrink-0 bet_like_btn h-full px-1">
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                            </button>
+                                        </div>
+                                        <div class="flex gap-2 w-full overflow-x-auto mt-2">
+                                            <div>
+                                                <p>Match Winner</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>1</span>
+                                                        <b>+190</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>X</span>
+                                                        <b>+400</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>2</span>
+                                                        <b>+550</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>Double Chance</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>1</span>
+                                                        <b>+190</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>X</span>
+                                                        <b>+400</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>2</span>
+                                                        <b>+550</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>Handicap</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>1(+0.5)</span>
+                                                        <b>-125</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>2(-0.5)</span>
+                                                        <b>+110</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>Total Goals</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>O(2.5)</span>
+                                                        <b>-155</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>U(2.5)</span>
+                                                        <b>+135</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="bg-backlight p-4 mb-1.5">
+                                        <div><b class="text-tit">22.12 23:30</b> ID 5446034 <i>+592</i></div>
+                                        <div class="flex items-center justify-between mt-2 pb-2 border-b border-slate-100 border-opacity-70">
+                                            <div>
+                                                <div class="flex items-center gap-1 text-tit">
+                                                    <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/leipzig.webp" alt="">
+                                                    RB Leipzig
+                                                </div>
+                                                <div class="flex items-center gap-1 mt-1 text-tit">
+                                                    <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/madrid.webp" alt="">
+                                                    Real Madrid
+                                                </div>
+                                            </div>
+                                            <button class="sports_like_btn shrink-0 bet_like_btn h-full px-1">
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
+                                                <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
+                                            </button>
+                                        </div>
+                                        <div class="flex gap-2 w-full overflow-x-auto mt-2">
+                                            <div>
+                                                <p>Match Winner</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>1</span>
+                                                        <b>+190</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>X</span>
+                                                        <b>+400</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>2</span>
+                                                        <b>+550</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>Double Chance</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>1</span>
+                                                        <b>+190</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>X</span>
+                                                        <b>+400</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>2</span>
+                                                        <b>+550</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>Handicap</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>1(+0.5)</span>
+                                                        <b>-125</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>2(-0.5)</span>
+                                                        <b>+110</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>Total Goals</p>
+                                                <div class="bet_box type02 flex items-center mt-1 gap-0.5">
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>O(2.5)</span>
+                                                        <b>-155</b>
+                                                    </button>
+                                                    <button class="bet_btn w-20 type02 flex items-center justify-between p-2 rounded bg-place">
+                                                        <span>U(2.5)</span>
+                                                        <b>+135</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+
                     </div>
 
                     <!-- 우측 : 베팅 슬립 -->
-                    <div class="sports_right h-full scrollbar overflow-y-auto type02 py-4 px-2.5 shrink-0">
-                        
+                    <div class="sports_right h-full scrollbar overflow-y-auto type02 py-2 shrink-0 border-l-2 border-slate-100 border-opacity-70">
+                        <div class="w-full justify-end mb-4 lg:hidden flex">
+                            <button onClick="tabClick('sports_right')"><svg class="w-5 h-5 fill-title2"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg> </button>
+                        </div>
+                        <ul class="nav nav-link-tabs" role="tablist">
+                            <li id="betslip-1-tab" class="nav-item flex-1" role="presentation">
+                                <button class="nav-link w-full !px-2 py-2 active" data-tw-toggle="pill" data-tw-target="#betslip-tab-1" type="button" role="tab" aria-controls="betslip-tab-1" aria-selected="true">Betslip</button>
+                            </li>
+                            <li id="betslip-2-tab" class="nav-item flex-1" role="presentation">
+                                <button class="nav-link w-full !px-2 py-2" data-tw-toggle="pill" data-tw-target="#betslip-tab-2" type="button" role="tab" aria-controls="betslip-tab-2" aria-selected="false">My Bets</button>
+                            </li>
+                            <li id="betslip-3-tab" class="nav-item flex-1" role="presentation">
+                                <button class="nav-link w-full !px-2 py-2" data-tw-toggle="pill" data-tw-target="#betslip-tab-3" type="button" role="tab" aria-controls="betslip-tab-3" aria-selected="false">My Orders</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="betslip-tab-1" class="tab-pane leading-relaxed active" role="tabpanel" aria-labelledby="betslip-1-tab">
+                                <div class="flex items-center border-b border-slate-300">
+                                    <div class="w-1/2 p-2 border-r border-slate-300">
+                                        <div class="form-check form-switch"> 
+                                            <input id="bet_quick" class="form-check-input small_check" type="checkbox"> 
+                                            <label class="form-check-label text-xs" for="bet_quick">Quick bet</label> 
+                                        </div>
+                                    </div>
+                                    <div class="w-1/2 p-2">
+                                        <button class="flex items-center gap-1 text-xs">
+                                            <svg width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#settings"></use></svg>
+                                            <span>Odds settings</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="betslip_1">
+                                    <!-- 내용 없을때 -->
+                                    <div class=" p-4">
+                                        <p class="text-center text-tit text-xs">To place a bet add an outcome to the Betslip</p>
+                                        <div>
+                                            <p class="mt-4 text-tit font-bold">Book a bet</p>
+                                            <div class="flex items-center gap-2 mt-2">
+                                                <div class="w-1/2">
+                                                    <input type="text" class="form-control bg-backlight" placeholder="Booking ID">
+                                                </div>
+                                                <button class="btn-green w-1/2 h-10 font-bold">BOOK</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 내용 있을때 -->
+                                    <div class="form-check form-switch py-2 px-4 border-t border-b border-slate-100 border-opacity-70"> 
+                                        <input id="order_check" class="form-check-input small_check" type="checkbox"> 
+                                        <label class="form-check-label text-xs" for="order_check">Don't like odds? Order your own!</label> 
+                                    </div>
+                                    <div class="px-4 py-2">
+                                        <div class="py-2">
+                                            <div class="flex items-center justify-between">
+                                                <a href="javascript:;" class="text-primary underline font-medium text-xs">RB Leipzig - Real Madrid</a>
+                                                <div><button>x</button></div>
+                                            </div>
+                                            <div class="flex items-start justify-between text-xs">
+                                                <div>
+                                                    <b>RB Leipzig</b>
+                                                    <p>Match Winner</p>
+                                                </div>
+                                                <b>+200</b>
+                                            </div>
+                                        </div>
+                                        <div class="py-2 border-t border-slate-300 border-opacity-70">
+                                            <div class="flex items-center justify-between">
+                                                <a href="javascript:;" class="text-primary underline font-medium text-xs">Lazio - FC Bayern Munich</a>
+                                                <div><button>x</button></div>
+                                            </div>
+                                            <div class="flex items-start justify-between text-xs">
+                                                <div>
+                                                    <b>FC Bayern Munich</b>
+                                                    <p>Match Winner</p>
+                                                </div>
+                                                <b>-179</b>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center border-b border-slate-100 border-opacity-70">
+                                            <button class="w-1/2 font-bold text-tit">CLEAR ALL BETS</button>
+                                            <div class="p-2 border-l border-slate-100 border-opacity-70">
+                                                <div class="custom_select w-full md:w-36">
+                                                    <button class="w-full h-9 flex px-4 items-center justify-between border-none bg-backlight rounded-sm">
+                                                        <span>Multiple</span>
+                                                        <i><svg class="w-3.5 h-3.5 fill-basic rotate-90 opacity-50"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                                    </button>
+                                                    <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
+                                                        <li class="py-1 on">Multiple</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="my-3 flex items-center">
+                                            <div class="w-2/3">
+                                                <input type="text" class="form-control bg-backlight" placeholder="Amount">
+                                            </div>
+                                            <button class="border-primary border-2 rounded text-primary w-1/3 h-10 font-bold">MAX BET</button>
+                                        </div>
+                                        <div class="flex items-center justify-between font-bold">
+                                            <span>Total odds:</span>
+                                            <span>+200</span>
+                                        </div>
+                                    </div>
+                                    <div class="border-t border-slate-100 border-opacity-70 p-4">
+                                        <button class="btn-green w-full py-2 font-bold">ENTER AMOUNT TO BET</button>
+                                    </div>
+                                </div>
+
+                                <!-- Quick bet 활성화 -->
+                                <div class="betslip_2 p-4 hidden">
+                                    <div>
+                                        <p class="text-tit text-xs">When activating the Quick Bet mode, you automatically agree to odds changes</p>
+                                        <p class="py-2 text-tit font-bold">Amount</p>
+                                        <input type="text" class="form-control bg-backlight" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="betslip-tab-2" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="betslip-2-tab">
+                                <div class="sports_bet_box p-2 text-xs border-b-2 border-slate-100 border-opacity-70">
+                                    <button class="px-2 py-1 rounded-2xl">All bets</button>
+                                    <button class="px-2 py-1 rounded-2xl">Open</button>
+                                    <button class="px-2 py-1 rounded-2xl">Settled</button>
+                                </div>
+                                <div class="px-4 py-6 text-center">You have no bets yet</div>
+                                <div class="p-4">
+                                    <button class="btn-green w-full py-2 font-bold">BET HISTORY</button>
+                                </div>
+                            </div>
+                            <div id="betslip-tab-3" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="betslip-3-tab">
+                                <div class="px-4 py-6 text-center">
+                                    <b>No orders</b><br/>
+                                    There are no ordered bets yet
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-t-8 border-slate-100 border-opacity-70 p-4">
+                            <p class="py-4 text-tit font-bold">Bet checker</p>
+                            <div class="flex items-center gap-2 mt-2">
+                                <div class="w-1/2">
+                                    <input type="text" class="form-control bg-backlight" placeholder="Bet ID">
+                                </div>
+                                <button class="btn-green w-1/2 h-10 font-bold">CHECK BET</button>
+                            </div>
+                        </div>
                        
                     </div>
                 </div>
@@ -133,6 +1843,97 @@
         $('.sports_like_btn').on('click',function(){
             $(this).toggleClass('on')
         })
+        $('.pin_btn').on('click',function(){
+            $(this).toggleClass('on')
+        })
+        $('#bet_quick').on('change',function(){
+            let bet = $(this).prop('checked')
+            if(bet){
+                $('.betslip_1').addClass('hidden')
+                $('.betslip_2').removeClass('hidden')
+            }else{
+                $('.betslip_1').removeClass('hidden')
+                $('.betslip_2').addClass('hidden')
+            }
+        })
+        $('.sports_bet_box button').on('click',function(){
+            $(this).addClass('on').siblings().removeClass('on');
+        })
+        $('.sports_list button').on('click',function(){
+            $(this).addClass('on').siblings().removeClass('on');
+        })
+
+        $('.sports_more_btn').on('click',function(){
+            $(this).toggleClass('on')
+            $('.sports_more_box').toggleClass('hidden')
+        })
+        $('.sports_list_btn').on('click',function(){
+            $(this).toggleClass('on')
+            $('.sports_list_more_box').toggleClass('hidden')
+        })
+
+        $('.bet_box .bet_btn').on('click',function(){
+            $(this).toggleClass('on').siblings('.bet_btn').removeClass('on')
+            $(this).parent().siblings('.bet_box').find('.bet_btn').removeClass('on')
+        })
+
+        $('.bet_more_btn').on('click',function(){
+            $(this).next('.bet_more_box').toggleClass('hidden')
+        })
+
+
+         // 스포츠 롤링
+         var swiper = new Swiper(".sports_slide_wrap .sports_slide_box", {
+            slidesPerView: 'auto',
+            spaceBetween: 10,
+            centeredSlides: true,
+            autoplay:{
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".sports_slide_wrap .next_btn",
+                prevEl: ".sports_slide_wrap .prev_btn",
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 'auto',
+                    spaceBetween: 10,
+                    centeredSlides: false,
+                },
+            },
+        });
+
+        // 모바일 
+        $('.mo_sports_title').on('click',function(){
+            $(this).parent().toggleClass('on')
+        })
+
+        const tabClick = (item)=>{
+            $(`.${item}`).toggleClass('on')
+        }
+
+
+        $('.custom_select > button').on('click',function(){
+            $(this).parent().toggleClass('on')
+        })
+
+        $('.custom_select ul li').on('click',function(){
+            const parent = $(this).parents('.custom_select'); 
+
+            parent.removeClass('on')
+            parent.find('button span').text($(this).text())
+            $(this).addClass('on').siblings().removeClass('on')
+        });
+
+        document.addEventListener('click',(e)=>{
+            const select = document.querySelector('.custom_select.on')
+         
+            if(select && !select.contains(e.target)){
+                select.classList.remove('on')
+            }
+        })
+
     </script>
 
   

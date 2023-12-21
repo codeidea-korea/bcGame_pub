@@ -48,6 +48,7 @@ button:focus {box-shadow:none !important; }
 .dark .dark\:bg-back {background-color: var(--background-color);}
 .dark .dark\:bg-modaldark {background-color: var(--modal-darkbg);}
 .dark .dark\:bg-backlight {background-color: var(--background-light);}
+.hover\:bg-sub:hover {background-color: var(--sub-text-color);}
 .hover\:bg-stand:hover {background-color: var(--standard-color);}
 .hover\:bg-place:hover {background-color: var(--placeholder-color);}
 .hover\:bg-tab:hover {background-color: var(--tab-bg);}
@@ -678,4 +679,5 @@ footer .icon_btn.icon-Ripple {background-position: -164px -82px; }
 .lottery_side .side-nav-bg {display:none !important; }
 .lottery_side .side-nav {display:none; }
 .content.lottery {margin-left:0;}
+.content.lottery .top-bar .trading_logo {display:block;}
 .content.lottery .container {max-width:unset}
