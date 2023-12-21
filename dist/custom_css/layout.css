@@ -187,10 +187,15 @@ button:disabled {opacity:.7 !important; }
 }
 .top-bar .container {white-space:nowrap; }
 
+.btn-top.active .casino_i,
 .btn-top:hover .casino_i {fill:var(--primary-color) !important; }
+.btn-top.active .sports_i,
 .btn-top:hover .sports_i {fill:#ea6518 !important; }
+.btn-top.active .horse_i,
 .btn-top:hover .horse_i {fill:#ffbf39 !important; }
+.btn-top.active .lottery_i,
 .btn-top:hover .lottery_i {fill:#3296f1 !important; }
+
 
 .top-bar .mo_left {display:none; }
 .top-bar .chat_btn {position:relative}
