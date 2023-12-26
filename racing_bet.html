@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <link href="/bcGame/dist/custom_img/stake_favicon.png" rel="shortcut icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <title>BC.GAME</title>
+    <!-- ** css 시작 ** -->
+    <link rel="stylesheet" href="/bcGame/dist/css/app.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <!-- 커스텀 css 추가 -->
+    <link rel="stylesheet" href="/bcGame/dist/custom_css/custom.css" />
+    <!-- ** css 끝 ** -->
+</head>
+
+<body class="bg-back">
+
+    <div class="flex relative">
+        <!--  ** 사이드 메뉴 시작 ** -->
+        <div class="sidebar"></div>
+        <!--  ** 사이드 메뉴 끝 ** -->
+
+        <!--  ** 메인 보드 시작 ** -->
+        <div class="content trading motop_open">
+            <!-- ** 페이지 로딩 ** -->
+            <div id="loadingContainer">
+                <svg width="25" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" fill="#3BC117" class="w-12 h-12">
+                    <circle cx="15" cy="15" r="15">
+                        <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                    <circle cx="60" cy="15" r="9" fill-opacity="0.3">
+                        <animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                    <circle cx="105" cy="15" r="15">
+                        <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite"></animate>
+                        <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite"></animate>
+                    </circle>
+                </svg>
+            </div>
+            <!-- ** 페이지 로딩 끝 ** -->
+            
+            <!-- ** 탑바 시작 ** -->
+            <!-- ** 탑바 끝 ** -->
+
+            <!-- ** 내용시작 ** -->
+            <div class="container_wrap">
+
+                <div class="md:p-5">
+                    <div class="flex items-center justify-between bg-backlight py-3 px-5 text-xs rounded-t">
+                        <div>베팅 내역</div>
+                        <a class="flex items-center text-tit" href="/bcGame/racing.html"><svg class="w-3 h-3 fill-title2 rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>뒤로</a>
+                    </div>
+                    <div class="rounded-b bg-back2 p-4 text-tit">
+                        <div class="text-tit text-base">아래에서 베팅 내역의 세부 정보를 볼 수 있습니다.</div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-5">
+                            <div>
+                                <p class="mb-1 text-xs text-tit font-bold">게임</p>
+                                <select class="w-full bg-backlight rounded" aria-label="Default select example">
+                                    <option>전체</option>
+                                    <option>스포츠</option>
+                                    <option>말/그레이하운드</option>
+                                </select> 
+                            </div>
+                            <div>
+                                <p class="mb-1 text-xs text-tit font-bold">티켓 ID</p>
+                                <input type="text" class="w-full bg-backlight rounded">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-5">
+                            <div>
+                                <p class="mb-1 text-xs text-tit font-bold">시작일</p>
+                                <input type="text" class="datepicker w-56 block bg-backlight rounded" data-single-mode="true" value="2023.10.10">
+                            </div>
+                            <div>
+                                <p class="mb-1 text-xs text-tit font-bold">종료일</p>
+                                <input type="text" class="datepicker w-56 block bg-backlight rounded" data-single-mode="true" value="2023.10.10">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-5">
+                            <div>
+                                <p class="mb-1 text-xs text-tit font-bold">유형</p>
+                                <select class="w-full bg-backlight rounded" aria-label="Default select example">
+                                    <option>전체</option>
+                                    <option>싱글</option>
+                                    <option>멀티</option>
+                                    <option>시스템</option>
+                                </select> 
+                            </div>
+                            <div>
+                                <p class="mb-1 text-xs text-tit font-bold">티켓 ID</p>
+                                <select class="w-full bg-backlight rounded" aria-label="Default select example">
+                                    <option>전체</option>
+                                    <option>열기</option>
+                                    <option>승리</option>
+                                    <option>패배</option>
+                                    <option>현금인출</option>
+                                    <option>취소</option>
+                                    <option>Cashback</option>
+                                    <option>W/리턴</option>
+                                    <option>L/리턴</option>
+                                    <option>베팅 취소</option>
+                                </select> 
+                            </div>
+                        </div>
+
+                        <div class="mt-5">
+                            <button class="btn-green py-2 px-4">검색</button>
+                            <button class="ml-1 bg-tab py-2 px-4 rounded">지우기</button>
+                        </div>
+
+                        <div class="overflow-x-auto">
+                            <table class="table noline mt-6 text-xs border border-slate-300 border-opacity-50 min-w-[600px]">
+                                <thead>
+                                    <tr class="bg-backlight">
+                                        <th>날짜</th>
+                                        <th>유형</th>
+                                        <th>스테이크</th>
+                                        <th>배당률</th>
+                                        <th>승리 가능</th>
+                                        <th>보너스</th>
+                                        <th>승리</th>
+                                        <th>상태</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+
+                
+                <!-- ** 푸터 시작 ** -->
+                <!-- ** 푸터 끝 ** -->
+            
+            </div>
+            <!-- ** 내용 끝 ** -->
+
+        </div>
+        <!--  ** 메인 보드 끝 ** -->
+
+        <!--  ** 오른쪽 보드 시작 ** -->
+        <div class="right-sidebar "></div>
+        <!--  ** 오른쪽 보드 끝 ** -->
+
+
+        <!-- 공통 알림 영역 : S -->
+
+        <!-- 공통 알림 영역 : E -->
+
+
+        <!--  ** 모달영역 시작 ** -->
+
+        <!--  ** 모달영역 끝 ** -->
+
+    </div>
+    <!-- ** JS 시작 ** -->
+    <script
+    src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="/bcGame/dist/custom_js/custom.js"></script>
+    <script src="/bcGame/dist/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- 필수 jquery library -->
+    <script src="/bcGame/dist/js/jquery-1.12.4.js"></script>
+    <script src="/bcGame/dist/js/jquery-ui.js"></script>
+
+
+    <script>
+         $(window).on('load',function(){
+            $('.mo_top_menu .racing').addClass('active');
+            $('#top_racing').addClass('active');
+        })
+    </script>
+
+
+
+
+</body>
+
+</html>

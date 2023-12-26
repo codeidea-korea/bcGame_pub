@@ -200,6 +200,7 @@ echo txtRecord('./@record/');
             <ul>
 				<li><a href="/bcGame/sports.html" target="_blank" class="">스포츠</a></li>
 				<li><a href="/bcGame/sports_detail.html" target="_blank" class="">스포츠 - 상세 </a></li>
+				<li><a href="/bcGame/sports_bet.html" target="_blank" class="">스포츠 - 나의베팅 </a></li>
             </ul>
         </li>
         
@@ -207,6 +208,7 @@ echo txtRecord('./@record/');
             <ul>
 				<li><a href="/bcGame/racing.html" target="_blank" class="">레이싱</a></li>
 				<li><a href="/bcGame/racing_detail.html" target="_blank" class="">레이싱 - 상세 </a></li>
+				<li><a href="/bcGame/racing_bet.html" target="_blank" class="">레이싱 - 베팅내역 </a></li>
             </ul>
         </li>
 
