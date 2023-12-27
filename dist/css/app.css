@@ -15009,6 +15009,9 @@ html body{
     .md\:border{
         border-width: 1px; 
     }
+    .md\:border-0{
+        border-width: 0px; 
+    }
     .md\:border-l{
         border-left-width: 1px; 
     }
@@ -15017,6 +15020,9 @@ html body{
     }
     .md\:border-r{
         border-right-width: 1px; 
+    }
+    .md\:\!border-r{
+        border-right-width: 1px !important; 
     }
     .md\:border-none{
         border-style: none; 
