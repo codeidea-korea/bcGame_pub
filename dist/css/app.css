@@ -14777,6 +14777,9 @@ html body{
     .md\:top-20{
         top: 5rem; 
     }
+    .md\:col-span-1{
+        grid-column: span 1 / span 1; 
+    }
     .md\:my-8{
         margin-top: 2rem;
         margin-bottom: 2rem; 
@@ -14961,6 +14964,9 @@ html body{
     .md\:grid-cols-5{
         grid-template-columns: repeat(5, minmax(0, 1fr)); 
     }
+    .md\:grid-cols-3{
+        grid-template-columns: repeat(3, minmax(0, 1fr)); 
+    }
     .md\:flex-row{
         flex-direction: row; 
     }
@@ -14997,11 +15003,27 @@ html body{
     .md\:gap-y-3{
         row-gap: 0.75rem; 
     }
+    .md\:rounded-none{
+        border-radius: 0px; 
+    }
+    .md\:border{
+        border-width: 1px; 
+    }
     .md\:border-l{
         border-left-width: 1px; 
     }
     .md\:border-t-0{
         border-top-width: 0px; 
+    }
+    .md\:border-r{
+        border-right-width: 1px; 
+    }
+    .md\:border-none{
+        border-style: none; 
+    }
+    .md\:border-slate-500{
+        --tw-border-opacity: 1;
+        border-color: rgb(var(--color-slate-500) / var(--tw-border-opacity)); 
     }
     .md\:p-10{
         padding: 2.5rem; 
@@ -15017,6 +15039,9 @@ html body{
     }
     .md\:p-7{
         padding: 1.75rem; 
+    }
+    .md\:p-0{
+        padding: 0px; 
     }
     .md\:\!px-10{
         padding-left: 2.5rem !important;

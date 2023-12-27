@@ -351,77 +351,128 @@
                 <!-- 컨텐츠 -->
                 <div class="px-3 md:px-10 py-5">
                    
-
-                    <!-- 가장 좋아하는 -->
                     <div class="py-3">
                         <div class="flex items-center justify-between">
                             <h4 class="text-lg text-tit font-bold">나의 베팅</h4>
                         </div>
-                        <div class="flex flex-wrap items-center justify-between gap-3 mt-2 mb-4">
-                            <div class="custom_select w-full md:w-36">
-                                <button class="w-full h-9 flex px-4 items-center justify-between border-none bg-backlight rounded-sm">
-                                    <span>All country</span>
-                                    <i><svg class="w-3.5 h-3.5 fill-basic rotate-90 opacity-50"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
-                                </button>
-                                <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
-                                    <li class="py-1 on">All country</li>
-                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""> USA</li>
-                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""> Australia</li>
-                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Uruguay.webp" alt=""> Uruguay</li>
-                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/singapore.png" alt=""> singapore</li>
-                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""> USA</li>
-                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""> Australia</li>
-                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Uruguay.webp" alt=""> Uruguay</li>
-                                    <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/singapore.png" alt=""> singapore</li>
-                                </ul>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="custom_select w-48">
-                                    <button class="w-32 h-9 flex px-4 items-center justify-between border-none bg-backlight rounded-sm">
-                                        <p>Sort By: <span>Added Date</span></p>
-                                        <i><svg class="w-3.5 h-3.5 fill-basic rotate-90 opacity-50"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
-                                    </button>
-                                    <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
-                                        <li class="py-1 on">Added Date</li>
-                                        <li class="py-1.5 ">Drow Date</li>
-                                        <li class="py-1.5 ">Popularity</li>
-                                    </ul>
+
+                        <div class="grid grid-cols-2 md:grid-cols-3 md:p-5 mt-4 md:gap-0 gap-3 md:border border-slate-300 border-opacity-50 lottery_mybet_info rounded md:text-center">
+                            <div class="md:p-0 p-3 border md:border-r border-slate-300 md:border-slate-500 border-opacity-50 md:rounded-none rounded">
+                                <img class="md:block hidden w-8 mx-auto" src="/bcGame/dist/custom_img/lottery/total-tickets.png" alt="">
+                                <p class="mb-2 mt-1">총 티켓</p>
+                                <div class="md:block flex items-center justify-between text-tit text-2xl font-extrabold">
+                                    0
+                                    <img class="w-8" src="/bcGame/dist/custom_img/lottery/total-tickets.png" alt="">
                                 </div>
-                                <div class="relative flex-1 md:w-48">
-                                    <label for="cash_input"><svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Search"></use></svg></label>
-                                    <input type="text" id="cash_input" class="form-control bg-back2 pl-10 !h-9" placeholder="Search lottery name">
+                            </div>
+                            <div class="md:p-0 p-3 border md:border-r border-slate-300 md:border-slate-500 border-opacity-50 md:rounded-none rounded">
+                                <img class="md:block hidden w-8 mx-auto" src="/bcGame/dist/custom_img/lottery/winner-tickets.png" alt="">
+                                <p class="mb-2 mt-1">총 우승 티켓</p>
+                                <div class="md:block flex items-center justify-between text-tit text-2xl font-extrabold">
+                                    0
+                                    <img class="w-8" src="/bcGame/dist/custom_img/lottery/winner-tickets.png" alt="">
+                                </div>
+                            </div>
+                            <div class="md:p-0 p-3 border md:border-none border-slate-300 md:border-slate-500 border-opacity-50 col-span-2 md:col-span-1 md:rounded-none rounded">
+                                <img class="md:block hidden w-8 mx-auto" src="/bcGame/dist/custom_img/lottery/total-price.png" alt="">
+                                <p class="mb-2 mt-1">총 상금 승리</p>
+                                <div class="md:block flex items-center justify-between text-primary text-2xl font-extrabold">
+                                    0
+                                    <img class="w-8" src="/bcGame/dist/custom_img/lottery/total-price.png" alt="">
                                 </div>
                             </div>
                         </div>
-                        <div class="favorite_slide_box overflow-hidden mt-2">
-                            <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
-                                <li class="relative p-4 bg-back2 rounded">
-                                    <button class="absolute left-4 top-4 lottery_like_btn on shrink-0">
-                                        <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
-                                        <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
-                                    </button>
-                                    <img class="w-6 mx-auto" src="/bcGame/dist/custom_img/lottery/USA.webp" alt="">
-                                    <div class="py-2 text-tit font-medium truncate text-base text-center border-b border-slate-300">Arizona Triple Twist 6/42</div>
-                                    <div class="py-2 text-xs truncate text-center">다음추첨 02h 28m 22s</div>
-                                    <div class="flex items-center gap-1 mt-3">
-                                        <button class="bg-list w-full h-12 font-extrabold text-tit rounded">2개 볼 베팅</button>
-                                        <button class="bg-list w-full h-12 font-extrabold text-tit rounded">3개 볼 베팅</button>
-                                    </div>
+                        
+                        <div class="bg-backlight rounded mt-4">
+                            <ul class="nav nav-link-tabs type02 pt-4 px-5 border-b border-slate-400 border-opacity-70" role="tablist">
+                                <li id="bet-1-tab" class="nav-item" role="presentation"> 
+                                    <button class="nav-link w-full px-8 py-2 active" data-tw-toggle="pill" data-tw-target="#bet-tab-1" type="button" role="tab" aria-controls="bet-tab-1" aria-selected="true">활성화</button> 
                                 </li>
-                                <li class="relative p-4 bg-back2 rounded">
-                                    <button class="absolute left-4 top-4 lottery_like_btn on shrink-0">
-                                        <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
-                                        <img class="w-5 h-5" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
-                                    </button>
-                                    <img class="w-6 mx-auto" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt="">
-                                    <div class="py-2 text-tit font-medium truncate text-base text-center border-b border-slate-300">6aus49 6/49</div>
-                                    <div class="py-2 text-xs truncate text-center">다음추첨 02h 28m 22s</div>
-                                    <div class="flex items-center gap-1 mt-3">
-                                        <button class="bg-list w-full h-12 font-extrabold text-tit rounded">2개 볼 베팅</button>
-                                        <button class="bg-list w-full h-12 font-extrabold text-tit rounded">3개 볼 베팅</button>
-                                    </div>
+                                <li id="bet-2-tab" class="nav-item" role="presentation">
+                                    <button class="nav-link w-full px-8 py-2" data-tw-toggle="pill" data-tw-target="#bet-tab-2" type="button" role="tab" aria-controls="bet-tab-2" aria-selected="false">지난</button> 
+                                </li>
+                                <li id="bet-3-tab" class="nav-item" role="presentation">
+                                    <button class="nav-link w-full px-8 py-2" data-tw-toggle="pill" data-tw-target="#bet-tab-3" type="button" role="tab" aria-controls="bet-tab-3" aria-selected="false">승리 내역</button> 
                                 </li>
                             </ul>
+                            <div class="tab-content  p-5">
+                                <div id="bet-tab-1" class="tab-pane leading-relaxed active" role="tabpanel" aria-labelledby="bet-1-tab">
+                                    <div class="flex flex-wrap items-center justify-between gap-3 mt-2 mb-4">
+                                        <div class="custom_select w-full md:w-36">
+                                            <button class="w-full h-9 flex px-4 items-center justify-between border-none bg-back2 rounded-sm">
+                                                <span>All country</span>
+                                                <i><svg class="w-3.5 h-3.5 fill-basic rotate-90 opacity-50"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                            </button>
+                                            <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
+                                                <li class="py-1 on">All country</li>
+                                                <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""> USA</li>
+                                                <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""> Australia</li>
+                                                <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Uruguay.webp" alt=""> Uruguay</li>
+                                                <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/singapore.png" alt=""> singapore</li>
+                                                <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/USA.webp" alt=""> USA</li>
+                                                <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Australia.webp" alt=""> Australia</li>
+                                                <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/Uruguay.webp" alt=""> Uruguay</li>
+                                                <li class="py-1.5 "><img class="inline-flex mr-1 w-3 h-3" src="/bcGame/dist/custom_img/lottery/singapore.png" alt=""> singapore</li>
+                                            </ul>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div class="custom_select w-48">
+                                                <button class="w-32 h-9 flex px-4 items-center justify-between border-none bg-back2 rounded-sm">
+                                                    <p>Sort By: <span>Added Date</span></p>
+                                                    <i><svg class="w-3.5 h-3.5 fill-basic rotate-90 opacity-50"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></i>
+                                                </button>
+                                                <ul class="overflow-y-auto scrollbar p-2 shadow-basic rounded bg-modaldark text-sub">
+                                                    <li class="py-1 on">Added Date</li>
+                                                    <li class="py-1.5 ">Drow Date</li>
+                                                    <li class="py-1.5 ">Popularity</li>
+                                                </ul>
+                                            </div>
+                                            <div class="relative flex-1 md:w-48">
+                                                <label for="cash_input"><svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Search"></use></svg></label>
+                                                <input type="text" id="cash_input" class="form-control bg-back2 pl-10 !h-9" placeholder="Search lottery name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="overflow-x-auto">
+                                        <table class="table noline" style="min-width:600px">
+                                            <thead>
+                                                <tr class="border-b border-slate-300 border-opacity-50">
+                                                    <th>복권 ID & 이름</th>
+                                                    <th>추첨 시간</th>
+                                                    <th>내 티켓</th>
+                                                    <th>결과</th>
+                                                    <th>총 금액</th>
+                                                    <th>총 수익</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="flex gap-2 items-center justify-end mt-4">
+                                        <p class="text-xs">총 1</p>
+                                        <div class="flex gap-0 text-base px-4 py-1  rounded font-medium">
+                                            <button class="w-6 h-6 basic-hover active font-extrabold">1</button>
+                                            <button class="w-6 h-6 basic-hover">2</button>
+                                            <button class="w-6 h-6 basic-hover">3</button>
+                                        </div>
+                                        <div class="flex gap-1">
+                                            <button class="btn-normal w-8 h-8 basic-hover rounded"><svg class="w-4 h-4 mx-auto rotate-180"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                            <button class="btn-normal w-8 h-8 basic-hover rounded"><svg class="w-4 h-4 mx-auto"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="bet-tab-2" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="bet-2-tab"> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). </div>
+                                <div id="bet-tab-3" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="bet-3-tab"> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). </div>
+                            </div>
                         </div>
                     </div>
 
