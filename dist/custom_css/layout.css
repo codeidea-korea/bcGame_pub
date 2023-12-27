@@ -49,6 +49,8 @@ button:focus {box-shadow:none !important; }
 .dark .dark\:bg-modaldark {background-color: var(--modal-darkbg);}
 .dark .dark\:bg-backlight {background-color: var(--background-light);}
 .dark .dark\:bg-stand {background-color: var(--standard-light);}
+.hover\:bg-back2:hover {background-color: var(--background-type-color);}
+.hover\:bg-back:hover {background-color: var(--background-color);}
 .hover\:bg-sub:hover {background-color: var(--sub-text-color);}
 .hover\:bg-stand:hover {background-color: var(--standard-color);}
 .hover\:bg-place:hover {background-color: var(--placeholder-color);}
