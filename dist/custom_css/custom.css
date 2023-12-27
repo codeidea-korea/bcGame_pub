@@ -652,7 +652,7 @@
 */
 .dark .bingo_list .bottom_box {background:linear-gradient(0deg,#1E2024 69.86%,rgba(30,32,36,.36) 100%); }
 .bingo_list .bottom_box {min-height:5rem; padding:10px 0 14px; background:linear-gradient(0deg,#fff 69.86%,rgba(255,255,255,.66) 100%); }
-.bingo_list li,:hover .hover_box {opacity:1; }
+.bingo_list li:hover .hover_box {opacity:1; }
 
 /*
 #=========================================#

@@ -401,6 +401,8 @@ button:disabled {opacity:.7 !important; }
         컨텐츠
 #=========================================#
 */
+.container_wrap {min-height:calc(100vh - 64px);}
+
 .content {position:relative; margin-left:260px; transition:margin 0.3s; }
 .content.right_open {margin-right:360px; }
 .content.fold {margin-left:64px; }
@@ -419,6 +421,11 @@ button:disabled {opacity:.7 !important; }
     padding-left:40px;
     padding-right:40px;
     max-width: 900px
+}
+
+@media all and (min-width:1921px){
+    .container {max-width:65%; min-width:1430px; }
+
 }
 
 @media all and (max-width:1200px){
@@ -688,4 +695,5 @@ footer .icon_btn.icon-Ripple {background-position: -164px -82px; }
 .lottery_side .side-nav {display:none; }
 .content.lottery {margin-left:0;}
 .content.lottery .top-bar .trading_logo {display:block;}
-.content.lottery .container {max-width:unset}
+.content.lottery:not(.detail) .container {max-width:unset}
+

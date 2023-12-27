@@ -86,7 +86,7 @@ fetch("/bcGame/_modal.html")
 fetch("/bcGame/_footer.html")
     .then((response) => response.text())
     .then((html) => {
-        $(".container_wrap").append(html);
+        $(".content").append(html);
 
     })
     .catch((error) => {
