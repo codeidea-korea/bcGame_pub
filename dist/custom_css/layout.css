@@ -695,5 +695,6 @@ footer .icon_btn.icon-Ripple {background-position: -164px -82px; }
 .lottery_side .side-nav {display:none; }
 .content.lottery {margin-left:0;}
 .content.lottery .top-bar .trading_logo {display:block;}
+.content.lottery .top-bar .container {max-width:unset; }
 .content.lottery:not(.detail) .container {max-width:unset}
 
