@@ -901,7 +901,15 @@
     .affiliate_visual {height:auto; background:url('../custom_img/affiliate/bg_m.png') no-repeat center center / cover !important; }
 }
 
+/* 제휴 - 로그인시 */
+.dark .affiliate_visual2 {background:url('../custom_img/affiliate/invite_bg.png') no-repeat center center / cover; }
+.affiliate_visual2 {height:220px; background:url('../custom_img/affiliate/invite_bg_w.png') no-repeat center center / cover; }
 
+@media all and (max-width:767px){
+    .dark .affiliate_visual2,
+    .affiliate_visual2 {position:relative; height:120px; background:url('../custom_img/affiliate/invite_bg_m.png') no-repeat right center / auto 100%; }
+    .affiliate_visual2:after {content:''; position:absolute; left:5%; bottom:0; width:90%; height:1px; margin:0 auto; background:linear-gradient(270deg,rgba(152,167,181,0) 0%,rgba(152,167,181,0) 0%,#98A7B5 47.4%,rgba(152,167,181,0) 100%); }
+}
 
 /* 커미션 모달 */
 .comission_modal .bg1 {background:var(--background-color) url('../custom_img/affiliate/wager_1.png') no-repeat 96% 0% / auto 100%; }
