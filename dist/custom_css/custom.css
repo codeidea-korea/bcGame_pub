@@ -1172,6 +1172,11 @@ tr.non-runner {pointer-events:none; opacity:.5; }
 .bet_btn:hover {background:#c7dbc173; }
 .bet_btn.on {background:#1c7604ba; }
 .bet_btn span {color:var(--text2-color); font-weight:normal; }
+.bet_btn.lock {color:var(--text-color);}
+.bet_btn.up {position:relative; color:var(--primary-color); }
+.bet_btn.up:before {content:''; position:absolute; right:0; top:0; width:8px; height:8px; border-top:4px solid var(--primary-color); border-right:4px solid var(--primary-color); border-left:4px solid transparent; border-bottom:4px solid transparent; }
+.bet_btn.down {position:relative; color:#f26f89; }
+.bet_btn.down:before {content:''; position:absolute; right:0; bottom:0; width:8px; height:8px; border-bottom:4px solid #f26f89; border-right:4px solid #f26f89; border-left:4px solid transparent; border-top:4px solid transparent; }
 
 .bet_box.type02 {border-right:0 none;}
 .dark .bet_btn.type02 {border-top:1px solid var(--standard-color); }
