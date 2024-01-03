@@ -198,7 +198,13 @@ echo txtRecord('./@record/');
 
         <li class="mt20" data-label="스포츠">
             <ul>
-				<li><a href="/bcGame/sports.html" target="_blank" class="">스포츠</a></li>
+				<li>
+                    <a href="/bcGame/sports.html" target="_blank" class="">스포츠</a>
+                    <ul>
+                        <li><a href="/bcGame/sports_live.html" target="_blank" class="">스포츠 - live </a></li>        
+                        <li><a href="/bcGame/sports_result.html" target="_blank" class="">스포츠 - result </a></li>        
+                    </ul>
+                </li>
 				<li><a href="/bcGame/sports_detail.html" target="_blank" class="">스포츠 - 상세 </a></li>
 				<li><a href="/bcGame/sports_bet.html" target="_blank" class="">스포츠 - 나의베팅 </a></li>
             </ul>

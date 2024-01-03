@@ -53,6 +53,15 @@
             <!-- ** 내용시작 ** -->
             <div class="container_wrap">
 
+                <!-- 상단 스포츠 탭 -->
+                <div class="md:block hidden p-2 bg-backlight">
+                    <div class="flex gap-2 sports_bet_box text-xs">
+                        <a href="./sports_live.html" class="px-3 py-2 rounded-2xl whitespace-nowrap">Live</a>
+                        <button class="px-3 py-2 rounded-2xl whitespace-nowrap on">Sport</button>
+                        <a href="./sports_result.html" class="px-3 py-2 rounded-2xl whitespace-nowrap">Results</a>
+                    </div>
+                </div>
+
                 <!-- 모바일 하단메뉴 -->
                 <div class="flex items-center justify-evenly racing_mo_menu text-xs">
                     <a class="inline-block text-center" href="/bcGame/sports.html"> 
@@ -1281,7 +1290,7 @@
                                         </div>
                                     </div>
                                     <div class="w-1/2 p-2">
-                                        <button class="flex items-center gap-1 text-xs">
+                                        <button class="flex items-center gap-1 text-xs" data-tw-toggle="modal" data-tw-target="#odd_setting-modal">
                                             <svg width="24" height="24"><use href="/bcGame/dist/custom_img/sports-defs.svg#settings"></use></svg>
                                             <span>Odds settings</span>
                                         </button>
@@ -1382,7 +1391,7 @@
                                 </div>
                                 <div class="px-4 py-6 text-center">You have no bets yet</div>
                                 <div class="p-4">
-                                    <a  href="/bcGame/sports_bet.html" class="btn-green w-full py-2 font-bold">BET HISTORY</a>
+                                    <a href="/bcGame/sports_bet.html" class="block btn-green w-full py-2 font-bold text-center">BET HISTORY</a>
                                 </div>
                             </div>
                             <div id="betslip-tab-3" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="betslip-3-tab">
@@ -1401,6 +1410,10 @@
                                 </div>
                                 <button class="btn-green w-1/2 h-10 font-bold">CHECK BET</button>
                             </div>
+                        </div>
+
+                        <div class="border-t-8 border-slate-100 border-opacity-70">
+                            <a href="javascript:;"><img src="/bcGame/dist/custom_img/sports/cashback.png" alt=""></a>
                         </div>
                        
                     </div>
@@ -1427,6 +1440,71 @@
 
 
         <!--  ** 모달영역 시작 ** -->
+         <!-- ODDS SETTINGS -->
+         <div id="odd_setting-modal" class="modal mo_full" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body bg-modaldark relative rounded">
+                        <div class="relative flex items-center justify-between p-4">
+                            <p class="text-tit font-extrabold text-base">ODDS SETTINGS</p>
+                            
+                            <button class="basic-hover" data-tw-dismiss="modal"><svg class="w-4 h-4 close_btn cursor-pointer hover:-rotate-90 duration-500 transition-all"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg></button>
+                        </div>
+
+                        <div class="p-5 text-xs font-bold">
+                            <div class="grid grid-cols-2">
+                                <div>
+                                    <p class="font-bold">ODDS TYPE</p>
+                                    <div class="form-check mt-4"> 
+                                        <input id="setting-1" class="form-check-input" type="radio" name="vertical_radio_button" value="vertical-radio-chris-evans"> 
+                                        <label class="form-check-label text-tit" for="setting-1">American</label> 
+                                    </div>
+                                    <div class="form-check mt-4"> 
+                                        <input id="setting-2" class="form-check-input" type="radio" name="vertical_radio_button" value="vertical-radio-liam-neeson"> 
+                                        <label class="form-check-label text-tit" for="setting-2">Decimal</label> 
+                                    </div>
+                                    <div class="form-check mt-4"> 
+                                        <input id="setting-3" class="form-check-input" type="radio" name="vertical_radio_button" value="vertical-radio-daniel-craig"> 
+                                        <label class="form-check-label text-tit" for="setting-3">Fractional</label> 
+                                    </div>
+                                    <div class="form-check mt-4"> 
+                                        <input id="setting-4" class="form-check-input" type="radio" name="vertical_radio_button" value="vertical-radio-daniel-craig"> 
+                                        <label class="form-check-label text-tit" for="setting-4">Hong Kong</label> 
+                                    </div>
+                                    <div class="form-check mt-4"> 
+                                        <input id="setting-5" class="form-check-input" type="radio" name="vertical_radio_button" value="vertical-radio-daniel-craig"> 
+                                        <label class="form-check-label text-tit" for="setting-5">Indonesian</label> 
+                                    </div>
+                                    <div class="form-check mt-4"> 
+                                        <input id="setting-6" class="form-check-input" type="radio" name="vertical_radio_button" value="vertical-radio-daniel-craig"> 
+                                        <label class="form-check-label text-tit" for="setting-6">Malay</label> 
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-bold">ODDS CHANGING:</p>
+                                    <div class="form-check mt-4"> 
+                                        <input id="setting-7" class="form-check-input" type="radio" name="vertical_radio_button" value="vertical-radio-daniel-craig"> 
+                                        <label class="form-check-label text-tit" for="setting-7">Accept all odds changes</label> 
+                                    </div>
+                                    <div class="form-check mt-4"> 
+                                        <input id="setting-8" class="form-check-input" type="radio" name="vertical_radio_button" value="vertical-radio-daniel-craig"> 
+                                        <label class="form-check-label text-tit" for="setting-8">Accept increased odds</label> 
+                                    </div>
+                                    <div class="form-check mt-4"> 
+                                        <input id="setting-9" class="form-check-input" type="radio" name="vertical_radio_button" value="vertical-radio-daniel-craig"> 
+                                        <label class="form-check-label text-tit" for="setting-9">Always ask</label> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 mt-5">
+                                <button class="w-1/2 h-10 bg-backlight rounded">CANCEL</button>
+                                <button class="w-1/2 h-10 btn-green">SAVE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!--  ** 모달영역 끝 ** -->
 

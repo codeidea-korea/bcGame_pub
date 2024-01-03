@@ -56,8 +56,8 @@
                 <!-- 상단 스포츠 탭 -->
                 <div class="md:block hidden p-2 bg-backlight">
                     <div class="flex gap-2 sports_bet_box text-xs">
-                        <a href="./sports_live.html" class="px-3 py-2 rounded-2xl whitespace-nowrap">Live</a>
-                        <a href="./sports.html" class="px-3 py-2 rounded-2xl whitespace-nowrap on">Sport</a>
+                        <a href="./sports_live.html" class="px-3 py-2 rounded-2xl whitespace-nowrap on">Live</a>
+                        <a href="./sports.html" class="px-3 py-2 rounded-2xl whitespace-nowrap">Sport</a>
                         <a href="./sports_result.html" class="px-3 py-2 rounded-2xl whitespace-nowrap">Results</a>
                     </div>
                 </div>
@@ -73,342 +73,10 @@
                 </div>
 
                 <div class="flex sports_wrap">
-                    <!-- 좌측 : 예정 레이스 -->
-                    <div class="sports_left h-full scrollbar overflow-y-auto type02 py-2 px-1.5 shrink-0">
-                        <div class="w-full justify-end mb-4 lg:hidden flex">
-                            <button onClick="tabClick('sports_left')"><svg class="w-5 h-5 fill-title2"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Close"></use></svg> </button>
-                        </div>
-                        <div class="relative w-full">
-                            <label for="sports_input"><svg class="absolute left-3 top-2.5 w-5 h-5 fill-basic"><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Search"></use></svg></label>
-                            <input type="text" id="sports_input" class="form-control type02 pl-10" placeholder="Search events...">
-                        </div>
-
-                        <div class="flex items-center justify-between gap-2 px-3 py-3 mt-2 bg-stand hover:bg-btndark cursor-pointer rounded">
-                            <img class="w-5 h-5" src="/bcGame/dist/custom_img/sports/like_done.svg" alt="">
-                            <b class="flex-1">Favourites</b>
-                            <svg class="w-4 h-4 fill-basic "><use xlink:href="/bcGame/dist/custom_img/symbol-defs.svg#icon_Arrow"></use></svg>
-                        </div>
-
-                        <div class="p-0.5 mt-2 bg-btndark">
-                            <div class="p-2 text-tit font-bold">TOP<br/>COMPETITIONS</div>
-                            <div>
-                                <button class="flex items-center gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-2"></use></svg>
-                                    <img class="w-5" src="/bcGame/dist/custom_img/sports/australian.svg" alt="">
-                                    <p class="truncate">Australian Open Men's 2024</p>
-                                </button>
-                                <button class="flex items-center gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-1"></use></svg>
-                                    <img class="w-5" src="/bcGame/dist/custom_img/sports/fifa.svg" alt="">
-                                    <p class="truncate">FIFA Club World Cup</p>
-                                </button>
-                                <button class="flex items-center gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-1"></use></svg>
-                                    <img class="w-5" src="/bcGame/dist/custom_img/sports/champions.svg" alt="">
-                                    <p class="truncate">Champions League</p>
-                                </button>
-                                <button class="flex items-center gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-1"></use></svg>
-                                    <img class="w-5" src="/bcGame/dist/custom_img/sports/europa.svg" alt="">
-                                    <p class="truncate"> Europa League</p>
-                                </button>
-                                <button class="flex items-center gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-1"></use></svg>
-                                    <img class="w-5" src="/bcGame/dist/custom_img/sports/conference.svg" alt="">
-                                    <p class="truncate">Conference League</p>
-                                </button>
-                                <button class="flex items-center gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-3"></use></svg>
-                                    <img class="w-5" src="/bcGame/dist/custom_img/sports/nba.svg" alt="">
-                                    <p class="truncate">NBA</p>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="p-0.5 mt-2 bg-btndark">
-                            <div class="p-2 text-tit font-bold">ALL SPORTS</div>
-                                                        
-                            <ul class="nav nav-link-tabs bg-stand" role="tablist">
-                                <li id="time-1-tab" class="nav-item" role="presentation">
-                                    <button class="nav-link !px-2 !py-1 text-xs active" data-tw-toggle="pill" data-tw-target="#time-tab-1" type="button" role="tab" aria-controls="time-tab-1" aria-selected="true">
-                                        ALL
-                                    </button>
-                                </li>
-                                <li id="time-2-tab" class="nav-item" role="presentation">
-                                    <button class="nav-link !px-2 !py-1 text-xs" data-tw-toggle="pill" data-tw-target="#time-tab-2" type="button" role="tab" aria-controls="time-tab-2" aria-selected="false">
-                                        24h
-                                    </button>
-                                </li>
-                                <li id="time-2-tab" class="nav-item" role="presentation">
-                                    <button class="nav-link !px-2 !py-1 text-xs" data-tw-toggle="pill" data-tw-target="#time-tab-2" type="button" role="tab" aria-controls="time-tab-2" aria-selected="false">
-                                        12h
-                                    </button>
-                                </li>
-                                <li id="time-2-tab" class="nav-item" role="presentation">
-                                    <button class="nav-link !px-2 !py-1 text-xs" data-tw-toggle="pill" data-tw-target="#time-tab-2" type="button" role="tab" aria-controls="time-tab-2" aria-selected="false">
-                                        6h
-                                    </button>
-                                </li>
-                                <li id="time-2-tab" class="nav-item" role="presentation">
-                                    <button class="nav-link !px-2 !py-1 text-xs" data-tw-toggle="pill" data-tw-target="#time-tab-2" type="button" role="tab" aria-controls="time-tab-2" aria-selected="false">
-                                        3h
-                                    </button>
-                                </li>
-                                <li id="time-2-tab" class="nav-item" role="presentation">
-                                    <button class="nav-link !px-2 !py-1 text-xs" data-tw-toggle="pill" data-tw-target="#time-tab-2" type="button" role="tab" aria-controls="time-tab-2" aria-selected="false">
-                                        1h
-                                    </button>
-                                </li>
-                            </ul>
-
-                            <div>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-1"></use></svg>
-                                        <span class="truncate">축구</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>602</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-48"></use></svg>
-                                        <span class="truncate">야구</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>10</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-18"></use></svg>
-                                        <span class="truncate">아이스 하키</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>105</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-3"></use></svg>
-                                        <span class="truncate">농구</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>249</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-2"></use></svg>
-                                        <span class="truncate">테니스</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-17"></use></svg>
-                                        <span class="truncate">배구</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-7"></use></svg>
-                                        <span class="truncate">탁구</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-39"></use></svg>
-                                        <span class="truncate">핸드볼</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-54"></use></svg>
-                                        <span class="truncate">미식축구</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-52"></use></svg>
-                                        <span class="truncate">권투</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-11"></use></svg>
-                                        <span class="truncate">E 게임</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-42"></use></svg>
-                                        <span class="truncate">TV 게임</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-30"></use></svg>
-                                        <span class="truncate">게일 스포츠</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-10"></use></svg>
-                                        <span class="truncate">골프</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-24"></use></svg>
-                                        <span class="truncate">나스카</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-49"></use></svg>
-                                        <span class="truncate">럭비</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-50"></use></svg>
-                                        <span class="truncate">럭비 리그</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-55"></use></svg>
-                                        <span class="truncate">스누커</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-21"></use></svg>
-                                        <span class="truncate">오지 룰스</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-40"></use></svg>
-                                        <span class="truncate">정치</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-57"></use></svg>
-                                        <span class="truncate">카바디</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-19"></use></svg>
-                                        <span class="truncate">크리켓</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-23"></use></svg>
-                                        <span class="truncate">포뮬러 1</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                                <button class="flex items-center justify-between gap-2 w-full p-2 text-xs bg-stand hover:bg-btndark">
-                                    <div class="grid grid-flow-col items-center gap-2">
-                                        <svg width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#sportIcon-36"></use></svg>
-                                        <span class="truncate">플로어볼</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span>51</span>
-                                        <svg class="pin_btn" width="24" height="24" ><use href="/bcGame/dist/custom_img/sports-defs.svg#pin"></use></svg>
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-                            
-                    </div>
+                 
 
                     <!-- 중앙 -->
-                    <div class="sports_center h-full scrollbar overflow-y-auto type02 py-4 md:px-2 dark:bg-stand bg-shadow">
+                    <div class="sports_center2 h-full scrollbar overflow-y-auto type02 py-4 md:px-2 dark:bg-stand bg-shadow">
                         <!-- MO -->
                         <div class="md:hidden block mb-2 px-2">
                             <div class="relative w-full">
@@ -1043,24 +711,27 @@
 
                                 <div class="flex items-center justify-between bg-backlight hover:bg-[#688960] dark:hover:bg-[#354036] !bg-opacity-50 dark:!bg-opacity-100 rounded">
                                     <div class="w-48 flex items-center justify-between bet_info">
-                                        <div class="p-2 cursor-pointer" onclick="window.location.href='/bcGame/sports_detail.html'">
+                                        <div class="p-2 cursor-pointer w-full" onclick="window.location.href='/bcGame/sports_detail.html'">
                                             <div class="flex items-center gap-1 mb-1">
+                                                <b class="text-tit">2nd Half</b>
                                                 <span class="mr-1 text-tit">05:00</span>
                                                 ID 5438849
                                             </div>
-                                            <div class="flex items-center gap-1 text-tit">
-                                                <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/leipzig.webp" alt="">
-                                                RB Leipzig
+                                            <div class="flex items-center justify-between gap-1 text-tit">
+                                                <p class="flex items-center gap-1">
+                                                    <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/leipzig.webp" alt="">
+                                                    RB Leipzig
+                                                </p>
+                                                <b>1</b>
                                             </div>
-                                            <div class="flex items-center gap-1 text-tit">
-                                                <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/madrid.webp" alt="">
-                                                Real Madrid
+                                            <div class="flex items-center justify-between gap-1 text-tit">
+                                                <p class="flex items-center gap-1">
+                                                    <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/madrid.webp" alt="">
+                                                    Real Madrid
+                                                </p>
+                                                <b>0</b>
                                             </div>
                                         </div>
-                                        <button class="sports_like_btn shrink-0 bet_like_btn h-full px-1">
-                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
-                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
-                                        </button>
                                     </div>
                                     <div class="flex-1 flex text-center">
                                         <div class="flex bet_box" style="flex:3 1 0%">
@@ -1127,24 +798,27 @@
 
                                 <div class="flex items-center justify-between mt-1 bg-backlight hover:bg-[#688960] dark:hover:bg-[#354036] !bg-opacity-50 dark:!bg-opacity-100 rounded">
                                     <div class="w-48 flex items-center justify-between bet_info">
-                                        <div class="p-2 cursor-pointer" onclick="window.location.href='/bcGame/sports_detail.html'">
+                                        <div class="p-2 cursor-pointer w-full" onclick="window.location.href='/bcGame/sports_detail.html'">
                                             <div class="flex items-center gap-1 mb-1">
+                                                <i class="font-bold text-danger animate-opacity">LIVE</i>
                                                 <span class="mr-1 text-tit">05:00</span>
                                                 ID 5438849
                                             </div>
-                                            <div class="flex items-center gap-1 text-tit">
-                                                <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/leipzig.webp" alt="">
-                                                RB Leipzig
+                                            <div class="flex items-center justify-between gap-1 text-tit">
+                                                <p class="flex items-center gap-1">
+                                                    <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/leipzig.webp" alt="">
+                                                    RB Leipzig
+                                                </p>
+                                                <b>1</b>
                                             </div>
-                                            <div class="flex items-center gap-1 text-tit">
-                                                <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/madrid.webp" alt="">
-                                                Real Madrid
+                                            <div class="flex items-center justify-between gap-1 text-tit">
+                                                <p class="flex items-center gap-1">
+                                                    <img class="w-4 rounded-sm" src="/bcGame/dist/custom_img/sports/madrid.webp" alt="">
+                                                    Real Madrid
+                                                </p>
+                                                <b>0</b>
                                             </div>
                                         </div>
-                                        <button class="sports_like_btn shrink-0 bet_like_btn h-full px-1">
-                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
-                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
-                                        </button>
                                     </div>
                                     <div class="flex-1 flex text-center">
                                         <div class="flex bet_box" style="flex:3 1 0%">
@@ -1289,7 +963,7 @@
 
                                 <div class="flex items-center justify-between bg-backlight hover:bg-[#688960] dark:hover:bg-[#354036] !bg-opacity-50 dark:!bg-opacity-100 rounded">
                                     <div class="w-48 flex items-center justify-between bet_info">
-                                        <div class="p-2 cursor-pointer" onclick="window.location.href='/bcGame/sports_detail.html'">
+                                        <div class="p-2 cursor-pointer w-full" onclick="window.location.href='/bcGame/sports_detail.html'">
                                             <div class="flex items-center gap-1 mb-1">
                                                 <i class="font-bold text-danger animate-opacity">LIVE</i>
                                                 <span class="mr-1 text-tit">05:00</span>
@@ -1310,10 +984,7 @@
                                                 <b>0</b>
                                             </div>
                                         </div>
-                                        <button class="sports_like_btn shrink-0 bet_like_btn h-full px-1">
-                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
-                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
-                                        </button>
+                                        
                                     </div>
                                     <div class="flex-1 flex text-center">
                                         <div class="flex bet_box" style="flex:3 1 0%">
@@ -1380,7 +1051,7 @@
 
                                 <div class="flex items-center justify-between mt-1 bg-backlight hover:bg-[#688960] dark:hover:bg-[#354036] !bg-opacity-50 dark:!bg-opacity-100 rounded">
                                     <div class="w-48 flex items-center justify-between bet_info">
-                                        <div class="p-2 cursor-pointer" onclick="window.location.href='/bcGame/sports_detail.html'">
+                                        <div class="p-2 cursor-pointer w-full" onclick="window.location.href='/bcGame/sports_detail.html'">
                                             <div class="flex items-center gap-1 mb-1">
                                                 <i class="font-bold text-danger animate-opacity">LIVE</i>
                                                 <span class="mr-1 text-tit">05:00</span>
@@ -1395,10 +1066,7 @@
                                                 Real Madrid
                                             </div>
                                         </div>
-                                        <button class="sports_like_btn shrink-0 bet_like_btn h-full px-1">
-                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
-                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
-                                        </button>
+                                        
                                     </div>
                                     <div class="flex-1 flex text-center">
                                         <div class="flex bet_box" style="flex:3 1 0%">
@@ -1508,7 +1176,7 @@
 
                                 <div class="flex items-center justify-between bg-backlight hover:bg-[#688960] dark:hover:bg-[#354036] !bg-opacity-50 dark:!bg-opacity-100 rounded">
                                     <div class="w-48 flex items-center justify-between bet_info">
-                                        <div class="p-2 cursor-pointer" onclick="window.location.href='/bcGame/sports_detail.html'">
+                                        <div class="p-2 cursor-pointer w-full" onclick="window.location.href='/bcGame/sports_detail.html'">
                                             <div class="flex items-center gap-1 mb-1">
                                                 <span class="mr-1 text-tit">05:00</span>
                                                 ID 5438849
@@ -1522,10 +1190,7 @@
                                                 Real Madrid
                                             </div>
                                         </div>
-                                        <button class="sports_like_btn shrink-0 bet_like_btn h-full px-1">
-                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
-                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
-                                        </button>
+                                        
                                     </div>
                                     <div class="flex-1 flex text-center">
                                         <div class="flex bet_box" style="flex:3 1 0%">
@@ -1592,7 +1257,7 @@
 
                                 <div class="flex items-center justify-between mt-1 bg-backlight hover:bg-[#688960] dark:hover:bg-[#354036] !bg-opacity-50 dark:!bg-opacity-100 rounded">
                                     <div class="w-48 flex items-center justify-between bet_info">
-                                        <div class="p-2 cursor-pointer" onclick="window.location.href='/bcGame/sports_detail.html'">
+                                        <div class="p-2 cursor-pointer w-full" onclick="window.location.href='/bcGame/sports_detail.html'">
                                             <div class="flex items-center gap-1 mb-1">
                                                 <span class="mr-1 text-tit">05:00</span>
                                                 ID 5438849
@@ -1606,10 +1271,7 @@
                                                 Real Madrid
                                             </div>
                                         </div>
-                                        <button class="sports_like_btn shrink-0 bet_like_btn h-full px-1">
-                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
-                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
-                                        </button>
+                                        
                                     </div>
                                     <div class="flex-1 flex text-center">
                                         <div class="flex bet_box" style="flex:3 1 0%">
@@ -1705,7 +1367,7 @@
 
                                 <div class="flex items-center justify-between bg-backlight hover:bg-[#688960] dark:hover:bg-[#354036] !bg-opacity-50 dark:!bg-opacity-100 rounded">
                                     <div class="w-48 flex items-center justify-between bet_info">
-                                        <div class="p-2 cursor-pointer" onclick="window.location.href='/bcGame/sports_detail.html'">
+                                        <div class="p-2 cursor-pointer w-full" onclick="window.location.href='/bcGame/sports_detail.html'">
                                             <div class="flex items-center gap-1 mb-1">
                                                 <span class="mr-1 text-tit">05:00</span>
                                                 ID 5438849
@@ -1719,10 +1381,7 @@
                                                 Real Madrid
                                             </div>
                                         </div>
-                                        <button class="sports_like_btn shrink-0 bet_like_btn h-full px-1">
-                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
-                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
-                                        </button>
+                                        
                                     </div>
                                     <div class="flex-1 flex text-center">
                                         <div class="flex bet_box" style="flex:3 1 0%">
@@ -1789,7 +1448,7 @@
 
                                 <div class="flex items-center justify-between mt-1 bg-backlight hover:bg-[#688960] dark:hover:bg-[#354036] !bg-opacity-50 dark:!bg-opacity-100 rounded">
                                     <div class="w-48 flex items-center justify-between bet_info">
-                                        <div class="p-2 cursor-pointer" onclick="window.location.href='/bcGame/sports_detail.html'">
+                                        <div class="p-2 cursor-pointer w-full" onclick="window.location.href='/bcGame/sports_detail.html'">
                                             <div class="flex items-center gap-1 mb-1">
                                                 <span class="mr-1 text-tit">05:00</span>
                                                 ID 5438849
@@ -1803,10 +1462,7 @@
                                                 Real Madrid
                                             </div>
                                         </div>
-                                        <button class="sports_like_btn shrink-0 bet_like_btn h-full px-1">
-                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like.svg" alt="">
-                                            <img class="w-4 h-4" src="/bcGame/dist/custom_img/lottery/like_done.svg" alt="">
-                                        </button>
+                                        
                                     </div>
                                     <div class="flex-1 flex text-center">
                                         <div class="flex bet_box" style="flex:3 1 0%">
@@ -2665,7 +2321,6 @@
                         <div class="border-t-8 border-slate-100 border-opacity-70">
                             <a href="javascript:;"><img src="/bcGame/dist/custom_img/sports/cashback.png" alt=""></a>
                         </div>
-
                        
                     </div>
                 </div>

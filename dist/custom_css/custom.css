@@ -1120,15 +1120,17 @@ tr.non-runner {pointer-events:none; opacity:.5; }
         스포츠
 #=========================================#
 */
-.sports_wrap {width:100%; height:calc(100vh - 64px); color:var(--text2-color); }
+.sports_wrap {width:100%; height:calc(100vh - 114px); color:var(--text2-color); }
 
 .sports_left {width:230px; }
 .sports_center {width:calc(100vw - 560px); }
+.sports_center2 {width:calc(100vw - 330px); }
 .sports_right {width:330px; }
 
 @media all and (max-width:1024px){
     .sports_wrap {height:auto; }
     .sports_center {width:100%; }
+    .sports_center2 {width:100%; }
     .sports_left ,
     .sports_right {z-index:51; position:fixed; left:100%; top:50px; width:100%; height:calc(100% - 50px); background-color: var(--background-color); transition:left 0.5s;  }
     .sports_left.on,
@@ -1142,8 +1144,10 @@ tr.non-runner {pointer-events:none; opacity:.5; }
 
 .pin_btn.on {color:var(--primary-color); }
 
-.sports_bet_box button {border:1px solid var(--placeholder-color); }
-.sports_bet_box button.on {border-color:var(--primary-color); }
+.sports_bet_box button,
+.sports_bet_box a {border:1px solid var(--placeholder-color); }
+.sports_bet_box button.on,
+.sports_bet_box a.on {border-color:var(--primary-color); color:var(--title-color); }
 
 .sports_more_btn {border:1px solid var(--placeholder-color);}
 .sports_more_btn:hover,
@@ -1245,3 +1249,15 @@ tr.non-runner {pointer-events:none; opacity:.5; }
 .bet_arrow.on:after {transform:rotate(0deg);}
 
 
+.sports_result_wrap {display:flex; height:calc(100vh - 190px); }
+.sports_result_wrap .sports_depth1 {min-width:218px;}
+.sports_result_wrap .sports_depth2 {min-width:228px;}
+.sports_result_wrap .sports_depth3 {min-width:330px;}
+.sports_result_wrap .result_content {width:calc(100% - 776px); min-width:440px; }
+
+.sports_btn.on {color:var(--title-color); background-color: var(--btn-dark);}
+.sports_btn.on > svg {transform:rotate(0)}
+.sports_result_wrap .sports_depth1 .depth button.on,
+.sports_result_wrap .sports_depth2 .depth2 button.on {color:var(--title-color); background-color: var(--btn-dark);}
+.sports_result_wrap .sports_depth2 .depth2 button.on svg {opacity:1; }
+.sports_result_wrap .sports_depth3 .depth3 button.on {background-color: var(--btn-dark);}
